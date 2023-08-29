@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 90
+
+[tool.isort]
+profile = "black"
+force_sort_within_sections = true
+line_length = 90
+default_section = "THIRDPARTY"
+src_paths = ["doc", "src", "tests"]
+
+[project]
+name = "ansys-rocky"
+version = "0.1.dev0"
+authors = [
+  { name="ANSYS, Inc.", email="pyansys.support@ansys.com" },
+]
+description = "A python wrapper for ansys rocky"
+readme = "README.rst"
+requires-python = ">=3.8"
+classifiers = [
+        "Development Status :: 4 - Beta",
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+]
+license = { file = "LICENSE" }
+dependencies = [
+  "importlib-metadata >=4.0",
+  "Pyro5-5.14",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/pyansys/pyrocky"

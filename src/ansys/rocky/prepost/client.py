@@ -29,6 +29,9 @@ class RockyClient:
     def api(self):
         return self._api_adapter
 
+    def close(self):
+        self._api.Exit()
+
 
 class _ApiElementProxy:
     def __init__(self, pyro_api, pool_id):
@@ -38,7 +41,7 @@ class _ApiElementProxy:
     def GetNumpyCurve(self, curve_name, unit=None):
         api = self._pyro_api
         serpent_dicts = api.SendToApiElement(
-            self._pool_id, "GetNumpyCurve", (curve_name, unit)
+            self._pool_id, "GetNumpyCurve", curve_name, unit
         )
         numpy_data = [serpent.tobytes(d) for d in serpent_dicts]
         return tuple(pickle.loads(b) for b in numpy_data)
@@ -55,5 +58,10 @@ class _ApiElementProxy:
     def deserialize(cls, classname, serialized):
         return cls(_ROCKY_API, serialized["_api_element_id"])
 
+    @classmethod
+    def serialize(cls, obj) -> dict:
+        return {"__class__": "_ApiElementProxy", "_api_element_id": obj._pool_id}
+
 
 Pyro5.api.register_dict_to_class("ApiElementProxy", _ApiElementProxy.deserialize)
+Pyro5.api.register_class_to_dict(_ApiElementProxy, _ApiElementProxy.serialize)

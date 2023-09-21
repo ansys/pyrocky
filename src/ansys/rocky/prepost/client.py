@@ -30,7 +30,7 @@ class RockyClient:
         return self._api_adapter
 
     def close(self):
-        self._api.Exit()
+        self._api_adapter.Exit()
 
 
 class _ApiElementProxy:

@@ -11,7 +11,10 @@ from ansys.rocky.prepost.client import RockyClient, connect_to_rocky
 from ansys.rocky.prepost.exceptions import PyRockyError
 
 
-def launch_rocky(rocky_exe: Optional[Path] = None) -> RockyClient:
+def launch_rocky(
+    rocky_exe: Optional[Path] = None,
+    headless: bool = True,
+) -> RockyClient:
     """
     Launch Rocky executable with PyRocky server enabled, wait Rocky to start up and
     return a `RockyClient` instance.
@@ -31,6 +34,8 @@ def launch_rocky(rocky_exe: Optional[Path] = None) -> RockyClient:
             raise FileNotFoundError(f"Rocky executable not found at {rocky_exe}")
 
     cmd = [rocky_exe, "--pyrocky"]
+    if headless:
+        cmd.append("--headless")
     with contextlib.suppress(subprocess.TimeoutExpired):
         rocky_process = subprocess.Popen(cmd)
         rocky_process.wait(timeout=3)

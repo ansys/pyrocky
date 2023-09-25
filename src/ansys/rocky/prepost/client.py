@@ -30,7 +30,7 @@ class RockyClient:
         return self._api_adapter
 
     def close(self):
-        self._api.Exit()
+        self._api_adapter.Exit()
 
 
 class _ApiElementProxy:
@@ -63,5 +63,17 @@ class _ApiElementProxy:
         return {"__class__": "_ApiElementProxy", "_api_element_id": obj._pool_id}
 
 
+def deserialize_api_error(classname, serialized):
+    return RockyApiError(serialized["message"])
+
+
 Pyro5.api.register_dict_to_class("ApiElementProxy", _ApiElementProxy.deserialize)
+Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
+
 Pyro5.api.register_class_to_dict(_ApiElementProxy, _ApiElementProxy.serialize)
+
+
+class RockyApiError(Exception):
+    """
+    Exception class representing an error generated in the API layer.
+    """

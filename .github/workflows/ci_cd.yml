@@ -1,0 +1,28 @@
+name: CI
+on:
+  pull_request:
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+
+env:
+  MAIN_PYTHON_VERSION : '3.10'
+  LIBRARY_NAME: 'ansys-rocky-core'
+  DOCUMENTATION_CNAME: 'rocky.docs.pyansys.com'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  code-style:
+    name: Code style
+    runs-on: [self-hosted, Windows, pyrocky]
+    steps:
+
+      - name: "Hello runner"
+        run: |
+          python -c "print('Hello runner!')"

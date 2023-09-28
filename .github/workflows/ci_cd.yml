@@ -9,7 +9,7 @@ on:
 
 env:
   MAIN_PYTHON_VERSION : '3.10'
-  LIBRARY_NAME: 'ansys-rocky-core'
+  LIBRARY_NAME: 'ansys-rocky-prepost'
   DOCUMENTATION_CNAME: 'rocky.docs.pyansys.com'
 
 concurrency:
@@ -18,11 +18,23 @@ concurrency:
 
 jobs:
 
-  code-style:
-    name: Code style
+  tests:
+    name: Tests
     runs-on: [self-hosted, Windows, pyrocky]
-    steps:
+    timeout-minutes: 10
 
-      - name: "Hello runner"
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: "Install"
         run: |
-          python -c "print('Hello runner!')"
+          python -m venv .venv
+          .venv/Scripts/activate.bat
+
+          pip install .
+
+      - name: "Test"
+        run: |
+          .venv/Scripts/activate.bat
+
+          python -c "import ansys.rocky.prepost"

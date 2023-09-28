@@ -1,0 +1,40 @@
+name: CI
+on:
+  pull_request:
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+
+env:
+  MAIN_PYTHON_VERSION : '3.10'
+  LIBRARY_NAME: 'ansys-rocky-prepost'
+  DOCUMENTATION_CNAME: 'rocky.docs.pyansys.com'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  tests:
+    name: Tests
+    runs-on: [self-hosted, Windows, pyrocky]
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: "Install"
+        run: |
+          python -m venv .venv
+          .venv/Scripts/activate.bat
+
+          pip install .
+
+      - name: "Test"
+        run: |
+          .venv/Scripts/activate.bat
+
+          python -c "import ansys.rocky.prepost"

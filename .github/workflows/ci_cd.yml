@@ -22,6 +22,8 @@ jobs:
     name: Tests
     runs-on: [self-hosted, Windows, pyrocky]
     timeout-minutes: 10
+    env:
+      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
       - uses: actions/checkout@v3
@@ -31,10 +33,20 @@ jobs:
           python -m venv .venv
           .venv/Scripts/activate.bat
 
-          pip install .
+          pip install -e .[dev]
 
       - name: "Test"
         run: |
           .venv/Scripts/activate.bat
 
-          python -c "import ansys.rocky.prepost"
+          pre-commit run --all-files --show-diff-on-failure
+
+          pytest tests --junitxml=build/pytest.xml
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: Pytest Report
+          path: build/pytest.xml    # Path to test results
+          reporter: java-junit

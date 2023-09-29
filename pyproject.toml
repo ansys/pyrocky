@@ -31,8 +31,14 @@ license = { file = "LICENSE" }
 dependencies = [
   "importlib-metadata >=4.0",
   "Pyro5",
+  "numpy >=1.19",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "pytest >=7.4"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/pyansys/pyrocky"

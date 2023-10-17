@@ -1,121 +1,91 @@
 PyRocky ansys-rocky-prepost
 ===========================
-|pyansys| |python| |pypi| |GH-CI| |codecov| |MIT| |black|
 
-.. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
-   :target: https://docs.pyansys.com/
-   :alt: PyAnsys
-
-.. |GH-CI| image:: https://github.com/pyansys/pypyattest-ansys-attest-prepost/actions/workflows/ci_cd.yml/badge.svg
-   :target: https://github.com/pyansys/pypyattest-ansys-attest-prepost/actions/workflows/ci_cd.yml
-   :alt: GH-CI
-
-.. |MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
-   :target: https://opensource.org/licenses/MIT
-   :alt: MIT
+|pyansys| |MIT|
 
 A Python package to remote control Ansys Rocky.
 
+Usage
+-----
 
-How to install
---------------
+Installation
+^^^^^^^^^^^^
 
-At least two installation modes are provided: user and developer.
-
-For users
-^^^^^^^^^
-
-In order to install ansys-rocky-prepost
+As of now, PyRocky is on private Beta. You can install it straight from the GitHub
+repository:
 
 .. code:: bash
 
-    python -m pip install ansys-rocky-prepost
+    python -m pip install https://github.com/ansys-internal/pyrocky
 
-For developers
-^^^^^^^^^^^^^^
+Getting Started
+^^^^^^^^^^^^^^^
 
-Installing ansys-rocky-prepost in developer mode allows
-you to modify the source and enhance it.
+The best way play with **PyRocky** is by using `Jupyer Notebook <https://jupyter.org/>`_
+or `VSCode <https://code.visualstudio.com>`_. The following snippet launches a Rocky
+headless session and return a ``RockyClient`` instance from which you'll be able to
+programmatically interact with the software:
 
-Before contributing to the project, please refer to the `PyAnsys Developer's guide`_. You will
-need to follow these steps:
+..  code:: python
 
-#. Start by cloning this repository:
+    import ansys.rocky.rocky as pyrocky
 
-   .. code:: bash
+    rocky = pyrocky.launch_rocky()
 
-      git clone https://github.com/ansys/pyrocky
+To close the Rocky session, just use `close()`:
 
-#. Create a fresh-clean Python environment and activate it:
+..  code:: python
 
-   .. code:: bash
+    rocky.close()
 
-      # Create a virtual environment
-      python -m venv .venv
+It's also possible to launch Rocky GUI disabling the headless flag:
 
-      # Activate it in a POSIX system
-      source .venv/bin/activate
+..  code:: python
 
-      # Activate it in Windows CMD environment
-      .venv\Scripts\activate.bat
+    rocky = pyrocky.launch_rocky(headless=False)
 
-      # Activate it in Windows Powershell
-      .venv\Scripts\Activate.ps1
+Connecting to an existing session
+************************************
 
-#. Make sure you have the latest required build system and doc, testing, and CI tools:
+You can connect to a Rocky session as long as the session is started with `--pyrocky`
+option:
 
-   .. code:: bash
+.. code:: bat
 
-      python -m pip install -U pip setuptools
+   C:\Program Files\Ansys Inc\v241\Rocky> bin\Rocky.exe --pyrocky
 
+.. code:: python
 
-#. Install the project in editable mode:
+    import ansys.rocky.rocky as pyrocky
 
-    .. code:: bash
-
-      python -m pip install -e ansys-rocky-prepost
+    rocky = pyrocky.connect_to_rocky()
 
 
-A note on pre-commit
-^^^^^^^^^^^^^^^^^^^^
+Using Rocky PrePost API
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The style checks take advantage of `pre-commit`_. Developers are not forced but
-encouraged to install this tool via:
+Most of the Rocky PrePost API is available through the ``api`` object. The following
+snippet creates new project and save it to disk:
 
-.. code:: bash
+..  code:: python
 
-    python -m pip install pre-commit && pre-commit install
+    api = rocky.api
+    project = api.CreateProject()
+    study = project.GetStudy()
+    study.SetName("My Studyy")
 
+    api.SaveProject("my-project.rocky"))
 
-Documentation
--------------
+You can get the full documentation within Rocky Application (*Help* - *Manuals* -
+*API PrePost*).
 
-For building documentation, you can either run the usual rules provided in the
-`Sphinx`_ Makefile, such us:
+Known Issues
+**************
 
-.. code:: bash
-
-    make -C doc/ html && your_browser_name doc/html/index.html
-
-However, the recommended way of checking documentation integrity is using:
-
-.. code:: bash
-
-    tox -e doc && your_browser_name .tox/doc_out/index.html
-
-
-Distributing
-------------
-
-If you would like to create either source or wheel files, start by installing
-the building requirements and then executing the build module:
-
-.. code:: bash
-
-    python -m pip install -r requirements/requirements_build.txt
-    python -m build
-    python -m twine check dist/*
-
+ - When opened with UI visible (non-headless), PyRocky cannot deal with confirmation
+   or error dialogs (for instance, a call to ``CloseProject()`` will ask for confirmation
+   and PyRocky will freeze until user click `OK` or `Cancel` on the UI).
+ - Some API methods may not work.
 
 .. LINKS AND REFERENCES
 .. _black: https://github.com/psf/black
@@ -127,3 +97,13 @@ the building requirements and then executing the build module:
 .. _pytest: https://docs.pytest.org/en/stable/
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _tox: https://tox.wiki/
+
+.. BADGES
+.. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC
+   :target: https://docs.pyansys.com/
+   :alt: PyAnsys
+
+.. |MIT| image:: https://img.shields.io/badge/License-MIT-yellow.svg
+   :target: https://opensource.org/licenses/MIT
+   :alt: MIT
+

@@ -38,14 +38,6 @@ class _ApiElementProxy:
         self._pool_id = pool_id
         self._pyro_api = pyro_api
 
-    def GetNumpyCurve(self, curve_name, unit=None):
-        api = self._pyro_api
-        serpent_dicts = api.SendToApiElement(
-            self._pool_id, "GetNumpyCurve", curve_name, unit
-        )
-        numpy_data = [serpent.tobytes(d) for d in serpent_dicts]
-        return tuple(pickle.loads(b) for b in numpy_data)
-
     def __getattr__(self, attr_name: str) -> object:
         def CallProxy(*args, **kwargs):
             return self._pyro_api.SendToApiElement(
@@ -67,8 +59,14 @@ def deserialize_api_error(classname, serialized):
     return RockyApiError(serialized["message"])
 
 
+def deserialize_numpy(classname, serialized):
+    bytes = serpent.tobytes(serialized["bytes"])
+    return pickle.loads(bytes)
+
+
 Pyro5.api.register_dict_to_class("ApiElementProxy", _ApiElementProxy.deserialize)
 Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
+Pyro5.api.register_dict_to_class("ndarray", deserialize_numpy)
 
 Pyro5.api.register_class_to_dict(_ApiElementProxy, _ApiElementProxy.serialize)
 

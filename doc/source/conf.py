@@ -4,6 +4,7 @@ import os
 
 from ansys_sphinx_theme import get_version_match
 from ansys_sphinx_theme import pyansys_logo_black as logo
+from sphinx_gallery.sorting import FileNameSortKey
 
 # Project information
 project = "pyrocky"
@@ -27,7 +28,7 @@ html_theme_options = {
     ],
     "switcher": {
         "json_url": f"https://{cname}/versions.json",
-        "version_match": get_version_match(__version__),
+        "version_match": get_version_match(version),
     },
     "check_switcher": False,
 }
@@ -39,6 +40,7 @@ extensions = [
     "numpydoc",
     "sphinx.ext.intersphinx",
     "sphinx_copybutton",
+    "sphinx_gallery.gen_gallery",
 ]
 
 # Intersphinx mapping
@@ -87,3 +89,19 @@ source_suffix = ".rst"
 
 # The master toctree document.
 master_doc = "index"
+
+
+sphinx_gallery_conf = {
+    # path to your examples scripts
+    "examples_dirs": ["../../examples/"],
+    # path where to save gallery generated examples
+    "gallery_dirs": ["examples"],
+    # Pattern to search for example files
+    "filename_pattern": r"\.py",
+    # Remove the "Download all examples" button from the top level gallery
+    "download_all_examples": False,
+    # Sort gallery example by file name instead of number of lines (default)
+    "within_subsection_order": FileNameSortKey,
+    # directory where function granular galleries are stored
+    "backreferences_dir": None,
+}

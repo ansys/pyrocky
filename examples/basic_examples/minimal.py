@@ -13,7 +13,6 @@ This example sets up and solves a simple particle simulation workflow.
 
 import os.path
 import tempfile
-
 import ansys.rocky.prepost as pyrocky
 
 # Create a temp directory to save the project.
@@ -30,8 +29,8 @@ project = rocky.api.CreateProject()
 
 study = project.GetStudy()
 
-# The default particle entity has a spherical shape and just one size distribution with
-# the sieve size of 0.1 m.
+# The default particle entity has a spherical shape and just one size distribution with 
+# the sieve size of 0.1 m. 
 particle = study.CreateParticle()
 
 # The default circular surface is defined in the XZ plane and has a max radius of 1.0 m
@@ -39,7 +38,7 @@ particle = study.CreateParticle()
 circular_surface = study.CreateCircularSurface()
 study.CreateParticleInlet(entry_point=circular_surface, particle=particle)
 
-# The domain settings define the domain limits where the particles are enabled to be
+# The domain settings define the domain limits where the particles are enabled to be 
 # computed in the simulation.
 domain = study.GetDomainSettings()
 domain.DisableUseBoundaryLimits()
@@ -60,7 +59,7 @@ study.StartSimulation()
 # Post-processing
 # ~~~~~~~~~~~~~~~
 
-# Get the particles count curve that shows the number of particles inside the domain at
+# Get the particles count curve that shows the number of particles inside the domain at 
 # each time step of the simulation.
 times, particles_count = study.GetParticles().GetNumpyCurve("Particles Count")
 for time, count in zip(times, particles_count):

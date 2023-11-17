@@ -6,8 +6,6 @@ from ansys_sphinx_theme import get_version_match
 from ansys_sphinx_theme import pyansys_logo_black as logo
 from sphinx_gallery.sorting import FileNameSortKey
 
-from sphinx_gallery.sorting import FileNameSortKey
-
 # Project information
 project = "pyrocky"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"

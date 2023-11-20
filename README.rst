@@ -1,4 +1,4 @@
-PyRocky ansys-rocky-prepost
+PyRocky ansys-rocky-core
 ===========================
 
 |pyansys| |MIT|

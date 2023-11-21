@@ -9,7 +9,7 @@ on:
 
 env:
   MAIN_PYTHON_VERSION : '3.10'
-  LIBRARY_NAME: 'ansys-rocky-prepost'
+  LIBRARY_NAME: 'ansys-rocky-core'
   DOCUMENTATION_CNAME: 'rocky.docs.pyansys.com'
 
 concurrency:

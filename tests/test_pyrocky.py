@@ -1,6 +1,6 @@
 import pytest
 
-import ansys.rocky.prepost as pyrocky
+import ansys.rocky.core as pyrocky
 
 
 @pytest.fixture()

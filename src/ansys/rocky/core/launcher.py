@@ -7,8 +7,8 @@ from typing import Optional
 
 from Pyro5.errors import CommunicationError
 
-from ansys.rocky.prepost.client import RockyClient, connect_to_rocky
-from ansys.rocky.prepost.exceptions import PyRockyError
+from ansys.rocky.core.client import RockyClient, connect_to_rocky
+from ansys.rocky.core.exceptions import PyRockyError
 
 
 def launch_rocky(

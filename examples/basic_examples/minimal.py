@@ -14,7 +14,7 @@ This example sets up and solves a simple particle simulation workflow.
 import os.path
 import tempfile
 
-import ansys.rocky.prepost as pyrocky
+import ansys.rocky.core as pyrocky
 
 # Create a temp directory to save the project.
 project_dir = tempfile.mkdtemp(prefix="pyrocky_")

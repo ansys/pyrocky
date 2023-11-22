@@ -27,6 +27,7 @@ dependencies = [
   "Sphinx ==6.2.1",
   "sphinx-copybutton ==0.5.1",
   "sphinx-gallery ==0.14.0",
+  "matplotlib ==3.8.2", # required by sphinx-gallery
 ]
 
 [project.optional-dependencies]

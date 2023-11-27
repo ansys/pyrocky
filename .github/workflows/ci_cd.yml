@@ -43,6 +43,14 @@ jobs:
 
           pytest tests --junitxml=build/pytest.xml
 
+      - name: "Test Examples"
+        run: |
+          .venv/Scripts/activate.bat
+
+          for file in $(find examples/ -name "*.py"); do
+            python $file
+          done
+
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed

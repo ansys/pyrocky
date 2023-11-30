@@ -43,6 +43,12 @@ jobs:
 
           pytest tests --junitxml=build/pytest.xml
 
+      - name: "Check Examples"
+        run: |
+          .venv/Scripts/activate.bat
+
+          python examples/run_examples.py
+
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed

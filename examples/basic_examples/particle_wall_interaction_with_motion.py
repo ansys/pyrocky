@@ -56,7 +56,8 @@ rectangular_surface.SetCenter((5, -7.5, 0), unit="m")
 
 # Set the inlet and outlet.
 particle_inlet = study.CreateParticleInlet(circular_surface, particle)
-particle_inlet.GetInputPropertiesList().__getitem__(0).SetMassFlowRate(1000)
+input_property_list = particle_inlet.GetInputPropertiesList()
+input_property_list[0].SetMassFlowRate(1000)
 outlet = study.CreateOutlet(rectangular_surface)
 
 # Set the motion rotation over Y axis a apply it on the wall and the rectagular surface

@@ -48,7 +48,7 @@ jobs:
         run: |
           .venv/Scripts/activate.bat
 
-          pytest examples\test_examples.py --junitxml=build/tests-examples.xml
+          pytest test_examples.py --junitxml=build/tests-examples.xml
 
       - name: Test Report
         uses: dorny/test-reporter@v1

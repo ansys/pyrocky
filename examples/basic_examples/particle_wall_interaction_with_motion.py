@@ -107,6 +107,6 @@ ax.set_xlabel("Time [s]")
 ax.set_ylabel("Mass Flow [t/h]")
 ax.legend(loc="upper left")
 
-plt.show()
+plt.draw()
 
 rocky.close()

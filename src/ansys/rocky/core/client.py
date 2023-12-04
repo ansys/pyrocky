@@ -1,4 +1,5 @@
 import pickle
+from typing import Generator
 
 import Pyro5.api
 import serpent
@@ -52,7 +53,26 @@ class _ApiElementProxy:
 
     @classmethod
     def serialize(cls, obj) -> dict:
-        return {"__class__": "_ApiElementProxy", "_api_element_id": obj._pool_id}
+        return {"__class__": cls.__name__, "_api_element_id": obj._pool_id}
+
+
+class _ApiListProxy(_ApiElementProxy):
+    """
+    A proxy object for API Elements that implement the sequence interface.
+    """
+
+    def __len__(self) -> int:
+        return self._pyro_api.SendToApiElement(self._pool_id, "__len__")
+
+    def __getitem__(self, index: int) -> _ApiElementProxy:
+        return self._pyro_api.SendToApiElement(self._pool_id, "__getitem__", index)
+
+    def __iter__(self) -> Generator[_ApiElementProxy, None, None]:
+        for index in range(len(self)):
+            yield self[index]
+
+    def __delitem__(self, index: int) -> None:
+        self._pyro_api.SendToSubject(self._pool_id, "__delitem__", index)
 
 
 def deserialize_api_error(classname, serialized):
@@ -65,6 +85,7 @@ def deserialize_numpy(classname, serialized):
 
 
 Pyro5.api.register_dict_to_class("ApiElementProxy", _ApiElementProxy.deserialize)
+Pyro5.api.register_dict_to_class("ApiListProxy", _ApiListProxy.deserialize)
 Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
 Pyro5.api.register_dict_to_class("ndarray", deserialize_numpy)
 

@@ -41,18 +41,18 @@ jobs:
 
           pre-commit run --all-files --show-diff-on-failure
 
-          pytest tests --junitxml=build/pytest.xml
+          pytest tests --junitxml=build/tests.xml
 
       - name: "Check Examples"
         run: |
           .venv/Scripts/activate.bat
 
-          python examples/run_examples.py
+          pytest examples\test_examples.py --junitxml=build/tests-examples.xml
 
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed
         with:
           name: Pytest Report
-          path: build/pytest.xml    # Path to test results
+          path: build/tests.xml    # Path to test results
           reporter: java-junit

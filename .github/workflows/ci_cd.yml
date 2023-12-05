@@ -11,6 +11,7 @@ env:
   MAIN_PYTHON_VERSION : '3.10'
   LIBRARY_NAME: 'ansys-rocky-core'
   DOCUMENTATION_CNAME: 'rocky.docs.pyansys.com'
+  DOC_DEPLOYMENT_IMAGE_TAG: v24.1.0
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -26,7 +27,7 @@ jobs:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: "Install"
         run: |
@@ -47,7 +48,7 @@ jobs:
         run: |
           .venv/Scripts/activate.bat
 
-          pytest examples\test_examples.py --junitxml=build/tests-examples.xml
+          pytest test_examples.py --junitxml=build/tests-examples.xml
 
       - name: Test Report
         uses: dorny/test-reporter@v1
@@ -56,3 +57,50 @@ jobs:
           name: Pytest Report
           path: build/tests.xml    # Path to test results
           reporter: java-junit
+
+
+  docs_build:
+    name: Build Documentation
+    runs-on: [self-hosted, Windows, pyrocky]
+    env:
+      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Install"
+        run: |
+          python -m venv .venv
+          .venv/Scripts/activate.bat
+          pip install -e .[dev]
+          pip install msvc-runtime
+
+      - name: Build Source Documentation
+        run: |
+          .venv/Scripts/activate.bat
+          doc\make.bat html
+
+      - name: Zip HTML Documentation before upload
+        run: python doc\compress_doc.py HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
+
+      - name: Upload HTML Documentation
+        uses: actions/upload-artifact@v3
+        with:
+          name: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
+          path: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}.zip
+          retention-days: 7
+
+
+  doc-deploy-dev:
+    name: "Deploy development documentation"
+    # Deploy development only when merging or pushing to the 'main' branch
+    if: github.event_name == 'push' && !contains(github.ref, 'refs/tags')
+    runs-on: ubuntu-latest
+    needs: docs_build
+    steps:
+      - uses: ansys/actions/doc-deploy-dev@v4
+        with:
+          doc-artifact-name: 'HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}'
+          decompress-artifact: true
+          cname: ${{ env.DOCUMENTATION_CNAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}

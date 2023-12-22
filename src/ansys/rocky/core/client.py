@@ -28,10 +28,12 @@ import serpent
 
 from ansys.rocky.core.exceptions import RockyApiError
 
+ROCKY_SERVER_PORT = 50615
+
 _ROCKY_API = None
 
 
-def connect_to_rocky(host: str = "localhost", port: int = 50615) -> "RockyClient":
+def connect_to_rocky(host: str = "localhost", port: int = ROCKY_SERVER_PORT) -> "RockyClient":
     """Connect to a Rocky Application instance.
 
     Parameters

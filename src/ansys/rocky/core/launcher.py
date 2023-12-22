@@ -25,16 +25,18 @@ import os
 from pathlib import Path
 import subprocess
 import time
-from typing import Optional
+from typing import Optional, Union
 
 from Pyro5.errors import CommunicationError
 
-from ansys.rocky.core.client import RockyClient, connect_to_rocky
+from ansys.rocky.core.client import ROCKY_SERVER_PORT, RockyClient, connect_to_rocky
 from ansys.rocky.core.exceptions import RockyLaunchError
+
+_WAIT_ROCKY_START = 60
 
 
 def launch_rocky(
-    rocky_exe: Optional[Path] = None,
+    rocky_exe: Optional[Union[Path, str]] = None,
     headless: bool = True,
 ) -> RockyClient:
     """
@@ -54,6 +56,12 @@ def launch_rocky(
     RockyClient
         A `RockyClient` instance connected to the launched Rocky application.
     """
+    if isinstance(rocky_exe, str):
+        rocky_exe = Path(rocky_exe)
+
+    if _is_port_busy(ROCKY_SERVER_PORT):
+        raise RockyLaunchError(f"Port {ROCKY_SERVER_PORT} already in use")
+
     if rocky_exe is None:
         for awp_root in ["AWP_ROOT241", "AWP_ROOT232"]:
             if awp_root not in os.environ:
@@ -96,4 +104,11 @@ def launch_rocky(
     return client
 
 
-_WAIT_ROCKY_START = 60
+def _is_port_busy(port: int) -> bool:
+    """
+    Check if there is already a Rocky server running.
+    """
+    import socket
+
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        return s.connect_ex(("localhost", port)) == 0

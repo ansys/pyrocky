@@ -18,9 +18,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  style:
+    name: Code style
+    runs-on: ubuntu-latest
+    steps:
+      - name: PyAnsys code style checks
+        uses: ansys/actions/code-style@v5
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+          vale-config: "doc/.vale.ini"
+          vale-version: "2.29.6"
+  
+  docs-style:
+    name: Documentation Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: PyAnsys documentation style checks
+        uses: ansys/actions/doc-style@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
   smoke-tests:
     name: Build and Smoke tests
     runs-on: ${{ matrix.os }}
+    needs: style
     strategy:
       fail-fast: false
       matrix:
@@ -38,6 +59,8 @@ jobs:
           library-name: ${{ env.LIBRARY_NAME }}
           operating-system: ${{ matrix.os }}
           python-version: ${{ matrix.python-version }}
+
+
   tests:
     name: Tests
     runs-on: [self-hosted, Windows, pyrocky]
@@ -48,12 +71,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: "Install"
-        run: |
-          python -m venv .venv
-          .venv/Scripts/activate.bat
-
-          pip install -e .[tests]
+      - name: Set up Python
+        if: env.SKIP_UNSTABLE == 'false'
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }} # self-hosted has an issue with 3.11
 
       - name: "Test"
         run: |

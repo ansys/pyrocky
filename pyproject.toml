@@ -4,20 +4,23 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ansys-rocky-core"
-version = "0.4.0"
-authors = [
-    { name="ANSYS, Inc.", email="pyansys.support@ansys.com" },
-]
+version = "0.1.dev0"
+authors = [{ name="ANSYS, Inc.", email="pyansys.core@ansys.com" }]
 description = "A Python wrapper for Ansys Rocky PrePost UI"
 readme = "README.rst"
-requires-python = ">=3.8"
+requires-python = ">=3.8,<4"
+license = { file = "LICENSE" }
 classifiers = [
     "Development Status :: 4 - Beta",
-    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Information Analysis",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
 ]
-license = { file = "LICENSE" }
 dependencies = [
     "importlib-metadata>=4.0",
     "Pyro5>=5.13",
@@ -38,7 +41,14 @@ doc = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/pyansys/pyrocky"
+Source = "https://github.com/pyansys/pyrocky"
+Issues = "https://github.com/pyansys/pyrocky/"
+Discussions = "https://github.com/pyansys/pyrocky/discussions"
+Documentation = "https://rocky.docs.pyansys.com"
+Releases = "https://github.com/pyansys/pyrocky/releases"
+
+[tool.flit.module]
+name = "ansys.rocky.core"
 
 [tool.black]
 line-length = 90
@@ -48,4 +58,15 @@ profile = "black"
 force_sort_within_sections = true
 line_length = 90
 default_section = "THIRDPARTY"
-src_paths = ["src", "tests"]
+src_paths = ["doc", "src", "tests"]
+
+[tool.coverage.run]
+source = ["ansys.rocky"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.pytest.ini_options]
+minversion = "7.1"
+addopts = "-ra --cov=ansys.rocky --cov-report html:.cov/html --cov-report xml:.cov/xml --cov-report term -vv"
+testpaths = ["tests"]

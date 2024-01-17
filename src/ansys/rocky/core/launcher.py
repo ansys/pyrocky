@@ -8,7 +8,7 @@ from typing import Optional
 from Pyro5.errors import CommunicationError
 
 from ansys.rocky.core.client import RockyClient, connect_to_rocky
-from ansys.rocky.core.exceptions import PyRockyError
+from ansys.rocky.core.exceptions import RockyLaunchError
 
 
 def launch_rocky(
@@ -18,6 +18,19 @@ def launch_rocky(
     """
     Launch Rocky executable with PyRocky server enabled, wait Rocky to start up and
     return a `RockyClient` instance.
+    
+    Parameters
+    ----------
+    rocky_exe : Optional[Path], optional
+        Path to Rocky executable. If not specified, will try to find it in the
+        environment variables `AWP_ROOT241` and `AWP_ROOT232`.
+    headless : bool, optional
+        Whether to launch Rocky in headless mode. Default is `True`.
+    
+    Returns
+    -------
+    RockyClient
+        A `RockyClient` instance connected to the launched Rocky application.
     """
     if rocky_exe is None:
         for awp_root in ["AWP_ROOT241", "AWP_ROOT232"]:
@@ -62,7 +75,3 @@ def launch_rocky(
 
 
 _WAIT_ROCKY_START = 60
-
-
-class RockyLaunchError(PyRockyError):
-    """Raised for errors occurred during Rocky application launch"""

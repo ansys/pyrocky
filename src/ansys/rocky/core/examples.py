@@ -10,11 +10,11 @@ logger = logging.getLogger("pyrocky.networking")
 ANSYS_EXAMPLE_DATA_REPO = "https://github.com/ansys/example-data/raw/master"
 
 
-def _get_file_url(file_name: str, directory: Optional[str] = None) -> str:
+def _get_file_url(file_name: str, file_host: str = ANSYS_EXAMPLE_DATA_REPO, directory: Optional[str] = None) -> str:
     """Get file URL."""
     if directory:
-        return f"{ANSYS_EXAMPLE_DATA_REPO}/{directory}/{file_name}"
-    return f"{ANSYS_EXAMPLE_DATA_REPO}/{file_name}"
+        return f"{file_host}/{directory}/{file_name}"
+    return f"{file_host}/{file_name}"
 
 
 def _retrieve_file(

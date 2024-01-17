@@ -73,7 +73,7 @@ class _ApiElementProxy:
         return CallProxy
 
     @classmethod
-    def deserialize(cls, serialized: dict) -> "_ApiElementProxy":
+    def deserialize(cls, classname: str, serialized: dict) -> "_ApiElementProxy":
         """Deserialize an API Element Proxy object.
 
         Parameters
@@ -89,7 +89,7 @@ class _ApiElementProxy:
         return cls(_ROCKY_API, serialized["_api_element_id"])
 
     @classmethod
-    def serialize(cls, obj) -> dict:
+    def serialize(cls, classname: str, obj) -> dict:
         """Serialize an API Element Proxy object.
 
         Parameters
@@ -123,7 +123,7 @@ class _ApiListProxy(_ApiElementProxy):
         self._pyro_api.SendToSubject(self._pool_id, "__delitem__", index)
 
 
-def deserialize_api_error(serialized):
+def deserialize_api_error(classname: str, serialized: dict) -> RockyApiError:
     """Deserialize an API Error.
     
     Parameters
@@ -139,7 +139,7 @@ def deserialize_api_error(serialized):
     return RockyApiError(serialized["message"])
 
 
-def deserialize_numpy(serialized):
+def deserialize_numpy(classname, serialized) -> "Any":
     """Deserialize a numpy array.
 
     Parameters

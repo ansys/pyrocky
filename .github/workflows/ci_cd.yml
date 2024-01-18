@@ -115,6 +115,7 @@ jobs:
           .\.venv\Scripts\Activate.ps1
           python -m pip install --upgrade pip
           pip install --upgrade build wheel
+          pip install msvc-runtime
           pip install .[doc]
 
       - name: Build Source Documentation (HTML)

@@ -37,7 +37,23 @@ def _get_file_url(
     directory: Optional[str] = None,
     file_host: str = ANSYS_EXAMPLE_DATA_REPO,
 ) -> str:
-    """Get file URL."""
+    """Get file from an URL.
+
+    Parameters
+    ----------
+    file_name : str
+        File to download.
+    directory : str, optional
+        Ansys example data repository directory where specified file is located. If not
+        specified, looks for the file in the root directory of the repository.
+    file_host : str, optional
+        URL of the file host, by default ANSYS_EXAMPLE_DATA_REPO.
+
+    Returns
+    -------
+    str
+        URL of the file.
+    """
     if directory:
         return f"{file_host}/{directory}/{file_name}"
     return f"{file_host}/{file_name}"
@@ -48,7 +64,22 @@ def _retrieve_file(
     file_name: str,
     save_path: str,
 ) -> str:
-    """Download specified file from specified URL."""
+    """Download specified file from specified URL.
+
+    Parameters
+    ----------
+    url : str
+        URL of the file to download.
+    file_name : str
+        File to download.
+    save_path : str
+        Path to download the specified file to.
+
+    Returns
+    -------
+    str
+        file path of the downloaded file.
+    """
     file_name = os.path.basename(file_name)
     save_path = os.path.abspath(save_path)
     local_path = os.path.join(save_path, file_name)

@@ -104,6 +104,8 @@ class _ApiElementProxy:
         ----------
         serialized : dict
             The serialized object.
+        classname : str
+            The name of the class to be deserialized, required by superclass but unused.
 
         Returns
         -------
@@ -151,6 +153,8 @@ def deserialize_api_error(classname: str, serialized: dict) -> RockyApiError:
 
     Parameters
     ----------
+    classname : str
+        The name of the class to be deserialized, required by superclass but unused.
     serialized : dict
         The serialized object.
 
@@ -167,6 +171,8 @@ def deserialize_numpy(classname, serialized) -> "Any":
 
     Parameters
     ----------
+    classname : str
+        The name of the class to be deserialized, required by superclass but unused.
     serialized : dict
         The serialized object.
 

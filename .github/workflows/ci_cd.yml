@@ -75,9 +75,18 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
-
-      - name: "Test"
+      - name: Create Python venv
         run: |
+          python -m venv .venv
+      - name: Install packages for tests
+        run: |
+          .\.venv\Scripts\Activate.ps1
+          python -m pip install --upgrade pip
+          pip install .[test]
+
+      - name: "Run unit tests"
+        run: |
+          .\.venv\Scripts\Activate.ps1
           pytest tests
 
       - uses: codecov/codecov-action@v3
@@ -92,20 +101,44 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-      - name: "Install"
+      - name: Create Python venv
         run: |
-          pip install  .[dev]
-          pip install msvc-runtime
+          python -m venv .venv
 
-      - name: Build Source Documentation
-        run:  doc\make.bat html
+      - name: Install packages for documentation build
+        run: |
+          .\.venv\Scripts\Activate.ps1
+          python -m pip install --upgrade pip
+          pip install --upgrade build wheel
+          pip install .[doc]
+
+      - name: Build Source Documentation (HTML)
+        run: |
+          .\.venv\Scripts\Activate.ps1
+          doc\make.bat html
+
+      - name: Build Source Documentation (PDF)
+        run: |
+          .\.venv\Scripts\Activate.ps1
+          doc\make.bat html
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v3
         with:
           name: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
           path:  doc/_build/html
+          retention-days: 7
+
+      - name: Upload PDF documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation-pdf
+          path: doc/_build/latex/*.pdf
           retention-days: 7
 
 
@@ -139,7 +172,7 @@ jobs:
 #        with:
 #          library-name: ${{ env.LIBRARY_NAME }}
 
-  upload_dev_docs:
+  upload_docs_dev:
     name: "Deploy development documentation"
     # Deploy development only when merging or pushing to the 'main' branch
     if: github.ref == 'refs/heads/main'

@@ -71,18 +71,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Update powershell
-        run: |
-          Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.Winget.Source_8wekyb3d8bbwe
-          winget install --id Microsoft.Powershell --source winget
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }} # self-hosted has an issue with 3.11
-
       - name: "Test"
         run: |
+          python -m venv .venv
           .venv/Scripts/activate.bat
           pytest
 

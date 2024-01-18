@@ -101,7 +101,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
       - name: "Install"
         run: |
           python -m venv .venv

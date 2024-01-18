@@ -101,14 +101,11 @@ jobs:
       - name: Build Source Documentation
         run:  doc\make.bat html
 
-      - name: Zip HTML Documentation before upload
-        run: python doc\compress_doc.py HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
-
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v3
         with:
           name: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
-          path: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}.zip
+          path:  doc/_build/html
           retention-days: 7
 
 

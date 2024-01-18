@@ -75,7 +75,7 @@ jobs:
         run: |
           python -m venv .venv
           .venv/Scripts/activate.bat
-          pytest
+          pytest tests
 
       - uses: codecov/codecov-action@v3
         name: 'Upload coverage to CodeCov'

@@ -74,7 +74,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }} # self-hosted has an issue with 3.11
+          python-version: "3.9" # self-hosted has an issue with 3.11
 
       - name: "Test"
         run: |

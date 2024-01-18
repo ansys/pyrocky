@@ -1,3 +1,7 @@
-ANSYS
-Ansys
-ansys
+(?i)ansys
+(?i)VSCode
+dialogs
+(?i)Rocky
+(?i)PrePost
+(?i)API
+(?i)pyrocky

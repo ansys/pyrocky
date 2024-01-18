@@ -87,15 +87,29 @@ jobs:
   docs_build:
     name: Build Documentation
     runs-on: [self-hosted, Windows, pyrocky]
+    env:
+      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Ansys documentation building action
-        uses: ansys/actions/doc-build@v4
-        env:
-          ANSYSLMD_LICENSE_FILE: ${{ format('1055@{0}', secrets.LICENSE_SERVER) }}
+      - name: "Install"
+        run: |
+          pip install  .[dev]
+          pip install msvc-runtime
+
+      - name: Build Source Documentation
+        run:  doc\make.bat html
+
+      - name: Zip HTML Documentation before upload
+        run: python doc\compress_doc.py HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
+
+      - name: Upload HTML Documentation
+        uses: actions/upload-artifact@v3
         with:
-          sphinxopts: '-j auto'
+          name: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
+          path: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}.zip
+          retention-days: 7
 
 
   doc-deploy-dev:

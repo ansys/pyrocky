@@ -78,8 +78,6 @@ jobs:
 
       - name: "Test"
         run: |
-          python -m venv .venv
-          .venv/Scripts/activate.bat
           pytest tests
 
       - uses: codecov/codecov-action@v3

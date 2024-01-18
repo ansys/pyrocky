@@ -30,7 +30,7 @@ def test_examples_download():
     # Create a temp directory to save the downloaded file.
     save_path = tempfile.mkdtemp(prefix="pyrocky_")
 
-    file_name = "bracket.iges"
+    file_name = "bracket.igs"
 
     file_path = examples.download_file(save_path, file_name, "geometry")
 

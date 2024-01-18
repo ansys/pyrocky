@@ -113,8 +113,6 @@ jobs:
       - name: Install packages for documentation build
         run: |
           .\.venv\Scripts\Activate.ps1
-          python -m pip install --upgrade pip
-          pip install --upgrade build wheel
           pip install msvc-runtime
           pip install .[doc]
 
@@ -126,7 +124,7 @@ jobs:
       - name: Build Source Documentation (PDF)
         run: |
           .\.venv\Scripts\Activate.ps1
-          doc\make.bat html
+          doc\make.bat pdf
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v3

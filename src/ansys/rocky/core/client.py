@@ -18,7 +18,7 @@ def connect_to_rocky(host: str = "localhost", port: int = 50615) -> "RockyClient
         The host name where the application is running, by default "localhost".
     port : int, optional
         The service port to connect, by default 50615.
-    
+
     Returns
     -------
     RockyClient
@@ -33,12 +33,13 @@ def connect_to_rocky(host: str = "localhost", port: int = 50615) -> "RockyClient
 
 class RockyClient:
     """A client object to interact with the Rocky Application.
-    
+
     Parameters
     ----------
     rocky_api : Pyro5.api.Proxy
         The Pyro5 proxy object to interact with the Rocky Application.
     """
+
     def __init__(self, rocky_api):
         self._api_adapter = rocky_api
 
@@ -52,7 +53,7 @@ class RockyClient:
 
 class _ApiElementProxy:
     """A proxy object for API Elements.
-    
+
     Parameters
     ----------
     pyro_api : Pyro5.api.Proxy
@@ -60,6 +61,7 @@ class _ApiElementProxy:
     pool_id : int
         The ID of the API Element.
     """
+
     def __init__(self, pyro_api, pool_id):
         self._pool_id = pool_id
         self._pyro_api = pyro_api
@@ -106,8 +108,7 @@ class _ApiElementProxy:
 
 
 class _ApiListProxy(_ApiElementProxy):
-    """A proxy object for API Elements that implement the sequence interface.
-    """
+    """A proxy object for API Elements that implement the sequence interface."""
 
     def __len__(self) -> int:
         return self._pyro_api.SendToApiElement(self._pool_id, "__len__")
@@ -125,7 +126,7 @@ class _ApiListProxy(_ApiElementProxy):
 
 def deserialize_api_error(classname: str, serialized: dict) -> RockyApiError:
     """Deserialize an API Error.
-    
+
     Parameters
     ----------
     serialized : dict
@@ -162,6 +163,3 @@ Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
 Pyro5.api.register_dict_to_class("ndarray", deserialize_numpy)
 
 Pyro5.api.register_class_to_dict(_ApiElementProxy, _ApiElementProxy.serialize)
-
-
-

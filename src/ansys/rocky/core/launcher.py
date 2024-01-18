@@ -18,7 +18,7 @@ def launch_rocky(
     """
     Launch Rocky executable with PyRocky server enabled, wait Rocky to start up and
     return a `RockyClient` instance.
-    
+
     Parameters
     ----------
     rocky_exe : Optional[Path], optional
@@ -26,7 +26,7 @@ def launch_rocky(
         environment variables `AWP_ROOT241` and `AWP_ROOT232`.
     headless : bool, optional
         Whether to launch Rocky in headless mode. Default is `True`.
-    
+
     Returns
     -------
     RockyClient

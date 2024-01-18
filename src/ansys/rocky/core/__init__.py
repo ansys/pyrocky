@@ -20,16 +20,13 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import importlib.metadata as importlib_metadata
+
 from .client import connect_to_rocky
 from .launcher import launch_rocky
 
-# TODO: Set __version__
-# try:
-#     import importlib.metadata as importlib_metadata
-# except ModuleNotFoundError:
-#     import importlib_metadata
-#
-# __version__ = importlib_metadata.version(__name__.replace(".", "-"))
+__version__ = importlib_metadata.version(__name__.replace(".", "-"))
+"""PyRocky version."""
 
 
 __all__ = [

@@ -12,6 +12,7 @@ set BUILDDIR=_build
 
 if "%1" == "" goto help
 if "%1" == "clean" goto clean
+if "%1" == "pdf" goto pdf
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (

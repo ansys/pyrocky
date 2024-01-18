@@ -105,28 +105,41 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
-      - name: "Install"
+
+      - name: Create Python venv
         run: |
           python -m venv .venv
-          .venv/Scripts/activate.bat
-          pip install msvc-runtime
-          pip install -e .[dev]
 
-
-      - name: Build Source Documentation
+      - name: Install packages for documentation build
         run: |
-          .venv/Scripts/activate.bat
+          .\.venv\Scripts\Activate.bat
+          pip install msvc-runtime
+          pip install .[doc]
+
+      - name: Build Source Documentation (HTML)
+        run: |
+          .\.venv\Scripts\Activate.bat
           doc\make.bat html
 
-      - name: Zip HTML Documentation before upload
-        run: python doc\compress_doc.py HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
+      - name: Build Source Documentation (PDF)
+        run: |
+          .\.venv\Scripts\Activate.bat
+          doc\make.bat pdf
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v3
         with:
           name: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
-          path: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}.zip
+          path:  doc/_build/html
           retention-days: 7
+
+      - name: Upload PDF documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation-pdf
+          path: doc/_build/latex/*.pdf
+          retention-days: 7
+
 
 
   package:

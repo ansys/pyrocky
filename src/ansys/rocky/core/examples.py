@@ -12,8 +12,8 @@ ANSYS_EXAMPLE_DATA_REPO = "https://github.com/ansys/example-data/raw/master"
 
 def _get_file_url(
     file_name: str,
-    file_host: str = ANSYS_EXAMPLE_DATA_REPO,
     directory: Optional[str] = None,
+    file_host: str = ANSYS_EXAMPLE_DATA_REPO,
 ) -> str:
     """Get file URL."""
     if directory:

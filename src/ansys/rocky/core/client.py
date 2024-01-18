@@ -113,7 +113,7 @@ class _ApiElementProxy:
         return cls(_ROCKY_API, serialized["_api_element_id"])
 
     @classmethod
-    def serialize(cls, classname: str, obj) -> dict:
+    def serialize(cls, obj) -> dict:
         """Serialize an API Element Proxy object.
 
         Parameters

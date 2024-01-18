@@ -112,10 +112,40 @@ jobs:
           retention-days: 7
 
 
-  doc-deploy-dev:
+  package:
+    name: Package library
+    needs: [tests, docs_build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build library source and wheel artifacts
+        uses: ansys/actions/build-library@v5
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+# Uncomment when ready to release
+#  release:
+#    name: Release project
+#    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+#    needs: [package]
+#    runs-on: ubuntu-latest
+#    steps:
+#     - name: Release to the public PyPI repository
+#        uses: ansys/actions/release-pypi-public@v5
+#        with:
+#          library-name: ${{ env.LIBRARY_NAME }}
+#          twine-username: "__token__"
+#          twine-token: ${{ secrets.PYPI_TOKEN }}
+
+#      - name: Release to GitHub
+#        uses: ansys/actions/release-github@v5
+#        with:
+#          library-name: ${{ env.LIBRARY_NAME }}
+
+  upload_dev_docs:
     name: "Deploy development documentation"
     # Deploy development only when merging or pushing to the 'main' branch
-    if: github.event_name == 'push' && !contains(github.ref, 'refs/tags')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: docs_build
     steps:
@@ -125,3 +155,16 @@ jobs:
           decompress-artifact: true
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  upload_docs_release:
+    name: Upload release documentation
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, 'dev')
+    runs-on: ubuntu-latest
+#    needs: [release]
+    steps:
+      - name: Deploy the stable documentation
+        uses: ansys/actions/doc-deploy-stable@v5
+        with:
+          cname: ${{ env.DOCUMENTATION_CNAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}

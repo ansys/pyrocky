@@ -71,13 +71,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
       - name: Create Python venv
         run: |
           python -m venv .venv
+
       - name: Install packages for tests
         run: |
           .\.venv\Scripts\Activate.ps1
@@ -91,7 +94,8 @@ jobs:
 
       - uses: codecov/codecov-action@v3
         name: 'Upload coverage to CodeCov'
-
+        env:
+          CODECOV_TOKEN: ""
 
   docs_build:
     name: Build Documentation
@@ -152,23 +156,22 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
 # Uncomment when ready to release
-#  release:
-#    name: Release project
-#    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
-#    needs: [package]
-#    runs-on: ubuntu-latest
-#    steps:
+  release:
+    name: Release project
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs: [package]
+    runs-on: ubuntu-latest
+    steps:
 #     - name: Release to the public PyPI repository
 #        uses: ansys/actions/release-pypi-public@v5
 #        with:
 #          library-name: ${{ env.LIBRARY_NAME }}
 #          twine-username: "__token__"
 #          twine-token: ${{ secrets.PYPI_TOKEN }}
-
-#      - name: Release to GitHub
-#        uses: ansys/actions/release-github@v5
-#        with:
-#          library-name: ${{ env.LIBRARY_NAME }}
+      - name: Release to GitHub
+        uses: ansys/actions/release-github@v5
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
 
   upload_docs_dev:
     name: "Deploy development documentation"

@@ -31,7 +31,6 @@ dependencies = [
 tests = [
     "pytest==7.4.4",
     "pytest-cov==4.1.0",
-
 ]
 doc = [
     "ansys-sphinx-theme==0.9.9",
@@ -43,11 +42,11 @@ doc = [
 ]
 
 [project.urls]
-Source = "https://github.com/pyansys/pyrocky"
-Issues = "https://github.com/pyansys/pyrocky/"
-Discussions = "https://github.com/pyansys/pyrocky/discussions"
+Source = "https://github.com/ansys/pyrocky"
+Issues = "https://github.com/ansys/pyrocky/"
+Discussions = "https://github.com/ansys/pyrocky/discussions"
 Documentation = "https://rocky.docs.pyansys.com"
-Releases = "https://github.com/pyansys/pyrocky/releases"
+Releases = "https://github.com/ansys/pyrocky/releases"
 
 [tool.flit.module]
 name = "ansys.rocky.core"

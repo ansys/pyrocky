@@ -27,7 +27,7 @@ PyRocky
       Initial steps to get started with PyRocky.
 
       +++
-      .. button-link:: user_guide/index.html
+      .. button-link:: user_guid/index.html
          :color: secondary
          :expand:
          :outline:

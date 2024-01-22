@@ -10,5 +10,5 @@ you can download these examples as Python files or Jupyter notebooks and run the
    :maxdepth: 1
    :hidden:
 
-   basic_examples/README.txt
+   basic_examples/index.rst
 

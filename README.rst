@@ -1,5 +1,5 @@
-PyRocky ansys-rocky-core
-===========================
+PyRocky
+=======
 
 |pyansys| |MIT|
 

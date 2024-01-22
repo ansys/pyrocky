@@ -41,7 +41,7 @@ PyRocky
    .. grid-item-card:: Examples
       :text-align: center
 
-      :material-regular:`code_square;48px`
+      :material-regular:`code;48px`
 
       PyRocky usage examples.
 

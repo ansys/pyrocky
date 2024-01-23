@@ -1,5 +1,5 @@
-PyRocky ansys-rocky-core
-===========================
+PyRocky
+=======
 
 |pyansys| |MIT| |python| |pypi| |codecov| |MIT| |black| |pre-commit|
 

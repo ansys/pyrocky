@@ -23,7 +23,7 @@
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import ROCKY_SERVER_PORT
+from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
 
 
@@ -93,8 +93,8 @@ def test_pyrocky_launch_multiple_servers():
 
     # Emulating Rocky server already running by binding socket to the server address.
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(("localhost", ROCKY_SERVER_PORT))
+        s.bind(("localhost", DEFAULT_SERVER_PORT))
         s.listen(10)
 
-        with pytest.raises(RockyLaunchError, match="Port \d+ already in use"):
+        with pytest.raises(RockyLaunchError, match=r"Port \d+ already in use"):
             pyrocky.launch_rocky()

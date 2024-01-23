@@ -35,7 +35,7 @@ PyRocky
 
             User guide
 
-.. grid:: 1
+.. grid:: 2
    :gutter: 2 3 3 4
 
    .. grid-item-card:: Examples
@@ -54,6 +54,21 @@ PyRocky
 
             Examples
 
+   .. grid-item-card:: API reference
+      :text-align: center
+
+      :material-regular:`terminal;48px`
+
+      Interface of PyRocky.
+
+      +++
+      .. button-link:: api/index.html
+         :color: secondary
+         :expand:
+         :outline:
+         :click-parent:
+
+         API reference
 
 
 .. toctree::

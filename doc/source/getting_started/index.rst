@@ -13,7 +13,7 @@ repository:
 
 .. code:: bash
 
-    python -m pip install https://github.com/ansys-internal/pyrocky
+    python -m pip install https://github.com/ansys/pyrocky
 
 
 Launch PyRocky

@@ -21,18 +21,23 @@
 # SOFTWARE.
 
 import pickle
-from typing import Generator
+from typing import Final, Generator
 
 import Pyro5.api
 import serpent
 
 from ansys.rocky.core.exceptions import RockyApiError
 
+DEFAULT_SERVER_PORT: Final[int] = 50615
+
 _ROCKY_API = None
 
 
-def connect_to_rocky(host: str = "localhost", port: int = 50615) -> "RockyClient":
-    """Connect to a Rocky Application instance.
+def connect_to_rocky(
+    host: str = "localhost", port: int = DEFAULT_SERVER_PORT
+) -> "RockyClient":
+    """
+    Connect to a Rocky Application instance.
 
     Parameters
     ----------

@@ -23,6 +23,8 @@
 import pytest
 
 import ansys.rocky.core as pyrocky
+from ansys.rocky.core.client import DEFAULT_SERVER_PORT
+from ansys.rocky.core.launcher import RockyLaunchError
 
 
 @pytest.fixture()
@@ -81,3 +83,18 @@ def test_sequences_interface(rocky_session):
     # Test __del__
     del inlets_outlets[0]
     assert {e.GetName() for e in inlets_outlets} == {"Inlet2"}
+
+
+def test_pyrocky_launch_multiple_servers():
+    """
+    Test that start multiple rocky servers is not allowed.
+    """
+    import socket
+
+    # Emulating Rocky server already running by binding socket to the server address.
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind(("localhost", DEFAULT_SERVER_PORT))
+        s.listen(10)
+
+        with pytest.raises(RockyLaunchError, match=r"Port \d+ already in use"):
+            pyrocky.launch_rocky()

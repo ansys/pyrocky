@@ -181,7 +181,7 @@ def deserialize_numpy(classname, serialized) -> "Any":
     Any
         The deserialized object.
     """
-    bytes_rocky = serpent.tobytes(serialized["bytes"])
+    deserialized_bytes = serpent.tobytes(serialized["bytes"])
     return pickle.loads(bytes_rocky)
 
 

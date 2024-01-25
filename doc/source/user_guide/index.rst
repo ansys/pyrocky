@@ -1,7 +1,7 @@
 .. _ref_index_user_guide:
 
 ==========
-User Guide
+User guide
 ==========
 
 
@@ -24,10 +24,10 @@ You can get the full documentation within Rocky Application (*Help* - *Manuals* 
 *API PrePost*).
 
 
-Known Issues
+Known issues
 **************
 
  - When opened with UI visible (non-headless), PyRocky cannot deal with confirmation
-   or error dialogs (for instance, a call to ``CloseProject()`` will ask for confirmation
-   and PyRocky will freeze until user click `OK` or `Cancel` on the UI).
+   or error dialogs (for instance, a call to ``CloseProject()`` asks for confirmation
+   and PyRocky freezes until user click `OK` or `Cancel` on the UI).
  - Some API methods may not work.

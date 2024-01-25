@@ -1,3 +1,25 @@
+# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 import logging
 import os
 from typing import Optional
@@ -10,11 +32,31 @@ logger = logging.getLogger("pyrocky.networking")
 ANSYS_EXAMPLE_DATA_REPO = "https://github.com/ansys/example-data/raw/master"
 
 
-def _get_file_url(file_name: str, directory: Optional[str] = None) -> str:
-    """Get file URL."""
+def _get_file_url(
+    file_name: str,
+    directory: Optional[str] = None,
+    file_host: str = ANSYS_EXAMPLE_DATA_REPO,
+) -> str:
+    """Get file from an URL.
+
+    Parameters
+    ----------
+    file_name : str
+        File to download.
+    directory : str, optional
+        Ansys example data repository directory where specified file is located. If not
+        specified, looks for the file in the root directory of the repository.
+    file_host : str, optional
+        URL of the file host, by default ANSYS_EXAMPLE_DATA_REPO.
+
+    Returns
+    -------
+    str
+        URL of the file.
+    """
     if directory:
-        return f"{ANSYS_EXAMPLE_DATA_REPO}/{directory}/{file_name}"
-    return f"{ANSYS_EXAMPLE_DATA_REPO}/{file_name}"
+        return f"{file_host}/{directory}/{file_name}"
+    return f"{file_host}/{file_name}"
 
 
 def _retrieve_file(
@@ -22,7 +64,22 @@ def _retrieve_file(
     file_name: str,
     save_path: str,
 ) -> str:
-    """Download specified file from specified URL."""
+    """Download specified file from specified URL.
+
+    Parameters
+    ----------
+    url : str
+        URL of the file to download.
+    file_name : str
+        File to download.
+    save_path : str
+        Path to download the specified file to.
+
+    Returns
+    -------
+    str
+        file path of the downloaded file.
+    """
     file_name = os.path.basename(file_name)
     save_path = os.path.abspath(save_path)
     local_path = os.path.join(save_path, file_name)

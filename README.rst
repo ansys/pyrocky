@@ -1,7 +1,7 @@
-PyRocky ansys-rocky-core
-===========================
+PyRocky
+=======
 
-|pyansys| |MIT|
+|pyansys| |MIT| |python| |pypi| |codecov| |MIT| |black| |pre-commit|
 
 A Python package to remote control Ansys Rocky.
 
@@ -16,7 +16,7 @@ repository:
 
 .. code:: bash
 
-    python -m pip install https://github.com/ansys-internal/pyrocky
+    python -m pip install https://github.com/ansys/pyrocky
 
 Getting Started
 ^^^^^^^^^^^^^^^
@@ -107,3 +107,26 @@ Known Issues
    :target: https://opensource.org/licenses/MIT
    :alt: MIT
 
+.. |python| image:: https://img.shields.io/pypi/pyversions/ansys-rocky-core?logo=pypi
+   :target: https://pypi.org/project/ansys-rocky-core/
+   :alt: Python
+
+.. |pypi| image:: https://img.shields.io/pypi/v/ansys-rocky-core.svg?logo=python&logoColor=white
+   :target: https://pypi.org/project/ansys-rocky-core
+   :alt: PyPI
+
+.. |codecov| image:: https://codecov.io/gh/ansys/pyrocky/graph/badge.svg?token=UZIC7XT5WE
+   :target: https://codecov.io/gh/ansys/pyrocky
+   :alt: Codecov
+
+.. |GH-CI| image:: https://github.com/ansys/pyrocky/actions/workflows/ci_cd.yml/badge.svg
+   :target: https://github.com/ansys/pyrocky/actions/workflows/ci_cd.yml
+   :alt: GH-CI
+
+.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg?style=flat
+   :target: https://github.com/psf/black
+   :alt: Black
+
+.. |pre-commit| image:: https://results.pre-commit.ci/badge/github/ansys/pyrocky/main.svg
+   :target: https://results.pre-commit.ci/latest/github/ansys/pyrocky/main
+   :alt: pre-commit.ci

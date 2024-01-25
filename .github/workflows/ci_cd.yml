@@ -18,6 +18,48 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  style:
+    name: Code style
+    runs-on: ubuntu-latest
+    steps:
+      - name: PyAnsys code style checks
+        uses: ansys/actions/code-style@v5
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+          vale-config: "doc/.vale.ini"
+          vale-version: "2.29.6"
+
+  docs-style:
+    name: Documentation Style Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: PyAnsys documentation style checks
+        uses: ansys/actions/doc-style@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  smoke-tests:
+    name: Build and Smoke tests
+    runs-on: ${{ matrix.os }}
+    needs: style
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.9', '3.10', '3.11', '3.12']
+        should-release:
+          - ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags') }}
+        exclude:
+          - should-release: false
+            os: macos-latest
+    steps:
+      - name: Build wheelhouse and perform smoke test
+        uses: ansys/actions/build-wheelhouse@v5
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          operating-system: ${{ matrix.os }}
+          python-version: ${{ matrix.python-version }}
+
 
   tests:
     name: Tests
@@ -26,38 +68,36 @@ jobs:
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: "Install"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Create Python venv
         run: |
           python -m venv .venv
-          .venv/Scripts/activate.bat
 
-          pip install -e .[dev]
-
-      - name: "Test"
+      - name: Install packages for tests
         run: |
-          .venv/Scripts/activate.bat
+          .\.venv\Scripts\Activate.ps1
+          python -m pip install --upgrade pip
+          pip install .[test]
 
-          pre-commit run --all-files --show-diff-on-failure
-
-          pytest tests --junitxml=build/tests.xml
-
-      - name: "Check Examples"
+      - name: "Run unit tests"
         run: |
-          .venv/Scripts/activate.bat
+          .\.venv\Scripts\Activate.ps1
+          pytest tests
 
-          pytest test_examples.py --junitxml=build/tests-examples.xml
-
-      - name: Test Report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()    # run this step even if previous step failed
-        with:
-          name: Pytest Report
-          path: build/tests.xml    # Path to test results
-          reporter: java-junit
-
+#      - uses: codecov/codecov-action@v3
+#        name: 'Upload coverage to CodeCov'
+#        env:
+#          CODECOV_TOKEN:  ${{ secrets.CODECOV_TOKEN }}
+#        with:
+#          files: .cov/xml
 
   docs_build:
     name: Build Documentation
@@ -68,33 +108,79 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: "Install"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Create Python venv
         run: |
           python -m venv .venv
-          .venv/Scripts/activate.bat
-          pip install -e .[dev]
-          pip install msvc-runtime
 
-      - name: Build Source Documentation
+      - name: Install packages for documentation build
         run: |
-          .venv/Scripts/activate.bat
-          doc\make.bat html
+          .\.venv\Scripts\Activate.bat
+          pip install msvc-runtime
+          pip install .[doc]
 
-      - name: Zip HTML Documentation before upload
-        run: python doc\compress_doc.py HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
+      - name: Build Source Documentation (HTML)
+        run: |
+          .\.venv\Scripts\Activate.bat
+          doc\make.bat html
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v3
         with:
-          name: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}
-          path: HTML-Documentation-tag-${{ env.DOC_DEPLOYMENT_IMAGE_TAG }}.zip
+          name: documentation-html
+          path:  doc/_build/html
           retention-days: 7
 
+      - name: Build Source Documentation (PDF)
+        run: |
+          .\.venv\Scripts\Activate.bat
+          doc\make.bat pdf
 
-  doc-deploy-dev:
+      - name: Upload PDF documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: documentation-pdf
+          path: doc/_build/latex/*.pdf
+          retention-days: 7
+
+  package:
+    name: Package library
+    needs: [tests, docs_build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build library source and wheel artifacts
+        uses: ansys/actions/build-library@v5
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+# Uncomment when ready to release
+  release:
+    name: Release project
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    needs: [package]
+    runs-on: ubuntu-latest
+    steps:
+#     - name: Release to the public PyPI repository
+#        uses: ansys/actions/release-pypi-public@v5
+#        with:
+#          library-name: ${{ env.LIBRARY_NAME }}
+#          twine-username: "__token__"
+#          twine-token: ${{ secrets.PYPI_TOKEN }}
+
+      - name: Release to GitHub
+        uses: ansys/actions/release-github@v5
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+
+  upload_docs_dev:
     name: "Deploy development documentation"
     # Deploy development only when merging or pushing to the 'main' branch
-    if: github.event_name == 'push' && !contains(github.ref, 'refs/tags')
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: docs_build
     steps:
@@ -104,3 +190,16 @@ jobs:
           decompress-artifact: true
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  upload_docs_release:
+    name: "Deploy stable documentation"
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, 'dev')
+    runs-on: ubuntu-latest
+    needs: [release]
+    steps:
+      - name: Deploy the stable documentation
+        uses: ansys/actions/doc-deploy-stable@v5
+        with:
+          cname: ${{ env.DOCUMENTATION_CNAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}

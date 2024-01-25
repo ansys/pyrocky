@@ -1,0 +1,34 @@
+
+version: 2
+updates:
+  - package-ecosystem: "pip" # See documentation for possible values
+    directory: "/"
+    insecure-external-code-execution: allow
+    schedule:
+      interval: "weekly"
+    labels:
+      - "maintenance"
+      - "dependencies"
+    groups:
+      general-dependencies:
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "*sphinx*"
+          - "numpydoc"
+          - "pyvista*"
+          - "pytest*"
+      test-dependencies:
+        patterns:
+          - "pytest*"
+      doc-dependencies:
+        patterns:
+          - "*sphinx*"
+          - "numpydoc"
+      pyvista:
+        patterns:
+          - "pyvista*"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

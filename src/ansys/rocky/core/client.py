@@ -182,7 +182,7 @@ def deserialize_numpy(classname, serialized) -> "Any":
         The deserialized object.
     """
     deserialized_bytes = serpent.tobytes(serialized["bytes"])
-    return pickle.loads(bytes_rocky)
+    return pickle.loads(deserialized_bytes)
 
 
 Pyro5.api.register_dict_to_class("ApiElementProxy", _ApiElementProxy.deserialize)

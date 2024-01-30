@@ -22,7 +22,7 @@
 
 """.. _ref_minimal:
 
-Simple Particle Simulation
+Simple particle simulation
 --------------------------
 This example sets up and solves a simple particle simulation workflow.
 
@@ -48,7 +48,7 @@ project = rocky.api.CreateProject()
 ###############################################################################
 # Configure the study
 # ~~~~~~~~~~~~~~~~~~~
-# Create a particle entity that will be injected through a circular surface.
+# Create a particle entity and then inject it through a circular surface.
 
 study = project.GetStudy()
 
@@ -56,8 +56,8 @@ study = project.GetStudy()
 # the sieve size of 0.1 m.
 particle = study.CreateParticle()
 
-# The default circular surface is defined in the XZ plane and has a max radius of 1.0 m
-# and center in the cartesian coordinates of (0.0, 0.0, 0.0).
+# The default circular surface is defined in the XZ plane and has a maximum radius
+# of 1.0 m and center in the Cartesian coordinates of (0.0, 0.0, 0.0).
 circular_surface = study.CreateCircularSurface()
 study.CreateParticleInlet(entry_point=circular_surface, particle=particle)
 
@@ -69,8 +69,8 @@ domain.SetCoordinateLimitsMaxValues((10, 1, 10))
 
 
 ###############################################################################
-# Setup the solver and run the simulation
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Set up the solver and run the simulation
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 solver = study.GetSolver()
 solver.SetSimulationDuration(2)  # Simulate for 2 sec.
@@ -79,8 +79,8 @@ project.SaveProject(os.path.join(project_dir, "rocky-testing.rocky"))
 study.StartSimulation()
 
 ###############################################################################
-# Post-processing
-# ~~~~~~~~~~~~~~~
+# Postprocess
+# ~~~~~~~~~~~
 
 # Get the particles count curve that shows the number of particles inside the domain at
 # each time step of the simulation.

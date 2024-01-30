@@ -1,2 +1,2 @@
-Basic Examples
+Basic examples
 --------------

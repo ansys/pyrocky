@@ -8,7 +8,7 @@ PyRocky
 
       :material-regular:`start;48px`
 
-      How to install and use PyRocky.
+      Learn how to install and launch PyRocky.
 
       +++
       .. button-link:: getting_started/index.html
@@ -24,7 +24,7 @@ PyRocky
 
       :material-regular:`book;48px`
 
-      Initial steps to get started with PyRocky.
+      Understand how to use the Rocky PrePost API with PyRocky.
 
       +++
       .. button-link:: user_guide/index.html
@@ -38,28 +38,12 @@ PyRocky
 .. grid:: 2
    :gutter: 2 3 3 4
 
-   .. grid-item-card:: Examples
-      :text-align: center
-
-      :material-regular:`code;48px`
-
-      PyRocky usage examples.
-
-      +++
-      .. button-link:: examples/index.html
-         :color: secondary
-         :expand:
-         :outline:
-         :click-parent:
-
-            Examples
-
    .. grid-item-card:: API reference
       :text-align: center
 
       :material-regular:`terminal;48px`
 
-      Interface of PyRocky.
+      Understand PyRocky API endpoints, their capabilities, and how to interact with them programmatically.
 
       +++
       .. button-link:: api/index.html
@@ -70,6 +54,21 @@ PyRocky
 
          API reference
 
+   .. grid-item-card:: Examples
+      :text-align: center
+
+      :material-regular:`code;48px`
+
+      Explore end-to-end examples that show how to use PyRocky.
+
+      +++
+      .. button-link:: examples/index.html
+         :color: secondary
+         :expand:
+         :outline:
+         :click-parent:
+
+            Examples
 
 .. toctree::
    :hidden:
@@ -77,6 +76,6 @@ PyRocky
 
    getting_started/index
    user_guide/index
-   examples/index
    api/index
+   examples/index
 

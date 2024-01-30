@@ -75,18 +75,18 @@ circular_surface.SetMaxRadius(0.3, "m")
 particle_inlet = study.CreateParticleInlet(circular_surface, particle)
 
 ###############################################################################
-# Setup the solver and run the simulation
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Set up the solver and run the simulation
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 solver = study.GetSolver()
 solver.SetSimulationDuration(2, unit="s")
 study.StartSimulation()
 
 ###############################################################################
-# Post-processing
-# ~~~~~~~~~~~~~~~
+# Postprocess
+# ~~~~~~~~~~~
 # Obtain the particle count curve over the entire particle domain and in a half-cylinder
-# domain selection, as shown in the figure below.
+# domain selection, as shown in the following figure:
 
 ###############################################################################
 # .. image:: /_static/open_cylinder_result_selection.png
@@ -105,8 +105,8 @@ times, all_particles_count = particles.GetNumpyCurve("Particles Count")
 times, selection_count = cylinder_selection.GetNumpyCurve("Particles Count")
 
 #################################################################################
-# Plotting curves
-# +++++++++++++++
+# Plot curves
+# +++++++++++
 
 import matplotlib.pyplot as plt
 

@@ -3,7 +3,8 @@
 ========
 Examples
 ========
-End-to-end examples show how you can use PyRocky. If the PyRocky package is installed on your machine,
+
+End-to-end examples show how to use PyRocky. If PyRocky is installed on your machine,
 you can download these examples as Python files or Jupyter notebooks and run them locally.
 
 .. toctree::

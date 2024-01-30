@@ -22,12 +22,12 @@
 
 
 class PyRockyError(Exception):
-    """Generic exception for PyRocky API."""
+    """Provides the generic exception for the PyRocky API."""
 
 
 class RockyLaunchError(PyRockyError):
-    """Raised for errors occurred during Rocky application launch."""
+    """Provides the error raised when problems occurs during launch of the Rocky app."""
 
 
 class RockyApiError(Exception):
-    """Exception class representing an error generated in the API layer."""
+    """Provides the ``Exception`` class for an error generated in the API layer."""

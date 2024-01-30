@@ -37,17 +37,18 @@ def _get_file_url(
     directory: Optional[str] = None,
     file_host: str = ANSYS_EXAMPLE_DATA_REPO,
 ) -> str:
-    """Get file from an URL.
+    """Get a file using a URL.
 
     Parameters
     ----------
     file_name : str
-        File to download.
+        Name of the file.
     directory : str, optional
-        Ansys example data repository directory where specified file is located. If not
-        specified, looks for the file in the root directory of the repository.
+        Directory in the Ansys example data repository where the file is located.
+        If a directory is not specified, this method looks for the file in the root
+        directory of the repository.
     file_host : str, optional
-        URL of the file host, by default ANSYS_EXAMPLE_DATA_REPO.
+        URL where the file is hosted. The default is ``ANSYS_EXAMPLE_DATA_REPO``.
 
     Returns
     -------
@@ -64,21 +65,21 @@ def _retrieve_file(
     file_name: str,
     save_path: str,
 ) -> str:
-    """Download specified file from specified URL.
+    """Download a file using a URL.
 
     Parameters
     ----------
     url : str
-        URL of the file to download.
+        URL of the file.
     file_name : str
-        File to download.
+        Name of the file.
     save_path : str
-        Path to download the specified file to.
+        Path to download the file to.
 
     Returns
     -------
     str
-        file path of the downloaded file.
+        Path of the downloaded file.
     """
     file_name = os.path.basename(file_name)
     save_path = os.path.abspath(save_path)
@@ -107,23 +108,24 @@ def download_file(
     file_name: str,
     directory: Optional[str] = None,
 ) -> str:
-    """Download specified example file from the Ansys example data repository.
+    """Download an example file from the Ansys example data repository.
 
     Parameters
     ----------
     save_path : str
-        Path to download the specified file to.
+        Path to download the file to.
     file_name : str
-        File to download.
+        Name of the file.
     directory : str, optional
-        Ansys example data repository directory where specified file is located. If not
-        specified, looks for the file in the root directory of the repository.
+        Name of the directory in the Ansys example data repository where the file
+        is located. If a directory is not specified, this method looks for the file
+        in the root directory of the repository.
 
 
     Returns
     -------
     str
-        file path of the downloaded file.
+        Path of the downloaded file.
 
     Examples
     --------

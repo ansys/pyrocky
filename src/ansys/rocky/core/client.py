@@ -36,20 +36,20 @@ _ROCKY_API = None
 def connect_to_rocky(
     host: str = "localhost", port: int = DEFAULT_SERVER_PORT
 ) -> "RockyClient":
-    """
-    Connect to a Rocky Application instance.
+    """Connect to a Rocky app instance.
 
     Parameters
     ----------
     host : str, optional
-        The host name where the application is running, by default "localhost".
+        Host name where the app is running. The default is ``"localhost"``.
     port : int, optional
-        The service port to connect, by default 50615.
+        Service port to connect to. The default is ``DEFAULT_SERVER_PORT``,
+        which is 50615.
 
     Returns
     -------
     RockyClient
-        A client object to interact with the Rocky Application.
+        Client object for interacting with the Rocky app.
     """
     uri = f"PYRO:rocky.api@{host}:{port}"
     global _ROCKY_API
@@ -59,12 +59,12 @@ def connect_to_rocky(
 
 
 class RockyClient:
-    """A client object to interact with the Rocky Application.
+    """Provides the client object for interacting with the Rocky app.
 
     Parameters
     ----------
     rocky_api : Pyro5.api.Proxy
-        The Pyro5 proxy object to interact with the Rocky Application.
+        Pyro5 proxy object for interacting with the Rocky app.
     """
 
     def __init__(self, rocky_api):
@@ -79,14 +79,14 @@ class RockyClient:
 
 
 class _ApiElementProxy:
-    """A proxy object for API Elements.
+    """Provides a proxy object for an API element.
 
     Parameters
     ----------
     pyro_api : Pyro5.api.Proxy
-        The Pyro5 proxy object to interact with the Rocky Application.
+        Pyro5 proxy object for interacting with the Rocky app.
     pool_id : int
-        The ID of the API Element.
+        ID of the API element.
     """
 
     def __init__(self, pyro_api, pool_id):
@@ -103,41 +103,42 @@ class _ApiElementProxy:
 
     @classmethod
     def deserialize(cls, classname: str, serialized: dict) -> "_ApiElementProxy":
-        """Deserialize an API Element Proxy object.
+        """Deserialize the proxy objects for the API element.
 
         Parameters
         ----------
         serialized : dict
-            The serialized object.
+            Dictionary of serialized objects.
         classname : str
-            The name of the class to be deserialized, required by superclass but unused.
+            Name of the class to deserialize. This parameter is required by the
+            superclass but is not used.
 
         Returns
         -------
         _ApiElementProxy
-            The deserialized object.
+            Deserialized object.
         """
         return cls(_ROCKY_API, serialized["_api_element_id"])
 
     @classmethod
     def serialize(cls, obj) -> dict:
-        """Serialize an API Element Proxy object.
+        """Serialize a proxy object of the API element.
 
         Parameters
         ----------
         obj : Any
-            The object to be serialized.
+            Object to serialize.
 
         Returns
         -------
         dict
-            The serialized object.
+            Dictionary of the serialized object.
         """
         return {"__class__": cls.__name__, "_api_element_id": obj._pool_id}
 
 
 class _ApiListProxy(_ApiElementProxy):
-    """A proxy object for API Elements that implement the sequence interface."""
+    """Provides a proxy object for API elements that implement the sequence interface."""
 
     def __len__(self) -> int:
         return self._pyro_api.SendToApiElement(self._pool_id, "__len__")
@@ -154,19 +155,20 @@ class _ApiListProxy(_ApiElementProxy):
 
 
 def deserialize_api_error(classname: str, serialized: dict) -> RockyApiError:
-    """Deserialize an API Error.
+    """Deserialize an API error.
 
     Parameters
     ----------
     classname : str
-        The name of the class to be deserialized, required by superclass but unused.
+        Name of the class to deserialize. This parameter is required by the superclass
+        but is not used.
     serialized : dict
-        The serialized object.
+        Dictionary of the serialized object.
 
     Returns
     -------
     RockyApiError
-        The error in serialized object.
+        Error in the serialized object.
     """
     return RockyApiError(serialized["message"])
 
@@ -177,14 +179,15 @@ def deserialize_numpy(classname, serialized) -> "Any":
     Parameters
     ----------
     classname : str
-        The name of the class to be deserialized, required by superclass but unused.
+        Name of the class to deserialize. This parameter is required by the
+        superclass but is not used.
     serialized : dict
-        The serialized object.
+        Dictionary of the serialized object.
 
     Returns
     -------
     Any
-        The deserialized object.
+        Deserialized object.
     """
     deserialized_bytes = serpent.tobytes(serialized["bytes"])
     return pickle.loads(deserialized_bytes)

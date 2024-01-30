@@ -42,29 +42,32 @@ def launch_rocky(
     server_port: int = DEFAULT_SERVER_PORT,
 ) -> RockyClient:
     """
-    Launch Rocky executable with PyRocky server enabled, wait Rocky to start up and
-    return a `RockyClient` instance.
+    Launch the Rocky executable with the PyRocky server enabled.
+
+    This method waits for Rocky to start up and then returns a
+    ```RockyClient`` instance.
 
     Parameters
     ----------
     rocky_exe : Optional[Path], optional
-        Path to Rocky executable. If not specified, will try to find it in the
-        environment variables `AWP_ROOT241` and `AWP_ROOT232`.
+        Path to the Rocky executable. If a path is not specified, this method
+        tries to find the path in the ``AWP_ROOT241`` and ``AWP_ROOT232``
+        environment variables.
     headless : bool, optional
-        Whether to launch Rocky in headless mode. Default is `True`.
+        Whether to launch Rocky in headless mode. The default is ``True``.
     server_port: int, optional
-        Set the port used to host Rocky PyRocky server.
+        Port that hosts the Rocky server.
 
     Returns
     -------
     RockyClient
-        A `RockyClient` instance connected to the launched Rocky application.
+        Rocky client instance connected to the launched Rocky app.
     """
     if isinstance(rocky_exe, str):
         rocky_exe = Path(rocky_exe)
 
     if _is_port_busy(server_port):
-        raise RockyLaunchError(f"Port {server_port} already in use")
+        raise RockyLaunchError(f"Port {server_port} is already in use.")
 
     if rocky_exe is None:
         for awp_root in ["AWP_ROOT241", "AWP_ROOT232"]:
@@ -75,10 +78,10 @@ def launch_rocky(
             if rocky_exe.is_file():
                 break
         else:
-            raise FileNotFoundError("Rocky executable not found")
+            raise FileNotFoundError("Rocky executable is not found.")
     else:
         if not rocky_exe.is_file():
-            raise FileNotFoundError(f"Rocky executable not found at {rocky_exe}")
+            raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -116,12 +119,12 @@ def _is_port_busy(port: int) -> bool:
     Parameters
     ----------
     port : int
-        The port to be checked.
+        Port to check.
 
     Returns
     -------
     bool
-        Whether the port is busy or not.
+        ``True`` if the port is busy, ``False`` otherwise.
     """
     import socket
 

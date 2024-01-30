@@ -8,7 +8,7 @@ Getting started
 Installation
 ------------
 
-PyRocky is currently a private library in the Ansys Internal GitHub account. To
+PyRocky is currently a private GitHub library in the Ansys Internal account. To
 install PyRocky, run this command:
 
 .. code:: bash
@@ -20,7 +20,7 @@ Launch PyRocky
 --------------
 
 The best way to experiment with PyRocky is by using `Jupyter Notebook <https://jupyter.org/>`_
-or `Visual Studio Code <https://code.visualstudio.com>`_. The following code launches a Rocky
+or `Visual Studio Code <https://code.visualstudio.com>`_. The following code launches a
 headless Rocky session and returns a ``RockyClient`` instance from which you can programmatically
 interact with the software:
 
@@ -30,13 +30,13 @@ interact with the software:
 
     rocky = pyrocky.launch_rocky()
 
-You use the `close()` method to close the Rocky session:
+You use the ``close()`` method to close the Rocky session:
 
 ..  code:: python
 
     rocky.close()
 
-If you want to launch the Rocky GUI, you set ``headless=False``:
+If you want to launch the Rocky GUI, set ``headless=False``:
 
 ..  code:: python
 
@@ -45,13 +45,13 @@ If you want to launch the Rocky GUI, you set ``headless=False``:
 Connecting to an existing session
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assume that a Rocky session is started with the `--pyrocky` option:
+Assume that a Rocky session is started with the ``--pyrocky`` option:
 
 .. code:: bat
 
    C:\Program Files\Ansys Inc\v241\Rocky> bin\Rocky.exe --pyrocky
 
-When a Rocky session is started in this way, you can connect to it with PyRocky:
+When the Rocky session is started in this way, you can connect to it with PyRocky:
 
 .. code:: python
 

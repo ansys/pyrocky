@@ -107,7 +107,7 @@ study.StartSimulation()
 ###############################################################################
 # Postprocess
 # ~~~~~~~~~~~
-# Obtain the in/out mass flow of the particles.
+# Obtain the in and out mass flows of the particles.
 
 particles = study.GetParticles()
 

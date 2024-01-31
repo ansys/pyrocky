@@ -78,4 +78,5 @@ PyRocky
    user_guide/index
    api/index
    examples/index
+   contributing
 

@@ -3,7 +3,7 @@ PyRocky
 
 |pyansys| |MIT| |python| |pypi| |codecov| |MIT| |black| |pre-commit|
 
-A Python package to remote control Ansys Rocky.
+PyRocky is a Python client library for remotely controlling Ansys Rocky.
 
 Usage
 -----
@@ -11,20 +11,20 @@ Usage
 Installation
 ^^^^^^^^^^^^
 
-As of now, PyRocky is on private Beta. You can install it straight from the GitHub
-repository:
+PyRocky is currently a private GitHub library in the Ansys Internal account. To
+install PyRocky, run this command:
 
 .. code:: bash
 
     python -m pip install https://github.com/ansys/pyrocky
 
-Getting Started
+Getting started
 ^^^^^^^^^^^^^^^
 
-The best way play with **PyRocky** is by using `Jupyer Notebook <https://jupyter.org/>`_
-or `VSCode <https://code.visualstudio.com>`_. The following snippet launches a Rocky
-headless session and return a ``RockyClient`` instance from which you'll be able to
-programmatically interact with the software:
+The best way to experiment with PyRocky is by using `Jupyter Notebook <https://jupyter.org/>`_
+or `Visual Studio Code <https://code.visualstudio.com>`_. The following code launches a
+headless Rocky session and returns a ``RockyClient`` instance from which you can programmatically
+interact with the software:
 
 ..  code:: python
 
@@ -32,27 +32,28 @@ programmatically interact with the software:
 
     rocky = pyrocky.launch_rocky()
 
-To close the Rocky session, just use `close()`:
+You use the ``close()`` method to close the Rocky session:
 
 ..  code:: python
 
     rocky.close()
 
-It's also possible to launch Rocky GUI disabling the headless flag:
+If you want to launch the Rocky UI, set ``headless=False``:
 
 ..  code:: python
 
     rocky = pyrocky.launch_rocky(headless=False)
 
 Connecting to an existing session
-************************************
+*********************************
 
-You can connect to a Rocky session as long as the session is started with `--pyrocky`
-option:
+Assume that a Rocky session is started with the ``--pyrocky`` option:
 
 .. code:: bat
 
    C:\Program Files\Ansys Inc\v241\Rocky> bin\Rocky.exe --pyrocky
+
+When the session is started in this way, you can connect to it with PyRocky:
 
 .. code:: python
 
@@ -60,43 +61,33 @@ option:
 
     rocky = pyrocky.connect_to_rocky()
 
+Using the Rocky PrePost API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Using Rocky PrePost API
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Most of the Rocky PrePost API is available through the ``api`` object. The following
-snippet creates new project and save it to disk:
+Most of the Rocky PrePost API is available through the ``api`` object. For example,
+the following code creates a project and saves it to disk:
 
 ..  code:: python
 
     api = rocky.api
     project = api.CreateProject()
     study = project.GetStudy()
-    study.SetName("My Studyy")
+    study.SetName("My Study")
 
     api.SaveProject("my-project.rocky"))
 
-You can get the full documentation within Rocky Application (*Help* - *Manuals* -
-*API PrePost*).
+To view comprehensive PrePost API documentation, in the Rocky app, select
+**Help > Manuals > API PrePost**.
 
-Known Issues
-**************
+Known issues
+************
 
- - When opened with UI visible (non-headless), PyRocky cannot deal with confirmation
-   or error dialogs (for instance, a call to ``CloseProject()`` will ask for confirmation
-   and PyRocky will freeze until user click `OK` or `Cancel` on the UI).
- - Some API methods may not work.
+- When opened with the Rocky UI visible (non-headless mode), PyRocky cannot deal with confirmation
+  or error dialogs. For example, a call to the ``CloseProject()`` method asks for confirmation,
+  causing PyRocky to freeze until **OK** or **Cancel** is clicked in the Rocky UI.
+- PyRocky does not cover the entire Rocky API PrePost functionality. For example, methods still not
+   supported include ``GetTimeSet`` and ``GetGridFunction``.
 
-.. LINKS AND REFERENCES
-.. _black: https://github.com/psf/black
-.. _flake8: https://flake8.pycqa.org/en/latest/
-.. _isort: https://github.com/PyCQA/isort
-.. _pip: https://pypi.org/project/pip/
-.. _pre-commit: https://pre-commit.com/
-.. _PyAnsys Developer's guide: https://dev.docs.pyansys.com/
-.. _pytest: https://docs.pytest.org/en/stable/
-.. _Sphinx: https://www.sphinx-doc.org/en/master/
-.. _tox: https://tox.wiki/
 
 .. BADGES
 .. |pyansys| image:: https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC

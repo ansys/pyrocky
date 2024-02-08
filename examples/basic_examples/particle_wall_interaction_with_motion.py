@@ -57,20 +57,20 @@ project.SaveProject(os.path.join(project_dir, "rocky-testing.rocky"))
 # ~~~~~~~~~~~~~~~~~~~
 study = project.GetStudy()
 
-# Download the STL file that will imported into Rocky to represent a Wall.
+# Download the STL file that was imported into Rocky to represent a wall.
 file_name = "Lshape_tube.stl"
 file_path = examples.download_file(project_dir, file_name, "pyrocky/geometries")
 wall = study.ImportWall(file_path)[0]
 
-# Create a particle with the default shape (Sphere) and size distribution (single
-# distribution with sieve size of 0.1 m).
+# Create a particle with the default shape (sphere) and size distribution (single
+# distribution with a sieve size of 0.1 m).
 particle = study.CreateParticle()
 
-# Create circular surface to be used as inlet.
+# Create a circular surface to used as the inlet.
 circular_surface = study.CreateCircularSurface()
 circular_surface.SetMaxRadius(0.8, unit="m")
 
-# Create a rectangular surface to be used as outlet.
+# Create a rectangular surface to use as the outlet.
 rectangular_surface = study.CreateRectangularSurface()
 rectangular_surface.SetLength(3, unit="m")
 rectangular_surface.SetWidth(3, unit="m")
@@ -82,8 +82,8 @@ input_property_list = particle_inlet.GetInputPropertiesList()
 input_property_list[0].SetMassFlowRate(1000)
 outlet = study.CreateOutlet(rectangular_surface)
 
-# Set the motion rotation over Y axis a apply it on the wall and the rectagular surface
-# used as outlet.
+# Set the motion rotation over the Y axis and apply it on the wall and the
+# rectagular surface used as the outlet.
 motion_frame_source = study.GetMotionFrameSource()
 motion_frame = motion_frame_source.NewFrame()
 motion_frame.AddRotationMotion(angular_velocity=((0.0, 0.5, 0.0), "rad/s"))
@@ -97,17 +97,17 @@ domain.DisableUseBoundaryLimits()
 domain.SetCoordinateLimitsMaxValues((10, 1, 10), unit="m")
 
 ###############################################################################
-# Setup the solver and run the simulation
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Set up the solver and run the simulation
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 solver = study.GetSolver()
 solver.SetSimulationDuration(5, unit="s")
 study.StartSimulation()
 
 ###############################################################################
-# Post-processing
-# ~~~~~~~~~~~~~~~
-# Obtain the particles In/Out mass flow.
+# Postprocess
+# ~~~~~~~~~~~
+# Obtain the in and out mass flows of the particles.
 
 particles = study.GetParticles()
 
@@ -116,8 +116,8 @@ times, mass_flow_out = particles.GetNumpyCurve("Particles Mass Flow Out", unit="
 
 
 #################################################################################
-# Plotting curves
-# +++++++++++++++
+# Plot curves
+# +++++++++++
 
 import matplotlib.pyplot as plt
 

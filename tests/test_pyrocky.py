@@ -96,5 +96,5 @@ def test_pyrocky_launch_multiple_servers():
         s.bind(("localhost", DEFAULT_SERVER_PORT))
         s.listen(10)
 
-        with pytest.raises(RockyLaunchError, match=r"Port \d+ already in use"):
+        with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
             pyrocky.launch_rocky()

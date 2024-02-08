@@ -5,11 +5,11 @@ User guide
 ==========
 
 
-Using Rocky PrePost API
------------------------
+Using the Rocky PrePost API
+---------------------------
 
-Most of the Rocky PrePost API is available through the ``api`` object. The following
-snippet creates new project and save it to disk:
+Most of the Rocky PrePost API is available through the ``api`` object. For example,
+the following code creates a project and saves it to disk:
 
 ..  code:: python
 
@@ -20,14 +20,13 @@ snippet creates new project and save it to disk:
 
     api.SaveProject("my-project.rocky"))
 
-You can get the full documentation within Rocky Application (*Help* - *Manuals* -
-*API PrePost*).
+To view comprehensive PrePost API documentation, in the Rocky app, select
+**Help > Manuals > API PrePost**.
 
 
 Known issues
 **************
-
- - When opened with UI visible (non-headless), PyRocky cannot deal with confirmation
-   or error dialogs (for instance, a call to ``CloseProject()`` asks for confirmation
-   and PyRocky freezes until user click `OK` or `Cancel` on the UI).
- - Some API methods may not work.
+- When opened with the Rocky UI visible (non-headless mode), PyRocky cannot deal with confirmation
+  or error dialogs. For example, a call to the ``CloseProject()`` method asks for confirmation,
+  causing PyRocky to freeze until **OK** or **Cancel** is clicked in the Rocky UI.
+- Some API methods may not work.

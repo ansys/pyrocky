@@ -85,7 +85,8 @@ Known issues
 - When opened with the Rocky UI visible (non-headless mode), PyRocky cannot deal with confirmation
   or error dialogs. For example, a call to the ``CloseProject()`` method asks for confirmation,
   causing PyRocky to freeze until **OK** or **Cancel** is clicked in the Rocky UI.
-- Some API methods may not work.
+- PyRocky does not cover the entire Rocky API PrePost functionality. For example, methods still not
+   supported include ``GetTimeSet`` and ``GetGridFunction``.
 
 
 .. BADGES

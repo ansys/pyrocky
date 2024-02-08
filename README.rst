@@ -38,7 +38,7 @@ You use the ``close()`` method to close the Rocky session:
 
     rocky.close()
 
-If you want to launch the Rocky GUI, set ``headless=False``:
+If you want to launch the Rocky UI, set ``headless=False``:
 
 ..  code:: python
 

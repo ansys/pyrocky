@@ -3,90 +3,51 @@ PyRocky
 
 |pyansys| |MIT| |python| |pypi| |codecov| |MIT| |black| |pre-commit|
 
-PyRocky is a Python client library for remotely controlling Ansys Rocky.
+PyRocky is a Python client library for remotely controlling
+`Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_.
 
-Usage
------
+Documentation and issues
+------------------------
 
-Installation
-^^^^^^^^^^^^
+Documentation for the latest stable release of PyRocky is hosted at
+`PyRocky documentation <https://rocky.docs.pyansys.com/version/dev/index.html>`_.
+The documentation has five sections:
 
-PyRocky is currently a private GitHub library in the Ansys Internal account. To
-install PyRocky, run this command:
+- `Getting started <https://rocky.docs.pyansys.com/version/dev/getting_started/index.html>`_: Learn
+  how to install PyRocky in user mode and then launch it.
+- `User guide <https://rocky.docs.pyansys.com/version/dev/user_guide/index.html>`_: Understand how to
+  use the Rocky PrePost API with PyRocky.
+- `API reference <https://rocky.docs.pyansys.com/version/dev/api/index.html>`_: Understand PyRocky API
+  endpoints, their capabilities, and how to interact with them programmatically.
+- `Examples <https://rocky.docs.pyansys.com/version/dev/examples/index.html>`_: Explore end-to-end
+  examples that show how to use PyRocky.
+- `Contribute <https://rocky.docs.pyansys.com/version/dev/contributing.html>`_: Learn how to contribute
+  to the PyRocky codebase or documentation.
 
-.. code:: bash
+In the upper right corner of the documentation's title bar, there is an option
+for switching from viewing the documentation for the latest stable release
+to viewing the documentation for the development version or previously
+released versions.
 
-    python -m pip install https://github.com/ansys/pyrocky
+On the `PyRocky Issues <https://github.com/ansys/pyrocky/issues>`_ page, you can
+create issues to report bugs and request new features. On the
+`Discussions <https://discuss.ansys.com/>`_ page on the Ansys Developer portal,
+you can post questions, share ideas, and get community feedback.
 
-Getting started
-^^^^^^^^^^^^^^^
+To reach the PyAnsys project support team, email `PyAnsys Core team <pyansys.core@ansys.com>`_.
 
-The best way to experiment with PyRocky is by using `Jupyter Notebook <https://jupyter.org/>`_
-or `Visual Studio Code <https://code.visualstudio.com>`_. The following code launches a
-headless Rocky session and returns a ``RockyClient`` instance from which you can programmatically
-interact with the software:
+License
+-------
 
-..  code:: python
+PyRocky is licensed under the `MIT License <https://github.com/ansys-internal/pyrocky/blob/main/LICENSE>`_.
 
-    import ansys.rocky.rocky as pyrocky
+PyRocky makes no commercial claim over Ansys whatsoever. This library extends the
+functionality of Ansys Rocky by adding a Python interface without changing the
+core behavior or license of the original software. The use of PyRocky requires a
+legally licensed local copy of Ansys Rocky.
 
-    rocky = pyrocky.launch_rocky()
-
-You use the ``close()`` method to close the Rocky session:
-
-..  code:: python
-
-    rocky.close()
-
-If you want to launch the Rocky UI, set ``headless=False``:
-
-..  code:: python
-
-    rocky = pyrocky.launch_rocky(headless=False)
-
-Connecting to an existing session
-*********************************
-
-Assume that a Rocky session is started with the ``--pyrocky`` option:
-
-.. code:: bat
-
-   C:\Program Files\Ansys Inc\v241\Rocky> bin\Rocky.exe --pyrocky
-
-When the session is started in this way, you can connect to it with PyRocky:
-
-.. code:: python
-
-    import ansys.rocky.rocky as pyrocky
-
-    rocky = pyrocky.connect_to_rocky()
-
-Using the Rocky PrePost API
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Most of the Rocky PrePost API is available through the ``api`` object. For example,
-the following code creates a project and saves it to disk:
-
-..  code:: python
-
-    api = rocky.api
-    project = api.CreateProject()
-    study = project.GetStudy()
-    study.SetName("My Study")
-
-    api.SaveProject("my-project.rocky"))
-
-To view comprehensive PrePost API documentation, in the Rocky app, select
-**Help > Manuals > API PrePost**.
-
-Known issues
-************
-
-- When opened with the Rocky UI visible (non-headless mode), PyRocky cannot deal with confirmation
-  or error dialogs. For example, a call to the ``CloseProject()`` method asks for confirmation,
-  causing PyRocky to freeze until **OK** or **Cancel** is clicked in the Rocky UI.
-- PyRocky does not cover the entire Rocky API PrePost functionality. For example, methods still not
-   supported include ``GetTimeSet`` and ``GetGridFunction``.
+To get a copy of Ansys Rocky, see the `Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_
+page on the Ansys website.
 
 
 .. BADGES

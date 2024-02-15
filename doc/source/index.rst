@@ -4,11 +4,11 @@ PyRocky
    :gutter: 2 3 3 4
 
    .. grid-item-card:: Getting started
-      :text-align: center
+      :text-align: left
 
       :material-regular:`start;48px`
 
-      Learn how to install and launch PyRocky.
+      Learn how to install PyRocky in user mode and then launch it.
 
       +++
       .. button-link:: getting_started/index.html
@@ -20,7 +20,7 @@ PyRocky
             Getting started
 
    .. grid-item-card:: User guide
-      :text-align: center
+      :text-align: left
 
       :material-regular:`book;48px`
 
@@ -39,7 +39,7 @@ PyRocky
    :gutter: 2 3 3 4
 
    .. grid-item-card:: API reference
-      :text-align: center
+      :text-align: left
 
       :material-regular:`terminal;48px`
 
@@ -55,7 +55,7 @@ PyRocky
          API reference
 
    .. grid-item-card:: Examples
-      :text-align: center
+      :text-align: left
 
       :material-regular:`code;48px`
 
@@ -70,6 +70,25 @@ PyRocky
 
             Examples
 
+   .. grid-item-card:: Contribute
+      :text-align: left
+
+      :material-regular:`code;48px`
+
+      Learn how to contribute to the PyRocky codebase or documentation.
+
+      +++
+      .. button-link:: contributing.html
+         :color: secondary
+         :expand:
+         :outline:
+         :click-parent:
+
+            Contribute
+
+.. toctree::
+   :hidden:
+   :maxdepth: 3
 .. toctree::
    :hidden:
    :maxdepth: 3

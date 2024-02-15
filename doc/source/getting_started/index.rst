@@ -4,12 +4,16 @@
 Getting started
 ===============
 
+PyRocky is a Python client library for remotely controlling
+`Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_,
+which is the most powerful software in the market for performing
+DEM (discrete element method) simulations.
 
-Installation
-------------
+Install PyRocky
+---------------
 
 PyRocky is currently a private GitHub library in the Ansys Internal account. To
-install PyRocky, run this command:
+install PyRocky in user mode, run this command:
 
 .. code:: bash
 
@@ -42,8 +46,8 @@ If you want to launch the Rocky UI, set ``headless=False``:
 
     rocky = pyrocky.launch_rocky(headless=False)
 
-Connecting to an existing session
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Connect to an existing session
+------------------------------
 
 Assume that a Rocky session is started with the ``--pyrocky`` option:
 

@@ -3,7 +3,7 @@ PyRocky
 
 |pyansys| |MIT| |python| |pypi| |codecov| |MIT| |black| |pre-commit|
 
-PyRocky is a Python client library for remotely controlling Ansys Rocky.
+PyRocky is a Python client for Ansys Rocky.
 
 Usage
 -----
@@ -11,12 +11,11 @@ Usage
 Installation
 ^^^^^^^^^^^^
 
-PyRocky is currently a private GitHub library in the Ansys Internal account. To
-install PyRocky, run this command:
+To install PyRocky, run this command:
 
 .. code:: bash
 
-    python -m pip install https://github.com/ansys/pyrocky
+    python -m pip install ansys-rocky-core
 
 Getting started
 ^^^^^^^^^^^^^^^

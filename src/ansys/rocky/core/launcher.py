@@ -51,12 +51,11 @@ def launch_rocky(
     ----------
     rocky_exe : Optional[Path], optional
         Path to the Rocky executable. If a path is not specified, this method
-        tries to find the path in the ``AWP_ROOT241`` and ``AWP_ROOT232``
-        environment variables.
+        tries to find the path using ``AWP_ROOT*`` environment variables.
     headless : bool, optional
         Whether to launch Rocky in headless mode. The default is ``True``.
     server_port: int, optional
-        Port that hosts the Rocky server.
+        Set the port for Rocky RPC server.
 
     Returns
     -------
@@ -70,10 +69,8 @@ def launch_rocky(
         raise RockyLaunchError(f"Port {server_port} is already in use.")
 
     if rocky_exe is None:
-        for awp_root in ["AWP_ROOT241", "AWP_ROOT232"]:
-            if awp_root not in os.environ:
-                continue
-
+        awp_roots = [k for k in os.environ.keys() if k.startswith("AWP_ROOT")]
+        for awp_root in sorted(awp_roots, reverse=True):
             rocky_exe = Path(os.environ[awp_root]) / "Rocky/bin/Rocky.exe"
             if rocky_exe.is_file():
                 break

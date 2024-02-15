@@ -4,13 +4,16 @@ PyRocky
 |pyansys| |MIT| |python| |pypi| |codecov| |MIT| |black| |pre-commit|
 
 PyRocky is a Python client library for remotely controlling
-`Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_.
+`Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_,
+which is the most powerful software in the market for performing
+DEM (discrete element method) simulations.
 
 Documentation and issues
 ------------------------
 
 Documentation for the latest stable release of PyRocky is hosted at
 `PyRocky documentation <https://rocky.docs.pyansys.com/version/dev/index.html>`_.
+
 The documentation has five sections:
 
 - `Getting started <https://rocky.docs.pyansys.com/version/dev/getting_started/index.html>`_: Learn

@@ -15,9 +15,10 @@ Install PyRocky
 PyRocky is currently a private GitHub library in the Ansys Internal account. To
 install PyRocky in user mode, run this command:
 
+
 .. code:: bash
 
-    python -m pip install https://github.com/ansys/pyrocky
+    python -m pip install ansys-rocky-core
 
 
 Launch PyRocky

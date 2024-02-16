@@ -36,7 +36,7 @@ PyRocky
 
       Explore end-to-end examples that show how to use PyRocky.
 
-   .. grid-item-card:: Contribute :material-regular:`code`
+   .. grid-item-card:: Contribute :fa:`people-group`
       :padding: 2 2 2 2
       :link: contributing.html
       :link-type: doc

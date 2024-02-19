@@ -31,14 +31,14 @@ PyRocky
 
    .. grid-item-card:: Examples :material-regular:`code`
       :padding: 2 2 2 2
-      :link: examples/index.html
+      :link: examples/index
       :link-type: doc
 
       Explore end-to-end examples that show how to use PyRocky.
 
    .. grid-item-card:: Contribute :fa:`people-group`
       :padding: 2 2 2 2
-      :link: contributing.html
+      :link: contributing
       :link-type: doc
 
       Learn how to contribute to the PyRocky codebase or documentation.

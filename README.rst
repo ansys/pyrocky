@@ -12,19 +12,19 @@ Documentation and issues
 ------------------------
 
 Documentation for the latest stable release of PyRocky is hosted at
-`PyRocky documentation <https://rocky.docs.pyansys.com/version/dev/index.html>`_.
+`PyRocky documentation <https://rocky.docs.pyansys.com/version/stable/index.html>`_.
 
 The documentation has five sections:
 
-- `Getting started <https://rocky.docs.pyansys.com/version/dev/getting_started/index.html>`_: Learn
+- `Getting started <https://rocky.docs.pyansys.com/version/stable/getting_started/index.html>`_: Learn
   how to install PyRocky in user mode and then launch it.
-- `User guide <https://rocky.docs.pyansys.com/version/dev/user_guide/index.html>`_: Understand how to
+- `User guide <https://rocky.docs.pyansys.com/version/stable/user_guide/index.html>`_: Understand how to
   use the Rocky PrePost API with PyRocky.
-- `API reference <https://rocky.docs.pyansys.com/version/dev/api/index.html>`_: Understand PyRocky API
+- `API reference <https://rocky.docs.pyansys.com/version/stable/api/index.html>`_: Understand PyRocky API
   endpoints, their capabilities, and how to interact with them programmatically.
-- `Examples <https://rocky.docs.pyansys.com/version/dev/examples/index.html>`_: Explore end-to-end
+- `Examples <https://rocky.docs.pyansys.com/version/stable/examples/index.html>`_: Explore end-to-end
   examples that show how to use PyRocky.
-- `Contribute <https://rocky.docs.pyansys.com/version/dev/contributing.html>`_: Learn how to contribute
+- `Contribute <https://rocky.docs.pyansys.com/version/stable/contributing.html>`_: Learn how to contribute
   to the PyRocky codebase or documentation.
 
 In the upper right corner of the documentation's title bar, there is an option

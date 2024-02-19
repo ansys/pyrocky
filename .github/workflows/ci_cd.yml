@@ -92,12 +92,12 @@ jobs:
           .\.venv\Scripts\Activate.ps1
           pytest tests
 
-#      - uses: codecov/codecov-action@v3
-#        name: 'Upload coverage to CodeCov'
-#        env:
-#          CODECOV_TOKEN:  ${{ secrets.CODECOV_TOKEN }}
-#        with:
-#          files: .cov/xml
+      - uses: codecov/codecov-action@v3
+        name: 'Upload coverage to CodeCov'
+        env:
+          CODECOV_TOKEN:  ${{ secrets.CODECOV_TOKEN }}
+        with:
+          files: .cov/xml
 
   docs_build:
     name: Build Documentation

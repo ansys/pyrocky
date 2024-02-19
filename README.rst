@@ -47,7 +47,7 @@ PyRocky is licensed under the `MIT License <https://github.com/ansys-internal/py
 PyRocky makes no commercial claim over Ansys whatsoever. This library extends the
 functionality of Ansys Rocky by adding a Python interface without changing the
 core behavior or license of the original software. The use of PyRocky requires a
-legally licensed local copy of Ansys Rocky.
+legally licensed copy of Ansys Rocky.
 
 To get a copy of Ansys Rocky, see the `Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_
 page on the Ansys website.

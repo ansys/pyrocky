@@ -42,7 +42,7 @@ To reach the PyAnsys project support team, email `PyAnsys Core team <pyansys.cor
 License
 -------
 
-PyRocky is licensed under the `MIT License <https://github.com/ansys-internal/pyrocky/blob/main/LICENSE>`_.
+PyRocky is licensed under the `MIT License <https://github.com/ansys/pyrocky/blob/main/LICENSE>`_.
 
 PyRocky makes no commercial claim over Ansys whatsoever. This library extends the
 functionality of Ansys Rocky by adding a Python interface without changing the

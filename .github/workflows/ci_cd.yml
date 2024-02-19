@@ -165,12 +165,12 @@ jobs:
     needs: [package]
     runs-on: ubuntu-latest
     steps:
-#     - name: Release to the public PyPI repository
-#        uses: ansys/actions/release-pypi-public@v5
-#        with:
-#          library-name: ${{ env.LIBRARY_NAME }}
-#          twine-username: "__token__"
-#          twine-token: ${{ secrets.PYPI_TOKEN }}
+      - name: Release to the public PyPI repository
+        uses: ansys/actions/release-pypi-public@v5
+        with:
+          library-name: ${{ env.LIBRARY_NAME }}
+          twine-username: "__token__"
+          twine-token: ${{ secrets.PYPI_TOKEN }}
 
       - name: Release to GitHub
         uses: ansys/actions/release-github@v5

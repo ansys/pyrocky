@@ -12,8 +12,7 @@ DEM (discrete element method) simulations.
 Install PyRocky
 ---------------
 
-PyRocky is currently a private GitHub library in the Ansys Internal account. To
-install PyRocky in user mode, run this command:
+To install PyRocky, run this command:
 
 
 .. code:: bash

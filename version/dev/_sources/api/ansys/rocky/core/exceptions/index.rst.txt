@@ -1,0 +1,244 @@
+
+
+
+
+
+The ``exceptions.py`` module
+============================
+
+.. py:module:: ansys.rocky.core.exceptions
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: exceptions
+.. tab-set::
+
+
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:attr:`~PyRockyError`
+            - Provides the generic exception for the PyRocky API.
+
+
+          * - :py:attr:`~RockyLaunchError`
+            - Provides the error raised when problems occurs during launch of the Rocky app.
+
+
+          * - :py:attr:`~RockyApiError`
+            - Provides the ``Exception`` class for an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Module where the exceptions of the project are contained.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+
+
+
+.. py:exception:: PyRockyError
+
+
+
+Bases: :py:obj:`Exception`
+
+
+   Provides the generic exception for the PyRocky API.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import PyRockyError
+
+
+
+
+
+
+
+
+
+
+
+.. py:exception:: RockyLaunchError
+
+
+
+Bases: :py:obj:`PyRockyError`
+
+
+   Provides the error raised when problems occurs during launch of the Rocky app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import RockyLaunchError
+
+
+
+
+
+
+
+
+
+
+
+.. py:exception:: RockyApiError
+
+
+
+Bases: :py:obj:`Exception`
+
+
+   Provides the ``Exception`` class for an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import RockyApiError
+
+
+
+
+
+
+
+

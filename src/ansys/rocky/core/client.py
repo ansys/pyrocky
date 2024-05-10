@@ -20,8 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 """Module with the client operations of Rocky."""
+from collections.abc import Callable, Generator
 import pickle
-from typing import Final, Generator
+from typing import Any, Final
 
 import Pyro5.api
 import serpent
@@ -30,7 +31,7 @@ from ansys.rocky.core.exceptions import RockyApiError
 
 DEFAULT_SERVER_PORT: Final[int] = 50615
 
-_ROCKY_API = None
+_ROCKY_API: Pyro5.api.Proxy | None = None
 
 
 def connect_to_rocky(
@@ -89,9 +90,9 @@ class _ApiElementProxy:
         ID of the API element.
     """
 
-    def __init__(self, pyro_api, pool_id):
-        self._pool_id = pool_id
+    def __init__(self, pyro_api: Pyro5.api.Proxy, pool_id: str):
         self._pyro_api = pyro_api
+        self._pool_id = pool_id
 
     def __getattr__(self, attr_name: str) -> object:
         def CallProxy(*args, **kwargs):
@@ -118,6 +119,7 @@ class _ApiElementProxy:
         _ApiElementProxy
             Deserialized object.
         """
+        assert _ROCKY_API is not None, "API Proxy not initialized"
         return cls(_ROCKY_API, serialized["_api_element_id"])
 
     @classmethod
@@ -154,6 +156,40 @@ class _ApiListProxy(_ApiElementProxy):
         self._pyro_api.SendToSubject(self._pool_id, "__delitem__", index)
 
 
+class _ApiGridFunctionProxy:
+    def __init__(self, grid_pool_id: str, gf_name: str, pyro_api) -> None:
+        self._grid_pool_id = grid_pool_id
+        self._gf_name = gf_name
+        self._pyro_api = pyro_api
+
+    def __getattr__(self, attr_name: str) -> Callable:
+        def CallProxy(*args: tuple, **kwargs: dict):
+            return self._pyro_api.SentToGridFunction(
+                self._grid_pool_id, self._gf_name, attr_name, *args, **kwargs
+            )
+
+        return CallProxy
+
+    @classmethod
+    def deserialize(cls, classname: str, serialized: dict) -> "_ApiGridFunctionProxy":
+        """Deserialize the proxy objects for the API element.
+
+        Parameters
+        ----------
+        classname : str
+            Name of the class to deserialize. This parameter is required by the
+            superclass but is not used.
+        serialized : dict
+            Dictionary of serialized objects.
+
+        Returns
+        -------
+        _ApiElementProxy
+            Deserialized object.
+        """
+        return cls(serialized["grid_pool_id"], serialized["gf_name"], _ROCKY_API)
+
+
 def deserialize_api_error(classname: str, serialized: dict) -> RockyApiError:
     """Deserialize an API error.
 
@@ -173,7 +209,7 @@ def deserialize_api_error(classname: str, serialized: dict) -> RockyApiError:
     return RockyApiError(serialized["message"])
 
 
-def deserialize_numpy(classname, serialized) -> "Any":
+def deserialize_numpy(classname, serialized) -> Any:
     """Deserialize a numpy array.
 
     Parameters
@@ -195,6 +231,9 @@ def deserialize_numpy(classname, serialized) -> "Any":
 
 Pyro5.api.register_dict_to_class("ApiElementProxy", _ApiElementProxy.deserialize)
 Pyro5.api.register_dict_to_class("ApiListProxy", _ApiListProxy.deserialize)
+Pyro5.api.register_dict_to_class(
+    "ApiGridFunctionProxy", _ApiGridFunctionProxy.deserialize
+)
 Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
 Pyro5.api.register_dict_to_class("ndarray", deserialize_numpy)
 

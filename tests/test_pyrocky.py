@@ -55,10 +55,18 @@ def test_minimal_simulation(rocky_session, tmp_path):
     project.SaveProject(str(tmp_path / "rocky-testing.rocky"))
     study.StartSimulation()
 
-    particles_count = study.GetParticles().GetNumpyCurve("Particles Count")
+    seconds = study.GetTimeSet()
+    assert seconds[-1] > 1.75
 
+    particles = study.GetParticles()
+    particles_count = particles.GetNumpyCurve("Particles Count")
     # Just check that simulation results are at a reasonable ballpark
     assert particles_count[1][-1] > 20, "Too few particles generated"
+
+    pid_gf = particles.GetGridFunction("Particle ID")
+    pid_values = pid_gf.GetArray(time_step=-1)
+    assert any(pid_values), "Particle ID should not be a zero-array"
+    assert len(pid_values) > 20, "Too few values for the grid function"
 
 
 def test_sequences_interface(rocky_session):

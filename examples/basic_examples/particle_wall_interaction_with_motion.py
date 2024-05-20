@@ -119,8 +119,12 @@ import numpy as np
 
 velocity_times = study.GetTimeSet()
 velocity_gf = particles.GetGridFunction("Velocity : Translational : Absolute")
-velocity_max = np.array([velocity_gf.GetMax(unit='m/s', time_step=i) for i in range(len(velocity_times))])
-velocity_min = np.array([velocity_gf.GetMin(unit='m/s', time_step=i) for i in range(len(velocity_times))])
+velocity_max = np.array(
+    [velocity_gf.GetMax(unit="m/s", time_step=i) for i in range(len(velocity_times))]
+)
+velocity_min = np.array(
+    [velocity_gf.GetMin(unit="m/s", time_step=i) for i in range(len(velocity_times))]
+)
 
 
 #################################################################################

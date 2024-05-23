@@ -114,13 +114,13 @@ particles = study.GetParticles()
 times, mass_flow_in = particles.GetNumpyCurve("Particles Mass Flow In", unit="t/h")
 times, mass_flow_out = particles.GetNumpyCurve("Particles Mass Flow Out", unit="t/h")
 
-# Obtain the maximum velocity the particles at each time step.
+# Obtain the maximum and minimum velocities of the particles at each time step.
 import numpy as np
 
-velocity_times = study.GetTimeSet()
+simulation_times = study.GetTimeSet()
 velocity_gf = particles.GetGridFunction("Velocity : Translational : Absolute")
-velocity_max = np.array([velocity_gf.GetMax(unit='m/s', time_step=i) for i in range(len(velocity_times))])
-velocity_min = np.array([velocity_gf.GetMin(unit='m/s', time_step=i) for i in range(len(velocity_times))])
+velocity_max = np.array([velocity_gf.GetMax(unit='m/s', time_step=i) for i in range(len(simulation_times))])
+velocity_min = np.array([velocity_gf.GetMin(unit='m/s', time_step=i) for i in range(len(simulation_times))])
 
 
 #################################################################################
@@ -137,8 +137,8 @@ ax1.set_xlabel("Time [s]")
 ax1.set_ylabel("Mass Flow [t/h]")
 ax1.legend(loc="upper left")
 
-ax2.plot(velocity_times, velocity_max, "b", label="Max Velocity")
-ax2.plot(velocity_times, velocity_min, "r", label="Min Velocity")
+ax2.plot(simulation_times, velocity_max, "b", label="Max Velocity")
+ax2.plot(simulation_times, velocity_min, "r", label="Min Velocity")
 ax2.set_xlabel("Time [s]")
 ax2.set_ylabel("Velocity [m/s]")
 ax2.legend(loc="upper left")

@@ -19,7 +19,10 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-"""Module with the client operations of Rocky."""
+"""
+Module that defines the RockyClient class, which act as a proxy for a Rocky application
+session.
+"""
 from collections.abc import Callable, Generator
 import pickle
 from typing import Any, Final

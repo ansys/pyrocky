@@ -4,10 +4,10 @@
 User guide
 ==========
 
-Use the Rocky PrePost Scripting
--------------------------------
+Use Rocky PrePost Scripting
+---------------------------
 
-In its current shape, PyRocky is a thin layer that enables remote calls to Rocky using the
+In its current form, PyRocky is a thin layer that enables remote calls to Rocky using the
 PrePost Scripting API. This API is available through the ``RockyClient.api`` object. For
 example, the following code creates a project and saves it to disk:
 
@@ -26,13 +26,13 @@ example, the following code creates a project and saves it to disk:
 To view comprehensive PrePost Scripting documentation, in the Rocky app, select
 **Help > Manuals > PrePost Scripting**.
 
-Most methods of the PrePost Scripting, when called through PyRocky, works in the exact same way
-they work in the Rocky built-in Python Shell. However, there are differences worth noting:
+Most methods of PrePost Scripting, when called through PyRocky, work in exactly the same way
+as in the Rocky built-in Python shell. However, there are differences worth noting:
 
-- ``KAStudy.GetTimeSet``: on PyRocky this method returns a ``numpy.array`` of simulation time
+- ``RAStudy.GetTimeSet``: In PyRocky, this method returns a ``numpy.array`` of simulation time
   steps in seconds (instead of a ``TimeSet`` object).
-- ``KAElementItem.GetCurve``: this method is not supported by PyRocky. Use ``GetNumpyCurve`` to
-  get resulting curves from study entities.
+- ``KAElementItem.GetCurve``: This method is not supported by PyRocky. Use the ``GetNumpyCurve``
+  method to get resulting curves from study entities.
 
 
 Known issues

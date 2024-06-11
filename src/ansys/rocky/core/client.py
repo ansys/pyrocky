@@ -20,8 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 """
-Module that defines the RockyClient class, which act as a proxy for a Rocky application
-session.
+Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
+application session.
 """
 from collections.abc import Callable, Generator
 import pickle

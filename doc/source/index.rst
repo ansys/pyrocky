@@ -1,7 +1,7 @@
 PyRocky
 #######
 
-PyRocky is a Python client library to create, run and post-processing
+PyRocky is a Python client library to create, run, and postprocess
 particle dynamics simulations using `Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_,
 the most powerful DEM (discrete element method) software in the market.
 

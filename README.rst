@@ -3,10 +3,9 @@ PyRocky
 
 |pyansys| |MIT| |python| |pypi| |codecov| |MIT| |black| |pre-commit|
 
-PyRocky is a Python client library for remotely controlling
-`Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_,
-which is the most powerful software in the market for performing
-DEM (discrete element method) simulations.
+PyRocky is a Python client library to create, run, and postprocess
+particle dynamics simulations using `Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_,
+the most powerful DEM (discrete element method) software in the market.
 
 Documentation and issues
 ------------------------
@@ -19,13 +18,13 @@ The documentation has five sections:
 - `Getting started <https://rocky.docs.pyansys.com/version/stable/getting_started/index.html>`_: Learn
   how to install PyRocky in user mode and then launch it.
 - `User guide <https://rocky.docs.pyansys.com/version/stable/user_guide/index.html>`_: Understand how to
-  use the Rocky PrePost API with PyRocky.
-- `API reference <https://rocky.docs.pyansys.com/version/stable/api/index.html>`_: Understand PyRocky API
-  endpoints, their capabilities, and how to interact with them programmatically.
+  use Rocky PrePost Scripting with PyRocky.
+- `API reference <https://rocky.docs.pyansys.com/version/stable/api/index.html>`_: Explore PyRocky
+  available methods and classes.
 - `Examples <https://rocky.docs.pyansys.com/version/stable/examples/index.html>`_: Explore end-to-end
   examples that show how to use PyRocky.
-- `Contribute <https://rocky.docs.pyansys.com/version/stable/contributing.html>`_: Learn how to contribute
-  to the PyRocky codebase or documentation.
+- `Contribute <https://rocky.docs.pyansys.com/version/stable/contributing.html>`_: Learn how to
+  contribute to the PyRocky codebase or documentation.
 
 In the upper right corner of the documentation's title bar, there is an option
 for switching from viewing the documentation for the latest stable release

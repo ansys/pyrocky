@@ -4,11 +4,6 @@
 Getting started
 ===============
 
-PyRocky is a Python client library for remotely controlling
-`Ansys Rocky <https://www.ansys.com/products/fluids/ansys-rocky>`_,
-which is the most powerful software in the market for performing
-DEM (discrete element method) simulations.
-
 Install PyRocky
 ---------------
 
@@ -51,9 +46,9 @@ Connect to an existing session
 
 Assume that a Rocky session is started with the ``--pyrocky`` option:
 
-.. code:: bat
+.. code::
 
-   C:\Program Files\Ansys Inc\v241\Rocky> bin\Rocky.exe --pyrocky
+   C:\Program Files\Ansys Inc\v242\Rocky\bin\Rocky.exe --pyrocky
 
 When the Rocky session is started in this way, you can connect to it with PyRocky:
 

@@ -34,7 +34,7 @@ awp_roots = sorted(
 )
 last_rocky_version = awp_roots[0]
 if "25.1" not in last_rocky_version:
-    # Async simulation is only available for rocky 25R1 and newer versions.
+    # `non_blocking` simulation only available on Rocky 25R1 and onwards.
     quit()
 
 ###############################################################################
@@ -112,7 +112,8 @@ domain.SetCoordinateLimitsMaxValues((10, 1, 10), unit="m")
 solver = study.GetSolver()
 simulation_duration = 5
 solver.SetSimulationDuration(simulation_duration, unit="s")
-study.StartSimulation(non_blocking=True)
+study.StartSimulation(non_blocking=True)    # `non_blocking` only available on Rocky
+                                            # 25R1 and onwards.
 
 ###############################################################################
 # Postprocess

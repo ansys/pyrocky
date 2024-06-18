@@ -124,8 +124,8 @@ particles = study.GetParticles()
 import time
 
 while study.IsSimulating():
-    # When running an asyncronous simulation, the call to RefreshResults is required to ensure
-    # that the results are updated.
+    # When running an asynchronous simulation, the call to RefreshResults is required to
+    # ensure that the results are updated.
     study.RefreshResults()
 
     times, mass_flow_in = particles.GetNumpyCurve("Particles Mass Flow In", unit="t/h")

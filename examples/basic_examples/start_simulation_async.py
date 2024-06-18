@@ -112,8 +112,8 @@ domain.SetCoordinateLimitsMaxValues((10, 1, 10), unit="m")
 solver = study.GetSolver()
 simulation_duration = 5
 solver.SetSimulationDuration(simulation_duration, unit="s")
-study.StartSimulation(non_blocking=True)    # `non_blocking` only available on Rocky
-                                            # 25R1 and onwards.
+study.StartSimulation(non_blocking=True)  # `non_blocking` only available on Rocky
+# 25R1 and onwards.
 
 ###############################################################################
 # Postprocess

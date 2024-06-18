@@ -29,9 +29,11 @@ L-shape tube wall using an async call.
 
 """
 
-awp_roots = sorted([k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True)
+awp_roots = sorted(
+    [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
+)
 last_rocky_version = awp_roots[0]
-if '25.1' not in last_rocky_version:
+if "25.1" not in last_rocky_version:
     # Async simulation is only available for rocky 25R1 and newer versions.
     quit()
 
@@ -122,7 +124,6 @@ particles = study.GetParticles()
 import time
 
 while study.IsSimulating():
-
     # When running an asyncronous simulation, the call to RefreshResults is required to ensure
     # that the results are updated.
     study.RefreshResults()
@@ -143,8 +144,12 @@ import numpy as np
 
 simulation_times = study.GetTimeSet()
 velocity_gf = particles.GetGridFunction("Velocity : Translational : Absolute")
-velocity_max = np.array([velocity_gf.GetMax(unit='m/s', time_step=i) for i in range(len(simulation_times))])
-velocity_min = np.array([velocity_gf.GetMin(unit='m/s', time_step=i) for i in range(len(simulation_times))])
+velocity_max = np.array(
+    [velocity_gf.GetMax(unit="m/s", time_step=i) for i in range(len(simulation_times))]
+)
+velocity_min = np.array(
+    [velocity_gf.GetMin(unit="m/s", time_step=i) for i in range(len(simulation_times))]
+)
 
 #################################################################################
 # Plot curves

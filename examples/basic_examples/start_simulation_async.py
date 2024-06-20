@@ -28,15 +28,6 @@ This example sets up and solves a simulation of particles interacting with a rot
 L-shape tube wall using an async call.
 
 """
-
-awp_roots = sorted(
-    [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
-)
-last_rocky_version = awp_roots[0]
-if "25.1" not in last_rocky_version:
-    # `non_blocking` simulation only available on Rocky 25R1 and onwards.
-    quit()
-
 ###############################################################################
 # .. image:: /_static/Lshape_tube_result.png
 #   :width: 400pt
@@ -52,6 +43,14 @@ import tempfile
 
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core import examples
+
+awp_roots = sorted(
+    [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
+)
+last_rocky_version = awp_roots[0]
+if "25.1" not in last_rocky_version:
+    # `non_blocking` simulation only available on Rocky 25R1 and onwards.
+    quit()
 
 # Create a temp directory to save the project.
 project_dir = tempfile.mkdtemp(prefix="pyrocky_")
@@ -133,13 +132,16 @@ while study.IsSimulating():
     times, mass_flow_in = particles.GetNumpyCurve("Particles Mass Flow In", unit="t/h")
     times, mass_flow_out = particles.GetNumpyCurve("Particles Mass Flow Out", unit="t/h")
 
-    print(f"Simulation Progress: {100 * times[-1] / simulation_duration:.2f} %")
+    print(f"Simulation Progress: {study.GetProgress():.2f} %")
     print(f"\tCurrent mass_flow_in: {mass_flow_in[-1]:.2f} t/h")
     print(f"\tCurrent mass_flow_out: {mass_flow_out[-1]:.2f} t/h")
 
     time.sleep(2)
 
 print("Simulation Complete!")
+
+times, mass_flow_in = particles.GetNumpyCurve("Particles Mass Flow In", unit="t/h")
+times, mass_flow_out = particles.GetNumpyCurve("Particles Mass Flow Out", unit="t/h")
 
 # Obtain the maximum and minimum velocities of the particles at each time step.
 import numpy as np
@@ -174,3 +176,5 @@ ax2.set_ylabel("Velocity [m/s]")
 ax2.legend(loc="upper left")
 
 plt.draw()
+
+rocky.close()

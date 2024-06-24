@@ -91,7 +91,7 @@ input_property_list[0].SetMassFlowRate(1000)
 outlet = study.CreateOutlet(rectangular_surface)
 
 # Set the motion rotation over the Y axis and apply it on the wall and the
-# rectagular surface used as the outlet.
+# rectangular surface used as the outlet.
 motion_frame_source = study.GetMotionFrameSource()
 motion_frame = motion_frame_source.NewFrame()
 motion_frame.AddRotationMotion(angular_velocity=((0.0, 0.5, 0.0), "rad/s"))
@@ -111,9 +111,8 @@ domain.SetCoordinateLimitsMaxValues((10, 1, 10), unit="m")
 solver = study.GetSolver()
 simulation_duration = 5
 solver.SetSimulationDuration(simulation_duration, unit="s")
-study.StartSimulation(
-    non_blocking=True
-)  # `non_blocking` only available on Rocky 25R1 and onwards.
+# `non_blocking` only available on Rocky 25R1 and onwards.
+study.StartSimulation(non_blocking=True)
 
 ###############################################################################
 # Postprocess

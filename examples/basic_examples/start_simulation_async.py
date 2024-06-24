@@ -127,8 +127,12 @@ if "25.1" in last_rocky_version:
         # ensure that the results are updated.
         study.RefreshResults()
 
-        times, mass_flow_in = particles.GetNumpyCurve("Particles Mass Flow In", unit="t/h")
-        times, mass_flow_out = particles.GetNumpyCurve("Particles Mass Flow Out", unit="t/h")
+        times, mass_flow_in = particles.GetNumpyCurve(
+            "Particles Mass Flow In", unit="t/h"
+        )
+        times, mass_flow_out = particles.GetNumpyCurve(
+            "Particles Mass Flow Out", unit="t/h"
+        )
 
         print(f"Simulation Progress: {study.GetProgress():.2f} %")
         print(f"\tCurrent mass_flow_in: {mass_flow_in[-1]:.2f} t/h")
@@ -147,10 +151,16 @@ if "25.1" in last_rocky_version:
     simulation_times = study.GetTimeSet()
     velocity_gf = particles.GetGridFunction("Velocity : Translational : Absolute")
     velocity_max = np.array(
-        [velocity_gf.GetMax(unit="m/s", time_step=i) for i in range(len(simulation_times))]
+        [
+            velocity_gf.GetMax(unit="m/s", time_step=i)
+            for i in range(len(simulation_times))
+        ]
     )
     velocity_min = np.array(
-        [velocity_gf.GetMin(unit="m/s", time_step=i) for i in range(len(simulation_times))]
+        [
+            velocity_gf.GetMin(unit="m/s", time_step=i)
+            for i in range(len(simulation_times))
+        ]
     )
 
     #################################################################################

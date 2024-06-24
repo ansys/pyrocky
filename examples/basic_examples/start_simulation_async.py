@@ -123,8 +123,8 @@ if "25.1" in last_rocky_version:
     import time
 
     while study.IsSimulating():
-        # When running an asynchronous simulation, the call to RefreshResults is required to
-        # ensure that the results are updated.
+        # When running an asynchronous simulation, the call to RefreshResults is required
+        # to ensure that the results are updated.
         study.RefreshResults()
 
         times, mass_flow_in = particles.GetNumpyCurve(

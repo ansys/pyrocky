@@ -74,6 +74,7 @@ class _ApiElementProxy:
             Deserialized object.
         """
         from .client import _ROCKY_API
+
         assert _ROCKY_API is not None, "API Proxy not initialized"
         return cls(_ROCKY_API, serialized["_api_element_id"])
 
@@ -143,6 +144,7 @@ class _ApiGridFunctionProxy:
             Deserialized object.
         """
         from .client import _ROCKY_API
+
         assert _ROCKY_API is not None, "API Proxy not initialized"
         return cls(serialized["grid_pool_id"], serialized["gf_name"], _ROCKY_API)
 

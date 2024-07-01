@@ -38,8 +38,9 @@ L-shape tube wall using an async call.
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Perform the required imports and create an empty project.
 
-import os.path
+import os
 import tempfile
+import time
 
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core import examples
@@ -119,8 +120,6 @@ if "25.1" in last_rocky_version:
     # Obtain the in and out mass flows of the particles while the simulation is
     # running.
     particles = study.GetParticles()
-
-    import time
 
     while study.IsSimulating():
         # When running an asynchronous simulation, the call to RefreshResults is required

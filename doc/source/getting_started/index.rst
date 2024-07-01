@@ -25,7 +25,7 @@ interact with the software:
 
 ..  code:: python
 
-    import ansys.rocky.rocky as pyrocky
+    import ansys.rocky.core as pyrocky
 
     rocky = pyrocky.launch_rocky()
 
@@ -54,6 +54,6 @@ When the Rocky session is started in this way, you can connect to it with PyRock
 
 .. code:: python
 
-    import ansys.rocky.rocky as pyrocky
+    import ansys.rocky.core as pyrocky
 
     rocky = pyrocky.connect_to_rocky()

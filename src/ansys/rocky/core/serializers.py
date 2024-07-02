@@ -23,7 +23,6 @@
 Module that defines the ``ApiElementProxy`` classes, which acts as a proxy for a
 Rocky application internal objects.
 """
-import os
 import pickle
 from typing import Any
 
@@ -58,17 +57,13 @@ def _ApiElementProxySerializer(obj: ApiElementProxy) -> dict:
     Serialize an `ApiElementProxy` ensuring backward compatibility with
     ROCKY 24.2 and older versions.
     """
+    from .client import _ROCKY_VERSION
+
     serialized = ApiElementProxy.serialize(obj)
 
-    try:
-        awp_roots = sorted(
-            [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
-        )
-        last_rocky_version = float(awp_roots[0][-4:])
-        if last_rocky_version <= 24.2:
-            serialized["__class__"] = f'_{serialized["__class__"]}'
-    finally:
-        return serialized
+    if _ROCKY_VERSION is not None and _ROCKY_VERSION <= 242:
+        serialized["__class__"] = f'_{serialized["__class__"]}'
+    return serialized
 
 
 def deserialize_api_element(classname: str, serialized: dict) -> ApiElementProxy:

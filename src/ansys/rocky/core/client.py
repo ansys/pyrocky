@@ -34,6 +34,7 @@ register_proxies()
 DEFAULT_SERVER_PORT: Final[int] = 50615
 
 _ROCKY_API: Pyro5.api.Proxy | None = None
+_ROCKY_VERSION: int | None = None
 
 
 def connect_to_rocky(
@@ -55,8 +56,10 @@ def connect_to_rocky(
         Client object for interacting with the Rocky app.
     """
     uri = f"PYRO:rocky.api@{host}:{port}"
-    global _ROCKY_API
+    global _ROCKY_API, _ROCKY_VERSION
     _ROCKY_API = Pyro5.api.Proxy(uri)
+    rocky_version = _ROCKY_API.GetVersion().split(".")
+    _ROCKY_VERSION = int(rocky_version[0] + rocky_version[1])  # major + minor
     rocky_client = RockyClient(_ROCKY_API)
     return rocky_client
 

@@ -46,7 +46,9 @@ class ApiElementProxy:
 
     def __getattr__(self, attr_name: str) -> object:
         def CallProxy(*args: tuple, **kwargs: dict) -> Any:
-            return self._pyro_api.SendToApiElement(self._pool_id, attr_name, *args, **kwargs)
+            return self._pyro_api.SendToApiElement(
+                self._pool_id, attr_name, *args, **kwargs
+            )
 
         return CallProxy
 
@@ -85,7 +87,9 @@ class ApiListProxy(ApiElementProxy):
 
 
 class ApiGridFunctionProxy:
-    def __init__(self, grid_pool_id: str, gf_name: str, pyro_api: Pyro5.api.Proxy) -> None:
+    def __init__(
+        self, grid_pool_id: str, gf_name: str, pyro_api: Pyro5.api.Proxy
+    ) -> None:
         self._grid_pool_id = grid_pool_id
         self._gf_name = gf_name
         self._pyro_api = pyro_api
@@ -125,7 +129,9 @@ class ApiExportToolkitProxy:
 
     def __getattr__(self, attr_name: str) -> Callable:
         def CallProxy(*args: tuple, **kwargs: dict) -> Any:
-            return self._pyro_api.SendToRAStudy("GetExportToolkit", attr_name, *args, **kwargs)
+            return self._pyro_api.SendToRAStudy(
+                "GetExportToolkit", attr_name, *args, **kwargs
+            )
 
         return CallProxy
 

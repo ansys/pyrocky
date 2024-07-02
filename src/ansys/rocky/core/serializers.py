@@ -28,13 +28,14 @@ import pickle
 from typing import Any
 
 import Pyro5.api
+import serpent
+
 from ansys.rocky.core.rocky_api_proxies import (
     ApiElementProxy,
     ApiExportToolkitProxy,
     ApiGridFunctionProxy,
     ApiListProxy,
 )
-import serpent
 
 
 def register_proxies() -> None:

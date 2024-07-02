@@ -27,14 +27,7 @@ from typing import Final
 
 import Pyro5.api
 
-<<<<<<< Updated upstream
-from serializers import register_proxies
-
-=======
-
 from ansys.rocky.core.serializers import register_proxies
-
->>>>>>> Stashed changes
 
 register_proxies()
 

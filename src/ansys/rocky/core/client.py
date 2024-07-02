@@ -68,8 +68,8 @@ def connect_to_rocky(
         awp_roots = sorted(
             [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
         )
-        last_rocky_version = awp_roots[0]
-        raise Exception(f"last_rocky_version is: {last_rocky_version}")
+        _ROCKY_VERSION = int(awp_roots[0].partition("AWP_ROOT")[2])
+        raise Exception(f"last_rocky_version is: {_ROCKY_VERSION}, envirom: {os.environ[awp_roots[0]]}")
 
     rocky_client = RockyClient(_ROCKY_API)
     return rocky_client

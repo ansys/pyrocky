@@ -28,16 +28,24 @@ import pickle
 from typing import Any
 
 import Pyro5.api
+from rocky_api_proxies import (
+    ApiElementProxy,
+    ApiExportToolkitProxy,
+    ApiGridFunctionProxy,
+    ApiListProxy,
+)
 import serpent
-
-from rocky_api_proxies import ApiElementProxy, ApiListProxy, ApiGridFunctionProxy, ApiExportToolkitProxy
 
 
 def register_proxies() -> None:
     Pyro5.api.register_dict_to_class("ApiElementProxy", deserialize_api_element)
     Pyro5.api.register_dict_to_class("ApiListProxy", deserialize_api_list)
-    Pyro5.api.register_dict_to_class("ApiGridFunctionProxy", deserialize_api_grid_function)
-    Pyro5.api.register_dict_to_class("ApiExportToolkitProxy", deserialize_api_exporttoolkit)
+    Pyro5.api.register_dict_to_class(
+        "ApiGridFunctionProxy", deserialize_api_grid_function
+    )
+    Pyro5.api.register_dict_to_class(
+        "ApiExportToolkitProxy", deserialize_api_exporttoolkit
+    )
     Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
     Pyro5.api.register_dict_to_class("ndarray", deserialize_numpy)
 
@@ -45,21 +53,21 @@ def register_proxies() -> None:
 
 
 def _ApiElementProxySerializer(obj: ApiElementProxy) -> dict:
-        """
-        Serialize an `ApiElementProxy` ensuring backward compatibility with
-        ROCKY 24.2 and older versions.
-        """
-        serialized = ApiElementProxy.serialize(obj)
+    """
+    Serialize an `ApiElementProxy` ensuring backward compatibility with
+    ROCKY 24.2 and older versions.
+    """
+    serialized = ApiElementProxy.serialize(obj)
 
-        try:
-            awp_roots = sorted(
-                [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
-            )
-            last_rocky_version = float(awp_roots[0][-4:])
-            if last_rocky_version <= 24.2:
-                serialized["__class__"] = f'_{serialized["__class__"]}'
-        finally:
-            return serialized
+    try:
+        awp_roots = sorted(
+            [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
+        )
+        last_rocky_version = float(awp_roots[0][-4:])
+        if last_rocky_version <= 24.2:
+            serialized["__class__"] = f'_{serialized["__class__"]}'
+    finally:
+        return serialized
 
 
 def deserialize_api_element(classname: str, serialized: dict) -> ApiElementProxy:
@@ -106,7 +114,9 @@ def deserialize_api_list(classname: str, serialized: dict) -> ApiListProxy:
     return ApiListProxy(_ROCKY_API, serialized["_api_element_id"])
 
 
-def deserialize_api_grid_function(classname: str, serialized: dict) -> ApiGridFunctionProxy:
+def deserialize_api_grid_function(
+    classname: str, serialized: dict
+) -> ApiGridFunctionProxy:
     """Deserialize the proxy objects for the API grid function.
 
     Parameters
@@ -125,10 +135,14 @@ def deserialize_api_grid_function(classname: str, serialized: dict) -> ApiGridFu
     from .client import _ROCKY_API
 
     assert _ROCKY_API is not None, "API Proxy not initialized"
-    return ApiGridFunctionProxy(serialized["grid_pool_id"], serialized["gf_name"], _ROCKY_API)
+    return ApiGridFunctionProxy(
+        serialized["grid_pool_id"], serialized["gf_name"], _ROCKY_API
+    )
 
 
-def deserialize_api_exporttoolkit(classname: str, serialized: dict) -> ApiExportToolkitProxy:
+def deserialize_api_exporttoolkit(
+    classname: str, serialized: dict
+) -> ApiExportToolkitProxy:
     """Deserialize the proxy objects for the API element.
 
     Parameters

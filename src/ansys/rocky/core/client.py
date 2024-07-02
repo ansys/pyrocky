@@ -26,7 +26,6 @@ application session.
 from typing import Final
 
 import Pyro5.api
-
 from serializers import register_proxies
 
 register_proxies()

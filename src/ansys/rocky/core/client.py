@@ -27,7 +27,7 @@ from typing import Final
 
 import Pyro5.api
 
-from ansys.rocky.core.rocky_api_proxies import register_proxies
+from serializers import register_proxies
 
 register_proxies()
 

@@ -23,6 +23,7 @@
 Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
+import os
 from typing import Final
 
 import Pyro5.api
@@ -58,8 +59,18 @@ def connect_to_rocky(
     uri = f"PYRO:rocky.api@{host}:{port}"
     global _ROCKY_API, _ROCKY_VERSION
     _ROCKY_API = Pyro5.api.Proxy(uri)
-    rocky_version = _ROCKY_API.GetVersion().split(".")
-    _ROCKY_VERSION = int(rocky_version[0] + rocky_version[1])  # major + minor
+
+    try:
+        # From 25.1 onwards we may use this to obtain the current rocky version.
+        rocky_version = _ROCKY_API.GetVersion().split(".")
+        _ROCKY_VERSION = int(rocky_version[0] + rocky_version[1])  # major + minor
+    except AttributeError:
+        awp_roots = sorted(
+            [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
+        )
+        last_rocky_version = awp_roots[0]
+        raise Exception(f"last_rocky_version is: {last_rocky_version}")
+
     rocky_client = RockyClient(_ROCKY_API)
     return rocky_client
 

@@ -28,7 +28,7 @@ import pickle
 from typing import Any
 
 import Pyro5.api
-from rocky_api_proxies import (
+from ansys.rocky.core.rocky_api_proxies import (
     ApiElementProxy,
     ApiExportToolkitProxy,
     ApiGridFunctionProxy,

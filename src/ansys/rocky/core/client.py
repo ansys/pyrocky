@@ -64,7 +64,7 @@ def connect_to_rocky(
         # From 25.1 onwards we may use this to obtain the current rocky version.
         rocky_version = _ROCKY_API.GetVersion().split(".")
         _ROCKY_VERSION = int(rocky_version[0] + rocky_version[1])  # major + minor
-    except AttributeError:
+    except:
         awp_roots = sorted(
             [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
         )

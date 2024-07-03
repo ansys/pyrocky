@@ -31,7 +31,9 @@ from ansys.rocky.core.serializers import register_proxies
 
 DEFAULT_SERVER_PORT: Final[int] = 50615
 _ROCKY_API: Pyro5.api.Proxy | None = None
-_ROCKY_VERSION: int | None = None  # Rocky version as integer (24R2 becomes 242, 25R1 becomes 251, ...)
+_ROCKY_VERSION: int | None = (
+    None  # Rocky version as integer (24R2 becomes 242, 25R1 becomes 251, ...)
+)
 
 
 def connect_to_rocky(

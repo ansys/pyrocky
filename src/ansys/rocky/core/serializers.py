@@ -61,7 +61,7 @@ def _ApiElementProxySerializer(obj: ApiElementProxy) -> dict:
 
     serialized = ApiElementProxy.serialize(obj)
 
-    if _ROCKY_VERSION is not None and _ROCKY_VERSION <= 242:
+    if _ROCKY_VERSION is not None and _ROCKY_VERSION < 250:
         serialized["__class__"] = f'_{serialized["__class__"]}'
     return serialized
 

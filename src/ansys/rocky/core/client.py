@@ -65,11 +65,10 @@ def connect_to_rocky(
         rocky_version = _ROCKY_API.GetVersion().split(".")
         _ROCKY_VERSION = int(rocky_version[0] + rocky_version[1])  # major + minor
     except:
-        awp_roots = sorted(
-            [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
-        )
-        _ROCKY_VERSION = int(awp_roots[0].partition("AWP_ROOT")[2])
-
+        # The rocky version is older than 25.1, the specific version is not really
+        # important.
+        _ROCKY_VERSION = 240
+    
     rocky_client = RockyClient(_ROCKY_API)
     return rocky_client
 

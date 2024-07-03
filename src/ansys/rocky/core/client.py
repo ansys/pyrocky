@@ -23,19 +23,15 @@
 Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
-import os
 from typing import Final
 
 import Pyro5.api
 
 from ansys.rocky.core.serializers import register_proxies
 
-register_proxies()
-
 DEFAULT_SERVER_PORT: Final[int] = 50615
-
 _ROCKY_API: Pyro5.api.Proxy | None = None
-_ROCKY_VERSION: int | None = None
+_ROCKY_VERSION: int | None = None  # Rocky version as integer (24R2 becomes 242, 25R1 becomes 251, ...)
 
 
 def connect_to_rocky(
@@ -58,17 +54,13 @@ def connect_to_rocky(
     """
     uri = f"PYRO:rocky.api@{host}:{port}"
     global _ROCKY_API, _ROCKY_VERSION
-    _ROCKY_API = Pyro5.api.Proxy(uri)
 
-    try:
-        # From 25.1 onwards we may use this to obtain the current rocky version.
-        rocky_version = _ROCKY_API.GetVersion().split(".")
-        _ROCKY_VERSION = int(rocky_version[0] + rocky_version[1])  # major + minor
-    except:
-        # The rocky version is older than 25.1, the specific version is not really
-        # important.
-        _ROCKY_VERSION = 240
-    
+    if _ROCKY_API is None:
+        register_proxies()
+
+    _ROCKY_API = Pyro5.api.Proxy(uri)
+    _ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
+
     rocky_client = RockyClient(_ROCKY_API)
     return rocky_client
 
@@ -91,3 +83,28 @@ class RockyClient:
 
     def close(self):
         self._api_adapter.Exit()
+
+
+def _get_numerical_version(rocky_api: Pyro5.api.Proxy) -> int:
+    """Provides the current Rocky app version as a numerical value
+    (24R2 becomes 242, 25R1 becomes 251, ...).
+
+    Parameters
+    ----------
+    rocky_api : Pyro5.api.Proxy
+        Pyro5 proxy object for interacting with the Rocky app.
+
+    Returns
+    -------
+    int
+        Rocky app version as int.
+    """
+    assert rocky_api is not None, "API Proxy not initialized"
+    try:
+        # From 25.1 onwards we may use this to obtain the current rocky version.
+        rocky_version = _ROCKY_API.GetVersion().split(".")
+        return int(rocky_version[0] + rocky_version[1])  # major + minor
+    except:
+        # The rocky version is older than 25.1, the specific version is not really
+        # important.
+        return 240

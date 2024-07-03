@@ -68,7 +68,7 @@ def connect_to_rocky(
         # The rocky version is older than 25.1, the specific version is not really
         # important.
         _ROCKY_VERSION = 240
-    
+
     rocky_client = RockyClient(_ROCKY_API)
     return rocky_client
 

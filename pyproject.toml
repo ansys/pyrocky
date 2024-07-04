@@ -24,7 +24,7 @@ classifiers = [
 dependencies = [
     "importlib-metadata>=4.0",
     "Pyro5>=5.13",
-    "numpy>=1.19, <2.0",
+    "numpy>=1.19, <3.0",
 ]
 
 [project.optional-dependencies]
@@ -40,7 +40,7 @@ doc = [
     "sphinx-copybutton==0.5.2",
     "sphinx-gallery==0.16.0",
     "sphinx-design==0.6.0",
-    "matplotlib==3.8.3", # required by sphinx-gallery
+    "matplotlib==3.9.0", # required by sphinx-gallery
 ]
 
 [project.urls]

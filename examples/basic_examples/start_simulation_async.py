@@ -48,8 +48,8 @@ from ansys.rocky.core import examples
 awp_roots = sorted(
     [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
 )
-last_rocky_version = awp_roots[0]
-if "25.1" in last_rocky_version:
+last_rocky_version = int(awp_roots[0].partition("AWP_ROOT")[2])
+if last_rocky_version >= 251:
     # `non_blocking` simulation only available on Rocky 25R1 and onwards.
 
     # Create a temp directory to save the project.

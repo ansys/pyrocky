@@ -24,7 +24,7 @@ import os
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import _ROCKY_VERSION, DEFAULT_SERVER_PORT
+from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
 
 
@@ -89,6 +89,7 @@ def test_minimal_simulation(version, expected_version, tmp_path, request):
     assert any(pid_values), "Particle ID should not be a zero-array"
     assert len(pid_values) > 20, "Too few values for the grid function"
 
+    from ansys.rocky.core.client import _ROCKY_VERSION
     global _ROCKY_VERSION
     awp_roots = sorted(
         [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True

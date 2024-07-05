@@ -25,13 +25,8 @@ import pytest
 
 import ansys.rocky.core as pyrocky
 
-<<<<<<< Updated upstream
-from ansys.rocky.core.client import _ROCKY_VERSION, DEFAULT_SERVER_PORT
-
-=======
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 
->>>>>>> Stashed changes
 from ansys.rocky.core.launcher import RockyLaunchError
 
 

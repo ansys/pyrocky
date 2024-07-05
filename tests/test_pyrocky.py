@@ -70,6 +70,7 @@ def test_minimal_simulation(rocky_session, tmp_path):
     assert len(pid_values) > 20, "Too few values for the grid function"
 
     from ansys.rocky.core.client import _ROCKY_VERSION
+
     global _ROCKY_VERSION
     awp_roots = sorted(
         [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True

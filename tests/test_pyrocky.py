@@ -24,7 +24,7 @@ import os
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import DEFAULT_SERVER_PORT
+from ansys.rocky.core.client import DEFAULT_SERVER_PORT, _ROCKY_VERSION
 from ansys.rocky.core.launcher import RockyLaunchError
 
 

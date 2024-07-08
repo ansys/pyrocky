@@ -39,12 +39,16 @@ def rocky_session(request):
     rocky.close()
 
 
-@pytest.mark.parametrize("rocky_session", [None, "24.2"], indirect=True)
-def test_minimal_simulation(rocky_session, tmp_path):
+@pytest.mark.parametrize('rocky_session, expected_version', [[None, '24.2'], [251, 240]], indirect=["rocky_session"])
+def test_minimal_simulation(rocky_session, expected_version, tmp_path):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
     rocky = pyrocky.connect_to_rocky()
+
+    global _ROCKY_VERSION
+    assert _ROCKY_VERSION == expected_version
+
     project = rocky.api.CreateProject()
     assert project, "No project created"
 

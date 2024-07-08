@@ -74,7 +74,7 @@ def launch_rocky(
     if rocky_exe is None:
         rocky_version = None
         if version is not None:
-            rocky_version = version.replace('.', '')
+            rocky_version = version.replace(".", "")
 
         awp_roots = [k for k in os.environ.keys() if k.startswith("AWP_ROOT")]
         for awp_root in sorted(awp_roots, reverse=True):

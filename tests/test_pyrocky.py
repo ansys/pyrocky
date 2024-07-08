@@ -19,7 +19,6 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-import os
 from pathlib import Path
 
 import pytest
@@ -90,14 +89,6 @@ def test_minimal_simulation(version, expected_version, tmp_path, request):
     pid_values = pid_gf.GetArray(time_step=-1)
     assert any(pid_values), "Particle ID should not be a zero-array"
     assert len(pid_values) > 20, "Too few values for the grid function"
-
-    from ansys.rocky.core.client import _ROCKY_VERSION
-
-    global _ROCKY_VERSION
-    awp_roots = sorted(
-        [k for k in os.environ.keys() if k.startswith("AWP_ROOT")], reverse=True
-    )
-    assert False, f"cur_version: {_ROCKY_VERSION}, all_versions: {awp_roots}"
 
 
 def test_sequences_interface(rocky_session):

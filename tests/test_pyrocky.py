@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import os
+from pathlib import Path
 
 import pytest
 
@@ -27,7 +28,6 @@ import ansys.rocky.core as pyrocky
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
-from pathlib import Path
 
 
 @pytest.fixture()
@@ -128,7 +128,7 @@ def test_export_toolkit(rocky_session, tmp_path):
     assert isinstance(export_toolkit, ApiExportToolkitProxy)
 
     stl_to_save = str(tmp_path / "particles_as_stl.stl")
-    export_toolkit.ExportParticleToStl(stl_to_save, 'Particle <1>')
+    export_toolkit.ExportParticleToStl(stl_to_save, "Particle <1>")
     assert Path(stl_to_save).is_file()
 
 

@@ -23,7 +23,7 @@
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import DEFAULT_SERVER_PORT, _ROCKY_VERSION
+from ansys.rocky.core.client import _ROCKY_VERSION, DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
 
 
@@ -34,15 +34,20 @@ def rocky_session():
     rocky.close()
 
 
-@pytest.mark.parametrize('version, expected_version', [
-    ('25.1', 251),
-    ('24.2', 240),
-])
+@pytest.mark.parametrize(
+    "version, expected_version",
+    [
+        ("25.1", 251),
+        ("24.2", 240),
+    ],
+)
 def test_minimal_simulation(version, expected_version, tmp_path):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
-    exe_file = f"C:\\Program Files\\ANSYS Inc\\v{version.replace('.','')}\\Rocky\\bin\\Rocky.exe"
+    exe_file = (
+        f"C:\\Program Files\\ANSYS Inc\\v{version.replace('.','')}\\Rocky\\bin\\Rocky.exe"
+    )
     pyrocky.launch_rocky(exe_file)
     rocky = pyrocky.connect_to_rocky()
 

@@ -23,31 +23,27 @@
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import DEFAULT_SERVER_PORT
+from ansys.rocky.core.client import DEFAULT_SERVER_PORT, _ROCKY_VERSION
 from ansys.rocky.core.launcher import RockyLaunchError
 
 
 @pytest.fixture()
-def rocky_session(request):
-    """We pass a possible rocky version to run this fixture via
-    ``@pytest.mark.parametrize('rocky_session', [version_str], indirect=True)``
-    If no decorator is used, it will use the more recent version installed.
-    """
-    version = request.param if hasattr(request, "param") else None
-    rocky = pyrocky.launch_rocky(version=version)
+def rocky_session():
+    rocky = pyrocky.launch_rocky()
     yield rocky
     rocky.close()
 
 
-@pytest.mark.parametrize(
-    "rocky_session, expected_version",
-    [[None, "24.2"], [251, 240]],
-    indirect=["rocky_session"],
-)
-def test_minimal_simulation(rocky_session, expected_version, tmp_path):
+@pytest.mark.parametrize('version, expected_version', [
+    ('25.1', 251),
+    ('24.2', 240),
+])
+def test_minimal_simulation(version, expected_version, tmp_path):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
+    exe_file = f"C:\\Program Files\\ANSYS Inc\\v{version.replace('.','')}\\Rocky\\bin\\Rocky.exe"
+    pyrocky.launch_rocky(exe_file)
     rocky = pyrocky.connect_to_rocky()
 
     global _ROCKY_VERSION
@@ -84,6 +80,7 @@ def test_minimal_simulation(rocky_session, expected_version, tmp_path):
     pid_values = pid_gf.GetArray(time_step=-1)
     assert any(pid_values), "Particle ID should not be a zero-array"
     assert len(pid_values) > 20, "Too few values for the grid function"
+    rocky.close()
 
 
 def test_sequences_interface(rocky_session):

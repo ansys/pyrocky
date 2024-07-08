@@ -28,13 +28,22 @@ from ansys.rocky.core.launcher import RockyLaunchError
 
 
 @pytest.fixture()
-def rocky_session():
-    rocky = pyrocky.launch_rocky()
+def rocky_session(request):
+    """We pass a possible rocky version to run this fixture via
+    ``@pytest.mark.parametrize('rocky_session', [version_str], indirect=True)``
+    If no decorator is used, it will use the more recent version installed.
+    """
+    version = request.param if hasattr(request, "param") else None
+    rocky = pyrocky.launch_rocky(version=version)
     yield rocky
     rocky.close()
 
 
+@pytest.mark.parametrize('rocky_session', [None, '24.2'], indirect=True)
 def test_minimal_simulation(rocky_session, tmp_path):
+    """Minimal test to be run with all the supported Rocky version to ensure
+    minimal backwards compatibility.
+    """
     rocky = pyrocky.connect_to_rocky()
     project = rocky.api.CreateProject()
     assert project, "No project created"

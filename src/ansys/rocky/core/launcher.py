@@ -40,6 +40,7 @@ def launch_rocky(
     *,
     headless: bool = True,
     server_port: int = DEFAULT_SERVER_PORT,
+    version: str | None = None,
 ) -> RockyClient:
     """
     Launch the Rocky executable with the PyRocky server enabled.
@@ -56,6 +57,8 @@ def launch_rocky(
         Whether to launch Rocky in headless mode. The default is ``True``.
     server_port: int, optional
         Set the port for Rocky RPC server.
+    version : str, optional
+        Try to launch a Rocky application with a specific version (24.2, 25.1, ...).
 
     Returns
     -------
@@ -69,8 +72,17 @@ def launch_rocky(
         raise RockyLaunchError(f"Port {server_port} is already in use.")
 
     if rocky_exe is None:
+        rocky_version = None
+        if version is not None:
+            rocky_version = version.replace('.', '')
+
         awp_roots = [k for k in os.environ.keys() if k.startswith("AWP_ROOT")]
         for awp_root in sorted(awp_roots, reverse=True):
+
+            # Only checks for the correct rocky version.
+            if rocky_version is not None and not awp_root.endswith(rocky_version):
+                continue
+
             rocky_exe = Path(os.environ[awp_root]) / "Rocky/bin/Rocky.exe"
             if rocky_exe.is_file():
                 break

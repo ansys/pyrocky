@@ -23,7 +23,7 @@
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import _ROCKY_VERSION, DEFAULT_SERVER_PORT
+from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
 
 
@@ -51,6 +51,7 @@ def test_minimal_simulation(version, expected_version, tmp_path):
     pyrocky.launch_rocky(exe_file)
     rocky = pyrocky.connect_to_rocky()
 
+    from ansys.rocky.core.client import _ROCKY_VERSION
     global _ROCKY_VERSION
     assert _ROCKY_VERSION == expected_version
 

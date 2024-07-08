@@ -39,7 +39,11 @@ def rocky_session(request):
     rocky.close()
 
 
-@pytest.mark.parametrize('rocky_session, expected_version', [[None, '24.2'], [251, 240]], indirect=["rocky_session"])
+@pytest.mark.parametrize(
+    "rocky_session, expected_version",
+    [[None, "24.2"], [251, 240]],
+    indirect=["rocky_session"],
+)
 def test_minimal_simulation(rocky_session, expected_version, tmp_path):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.

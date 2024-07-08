@@ -52,6 +52,7 @@ def test_minimal_simulation(version, expected_version, tmp_path):
     rocky = pyrocky.connect_to_rocky()
 
     from ansys.rocky.core.client import _ROCKY_VERSION
+
     global _ROCKY_VERSION
     assert _ROCKY_VERSION == expected_version
 

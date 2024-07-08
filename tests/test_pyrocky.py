@@ -26,6 +26,8 @@ import pytest
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
+from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
+from pathlib import Path
 
 
 @pytest.fixture()
@@ -120,6 +122,34 @@ def test_sequences_interface(rocky_session):
     # Test __del__
     del inlets_outlets[0]
     assert {e.GetName() for e in inlets_outlets} == {"Inlet2"}
+
+
+def test_export_toolkit(rocky_session, tmp_path):
+    rocky = pyrocky.connect_to_rocky()
+    project = rocky.api.CreateProject()
+
+    study = project.GetStudy()
+    particle = study.CreateParticle()
+
+    inlet_surface = study.CreateCircularSurface()
+    study.CreateParticleInlet(entry_point=inlet_surface, particle=particle)
+
+    domain = study.GetDomainSettings()
+    domain.DisableUseBoundaryLimits()
+    domain.SetCoordinateLimitsMaxValues((10, 1, 10))
+
+    solver = study.GetSolver()
+    solver.SetSimulationDuration(2)  # Simulate for 2 sec.
+
+    project.SaveProject(str(tmp_path / "rocky-testing-export.rocky"))
+    study.StartSimulation()
+
+    export_toolkit = study.GetExportToolkit()
+    assert isinstance(export_toolkit, ApiExportToolkitProxy)
+
+    stl_to_save = str(tmp_path / "particles_as_stl.stl")
+    export_toolkit.ExportParticleToStl(stl_to_save, 'Particle <1>')
+    assert Path(stl_to_save).is_file()
 
 
 def test_pyrocky_launch_multiple_servers():

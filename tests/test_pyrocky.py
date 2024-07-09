@@ -131,7 +131,7 @@ def test_export_toolkit(rocky_session, tmp_path):
 
     solver = study.GetSolver()
     solver.SetSimulationDuration(0.1)  # Simulate for 0.1 sec.
-    solver.SetTimeInterval(0.1, 's')  # With 0.1 sec as timestep.
+    solver.SetTimeInterval(0.1, "s")  # With 0.1 sec as timestep.
 
     project.SaveProject(str(tmp_path / "rocky-testing-export.rocky"))
     study.StartSimulation()

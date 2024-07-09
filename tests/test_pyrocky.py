@@ -19,6 +19,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import time
 from pathlib import Path
 
 import pytest
@@ -121,6 +122,8 @@ def test_export_toolkit(rocky_session, tmp_path):
 
     stl_to_save = str(tmp_path / "particles_as_stl.stl")
     export_toolkit.ExportParticleToStl(stl_to_save, "Particle <01>")
+
+    time.sleep(1)
     assert Path(stl_to_save).is_file()
 
 

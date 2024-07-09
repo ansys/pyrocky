@@ -125,6 +125,7 @@ def test_export_toolkit(rocky_session, tmp_path):
     inlets = study.GetInletsOutletsCollection()
 
     time.sleep(1)
+    project.SaveProject(str(tmp_path / "rocky-testing-export.rocky"))
 
     from os import listdir
     from os.path import isfile, join

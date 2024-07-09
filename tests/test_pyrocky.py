@@ -34,6 +34,18 @@ def rocky_session():
     rocky.close()
 
 
+@pytest.fixture()
+def rocky_cleanup(request):
+    def cleanup():
+        from ansys.rocky.core.client import _ROCKY_API
+        global _ROCKY_API
+
+        if _ROCKY_API is not None:
+            _ROCKY_API.close()
+
+    request.addfinalizer(cleanup)
+
+
 @pytest.mark.parametrize(
     "version, expected_version",
     [
@@ -41,7 +53,7 @@ def rocky_session():
         ("24.2", 240),
     ],
 )
-def test_minimal_simulation(version, expected_version, tmp_path):
+def test_minimal_simulation(version, expected_version, tmp_path, rocky_cleanup):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
@@ -85,7 +97,6 @@ def test_minimal_simulation(version, expected_version, tmp_path):
     pid_values = pid_gf.GetArray(time_step=-1)
     assert any(pid_values), "Particle ID should not be a zero-array"
     assert len(pid_values) > 20, "Too few values for the grid function"
-    rocky.close()
 
 
 def test_sequences_interface(rocky_session):

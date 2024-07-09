@@ -142,6 +142,7 @@ def test_export_toolkit(rocky_session, tmp_path):
 
     stl_to_save = str(tmp_path / "particles_as_stl.stl")
     export_toolkit.ExportParticleToStl(stl_to_save, "Particle <01>")
+    inlets = study.GetInletsOutletsCollection()
 
     time.sleep(1)
 
@@ -149,7 +150,7 @@ def test_export_toolkit(rocky_session, tmp_path):
     from os.path import isfile, join
 
     onlyfiles = [f for f in listdir(tmp_path)]
-    assert False, f"{onlyfiles}"
+    assert False, f"stl_filename:{stl_to_save}\nall_files:{onlyfiles}"
     assert Path(stl_to_save).is_file()
 
 

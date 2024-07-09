@@ -130,7 +130,8 @@ def test_export_toolkit(rocky_session, tmp_path):
     domain.SetCoordinateLimitsMaxValues((10, 1, 10))
 
     solver = study.GetSolver()
-    solver.SetSimulationDuration(2)  # Simulate for 2 sec.
+    solver.SetSimulationDuration(0.1)  # Simulate for 0.1 sec.
+    solver.SetTimeInterval(0.1, 's')  # With 0.1 sec as timestep.
 
     project.SaveProject(str(tmp_path / "rocky-testing-export.rocky"))
     study.StartSimulation()
@@ -139,7 +140,7 @@ def test_export_toolkit(rocky_session, tmp_path):
     assert isinstance(export_toolkit, ApiExportToolkitProxy)
 
     stl_to_save = str(tmp_path / "particles_as_stl.stl")
-    export_toolkit.ExportParticleToStl(stl_to_save, "Particle <1>")
+    export_toolkit.ExportParticleToStl(stl_to_save, "Particle <01>")
     assert Path(stl_to_save).is_file()
 
 

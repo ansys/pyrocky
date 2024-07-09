@@ -38,6 +38,7 @@ def rocky_session():
 def rocky_cleanup(request):
     def cleanup():
         from ansys.rocky.core.client import _ROCKY_API
+
         global _ROCKY_API
 
         if _ROCKY_API is not None:

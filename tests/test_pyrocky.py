@@ -37,9 +37,13 @@ def rocky_session():
     rocky.close()
 
 
-def _create_basic_project_with_results(rocky_api, project_filename, simulation_duration: float = 2, time_interval: float = 0.25):
-    """Helper to create a basic scenario. Returns the study proxy.
-    """
+def _create_basic_project_with_results(
+    rocky_api,
+    project_filename,
+    simulation_duration: float = 2,
+    time_interval: float = 0.25,
+):
+    """Helper to create a basic scenario. Returns the study proxy."""
     project = rocky_api.CreateProject()
     assert project, "No project created"
 
@@ -64,7 +68,9 @@ def _create_basic_project_with_results(rocky_api, project_filename, simulation_d
 
 def test_minimal_simulation(rocky_session, tmp_path):
     rocky = pyrocky.connect_to_rocky()
-    study = _create_basic_project_with_results(rocky.api, str(tmp_path / "rocky-testing.rocky"))
+    study = _create_basic_project_with_results(
+        rocky.api, str(tmp_path / "rocky-testing.rocky")
+    )
 
     seconds = study.GetTimeSet()
     assert seconds[-1] > 1.75
@@ -106,7 +112,12 @@ def test_sequences_interface(rocky_session):
 
 def test_export_toolkit(rocky_session, tmp_path):
     rocky = pyrocky.connect_to_rocky()
-    study = _create_basic_project_with_results(rocky.api, str(tmp_path / "rocky-testing-export.rocky"), simulation_duration=0.1, time_interval=0.1)
+    study = _create_basic_project_with_results(
+        rocky.api,
+        str(tmp_path / "rocky-testing-export.rocky"),
+        simulation_duration=0.1,
+        time_interval=0.1,
+    )
 
     export_toolkit = study.GetExportToolkit()
     assert isinstance(export_toolkit, ApiExportToolkitProxy)

@@ -58,7 +58,7 @@ def test_minimal_simulation(version, expected_version, tmp_path, rocky_cleanup):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
-    short_v = version.replace('.', '')
+    short_v = version.replace(".", "")
     exe_file = f"C:\\Program Files\\ANSYS Inc\\v{short_v}\\Rocky\\bin\\Rocky.exe"
     pyrocky.launch_rocky(exe_file)
     rocky = pyrocky.connect_to_rocky()

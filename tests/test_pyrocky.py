@@ -42,7 +42,7 @@ def rocky_cleanup(request):
         global _ROCKY_API
 
         if _ROCKY_API is not None:
-            _ROCKY_API.close()
+            _ROCKY_API.Exit()
 
     request.addfinalizer(cleanup)
 

@@ -19,9 +19,6 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-from pathlib import Path
-import time
-
 import pytest
 
 import ansys.rocky.core as pyrocky
@@ -118,7 +115,12 @@ def test_sequences_interface(rocky_session):
 
 def test_export_toolkit(rocky_session, tmp_path):
     rocky = pyrocky.connect_to_rocky()
-    study = _create_basic_project_with_results(rocky.api, str(tmp_path / "rocky-testing-export.rocky"), simulation_duration=0.1, time_interval=0.1)
+    study = create_basic_project_with_results(
+        rocky.api,
+        str(tmp_path / "rocky-testing-export.rocky"),
+        simulation_duration=0.1,
+        time_interval=0.1,
+    )
 
     export_toolkit = study.GetExportToolkit()
     assert isinstance(export_toolkit, ApiExportToolkitProxy)

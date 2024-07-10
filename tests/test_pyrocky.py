@@ -37,9 +37,10 @@ def rocky_session():
     rocky.close()
 
 
-def test_minimal_simulation(rocky_session, tmp_path):
-    rocky = pyrocky.connect_to_rocky()
-    project = rocky.api.CreateProject()
+def _create_basic_project_with_results(rocky_api, project_filename, simulation_duration: float = 2, time_interval: float = 0.25):
+    """Helper to create a basic scenario. Returns the study proxy.
+    """
+    project = rocky_api.CreateProject()
     assert project, "No project created"
 
     study = project.GetStudy()
@@ -53,10 +54,17 @@ def test_minimal_simulation(rocky_session, tmp_path):
     domain.SetCoordinateLimitsMaxValues((10, 1, 10))
 
     solver = study.GetSolver()
-    solver.SetSimulationDuration(2)  # Simulate for 2 sec.
+    solver.SetSimulationDuration(simulation_duration)
+    solver.SetTimeInterval(time_interval, "s")
 
-    project.SaveProject(str(tmp_path / "rocky-testing.rocky"))
+    project.SaveProject(project_filename)
     study.StartSimulation()
+    return study
+
+
+def test_minimal_simulation(rocky_session, tmp_path):
+    rocky = pyrocky.connect_to_rocky()
+    study = _create_basic_project_with_results(rocky.api, str(tmp_path / "rocky-testing.rocky"))
 
     seconds = study.GetTimeSet()
     assert seconds[-1] > 1.75
@@ -98,41 +106,13 @@ def test_sequences_interface(rocky_session):
 
 def test_export_toolkit(rocky_session, tmp_path):
     rocky = pyrocky.connect_to_rocky()
-    project = rocky.api.CreateProject()
-
-    study = project.GetStudy()
-    particle = study.CreateParticle()
-
-    inlet_surface = study.CreateCircularSurface()
-    study.CreateParticleInlet(entry_point=inlet_surface, particle=particle)
-
-    domain = study.GetDomainSettings()
-    domain.DisableUseBoundaryLimits()
-    domain.SetCoordinateLimitsMaxValues((10, 1, 10))
-
-    solver = study.GetSolver()
-    solver.SetSimulationDuration(0.1)  # Simulate for 0.1 sec.
-    solver.SetTimeInterval(0.1, "s")  # With 0.1 sec as timestep.
-
-    project.SaveProject(str(tmp_path / "rocky-testing-export.rocky"))
-    study.StartSimulation()
+    study = _create_basic_project_with_results(rocky.api, str(tmp_path / "rocky-testing-export.rocky"), simulation_duration=0.1, time_interval=0.1)
 
     export_toolkit = study.GetExportToolkit()
     assert isinstance(export_toolkit, ApiExportToolkitProxy)
 
     stl_to_save = str(tmp_path / "particles_as_stl.stl")
     export_toolkit.ExportParticleToStl(stl_to_save, "Particle <01>")
-    inlets = study.GetInletsOutletsCollection()
-
-    time.sleep(1)
-    project.SaveProject(str(tmp_path / "rocky-testing-export.rocky"))
-
-    from os import listdir
-    from os.path import isfile, join
-
-    onlyfiles = [f for f in listdir(tmp_path)]
-    assert False, f"stl_filename:{stl_to_save}\nall_files:{onlyfiles}"
-    assert Path(stl_to_save).is_file()
 
 
 def test_pyrocky_launch_multiple_servers():

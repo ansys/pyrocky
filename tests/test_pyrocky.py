@@ -19,9 +19,6 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-from pathlib import Path
-import time
-
 import pytest
 
 import ansys.rocky.core as pyrocky
@@ -37,7 +34,7 @@ def rocky_session():
     rocky.close()
 
 
-def _create_basic_project_with_results(
+def create_basic_project_with_results(
     rocky_api,
     project_filename,
     simulation_duration: float = 2,
@@ -68,7 +65,7 @@ def _create_basic_project_with_results(
 
 def test_minimal_simulation(rocky_session, tmp_path):
     rocky = pyrocky.connect_to_rocky()
-    study = _create_basic_project_with_results(
+    study = create_basic_project_with_results(
         rocky.api, str(tmp_path / "rocky-testing.rocky")
     )
 
@@ -112,7 +109,7 @@ def test_sequences_interface(rocky_session):
 
 def test_export_toolkit(rocky_session, tmp_path):
     rocky = pyrocky.connect_to_rocky()
-    study = _create_basic_project_with_results(
+    study = create_basic_project_with_results(
         rocky.api,
         str(tmp_path / "rocky-testing-export.rocky"),
         simulation_duration=0.1,

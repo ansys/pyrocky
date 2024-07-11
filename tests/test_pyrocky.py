@@ -34,19 +34,6 @@ def rocky_session():
     rocky.close()
 
 
-@pytest.fixture()
-def rocky_cleanup(request):
-    def cleanup():
-        from ansys.rocky.core.client import _ROCKY_API
-
-        global _ROCKY_API
-
-        if _ROCKY_API is not None:
-            _ROCKY_API.Exit()
-
-    request.addfinalizer(cleanup)
-
-
 @pytest.mark.parametrize(
     "version, expected_version",
     [
@@ -54,7 +41,7 @@ def rocky_cleanup(request):
         ("24.2", 240),
     ],
 )
-def test_minimal_simulation(version, expected_version, tmp_path, rocky_cleanup):
+def test_minimal_simulation(version, expected_version, tmp_path, request):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
@@ -62,6 +49,7 @@ def test_minimal_simulation(version, expected_version, tmp_path, rocky_cleanup):
     exe_file = f"C:\\Program Files\\ANSYS Inc\\v{short_v}\\Rocky\\bin\\Rocky.exe"
     pyrocky.launch_rocky(exe_file)
     rocky = pyrocky.connect_to_rocky()
+    request.addfinalizer(rocky.close)
 
     from ansys.rocky.core.client import _ROCKY_VERSION
 

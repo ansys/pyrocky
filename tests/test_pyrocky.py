@@ -34,6 +34,35 @@ def rocky_session():
     rocky.close()
 
 
+def create_basic_project_with_results(
+    rocky_api,
+    project_filename,
+    simulation_duration: float = 2,
+    time_interval: float = 0.25,
+):
+    """Helper to create a basic scenario. Returns the study proxy."""
+    project = rocky_api.CreateProject()
+    assert project, "No project created"
+
+    study = project.GetStudy()
+    particle = study.CreateParticle()
+
+    inlet_surface = study.CreateCircularSurface()
+    study.CreateParticleInlet(entry_point=inlet_surface, particle=particle)
+
+    domain = study.GetDomainSettings()
+    domain.DisableUseBoundaryLimits()
+    domain.SetCoordinateLimitsMaxValues((10, 1, 10))
+
+    solver = study.GetSolver()
+    solver.SetSimulationDuration(simulation_duration)
+    solver.SetTimeInterval(time_interval, "s")
+
+    project.SaveProject(project_filename)
+    study.StartSimulation()
+    return study
+
+
 @pytest.mark.parametrize(
     "version, expected_version",
     [
@@ -56,24 +85,9 @@ def test_minimal_simulation(version, expected_version, tmp_path, request):
     global _ROCKY_VERSION
     assert _ROCKY_VERSION == expected_version
 
-    project = rocky.api.CreateProject()
-    assert project, "No project created"
-
-    study = project.GetStudy()
-    particle = study.CreateParticle()
-
-    inlet_surface = study.CreateCircularSurface()
-    study.CreateParticleInlet(entry_point=inlet_surface, particle=particle)
-
-    domain = study.GetDomainSettings()
-    domain.DisableUseBoundaryLimits()
-    domain.SetCoordinateLimitsMaxValues((10, 1, 10))
-
-    solver = study.GetSolver()
-    solver.SetSimulationDuration(2)  # Simulate for 2 sec.
-
-    project.SaveProject(str(tmp_path / "rocky-testing.rocky"))
-    study.StartSimulation()
+    study = create_basic_project_with_results(
+        rocky.api, str(tmp_path / "rocky-testing.rocky")
+    )
 
     seconds = study.GetTimeSet()
     assert seconds[-1] > 1.75

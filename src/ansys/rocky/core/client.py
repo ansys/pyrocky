@@ -104,7 +104,7 @@ def _get_numerical_version(rocky_api: Pyro5.api.Proxy) -> int:
     assert rocky_api is not None, "API Proxy not initialized"
     try:
         # From 25.1 onwards we may use this to obtain the current rocky version.
-        rocky_version = _ROCKY_API.GetVersion().split(".")
+        rocky_version = rocky_api.GetVersion().split(".")
         return int(rocky_version[0] + rocky_version[1])  # major + minor
     except:
         # The rocky version is older than 25.1, the specific version is not really

@@ -19,12 +19,12 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
 import pytest
 
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
+from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
 
 @pytest.fixture()
@@ -34,9 +34,14 @@ def rocky_session():
     rocky.close()
 
 
-def test_minimal_simulation(rocky_session, tmp_path):
-    rocky = pyrocky.connect_to_rocky()
-    project = rocky.api.CreateProject()
+def create_basic_project_with_results(
+    rocky_api,
+    project_filename,
+    simulation_duration: float = 2,
+    time_interval: float = 0.25,
+):
+    """Helper to create a basic scenario. Returns the study proxy."""
+    project = rocky_api.CreateProject()
     assert project, "No project created"
 
     study = project.GetStudy()
@@ -50,10 +55,39 @@ def test_minimal_simulation(rocky_session, tmp_path):
     domain.SetCoordinateLimitsMaxValues((10, 1, 10))
 
     solver = study.GetSolver()
-    solver.SetSimulationDuration(2)  # Simulate for 2 sec.
+    solver.SetSimulationDuration(simulation_duration)
+    solver.SetTimeInterval(time_interval, "s")
 
-    project.SaveProject(str(tmp_path / "rocky-testing.rocky"))
+    project.SaveProject(project_filename)
     study.StartSimulation()
+    return study
+
+
+@pytest.mark.parametrize(
+    "version, expected_version",
+    [
+        ("25.1", 251),
+        ("24.2", 240),
+    ],
+)
+def test_minimal_simulation(version, expected_version, tmp_path, request):
+    """Minimal test to be run with all the supported Rocky version to ensure
+    minimal backwards compatibility.
+    """
+    short_v = version.replace(".", "")
+    exe_file = f"C:\\Program Files\\ANSYS Inc\\v{short_v}\\Rocky\\bin\\Rocky.exe"
+    pyrocky.launch_rocky(exe_file)
+    rocky = pyrocky.connect_to_rocky()
+    request.addfinalizer(rocky.close)
+
+    from ansys.rocky.core.client import _ROCKY_VERSION
+
+    global _ROCKY_VERSION
+    assert _ROCKY_VERSION == expected_version
+
+    study = create_basic_project_with_results(
+        rocky.api, str(tmp_path / "rocky-testing.rocky")
+    )
 
     seconds = study.GetTimeSet()
     assert seconds[-1] > 1.75
@@ -91,6 +125,22 @@ def test_sequences_interface(rocky_session):
     # Test __del__
     del inlets_outlets[0]
     assert {e.GetName() for e in inlets_outlets} == {"Inlet2"}
+
+
+def test_export_toolkit(rocky_session, tmp_path):
+    rocky = pyrocky.connect_to_rocky()
+    study = create_basic_project_with_results(
+        rocky.api,
+        str(tmp_path / "rocky-testing-export.rocky"),
+        simulation_duration=0.1,
+        time_interval=0.1,
+    )
+
+    export_toolkit = study.GetExportToolkit()
+    assert isinstance(export_toolkit, ApiExportToolkitProxy)
+
+    stl_to_save = str(tmp_path / "particles_as_stl.stl")
+    export_toolkit.ExportParticleToStl(stl_to_save, "Particle <01>")
 
 
 def test_pyrocky_launch_multiple_servers():

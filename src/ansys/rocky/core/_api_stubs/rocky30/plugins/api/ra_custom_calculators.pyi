@@ -42,14 +42,14 @@ class RACustomCurveAndGridProperty:
         output_unit: str = ...,
         domain: str = ...,
         scope: str = ...,
-        associations: Union[dict[str, str], None] = ...,
+        sources: Union[dict[str, str], None] = ...,
         expression: str = ...,
     ) -> None: ...
     def EditCustomCurve(
         self,
         edit_curve: str,
         new_name: Union[str, None] = ...,
-        associations: Union[dict[str, str], None] = ...,
+        sources: Union[dict[str, str], None] = ...,
         expression: Union[str, None] = ...,
     ) -> None: ...
     def RemoveCustomCurve(self, name: str) -> None: ...
@@ -59,14 +59,14 @@ class RACustomCurveAndGridProperty:
         property_type: str = ...,
         output_unit: str = ...,
         scope: str = ...,
-        associations: Union[dict[str, str], None] = ...,
+        sources: Union[dict[str, str], None] = ...,
         expression: str = ...,
     ) -> None: ...
     def EditCustomProperty(
         self,
         edit_property: str,
         new_name: Union[str, None] = ...,
-        associations: Union[dict[str, str], None] = ...,
+        sources: Union[dict[str, str], None] = ...,
         expression: Union[str, None] = ...,
     ) -> None: ...
     def RemoveCustomProperty(self, name: str) -> None: ...

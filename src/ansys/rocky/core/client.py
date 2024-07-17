@@ -27,6 +27,9 @@ from typing import Final
 
 import Pyro5.api
 
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application import (
+    RockyApiApplication,
+)
 from ansys.rocky.core.serializers import register_proxies
 
 DEFAULT_SERVER_PORT: Final[int] = 50615
@@ -80,7 +83,7 @@ class RockyClient:
         self._api_adapter = rocky_api
 
     @property
-    def api(self):
+    def api(self) -> RockyApiApplication:
         return self._api_adapter
 
     def close(self):

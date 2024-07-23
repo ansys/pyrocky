@@ -1,0 +1,183 @@
+
+
+.. py:class:: RATranslation(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+
+.. py:currentmodule:: RATranslation
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAcceleration`
+            - 
+          * - :py:attr:`~SetAcceleration`
+            - 
+          * - :py:attr:`~GetInput`
+            - 
+          * - :py:attr:`~SetInput`
+            - 
+          * - :py:attr:`~GetValidInputValues`
+            - 
+          * - :py:attr:`~GetFinalVelocity`
+            - 
+          * - :py:attr:`~SetFinalVelocity`
+            - 
+          * - :py:attr:`~GetVelocity`
+            - 
+          * - :py:attr:`~SetVelocity`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_translation import RATranslation
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetAcceleration(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetAcceleration(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetInput() -> str
+
+
+.. py:method:: SetInput(value: str) -> None
+
+
+.. py:method:: GetValidInputValues() -> List[str]
+
+
+.. py:method:: GetFinalVelocity(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetFinalVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetVelocity(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(name: str) -> None
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+

@@ -1,0 +1,146 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_time_selection_process
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_particle_time_selection_process
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RAParticleTimeSelectionProcess`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RAParticleTimeSelectionProcess
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAUserProcess`
+
+
+
+
+
+.. py:currentmodule:: RAParticleTimeSelectionProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetAbsoluteTimeRange`
+            - 
+          * - :py:attr:`~SetTimeRange`
+            - 
+          * - :py:attr:`~GetTimeRange`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_time_selection_process import RAParticleTimeSelectionProcess
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetAbsoluteTimeRange(initial_time, final_time, unit: str = ...) -> None
+
+
+.. py:method:: SetTimeRange(range_definition: _typeshed.Incomplete | None = ..., initial: _typeshed.Incomplete | None = ..., final: _typeshed.Incomplete | None = ..., unit: str = ...) -> None
+
+
+.. py:method:: GetTimeRange()
+
+
+
+
+
+

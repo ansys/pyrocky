@@ -1,0 +1,479 @@
+
+
+.. py:class:: RAMotionFrame(id, model_id: _typeshed.Incomplete | None = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion.RABaseMotionFrame`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+
+
+
+
+.. py:currentmodule:: RAMotionFrame
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~AddPendulumMotion`
+            - 
+          * - :py:attr:`~AddVibrationMotion`
+            - 
+          * - :py:attr:`~AddRotationMotion`
+            - 
+          * - :py:attr:`~AddTranslationMotion`
+            - 
+          * - :py:attr:`~ApplyTo`
+            - 
+          * - :py:attr:`~GetMotions`
+            - 
+          * - :py:attr:`~GetRotationAngle`
+            - 
+          * - :py:attr:`~SetRotationAngle`
+            - 
+          * - :py:attr:`~GetRelativeRotationVector`
+            - 
+          * - :py:attr:`~SetRelativeRotationVector`
+            - 
+          * - :py:attr:`~GetFbmMaxAngularLimits`
+            - 
+          * - :py:attr:`~SetFbmMaxAngularLimits`
+            - 
+          * - :py:attr:`~GetFbmMaxLinearLimits`
+            - 
+          * - :py:attr:`~SetFbmMaxLinearLimits`
+            - 
+          * - :py:attr:`~GetFbmMinAngularLimits`
+            - 
+          * - :py:attr:`~SetFbmMinAngularLimits`
+            - 
+          * - :py:attr:`~GetFbmMinLinearLimits`
+            - 
+          * - :py:attr:`~SetFbmMinLinearLimits`
+            - 
+          * - :py:attr:`~GetEnableFbmAngularLimits`
+            - 
+          * - :py:attr:`~SetEnableFbmAngularLimits`
+            - 
+          * - :py:attr:`~GetEnableFbmLinearLimits`
+            - 
+          * - :py:attr:`~SetEnableFbmLinearLimits`
+            - 
+          * - :py:attr:`~GetEnablePeriodicMotion`
+            - 
+          * - :py:attr:`~SetEnablePeriodicMotion`
+            - 
+          * - :py:attr:`~GetKeepInPlace`
+            - 
+          * - :py:attr:`~SetKeepInPlace`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetPeriodicMotionPeriod`
+            - 
+          * - :py:attr:`~SetPeriodicMotionPeriod`
+            - 
+          * - :py:attr:`~GetPeriodicMotionStartTime`
+            - 
+          * - :py:attr:`~SetPeriodicMotionStartTime`
+            - 
+          * - :py:attr:`~GetPeriodicMotionStopTime`
+            - 
+          * - :py:attr:`~SetPeriodicMotionStopTime`
+            - 
+          * - :py:attr:`~GetRelativePosition`
+            - 
+          * - :py:attr:`~SetRelativePosition`
+            - 
+          * - :py:attr:`~NewFrame`
+            - 
+          * - :py:attr:`~NewConeCrusherFrame`
+            - 
+          * - :py:attr:`~IterMotionFrames`
+            - 
+          * - :py:attr:`~GetMotionFrame`
+            - 
+          * - :py:attr:`~RemoveFrame`
+            - 
+          * - :py:attr:`~GetParentMotionFrame`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+          * - :py:attr:`~GetGridFunction`
+            - 
+          * - :py:attr:`~GetGeometry`
+            - 
+          * - :py:attr:`~GetTimeStatistics`
+            - 
+          * - :py:attr:`~CreateTransientCurveOutputVariable`
+            - 
+          * - :py:attr:`~CreateCurveOutputVariable`
+            - 
+          * - :py:attr:`~CreateGridFunctionStatisticOutputVariable`
+            - 
+          * - :py:attr:`~GetOutputVariableValue`
+            - 
+          * - :py:attr:`~RemoveOutputVariable`
+            - 
+          * - :py:attr:`~RemoveProcess`
+            - 
+          * - :py:attr:`~GetMeshColoring`
+            - 
+          * - :py:attr:`~AddCustomCurve`
+            - 
+          * - :py:attr:`~EditCustomCurve`
+            - 
+          * - :py:attr:`~RemoveCustomCurve`
+            - 
+          * - :py:attr:`~AddCustomProperty`
+            - 
+          * - :py:attr:`~EditCustomProperty`
+            - 
+          * - :py:attr:`~RemoveCustomProperty`
+            - 
+          * - :py:attr:`~GetOrientation`
+            - 
+          * - :py:attr:`~SetOrientation`
+            - 
+          * - :py:attr:`~SetOrientationFromAngles`
+            - 
+          * - :py:attr:`~SetOrientationFromAngleAndVector`
+            - 
+          * - :py:attr:`~SetOrientationFromBasisVector`
+            - 
+          * - :py:attr:`~GetOrientationFromAngles`
+            - 
+          * - :py:attr:`~GetOrientationFromAngleAndVector`
+            - 
+          * - :py:attr:`~GetOrientationFromBasisVector`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+          * - :py:attr:`~VALID_OPERATIONS`
+            - 
+          * - :py:attr:`~VALID_TIME_RANGE_DEFINITIONS`
+            - 
+          * - :py:attr:`~VALID_DOMAIN_RANGE`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame import RAMotionFrame
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_OPERATIONS
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_TIME_RANGE_DEFINITIONS
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_DOMAIN_RANGE
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: AddPendulumMotion(start_time=..., stop_time=..., initial_frequency=..., angular_initial_amplitude=..., direction=..., angular_initial_phase=..., frequency_variation=..., angular_amplitude_variation=...)
+
+
+.. py:method:: AddVibrationMotion(start_time=..., stop_time=..., initial_frequency=..., initial_amplitude=..., direction=..., frequency_variation=..., amplitude_variation=...)
+
+
+.. py:method:: AddRotationMotion(start_time=..., stop_time=..., angular_velocity=..., angular_acceleration=...)
+
+
+.. py:method:: AddTranslationMotion(start_time=..., stop_time=..., velocity=..., acceleration=..., define_as: str = ..., final_velocity=...)
+
+
+.. py:method:: ApplyTo(obj) -> None
+
+
+.. py:method:: GetMotions() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_list.RAMotionList
+
+
+.. py:method:: GetRotationAngle(unit: Union[str, None] = ...) -> float
+
+
+.. py:method:: SetRotationAngle(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: GetRelativeRotationVector(unit: Union[str, None] = ...) -> list[float]
+
+
+.. py:method:: SetRelativeRotationVector(values: collections.abc.Sequence[Union[str, float]], unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: GetFbmMaxAngularLimits(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetFbmMaxAngularLimits(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetFbmMaxLinearLimits(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetFbmMaxLinearLimits(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetFbmMinAngularLimits(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetFbmMinAngularLimits(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetFbmMinLinearLimits(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetFbmMinLinearLimits(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetEnableFbmAngularLimits() -> bool
+
+
+.. py:method:: SetEnableFbmAngularLimits(value: bool) -> None
+
+
+.. py:method:: GetEnableFbmLinearLimits() -> bool
+
+
+.. py:method:: SetEnableFbmLinearLimits(value: bool) -> None
+
+
+.. py:method:: GetEnablePeriodicMotion() -> bool
+
+
+.. py:method:: SetEnablePeriodicMotion(value: bool) -> None
+
+
+.. py:method:: GetKeepInPlace() -> int
+
+
+.. py:method:: SetKeepInPlace(value: Union[str, int]) -> None
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(value: str) -> None
+
+
+.. py:method:: GetPeriodicMotionPeriod(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetPeriodicMotionPeriod(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetPeriodicMotionStartTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetPeriodicMotionStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetPeriodicMotionStopTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetPeriodicMotionStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetRelativePosition(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetRelativePosition(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: NewFrame() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame.RAMotionFrame
+
+
+.. py:method:: NewConeCrusherFrame()
+
+
+.. py:method:: IterMotionFrames() -> collections.abc.Generator[_typeshed.Incomplete, None, None]
+
+
+.. py:method:: GetMotionFrame(frame_name)
+
+
+.. py:method:: RemoveFrame(motion_frame) -> None
+
+
+.. py:method:: GetParentMotionFrame()
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+.. py:method:: GetGridFunction(grid_function_name, simulation_name: _typeshed.Incomplete | None = ..., translated: bool = ...)
+
+
+.. py:method:: GetGeometry(time_step: str = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall.RAWall
+
+
+.. py:method:: GetTimeStatistics() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatistics
+
+
+.. py:method:: CreateTransientCurveOutputVariable(curve_name: str, operation: str = ..., time_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ..., domain_range: str = ..., initial_domain_range: float = ..., final_domain_range: float = ..., domain_unit: Union[str, None] = ...)
+
+
+.. py:method:: CreateCurveOutputVariable(curve_name: str, operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...)
+
+
+.. py:method:: CreateGridFunctionStatisticOutputVariable(grid_function_name: str, operation: str = ..., statistic_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...) -> str
+
+
+.. py:method:: GetOutputVariableValue(variable_name: str) -> barril.units.Scalar
+
+
+.. py:method:: RemoveOutputVariable(variable_name: str) -> None
+
+
+.. py:method:: RemoveProcess() -> None
+
+
+.. py:method:: GetMeshColoring(window: Union[str, type[kraken20.plugins.api.ka_workspace_window.KAWorkspaceWindow]]) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.RAMeshColoring
+
+
+.. py:method:: AddCustomCurve(name: str, curve_type: str = ..., output_unit: str = ..., domain: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+.. py:method:: EditCustomCurve(edit_curve: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+.. py:method:: RemoveCustomCurve(name: str) -> None
+
+
+.. py:method:: AddCustomProperty(name: str, property_type: str = ..., output_unit: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+.. py:method:: EditCustomProperty(edit_property: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+.. py:method:: RemoveCustomProperty(name: str) -> None
+
+
+.. py:method:: GetOrientation(unit: str = ...) -> rocky30.base_types.Tuple3F
+
+
+.. py:method:: SetOrientation(rotation: rocky30.base_types.Tuple3F, unit: str = ...) -> None
+
+
+.. py:method:: SetOrientationFromAngles(rotation: rocky30.base_types.Tuple3F, unit: str = ..., local_angles: bool = ..., order: str = ...) -> None
+
+
+.. py:method:: SetOrientationFromAngleAndVector(angle: float, vector: rocky30.base_types.Tuple3F, unit: str = ...) -> None
+
+
+.. py:method:: SetOrientationFromBasisVector(vector_x: rocky30.base_types.Tuple3F, vector_y: rocky30.base_types.Tuple3F, vector_z: rocky30.base_types.Tuple3F) -> None
+
+
+.. py:method:: GetOrientationFromAngles(unit: str = ...) -> rocky30.base_types.Tuple3F
+
+
+.. py:method:: GetOrientationFromAngleAndVector(unit: str = ...) -> tuple[float, rocky30.base_types.Tuple3F]
+
+
+.. py:method:: GetOrientationFromBasisVector() -> tuple[rocky30.base_types.Tuple3F, rocky30.base_types.Tuple3F, rocky30.base_types.Tuple3F]
+
+
+

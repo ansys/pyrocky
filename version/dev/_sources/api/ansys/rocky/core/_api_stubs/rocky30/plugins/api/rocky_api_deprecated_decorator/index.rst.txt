@@ -1,0 +1,65 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_deprecated_decorator
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: rocky_api_deprecated_decorator
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ApiDeprecated`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: ApiDeprecated(new_name: str, release_version: str, show_error: bool = ...) -> collections.abc.Callable
+
+
+
+

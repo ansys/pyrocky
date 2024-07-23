@@ -1,0 +1,273 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_outlet
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_outlet
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RAOutlet`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RAOutlet(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+
+.. py:currentmodule:: RAOutlet
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetEnabledForParticles`
+            - 
+          * - :py:attr:`~SetEnabledForParticles`
+            - 
+          * - :py:attr:`~GetEnabledForSph`
+            - 
+          * - :py:attr:`~SetEnabledForSph`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetPressure`
+            - 
+          * - :py:attr:`~SetPressure`
+            - 
+          * - :py:attr:`~GetPrescribedPressureEnabled`
+            - 
+          * - :py:attr:`~SetPrescribedPressureEnabled`
+            - 
+          * - :py:attr:`~EnablePrescribedPressure`
+            - 
+          * - :py:attr:`~DisablePrescribedPressure`
+            - 
+          * - :py:attr:`~IsPrescribedPressureEnabled`
+            - 
+          * - :py:attr:`~GetExitPoint`
+            - 
+          * - :py:attr:`~SetExitPoint`
+            - 
+          * - :py:attr:`~GetAvailableExitPoints`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_outlet import RAOutlet
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetEnabledForParticles() -> bool
+
+
+.. py:method:: SetEnabledForParticles(value: bool) -> None
+
+
+.. py:method:: GetEnabledForSph() -> bool
+
+
+.. py:method:: SetEnabledForSph(value: bool) -> None
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(value: str) -> None
+
+
+.. py:method:: GetPressure(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetPressure(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetPrescribedPressureEnabled() -> bool
+
+
+.. py:method:: SetPrescribedPressureEnabled(value: bool) -> None
+
+
+.. py:method:: EnablePrescribedPressure() -> None
+
+
+.. py:method:: DisablePrescribedPressure() -> None
+
+
+.. py:method:: IsPrescribedPressureEnabled() -> bool
+
+
+.. py:method:: GetExitPoint()
+
+
+.. py:method:: SetExitPoint(value) -> None
+
+
+.. py:method:: GetAvailableExitPoints()
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+
+
+
+

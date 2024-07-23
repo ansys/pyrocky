@@ -1,0 +1,91 @@
+
+
+.. py:class:: RAEulerianStatistics
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAUserProcess`
+
+
+
+
+
+.. py:currentmodule:: RAEulerianStatistics
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDivisions`
+            - 
+          * - :py:attr:`~SetDivisions`
+            - 
+          * - :py:attr:`~GetParticleGridFunctionNames`
+            - 
+          * - :py:attr:`~GetAvailableOperations`
+            - 
+          * - :py:attr:`~CreateEulerianGridFunction`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_eulerian_statistics import RAEulerianStatistics
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetDivisions()
+
+
+.. py:method:: SetDivisions(divisions) -> None
+
+
+.. py:method:: GetParticleGridFunctionNames()
+
+
+.. py:method:: GetAvailableOperations()
+
+
+.. py:method:: CreateEulerianGridFunction(operation_name, value_name, weight_name: _typeshed.Incomplete | None = ...)
+
+
+

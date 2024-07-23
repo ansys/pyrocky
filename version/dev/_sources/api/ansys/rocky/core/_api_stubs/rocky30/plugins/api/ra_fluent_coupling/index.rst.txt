@@ -1,0 +1,911 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_fluent_coupling
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RAFluentOneWayCoupling`
+            - 
+
+
+          * - :py:obj:`~RAFluentTwoWayCoupling`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RAFluentOneWayCoupling
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling`
+
+
+
+
+
+.. py:currentmodule:: RAFluentOneWayCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetupStoreFiles`
+            - 
+          * - :py:attr:`~GetAvailableCoupledBoundaryNames`
+            - 
+          * - :py:attr:`~CreateCoupledBoundaries`
+            - 
+          * - :py:attr:`~GetIsOneWayPeriodic`
+            - 
+          * - :py:attr:`~SetIsOneWayPeriodic`
+            - 
+          * - :py:attr:`~GetOverwriteCfdUpdateDistance`
+            - 
+          * - :py:attr:`~SetOverwriteCfdUpdateDistance`
+            - 
+          * - :py:attr:`~GetStartTime`
+            - 
+          * - :py:attr:`~SetStartTime`
+            - 
+          * - :py:attr:`~GetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~SetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~GetUserCfdUpdateDistance`
+            - 
+          * - :py:attr:`~SetUserCfdUpdateDistance`
+            - 
+          * - :py:attr:`~GetCFDParametersList`
+            - 
+          * - :py:attr:`~SetPartIdIfValid`
+            - 
+          * - :py:attr:`~GetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~SetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~GetDragLaw`
+            - 
+          * - :py:attr:`~SetDragLaw`
+            - 
+          * - :py:attr:`~GetLiftLaw`
+            - 
+          * - :py:attr:`~SetLiftLaw`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~GetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~GetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~GetTorqueLaw`
+            - 
+          * - :py:attr:`~SetTorqueLaw`
+            - 
+          * - :py:attr:`~GetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~SetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~GetVirtualMassLaw`
+            - 
+          * - :py:attr:`~SetVirtualMassLaw`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling import RAFluentOneWayCoupling
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetupStoreFiles(filename) -> None
+
+
+.. py:method:: GetAvailableCoupledBoundaryNames() -> collections.abc.Iterable[str]
+
+
+.. py:method:: CreateCoupledBoundaries(coupled_boundary_names: list[str]) -> None
+
+
+.. py:method:: GetIsOneWayPeriodic() -> bool
+
+
+.. py:method:: SetIsOneWayPeriodic(value: bool) -> None
+
+
+.. py:method:: GetOverwriteCfdUpdateDistance() -> bool
+
+
+.. py:method:: SetOverwriteCfdUpdateDistance(value: bool) -> None
+
+
+.. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetUseTurbulentDispersion() -> bool
+
+
+.. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+
+.. py:method:: GetUserCfdUpdateDistance(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetUserCfdUpdateDistance(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetCFDParametersList()
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+
+.. py:method:: GetConvectiveHeatTransferLaw()
+
+
+.. py:method:: SetConvectiveHeatTransferLaw(value) -> None
+
+
+.. py:method:: GetDragLaw()
+
+
+.. py:method:: SetDragLaw(value) -> None
+
+
+.. py:method:: GetLiftLaw()
+
+
+.. py:method:: SetLiftLaw(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK1()
+
+
+.. py:method:: SetMorsiAndAlexanderK1(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK2()
+
+
+.. py:method:: SetMorsiAndAlexanderK2(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK3()
+
+
+.. py:method:: SetMorsiAndAlexanderK3(value) -> None
+
+
+.. py:method:: GetSyamlalObrienC1()
+
+
+.. py:method:: SetSyamlalObrienC1(value) -> None
+
+
+.. py:method:: GetSyamlalObrienD1()
+
+
+.. py:method:: SetSyamlalObrienD1(value) -> None
+
+
+.. py:method:: GetTorqueLaw()
+
+
+.. py:method:: SetTorqueLaw(value) -> None
+
+
+.. py:method:: GetUseUserDefinedConstants()
+
+
+.. py:method:: SetUseUserDefinedConstants(value) -> None
+
+
+.. py:method:: GetVirtualMassLaw()
+
+
+.. py:method:: SetVirtualMassLaw(value) -> None
+
+
+
+
+
+
+.. py:class:: RAFluentTwoWayCoupling
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling`
+
+
+
+
+
+.. py:currentmodule:: RAFluentTwoWayCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetPartIdIfValid`
+            - 
+          * - :py:attr:`~GetFluentReleases`
+            - 
+          * - :py:attr:`~SetupDatFilename`
+            - 
+          * - :py:attr:`~StartFluent`
+            - 
+          * - :py:attr:`~IsFluentRunning`
+            - 
+          * - :py:attr:`~CloseFluent`
+            - 
+          * - :py:attr:`~UpdateFluentInfo`
+            - 
+          * - :py:attr:`~SetupStoreFiles`
+            - 
+          * - :py:attr:`~GetFluentVersion`
+            - 
+          * - :py:attr:`~SetFluentVersion`
+            - 
+          * - :py:attr:`~GetMaximumVolumeFractionTarget`
+            - 
+          * - :py:attr:`~SetMaximumVolumeFractionTarget`
+            - 
+          * - :py:attr:`~GetAvailableCoupledBoundaryNames`
+            - 
+          * - :py:attr:`~CreateCoupledBoundaries`
+            - 
+          * - :py:attr:`~GetAbsoluteValue`
+            - 
+          * - :py:attr:`~SetAbsoluteValue`
+            - 
+          * - :py:attr:`~GetMaximumIterations`
+            - 
+          * - :py:attr:`~SetMaximumIterations`
+            - 
+          * - :py:attr:`~GetMappingMethod`
+            - 
+          * - :py:attr:`~SetMappingMethod`
+            - 
+          * - :py:attr:`~GetValidMappingMethodValues`
+            - 
+          * - :py:attr:`~GetAveragingMethod`
+            - 
+          * - :py:attr:`~SetAveragingMethod`
+            - 
+          * - :py:attr:`~GetValidAveragingMethodValues`
+            - 
+          * - :py:attr:`~GetAveragingRadiusType`
+            - 
+          * - :py:attr:`~SetAveragingRadiusType`
+            - 
+          * - :py:attr:`~GetValidAveragingRadiusTypeValues`
+            - 
+          * - :py:attr:`~GetSolidsMaximumVolumeFractionTarget`
+            - 
+          * - :py:attr:`~SetSolidsMaximumVolumeFractionTarget`
+            - 
+          * - :py:attr:`~GetVolumeFractionTarget`
+            - 
+          * - :py:attr:`~SetVolumeFractionTarget`
+            - 
+          * - :py:attr:`~GetCouplingFilesKept`
+            - 
+          * - :py:attr:`~SetCouplingFilesKept`
+            - 
+          * - :py:attr:`~GetDecompositionFactor`
+            - 
+          * - :py:attr:`~SetDecompositionFactor`
+            - 
+          * - :py:attr:`~GetFluentAdditionalArgs`
+            - 
+          * - :py:attr:`~SetFluentAdditionalArgs`
+            - 
+          * - :py:attr:`~GetFluentExecutionMode`
+            - 
+          * - :py:attr:`~SetFluentExecutionMode`
+            - 
+          * - :py:attr:`~GetValidFluentExecutionModeValues`
+            - 
+          * - :py:attr:`~GetFluentOutputFrequencyMultiplier`
+            - 
+          * - :py:attr:`~SetFluentOutputFrequencyMultiplier`
+            - 
+          * - :py:attr:`~GetFluentSolverProcesses`
+            - 
+          * - :py:attr:`~SetFluentSolverProcesses`
+            - 
+          * - :py:attr:`~GetFractionParticleSize`
+            - 
+          * - :py:attr:`~SetFractionParticleSize`
+            - 
+          * - :py:attr:`~GetMaximumResidualTolerance`
+            - 
+          * - :py:attr:`~SetMaximumResidualTolerance`
+            - 
+          * - :py:attr:`~GetNumberOfSubsteps`
+            - 
+          * - :py:attr:`~SetNumberOfSubsteps`
+            - 
+          * - :py:attr:`~GetOverwriteCfdUpdateDistance`
+            - 
+          * - :py:attr:`~SetOverwriteCfdUpdateDistance`
+            - 
+          * - :py:attr:`~GetUseDatInitialization`
+            - 
+          * - :py:attr:`~SetUseDatInitialization`
+            - 
+          * - :py:attr:`~GetSubstepping`
+            - 
+          * - :py:attr:`~SetSubstepping`
+            - 
+          * - :py:attr:`~EnableSubstepping`
+            - 
+          * - :py:attr:`~DisableSubstepping`
+            - 
+          * - :py:attr:`~IsSubsteppingEnabled`
+            - 
+          * - :py:attr:`~GetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~SetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~GetUserCfdUpdateDistance`
+            - 
+          * - :py:attr:`~SetUserCfdUpdateDistance`
+            - 
+          * - :py:attr:`~GetCFDParametersList`
+            - 
+          * - :py:attr:`~GetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~SetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~GetDragLaw`
+            - 
+          * - :py:attr:`~SetDragLaw`
+            - 
+          * - :py:attr:`~GetLiftLaw`
+            - 
+          * - :py:attr:`~SetLiftLaw`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~GetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~GetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~GetTorqueLaw`
+            - 
+          * - :py:attr:`~SetTorqueLaw`
+            - 
+          * - :py:attr:`~GetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~SetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~GetVirtualMassLaw`
+            - 
+          * - :py:attr:`~SetVirtualMassLaw`
+            - 
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~fluent_release`
+            - 
+          * - :py:attr:`~fluent_phases`
+            - 
+          * - :py:attr:`~fluent_rocky_phase`
+            - 
+          * - :py:attr:`~fluent_solver_processes`
+            - 
+          * - :py:attr:`~use_dat_initialization`
+            - 
+          * - :py:attr:`~fluent_output_frequency_multiplier`
+            - 
+          * - :py:attr:`~coupling_files_kept`
+            - 
+          * - :py:attr:`~fluent_time_step`
+            - 
+          * - :py:attr:`~additional_input_variables`
+            - 
+          * - :py:attr:`~additional_output_variables`
+            - 
+          * - :py:attr:`~disabled_input_variables`
+            - 
+          * - :py:attr:`~disabled_output_variables`
+            - 
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~dat_filename`
+            - 
+          * - :py:attr:`~cas_filename`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling import RAFluentTwoWayCoupling
+
+Property detail
+---------------
+.. py:property:: fluent_release
+
+
+.. py:property:: fluent_phases
+
+
+.. py:property:: fluent_rocky_phase
+
+
+.. py:property:: fluent_solver_processes
+
+
+.. py:property:: use_dat_initialization
+
+
+.. py:property:: fluent_output_frequency_multiplier
+
+
+.. py:property:: coupling_files_kept
+
+
+.. py:property:: fluent_time_step
+
+
+.. py:property:: additional_input_variables
+
+
+.. py:property:: additional_output_variables
+
+
+.. py:property:: disabled_input_variables
+
+
+.. py:property:: disabled_output_variables
+
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: dat_filename
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: cas_filename
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+
+.. py:method:: GetFluentReleases()
+
+
+.. py:method:: SetupDatFilename(dat_filename)
+
+
+.. py:method:: StartFluent() -> None
+
+
+.. py:method:: IsFluentRunning()
+
+
+.. py:method:: CloseFluent() -> None
+
+
+.. py:method:: UpdateFluentInfo() -> None
+
+
+.. py:method:: SetupStoreFiles(cas_filename, case_config: _typeshed.Incomplete | None = ...) -> None
+
+
+.. py:method:: GetFluentVersion()
+
+
+.. py:method:: SetFluentVersion(fluent_version) -> None
+
+
+.. py:method:: GetMaximumVolumeFractionTarget()
+
+
+.. py:method:: SetMaximumVolumeFractionTarget(value) -> None
+
+
+.. py:method:: GetAvailableCoupledBoundaryNames() -> collections.abc.Iterable[str]
+
+
+.. py:method:: CreateCoupledBoundaries(coupled_boundary_names: list[str]) -> None
+
+
+.. py:method:: GetAbsoluteValue(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetAbsoluteValue(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMaximumIterations() -> int
+
+
+.. py:method:: SetMaximumIterations(value: Union[str, int]) -> None
+
+
+.. py:method:: GetMappingMethod() -> str
+
+
+.. py:method:: SetMappingMethod(value: str) -> None
+
+
+.. py:method:: GetValidMappingMethodValues() -> List[str]
+
+
+.. py:method:: GetAveragingMethod() -> str
+
+
+.. py:method:: SetAveragingMethod(value: str)
+
+
+.. py:method:: GetValidAveragingMethodValues() -> List[str]
+
+
+.. py:method:: GetAveragingRadiusType() -> str
+
+
+.. py:method:: SetAveragingRadiusType(value: str) -> None
+
+
+.. py:method:: GetValidAveragingRadiusTypeValues() -> List[str]
+
+
+.. py:method:: GetSolidsMaximumVolumeFractionTarget() -> float
+
+
+.. py:method:: SetSolidsMaximumVolumeFractionTarget(value: Union[str, float]) -> None
+
+
+.. py:method:: GetVolumeFractionTarget() -> float
+
+
+.. py:method:: SetVolumeFractionTarget(value: float) -> None
+
+
+.. py:method:: GetCouplingFilesKept() -> int
+
+
+.. py:method:: SetCouplingFilesKept(value: Union[str, int]) -> None
+
+
+.. py:method:: GetDecompositionFactor() -> float
+
+
+.. py:method:: SetDecompositionFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetFluentAdditionalArgs() -> str
+
+
+.. py:method:: SetFluentAdditionalArgs(value: str) -> None
+
+
+.. py:method:: GetFluentExecutionMode() -> str
+
+
+.. py:method:: SetFluentExecutionMode(value: str) -> None
+
+
+.. py:method:: GetValidFluentExecutionModeValues() -> List[str]
+
+
+.. py:method:: GetFluentOutputFrequencyMultiplier() -> int
+
+
+.. py:method:: SetFluentOutputFrequencyMultiplier(value: Union[str, int]) -> None
+
+
+.. py:method:: GetFluentSolverProcesses() -> int
+
+
+.. py:method:: SetFluentSolverProcesses(value: Union[str, int]) -> None
+
+
+.. py:method:: GetFractionParticleSize(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetFractionParticleSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMaximumResidualTolerance() -> float
+
+
+.. py:method:: SetMaximumResidualTolerance(value: Union[str, float]) -> None
+
+
+.. py:method:: GetNumberOfSubsteps() -> int
+
+
+.. py:method:: SetNumberOfSubsteps(value: Union[str, int]) -> None
+
+
+.. py:method:: GetOverwriteCfdUpdateDistance() -> bool
+
+
+.. py:method:: SetOverwriteCfdUpdateDistance(value: bool) -> None
+
+
+.. py:method:: GetUseDatInitialization() -> bool
+
+
+.. py:method:: SetUseDatInitialization(value: bool) -> None
+
+
+.. py:method:: GetSubstepping() -> bool
+
+
+.. py:method:: SetSubstepping(value: bool) -> None
+
+
+.. py:method:: EnableSubstepping() -> None
+
+
+.. py:method:: DisableSubstepping() -> None
+
+
+.. py:method:: IsSubsteppingEnabled() -> bool
+
+
+.. py:method:: GetUseTurbulentDispersion() -> bool
+
+
+.. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+
+.. py:method:: GetUserCfdUpdateDistance(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetUserCfdUpdateDistance(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetCFDParametersList()
+
+
+.. py:method:: GetConvectiveHeatTransferLaw()
+
+
+.. py:method:: SetConvectiveHeatTransferLaw(value) -> None
+
+
+.. py:method:: GetDragLaw()
+
+
+.. py:method:: SetDragLaw(value) -> None
+
+
+.. py:method:: GetLiftLaw()
+
+
+.. py:method:: SetLiftLaw(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK1()
+
+
+.. py:method:: SetMorsiAndAlexanderK1(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK2()
+
+
+.. py:method:: SetMorsiAndAlexanderK2(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK3()
+
+
+.. py:method:: SetMorsiAndAlexanderK3(value) -> None
+
+
+.. py:method:: GetSyamlalObrienC1()
+
+
+.. py:method:: SetSyamlalObrienC1(value) -> None
+
+
+.. py:method:: GetSyamlalObrienD1()
+
+
+.. py:method:: SetSyamlalObrienD1(value) -> None
+
+
+.. py:method:: GetTorqueLaw()
+
+
+.. py:method:: SetTorqueLaw(value) -> None
+
+
+.. py:method:: GetUseUserDefinedConstants()
+
+
+.. py:method:: SetUseUserDefinedConstants(value) -> None
+
+
+.. py:method:: GetVirtualMassLaw()
+
+
+.. py:method:: SetVirtualMassLaw(value) -> None
+
+
+
+
+
+

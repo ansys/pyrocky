@@ -1,0 +1,263 @@
+
+
+.. py:class:: RAFluentSemiResolvedCoupling(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+
+.. py:currentmodule:: RAFluentSemiResolvedCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetPartIdIfValid`
+            - 
+          * - :py:attr:`~SetupDatFilename`
+            - 
+          * - :py:attr:`~SetupStoreFiles`
+            - 
+          * - :py:attr:`~GetFluentReleases`
+            - 
+          * - :py:attr:`~GetFluentVersion`
+            - 
+          * - :py:attr:`~SetFluentVersion`
+            - 
+          * - :py:attr:`~GetConvergenceCriteria`
+            - 
+          * - :py:attr:`~SetConvergenceCriteria`
+            - 
+          * - :py:attr:`~GetCouplingFilesKept`
+            - 
+          * - :py:attr:`~SetCouplingFilesKept`
+            - 
+          * - :py:attr:`~GetFluentAdditionalArgs`
+            - 
+          * - :py:attr:`~SetFluentAdditionalArgs`
+            - 
+          * - :py:attr:`~GetFluentExecutionMode`
+            - 
+          * - :py:attr:`~SetFluentExecutionMode`
+            - 
+          * - :py:attr:`~GetValidFluentExecutionModeValues`
+            - 
+          * - :py:attr:`~GetFluentOutputFrequencyMultiplier`
+            - 
+          * - :py:attr:`~SetFluentOutputFrequencyMultiplier`
+            - 
+          * - :py:attr:`~GetFluentSolverProcesses`
+            - 
+          * - :py:attr:`~SetFluentSolverProcesses`
+            - 
+          * - :py:attr:`~GetIntegralCoefficient`
+            - 
+          * - :py:attr:`~SetIntegralCoefficient`
+            - 
+          * - :py:attr:`~GetProportionalCoefficient`
+            - 
+          * - :py:attr:`~SetProportionalCoefficient`
+            - 
+          * - :py:attr:`~GetUseDatInitialization`
+            - 
+          * - :py:attr:`~SetUseDatInitialization`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_semi_resolved_coupling import RAFluentSemiResolvedCoupling
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+
+.. py:method:: SetupDatFilename(dat_filename: str) -> bool
+
+
+.. py:method:: SetupStoreFiles(cas_filename: str, case_config: Optional[rocky30coupling.fluent.io.fluent_cas_description.FluentCaseConfig] = ...) -> None
+
+
+.. py:method:: GetFluentReleases() -> list[str]
+
+
+.. py:method:: GetFluentVersion() -> str
+
+
+.. py:method:: SetFluentVersion(fluent_version: str) -> None
+
+
+.. py:method:: GetConvergenceCriteria() -> float
+
+
+.. py:method:: SetConvergenceCriteria(value: Union[str, float]) -> None
+
+
+.. py:method:: GetCouplingFilesKept() -> int
+
+
+.. py:method:: SetCouplingFilesKept(value: Union[str, int]) -> None
+
+
+.. py:method:: GetFluentAdditionalArgs() -> str
+
+
+.. py:method:: SetFluentAdditionalArgs(value: str) -> None
+
+
+.. py:method:: GetFluentExecutionMode() -> str
+
+
+.. py:method:: SetFluentExecutionMode(value: str) -> None
+
+
+.. py:method:: GetValidFluentExecutionModeValues() -> List[str]
+
+
+.. py:method:: GetFluentOutputFrequencyMultiplier() -> int
+
+
+.. py:method:: SetFluentOutputFrequencyMultiplier(value: Union[str, int]) -> None
+
+
+.. py:method:: GetFluentSolverProcesses() -> int
+
+
+.. py:method:: SetFluentSolverProcesses(value: Union[str, int]) -> None
+
+
+.. py:method:: GetIntegralCoefficient() -> float
+
+
+.. py:method:: SetIntegralCoefficient(value: Union[str, float]) -> None
+
+
+.. py:method:: GetProportionalCoefficient() -> float
+
+
+.. py:method:: SetProportionalCoefficient(value: Union[str, float]) -> None
+
+
+.. py:method:: GetUseDatInitialization() -> bool
+
+
+.. py:method:: SetUseDatInitialization(value: bool) -> None
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(name: str) -> None
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+

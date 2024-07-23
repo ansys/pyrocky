@@ -1,0 +1,303 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_solid_material
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RASolidMaterial`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RASolidMaterial(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+
+
+
+
+.. py:currentmodule:: RASolidMaterial
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetUseBulkDensity`
+            - 
+          * - :py:attr:`~SetUseBulkDensity`
+            - 
+          * - :py:attr:`~GetBulkDensity`
+            - 
+          * - :py:attr:`~SetBulkDensity`
+            - 
+          * - :py:attr:`~GetCurrentDensity`
+            - 
+          * - :py:attr:`~SetCurrentDensity`
+            - 
+          * - :py:attr:`~GetDensity`
+            - 
+          * - :py:attr:`~SetDensity`
+            - 
+          * - :py:attr:`~GetYoungsModulus`
+            - 
+          * - :py:attr:`~SetYoungsModulus`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetPoissonRatio`
+            - 
+          * - :py:attr:`~SetPoissonRatio`
+            - 
+          * - :py:attr:`~GetSpecificHeat`
+            - 
+          * - :py:attr:`~SetSpecificHeat`
+            - 
+          * - :py:attr:`~GetThermalConductivity`
+            - 
+          * - :py:attr:`~SetThermalConductivity`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+          * - :py:attr:`~GetModuleProperties`
+            - 
+          * - :py:attr:`~GetModuleProperty`
+            - 
+          * - :py:attr:`~SetModuleProperty`
+            - 
+          * - :py:attr:`~GetValidOptionsForModuleProperty`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material import RASolidMaterial
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetUseBulkDensity() -> bool
+
+
+.. py:method:: SetUseBulkDensity(value: bool) -> None
+
+
+.. py:method:: GetBulkDensity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetBulkDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetCurrentDensity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetCurrentDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetDensity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetYoungsModulus(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetYoungsModulus(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(value: str) -> None
+
+
+.. py:method:: GetPoissonRatio(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetPoissonRatio(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSpecificHeat(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSpecificHeat(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetThermalConductivity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetThermalConductivity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+.. py:method:: GetModuleProperties() -> collections.abc.Sequence[ModulePropertyIdentifier]
+
+
+.. py:method:: GetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], unit: Union[str, None] = ...) -> Union[float, bool, str, ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList]
+
+
+.. py:method:: SetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], value: Union[float, bool, str], unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: GetValidOptionsForModuleProperty(property_name)
+
+
+
+
+
+

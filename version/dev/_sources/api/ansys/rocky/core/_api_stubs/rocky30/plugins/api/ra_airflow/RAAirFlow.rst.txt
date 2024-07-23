@@ -1,0 +1,226 @@
+
+
+.. py:class:: RAAirFlow
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+
+
+
+.. py:currentmodule:: RAAirFlow
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetPartIdIfValid`
+            - 
+          * - :py:attr:`~GetAirDensity`
+            - 
+          * - :py:attr:`~SetAirDensity`
+            - 
+          * - :py:attr:`~GetAirKinematicViscosity`
+            - 
+          * - :py:attr:`~SetAirKinematicViscosity`
+            - 
+          * - :py:attr:`~GetBoundaryConditionType`
+            - 
+          * - :py:attr:`~SetBoundaryConditionType`
+            - 
+          * - :py:attr:`~GetValidBoundaryConditionTypeValues`
+            - 
+          * - :py:attr:`~GetCellSize`
+            - 
+          * - :py:attr:`~SetCellSize`
+            - 
+          * - :py:attr:`~GetInteractionScale`
+            - 
+          * - :py:attr:`~SetInteractionScale`
+            - 
+          * - :py:attr:`~GetMaxX`
+            - 
+          * - :py:attr:`~SetMaxX`
+            - 
+          * - :py:attr:`~GetMaxY`
+            - 
+          * - :py:attr:`~SetMaxY`
+            - 
+          * - :py:attr:`~GetMaxZ`
+            - 
+          * - :py:attr:`~SetMaxZ`
+            - 
+          * - :py:attr:`~GetMinX`
+            - 
+          * - :py:attr:`~SetMinX`
+            - 
+          * - :py:attr:`~GetMinY`
+            - 
+          * - :py:attr:`~SetMinY`
+            - 
+          * - :py:attr:`~GetMinZ`
+            - 
+          * - :py:attr:`~SetMinZ`
+            - 
+          * - :py:attr:`~GetSpeedOfSound`
+            - 
+          * - :py:attr:`~SetSpeedOfSound`
+            - 
+          * - :py:attr:`~GetStartWhenParticlesEnter`
+            - 
+          * - :py:attr:`~SetStartWhenParticlesEnter`
+            - 
+          * - :py:attr:`~GetStartTime`
+            - 
+          * - :py:attr:`~SetStartTime`
+            - 
+          * - :py:attr:`~GetUseAirflow`
+            - 
+          * - :py:attr:`~SetUseAirflow`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow import RAAirFlow
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+
+.. py:method:: GetAirDensity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetAirDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetAirKinematicViscosity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetAirKinematicViscosity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetBoundaryConditionType() -> str
+
+
+.. py:method:: SetBoundaryConditionType(value: str) -> None
+
+
+.. py:method:: GetValidBoundaryConditionTypeValues() -> List[str]
+
+
+.. py:method:: GetCellSize(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetCellSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetInteractionScale(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetInteractionScale(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMaxX(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetMaxX(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMaxY(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetMaxY(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMaxZ(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetMaxZ(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMinX(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetMinX(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMinY(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetMinY(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMinZ(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetMinZ(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSpeedOfSound(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSpeedOfSound(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetStartWhenParticlesEnter() -> bool
+
+
+.. py:method:: SetStartWhenParticlesEnter(value: bool) -> None
+
+
+.. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetUseAirflow() -> bool
+
+
+.. py:method:: SetUseAirflow(value: bool) -> None
+
+
+

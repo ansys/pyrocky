@@ -1,0 +1,168 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_export_toolkit
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_export_toolkit
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RAExportToolkit`
+            - 
+
+
+
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ExportValuesTuple`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RAExportToolkit(ra_study: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_study.RAStudy)
+
+
+.. py:currentmodule:: RAExportToolkit
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~ExportFEMForces`
+            - 
+          * - :py:attr:`~ExportGeometryLoads`
+            - 
+          * - :py:attr:`~ExportGeometryLoadsMultiTime`
+            - 
+          * - :py:attr:`~ExportParticleToStl`
+            - 
+          * - :py:attr:`~ExportToSTL`
+            - 
+          * - :py:attr:`~ExportHTC`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~ra_study`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_export_toolkit import RAExportToolkit
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: ra_study
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: ExportFEMForces(csv_filename: str, entities_to_export: Union[ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem, str, list], timestep_to_export: Union[coilib50.time.time_step_interface.ITimeStep, None] = ..., apply_transformation: bool = ...) -> None
+
+
+.. py:method:: ExportGeometryLoads(csv_filename: str, entities_to_export: Union[ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem, str, list], timestep_to_export: Union[coilib50.time.time_step_interface.ITimeStep, None] = ..., apply_transformation: bool = ..., export_forces: bool = ...) -> None
+
+
+.. py:method:: ExportGeometryLoadsMultiTime(csv_filename: str, entities_to_export: Union[ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem, str, list], timesteps_to_export: list[coilib50.time.time_step_interface.ITimeStep], apply_transformation: bool = ..., export_forces: bool = ..., show_progress: bool = ...) -> None
+
+
+.. py:method:: ExportParticleToStl(stl_filename: str, particle: Union[str, rocky30.models.particle.particle.Particle, ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem], time_to_export: Union[coilib50.time.time_step_interface.ITimeStep, None] = ..., output_unit: Union[str, None] = ..., target_size: Union[float, None] = ..., target_unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: ExportToSTL(stl_filename: str, entities: Union[coilib50.subject.Subject, ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem, str, list], time_to_export: Union[coilib50.time.time_step_interface.ITimeStep, None] = ..., output_unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: ExportHTC(csv_filename: str, entities_to_export: Union[ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem, str, list], timestep_to_export: Union[coilib50.time.time_step_interface.ITimeStep, str, None], apply_transformation: bool, ref_temperature: Union[float, None]) -> None
+
+
+
+
+.. py:data:: ExportValuesTuple
+
+   
+
+
+

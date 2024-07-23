@@ -1,0 +1,94 @@
+
+
+.. py:class:: UserWindowSubjectContainer(app)
+
+   Bases: :py:obj:`coilib50.subject.Subject`
+
+
+
+
+.. py:currentmodule:: UserWindowSubjectContainer
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetIgnoreChanges`
+            - 
+          * - :py:attr:`~GetIgnoreAddRemove`
+            - 
+          * - :py:attr:`~GetIgnoreAdd`
+            - 
+          * - :py:attr:`~Add`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~app`
+            - 
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__iter__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import UserWindowSubjectContainer
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: app
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetIgnoreChanges()
+
+
+.. py:method:: GetIgnoreAddRemove()
+
+
+.. py:method:: GetIgnoreAdd()
+
+
+.. py:method:: Add(window_subject)
+
+
+.. py:method:: __iter__()
+
+
+

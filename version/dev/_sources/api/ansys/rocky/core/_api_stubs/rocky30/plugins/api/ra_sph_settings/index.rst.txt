@@ -1,0 +1,736 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_sph_settings
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RASPHSettings`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RASPHSettings(id, model_id: _typeshed.Incomplete | None = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+
+
+
+.. py:currentmodule:: RASPHSettings
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetBackgroundPressure`
+            - 
+          * - :py:attr:`~SetBackgroundPressure`
+            - 
+          * - :py:attr:`~SetSolver`
+            - 
+          * - :py:attr:`~GetSolver`
+            - 
+          * - :py:attr:`~GetCS`
+            - 
+          * - :py:attr:`~SetCS`
+            - 
+          * - :py:attr:`~GetClearyFactor`
+            - 
+          * - :py:attr:`~SetClearyFactor`
+            - 
+          * - :py:attr:`~GetDensityDevMinus`
+            - 
+          * - :py:attr:`~SetDensityDevMinus`
+            - 
+          * - :py:attr:`~GetDensityDevPlus`
+            - 
+          * - :py:attr:`~SetDensityDevPlus`
+            - 
+          * - :py:attr:`~GetDensityRelativeErrorTolerance`
+            - 
+          * - :py:attr:`~SetDensityRelativeErrorTolerance`
+            - 
+          * - :py:attr:`~GetDissFactor`
+            - 
+          * - :py:attr:`~SetDissFactor`
+            - 
+          * - :py:attr:`~GetDistFactorNorm`
+            - 
+          * - :py:attr:`~SetDistFactorNorm`
+            - 
+          * - :py:attr:`~GetDistFactorTang`
+            - 
+          * - :py:attr:`~SetDistFactorTang`
+            - 
+          * - :py:attr:`~GetEulerianSolutionEnabled`
+            - 
+          * - :py:attr:`~SetEulerianSolutionEnabled`
+            - 
+          * - :py:attr:`~EnableEulerianSolution`
+            - 
+          * - :py:attr:`~DisableEulerianSolution`
+            - 
+          * - :py:attr:`~IsEulerianSolutionEnabled`
+            - 
+          * - :py:attr:`~GetFreeSurfaceDivergenceLimit`
+            - 
+          * - :py:attr:`~SetFreeSurfaceDivergenceLimit`
+            - 
+          * - :py:attr:`~GetKernelDistFactor`
+            - 
+          * - :py:attr:`~SetKernelDistFactor`
+            - 
+          * - :py:attr:`~GetKernelType`
+            - 
+          * - :py:attr:`~SetKernelType`
+            - 
+          * - :py:attr:`~GetValidKernelTypeValues`
+            - 
+          * - :py:attr:`~GetMaximumExpectedVelocity`
+            - 
+          * - :py:attr:`~SetMaximumExpectedVelocity`
+            - 
+          * - :py:attr:`~GetMaximumNumberOfIterations`
+            - 
+          * - :py:attr:`~SetMaximumNumberOfIterations`
+            - 
+          * - :py:attr:`~GetMinDistFactor`
+            - 
+          * - :py:attr:`~SetMinDistFactor`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetNegativePressureFactor`
+            - 
+          * - :py:attr:`~SetNegativePressureFactor`
+            - 
+          * - :py:attr:`~GetNumCellSteps`
+            - 
+          * - :py:attr:`~SetNumCellSteps`
+            - 
+          * - :py:attr:`~GetNumberOfSteps`
+            - 
+          * - :py:attr:`~SetNumberOfSteps`
+            - 
+          * - :py:attr:`~GetPosCorrectionType`
+            - 
+          * - :py:attr:`~SetPosCorrectionType`
+            - 
+          * - :py:attr:`~GetValidPosCorrectionTypeValues`
+            - 
+          * - :py:attr:`~GetPressureDeg`
+            - 
+          * - :py:attr:`~SetPressureDeg`
+            - 
+          * - :py:attr:`~GetPressureUnderRelaxationFactor`
+            - 
+          * - :py:attr:`~SetPressureUnderRelaxationFactor`
+            - 
+          * - :py:attr:`~GetShiftingFactor`
+            - 
+          * - :py:attr:`~SetShiftingFactor`
+            - 
+          * - :py:attr:`~GetSize`
+            - 
+          * - :py:attr:`~SetSize`
+            - 
+          * - :py:attr:`~GetSolverModel`
+            - 
+          * - :py:attr:`~SetSolverModel`
+            - 
+          * - :py:attr:`~GetValidSolverModelValues`
+            - 
+          * - :py:attr:`~GetSoundSpeed`
+            - 
+          * - :py:attr:`~SetSoundSpeed`
+            - 
+          * - :py:attr:`~GetStabilityDegree`
+            - 
+          * - :py:attr:`~SetStabilityDegree`
+            - 
+          * - :py:attr:`~GetStabilityNegFactor`
+            - 
+          * - :py:attr:`~SetStabilityNegFactor`
+            - 
+          * - :py:attr:`~GetStabilityPosFactor`
+            - 
+          * - :py:attr:`~SetStabilityPosFactor`
+            - 
+          * - :py:attr:`~GetStiffFactor`
+            - 
+          * - :py:attr:`~SetStiffFactor`
+            - 
+          * - :py:attr:`~GetSurfaceTensionBoundaryAngle`
+            - 
+          * - :py:attr:`~SetSurfaceTensionBoundaryAngle`
+            - 
+          * - :py:attr:`~GetSurfaceTensionBoundaryFraction`
+            - 
+          * - :py:attr:`~SetSurfaceTensionBoundaryFraction`
+            - 
+          * - :py:attr:`~GetSurfaceTensionCoefficient`
+            - 
+          * - :py:attr:`~SetSurfaceTensionCoefficient`
+            - 
+          * - :py:attr:`~GetSurfaceTensionType`
+            - 
+          * - :py:attr:`~SetSurfaceTensionType`
+            - 
+          * - :py:attr:`~GetValidSurfaceTensionTypeValues`
+            - 
+          * - :py:attr:`~GetTimestepFactor`
+            - 
+          * - :py:attr:`~SetTimestepFactor`
+            - 
+          * - :py:attr:`~GetTurbDistanceFraction`
+            - 
+          * - :py:attr:`~SetTurbDistanceFraction`
+            - 
+          * - :py:attr:`~GetTurbulenceType`
+            - 
+          * - :py:attr:`~SetTurbulenceType`
+            - 
+          * - :py:attr:`~GetValidTurbulenceTypeValues`
+            - 
+          * - :py:attr:`~GetTurbulentPrandtl`
+            - 
+          * - :py:attr:`~SetTurbulentPrandtl`
+            - 
+          * - :py:attr:`~GetUpdateCoupledDensity`
+            - 
+          * - :py:attr:`~SetUpdateCoupledDensity`
+            - 
+          * - :py:attr:`~GetUseParticlesNeighborsList`
+            - 
+          * - :py:attr:`~SetUseParticlesNeighborsList`
+            - 
+          * - :py:attr:`~GetViscosityType`
+            - 
+          * - :py:attr:`~SetViscosityType`
+            - 
+          * - :py:attr:`~GetValidViscosityTypeValues`
+            - 
+          * - :py:attr:`~GetXsphFactor`
+            - 
+          * - :py:attr:`~SetXsphFactor`
+            - 
+          * - :py:attr:`~GetFluidMaterial`
+            - 
+          * - :py:attr:`~SetFluidMaterial`
+            - 
+          * - :py:attr:`~GetAvailableFluidMaterials`
+            - 
+          * - :py:attr:`~GetGridFunction`
+            - 
+          * - :py:attr:`~GetGeometry`
+            - 
+          * - :py:attr:`~GetTimeStatistics`
+            - 
+          * - :py:attr:`~CreateTransientCurveOutputVariable`
+            - 
+          * - :py:attr:`~CreateCurveOutputVariable`
+            - 
+          * - :py:attr:`~CreateGridFunctionStatisticOutputVariable`
+            - 
+          * - :py:attr:`~GetOutputVariableValue`
+            - 
+          * - :py:attr:`~RemoveOutputVariable`
+            - 
+          * - :py:attr:`~RemoveProcess`
+            - 
+          * - :py:attr:`~AddCustomCurve`
+            - 
+          * - :py:attr:`~EditCustomCurve`
+            - 
+          * - :py:attr:`~RemoveCustomCurve`
+            - 
+          * - :py:attr:`~AddCustomProperty`
+            - 
+          * - :py:attr:`~EditCustomProperty`
+            - 
+          * - :py:attr:`~RemoveCustomProperty`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~VALID_OPERATIONS`
+            - 
+          * - :py:attr:`~VALID_TIME_RANGE_DEFINITIONS`
+            - 
+          * - :py:attr:`~VALID_DOMAIN_RANGE`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings import RASPHSettings
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: VALID_OPERATIONS
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_TIME_RANGE_DEFINITIONS
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_DOMAIN_RANGE
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type[rocky30.models.sph.sph_settings.SPHProcess]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetBackgroundPressure() -> float
+
+
+.. py:method:: SetBackgroundPressure(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: SetSolver(value: str) -> None
+
+
+.. py:method:: GetSolver() -> str
+
+
+.. py:method:: GetCS() -> float
+
+
+.. py:method:: SetCS(value: Union[str, float]) -> None
+
+
+.. py:method:: GetClearyFactor() -> float
+
+
+.. py:method:: SetClearyFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetDensityDevMinus() -> float
+
+
+.. py:method:: SetDensityDevMinus(value: Union[str, float]) -> None
+
+
+.. py:method:: GetDensityDevPlus() -> float
+
+
+.. py:method:: SetDensityDevPlus(value: Union[str, float]) -> None
+
+
+.. py:method:: GetDensityRelativeErrorTolerance() -> float
+
+
+.. py:method:: SetDensityRelativeErrorTolerance(value: Union[str, float]) -> None
+
+
+.. py:method:: GetDissFactor() -> float
+
+
+.. py:method:: SetDissFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetDistFactorNorm() -> float
+
+
+.. py:method:: SetDistFactorNorm(value: Union[str, float]) -> None
+
+
+.. py:method:: GetDistFactorTang() -> float
+
+
+.. py:method:: SetDistFactorTang(value: Union[str, float]) -> None
+
+
+.. py:method:: GetEulerianSolutionEnabled() -> bool
+
+
+.. py:method:: SetEulerianSolutionEnabled(value: bool) -> None
+
+
+.. py:method:: EnableEulerianSolution() -> None
+
+
+.. py:method:: DisableEulerianSolution() -> None
+
+
+.. py:method:: IsEulerianSolutionEnabled() -> bool
+
+
+.. py:method:: GetFreeSurfaceDivergenceLimit() -> float
+
+
+.. py:method:: SetFreeSurfaceDivergenceLimit(value: Union[str, float]) -> None
+
+
+.. py:method:: GetKernelDistFactor() -> float
+
+
+.. py:method:: SetKernelDistFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetKernelType() -> str
+
+
+.. py:method:: SetKernelType(value: str) -> None
+
+
+.. py:method:: GetValidKernelTypeValues() -> List[str]
+
+
+.. py:method:: GetMaximumExpectedVelocity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetMaximumExpectedVelocity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMaximumNumberOfIterations() -> int
+
+
+.. py:method:: SetMaximumNumberOfIterations(value: Union[str, int]) -> None
+
+
+.. py:method:: GetMinDistFactor() -> float
+
+
+.. py:method:: SetMinDistFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(value: str) -> None
+
+
+.. py:method:: GetNegativePressureFactor() -> float
+
+
+.. py:method:: SetNegativePressureFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetNumCellSteps() -> int
+
+
+.. py:method:: SetNumCellSteps(value: Union[str, int]) -> None
+
+
+.. py:method:: GetNumberOfSteps() -> int
+
+
+.. py:method:: SetNumberOfSteps(value: Union[str, int]) -> None
+
+
+.. py:method:: GetPosCorrectionType() -> str
+
+
+.. py:method:: SetPosCorrectionType(value: str) -> None
+
+
+.. py:method:: GetValidPosCorrectionTypeValues() -> List[str]
+
+
+.. py:method:: GetPressureDeg() -> int
+
+
+.. py:method:: SetPressureDeg(value: Union[str, int]) -> None
+
+
+.. py:method:: GetPressureUnderRelaxationFactor() -> float
+
+
+.. py:method:: SetPressureUnderRelaxationFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetShiftingFactor() -> float
+
+
+.. py:method:: SetShiftingFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetSize(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSolverModel() -> str
+
+
+.. py:method:: SetSolverModel(value: str) -> None
+
+
+.. py:method:: GetValidSolverModelValues() -> List[str]
+
+
+.. py:method:: GetSoundSpeed(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSoundSpeed(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetStabilityDegree() -> int
+
+
+.. py:method:: SetStabilityDegree(value: Union[str, int]) -> None
+
+
+.. py:method:: GetStabilityNegFactor() -> float
+
+
+.. py:method:: SetStabilityNegFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetStabilityPosFactor() -> float
+
+
+.. py:method:: SetStabilityPosFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetStiffFactor() -> float
+
+
+.. py:method:: SetStiffFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetSurfaceTensionBoundaryAngle(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSurfaceTensionBoundaryAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSurfaceTensionBoundaryFraction() -> float
+
+
+.. py:method:: SetSurfaceTensionBoundaryFraction(value: Union[str, float]) -> None
+
+
+.. py:method:: GetSurfaceTensionCoefficient(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSurfaceTensionCoefficient(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSurfaceTensionType() -> str
+
+
+.. py:method:: SetSurfaceTensionType(value: str) -> None
+
+
+.. py:method:: GetValidSurfaceTensionTypeValues() -> List[str]
+
+
+.. py:method:: GetTimestepFactor() -> float
+
+
+.. py:method:: SetTimestepFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetTurbDistanceFraction() -> float
+
+
+.. py:method:: SetTurbDistanceFraction(value: Union[str, float]) -> None
+
+
+.. py:method:: GetTurbulenceType() -> str
+
+
+.. py:method:: SetTurbulenceType(value: str) -> None
+
+
+.. py:method:: GetValidTurbulenceTypeValues() -> List[str]
+
+
+.. py:method:: GetTurbulentPrandtl() -> float
+
+
+.. py:method:: SetTurbulentPrandtl(value: Union[str, float]) -> None
+
+
+.. py:method:: GetUpdateCoupledDensity() -> bool
+
+
+.. py:method:: SetUpdateCoupledDensity(value: bool) -> None
+
+
+.. py:method:: GetUseParticlesNeighborsList() -> bool
+
+
+.. py:method:: SetUseParticlesNeighborsList(value: bool) -> None
+
+
+.. py:method:: GetViscosityType() -> str
+
+
+.. py:method:: SetViscosityType(value: str) -> None
+
+
+.. py:method:: GetValidViscosityTypeValues() -> List[str]
+
+
+.. py:method:: GetXsphFactor() -> float
+
+
+.. py:method:: SetXsphFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetFluidMaterial()
+
+
+.. py:method:: SetFluidMaterial(value) -> None
+
+
+.. py:method:: GetAvailableFluidMaterials()
+
+
+.. py:method:: GetGridFunction(grid_function_name, simulation_name: _typeshed.Incomplete | None = ..., translated: bool = ...)
+
+
+.. py:method:: GetGeometry(time_step: str = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall.RAWall
+
+
+.. py:method:: GetTimeStatistics() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatistics
+
+
+.. py:method:: CreateTransientCurveOutputVariable(curve_name: str, operation: str = ..., time_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ..., domain_range: str = ..., initial_domain_range: float = ..., final_domain_range: float = ..., domain_unit: Union[str, None] = ...)
+
+
+.. py:method:: CreateCurveOutputVariable(curve_name: str, operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...)
+
+
+.. py:method:: CreateGridFunctionStatisticOutputVariable(grid_function_name: str, operation: str = ..., statistic_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...) -> str
+
+
+.. py:method:: GetOutputVariableValue(variable_name: str) -> barril.units.Scalar
+
+
+.. py:method:: RemoveOutputVariable(variable_name: str) -> None
+
+
+.. py:method:: RemoveProcess() -> None
+
+
+.. py:method:: AddCustomCurve(name: str, curve_type: str = ..., output_unit: str = ..., domain: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+.. py:method:: EditCustomCurve(edit_curve: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+.. py:method:: RemoveCustomCurve(name: str) -> None
+
+
+.. py:method:: AddCustomProperty(name: str, property_type: str = ..., output_unit: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+.. py:method:: EditCustomProperty(edit_property: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+.. py:method:: RemoveCustomProperty(name: str) -> None
+
+
+
+
+
+

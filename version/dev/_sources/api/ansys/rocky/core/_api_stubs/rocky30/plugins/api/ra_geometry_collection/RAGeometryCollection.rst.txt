@@ -1,0 +1,208 @@
+
+
+.. py:class:: RAGeometryCollection(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: RAGeometryCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetGeometryNames`
+            - 
+          * - :py:attr:`~GetGeometry`
+            - 
+          * - :py:attr:`~IterInputGeometries`
+            - 
+          * - :py:attr:`~IterInletGeometries`
+            - 
+          * - :py:attr:`~IterSurfaces`
+            - 
+          * - :py:attr:`~IterWalls`
+            - 
+          * - :py:attr:`~IterSystemCouplingWalls`
+            - 
+          * - :py:attr:`~GetBoundingBox`
+            - 
+          * - :py:attr:`~RemoveGeometry`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__iter__`
+            - 
+          * - :py:attr:`~__len__`
+            - 
+          * - :py:attr:`~__getitem__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_geometry_collection import RAGeometryCollection
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type[rocky30.models.geometry.geometry_collection.GeometryCollection]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetGeometryNames() -> list[str]
+
+
+.. py:method:: GetGeometry(geometry_name)
+
+
+.. py:method:: IterInputGeometries() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+.. py:method:: IterInletGeometries() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+.. py:method:: IterSurfaces() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+.. py:method:: IterWalls() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+.. py:method:: IterSystemCouplingWalls() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+.. py:method:: GetBoundingBox(time_step: Union[coilib50.time.time_step_interface.ITimeStep, None], force_load: bool = ...) -> tuple[barril.units.FixedArray, barril.units.FixedArray]
+
+
+.. py:method:: RemoveGeometry(geometry: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry, str, None]) -> None
+
+
+.. py:method:: __iter__() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem]
+
+
+.. py:method:: __len__() -> int
+
+
+.. py:method:: __getitem__(index: int) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(name: str) -> None
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+

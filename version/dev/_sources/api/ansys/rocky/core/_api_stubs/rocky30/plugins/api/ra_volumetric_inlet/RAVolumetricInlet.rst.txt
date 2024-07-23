@@ -1,0 +1,258 @@
+
+
+.. py:class:: RAVolumetricInlet(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+
+.. py:currentmodule:: RAVolumetricInlet
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetInputPropertiesList`
+            - 
+          * - :py:attr:`~GetCustomGeometries`
+            - 
+          * - :py:attr:`~SetCustomGeometries`
+            - 
+          * - :py:attr:`~GetUseCustomGeometriesToCompute`
+            - 
+          * - :py:attr:`~SetUseCustomGeometriesToCompute`
+            - 
+          * - :py:attr:`~GetBoxCenter`
+            - 
+          * - :py:attr:`~SetBoxCenter`
+            - 
+          * - :py:attr:`~GetBoxDimensions`
+            - 
+          * - :py:attr:`~SetBoxDimensions`
+            - 
+          * - :py:attr:`~GetUseGeometriesToCompute`
+            - 
+          * - :py:attr:`~SetUseGeometriesToCompute`
+            - 
+          * - :py:attr:`~GetGapScaleFactor`
+            - 
+          * - :py:attr:`~SetGapScaleFactor`
+            - 
+          * - :py:attr:`~GetInitialVelocity`
+            - 
+          * - :py:attr:`~SetInitialVelocity`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetSeedCoordinates`
+            - 
+          * - :py:attr:`~SetSeedCoordinates`
+            - 
+          * - :py:attr:`~GetSphMass`
+            - 
+          * - :py:attr:`~SetSphMass`
+            - 
+          * - :py:attr:`~GetSphTemperature`
+            - 
+          * - :py:attr:`~SetSphTemperature`
+            - 
+          * - :py:attr:`~GetGeometries`
+            - 
+          * - :py:attr:`~SetGeometries`
+            - 
+          * - :py:attr:`~GetAvailableGeometries`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet import RAVolumetricInlet
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type[rocky30.models.input.volume_fill.VolumeFill]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetInputPropertiesList() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties.RAVolumetricInletPropertiesList
+
+
+.. py:method:: GetCustomGeometries()
+
+
+.. py:method:: SetCustomGeometries(values) -> None
+
+
+.. py:method:: GetUseCustomGeometriesToCompute()
+
+
+.. py:method:: SetUseCustomGeometriesToCompute(value) -> None
+
+
+.. py:method:: GetBoxCenter(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetBoxCenter(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetBoxDimensions(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetBoxDimensions(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetUseGeometriesToCompute() -> bool
+
+
+.. py:method:: SetUseGeometriesToCompute(value: bool) -> None
+
+
+.. py:method:: GetGapScaleFactor() -> float
+
+
+.. py:method:: SetGapScaleFactor(value: Union[str, float]) -> None
+
+
+.. py:method:: GetInitialVelocity(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetInitialVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(value: str) -> None
+
+
+.. py:method:: GetSeedCoordinates(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetSeedCoordinates(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSphMass(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSphMass(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSphTemperature(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSphTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetGeometries()
+
+
+.. py:method:: SetGeometries(values) -> None
+
+
+.. py:method:: GetAvailableGeometries()
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+

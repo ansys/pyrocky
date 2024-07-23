@@ -1,0 +1,1934 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Summary &#8212; pyrocky</title>
+
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../../../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../../../../../../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../../../../../../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/graphviz.css?v=fd3f3429" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/css\ansys_sphinx_theme.css?v=a362721a" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../../../../../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+ 
+<link href="../../../../../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+
+    <script src="../../../../../../../../../_static/documentation_options.js?v=3b1a31c5"></script>
+    <script src="../../../../../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../../../../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.14.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://rocky.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../../../../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://rocky.docs.pyansys.com/version/stable/api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/index.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container"><!-- Debugging: html_theme_options =  -->
+
+<!-- If there is no MiliSearch enabled, use the PyData search -->
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+   
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../../../../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="pyrocky - Home"/>
+    <script>document.write(`<img src="../../../../../../../../../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="pyrocky - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../../getting_started/index.html">
+                        Getting started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../../user_guide/index.html">
+                        User guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../../contributing.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../../getting_started/index.html">
+                        Getting started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../../user_guide/index.html">
+                        User guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../index.html">
+                        API reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../../../../../../contributing.html">
+                        Contribute
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page">Summary</li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="summary">
+<span id="module-ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window"></span><h1>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h1>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Classes</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="MplCanvas.html#MplCanvas" title="MplCanvas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MplCanvas</span></code></a></p></td>
+<td><p>The canvas the figure renders into.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="MplWindow.html#MplWindow" title="MplWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MplWindow</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="MplWindowSubject.html#MplWindowSubject" title="MplWindowSubject"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MplWindowSubject</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="RAMplWindow.html#RAMplWindow" title="RAMplWindow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RAMplWindow</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="UserWindowSubjectContainer.html#UserWindowSubjectContainer" title="UserWindowSubjectContainer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UserWindowSubjectContainer</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="module-detail">
+<h1>Module detail<a class="headerlink" href="#module-detail" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ra_matplotlib_window.MplCanvas">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ra_matplotlib_window.</span></span><span class="sig-name descname"><span class="pre">MplCanvas</span></span><a class="headerlink" href="#ra_matplotlib_window.MplCanvas" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg</span></code></p>
+<p>The canvas the figure renders into.</p>
+<dl class="field-list">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>figure</strong><span class="classifier"><cite>~matplotlib.figure.Figure</cite></span></dt><dd><p>A high-level figure instance.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h1>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Constructors</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.new_manager" title="MplCanvas.new_manager"><code class="xref py py-attr docutils literal notranslate"><span class="pre">new_manager</span></code></a></p></td>
+<td><p>Create a new figure manager for <em>figure</em>, using this canvas class.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.get_supported_filetypes" title="MplCanvas.get_supported_filetypes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_supported_filetypes</span></code></a></p></td>
+<td><p>Return dict of savefig file formats supported by this backend.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.get_supported_filetypes_grouped" title="MplCanvas.get_supported_filetypes_grouped"><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_supported_filetypes_grouped</span></code></a></p></td>
+<td><p>Return a dict of savefig file formats supported by this backend,</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.get_default_filetype" title="MplCanvas.get_default_filetype"><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_default_filetype</span></code></a></p></td>
+<td><p>Return the default savefig file format as specified in</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Methods</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.paintEvent" title="MplCanvas.paintEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">paintEvent</span></code></a></p></td>
+<td><p>Copy the image from the Agg canvas to the qt.drawable.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.print_figure" title="MplCanvas.print_figure"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_figure</span></code></a></p></td>
+<td><p>Render the figure to hardcopy. Set the figure patch face and edge</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.copy_from_bbox" title="MplCanvas.copy_from_bbox"><code class="xref py py-attr docutils literal notranslate"><span class="pre">copy_from_bbox</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.restore_region" title="MplCanvas.restore_region"><code class="xref py py-attr docutils literal notranslate"><span class="pre">restore_region</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.draw" title="MplCanvas.draw"><code class="xref py py-attr docutils literal notranslate"><span class="pre">draw</span></code></a></p></td>
+<td><p>Render the <cite>.Figure</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.get_renderer" title="MplCanvas.get_renderer"><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_renderer</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.tostring_rgb" title="MplCanvas.tostring_rgb"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tostring_rgb</span></code></a></p></td>
+<td><p>Get the image as RGB <cite>bytes</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.tostring_argb" title="MplCanvas.tostring_argb"><code class="xref py py-attr docutils literal notranslate"><span class="pre">tostring_argb</span></code></a></p></td>
+<td><p>Get the image as ARGB <cite>bytes</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.buffer_rgba" title="MplCanvas.buffer_rgba"><code class="xref py py-attr docutils literal notranslate"><span class="pre">buffer_rgba</span></code></a></p></td>
+<td><p>Get the image as a <cite>memoryview</cite> to the renderer’s buffer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.print_raw" title="MplCanvas.print_raw"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_raw</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.print_png" title="MplCanvas.print_png"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_png</span></code></a></p></td>
+<td><p>Write the figure to a PNG file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.print_to_buffer" title="MplCanvas.print_to_buffer"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_to_buffer</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.print_jpg" title="MplCanvas.print_jpg"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_jpg</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.print_tif" title="MplCanvas.print_tif"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_tif</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.print_webp" title="MplCanvas.print_webp"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_webp</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.supports_blit" title="MplCanvas.supports_blit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">supports_blit</span></code></a></p></td>
+<td><p>If this Canvas sub-class supports blitting.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.is_saving" title="MplCanvas.is_saving"><code class="xref py py-attr docutils literal notranslate"><span class="pre">is_saving</span></code></a></p></td>
+<td><p>Return whether the renderer is in the process of saving</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.blit" title="MplCanvas.blit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">blit</span></code></a></p></td>
+<td><p>Blit the canvas in bbox (default entire canvas).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.inaxes" title="MplCanvas.inaxes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">inaxes</span></code></a></p></td>
+<td><p>Return the topmost visible <cite>~.axes.Axes</cite> containing the point <em>xy</em>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.grab_mouse" title="MplCanvas.grab_mouse"><code class="xref py py-attr docutils literal notranslate"><span class="pre">grab_mouse</span></code></a></p></td>
+<td><p>Set the child <cite>~.axes.Axes</cite> which is grabbing the mouse events.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.release_mouse" title="MplCanvas.release_mouse"><code class="xref py py-attr docutils literal notranslate"><span class="pre">release_mouse</span></code></a></p></td>
+<td><p>Release the mouse grab held by the <cite>~.axes.Axes</cite> <em>ax</em>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.set_cursor" title="MplCanvas.set_cursor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">set_cursor</span></code></a></p></td>
+<td><p>Set the current cursor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.draw_idle" title="MplCanvas.draw_idle"><code class="xref py py-attr docutils literal notranslate"><span class="pre">draw_idle</span></code></a></p></td>
+<td><p>Request a widget redraw once control returns to the GUI event loop.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.get_width_height" title="MplCanvas.get_width_height"><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_width_height</span></code></a></p></td>
+<td><p>Return the figure width and height in integral points or pixels.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.get_default_filename" title="MplCanvas.get_default_filename"><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_default_filename</span></code></a></p></td>
+<td><p>Return a string, which includes extension, suitable for use as</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.switch_backends" title="MplCanvas.switch_backends"><code class="xref py py-attr docutils literal notranslate"><span class="pre">switch_backends</span></code></a></p></td>
+<td><p>Instantiate an instance of FigureCanvasClass</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.mpl_connect" title="MplCanvas.mpl_connect"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mpl_connect</span></code></a></p></td>
+<td><p>Bind function <em>func</em> to event <em>s</em>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.mpl_disconnect" title="MplCanvas.mpl_disconnect"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mpl_disconnect</span></code></a></p></td>
+<td><p>Disconnect the callback with id <em>cid</em>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.new_timer" title="MplCanvas.new_timer"><code class="xref py py-attr docutils literal notranslate"><span class="pre">new_timer</span></code></a></p></td>
+<td><p>Create a new backend-specific subclass of <cite>.Timer</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.flush_events" title="MplCanvas.flush_events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">flush_events</span></code></a></p></td>
+<td><p>Flush the GUI events for the figure.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.start_event_loop" title="MplCanvas.start_event_loop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">start_event_loop</span></code></a></p></td>
+<td><p>Start a blocking event loop.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.stop_event_loop" title="MplCanvas.stop_event_loop"><code class="xref py py-attr docutils literal notranslate"><span class="pre">stop_event_loop</span></code></a></p></td>
+<td><p>Stop the current blocking event loop.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.showEvent" title="MplCanvas.showEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">showEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.mouseEventCoords" title="MplCanvas.mouseEventCoords"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mouseEventCoords</span></code></a></p></td>
+<td><p>Calculate mouse coordinates in physical pixels.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.enterEvent" title="MplCanvas.enterEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">enterEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.leaveEvent" title="MplCanvas.leaveEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">leaveEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.mousePressEvent" title="MplCanvas.mousePressEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mousePressEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.mouseDoubleClickEvent" title="MplCanvas.mouseDoubleClickEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mouseDoubleClickEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.mouseMoveEvent" title="MplCanvas.mouseMoveEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mouseMoveEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.mouseReleaseEvent" title="MplCanvas.mouseReleaseEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mouseReleaseEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.wheelEvent" title="MplCanvas.wheelEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">wheelEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.keyPressEvent" title="MplCanvas.keyPressEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">keyPressEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.keyReleaseEvent" title="MplCanvas.keyReleaseEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">keyReleaseEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.resizeEvent" title="MplCanvas.resizeEvent"><code class="xref py py-attr docutils literal notranslate"><span class="pre">resizeEvent</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.sizeHint" title="MplCanvas.sizeHint"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sizeHint</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.minumumSizeHint" title="MplCanvas.minumumSizeHint"><code class="xref py py-attr docutils literal notranslate"><span class="pre">minumumSizeHint</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.drawRectangle" title="MplCanvas.drawRectangle"><code class="xref py py-attr docutils literal notranslate"><span class="pre">drawRectangle</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Properties</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.device_pixel_ratio" title="MplCanvas.device_pixel_ratio"><code class="xref py py-attr docutils literal notranslate"><span class="pre">device_pixel_ratio</span></code></a></p></td>
+<td><p>The ratio of physical to logical pixels used for the canvas on screen.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Attributes</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.figure" title="MplCanvas.figure"><code class="xref py py-attr docutils literal notranslate"><span class="pre">figure</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.print_rgba" title="MplCanvas.print_rgba"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_rgba</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.print_jpeg" title="MplCanvas.print_jpeg"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_jpeg</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.print_tiff" title="MplCanvas.print_tiff"><code class="xref py py-attr docutils literal notranslate"><span class="pre">print_tiff</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.required_interactive_framework" title="MplCanvas.required_interactive_framework"><code class="xref py py-attr docutils literal notranslate"><span class="pre">required_interactive_framework</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.manager_class" title="MplCanvas.manager_class"><code class="xref py py-attr docutils literal notranslate"><span class="pre">manager_class</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.events" title="MplCanvas.events"><code class="xref py py-attr docutils literal notranslate"><span class="pre">events</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.fixed_dpi" title="MplCanvas.fixed_dpi"><code class="xref py py-attr docutils literal notranslate"><span class="pre">fixed_dpi</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.filetypes" title="MplCanvas.filetypes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">filetypes</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.callbacks" title="MplCanvas.callbacks"><code class="xref py py-attr docutils literal notranslate"><span class="pre">callbacks</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.button_pick_id" title="MplCanvas.button_pick_id"><code class="xref py py-attr docutils literal notranslate"><span class="pre">button_pick_id</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplCanvas.scroll_pick_id" title="MplCanvas.scroll_pick_id"><code class="xref py py-attr docutils literal notranslate"><span class="pre">scroll_pick_id</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplCanvas.buttond" title="MplCanvas.buttond"><code class="xref py py-attr docutils literal notranslate"><span class="pre">buttond</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="import-detail">
+<h1>Import detail<a class="headerlink" href="#import-detail" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window</span> <span class="kn">import</span> <span class="n">MplCanvas</span>
+</pre></div>
+</div>
+</section>
+<section id="property-detail">
+<h1>Property detail<a class="headerlink" href="#property-detail" title="Link to this heading">#</a></h1>
+<dl class="py property">
+<dt class="sig sig-object py" id="MplCanvas.device_pixel_ratio">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">device_pixel_ratio</span></span><a class="headerlink" href="#MplCanvas.device_pixel_ratio" title="Link to this definition">#</a></dt>
+<dd><p>The ratio of physical to logical pixels used for the canvas on screen.</p>
+<p>By default, this is 1, meaning physical and logical pixels are the same
+size. Subclasses that support High DPI screens may set this property to
+indicate that said ratio is different. All Matplotlib interaction,
+unless working directly with the canvas, remains in logical pixels.</p>
+</dd></dl>
+
+</section>
+<section id="attribute-detail">
+<h1>Attribute detail<a class="headerlink" href="#attribute-detail" title="Link to this heading">#</a></h1>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.figure">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">figure</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_typeshed.Incomplete</span></em><a class="headerlink" href="#MplCanvas.figure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.print_rgba">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_rgba</span></span><a class="headerlink" href="#MplCanvas.print_rgba" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.print_jpeg">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_jpeg</span></span><a class="headerlink" href="#MplCanvas.print_jpeg" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.print_tiff">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_tiff</span></span><a class="headerlink" href="#MplCanvas.print_tiff" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.required_interactive_framework">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">required_interactive_framework</span></span><a class="headerlink" href="#MplCanvas.required_interactive_framework" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.manager_class">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">manager_class</span></span><a class="headerlink" href="#MplCanvas.manager_class" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.events">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">events</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['resize_event',</span> <span class="pre">'draw_event',</span> <span class="pre">'key_press_event',</span> <span class="pre">'key_release_event',</span> <span class="pre">'button_press_event',...</span></em><a class="headerlink" href="#MplCanvas.events" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.fixed_dpi">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">fixed_dpi</span></span><a class="headerlink" href="#MplCanvas.fixed_dpi" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.filetypes">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">filetypes</span></span><a class="headerlink" href="#MplCanvas.filetypes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.callbacks">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">callbacks</span></span><a class="headerlink" href="#MplCanvas.callbacks" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.button_pick_id">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">button_pick_id</span></span><a class="headerlink" href="#MplCanvas.button_pick_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.scroll_pick_id">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">scroll_pick_id</span></span><a class="headerlink" href="#MplCanvas.scroll_pick_id" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplCanvas.buttond">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">buttond</span></span><a class="headerlink" href="#MplCanvas.buttond" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="method-detail">
+<h1>Method detail<a class="headerlink" href="#method-detail" title="Link to this heading">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.paintEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">paintEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.paintEvent" title="Link to this definition">#</a></dt>
+<dd><p>Copy the image from the Agg canvas to the qt.drawable.</p>
+<p>In Qt, all drawing should be done inside of here when a widget is
+shown onscreen.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.print_figure">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.print_figure" title="Link to this definition">#</a></dt>
+<dd><p>Render the figure to hardcopy. Set the figure patch face and edge
+colors.  This is useful because some of the GUIs have a gray figure
+face color background and you’ll probably want to override this on
+hardcopy.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>filename</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or path-like or file-like</span></dt><dd><p>The file where the figure is saved.</p>
+</dd>
+<dt><strong>dpi</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, default: <a href="#id1"><span class="problematic" id="id2">:rc:`savefig.dpi`</span></a></span></dt><dd><p>The dots per inch to save the figure in.</p>
+</dd>
+<dt><strong>facecolor</strong><span class="classifier"><a href="#id3"><span class="problematic" id="id4">:mpltype:`color`</span></a> or ‘auto’, default: <a href="#id5"><span class="problematic" id="id6">:rc:`savefig.facecolor`</span></a></span></dt><dd><p>The facecolor of the figure.  If ‘auto’, use the current figure
+facecolor.</p>
+</dd>
+<dt><strong>edgecolor</strong><span class="classifier"><a href="#id7"><span class="problematic" id="id8">:mpltype:`color`</span></a> or ‘auto’, default: <a href="#id9"><span class="problematic" id="id10">:rc:`savefig.edgecolor`</span></a></span></dt><dd><p>The edgecolor of the figure.  If ‘auto’, use the current figure
+edgecolor.</p>
+</dd>
+<dt><strong>orientation</strong><span class="classifier">{‘landscape’, ‘portrait’}, default: ‘portrait’</span></dt><dd><p>Only currently applies to PostScript printing.</p>
+</dd>
+<dt><strong>format</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Force a specific file format. If not given, the format is inferred
+from the <em>filename</em> extension, and if that fails from
+<a href="#id11"><span class="problematic" id="id12">:rc:`savefig.format`</span></a>.</p>
+</dd>
+<dt><strong>bbox_inches</strong><span class="classifier">‘tight’ or <cite>.Bbox</cite>, default: <a href="#id13"><span class="problematic" id="id14">:rc:`savefig.bbox`</span></a></span></dt><dd><p>Bounding box in inches: only the given portion of the figure is
+saved.  If ‘tight’, try to figure out the tight bbox of the figure.</p>
+</dd>
+<dt><strong>pad_inches</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or ‘layout’, default: <a href="#id15"><span class="problematic" id="id16">:rc:`savefig.pad_inches`</span></a></span></dt><dd><p>Amount of padding in inches around the figure when bbox_inches is
+‘tight’. If ‘layout’ use the padding from the constrained or
+compressed layout engine; ignored if one of those engines is not in
+use.</p>
+</dd>
+<dt><strong>bbox_extra_artists</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> <code class="xref py py-obj docutils literal notranslate"><span class="pre">of</span></code> <cite>~matplotlib.artist.Artist</cite>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>A list of extra artists that will be considered when the
+tight bbox is calculated.</p>
+</dd>
+<dt><strong>backend</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Use a non-default backend to render the file, e.g. to render a
+png file with the “cairo” backend rather than the default “agg”,
+or a pdf file with the “pgf” backend rather than the default
+“pdf”.  Note that the default backend is normally sufficient.  See
+<span class="xref std std-ref">the-builtin-backends</span> for a list of valid backends for each
+file format.  Custom backends can be referenced as “module://…”.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.copy_from_bbox">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">copy_from_bbox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.copy_from_bbox" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.restore_region">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">restore_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bbox</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.restore_region" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.draw">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">draw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.draw" title="Link to this definition">#</a></dt>
+<dd><p>Render the <cite>.Figure</cite>.</p>
+<p>This method must walk the artist tree, even if no output is produced,
+because it triggers deferred work that users may want to access
+before saving output to disk. For example computing limits,
+auto-limits, and tick values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.get_renderer">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">get_renderer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.get_renderer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.tostring_rgb">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">tostring_rgb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.tostring_rgb" title="Link to this definition">#</a></dt>
+<dd><p>Get the image as RGB <cite>bytes</cite>.</p>
+<p><cite>draw</cite> must be called at least once before this function will work and
+to update the renderer for any subsequent changes to the Figure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.tostring_argb">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">tostring_argb</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.tostring_argb" title="Link to this definition">#</a></dt>
+<dd><p>Get the image as ARGB <cite>bytes</cite>.</p>
+<p><cite>draw</cite> must be called at least once before this function will work and
+to update the renderer for any subsequent changes to the Figure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.buffer_rgba">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">buffer_rgba</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.buffer_rgba" title="Link to this definition">#</a></dt>
+<dd><p>Get the image as a <cite>memoryview</cite> to the renderer’s buffer.</p>
+<p><cite>draw</cite> must be called at least once before this function will work and
+to update the renderer for any subsequent changes to the Figure.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.print_raw">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_raw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.print_raw" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.print_png">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_png</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pil_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.print_png" title="Link to this definition">#</a></dt>
+<dd><p>Write the figure to a PNG file.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>filename_or_obj</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or path-like or file-like</span></dt><dd><p>The file to write to.</p>
+</dd>
+<dt><strong>metadata</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Metadata in the PNG file as key-value pairs of bytes or latin-1
+encodable strings.
+According to the PNG specification, keys must be shorter than 79
+chars.</p>
+<p>The <a class="reference external" href="https://www.w3.org/TR/2003/REC-PNG-20031110/#11keywords">PNG specification</a> defines some common keywords that may be
+used as appropriate:</p>
+<ul class="simple">
+<li><p>Title: Short (one line) title or caption for image.</p></li>
+<li><p>Author: Name of image’s creator.</p></li>
+<li><p>Description: Description of image (possibly long).</p></li>
+<li><p>Copyright: Copyright notice.</p></li>
+<li><p>Creation Time: Time of original image creation
+(usually RFC 1123 format).</p></li>
+<li><p>Software: Software used to create the image.</p></li>
+<li><p>Disclaimer: Legal disclaimer.</p></li>
+<li><p>Warning: Warning of nature of content.</p></li>
+<li><p>Source: Device used to create the image.</p></li>
+<li><p>Comment: Miscellaneous comment;
+conversion from other image format.</p></li>
+</ul>
+<p>Other keywords may be invented for other purposes.</p>
+<p>If ‘Software’ is not given, an autogenerated value for Matplotlib
+will be used.  This can be removed by setting it to <em>None</em>.</p>
+<p>For more details see the <a class="reference external" href="https://www.w3.org/TR/2003/REC-PNG-20031110/#11keywords">PNG specification</a>.</p>
+</dd>
+<dt><strong>pil_kwargs</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">optional</span></code></span></dt><dd><p>Keyword arguments passed to <cite>PIL.Image.Image.save</cite>.</p>
+<p>If the ‘pnginfo’ key is present, it completely overrides
+<em>metadata</em>, including the default ‘Software’ key.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.print_to_buffer">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_to_buffer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.print_to_buffer" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.print_jpg">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_jpg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pil_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.print_jpg" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.print_tif">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_tif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pil_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.print_tif" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.print_webp">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">print_webp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_or_obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pil_kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.print_webp" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.supports_blit">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">supports_blit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.supports_blit" title="Link to this definition">#</a></dt>
+<dd><p>If this Canvas sub-class supports blitting.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.new_manager">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">new_manager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.new_manager" title="Link to this definition">#</a></dt>
+<dd><p>Create a new figure manager for <em>figure</em>, using this canvas class.</p>
+<p class="rubric">Notes</p>
+<p>This method should not be reimplemented in subclasses.  If
+custom manager creation logic is needed, please reimplement
+<code class="docutils literal notranslate"><span class="pre">FigureManager.create_with_canvas</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.is_saving">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">is_saving</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.is_saving" title="Link to this definition">#</a></dt>
+<dd><p>Return whether the renderer is in the process of saving
+to a file, rather than rendering for an on-screen buffer.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.blit">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">blit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bbox</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.blit" title="Link to this definition">#</a></dt>
+<dd><p>Blit the canvas in bbox (default entire canvas).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.inaxes">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">inaxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.inaxes" title="Link to this definition">#</a></dt>
+<dd><p>Return the topmost visible <cite>~.axes.Axes</cite> containing the point <em>xy</em>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>xy</strong><span class="classifier">(<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>)</span></dt><dd><p>(x, y) pixel positions from left/bottom of the canvas.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><cite>~matplotlib.axes.Axes</cite> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></dt><dd><p>The topmost visible Axes containing the point, or None if there
+is no Axes at the point.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.grab_mouse">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">grab_mouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.grab_mouse" title="Link to this definition">#</a></dt>
+<dd><p>Set the child <cite>~.axes.Axes</cite> which is grabbing the mouse events.</p>
+<p>Usually called by the widgets themselves. It is an error to call this
+if the mouse is already grabbed by another Axes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.release_mouse">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">release_mouse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ax</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.release_mouse" title="Link to this definition">#</a></dt>
+<dd><p>Release the mouse grab held by the <cite>~.axes.Axes</cite> <em>ax</em>.</p>
+<p>Usually called by the widgets. It is ok to call this even if <em>ax</em>
+doesn’t have the mouse grab currently.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.set_cursor">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">set_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cursor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.set_cursor" title="Link to this definition">#</a></dt>
+<dd><p>Set the current cursor.</p>
+<p>This may have no effect if the backend does not display anything.</p>
+<p>If required by the backend, this method should trigger an update in
+the backend event loop after the cursor is set, as this method may be
+called e.g. before a long-running task during which the GUI is not
+updated.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>cursor</strong><span class="classifier"><cite>.Cursors</cite></span></dt><dd><p>The cursor to display over the canvas. Note: some backends may
+change the cursor for the entire window.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.draw_idle">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">draw_idle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.draw_idle" title="Link to this definition">#</a></dt>
+<dd><p>Request a widget redraw once control returns to the GUI event loop.</p>
+<p>Even if multiple calls to <cite>draw_idle</cite> occur before control returns
+to the GUI event loop, the figure will only be rendered once.</p>
+<p class="rubric">Notes</p>
+<p>Backends may choose to override the method and implement their own
+strategy to prevent multiple renderings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.get_width_height">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">get_width_height</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">physical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.get_width_height" title="Link to this definition">#</a></dt>
+<dd><p>Return the figure width and height in integral points or pixels.</p>
+<p>When the figure is used on High DPI screens (and the backend supports
+it), the truncation to integers occurs after scaling by the device
+pixel ratio.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>physical</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.12)"><span class="xref std std-ref">bool</span></a>, default: <a class="reference external" href="https://docs.python.org/3/library/constants.html#False" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a></span></dt><dd><p>Whether to return true physical pixels or logical pixels. Physical
+pixels may be used by backends that support HiDPI, but still
+configure the canvas using its actual size.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>width, height</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The size of the figure, in points or pixels, depending on the
+backend.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.get_supported_filetypes">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">get_supported_filetypes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.get_supported_filetypes" title="Link to this definition">#</a></dt>
+<dd><p>Return dict of savefig file formats supported by this backend.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.get_supported_filetypes_grouped">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">get_supported_filetypes_grouped</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.get_supported_filetypes_grouped" title="Link to this definition">#</a></dt>
+<dd><p>Return a dict of savefig file formats supported by this backend,
+where the keys are a file type name, such as ‘Joint Photographic
+Experts Group’, and the values are a list of filename extensions used
+for that filetype, such as [‘jpg’, ‘jpeg’].</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.get_default_filetype">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">get_default_filetype</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.get_default_filetype" title="Link to this definition">#</a></dt>
+<dd><p>Return the default savefig file format as specified in
+<a href="#id17"><span class="problematic" id="id18">:rc:`savefig.format`</span></a>.</p>
+<p>The returned string does not include a period. This method is
+overridden in backends that only support a single file type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.get_default_filename">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">get_default_filename</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.get_default_filename" title="Link to this definition">#</a></dt>
+<dd><p>Return a string, which includes extension, suitable for use as
+a default filename.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.switch_backends">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">switch_backends</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">FigureCanvasClass</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.switch_backends" title="Link to this definition">#</a></dt>
+<dd><p>Instantiate an instance of FigureCanvasClass</p>
+<p>This is used for backend switching, e.g., to instantiate a
+FigureCanvasPS from a FigureCanvasGTK.  Note, deep copying is
+not done, so any changes to one of the instances (e.g., setting
+figure size or line props), will be reflected in the other</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.mpl_connect">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">mpl_connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.mpl_connect" title="Link to this definition">#</a></dt>
+<dd><p>Bind function <em>func</em> to event <em>s</em>.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>s</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>One of the following events ids:</p>
+<ul class="simple">
+<li><p>‘button_press_event’</p></li>
+<li><p>‘button_release_event’</p></li>
+<li><p>‘draw_event’</p></li>
+<li><p>‘key_press_event’</p></li>
+<li><p>‘key_release_event’</p></li>
+<li><p>‘motion_notify_event’</p></li>
+<li><p>‘pick_event’</p></li>
+<li><p>‘resize_event’</p></li>
+<li><p>‘scroll_event’</p></li>
+<li><p>‘figure_enter_event’,</p></li>
+<li><p>‘figure_leave_event’,</p></li>
+<li><p>‘axes_enter_event’,</p></li>
+<li><p>‘axes_leave_event’</p></li>
+<li><p>‘close_event’.</p></li>
+</ul>
+</dd>
+<dt><strong>func</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">callable()</span></code></a></span></dt><dd><p>The callback function to be executed, which must have the
+signature:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">event</span><span class="p">:</span> <span class="n">Event</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span>
+</pre></div>
+</div>
+<p>For the location events (button and key press/release), if the
+mouse is over the Axes, the <code class="docutils literal notranslate"><span class="pre">inaxes</span></code> attribute of the event will
+be set to the <cite>~matplotlib.axes.Axes</cite> the event occurs is over, and
+additionally, the variables <code class="docutils literal notranslate"><span class="pre">xdata</span></code> and <code class="docutils literal notranslate"><span class="pre">ydata</span></code> attributes will
+be set to the mouse location in data coordinates.  See <cite>.KeyEvent</cite>
+and <cite>.MouseEvent</cite> for more info.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If func is a method, this only stores a weak reference to the
+method. Thus, the figure does not influence the lifetime of
+the associated object. Usually, you want to make sure that the
+object is kept alive throughout the lifetime of the figure by
+holding a reference to it.</p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">cid</span></code></dt><dd><p>A connection id that can be used with
+<cite>.FigureCanvasBase.mpl_disconnect</cite>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_press</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;you pressed&#39;</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">button</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">xdata</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">ydata</span><span class="p">)</span>
+
+<span class="n">cid</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="s1">&#39;button_press_event&#39;</span><span class="p">,</span> <span class="n">on_press</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.mpl_disconnect">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">mpl_disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.mpl_disconnect" title="Link to this definition">#</a></dt>
+<dd><p>Disconnect the callback with id <em>cid</em>.</p>
+<p class="rubric">Examples</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cid</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="s1">&#39;button_press_event&#39;</span><span class="p">,</span> <span class="n">on_press</span><span class="p">)</span>
+<span class="c1"># ... later</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">mpl_disconnect</span><span class="p">(</span><span class="n">cid</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.new_timer">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">new_timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callbacks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.new_timer" title="Link to this definition">#</a></dt>
+<dd><p>Create a new backend-specific subclass of <cite>.Timer</cite>.</p>
+<p>This is useful for getting periodic events through the backend’s native
+event loop.  Implemented only for backends with GUIs.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>interval</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Timer interval in milliseconds.</p>
+</dd>
+<dt><strong>callbacks</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#callable" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">callable()</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a>]]</span></dt><dd><p>Sequence of (func, args, kwargs) where <code class="docutils literal notranslate"><span class="pre">func(*args,</span> <span class="pre">**kwargs)</span></code>
+will be executed by the timer every <em>interval</em>.</p>
+<p>Callbacks which return <code class="docutils literal notranslate"><span class="pre">False</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> will be removed from the
+timer.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">timer</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">new_timer</span><span class="p">(</span><span class="n">callbacks</span><span class="o">=</span><span class="p">[(</span><span class="n">f1</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,),</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">})])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.flush_events">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">flush_events</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.flush_events" title="Link to this definition">#</a></dt>
+<dd><p>Flush the GUI events for the figure.</p>
+<p>Interactive backends need to reimplement this method.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.start_event_loop">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">start_event_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.start_event_loop" title="Link to this definition">#</a></dt>
+<dd><p>Start a blocking event loop.</p>
+<p>Such an event loop is used by interactive functions, such as
+<cite>~.Figure.ginput</cite> and <cite>~.Figure.waitforbuttonpress</cite>, to wait for
+events.</p>
+<p>The event loop blocks until a callback function triggers
+<cite>stop_event_loop</cite>, or <em>timeout</em> is reached.</p>
+<p>If <em>timeout</em> is 0 or negative, never timeout.</p>
+<p>Only interactive backends need to reimplement this method and it relies
+on <cite>flush_events</cite> being properly implemented.</p>
+<p>Interactive backends should implement this in a more native way.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.stop_event_loop">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">stop_event_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.stop_event_loop" title="Link to this definition">#</a></dt>
+<dd><p>Stop the current blocking event loop.</p>
+<p>Interactive backends need to reimplement this to match
+<cite>start_event_loop</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.showEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">showEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.showEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.mouseEventCoords">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">mouseEventCoords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.mouseEventCoords" title="Link to this definition">#</a></dt>
+<dd><p>Calculate mouse coordinates in physical pixels.</p>
+<p>Qt uses logical pixels, but the figure is scaled to physical
+pixels for rendering.  Transform to physical pixels so that
+all of the down-stream transforms work as expected.</p>
+<p>Also, the origin is different and needs to be corrected.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.enterEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">enterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.enterEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.leaveEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">leaveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.leaveEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.mousePressEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.mousePressEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.mouseDoubleClickEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">mouseDoubleClickEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.mouseDoubleClickEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.mouseMoveEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">mouseMoveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.mouseMoveEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.mouseReleaseEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">mouseReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.mouseReleaseEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.wheelEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">wheelEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.wheelEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.keyPressEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">keyPressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.keyPressEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.keyReleaseEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">keyReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.keyReleaseEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.resizeEvent">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">resizeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.resizeEvent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.sizeHint">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">sizeHint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.sizeHint" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.minumumSizeHint">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">minumumSizeHint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.minumumSizeHint" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplCanvas.drawRectangle">
+<span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">drawRectangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.drawRectangle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="MplCanvas.MplWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MplCanvas.</span></span><span class="sig-name descname"><span class="pre">MplWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">central_editor_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#MplCanvas.MplWindow" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">esss_qt10.qt_traits.QWidget</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">plugins10.plugins.mainwindow.mainwindowplugins.centralwidget.DefaultCentralEditor</span></code></p>
+</dd></dl>
+
+</section>
+<section id="id19">
+<h1>Overview<a class="headerlink" href="#id19" title="Link to this heading">#</a></h1>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Methods</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplWindow.GetFigure" title="MplWindow.GetFigure"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFigure</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Attributes</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplWindow.frame" title="MplWindow.frame"><code class="xref py py-attr docutils literal notranslate"><span class="pre">frame</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplWindow.canvas" title="MplWindow.canvas"><code class="xref py py-attr docutils literal notranslate"><span class="pre">canvas</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplWindow.mpltoolbar" title="MplWindow.mpltoolbar"><code class="xref py py-attr docutils literal notranslate"><span class="pre">mpltoolbar</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplWindow.vbl" title="MplWindow.vbl"><code class="xref py py-attr docutils literal notranslate"><span class="pre">vbl</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="id20">
+<h1>Import detail<a class="headerlink" href="#id20" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window</span> <span class="kn">import</span> <span class="n">MplWindow</span>
+</pre></div>
+</div>
+</section>
+<section id="id21">
+<h1>Attribute detail<a class="headerlink" href="#id21" title="Link to this heading">#</a></h1>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplWindow.frame">
+<span class="sig-prename descclassname"><span class="pre">MplWindow.</span></span><span class="sig-name descname"><span class="pre">frame</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_typeshed.Incomplete</span></em><a class="headerlink" href="#MplWindow.frame" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplWindow.canvas">
+<span class="sig-prename descclassname"><span class="pre">MplWindow.</span></span><span class="sig-name descname"><span class="pre">canvas</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_typeshed.Incomplete</span></em><a class="headerlink" href="#MplWindow.canvas" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplWindow.mpltoolbar">
+<span class="sig-prename descclassname"><span class="pre">MplWindow.</span></span><span class="sig-name descname"><span class="pre">mpltoolbar</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_typeshed.Incomplete</span></em><a class="headerlink" href="#MplWindow.mpltoolbar" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="MplWindow.vbl">
+<span class="sig-prename descclassname"><span class="pre">MplWindow.</span></span><span class="sig-name descname"><span class="pre">vbl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_typeshed.Incomplete</span></em><a class="headerlink" href="#MplWindow.vbl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id22">
+<h1>Method detail<a class="headerlink" href="#id22" title="Link to this heading">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="MplWindow.GetFigure">
+<span class="sig-prename descclassname"><span class="pre">MplWindow.</span></span><span class="sig-name descname"><span class="pre">GetFigure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplWindow.GetFigure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="MplWindow.MplWindowSubject">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MplWindow.</span></span><span class="sig-name descname"><span class="pre">MplWindowSubject</span></span><a class="headerlink" href="#MplWindow.MplWindowSubject" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">plugins10.plugins.workspace.workspace_editor_subjects.workspace_editor_subjects.WorkspaceEditorSubject</span></code></p>
+</dd></dl>
+
+</section>
+<section id="id23">
+<h1>Overview<a class="headerlink" href="#id23" title="Link to this heading">#</a></h1>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Methods</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplWindowSubject.GetGUIClass" title="MplWindowSubject.GetGUIClass"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetGUIClass</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplWindowSubject.GetIgnoreChanges" title="MplWindowSubject.GetIgnoreChanges"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetIgnoreChanges</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#MplWindowSubject.GetIgnoreAddRemove" title="MplWindowSubject.GetIgnoreAddRemove"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetIgnoreAddRemove</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#MplWindowSubject.GetIgnoreAdd" title="MplWindowSubject.GetIgnoreAdd"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetIgnoreAdd</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="id24">
+<h1>Import detail<a class="headerlink" href="#id24" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window</span> <span class="kn">import</span> <span class="n">MplWindowSubject</span>
+</pre></div>
+</div>
+</section>
+<section id="id25">
+<h1>Method detail<a class="headerlink" href="#id25" title="Link to this heading">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="MplWindowSubject.GetGUIClass">
+<span class="sig-prename descclassname"><span class="pre">MplWindowSubject.</span></span><span class="sig-name descname"><span class="pre">GetGUIClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplWindowSubject.GetGUIClass" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplWindowSubject.GetIgnoreChanges">
+<span class="sig-prename descclassname"><span class="pre">MplWindowSubject.</span></span><span class="sig-name descname"><span class="pre">GetIgnoreChanges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplWindowSubject.GetIgnoreChanges" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplWindowSubject.GetIgnoreAddRemove">
+<span class="sig-prename descclassname"><span class="pre">MplWindowSubject.</span></span><span class="sig-name descname"><span class="pre">GetIgnoreAddRemove</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplWindowSubject.GetIgnoreAddRemove" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="MplWindowSubject.GetIgnoreAdd">
+<span class="sig-prename descclassname"><span class="pre">MplWindowSubject.</span></span><span class="sig-name descname"><span class="pre">GetIgnoreAdd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MplWindowSubject.GetIgnoreAdd" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="MplWindowSubject.RAMplWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">MplWindowSubject.</span></span><span class="sig-name descname"><span class="pre">RAMplWindow</span></span><a class="headerlink" href="#MplWindowSubject.RAMplWindow" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">kraken20.plugins.api.ka_workspace_window.KAWorkspaceWindow</span></code></p>
+</dd></dl>
+
+</section>
+<section id="id26">
+<h1>Overview<a class="headerlink" href="#id26" title="Link to this heading">#</a></h1>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Methods</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMplWindow.GetFigure" title="RAMplWindow.GetFigure"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFigure</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMplWindow.GetCanvas" title="RAMplWindow.GetCanvas"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetCanvas</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMplWindow.Redraw" title="RAMplWindow.Redraw"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Redraw</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="id27">
+<h1>Import detail<a class="headerlink" href="#id27" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window</span> <span class="kn">import</span> <span class="n">RAMplWindow</span>
+</pre></div>
+</div>
+</section>
+<section id="id28">
+<h1>Method detail<a class="headerlink" href="#id28" title="Link to this heading">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMplWindow.GetFigure">
+<span class="sig-prename descclassname"><span class="pre">RAMplWindow.</span></span><span class="sig-name descname"><span class="pre">GetFigure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RAMplWindow.GetFigure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMplWindow.GetCanvas">
+<span class="sig-prename descclassname"><span class="pre">RAMplWindow.</span></span><span class="sig-name descname"><span class="pre">GetCanvas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RAMplWindow.GetCanvas" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMplWindow.Redraw">
+<span class="sig-prename descclassname"><span class="pre">RAMplWindow.</span></span><span class="sig-name descname"><span class="pre">Redraw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RAMplWindow.Redraw" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="RAMplWindow.UserWindowSubjectContainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RAMplWindow.</span></span><span class="sig-name descname"><span class="pre">UserWindowSubjectContainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#RAMplWindow.UserWindowSubjectContainer" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">coilib50.subject.Subject</span></code></p>
+</dd></dl>
+
+</section>
+<section id="id29">
+<h1>Overview<a class="headerlink" href="#id29" title="Link to this heading">#</a></h1>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Methods</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#UserWindowSubjectContainer.GetIgnoreChanges" title="UserWindowSubjectContainer.GetIgnoreChanges"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetIgnoreChanges</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#UserWindowSubjectContainer.GetIgnoreAddRemove" title="UserWindowSubjectContainer.GetIgnoreAddRemove"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetIgnoreAddRemove</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#UserWindowSubjectContainer.GetIgnoreAdd" title="UserWindowSubjectContainer.GetIgnoreAdd"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetIgnoreAdd</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#UserWindowSubjectContainer.Add" title="UserWindowSubjectContainer.Add"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Add</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Attributes</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#UserWindowSubjectContainer.app" title="UserWindowSubjectContainer.app"><code class="xref py py-attr docutils literal notranslate"><span class="pre">app</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Special methods</label><div class="sd-tab-content docutils">
+<table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#UserWindowSubjectContainer.__iter__" title="UserWindowSubjectContainer.__iter__"><code class="xref py py-attr docutils literal notranslate"><span class="pre">__iter__</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="id30">
+<h1>Import detail<a class="headerlink" href="#id30" title="Link to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window</span> <span class="kn">import</span> <span class="n">UserWindowSubjectContainer</span>
+</pre></div>
+</div>
+</section>
+<section id="id31">
+<h1>Attribute detail<a class="headerlink" href="#id31" title="Link to this heading">#</a></h1>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="UserWindowSubjectContainer.app">
+<span class="sig-prename descclassname"><span class="pre">UserWindowSubjectContainer.</span></span><span class="sig-name descname"><span class="pre">app</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_typeshed.Incomplete</span></em><a class="headerlink" href="#UserWindowSubjectContainer.app" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="id32">
+<h1>Method detail<a class="headerlink" href="#id32" title="Link to this heading">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="UserWindowSubjectContainer.GetIgnoreChanges">
+<span class="sig-prename descclassname"><span class="pre">UserWindowSubjectContainer.</span></span><span class="sig-name descname"><span class="pre">GetIgnoreChanges</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UserWindowSubjectContainer.GetIgnoreChanges" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UserWindowSubjectContainer.GetIgnoreAddRemove">
+<span class="sig-prename descclassname"><span class="pre">UserWindowSubjectContainer.</span></span><span class="sig-name descname"><span class="pre">GetIgnoreAddRemove</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UserWindowSubjectContainer.GetIgnoreAddRemove" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UserWindowSubjectContainer.GetIgnoreAdd">
+<span class="sig-prename descclassname"><span class="pre">UserWindowSubjectContainer.</span></span><span class="sig-name descname"><span class="pre">GetIgnoreAdd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UserWindowSubjectContainer.GetIgnoreAdd" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UserWindowSubjectContainer.Add">
+<span class="sig-prename descclassname"><span class="pre">UserWindowSubjectContainer.</span></span><span class="sig-name descname"><span class="pre">Add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">window_subject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#UserWindowSubjectContainer.Add" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UserWindowSubjectContainer.__iter__">
+<span class="sig-prename descclassname"><span class="pre">UserWindowSubjectContainer.</span></span><span class="sig-name descname"><span class="pre">__iter__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UserWindowSubjectContainer.__iter__" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Summary</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#module-detail">Module detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ra_matplotlib_window.MplCanvas"><code class="docutils literal notranslate"><span class="pre">MplCanvas</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#import-detail">Import detail</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#property-detail">Property detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.device_pixel_ratio"><code class="docutils literal notranslate"><span class="pre">device_pixel_ratio</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#attribute-detail">Attribute detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.figure"><code class="docutils literal notranslate"><span class="pre">figure</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_rgba"><code class="docutils literal notranslate"><span class="pre">print_rgba</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_jpeg"><code class="docutils literal notranslate"><span class="pre">print_jpeg</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_tiff"><code class="docutils literal notranslate"><span class="pre">print_tiff</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.required_interactive_framework"><code class="docutils literal notranslate"><span class="pre">required_interactive_framework</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.manager_class"><code class="docutils literal notranslate"><span class="pre">manager_class</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.events"><code class="docutils literal notranslate"><span class="pre">events</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.fixed_dpi"><code class="docutils literal notranslate"><span class="pre">fixed_dpi</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.filetypes"><code class="docutils literal notranslate"><span class="pre">filetypes</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.callbacks"><code class="docutils literal notranslate"><span class="pre">callbacks</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.button_pick_id"><code class="docutils literal notranslate"><span class="pre">button_pick_id</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.scroll_pick_id"><code class="docutils literal notranslate"><span class="pre">scroll_pick_id</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.buttond"><code class="docutils literal notranslate"><span class="pre">buttond</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#method-detail">Method detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.paintEvent"><code class="docutils literal notranslate"><span class="pre">paintEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_figure"><code class="docutils literal notranslate"><span class="pre">print_figure()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.copy_from_bbox"><code class="docutils literal notranslate"><span class="pre">copy_from_bbox()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.restore_region"><code class="docutils literal notranslate"><span class="pre">restore_region()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.draw"><code class="docutils literal notranslate"><span class="pre">draw()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.get_renderer"><code class="docutils literal notranslate"><span class="pre">get_renderer()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.tostring_rgb"><code class="docutils literal notranslate"><span class="pre">tostring_rgb()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.tostring_argb"><code class="docutils literal notranslate"><span class="pre">tostring_argb()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.buffer_rgba"><code class="docutils literal notranslate"><span class="pre">buffer_rgba()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_raw"><code class="docutils literal notranslate"><span class="pre">print_raw()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_png"><code class="docutils literal notranslate"><span class="pre">print_png()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_to_buffer"><code class="docutils literal notranslate"><span class="pre">print_to_buffer()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_jpg"><code class="docutils literal notranslate"><span class="pre">print_jpg()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_tif"><code class="docutils literal notranslate"><span class="pre">print_tif()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.print_webp"><code class="docutils literal notranslate"><span class="pre">print_webp()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.supports_blit"><code class="docutils literal notranslate"><span class="pre">supports_blit()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.new_manager"><code class="docutils literal notranslate"><span class="pre">new_manager()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.is_saving"><code class="docutils literal notranslate"><span class="pre">is_saving()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.blit"><code class="docutils literal notranslate"><span class="pre">blit()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.inaxes"><code class="docutils literal notranslate"><span class="pre">inaxes()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.grab_mouse"><code class="docutils literal notranslate"><span class="pre">grab_mouse()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.release_mouse"><code class="docutils literal notranslate"><span class="pre">release_mouse()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.set_cursor"><code class="docutils literal notranslate"><span class="pre">set_cursor()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.draw_idle"><code class="docutils literal notranslate"><span class="pre">draw_idle()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.get_width_height"><code class="docutils literal notranslate"><span class="pre">get_width_height()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.get_supported_filetypes"><code class="docutils literal notranslate"><span class="pre">get_supported_filetypes()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.get_supported_filetypes_grouped"><code class="docutils literal notranslate"><span class="pre">get_supported_filetypes_grouped()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.get_default_filetype"><code class="docutils literal notranslate"><span class="pre">get_default_filetype()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.get_default_filename"><code class="docutils literal notranslate"><span class="pre">get_default_filename()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.switch_backends"><code class="docutils literal notranslate"><span class="pre">switch_backends()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.mpl_connect"><code class="docutils literal notranslate"><span class="pre">mpl_connect()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.mpl_disconnect"><code class="docutils literal notranslate"><span class="pre">mpl_disconnect()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.new_timer"><code class="docutils literal notranslate"><span class="pre">new_timer()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.flush_events"><code class="docutils literal notranslate"><span class="pre">flush_events()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.start_event_loop"><code class="docutils literal notranslate"><span class="pre">start_event_loop()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.stop_event_loop"><code class="docutils literal notranslate"><span class="pre">stop_event_loop()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.showEvent"><code class="docutils literal notranslate"><span class="pre">showEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.mouseEventCoords"><code class="docutils literal notranslate"><span class="pre">mouseEventCoords()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.enterEvent"><code class="docutils literal notranslate"><span class="pre">enterEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.leaveEvent"><code class="docutils literal notranslate"><span class="pre">leaveEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">mousePressEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.mouseDoubleClickEvent"><code class="docutils literal notranslate"><span class="pre">mouseDoubleClickEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.mouseMoveEvent"><code class="docutils literal notranslate"><span class="pre">mouseMoveEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">mouseReleaseEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.wheelEvent"><code class="docutils literal notranslate"><span class="pre">wheelEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.keyPressEvent"><code class="docutils literal notranslate"><span class="pre">keyPressEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.keyReleaseEvent"><code class="docutils literal notranslate"><span class="pre">keyReleaseEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.resizeEvent"><code class="docutils literal notranslate"><span class="pre">resizeEvent()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.sizeHint"><code class="docutils literal notranslate"><span class="pre">sizeHint()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.minumumSizeHint"><code class="docutils literal notranslate"><span class="pre">minumumSizeHint()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.drawRectangle"><code class="docutils literal notranslate"><span class="pre">drawRectangle()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplCanvas.MplWindow"><code class="docutils literal notranslate"><span class="pre">MplWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Import detail</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Attribute detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindow.frame"><code class="docutils literal notranslate"><span class="pre">frame</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindow.canvas"><code class="docutils literal notranslate"><span class="pre">canvas</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindow.mpltoolbar"><code class="docutils literal notranslate"><span class="pre">mpltoolbar</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindow.vbl"><code class="docutils literal notranslate"><span class="pre">vbl</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Method detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindow.GetFigure"><code class="docutils literal notranslate"><span class="pre">GetFigure()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindow.MplWindowSubject"><code class="docutils literal notranslate"><span class="pre">MplWindowSubject</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Import detail</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Method detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindowSubject.GetGUIClass"><code class="docutils literal notranslate"><span class="pre">GetGUIClass()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindowSubject.GetIgnoreChanges"><code class="docutils literal notranslate"><span class="pre">GetIgnoreChanges()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindowSubject.GetIgnoreAddRemove"><code class="docutils literal notranslate"><span class="pre">GetIgnoreAddRemove()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindowSubject.GetIgnoreAdd"><code class="docutils literal notranslate"><span class="pre">GetIgnoreAdd()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#MplWindowSubject.RAMplWindow"><code class="docutils literal notranslate"><span class="pre">RAMplWindow</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Import detail</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Method detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMplWindow.GetFigure"><code class="docutils literal notranslate"><span class="pre">GetFigure()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMplWindow.GetCanvas"><code class="docutils literal notranslate"><span class="pre">GetCanvas()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMplWindow.Redraw"><code class="docutils literal notranslate"><span class="pre">Redraw()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMplWindow.UserWindowSubjectContainer"><code class="docutils literal notranslate"><span class="pre">UserWindowSubjectContainer</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Import detail</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Attribute detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#UserWindowSubjectContainer.app"><code class="docutils literal notranslate"><span class="pre">app</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Method detail</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#UserWindowSubjectContainer.GetIgnoreChanges"><code class="docutils literal notranslate"><span class="pre">GetIgnoreChanges()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#UserWindowSubjectContainer.GetIgnoreAddRemove"><code class="docutils literal notranslate"><span class="pre">GetIgnoreAddRemove()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#UserWindowSubjectContainer.GetIgnoreAdd"><code class="docutils literal notranslate"><span class="pre">GetIgnoreAdd()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#UserWindowSubjectContainer.Add"><code class="docutils literal notranslate"><span class="pre">Add()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#UserWindowSubjectContainer.__iter__"><code class="docutils literal notranslate"><span class="pre">__iter__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<!-- If there is no fix edit button function, use the PyData edit-this-button-->
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../../../../../../../_sources/api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  0.16.6. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

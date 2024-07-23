@@ -1,0 +1,201 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_coupled_wall
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_coupled_wall
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RACoupledWall`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RACoupledWall
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+
+
+
+.. py:currentmodule:: RACoupledWall
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~HasMotionFrame`
+            - 
+          * - :py:attr:`~GetDisableTime`
+            - 
+          * - :py:attr:`~SetDisableTime`
+            - 
+          * - :py:attr:`~GetEnableTime`
+            - 
+          * - :py:attr:`~SetEnableTime`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetMaterial`
+            - 
+          * - :py:attr:`~SetMaterial`
+            - 
+          * - :py:attr:`~GetAvailableMaterials`
+            - 
+          * - :py:attr:`~GetModuleProperties`
+            - 
+          * - :py:attr:`~GetModuleProperty`
+            - 
+          * - :py:attr:`~SetModuleProperty`
+            - 
+          * - :py:attr:`~GetValidOptionsForModuleProperty`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_coupled_wall import RACoupledWall
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type[object]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: HasMotionFrame() -> bool
+
+
+.. py:method:: GetDisableTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetDisableTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetEnableTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetEnableTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(value: str) -> None
+
+
+.. py:method:: GetMaterial()
+
+
+.. py:method:: SetMaterial(value) -> None
+
+
+.. py:method:: GetAvailableMaterials()
+
+
+.. py:method:: GetModuleProperties() -> collections.abc.Sequence[ModulePropertyIdentifier]
+
+
+.. py:method:: GetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], unit: Union[str, None] = ...) -> Union[float, bool, str, ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList]
+
+
+.. py:method:: SetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], value: Union[float, bool, str], unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: GetValidOptionsForModuleProperty(property_name)
+
+
+
+
+
+

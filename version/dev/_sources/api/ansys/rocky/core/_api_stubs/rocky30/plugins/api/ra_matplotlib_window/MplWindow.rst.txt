@@ -1,0 +1,87 @@
+
+
+.. py:class:: MplWindow(parent, central_editor_id)
+
+   Bases: :py:obj:`esss_qt10.qt_traits.QWidget`, :py:obj:`plugins10.plugins.mainwindow.mainwindowplugins.centralwidget.DefaultCentralEditor`
+
+
+
+.. py:currentmodule:: MplWindow
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFigure`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~frame`
+            - 
+          * - :py:attr:`~canvas`
+            - 
+          * - :py:attr:`~mpltoolbar`
+            - 
+          * - :py:attr:`~vbl`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import MplWindow
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: frame
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: canvas
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: mpltoolbar
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: vbl
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetFigure()
+
+
+

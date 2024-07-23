@@ -1,0 +1,165 @@
+
+
+.. py:class:: RABaseCFDCoupling
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+
+.. py:currentmodule:: RABaseCFDCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCFDParametersList`
+            - 
+          * - :py:attr:`~SetPartIdIfValid`
+            - 
+          * - :py:attr:`~GetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~SetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~GetDragLaw`
+            - 
+          * - :py:attr:`~SetDragLaw`
+            - 
+          * - :py:attr:`~GetLiftLaw`
+            - 
+          * - :py:attr:`~SetLiftLaw`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~GetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~GetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~GetTorqueLaw`
+            - 
+          * - :py:attr:`~SetTorqueLaw`
+            - 
+          * - :py:attr:`~GetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~SetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~GetVirtualMassLaw`
+            - 
+          * - :py:attr:`~SetVirtualMassLaw`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling import RABaseCFDCoupling
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetCFDParametersList()
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+
+.. py:method:: GetConvectiveHeatTransferLaw()
+
+
+.. py:method:: SetConvectiveHeatTransferLaw(value) -> None
+
+
+.. py:method:: GetDragLaw()
+
+
+.. py:method:: SetDragLaw(value) -> None
+
+
+.. py:method:: GetLiftLaw()
+
+
+.. py:method:: SetLiftLaw(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK1()
+
+
+.. py:method:: SetMorsiAndAlexanderK1(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK2()
+
+
+.. py:method:: SetMorsiAndAlexanderK2(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK3()
+
+
+.. py:method:: SetMorsiAndAlexanderK3(value) -> None
+
+
+.. py:method:: GetSyamlalObrienC1()
+
+
+.. py:method:: SetSyamlalObrienC1(value) -> None
+
+
+.. py:method:: GetSyamlalObrienD1()
+
+
+.. py:method:: SetSyamlalObrienD1(value) -> None
+
+
+.. py:method:: GetTorqueLaw()
+
+
+.. py:method:: SetTorqueLaw(value) -> None
+
+
+.. py:method:: GetUseUserDefinedConstants()
+
+
+.. py:method:: SetUseUserDefinedConstants(value) -> None
+
+
+.. py:method:: GetVirtualMassLaw()
+
+
+.. py:method:: SetVirtualMassLaw(value) -> None
+
+
+

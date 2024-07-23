@@ -1,0 +1,181 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_inlets_outlets_collection
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_inlets_outlets_collection
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RAInletsOutletsCollection`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RAInletsOutletsCollection
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet.RAParticleInlet`\ ]
+
+
+
+
+
+.. py:currentmodule:: RAInletsOutletsCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~New`
+            - 
+          * - :py:attr:`~AddContinuousInjection`
+            - 
+          * - :py:attr:`~AddParticleInlet`
+            - 
+          * - :py:attr:`~AddOutlet`
+            - 
+          * - :py:attr:`~AddVolumeFill`
+            - 
+          * - :py:attr:`~AddVolumetricInlet`
+            - 
+          * - :py:attr:`~AddCustomInput`
+            - 
+          * - :py:attr:`~AddFluidInlet`
+            - 
+          * - :py:attr:`~GetParticleInputNames`
+            - 
+          * - :py:attr:`~GetParticleInput`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_inlets_outlets_collection import RAInletsOutletsCollection
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: New()
+
+
+.. py:method:: AddContinuousInjection() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet.RAParticleInlet
+
+
+.. py:method:: AddParticleInlet() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet.RAParticleInlet
+
+
+.. py:method:: AddOutlet() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_outlet.RAOutlet
+
+
+.. py:method:: AddVolumeFill() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet.RAVolumetricInlet
+
+
+.. py:method:: AddVolumetricInlet() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet.RAVolumetricInlet
+
+
+.. py:method:: AddCustomInput() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_input.RACustomInput
+
+
+.. py:method:: AddFluidInlet() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_inlet.RAFluidInlet
+
+
+.. py:method:: GetParticleInputNames()
+
+
+.. py:method:: GetParticleInput(input_name)
+
+
+
+
+
+

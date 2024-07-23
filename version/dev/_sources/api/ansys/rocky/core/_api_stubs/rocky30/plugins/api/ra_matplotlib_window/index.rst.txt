@@ -1,0 +1,1705 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_matplotlib_window
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~MplCanvas`
+            - The canvas the figure renders into.
+
+
+          * - :py:obj:`~MplWindow`
+            - 
+
+
+          * - :py:obj:`~MplWindowSubject`
+            - 
+
+
+          * - :py:obj:`~RAMplWindow`
+            - 
+
+
+          * - :py:obj:`~UserWindowSubjectContainer`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: MplCanvas
+
+   Bases: :py:obj:`matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg`
+
+
+   
+   The canvas the figure renders into.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   :Attributes:
+
+       **figure** : `~matplotlib.figure.Figure`
+           A high-level figure instance.
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+.. py:currentmodule:: MplCanvas
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~new_manager`
+            - Create a new figure manager for *figure*, using this canvas class.
+          * - :py:attr:`~get_supported_filetypes`
+            - Return dict of savefig file formats supported by this backend.
+          * - :py:attr:`~get_supported_filetypes_grouped`
+            - Return a dict of savefig file formats supported by this backend,
+          * - :py:attr:`~get_default_filetype`
+            - Return the default savefig file format as specified in
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~paintEvent`
+            - Copy the image from the Agg canvas to the qt.drawable.
+          * - :py:attr:`~print_figure`
+            - Render the figure to hardcopy. Set the figure patch face and edge
+          * - :py:attr:`~copy_from_bbox`
+            - 
+          * - :py:attr:`~restore_region`
+            - 
+          * - :py:attr:`~draw`
+            - Render the `.Figure`.
+          * - :py:attr:`~get_renderer`
+            - 
+          * - :py:attr:`~tostring_rgb`
+            - Get the image as RGB `bytes`.
+          * - :py:attr:`~tostring_argb`
+            - Get the image as ARGB `bytes`.
+          * - :py:attr:`~buffer_rgba`
+            - Get the image as a `memoryview` to the renderer's buffer.
+          * - :py:attr:`~print_raw`
+            - 
+          * - :py:attr:`~print_png`
+            - Write the figure to a PNG file.
+          * - :py:attr:`~print_to_buffer`
+            - 
+          * - :py:attr:`~print_jpg`
+            - 
+          * - :py:attr:`~print_tif`
+            - 
+          * - :py:attr:`~print_webp`
+            - 
+          * - :py:attr:`~supports_blit`
+            - If this Canvas sub-class supports blitting.
+          * - :py:attr:`~is_saving`
+            - Return whether the renderer is in the process of saving
+          * - :py:attr:`~blit`
+            - Blit the canvas in bbox (default entire canvas).
+          * - :py:attr:`~inaxes`
+            - Return the topmost visible `~.axes.Axes` containing the point *xy*.
+          * - :py:attr:`~grab_mouse`
+            - Set the child `~.axes.Axes` which is grabbing the mouse events.
+          * - :py:attr:`~release_mouse`
+            - Release the mouse grab held by the `~.axes.Axes` *ax*.
+          * - :py:attr:`~set_cursor`
+            - Set the current cursor.
+          * - :py:attr:`~draw_idle`
+            - Request a widget redraw once control returns to the GUI event loop.
+          * - :py:attr:`~get_width_height`
+            - Return the figure width and height in integral points or pixels.
+          * - :py:attr:`~get_default_filename`
+            - Return a string, which includes extension, suitable for use as
+          * - :py:attr:`~switch_backends`
+            - Instantiate an instance of FigureCanvasClass
+          * - :py:attr:`~mpl_connect`
+            - Bind function *func* to event *s*.
+          * - :py:attr:`~mpl_disconnect`
+            - Disconnect the callback with id *cid*.
+          * - :py:attr:`~new_timer`
+            - Create a new backend-specific subclass of `.Timer`.
+          * - :py:attr:`~flush_events`
+            - Flush the GUI events for the figure.
+          * - :py:attr:`~start_event_loop`
+            - Start a blocking event loop.
+          * - :py:attr:`~stop_event_loop`
+            - Stop the current blocking event loop.
+          * - :py:attr:`~showEvent`
+            - 
+          * - :py:attr:`~mouseEventCoords`
+            - Calculate mouse coordinates in physical pixels.
+          * - :py:attr:`~enterEvent`
+            - 
+          * - :py:attr:`~leaveEvent`
+            - 
+          * - :py:attr:`~mousePressEvent`
+            - 
+          * - :py:attr:`~mouseDoubleClickEvent`
+            - 
+          * - :py:attr:`~mouseMoveEvent`
+            - 
+          * - :py:attr:`~mouseReleaseEvent`
+            - 
+          * - :py:attr:`~wheelEvent`
+            - 
+          * - :py:attr:`~keyPressEvent`
+            - 
+          * - :py:attr:`~keyReleaseEvent`
+            - 
+          * - :py:attr:`~resizeEvent`
+            - 
+          * - :py:attr:`~sizeHint`
+            - 
+          * - :py:attr:`~minumumSizeHint`
+            - 
+          * - :py:attr:`~drawRectangle`
+            - 
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~device_pixel_ratio`
+            - The ratio of physical to logical pixels used for the canvas on screen.
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~figure`
+            - 
+          * - :py:attr:`~print_rgba`
+            - 
+          * - :py:attr:`~print_jpeg`
+            - 
+          * - :py:attr:`~print_tiff`
+            - 
+          * - :py:attr:`~required_interactive_framework`
+            - 
+          * - :py:attr:`~manager_class`
+            - 
+          * - :py:attr:`~events`
+            - 
+          * - :py:attr:`~fixed_dpi`
+            - 
+          * - :py:attr:`~filetypes`
+            - 
+          * - :py:attr:`~callbacks`
+            - 
+          * - :py:attr:`~button_pick_id`
+            - 
+          * - :py:attr:`~scroll_pick_id`
+            - 
+          * - :py:attr:`~buttond`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import MplCanvas
+
+Property detail
+---------------
+.. py:property:: device_pixel_ratio
+
+   
+   The ratio of physical to logical pixels used for the canvas on screen.
+
+   By default, this is 1, meaning physical and logical pixels are the same
+   size. Subclasses that support High DPI screens may set this property to
+   indicate that said ratio is different. All Matplotlib interaction,
+   unless working directly with the canvas, remains in logical pixels.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: figure
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: print_rgba
+
+   
+
+.. py:attribute:: print_jpeg
+
+   
+
+.. py:attribute:: print_tiff
+
+   
+
+.. py:attribute:: required_interactive_framework
+
+   
+
+.. py:attribute:: manager_class
+
+   
+
+.. py:attribute:: events
+   :value: ['resize_event', 'draw_event', 'key_press_event', 'key_release_event', 'button_press_event',...
+
+   
+
+.. py:attribute:: fixed_dpi
+
+   
+
+.. py:attribute:: filetypes
+
+   
+
+.. py:attribute:: callbacks
+
+   
+
+.. py:attribute:: button_pick_id
+
+   
+
+.. py:attribute:: scroll_pick_id
+
+   
+
+.. py:attribute:: buttond
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: paintEvent(event)
+
+   
+   Copy the image from the Agg canvas to the qt.drawable.
+
+   In Qt, all drawing should be done inside of here when a widget is
+   shown onscreen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: print_figure(*args, **kwargs)
+
+   
+   Render the figure to hardcopy. Set the figure patch face and edge
+   colors.  This is useful because some of the GUIs have a gray figure
+   face color background and you'll probably want to override this on
+   hardcopy.
+
+
+   :Parameters:
+
+       **filename** : :class:`python:str` or path-like or file-like
+           The file where the figure is saved.
+
+       **dpi** : :class:`python:float`, default: :rc:`savefig.dpi`
+           The dots per inch to save the figure in.
+
+       **facecolor** : :mpltype:`color` or 'auto', default: :rc:`savefig.facecolor`
+           The facecolor of the figure.  If 'auto', use the current figure
+           facecolor.
+
+       **edgecolor** : :mpltype:`color` or 'auto', default: :rc:`savefig.edgecolor`
+           The edgecolor of the figure.  If 'auto', use the current figure
+           edgecolor.
+
+       **orientation** : {'landscape', 'portrait'}, default: 'portrait'
+           Only currently applies to PostScript printing.
+
+       **format** : :class:`python:str`, :obj:`optional`
+           Force a specific file format. If not given, the format is inferred
+           from the *filename* extension, and if that fails from
+           :rc:`savefig.format`.
+
+       **bbox_inches** : 'tight' or `.Bbox`, default: :rc:`savefig.bbox`
+           Bounding box in inches: only the given portion of the figure is
+           saved.  If 'tight', try to figure out the tight bbox of the figure.
+
+       **pad_inches** : :class:`python:float` or 'layout', default: :rc:`savefig.pad_inches`
+           Amount of padding in inches around the figure when bbox_inches is
+           'tight'. If 'layout' use the padding from the constrained or
+           compressed layout engine; ignored if one of those engines is not in
+           use.
+
+       **bbox_extra_artists** : :class:`python:list` :obj:`of` `~matplotlib.artist.Artist`, :obj:`optional`
+           A list of extra artists that will be considered when the
+           tight bbox is calculated.
+
+       **backend** : :class:`python:str`, :obj:`optional`
+           Use a non-default backend to render the file, e.g. to render a
+           png file with the "cairo" backend rather than the default "agg",
+           or a pdf file with the "pgf" backend rather than the default
+           "pdf".  Note that the default backend is normally sufficient.  See
+           :ref:`the-builtin-backends` for a list of valid backends for each
+           file format.  Custom backends can be referenced as "module://...".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: copy_from_bbox(bbox)
+
+
+.. py:method:: restore_region(region, bbox=None, xy=None)
+
+
+.. py:method:: draw()
+
+   
+   Render the `.Figure`.
+
+   This method must walk the artist tree, even if no output is produced,
+   because it triggers deferred work that users may want to access
+   before saving output to disk. For example computing limits,
+   auto-limits, and tick values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: get_renderer()
+
+
+.. py:method:: tostring_rgb()
+
+   
+   Get the image as RGB `bytes`.
+
+   `draw` must be called at least once before this function will work and
+   to update the renderer for any subsequent changes to the Figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: tostring_argb()
+
+   
+   Get the image as ARGB `bytes`.
+
+   `draw` must be called at least once before this function will work and
+   to update the renderer for any subsequent changes to the Figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: buffer_rgba()
+
+   
+   Get the image as a `memoryview` to the renderer's buffer.
+
+   `draw` must be called at least once before this function will work and
+   to update the renderer for any subsequent changes to the Figure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: print_raw(filename_or_obj, *, metadata=None)
+
+
+.. py:method:: print_png(filename_or_obj, *, metadata=None, pil_kwargs=None)
+
+   
+   Write the figure to a PNG file.
+
+
+   :Parameters:
+
+       **filename_or_obj** : :class:`python:str` or path-like or file-like
+           The file to write to.
+
+       **metadata** : :class:`python:dict`, :obj:`optional`
+           Metadata in the PNG file as key-value pairs of bytes or latin-1
+           encodable strings.
+           According to the PNG specification, keys must be shorter than 79
+           chars.
+           
+           The `PNG specification`_ defines some common keywords that may be
+           used as appropriate:
+           
+           - Title: Short (one line) title or caption for image.
+           - Author: Name of image's creator.
+           - Description: Description of image (possibly long).
+           - Copyright: Copyright notice.
+           - Creation Time: Time of original image creation
+             (usually RFC 1123 format).
+           - Software: Software used to create the image.
+           - Disclaimer: Legal disclaimer.
+           - Warning: Warning of nature of content.
+           - Source: Device used to create the image.
+           - Comment: Miscellaneous comment;
+             conversion from other image format.
+           
+           Other keywords may be invented for other purposes.
+           
+           If 'Software' is not given, an autogenerated value for Matplotlib
+           will be used.  This can be removed by setting it to *None*.
+           
+           For more details see the `PNG specification`_.
+           
+           .. _PNG specification:                 https://www.w3.org/TR/2003/REC-PNG-20031110/#11keywords
+
+       **pil_kwargs** : :class:`python:dict`, :obj:`optional`
+           Keyword arguments passed to `PIL.Image.Image.save`.
+           
+           If the 'pnginfo' key is present, it completely overrides
+           *metadata*, including the default 'Software' key.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: print_to_buffer()
+
+
+.. py:method:: print_jpg(filename_or_obj, *, metadata=None, pil_kwargs=None)
+
+
+.. py:method:: print_tif(filename_or_obj, *, metadata=None, pil_kwargs=None)
+
+
+.. py:method:: print_webp(filename_or_obj, *, metadata=None, pil_kwargs=None)
+
+
+.. py:method:: supports_blit()
+
+   
+   If this Canvas sub-class supports blitting.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: new_manager(figure, num)
+   :classmethod:
+
+   
+   Create a new figure manager for *figure*, using this canvas class.
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Notes
+
+   This method should not be reimplemented in subclasses.  If
+   custom manager creation logic is needed, please reimplement
+   ``FigureManager.create_with_canvas``.
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: is_saving()
+
+   
+   Return whether the renderer is in the process of saving
+   to a file, rather than rendering for an on-screen buffer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: blit(bbox=None)
+
+   
+   Blit the canvas in bbox (default entire canvas).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: inaxes(xy)
+
+   
+   Return the topmost visible `~.axes.Axes` containing the point *xy*.
+
+
+   :Parameters:
+
+       **xy** : (:class:`python:float`, :class:`python:float`)
+           (x, y) pixel positions from left/bottom of the canvas.
+
+   :Returns:
+
+       `~matplotlib.axes.Axes` or :data:`python:None`
+           The topmost visible Axes containing the point, or None if there
+           is no Axes at the point.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: grab_mouse(ax)
+
+   
+   Set the child `~.axes.Axes` which is grabbing the mouse events.
+
+   Usually called by the widgets themselves. It is an error to call this
+   if the mouse is already grabbed by another Axes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: release_mouse(ax)
+
+   
+   Release the mouse grab held by the `~.axes.Axes` *ax*.
+
+   Usually called by the widgets. It is ok to call this even if *ax*
+   doesn't have the mouse grab currently.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: set_cursor(cursor)
+
+   
+   Set the current cursor.
+
+   This may have no effect if the backend does not display anything.
+
+   If required by the backend, this method should trigger an update in
+   the backend event loop after the cursor is set, as this method may be
+   called e.g. before a long-running task during which the GUI is not
+   updated.
+
+   :Parameters:
+
+       **cursor** : `.Cursors`
+           The cursor to display over the canvas. Note: some backends may
+           change the cursor for the entire window.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: draw_idle(*args, **kwargs)
+
+   
+   Request a widget redraw once control returns to the GUI event loop.
+
+   Even if multiple calls to `draw_idle` occur before control returns
+   to the GUI event loop, the figure will only be rendered once.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Notes
+
+   Backends may choose to override the method and implement their own
+   strategy to prevent multiple renderings.
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: get_width_height(*, physical=False)
+
+   
+   Return the figure width and height in integral points or pixels.
+
+   When the figure is used on High DPI screens (and the backend supports
+   it), the truncation to integers occurs after scaling by the device
+   pixel ratio.
+
+   :Parameters:
+
+       **physical** : :ref:`bool <python:bltin-boolean-values>`, default: :data:`python:False`
+           Whether to return true physical pixels or logical pixels. Physical
+           pixels may be used by backends that support HiDPI, but still
+           configure the canvas using its actual size.
+
+   :Returns:
+
+       **width, height** : :class:`python:int`
+           The size of the figure, in points or pixels, depending on the
+           backend.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: get_supported_filetypes()
+   :classmethod:
+
+   
+   Return dict of savefig file formats supported by this backend.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: get_supported_filetypes_grouped()
+   :classmethod:
+
+   
+   Return a dict of savefig file formats supported by this backend,
+   where the keys are a file type name, such as 'Joint Photographic
+   Experts Group', and the values are a list of filename extensions used
+   for that filetype, such as ['jpg', 'jpeg'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: get_default_filetype()
+   :classmethod:
+
+   
+   Return the default savefig file format as specified in
+   :rc:`savefig.format`.
+
+   The returned string does not include a period. This method is
+   overridden in backends that only support a single file type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: get_default_filename()
+
+   
+   Return a string, which includes extension, suitable for use as
+   a default filename.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: switch_backends(FigureCanvasClass)
+
+   
+   Instantiate an instance of FigureCanvasClass
+
+   This is used for backend switching, e.g., to instantiate a
+   FigureCanvasPS from a FigureCanvasGTK.  Note, deep copying is
+   not done, so any changes to one of the instances (e.g., setting
+   figure size or line props), will be reflected in the other
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: mpl_connect(s, func)
+
+   
+   Bind function *func* to event *s*.
+
+
+   :Parameters:
+
+       **s** : :class:`python:str`
+           One of the following events ids:
+           
+           - 'button_press_event'
+           - 'button_release_event'
+           - 'draw_event'
+           - 'key_press_event'
+           - 'key_release_event'
+           - 'motion_notify_event'
+           - 'pick_event'
+           - 'resize_event'
+           - 'scroll_event'
+           - 'figure_enter_event',
+           - 'figure_leave_event',
+           - 'axes_enter_event',
+           - 'axes_leave_event'
+           - 'close_event'.
+
+       **func** : :func:`python:callable`
+           The callback function to be executed, which must have the
+           signature::
+           
+               def func(event: Event) -> Any
+           
+           For the location events (button and key press/release), if the
+           mouse is over the Axes, the ``inaxes`` attribute of the event will
+           be set to the `~matplotlib.axes.Axes` the event occurs is over, and
+           additionally, the variables ``xdata`` and ``ydata`` attributes will
+           be set to the mouse location in data coordinates.  See `.KeyEvent`
+           and `.MouseEvent` for more info.
+           
+           .. note::
+           
+               If func is a method, this only stores a weak reference to the
+               method. Thus, the figure does not influence the lifetime of
+               the associated object. Usually, you want to make sure that the
+               object is kept alive throughout the lifetime of the figure by
+               holding a reference to it.
+
+   :Returns:
+
+       :obj:`cid`
+           A connection id that can be used with
+           `.FigureCanvasBase.mpl_disconnect`.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   ::
+
+       def on_press(event):
+           print('you pressed', event.button, event.xdata, event.ydata)
+
+       cid = canvas.mpl_connect('button_press_event', on_press)
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: mpl_disconnect(cid)
+
+   
+   Disconnect the callback with id *cid*.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   ::
+
+       cid = canvas.mpl_connect('button_press_event', on_press)
+       # ... later
+       canvas.mpl_disconnect(cid)
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: new_timer(interval=None, callbacks=None)
+
+   
+   Create a new backend-specific subclass of `.Timer`.
+
+   This is useful for getting periodic events through the backend's native
+   event loop.  Implemented only for backends with GUIs.
+
+   :Parameters:
+
+       **interval** : :class:`python:int`
+           Timer interval in milliseconds.
+
+       **callbacks** : :class:`python:list`\[:class:`python:tuple`\[:func:`python:callable`, :class:`python:tuple`, :class:`python:dict`]]
+           Sequence of (func, args, kwargs) where ``func(*args, **kwargs)``
+           will be executed by the timer every *interval*.
+           
+           Callbacks which return ``False`` or ``0`` will be removed from the
+           timer.
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> timer = fig.canvas.new_timer(callbacks=[(f1, (1,), {'a': 3})])
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: flush_events()
+
+   
+   Flush the GUI events for the figure.
+
+   Interactive backends need to reimplement this method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: start_event_loop(timeout=0)
+
+   
+   Start a blocking event loop.
+
+   Such an event loop is used by interactive functions, such as
+   `~.Figure.ginput` and `~.Figure.waitforbuttonpress`, to wait for
+   events.
+
+   The event loop blocks until a callback function triggers
+   `stop_event_loop`, or *timeout* is reached.
+
+   If *timeout* is 0 or negative, never timeout.
+
+   Only interactive backends need to reimplement this method and it relies
+   on `flush_events` being properly implemented.
+
+   Interactive backends should implement this in a more native way.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: stop_event_loop()
+
+   
+   Stop the current blocking event loop.
+
+   Interactive backends need to reimplement this to match
+   `start_event_loop`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: showEvent(event)
+
+
+.. py:method:: mouseEventCoords(pos=None)
+
+   
+   Calculate mouse coordinates in physical pixels.
+
+   Qt uses logical pixels, but the figure is scaled to physical
+   pixels for rendering.  Transform to physical pixels so that
+   all of the down-stream transforms work as expected.
+
+   Also, the origin is different and needs to be corrected.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: enterEvent(event)
+
+
+.. py:method:: leaveEvent(event)
+
+
+.. py:method:: mousePressEvent(event)
+
+
+.. py:method:: mouseDoubleClickEvent(event)
+
+
+.. py:method:: mouseMoveEvent(event)
+
+
+.. py:method:: mouseReleaseEvent(event)
+
+
+.. py:method:: wheelEvent(event)
+
+
+.. py:method:: keyPressEvent(event)
+
+
+.. py:method:: keyReleaseEvent(event)
+
+
+.. py:method:: resizeEvent(event)
+
+
+.. py:method:: sizeHint()
+
+
+.. py:method:: minumumSizeHint()
+
+
+.. py:method:: drawRectangle(rect)
+
+
+
+
+
+
+.. py:class:: MplWindow(parent, central_editor_id)
+
+   Bases: :py:obj:`esss_qt10.qt_traits.QWidget`, :py:obj:`plugins10.plugins.mainwindow.mainwindowplugins.centralwidget.DefaultCentralEditor`
+
+
+
+.. py:currentmodule:: MplWindow
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFigure`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~frame`
+            - 
+          * - :py:attr:`~canvas`
+            - 
+          * - :py:attr:`~mpltoolbar`
+            - 
+          * - :py:attr:`~vbl`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import MplWindow
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: frame
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: canvas
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: mpltoolbar
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: vbl
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetFigure()
+
+
+
+
+
+
+.. py:class:: MplWindowSubject
+
+   Bases: :py:obj:`plugins10.plugins.workspace.workspace_editor_subjects.workspace_editor_subjects.WorkspaceEditorSubject`
+
+
+
+.. py:currentmodule:: MplWindowSubject
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetGUIClass`
+            - 
+          * - :py:attr:`~GetIgnoreChanges`
+            - 
+          * - :py:attr:`~GetIgnoreAddRemove`
+            - 
+          * - :py:attr:`~GetIgnoreAdd`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import MplWindowSubject
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetGUIClass()
+
+
+.. py:method:: GetIgnoreChanges()
+
+
+.. py:method:: GetIgnoreAddRemove()
+
+
+.. py:method:: GetIgnoreAdd()
+
+
+
+
+
+
+.. py:class:: RAMplWindow
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_workspace_window.KAWorkspaceWindow`
+
+
+
+.. py:currentmodule:: RAMplWindow
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFigure`
+            - 
+          * - :py:attr:`~GetCanvas`
+            - 
+          * - :py:attr:`~Redraw`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import RAMplWindow
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetFigure()
+
+
+.. py:method:: GetCanvas()
+
+
+.. py:method:: Redraw()
+
+
+
+
+
+
+.. py:class:: UserWindowSubjectContainer(app)
+
+   Bases: :py:obj:`coilib50.subject.Subject`
+
+
+
+
+.. py:currentmodule:: UserWindowSubjectContainer
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetIgnoreChanges`
+            - 
+          * - :py:attr:`~GetIgnoreAddRemove`
+            - 
+          * - :py:attr:`~GetIgnoreAdd`
+            - 
+          * - :py:attr:`~Add`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~app`
+            - 
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__iter__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import UserWindowSubjectContainer
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: app
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetIgnoreChanges()
+
+
+.. py:method:: GetIgnoreAddRemove()
+
+
+.. py:method:: GetIgnoreAdd()
+
+
+.. py:method:: Add(window_subject)
+
+
+.. py:method:: __iter__()
+
+
+
+
+
+

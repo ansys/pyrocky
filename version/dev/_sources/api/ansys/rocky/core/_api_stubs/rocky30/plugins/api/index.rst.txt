@@ -1,0 +1,496 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: api
+.. tab-set::
+
+    .. tab-item:: Subpackages
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~conveyors`
+            - 
+
+
+          * - :py:obj:`~motion`
+            - 
+
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ra_addin_list`
+            - 
+
+
+          * - :py:obj:`~ra_addin_process`
+            - 
+
+
+          * - :py:obj:`~ra_addins`
+            - 
+
+
+          * - :py:obj:`~ra_additional_features`
+            - 
+
+
+          * - :py:obj:`~ra_airflow`
+            - 
+
+
+          * - :py:obj:`~ra_api`
+            - 
+
+
+          * - :py:obj:`~ra_base_geometry`
+            - 
+
+
+          * - :py:obj:`~ra_base_subject_element`
+            - 
+
+
+          * - :py:obj:`~ra_base_tagging`
+            - 
+
+
+          * - :py:obj:`~ra_calculations`
+            - 
+
+
+          * - :py:obj:`~ra_cfd_coupling`
+            - 
+
+
+          * - :py:obj:`~ra_cfd_parameters`
+            - 
+
+
+          * - :py:obj:`~ra_circular_surface`
+            - 
+
+
+          * - :py:obj:`~ra_contact_data`
+            - 
+
+
+          * - :py:obj:`~ra_contact_to_particle_process`
+            - 
+
+
+          * - :py:obj:`~ra_contacts_data_mesh_coloring`
+            - 
+
+
+          * - :py:obj:`~ra_coupled_wall`
+            - 
+
+
+          * - :py:obj:`~ra_custom_calculators`
+            - 
+
+
+          * - :py:obj:`~ra_custom_input`
+            - 
+
+
+          * - :py:obj:`~ra_divisions_tagging`
+            - 
+
+
+          * - :py:obj:`~ra_domain_settings`
+            - 
+
+
+          * - :py:obj:`~ra_eulerian_statistics`
+            - 
+
+
+          * - :py:obj:`~ra_export_toolkit`
+            - 
+
+
+          * - :py:obj:`~ra_fluent_coupling`
+            - 
+
+
+          * - :py:obj:`~ra_fluid_inlet`
+            - 
+
+
+          * - :py:obj:`~ra_fluid_material`
+            - 
+
+
+          * - :py:obj:`~ra_geometry_collection`
+            - 
+
+
+          * - :py:obj:`~ra_grid_process_element`
+            - 
+
+
+          * - :py:obj:`~ra_inlet`
+            - 
+
+
+          * - :py:obj:`~ra_inlets_outlets_collection`
+            - 
+
+
+          * - :py:obj:`~ra_input_variables`
+            - 
+
+
+          * - :py:obj:`~ra_joints_data_mesh_coloring`
+            - 
+
+
+          * - :py:obj:`~ra_list`
+            - 
+
+
+          * - :py:obj:`~ra_macro_hooks`
+            - 
+
+
+          * - :py:obj:`~ra_material_manager`
+            - 
+
+
+          * - :py:obj:`~ra_materials_collection`
+            - 
+
+
+          * - :py:obj:`~ra_materials_interaction`
+            - 
+
+
+          * - :py:obj:`~ra_materials_interaction_collection`
+            - 
+
+
+          * - :py:obj:`~ra_matplotlib_window`
+            - 
+
+
+          * - :py:obj:`~ra_mesh_coloring`
+            - 
+
+
+          * - :py:obj:`~ra_outlet`
+            - 
+
+
+          * - :py:obj:`~ra_parametric_variables`
+            - 
+
+
+          * - :py:obj:`~ra_particle`
+            - 
+
+
+          * - :py:obj:`~ra_particle_assembly`
+            - 
+
+
+          * - :py:obj:`~ra_particle_collection`
+            - 
+
+
+          * - :py:obj:`~ra_particle_inlet`
+            - 
+
+
+          * - :py:obj:`~ra_particle_inlet_properties`
+            - 
+
+
+          * - :py:obj:`~ra_particle_joints_data`
+            - 
+
+
+          * - :py:obj:`~ra_particle_time_selection_process`
+            - 
+
+
+          * - :py:obj:`~ra_particle_to_contact_process`
+            - 
+
+
+          * - :py:obj:`~ra_particles_process`
+            - 
+
+
+          * - :py:obj:`~ra_physics`
+            - 
+
+
+          * - :py:obj:`~ra_point_cloud`
+            - 
+
+
+          * - :py:obj:`~ra_point_cloud_collection`
+            - 
+
+
+          * - :py:obj:`~ra_process_element`
+            - 
+
+
+          * - :py:obj:`~ra_project`
+            - 
+
+
+          * - :py:obj:`~ra_rectangular_surface`
+            - 
+
+
+          * - :py:obj:`~ra_region_of_interest_cube`
+            - 
+
+
+          * - :py:obj:`~ra_region_of_interest_cylinder`
+            - 
+
+
+          * - :py:obj:`~ra_regions_of_interest_collection`
+            - 
+
+
+          * - :py:obj:`~ra_semi_resolved_coupling`
+            - 
+
+
+          * - :py:obj:`~ra_simulator_run`
+            - 
+
+
+          * - :py:obj:`~ra_size_distribution`
+            - 
+
+
+          * - :py:obj:`~ra_solid_material`
+            - 
+
+
+          * - :py:obj:`~ra_sph_eulerian_solution`
+            - 
+
+
+          * - :py:obj:`~ra_sph_settings`
+            - 
+
+
+          * - :py:obj:`~ra_sph_tagging`
+            - 
+
+
+          * - :py:obj:`~ra_streamlines_user_process`
+            - 
+
+
+          * - :py:obj:`~ra_study`
+            - 
+
+
+          * - :py:obj:`~ra_surface`
+            - 
+
+
+          * - :py:obj:`~ra_system_coupling_wall`
+            - 
+
+
+          * - :py:obj:`~ra_tagging`
+            - 
+
+
+          * - :py:obj:`~ra_time_filter`
+            - 
+
+
+          * - :py:obj:`~ra_time_range_filter`
+            - 
+
+
+          * - :py:obj:`~ra_time_statistics`
+            - 
+
+
+          * - :py:obj:`~ra_user_process_collection`
+            - 
+
+
+          * - :py:obj:`~ra_volumetric_inlet`
+            - 
+
+
+          * - :py:obj:`~ra_volumetric_inlet_properties`
+            - 
+
+
+          * - :py:obj:`~ra_wall`
+            - 
+
+
+          * - :py:obj:`~rocky_api_application`
+            - 
+
+
+          * - :py:obj:`~rocky_api_deprecated_decorator`
+            - 
+
+
+          * - :py:obj:`~rocky_api_plugin`
+            - 
+
+
+          * - :py:obj:`~rocky_api_utils`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-package"></span> conveyors</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/conveyors/index>
+    <span class="nf nf-md-package"></span> motion</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/index>
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> ra_addin_list</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addin_list/index>
+    <span class="nf nf-fa-file"></span> ra_addin_process</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addin_process/index>
+    <span class="nf nf-fa-file"></span> ra_addins</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addins/index>
+    <span class="nf nf-fa-file"></span> ra_additional_features</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_additional_features/index>
+    <span class="nf nf-fa-file"></span> ra_airflow</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_airflow/index>
+    <span class="nf nf-fa-file"></span> ra_api</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_api/index>
+    <span class="nf nf-fa-file"></span> ra_base_geometry</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_base_geometry/index>
+    <span class="nf nf-fa-file"></span> ra_base_subject_element</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_base_subject_element/index>
+    <span class="nf nf-fa-file"></span> ra_base_tagging</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_base_tagging/index>
+    <span class="nf nf-fa-file"></span> ra_calculations</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_calculations/index>
+    <span class="nf nf-fa-file"></span> ra_cfd_coupling</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_cfd_coupling/index>
+    <span class="nf nf-fa-file"></span> ra_cfd_parameters</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_cfd_parameters/index>
+    <span class="nf nf-fa-file"></span> ra_circular_surface</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_circular_surface/index>
+    <span class="nf nf-fa-file"></span> ra_contact_data</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_contact_data/index>
+    <span class="nf nf-fa-file"></span> ra_contact_to_particle_process</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_contact_to_particle_process/index>
+    <span class="nf nf-fa-file"></span> ra_contacts_data_mesh_coloring</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_contacts_data_mesh_coloring/index>
+    <span class="nf nf-fa-file"></span> ra_coupled_wall</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_coupled_wall/index>
+    <span class="nf nf-fa-file"></span> ra_custom_calculators</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_custom_calculators/index>
+    <span class="nf nf-fa-file"></span> ra_custom_input</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_custom_input/index>
+    <span class="nf nf-fa-file"></span> ra_divisions_tagging</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_divisions_tagging/index>
+    <span class="nf nf-fa-file"></span> ra_domain_settings</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_domain_settings/index>
+    <span class="nf nf-fa-file"></span> ra_eulerian_statistics</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_eulerian_statistics/index>
+    <span class="nf nf-fa-file"></span> ra_export_toolkit</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_export_toolkit/index>
+    <span class="nf nf-fa-file"></span> ra_fluent_coupling</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_fluent_coupling/index>
+    <span class="nf nf-fa-file"></span> ra_fluid_inlet</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_fluid_inlet/index>
+    <span class="nf nf-fa-file"></span> ra_fluid_material</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_fluid_material/index>
+    <span class="nf nf-fa-file"></span> ra_geometry_collection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_geometry_collection/index>
+    <span class="nf nf-fa-file"></span> ra_grid_process_element</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_grid_process_element/index>
+    <span class="nf nf-fa-file"></span> ra_inlet</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_inlet/index>
+    <span class="nf nf-fa-file"></span> ra_inlets_outlets_collection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_inlets_outlets_collection/index>
+    <span class="nf nf-fa-file"></span> ra_input_variables</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_input_variables/index>
+    <span class="nf nf-fa-file"></span> ra_joints_data_mesh_coloring</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_joints_data_mesh_coloring/index>
+    <span class="nf nf-fa-file"></span> ra_list</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_list/index>
+    <span class="nf nf-fa-file"></span> ra_macro_hooks</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_macro_hooks/index>
+    <span class="nf nf-fa-file"></span> ra_material_manager</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_material_manager/index>
+    <span class="nf nf-fa-file"></span> ra_materials_collection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_materials_collection/index>
+    <span class="nf nf-fa-file"></span> ra_materials_interaction</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_materials_interaction/index>
+    <span class="nf nf-fa-file"></span> ra_materials_interaction_collection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_materials_interaction_collection/index>
+    <span class="nf nf-fa-file"></span> ra_matplotlib_window</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/index>
+    <span class="nf nf-fa-file"></span> ra_mesh_coloring</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_mesh_coloring/index>
+    <span class="nf nf-fa-file"></span> ra_outlet</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_outlet/index>
+    <span class="nf nf-fa-file"></span> ra_parametric_variables</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_parametric_variables/index>
+    <span class="nf nf-fa-file"></span> ra_particle</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particle/index>
+    <span class="nf nf-fa-file"></span> ra_particle_assembly</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particle_assembly/index>
+    <span class="nf nf-fa-file"></span> ra_particle_collection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particle_collection/index>
+    <span class="nf nf-fa-file"></span> ra_particle_inlet</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particle_inlet/index>
+    <span class="nf nf-fa-file"></span> ra_particle_inlet_properties</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particle_inlet_properties/index>
+    <span class="nf nf-fa-file"></span> ra_particle_joints_data</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particle_joints_data/index>
+    <span class="nf nf-fa-file"></span> ra_particle_time_selection_process</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particle_time_selection_process/index>
+    <span class="nf nf-fa-file"></span> ra_particle_to_contact_process</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particle_to_contact_process/index>
+    <span class="nf nf-fa-file"></span> ra_particles_process</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_particles_process/index>
+    <span class="nf nf-fa-file"></span> ra_physics</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_physics/index>
+    <span class="nf nf-fa-file"></span> ra_point_cloud</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_point_cloud/index>
+    <span class="nf nf-fa-file"></span> ra_point_cloud_collection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_point_cloud_collection/index>
+    <span class="nf nf-fa-file"></span> ra_process_element</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_process_element/index>
+    <span class="nf nf-fa-file"></span> ra_project</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_project/index>
+    <span class="nf nf-fa-file"></span> ra_rectangular_surface</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_rectangular_surface/index>
+    <span class="nf nf-fa-file"></span> ra_region_of_interest_cube</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_region_of_interest_cube/index>
+    <span class="nf nf-fa-file"></span> ra_region_of_interest_cylinder</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_region_of_interest_cylinder/index>
+    <span class="nf nf-fa-file"></span> ra_regions_of_interest_collection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_regions_of_interest_collection/index>
+    <span class="nf nf-fa-file"></span> ra_semi_resolved_coupling</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_semi_resolved_coupling/index>
+    <span class="nf nf-fa-file"></span> ra_simulator_run</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_simulator_run/index>
+    <span class="nf nf-fa-file"></span> ra_size_distribution</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_size_distribution/index>
+    <span class="nf nf-fa-file"></span> ra_solid_material</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_solid_material/index>
+    <span class="nf nf-fa-file"></span> ra_sph_eulerian_solution</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_sph_eulerian_solution/index>
+    <span class="nf nf-fa-file"></span> ra_sph_settings</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_sph_settings/index>
+    <span class="nf nf-fa-file"></span> ra_sph_tagging</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_sph_tagging/index>
+    <span class="nf nf-fa-file"></span> ra_streamlines_user_process</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_streamlines_user_process/index>
+    <span class="nf nf-fa-file"></span> ra_study</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_study/index>
+    <span class="nf nf-fa-file"></span> ra_surface</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_surface/index>
+    <span class="nf nf-fa-file"></span> ra_system_coupling_wall</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_system_coupling_wall/index>
+    <span class="nf nf-fa-file"></span> ra_tagging</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_tagging/index>
+    <span class="nf nf-fa-file"></span> ra_time_filter</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_time_filter/index>
+    <span class="nf nf-fa-file"></span> ra_time_range_filter</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_time_range_filter/index>
+    <span class="nf nf-fa-file"></span> ra_time_statistics</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_time_statistics/index>
+    <span class="nf nf-fa-file"></span> ra_user_process_collection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_user_process_collection/index>
+    <span class="nf nf-fa-file"></span> ra_volumetric_inlet</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_volumetric_inlet/index>
+    <span class="nf nf-fa-file"></span> ra_volumetric_inlet_properties</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_volumetric_inlet_properties/index>
+    <span class="nf nf-fa-file"></span> ra_wall</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_wall/index>
+    <span class="nf nf-fa-file"></span> rocky_api_application</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/rocky_api_application/index>
+    <span class="nf nf-fa-file"></span> rocky_api_deprecated_decorator</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/rocky_api_deprecated_decorator/index>
+    <span class="nf nf-fa-file"></span> rocky_api_plugin</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/rocky_api_plugin/index>
+    <span class="nf nf-fa-file"></span> rocky_api_utils</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/rocky_api_utils/index>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,571 @@
+
+
+.. py:class:: RAFeedConveyor
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_base_conveyor.RABaseConveyor`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+
+
+
+.. py:currentmodule:: RAFeedConveyor
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAccelerationPeriod`
+            - 
+          * - :py:attr:`~SetAccelerationPeriod`
+            - 
+          * - :py:attr:`~GetBeginningStopTime`
+            - 
+          * - :py:attr:`~SetBeginningStopTime`
+            - 
+          * - :py:attr:`~GetBeltSpeed`
+            - 
+          * - :py:attr:`~SetBeltSpeed`
+            - 
+          * - :py:attr:`~GetDecelerationPeriod`
+            - 
+          * - :py:attr:`~SetDecelerationPeriod`
+            - 
+          * - :py:attr:`~GetBeginningStartTime`
+            - 
+          * - :py:attr:`~SetBeginningStartTime`
+            - 
+          * - :py:attr:`~GetDropBoxHeight`
+            - 
+          * - :py:attr:`~SetDropBoxHeight`
+            - 
+          * - :py:attr:`~GetDropBoxLength`
+            - 
+          * - :py:attr:`~SetDropBoxLength`
+            - 
+          * - :py:attr:`~GetDropBoxWidth`
+            - 
+          * - :py:attr:`~SetDropBoxWidth`
+            - 
+          * - :py:attr:`~GetFrontPlateOffset`
+            - 
+          * - :py:attr:`~SetFrontPlateOffset`
+            - 
+          * - :py:attr:`~GetWallThickness`
+            - 
+          * - :py:attr:`~SetWallThickness`
+            - 
+          * - :py:attr:`~GetBeltThickness`
+            - 
+          * - :py:attr:`~SetBeltThickness`
+            - 
+          * - :py:attr:`~GetBeltWidth`
+            - 
+          * - :py:attr:`~SetBeltWidth`
+            - 
+          * - :py:attr:`~GetLoadingLength`
+            - 
+          * - :py:attr:`~SetLoadingLength`
+            - 
+          * - :py:attr:`~GetTemperature`
+            - 
+          * - :py:attr:`~SetTemperature`
+            - 
+          * - :py:attr:`~GetThermalBoundaryConditionType`
+            - 
+          * - :py:attr:`~SetThermalBoundaryConditionType`
+            - 
+          * - :py:attr:`~GetValidThermalBoundaryConditionTypeValues`
+            - 
+          * - :py:attr:`~GetTransitionLength`
+            - 
+          * - :py:attr:`~SetTransitionLength`
+            - 
+          * - :py:attr:`~GetTriangleSize`
+            - 
+          * - :py:attr:`~SetTriangleSize`
+            - 
+          * - :py:attr:`~GetDiameter`
+            - 
+          * - :py:attr:`~SetDiameter`
+            - 
+          * - :py:attr:`~GetFaceWidth`
+            - 
+          * - :py:attr:`~SetFaceWidth`
+            - 
+          * - :py:attr:`~GetOffsetToIdlers`
+            - 
+          * - :py:attr:`~SetOffsetToIdlers`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetAlignmentAngle`
+            - 
+          * - :py:attr:`~SetAlignmentAngle`
+            - 
+          * - :py:attr:`~GetBeltInclineAngle`
+            - 
+          * - :py:attr:`~SetBeltInclineAngle`
+            - 
+          * - :py:attr:`~GetHorizontalOffset`
+            - 
+          * - :py:attr:`~SetHorizontalOffset`
+            - 
+          * - :py:attr:`~GetOutOfPlaneOffset`
+            - 
+          * - :py:attr:`~SetOutOfPlaneOffset`
+            - 
+          * - :py:attr:`~GetReturnBeltAngle`
+            - 
+          * - :py:attr:`~SetReturnBeltAngle`
+            - 
+          * - :py:attr:`~GetVerticalOffset`
+            - 
+          * - :py:attr:`~SetVerticalOffset`
+            - 
+          * - :py:attr:`~GetSkirtboardHeight`
+            - 
+          * - :py:attr:`~SetSkirtboardHeight`
+            - 
+          * - :py:attr:`~GetHeightOffset`
+            - 
+          * - :py:attr:`~SetHeightOffset`
+            - 
+          * - :py:attr:`~GetSkirtboardLength`
+            - 
+          * - :py:attr:`~SetSkirtboardLength`
+            - 
+          * - :py:attr:`~GetLengthOffset`
+            - 
+          * - :py:attr:`~SetLengthOffset`
+            - 
+          * - :py:attr:`~GetWidth`
+            - 
+          * - :py:attr:`~SetWidth`
+            - 
+          * - :py:attr:`~GetSphBoundaryType`
+            - 
+          * - :py:attr:`~SetSphBoundaryType`
+            - 
+          * - :py:attr:`~GetValidSphBoundaryTypeValues`
+            - 
+          * - :py:attr:`~GetMaterial`
+            - 
+          * - :py:attr:`~SetMaterial`
+            - 
+          * - :py:attr:`~GetAvailableMaterials`
+            - 
+          * - :py:attr:`~GetBeltProfileName`
+            - 
+          * - :py:attr:`~GetBeltProfile`
+            - 
+          * - :py:attr:`~SetBeltProfile`
+            - 
+          * - :py:attr:`~GetValidBeltProfileNames`
+            - 
+          * - :py:attr:`~GetGridFunction`
+            - 
+          * - :py:attr:`~GetGeometry`
+            - 
+          * - :py:attr:`~GetTimeStatistics`
+            - 
+          * - :py:attr:`~CreateTransientCurveOutputVariable`
+            - 
+          * - :py:attr:`~CreateCurveOutputVariable`
+            - 
+          * - :py:attr:`~CreateGridFunctionStatisticOutputVariable`
+            - 
+          * - :py:attr:`~GetOutputVariableValue`
+            - 
+          * - :py:attr:`~RemoveOutputVariable`
+            - 
+          * - :py:attr:`~RemoveProcess`
+            - 
+          * - :py:attr:`~GetMeshColoring`
+            - 
+          * - :py:attr:`~AddCustomCurve`
+            - 
+          * - :py:attr:`~EditCustomCurve`
+            - 
+          * - :py:attr:`~RemoveCustomCurve`
+            - 
+          * - :py:attr:`~AddCustomProperty`
+            - 
+          * - :py:attr:`~EditCustomProperty`
+            - 
+          * - :py:attr:`~RemoveCustomProperty`
+            - 
+          * - :py:attr:`~GetModuleProperties`
+            - 
+          * - :py:attr:`~GetModuleProperty`
+            - 
+          * - :py:attr:`~SetModuleProperty`
+            - 
+          * - :py:attr:`~GetValidOptionsForModuleProperty`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~VALID_OPERATIONS`
+            - 
+          * - :py:attr:`~VALID_TIME_RANGE_DEFINITIONS`
+            - 
+          * - :py:attr:`~VALID_DOMAIN_RANGE`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_feed_conveyor import RAFeedConveyor
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: VALID_OPERATIONS
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_TIME_RANGE_DEFINITIONS
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_DOMAIN_RANGE
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetAccelerationPeriod(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetAccelerationPeriod(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetBeginningStopTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetBeginningStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetBeltSpeed(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetBeltSpeed(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetDecelerationPeriod(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetDecelerationPeriod(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetBeginningStartTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetBeginningStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetDropBoxHeight(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetDropBoxHeight(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetDropBoxLength(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetDropBoxLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetDropBoxWidth(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetDropBoxWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetFrontPlateOffset(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetFrontPlateOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetWallThickness(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetWallThickness(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetBeltThickness(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetBeltThickness(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetBeltWidth(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetBeltWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetLoadingLength(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetLoadingLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetThermalBoundaryConditionType() -> str
+
+
+.. py:method:: SetThermalBoundaryConditionType(value: str) -> None
+
+
+.. py:method:: GetValidThermalBoundaryConditionTypeValues() -> List[str]
+
+
+.. py:method:: GetTransitionLength(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetTransitionLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetTriangleSize(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetTriangleSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetDiameter(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetDiameter(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetFaceWidth(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetFaceWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetOffsetToIdlers(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetOffsetToIdlers(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(value: str) -> None
+
+
+.. py:method:: GetAlignmentAngle(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetAlignmentAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetBeltInclineAngle(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetBeltInclineAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetHorizontalOffset(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetHorizontalOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetOutOfPlaneOffset(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetOutOfPlaneOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetReturnBeltAngle(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetReturnBeltAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetVerticalOffset(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetVerticalOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSkirtboardHeight(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSkirtboardHeight(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetHeightOffset(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetHeightOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSkirtboardLength(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSkirtboardLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetLengthOffset(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetLengthOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetWidth(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSphBoundaryType() -> str
+
+
+.. py:method:: SetSphBoundaryType(value: str) -> None
+
+
+.. py:method:: GetValidSphBoundaryTypeValues() -> List[str]
+
+
+.. py:method:: GetMaterial()
+
+
+.. py:method:: SetMaterial(value) -> None
+
+
+.. py:method:: GetAvailableMaterials()
+
+
+.. py:method:: GetBeltProfileName()
+
+
+.. py:method:: GetBeltProfile()
+
+
+.. py:method:: SetBeltProfile(belt_profile_name)
+
+
+.. py:method:: GetValidBeltProfileNames()
+
+
+.. py:method:: GetGridFunction(grid_function_name, simulation_name: _typeshed.Incomplete | None = ..., translated: bool = ...)
+
+
+.. py:method:: GetGeometry(time_step: str = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall.RAWall
+
+
+.. py:method:: GetTimeStatistics() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatistics
+
+
+.. py:method:: CreateTransientCurveOutputVariable(curve_name: str, operation: str = ..., time_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ..., domain_range: str = ..., initial_domain_range: float = ..., final_domain_range: float = ..., domain_unit: Union[str, None] = ...)
+
+
+.. py:method:: CreateCurveOutputVariable(curve_name: str, operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...)
+
+
+.. py:method:: CreateGridFunctionStatisticOutputVariable(grid_function_name: str, operation: str = ..., statistic_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...) -> str
+
+
+.. py:method:: GetOutputVariableValue(variable_name: str) -> barril.units.Scalar
+
+
+.. py:method:: RemoveOutputVariable(variable_name: str) -> None
+
+
+.. py:method:: RemoveProcess() -> None
+
+
+.. py:method:: GetMeshColoring(window: Union[str, type[kraken20.plugins.api.ka_workspace_window.KAWorkspaceWindow]]) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.RAMeshColoring
+
+
+.. py:method:: AddCustomCurve(name: str, curve_type: str = ..., output_unit: str = ..., domain: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+.. py:method:: EditCustomCurve(edit_curve: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+.. py:method:: RemoveCustomCurve(name: str) -> None
+
+
+.. py:method:: AddCustomProperty(name: str, property_type: str = ..., output_unit: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+.. py:method:: EditCustomProperty(edit_property: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+.. py:method:: RemoveCustomProperty(name: str) -> None
+
+
+.. py:method:: GetModuleProperties() -> collections.abc.Sequence[ModulePropertyIdentifier]
+
+
+.. py:method:: GetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], unit: Union[str, None] = ...) -> Union[float, bool, str, ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList]
+
+
+.. py:method:: SetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], value: Union[float, bool, str], unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: GetValidOptionsForModuleProperty(property_name)
+
+
+

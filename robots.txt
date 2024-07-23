@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /version/0.1
+
+Sitemap: https://rocky.docs.pyansys.com/sitemap.xml

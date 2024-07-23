@@ -1,0 +1,66 @@
+
+
+.. py:class:: IWrappedItem
+
+   Bases: :py:obj:`ben10.interface.Interface`
+
+
+
+
+
+
+.. py:currentmodule:: IWrappedItem
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import IWrappedItem
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> None
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> None
+   :classmethod:
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> None
+   :classmethod:
+
+
+

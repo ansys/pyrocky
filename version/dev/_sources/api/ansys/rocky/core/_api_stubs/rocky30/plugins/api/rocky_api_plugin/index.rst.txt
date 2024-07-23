@@ -1,0 +1,174 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_plugin
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: rocky_api_plugin
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RockyModels`
+            - 
+
+
+          * - :py:obj:`~RockyApiPlugin`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RockyModels
+
+
+.. py:currentmodule:: RockyModels
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrapperClasses`
+            - 
+          * - :py:attr:`~GetExtraAPIClasses`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_plugin import RockyModels
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrapperClasses()
+
+
+.. py:method:: GetExtraAPIClasses()
+
+
+
+
+
+
+.. py:class:: RockyApiPlugin
+
+   Bases: :py:obj:`plugins10core.plugin.Plugin`
+
+
+
+.. py:currentmodule:: RockyApiPlugin
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~Install`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_plugin import RockyApiPlugin
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: Install() -> None
+
+
+
+
+
+

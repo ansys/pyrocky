@@ -1,0 +1,273 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_calculations
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_calculations
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RACalculations`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RACalculations(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: RACalculations
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~CreateSelectionResidenceTime`
+            - 
+          * - :py:attr:`~CreateSelectionFlipCount`
+            - 
+          * - :py:attr:`~CreateSelectionTagging`
+            - 
+          * - :py:attr:`~GetTagging`
+            - 
+          * - :py:attr:`~GetDivisionsTagging`
+            - 
+          * - :py:attr:`~GetTaggingNames`
+            - 
+          * - :py:attr:`~GetDivisionsTaggingNames`
+            - 
+          * - :py:attr:`~CreateTagging`
+            - 
+          * - :py:attr:`~CreateDivisionsTagging`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__iter__`
+            - 
+          * - :py:attr:`~__len__`
+            - 
+          * - :py:attr:`~__getitem__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_calculations import RACalculations
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.particles_calculations.particles_calculations.ParticlesCalculations]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: CreateSelectionResidenceTime(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+
+.. py:method:: CreateSelectionFlipCount(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+
+.. py:method:: CreateSelectionTagging(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> Union[rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator, None]
+
+
+.. py:method:: GetTagging(name: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_tagging.RATagging
+
+
+.. py:method:: GetDivisionsTagging(name: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_divisions_tagging.RADivisionsTagging
+
+
+.. py:method:: GetTaggingNames() -> list[str]
+
+
+.. py:method:: GetDivisionsTaggingNames() -> list[str]
+
+
+.. py:method:: CreateTagging(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> Union[rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator, None]
+
+
+.. py:method:: CreateDivisionsTagging(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_divisions_tagging.RADivisionsTagging
+
+
+.. py:method:: __iter__() -> collections.abc.Iterator
+
+
+.. py:method:: __len__() -> int
+
+
+.. py:method:: __getitem__(index: int) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(name: str) -> None
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+
+
+
+

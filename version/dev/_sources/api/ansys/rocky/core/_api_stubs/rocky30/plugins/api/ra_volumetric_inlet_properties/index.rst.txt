@@ -1,0 +1,554 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_volumetric_inlet_properties
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RAVolumetricInletProperties`
+            - 
+
+
+          * - :py:obj:`~RAVolumetricInletPropertiesList`
+            - Base class for API classes that wrap SubjectLists (and related list classes).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RAVolumetricInletProperties(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+
+
+
+
+.. py:currentmodule:: RAVolumetricInletProperties
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetMass`
+            - 
+          * - :py:attr:`~SetMass`
+            - 
+          * - :py:attr:`~GetTemperature`
+            - 
+          * - :py:attr:`~SetTemperature`
+            - 
+          * - :py:attr:`~GetParticle`
+            - 
+          * - :py:attr:`~SetParticle`
+            - 
+          * - :py:attr:`~GetAvailableParticles`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+          * - :py:attr:`~GetModuleProperties`
+            - 
+          * - :py:attr:`~GetModuleProperty`
+            - 
+          * - :py:attr:`~SetModuleProperty`
+            - 
+          * - :py:attr:`~GetValidOptionsForModuleProperty`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties import RAVolumetricInletProperties
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type[rocky30.models.input.volume_fill.VolumeFillProperties]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetMass(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetMass(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetParticle()
+
+
+.. py:method:: SetParticle(value) -> None
+
+
+.. py:method:: GetAvailableParticles()
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(name: str) -> None
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+.. py:method:: GetModuleProperties() -> collections.abc.Sequence[ModulePropertyIdentifier]
+
+
+.. py:method:: GetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], unit: Union[str, None] = ...) -> Union[float, bool, str, ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList]
+
+
+.. py:method:: SetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], value: Union[float, bool, str], unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: GetValidOptionsForModuleProperty(property_name)
+
+
+
+
+
+
+.. py:class:: RAVolumetricInletPropertiesList(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`RAVolumetricInletProperties`\ ]
+
+
+   
+   Base class for API classes that wrap SubjectLists (and related list classes).
+
+   Provides methods to add, remove and iterate on the items. The PrePost Scripting wrappers for the list items
+   will be obtained via ApiApplication._GetElementWrapper(), so it's important that these wrappers
+   are registered as wrapper classes (see `EPApiExtension`).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: RAVolumetricInletPropertiesList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+          * - :py:attr:`~__class_getitem__`
+            - 
+          * - :py:attr:`~__init_subclass__`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~New`
+            - Add a new item. Returns the newly created item.
+          * - :py:attr:`~Remove`
+            - Remove an item from the list.
+          * - :py:attr:`~Clear`
+            - Remove all items from the list.
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+          * - :py:attr:`~__slots__`
+            - 
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__len__`
+            - 
+          * - :py:attr:`~__getitem__`
+            - 
+          * - :py:attr:`~__iter__`
+            - 
+          * - :py:attr:`~__delitem__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties import RAVolumetricInletPropertiesList
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: __slots__
+   :value: ()
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: New() -> T
+
+   
+   Add a new item. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Remove(item: T) -> None
+
+   
+   Remove an item from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Clear() -> None
+
+   
+   Remove all items from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __len__() -> int
+
+
+.. py:method:: __getitem__(index: int) -> T
+
+
+.. py:method:: __iter__() -> collections.abc.Generator[T, None, None]
+
+
+.. py:method:: __delitem__(index: int) -> None
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(name: str) -> None
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+.. py:method:: __class_getitem__(params)
+   :classmethod:
+
+
+.. py:method:: __init_subclass__(*args, **kwargs)
+   :classmethod:
+
+
+
+
+
+

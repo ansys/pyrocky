@@ -1,0 +1,423 @@
+
+
+.. py:class:: RAMeshColoring(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+
+.. py:currentmodule:: RAMeshColoring
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetVisible`
+            - 
+          * - :py:attr:`~GetVisible`
+            - 
+          * - :py:attr:`~SetLevelOfDetail`
+            - 
+          * - :py:attr:`~GetValidLevelOfDetailValues`
+            - 
+          * - :py:attr:`~GetLevelOfDetail`
+            - 
+          * - :py:attr:`~SetStride`
+            - 
+          * - :py:attr:`~GetStride`
+            - 
+          * - :py:attr:`~GetAvailableGridFunctions`
+            - 
+          * - :py:attr:`~GetAvailableGridFunctionsNames`
+            - 
+          * - :py:attr:`~GetAvailableVectorGridFunctions`
+            - 
+          * - :py:attr:`~GetAvailableVectorGridFunctionsNames`
+            - 
+          * - :py:attr:`~GetValidColoringModes`
+            - 
+          * - :py:attr:`~SetTransparencyEnabled`
+            - 
+          * - :py:attr:`~GetTransparencyEnabled`
+            - 
+          * - :py:attr:`~SetTransparency`
+            - 
+          * - :py:attr:`~GetTransparency`
+            - 
+          * - :py:attr:`~SetNodeVisible`
+            - 
+          * - :py:attr:`~GetNodeVisible`
+            - 
+          * - :py:attr:`~SetNodeColor`
+            - 
+          * - :py:attr:`~GetNodeColor`
+            - 
+          * - :py:attr:`~SetNodeGridFunction`
+            - 
+          * - :py:attr:`~GetNodeGridFunction`
+            - 
+          * - :py:attr:`~SetNodePointSize`
+            - 
+          * - :py:attr:`~GetNodePointSize`
+            - 
+          * - :py:attr:`~SetEdgeVisible`
+            - 
+          * - :py:attr:`~GetEdgeVisible`
+            - 
+          * - :py:attr:`~SetEdgeColor`
+            - 
+          * - :py:attr:`~GetEdgeColor`
+            - 
+          * - :py:attr:`~SetEdgeGridFunction`
+            - 
+          * - :py:attr:`~GetEdgeGridFunction`
+            - 
+          * - :py:attr:`~SetEdgeLineWidth`
+            - 
+          * - :py:attr:`~GetEdgeLineWidth`
+            - 
+          * - :py:attr:`~SetFaceVisible`
+            - 
+          * - :py:attr:`~GetFaceVisible`
+            - 
+          * - :py:attr:`~SetFaceColor`
+            - 
+          * - :py:attr:`~GetFaceColor`
+            - 
+          * - :py:attr:`~SetFaceGridFunction`
+            - 
+          * - :py:attr:`~GetFaceGridFunction`
+            - 
+          * - :py:attr:`~GetValidFaceScopes`
+            - 
+          * - :py:attr:`~SetFaceScope`
+            - 
+          * - :py:attr:`~GetFaceScope`
+            - 
+          * - :py:attr:`~GetValidFaceStructuredPartitionsValues`
+            - 
+          * - :py:attr:`~SetFaceStructuredPartitions`
+            - 
+          * - :py:attr:`~GetFaceStructuredPartitions`
+            - 
+          * - :py:attr:`~GetValidFaceCustomStructuredPartitions`
+            - 
+          * - :py:attr:`~SetFaceCustomStructuredPartitions`
+            - 
+          * - :py:attr:`~GetFaceCustomStructuredPartitions`
+            - 
+          * - :py:attr:`~SetFaceShowOnNode`
+            - 
+          * - :py:attr:`~GetFaceShowOnNode`
+            - 
+          * - :py:attr:`~SetVectorVisible`
+            - 
+          * - :py:attr:`~GetVectorVisible`
+            - 
+          * - :py:attr:`~SetVectorGridFunction`
+            - 
+          * - :py:attr:`~GetVectorGridFunction`
+            - 
+          * - :py:attr:`~SetVectorScale`
+            - 
+          * - :py:attr:`~GetVectorScale`
+            - 
+          * - :py:attr:`~SetNormalizedVectorsEnabled`
+            - 
+          * - :py:attr:`~GetNormalizedVectorsEnabled`
+            - 
+          * - :py:attr:`~GetDataId`
+            - 
+          * - :py:attr:`~IsValid`
+            - 
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~SetSelected`
+            - 
+          * - :py:attr:`~Select`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring import RAMeshColoring
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: id
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: subject
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: name
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type[sci20.plugins.process.coloring_process.MeshAssemblyColoringProcessSubject]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetVisible(value: bool) -> None
+
+
+.. py:method:: GetVisible() -> bool
+
+
+.. py:method:: SetLevelOfDetail(value: str) -> None
+
+
+.. py:method:: GetValidLevelOfDetailValues() -> list[str]
+
+
+.. py:method:: GetLevelOfDetail() -> str
+
+
+.. py:method:: SetStride(value: int) -> None
+
+
+.. py:method:: GetStride() -> int
+
+
+.. py:method:: GetAvailableGridFunctions() -> set[ben10.element_function.semantic_association.SemanticAssociation]
+
+
+.. py:method:: GetAvailableGridFunctionsNames() -> set[str]
+
+
+.. py:method:: GetAvailableVectorGridFunctions() -> set[ben10.element_function.semantic_association.SemanticAssociation]
+
+
+.. py:method:: GetAvailableVectorGridFunctionsNames() -> set[str]
+
+
+.. py:method:: GetValidColoringModes() -> list[str]
+
+
+.. py:method:: SetTransparencyEnabled(value: bool) -> None
+
+
+.. py:method:: GetTransparencyEnabled() -> bool
+
+
+.. py:method:: SetTransparency(value: float) -> None
+
+
+.. py:method:: GetTransparency() -> float
+
+
+.. py:method:: SetNodeVisible(value: bool) -> None
+
+
+.. py:method:: GetNodeVisible() -> bool
+
+
+.. py:method:: SetNodeColor(values: ColorType) -> None
+
+
+.. py:method:: GetNodeColor() -> ColorType
+
+
+.. py:method:: SetNodeGridFunction(value: Union[ben10.element_function.semantic_association.SemanticAssociation, str, None]) -> None
+
+
+.. py:method:: GetNodeGridFunction() -> Union[ben10.element_function.semantic_association.SemanticAssociation, None]
+
+
+.. py:method:: SetNodePointSize(value: float) -> None
+
+
+.. py:method:: GetNodePointSize() -> float
+
+
+.. py:method:: SetEdgeVisible(value: bool) -> None
+
+
+.. py:method:: GetEdgeVisible() -> bool
+
+
+.. py:method:: SetEdgeColor(values: ColorType) -> None
+
+
+.. py:method:: GetEdgeColor() -> ColorType
+
+
+.. py:method:: SetEdgeGridFunction(value: Union[ben10.element_function.semantic_association.SemanticAssociation, str, None]) -> None
+
+
+.. py:method:: GetEdgeGridFunction() -> Union[ben10.element_function.semantic_association.SemanticAssociation, None]
+
+
+.. py:method:: SetEdgeLineWidth(value: float) -> None
+
+
+.. py:method:: GetEdgeLineWidth() -> float
+
+
+.. py:method:: SetFaceVisible(value: bool) -> None
+
+
+.. py:method:: GetFaceVisible() -> bool
+
+
+.. py:method:: SetFaceColor(values: ColorType) -> None
+
+
+.. py:method:: GetFaceColor() -> ColorType
+
+
+.. py:method:: SetFaceGridFunction(value: Union[ben10.element_function.semantic_association.SemanticAssociation, str, None]) -> None
+
+
+.. py:method:: GetFaceGridFunction() -> Union[ben10.element_function.semantic_association.SemanticAssociation, None]
+
+
+.. py:method:: GetValidFaceScopes() -> list[str]
+
+
+.. py:method:: SetFaceScope(value: str) -> None
+
+
+.. py:method:: GetFaceScope() -> str
+
+
+.. py:method:: GetValidFaceStructuredPartitionsValues() -> list[str]
+
+
+.. py:method:: SetFaceStructuredPartitions(value: str) -> None
+
+
+.. py:method:: GetFaceStructuredPartitions() -> str
+
+
+.. py:method:: GetValidFaceCustomStructuredPartitions() -> list[str]
+
+
+.. py:method:: SetFaceCustomStructuredPartitions(values: list[str]) -> None
+
+
+.. py:method:: GetFaceCustomStructuredPartitions() -> list[str]
+
+
+.. py:method:: SetFaceShowOnNode(value: bool) -> None
+
+
+.. py:method:: GetFaceShowOnNode() -> bool
+
+
+.. py:method:: SetVectorVisible(value: bool) -> None
+
+
+.. py:method:: GetVectorVisible() -> bool
+
+
+.. py:method:: SetVectorGridFunction(value: Union[ben10.element_function.semantic_association.SemanticAssociation, str, None]) -> None
+
+
+.. py:method:: GetVectorGridFunction() -> Union[ben10.element_function.semantic_association.SemanticAssociation, None]
+
+
+.. py:method:: SetVectorScale(value: float) -> None
+
+
+.. py:method:: GetVectorScale() -> float
+
+
+.. py:method:: SetNormalizedVectorsEnabled(value: bool) -> None
+
+
+.. py:method:: GetNormalizedVectorsEnabled() -> bool
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+   :classmethod:
+
+
+.. py:method:: GetDataId() -> str
+
+
+.. py:method:: IsValid() -> bool
+
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(name: str) -> None
+
+
+.. py:method:: SetSelected() -> None
+
+
+.. py:method:: Select(element_names: List[str]) -> None
+
+
+

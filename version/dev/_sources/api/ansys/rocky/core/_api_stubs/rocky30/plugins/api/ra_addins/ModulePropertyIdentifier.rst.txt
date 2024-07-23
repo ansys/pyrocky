@@ -1,0 +1,59 @@
+
+
+.. py:class:: ModulePropertyIdentifier
+
+   Bases: :py:obj:`NamedTuple`
+
+
+
+.. py:currentmodule:: ModulePropertyIdentifier
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~name`
+            - 
+          * - :py:attr:`~modules`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins import ModulePropertyIdentifier
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: name
+   :type: str
+
+   
+
+.. py:attribute:: modules
+   :type: set[str]
+
+   
+
+
+
+

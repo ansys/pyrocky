@@ -1,0 +1,227 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_joints_data_mesh_coloring
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_joints_data_mesh_coloring
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RAJointsDataMeshColoring`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: RAJointsDataMeshColoring(id: str)
+
+
+.. py:currentmodule:: RAJointsDataMeshColoring
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~SetVisible`
+            - 
+          * - :py:attr:`~GetVisible`
+            - 
+          * - :py:attr:`~GetValidColoringModes`
+            - 
+          * - :py:attr:`~GetAvailableGridFunctionsNames`
+            - 
+          * - :py:attr:`~GetAvailableGridFunctions`
+            - 
+          * - :py:attr:`~SetStride`
+            - 
+          * - :py:attr:`~GetStride`
+            - 
+          * - :py:attr:`~SetJointsVisible`
+            - 
+          * - :py:attr:`~GetJointsVisible`
+            - 
+          * - :py:attr:`~SetJointsColor`
+            - 
+          * - :py:attr:`~GetJointsColor`
+            - 
+          * - :py:attr:`~SetJointsProperty`
+            - 
+          * - :py:attr:`~GetJointsProperty`
+            - 
+          * - :py:attr:`~SetJointsPointSize`
+            - 
+          * - :py:attr:`~GetJointsPointSize`
+            - 
+          * - :py:attr:`~SetJointsConnectivityVisible`
+            - 
+          * - :py:attr:`~GetJointsConnectivityVisible`
+            - 
+          * - :py:attr:`~SetJointsConnectivityColor`
+            - 
+          * - :py:attr:`~GetJointsConnectivityColor`
+            - 
+          * - :py:attr:`~SetJointsConnectivityProperty`
+            - 
+          * - :py:attr:`~GetJointsConnectivityProperty`
+            - 
+          * - :py:attr:`~SetJointsConnectivityLineWidth`
+            - 
+          * - :py:attr:`~GetJointsConnectivityLineWidth`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_joints_data_mesh_coloring import RAJointsDataMeshColoring
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+.. py:method:: SetVisible(value: bool) -> None
+
+
+.. py:method:: GetVisible() -> bool
+
+
+.. py:method:: GetValidColoringModes() -> list[str]
+
+
+.. py:method:: GetAvailableGridFunctionsNames() -> set[str]
+
+
+.. py:method:: GetAvailableGridFunctions() -> set[type[coilib50.element_function.semantic_association.SemanticAssociation]]
+
+
+.. py:method:: SetStride(value: int) -> None
+
+
+.. py:method:: GetStride() -> int
+
+
+.. py:method:: SetJointsVisible(value: bool) -> None
+
+
+.. py:method:: GetJointsVisible() -> bool
+
+
+.. py:method:: SetJointsColor(values: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType) -> None
+
+
+.. py:method:: GetJointsColor() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType
+
+
+.. py:method:: SetJointsProperty(value: Union[type[coilib50.element_function.semantic_association.SemanticAssociation], str, None]) -> None
+
+
+.. py:method:: GetJointsProperty() -> Union[type[coilib50.element_function.semantic_association.SemanticAssociation], None]
+
+
+.. py:method:: SetJointsPointSize(value: float) -> None
+
+
+.. py:method:: GetJointsPointSize() -> float
+
+
+.. py:method:: SetJointsConnectivityVisible(value: bool) -> None
+
+
+.. py:method:: GetJointsConnectivityVisible() -> bool
+
+
+.. py:method:: SetJointsConnectivityColor(values: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType) -> None
+
+
+.. py:method:: GetJointsConnectivityColor() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType
+
+
+.. py:method:: SetJointsConnectivityProperty(value: Union[type[coilib50.element_function.semantic_association.SemanticAssociation], str, None]) -> None
+
+
+.. py:method:: GetJointsConnectivityProperty() -> Union[type[coilib50.element_function.semantic_association.SemanticAssociation], None]
+
+
+.. py:method:: SetJointsConnectivityLineWidth(value: float) -> None
+
+
+.. py:method:: GetJointsConnectivityLineWidth() -> float
+
+
+
+
+
+

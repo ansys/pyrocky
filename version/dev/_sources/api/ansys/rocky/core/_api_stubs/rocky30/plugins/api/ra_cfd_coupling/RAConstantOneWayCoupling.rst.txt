@@ -1,0 +1,301 @@
+
+
+.. py:class:: RAConstantOneWayCoupling
+
+   Bases: :py:obj:`RABaseCFDCoupling`
+
+
+
+
+
+.. py:currentmodule:: RAConstantOneWayCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDensity`
+            - 
+          * - :py:attr:`~SetDensity`
+            - 
+          * - :py:attr:`~GetSpecificHeat`
+            - 
+          * - :py:attr:`~SetSpecificHeat`
+            - 
+          * - :py:attr:`~GetStartTime`
+            - 
+          * - :py:attr:`~SetStartTime`
+            - 
+          * - :py:attr:`~GetTemperature`
+            - 
+          * - :py:attr:`~SetTemperature`
+            - 
+          * - :py:attr:`~GetThermalConductivity`
+            - 
+          * - :py:attr:`~SetThermalConductivity`
+            - 
+          * - :py:attr:`~GetTurbulentDissipationRate`
+            - 
+          * - :py:attr:`~SetTurbulentDissipationRate`
+            - 
+          * - :py:attr:`~GetTurbulentKineticEnergy`
+            - 
+          * - :py:attr:`~SetTurbulentKineticEnergy`
+            - 
+          * - :py:attr:`~GetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~SetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~EnableTurbulentDispersion`
+            - 
+          * - :py:attr:`~DisableTurbulentDispersion`
+            - 
+          * - :py:attr:`~IsTurbulentDispersionEnabled`
+            - 
+          * - :py:attr:`~GetVelocity`
+            - 
+          * - :py:attr:`~SetVelocity`
+            - 
+          * - :py:attr:`~GetViscosity`
+            - 
+          * - :py:attr:`~SetViscosity`
+            - 
+          * - :py:attr:`~GetCFDParametersList`
+            - 
+          * - :py:attr:`~SetPartIdIfValid`
+            - 
+          * - :py:attr:`~GetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~SetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~GetDragLaw`
+            - 
+          * - :py:attr:`~SetDragLaw`
+            - 
+          * - :py:attr:`~GetLiftLaw`
+            - 
+          * - :py:attr:`~SetLiftLaw`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~GetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~GetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~GetTorqueLaw`
+            - 
+          * - :py:attr:`~SetTorqueLaw`
+            - 
+          * - :py:attr:`~GetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~SetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~GetVirtualMassLaw`
+            - 
+          * - :py:attr:`~SetVirtualMassLaw`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling import RAConstantOneWayCoupling
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetDensity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetSpecificHeat(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetSpecificHeat(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetThermalConductivity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetThermalConductivity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetTurbulentDissipationRate(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetTurbulentDissipationRate(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetTurbulentKineticEnergy(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetTurbulentKineticEnergy(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetUseTurbulentDispersion() -> bool
+
+
+.. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+
+.. py:method:: EnableTurbulentDispersion() -> None
+
+
+.. py:method:: DisableTurbulentDispersion() -> None
+
+
+.. py:method:: IsTurbulentDispersionEnabled() -> bool
+
+
+.. py:method:: GetVelocity(unit: Optional[str] = ...) -> List[float]
+
+
+.. py:method:: SetVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetViscosity(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetViscosity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetCFDParametersList()
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+
+.. py:method:: GetConvectiveHeatTransferLaw()
+
+
+.. py:method:: SetConvectiveHeatTransferLaw(value) -> None
+
+
+.. py:method:: GetDragLaw()
+
+
+.. py:method:: SetDragLaw(value) -> None
+
+
+.. py:method:: GetLiftLaw()
+
+
+.. py:method:: SetLiftLaw(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK1()
+
+
+.. py:method:: SetMorsiAndAlexanderK1(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK2()
+
+
+.. py:method:: SetMorsiAndAlexanderK2(value) -> None
+
+
+.. py:method:: GetMorsiAndAlexanderK3()
+
+
+.. py:method:: SetMorsiAndAlexanderK3(value) -> None
+
+
+.. py:method:: GetSyamlalObrienC1()
+
+
+.. py:method:: SetSyamlalObrienC1(value) -> None
+
+
+.. py:method:: GetSyamlalObrienD1()
+
+
+.. py:method:: SetSyamlalObrienD1(value) -> None
+
+
+.. py:method:: GetTorqueLaw()
+
+
+.. py:method:: SetTorqueLaw(value) -> None
+
+
+.. py:method:: GetUseUserDefinedConstants()
+
+
+.. py:method:: SetUseUserDefinedConstants(value) -> None
+
+
+.. py:method:: GetVirtualMassLaw()
+
+
+.. py:method:: SetVirtualMassLaw(value) -> None
+
+
+

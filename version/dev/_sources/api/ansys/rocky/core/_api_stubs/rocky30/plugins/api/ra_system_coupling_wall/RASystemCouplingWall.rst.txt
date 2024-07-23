@@ -1,0 +1,276 @@
+
+
+.. py:class:: RASystemCouplingWall
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`
+
+
+
+
+
+.. py:currentmodule:: RASystemCouplingWall
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~HasMotionFrame`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetSphBoundaryType`
+            - 
+          * - :py:attr:`~SetSphBoundaryType`
+            - 
+          * - :py:attr:`~GetValidSphBoundaryTypeValues`
+            - 
+          * - :py:attr:`~GetStructuralCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~SetStructuralCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~EnableStructuralCouplingType`
+            - 
+          * - :py:attr:`~DisableStructuralCouplingType`
+            - 
+          * - :py:attr:`~IsStructuralCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~GetThermalCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~SetThermalCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~EnableThermalCouplingType`
+            - 
+          * - :py:attr:`~DisableThermalCouplingType`
+            - 
+          * - :py:attr:`~IsThermalCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~GetTriangleSize`
+            - 
+          * - :py:attr:`~SetTriangleSize`
+            - 
+          * - :py:attr:`~GetMaterial`
+            - 
+          * - :py:attr:`~SetMaterial`
+            - 
+          * - :py:attr:`~GetAvailableMaterials`
+            - 
+          * - :py:attr:`~GetGridFunction`
+            - 
+          * - :py:attr:`~GetGeometry`
+            - 
+          * - :py:attr:`~GetTimeStatistics`
+            - 
+          * - :py:attr:`~CreateTransientCurveOutputVariable`
+            - 
+          * - :py:attr:`~CreateCurveOutputVariable`
+            - 
+          * - :py:attr:`~CreateGridFunctionStatisticOutputVariable`
+            - 
+          * - :py:attr:`~GetOutputVariableValue`
+            - 
+          * - :py:attr:`~RemoveOutputVariable`
+            - 
+          * - :py:attr:`~RemoveProcess`
+            - 
+          * - :py:attr:`~AddCustomCurve`
+            - 
+          * - :py:attr:`~EditCustomCurve`
+            - 
+          * - :py:attr:`~RemoveCustomCurve`
+            - 
+          * - :py:attr:`~AddCustomProperty`
+            - 
+          * - :py:attr:`~EditCustomProperty`
+            - 
+          * - :py:attr:`~RemoveCustomProperty`
+            - 
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~VALID_OPERATIONS`
+            - 
+          * - :py:attr:`~VALID_TIME_RANGE_DEFINITIONS`
+            - 
+          * - :py:attr:`~VALID_DOMAIN_RANGE`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_system_coupling_wall import RASystemCouplingWall
+
+
+
+Attribute detail
+----------------
+.. py:attribute:: VALID_OPERATIONS
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_TIME_RANGE_DEFINITIONS
+   :type: _typeshed.Incomplete
+
+   
+
+.. py:attribute:: VALID_DOMAIN_RANGE
+   :type: _typeshed.Incomplete
+
+   
+
+
+
+Method detail
+-------------
+.. py:method:: GetWrappedClass() -> type[object]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: HasMotionFrame() -> bool
+
+
+.. py:method:: GetName() -> str
+
+
+.. py:method:: SetName(value: str) -> None
+
+
+.. py:method:: GetSphBoundaryType() -> str
+
+
+.. py:method:: SetSphBoundaryType(value: str) -> None
+
+
+.. py:method:: GetValidSphBoundaryTypeValues() -> List[str]
+
+
+.. py:method:: GetStructuralCouplingTypeEnabled() -> bool
+
+
+.. py:method:: SetStructuralCouplingTypeEnabled(value: bool) -> None
+
+
+.. py:method:: EnableStructuralCouplingType() -> None
+
+
+.. py:method:: DisableStructuralCouplingType() -> None
+
+
+.. py:method:: IsStructuralCouplingTypeEnabled() -> bool
+
+
+.. py:method:: GetThermalCouplingTypeEnabled() -> bool
+
+
+.. py:method:: SetThermalCouplingTypeEnabled(value: bool) -> None
+
+
+.. py:method:: EnableThermalCouplingType() -> None
+
+
+.. py:method:: DisableThermalCouplingType() -> None
+
+
+.. py:method:: IsThermalCouplingTypeEnabled() -> bool
+
+
+.. py:method:: GetTriangleSize(unit: Optional[str] = ...) -> float
+
+
+.. py:method:: SetTriangleSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:method:: GetMaterial()
+
+
+.. py:method:: SetMaterial(value) -> None
+
+
+.. py:method:: GetAvailableMaterials()
+
+
+.. py:method:: GetGridFunction(grid_function_name, simulation_name: _typeshed.Incomplete | None = ..., translated: bool = ...)
+
+
+.. py:method:: GetGeometry(time_step: str = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall.RAWall
+
+
+.. py:method:: GetTimeStatistics() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatistics
+
+
+.. py:method:: CreateTransientCurveOutputVariable(curve_name: str, operation: str = ..., time_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ..., domain_range: str = ..., initial_domain_range: float = ..., final_domain_range: float = ..., domain_unit: Union[str, None] = ...)
+
+
+.. py:method:: CreateCurveOutputVariable(curve_name: str, operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...)
+
+
+.. py:method:: CreateGridFunctionStatisticOutputVariable(grid_function_name: str, operation: str = ..., statistic_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...) -> str
+
+
+.. py:method:: GetOutputVariableValue(variable_name: str) -> barril.units.Scalar
+
+
+.. py:method:: RemoveOutputVariable(variable_name: str) -> None
+
+
+.. py:method:: RemoveProcess() -> None
+
+
+.. py:method:: AddCustomCurve(name: str, curve_type: str = ..., output_unit: str = ..., domain: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+.. py:method:: EditCustomCurve(edit_curve: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+.. py:method:: RemoveCustomCurve(name: str) -> None
+
+
+.. py:method:: AddCustomProperty(name: str, property_type: str = ..., output_unit: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+.. py:method:: EditCustomProperty(edit_property: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+.. py:method:: RemoveCustomProperty(name: str) -> None
+
+
+

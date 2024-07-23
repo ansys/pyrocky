@@ -1,0 +1,62 @@
+
+
+.. py:class:: ElementWithAddins
+
+
+.. py:currentmodule:: ElementWithAddins
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetModuleProperties`
+            - 
+          * - :py:attr:`~GetModuleProperty`
+            - 
+          * - :py:attr:`~SetModuleProperty`
+            - 
+          * - :py:attr:`~GetValidOptionsForModuleProperty`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins import ElementWithAddins
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: GetModuleProperties() -> collections.abc.Sequence[ModulePropertyIdentifier]
+
+
+.. py:method:: GetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], unit: Union[str, None] = ...) -> Union[float, bool, str, ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList]
+
+
+.. py:method:: SetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], value: Union[float, bool, str], unit: Union[str, None] = ...) -> None
+
+
+.. py:method:: GetValidOptionsForModuleProperty(property_name)
+
+
+

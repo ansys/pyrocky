@@ -28,6 +28,7 @@ from rocky30.models.material.fluid_material import (
 from rocky30.models.material.fluid_material import FluidMaterial as FluidMaterial
 from rocky30.models.material.material import Material as Material
 from rocky30.models.material.material import MaterialCollection as MaterialCollection
+from rocky30.models.naming import CreateNewName as CreateNewName
 
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
     ApiElementItem,

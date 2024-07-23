@@ -23,11 +23,16 @@
 Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
-from typing import Final
+from typing import TYPE_CHECKING, Final
 
 import Pyro5.api
 
 from ansys.rocky.core.serializers import register_proxies
+
+if TYPE_CHECKING:
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application import (
+        RockyApiApplication,
+    )
 
 DEFAULT_SERVER_PORT: Final[int] = 50615
 _ROCKY_API: Pyro5.api.Proxy | None = None
@@ -80,7 +85,7 @@ class RockyClient:
         self._api_adapter = rocky_api
 
     @property
-    def api(self):
+    def api(self) -> "RockyApiApplication":
         return self._api_adapter
 
     def close(self):

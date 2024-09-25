@@ -40,7 +40,7 @@ def launch_rocky(
     *,
     headless: bool = True,
     server_port: int = DEFAULT_SERVER_PORT,
-    terminate_existing_session: bool = False,
+    close_existing: bool = False,
 ) -> RockyClient:
     """
     Launch the Rocky executable with the PyRocky server enabled.
@@ -57,7 +57,7 @@ def launch_rocky(
         Whether to launch Rocky in headless mode. The default is ``True``.
     server_port: int, optional
         Set the port for Rocky RPC server.
-    terminate_existing_session: bool, optional
+    close_existing: bool, optional
         Checks if a session exists under the given server_port and closes it
         before attempting to launch a new session.
 
@@ -70,7 +70,7 @@ def launch_rocky(
         rocky_exe = Path(rocky_exe)
 
     if _is_port_busy(server_port):
-        if terminate_existing_session:
+        if close_existing:
             # Will try to connect to an existing session using the
             # given server port and attempt to close it.
             client = connect_to_rocky(port=server_port)

@@ -156,3 +156,19 @@ def test_pyrocky_launch_multiple_servers():
 
         with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
             pyrocky.launch_rocky()
+
+
+def test_close_existing_session():
+    """
+    Launches a pyrocky session on top another one using the
+    same server port. PyRocky should attempt closing the
+    existing session before launching the second one.
+    """
+    from ansys.rocky.core.client import _get_numerical_version
+
+    rocky_one = pyrocky.launch_rocky()
+    rocky_two = pyrocky.launch_rocky(close_existing=True)
+
+    assert _get_numerical_version(rocky_two.api) is not None
+
+    rocky_two.close()

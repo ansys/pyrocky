@@ -41,22 +41,26 @@ def launch_rocky(
     *,
     headless: bool = True,
     server_port: int = DEFAULT_SERVER_PORT,
+    close_existing: bool = False,
 ) -> RockyClient:
     """
     Launch the Rocky executable with the PyRocky server enabled.
 
     This method waits for Rocky to start up and then returns a
-    `RockyClient` instance.
+    ```RockyClient`` instance.
 
     Parameters
     ----------
     rocky_exe : Optional[Path], optional
         Path to the Rocky executable. If a path is not specified, this method
-        tries to find the path using environment variables.
+        tries to find the path using ``AWP_ROOT*`` environment variables.
     headless : bool, optional
-        Whether to launch Rocky in headless mode. The default is `True`.
+        Whether to launch Rocky in headless mode. The default is ``True``.
     server_port: int, optional
-        Set the port for the Rocky RPC server.
+        Set the port for Rocky RPC server.
+    close_existing: bool, optional
+        Checks if a session exists under the given server_port and closes it
+        before attempting to launch a new session.
 
     Returns
     -------
@@ -67,7 +71,17 @@ def launch_rocky(
         rocky_exe = Path(rocky_exe)
 
     if _is_port_busy(server_port):
-        raise RockyLaunchError(f"Port {server_port} is already in use.")
+        if close_existing:
+            # Will try to connect to an existing session using the
+            # given server port and attempt to close it.
+            client = connect_to_rocky(port=server_port)
+            try:
+                client.close()
+            except CommunicationError:
+                # Maybe the session closed in the meantime so we just pass
+                pass
+        else:
+            raise RockyLaunchError(f"Port {server_port} is already in use.")
 
     if rocky_exe is None:
         # Detect the operating system
@@ -95,10 +109,9 @@ def launch_rocky(
         if not rocky_exe.is_file():
             raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")
 
-    cmd = [str(rocky_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
+    cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
         cmd.append("--headless")
-
     with contextlib.suppress(subprocess.TimeoutExpired):
         rocky_process = subprocess.Popen(cmd)
         try:
@@ -106,8 +119,8 @@ def launch_rocky(
         except subprocess.TimeoutExpired:
             pass
 
-    # Check if the process terminated prematurely
-    if rocky_process.poll() is not None and rocky_process.returncode != 0:
+    # Rocky.exe call returned to soon, something happen
+    if rocky_process.returncode is not None:
         raise RockyLaunchError(f"Error launching Rocky:\n  {' '.join(cmd)}")
 
     client = connect_to_rocky(port=server_port)
@@ -122,7 +135,7 @@ def launch_rocky(
         else:
             break
     else:
-        raise RockyLaunchError("Could not connect to Rocky remote server: timed out")
+        raise RockyLaunchError("Could not connect Rocky remote server: timed out")
 
     client._process = rocky_process
     return client

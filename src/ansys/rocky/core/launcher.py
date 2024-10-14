@@ -85,7 +85,7 @@ def launch_rocky(
 
     if rocky_exe is None:
         # Detect the operating system
-        if sys.platform.startswith('win'):
+        if sys.platform.startswith("win"):
             awp_roots = [k for k in os.environ.keys() if k.startswith("AWP_ROOT")]
             for awp_root in sorted(awp_roots, reverse=True):
                 rocky_exe = Path(os.environ[awp_root]) / "Rocky/bin/Rocky.exe"
@@ -102,7 +102,7 @@ def launch_rocky(
                     break
             else:
                 # Try to find 'rocky' in PATH
-                rocky_exe = shutil.which('rocky')
+                rocky_exe = shutil.which("rocky")
                 if rocky_exe is None:
                     raise FileNotFoundError("Rocky executable is not found.")
     else:

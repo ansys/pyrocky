@@ -23,12 +23,12 @@
 import contextlib
 import os
 from pathlib import Path
+import re
+import shutil
 import subprocess
 import sys
 import time
-import shutil
 from typing import Optional, Union
-import re
 
 from Pyro5.errors import CommunicationError
 
@@ -97,12 +97,12 @@ def launch_rocky(
                 raise FileNotFoundError("Rocky executable is not found.")
         else:
             # for Linux: Trying ANSYSXXX_DIR-environment variable according install instructions
-            pattern = re.compile(r'^ANSYS(\d{3})_DIR$')
+            pattern = re.compile(r"^ANSYS(\d{3})_DIR$")
             ansys_dirs = sorted(
-                (int(m.group(1)), Path(v)) 
-                for k, v in os.environ.items() 
+                (int(m.group(1)), Path(v))
+                for k, v in os.environ.items()
                 if (m := pattern.match(k))
-            )      
+            )
             if ansys_dirs:
                 latest_version, ansys_dir = ansys_dirs[-1]
                 rocky_exe = ansys_dir.parent / "Rocky"
@@ -112,7 +112,9 @@ def launch_rocky(
                 if rocky_exe_str:
                     rocky_exe = Path(rocky_exe_str)
                 else:
-                    raise FileNotFoundError("Rocky executable is not found. Ensure ANSYSXXX_DIR (XXX=Version) is set or 'rocky' is in PATH.")
+                    raise FileNotFoundError(
+                        "Rocky executable is not found. Ensure ANSYSXXX_DIR (XXX=Version) is set or 'rocky' is in PATH."
+                    )
     else:
         if not rocky_exe.is_file():
             raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")

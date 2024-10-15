@@ -96,7 +96,7 @@ def launch_rocky(
             else:
                 raise FileNotFoundError("Rocky executable is not found.")
         else:
-            # for Linux: Trying ANSYSXXX_DIR-environment variable according install instructions
+            # Linux: Trying ANSYSXXX_DIR-environment var according install instructions
             pattern = re.compile(r"^ANSYS(\d{3})_DIR$")
             ansys_dirs = sorted(
                 (int(m.group(1)), Path(v))
@@ -106,14 +106,14 @@ def launch_rocky(
             if ansys_dirs:
                 latest_version, ansys_dir = ansys_dirs[-1]
                 rocky_exe = ansys_dir.parent / "Rocky"
-                print(rocky_exe)
             if not rocky_exe or not rocky_exe.is_file():
                 rocky_exe_str = shutil.which("rocky")
                 if rocky_exe_str:
                     rocky_exe = Path(rocky_exe_str)
                 else:
                     raise FileNotFoundError(
-                        "Rocky executable is not found. Ensure ANSYSXXX_DIR (XXX=Version) is set or 'rocky' is in PATH."
+                        "Rocky executable not found. Ensure ANSYSXXX_DIR (XXX=Version) "
+                        "is set or 'rocky' is in PATH."
                     )
     else:
         if not rocky_exe.is_file():

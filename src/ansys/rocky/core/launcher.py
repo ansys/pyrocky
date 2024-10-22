@@ -23,7 +23,10 @@
 import contextlib
 import os
 from pathlib import Path
+import re
+import shutil
 import subprocess
+import sys
 import time
 from typing import Optional, Union
 
@@ -83,13 +86,35 @@ def launch_rocky(
             raise RockyLaunchError(f"Port {server_port} is already in use.")
 
     if rocky_exe is None:
-        awp_roots = [k for k in os.environ.keys() if k.startswith("AWP_ROOT")]
-        for awp_root in sorted(awp_roots, reverse=True):
-            rocky_exe = Path(os.environ[awp_root]) / "Rocky/bin/Rocky.exe"
-            if rocky_exe.is_file():
-                break
+        # Detect the operating system
+        if sys.platform.startswith("win"):
+            awp_roots = [k for k in os.environ.keys() if k.startswith("AWP_ROOT")]
+            for awp_root in sorted(awp_roots, reverse=True):
+                rocky_exe = Path(os.environ[awp_root]) / "Rocky/bin/Rocky.exe"
+                if rocky_exe.is_file():
+                    break
+            else:
+                raise FileNotFoundError("Rocky executable is not found.")
         else:
-            raise FileNotFoundError("Rocky executable is not found.")
+            # Linux: Trying ANSYSXXX_DIR-environment var according install instructions
+            pattern = re.compile(r"^ANSYS(\d{3})_DIR$")
+            ansys_dirs = sorted(
+                (int(m.group(1)), Path(v))
+                for k, v in os.environ.items()
+                if (m := pattern.match(k))
+            )
+            if ansys_dirs:
+                latest_version, ansys_dir = ansys_dirs[-1]
+                rocky_exe = ansys_dir.parent / "Rocky"
+            if not rocky_exe or not rocky_exe.is_file():
+                rocky_exe_str = shutil.which("rocky")
+                if rocky_exe_str:
+                    rocky_exe = Path(rocky_exe_str)
+                else:
+                    raise FileNotFoundError(
+                        "Rocky executable not found. Ensure ANSYSXXX_DIR (XXX=Version) "
+                        "is set or 'rocky' is in PATH."
+                    )
     else:
         if not rocky_exe.is_file():
             raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")

@@ -28,7 +28,8 @@ try:
     import requests
 except ImportError:
     raise ImportError(
-        "requests library is required to download examples data. Please install it with `pip install requests`"
+        "requests library is required to download examples data. "
+        "Please install it with 'pip install requests'"
     )
 
 logger = logging.getLogger("pyrocky.networking")

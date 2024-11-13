@@ -57,11 +57,12 @@ def _ApiElementProxySerializer(obj: ApiElementProxy) -> dict:
     Serialize an `ApiElementProxy` ensuring backward compatibility with
     ROCKY 24.2 and older versions.
     """
-    from .client import _ROCKY_VERSION
+    from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
 
+    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
     serialized = ApiElementProxy.serialize(obj)
 
-    if _ROCKY_VERSION is not None and _ROCKY_VERSION < 250:
+    if ROCKY_VERSION is not None and ROCKY_VERSION < 250:
         serialized["__class__"] = f'_{serialized["__class__"]}'
     return serialized
 

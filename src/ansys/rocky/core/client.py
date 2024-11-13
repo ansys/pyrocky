@@ -36,9 +36,6 @@ if TYPE_CHECKING:
 
 DEFAULT_SERVER_PORT: Final[int] = 50615
 _ROCKY_API: Pyro5.api.Proxy | None = None
-_ROCKY_VERSION: int | None = (
-    None  # Rocky version as integer (24R2 becomes 242, 25R1 becomes 251, ...)
-)
 
 
 def connect_to_rocky(
@@ -60,13 +57,12 @@ def connect_to_rocky(
         Client object for interacting with the Rocky app.
     """
     uri = f"PYRO:rocky.api@{host}:{port}"
-    global _ROCKY_API, _ROCKY_VERSION
+    global _ROCKY_API
 
     if _ROCKY_API is None:
         register_proxies()
 
     _ROCKY_API = Pyro5.api.Proxy(uri)
-    _ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
 
     rocky_client = RockyClient(_ROCKY_API)
     return rocky_client

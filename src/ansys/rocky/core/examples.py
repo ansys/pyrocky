@@ -24,7 +24,12 @@ import logging
 import os
 from typing import Optional
 
-import requests
+try:
+    import requests
+except ImportError:
+    raise ImportError(
+        "requests library is required to download examples data. Please install it with `pip install requests`"
+    )
 
 logger = logging.getLogger("pyrocky.networking")
 

@@ -21,10 +21,11 @@
 # SOFTWARE.
 
 from collections.abc import Sequence
-from typing import Any, Optional, Union
+from typing import Any
 
 from _typeshed import Incomplete
 from barril.units import Scalar
+from ben10.foundation.types_ import AsList as AsList
 from coilib50.process import IProcess as IProcess
 from coilib50.status.status_interface import IStatusMessage
 from coilib50.subject import Subject as Subject
@@ -64,6 +65,9 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_feed_conveyor 
 )
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_receiving_conveyor import (
     RAReceivingConveyor as RAReceivingConveyor,
+)
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame import (
+    RAMotionFrame as RAMotionFrame,
 )
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame_source import (
     RAMotionFrameSource as RAMotionFrameSource,
@@ -167,10 +171,11 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_deprecated_decora
     ApiDeprecated as ApiDeprecated,
 )
 
-RAMaterialOrName = Union[RASolidMaterial, str]
+RAMaterialOrName: Incomplete
 Status = dict[str, Sequence[tuple[IStatusMessage, str]]]
-Particle = Optional[Union[RAParticle, list[RAParticle]]]
-ParticleInletExtensions = list[tuple[str, Union[float, Scalar]]]
+Particle: Incomplete
+ParticleInletExtensions: Incomplete
+PeriodicMotionExtensions: Incomplete
 
 class RAStudy(ApiElementItem):
     @classmethod
@@ -362,7 +367,8 @@ class RAStudy(ApiElementItem):
         extension_amount: Union[float, Scalar] = ...,
         time: Union[int, TimeStep, None] = ...,
         inlet_extensions: Union[ParticleInletExtensions, None] = ...,
-    ): ...
+        periodic_motion_extensions: Union[PeriodicMotionExtensions, None] = ...,
+    ) -> None: ...
     def GetTimeSet(self) -> TimeSet: ...
     def SetVariable(self, name: str, value: float) -> None: ...
     STATUS_ERROR: str

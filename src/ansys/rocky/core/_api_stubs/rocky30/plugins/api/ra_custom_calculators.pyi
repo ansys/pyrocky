@@ -40,7 +40,6 @@ class RACustomCurveAndGridProperty:
         name: str,
         curve_type: str = ...,
         output_unit: str = ...,
-        domain: str = ...,
         scope: str = ...,
         sources: Union[dict[str, str], None] = ...,
         expression: str = ...,
@@ -70,3 +69,13 @@ class RACustomCurveAndGridProperty:
         expression: Union[str, None] = ...,
     ) -> None: ...
     def RemoveCustomProperty(self, name: str) -> None: ...
+
+class RACustomCurveParameters:
+    variable_to_association_and_unit: Incomplete
+    output_quantity: Incomplete
+    domain_association: Incomplete
+    def __init__(
+        self,
+        process: RACustomCurveAndGridProperty,
+        sources: Union[dict[str, str], None] = ...,
+    ) -> None: ...

@@ -70,6 +70,9 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_divisions_tagging import
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element import (
     RAGridProcessElementItem as RAGridProcessElementItem,
 )
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_residence_time import (
+    RAResidenceTime as RAResidenceTime,
+)
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_tagging import (
     RASPHTagging as RASPHTagging,
 )
@@ -86,7 +89,7 @@ class RACalculations(ApiElementItem):
     @classmethod
     def GetClassName(self) -> str: ...
     def CreateSelectionResidenceTime(
-        self, selection: RAGridProcessElementItem
+        self, selection: Union[RAGridProcessElementItem, str]
     ) -> ParticlesSelectionCalculator: ...
     def CreateSelectionFlipCount(
         self, selection: RAGridProcessElementItem

@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 from collections.abc import Sequence
-from typing import NamedTuple, Union
+from typing import Union
 
 from rocky30.plugins.addins.model.addin_manager import AddinManager as AddinManager
 from rocky30.plugins.addins.model.property_set import PropertyEntry as PropertyEntry
@@ -37,9 +37,15 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_process import (
     RAModuleOutput as RAModuleOutput,
 )
 
-class ModulePropertyIdentifier(NamedTuple):
+class ModulePropertyIdentifier:
     name: str
     modules: set[str]
+    all_captions: dict[str, str]
+    def __init__(self, name, modules, all_captions) -> None: ...
+    def __lt__(self, other): ...
+    def __le__(self, other): ...
+    def __gt__(self, other): ...
+    def __ge__(self, other): ...
 
 class ElementWithAddins:
     def GetModuleProperties(self) -> Sequence[ModulePropertyIdentifier]: ...

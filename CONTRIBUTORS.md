@@ -6,6 +6,7 @@
 
 ## Individual Contributors
 
+* [Adrian Brandemarte Moreira](https://github.com/Adrian-B-Moreira)
 * [Alejandro Fernández Luces](https://github.com/AlejandroFernandezLuces)
 * [Augusto Finger Pacheco](https://github.com/fingeraugusto)
 * [Gustavo Corrêa Martins](https://github.com/gcmartins)

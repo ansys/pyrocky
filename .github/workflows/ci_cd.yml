@@ -80,7 +80,7 @@ jobs:
           .\.venv\Scripts\Activate.ps1
           pytest tests
 
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
         name: 'Upload coverage to CodeCov'
         env:
           CODECOV_TOKEN:  ${{ secrets.CODECOV_TOKEN }}

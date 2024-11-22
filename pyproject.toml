@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "ansys-rocky-core"
-version = "0.2.dev0"
+version = "0.3.1"
 authors = [{ name="ANSYS, Inc.", email="pyansys.core@ansys.com" }]
 description = "Python client library for Ansys Rocky"
 readme = "README.rst"

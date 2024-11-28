@@ -14,6 +14,11 @@ To install PyRocky, run this command:
 
     python -m pip install ansys-rocky-core
 
+or
+
+.. code:: bash
+
+    conda install conda-forge::ansys-rocky-core
 
 Launch PyRocky
 --------------

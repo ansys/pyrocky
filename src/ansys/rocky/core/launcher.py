@@ -21,22 +21,23 @@
 # SOFTWARE.
 """Module that exposes functions to launch a Rocky application session."""
 import contextlib
-import os
+
 from pathlib import Path
 import subprocess
 import time
-from typing import Optional, Union
 
 from Pyro5.errors import CommunicationError
 
+from ansys.tools.path import get_available_ansys_installations
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect_to_rocky
 from ansys.rocky.core.exceptions import RockyLaunchError
 
 _CONNECT_TO_SERVER_TIMEOUT = 60
+MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 
 
 def launch_rocky(
-    rocky_exe: Optional[Union[Path, str]] = None,
+    rocky_version: str | int = None,
     *,
     headless: bool = True,
     server_port: int = DEFAULT_SERVER_PORT,
@@ -50,14 +51,14 @@ def launch_rocky(
 
     Parameters
     ----------
-    rocky_exe : Optional[Path], optional
-        Path to the Rocky executable. If a path is not specified, this method
-        tries to find the path using ``AWP_ROOT*`` environment variables.
-    headless : bool, optional
+    rocky_version:
+        Rocky version to run. If the version is not specified, this method tries to
+        find the path using the latest Ansys path returned by ansys-tools-path API
+    headless:
         Whether to launch Rocky in headless mode. The default is ``True``.
-    server_port: int, optional
+    server_port:
         Set the port for Rocky RPC server.
-    close_existing: bool, optional
+    close_existing:
         Checks if a session exists under the given server_port and closes it
         before attempting to launch a new session.
 
@@ -66,8 +67,8 @@ def launch_rocky(
     RockyClient
         Rocky client instance connected to the launched Rocky app.
     """
-    if isinstance(rocky_exe, str):
-        rocky_exe = Path(rocky_exe)
+    if isinstance(rocky_version, str):
+        rocky_version = int(rocky_version)
 
     if _is_port_busy(server_port):
         if close_existing:
@@ -82,17 +83,30 @@ def launch_rocky(
         else:
             raise RockyLaunchError(f"Port {server_port} is already in use.")
 
-    if rocky_exe is None:
-        awp_roots = [k for k in os.environ.keys() if k.startswith("AWP_ROOT")]
-        for awp_root in sorted(awp_roots, reverse=True):
-            rocky_exe = Path(os.environ[awp_root]) / "Rocky/bin/Rocky.exe"
-            if rocky_exe.is_file():
+    ansys_installations = get_available_ansys_installations()
+
+    if rocky_version is None:
+        for installation in sorted(ansys_installations, reverse=True):
+            rocky_exe = Path(ansys_installations[installation]) / "Rocky/bin/Rocky.exe"
+            if rocky_exe.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
                 break
         else:
             raise FileNotFoundError("Rocky executable is not found.")
     else:
+        if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
+            raise ValueError(
+                f"Rocky version {rocky_version} is not supported. "
+                f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
+            )
+
+        if rocky_version in ansys_installations:
+            ansys_installation = ansys_installations.get(rocky_version)
+        else:
+            raise FileNotFoundError(f"Rocky executable for version {rocky_version} is not found.")
+
+        rocky_exe = Path(ansys_installation) / "Rocky/bin/Rocky.exe"
         if not rocky_exe.is_file():
-            raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")
+            raise FileNotFoundError(f"Rocky executable for version {rocky_version} is not found.")
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

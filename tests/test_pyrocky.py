@@ -66,17 +66,15 @@ def create_basic_project_with_results(
 @pytest.mark.parametrize(
     "version, expected_version",
     [
-        ("25.1", 251),
-        ("24.2", 240),
+        ("251", 251),
+        ("242", 240),
     ],
 )
 def test_minimal_simulation(version, expected_version, tmp_path, request):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
-    short_v = version.replace(".", "")
-    exe_file = f"C:\\Program Files\\ANSYS Inc\\v{short_v}\\Rocky\\bin\\Rocky.exe"
-    rocky = pyrocky.launch_rocky(exe_file)
+    rocky = pyrocky.launch_rocky(rocky_version=version)
     request.addfinalizer(rocky.close)
 
     from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version

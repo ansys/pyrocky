@@ -76,14 +76,13 @@ def test_minimal_simulation(version, expected_version, tmp_path, request):
     """
     short_v = version.replace(".", "")
     exe_file = f"C:\\Program Files\\ANSYS Inc\\v{short_v}\\Rocky\\bin\\Rocky.exe"
-    pyrocky.launch_rocky(exe_file)
-    rocky = pyrocky.connect_to_rocky()
+    rocky = pyrocky.launch_rocky(exe_file)
     request.addfinalizer(rocky.close)
 
-    from ansys.rocky.core.client import _ROCKY_VERSION
+    from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
 
-    global _ROCKY_VERSION
-    assert _ROCKY_VERSION == expected_version
+    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
+    assert ROCKY_VERSION == expected_version
 
     study = create_basic_project_with_results(
         rocky.api, str(tmp_path / "rocky-testing.rocky")
@@ -105,8 +104,7 @@ def test_minimal_simulation(version, expected_version, tmp_path, request):
 
 def test_sequences_interface(rocky_session):
     """Ensure that API objects that are sequences have their dunder methods exposed."""
-    rocky = pyrocky.connect_to_rocky()
-    project = rocky.api.CreateProject()
+    project = rocky_session.api.CreateProject()
 
     study = project.GetStudy()
 
@@ -128,9 +126,8 @@ def test_sequences_interface(rocky_session):
 
 
 def test_export_toolkit(rocky_session, tmp_path):
-    rocky = pyrocky.connect_to_rocky()
     study = create_basic_project_with_results(
-        rocky.api,
+        rocky_session.api,
         str(tmp_path / "rocky-testing-export.rocky"),
         simulation_duration=0.1,
         time_interval=0.1,

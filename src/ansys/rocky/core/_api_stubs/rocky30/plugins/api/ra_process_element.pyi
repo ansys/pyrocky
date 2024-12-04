@@ -39,11 +39,11 @@ from rocky30.process.user_process.cube_process_with_movement import (
 from rocky30.process.user_process.cylinder_process_with_movement import (
     CylinderProcessWithMovement as CylinderProcessWithMovement,
 )
+from rocky30.process.user_process.polyhedron_process_with_movement import (
+    PolyhedronProcessWithMovement as PolyhedronProcessWithMovement,
+)
 from sci20.plugins.api.api_process_element import SciApiProcessElementItem
 from sci20.plugins.process.plane_process.plane_process_subject import PlaneProcessSubject
-from sci20.plugins.process.polyhedron_process.polyhedron_process_subject import (
-    PolyhedronProcessSubject,
-)
 
 from ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin import (
     _RAOrientationMixin,
@@ -179,13 +179,14 @@ class RAInspectorProcess(RAUserProcess):
 
 class RAPolyhedronProcess(RAUserProcess, _WithMovementMixin, _RAOrientationMixin):
     @classmethod
-    def GetWrappedClass(cls) -> type[PolyhedronProcessSubject]: ...
+    def GetWrappedClass(cls) -> type[PolyhedronProcessWithMovement]: ...
     @classmethod
     def GetClassName(cls) -> str: ...
     def GetCenter(self, unit: Incomplete | None = ...) -> Tuple3F: ...
     def SetCenter(
         self, x: float, y: float, z: float, unit: Union[str, None] = ...
     ) -> None: ...
+    def GetCenterAfterMovement(self, timestep: int) -> Tuple3F: ...
     def GetSize(self, unit: Union[str, None] = ...) -> Tuple3F: ...
     def SetSize(
         self, x: float, y: float, z: float, unit: Union[str, None] = ...

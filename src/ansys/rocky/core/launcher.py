@@ -21,14 +21,13 @@
 # SOFTWARE.
 """Module that exposes functions to launch a Rocky application session."""
 import contextlib
-
 from pathlib import Path
 import subprocess
 import time
 
 from Pyro5.errors import CommunicationError
-
 from ansys.tools.path import get_available_ansys_installations
+
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect_to_rocky
 from ansys.rocky.core.exceptions import RockyLaunchError
 
@@ -102,11 +101,15 @@ def launch_rocky(
         if rocky_version in ansys_installations:
             ansys_installation = ansys_installations.get(rocky_version)
         else:
-            raise FileNotFoundError(f"Rocky executable for version {rocky_version} is not found.")
+            raise FileNotFoundError(
+                f"Rocky executable for version {rocky_version} is not found."
+            )
 
         rocky_exe = Path(ansys_installation) / "Rocky/bin/Rocky.exe"
         if not rocky_exe.is_file():
-            raise FileNotFoundError(f"Rocky executable for version {rocky_version} is not found.")
+            raise FileNotFoundError(
+                f"Rocky executable for version {rocky_version} is not found."
+            )
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

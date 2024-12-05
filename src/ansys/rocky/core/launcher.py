@@ -54,8 +54,9 @@ def launch_rocky(
     rocky_exe:
         Path to the Rocky executable.
     rocky_version:
-        Rocky version to run. If no executable is passed and the version is not specified, this
-        method tries to find the path using the latest Ansys path returned by ansys-tools-path API.
+        Rocky version to run. If no executable is passed and the version is not
+        specified, this method tries to find the path using the latest Ansys path
+        returned by ansys-tools-path API.
     headless:
         Whether to launch Rocky in headless mode. The default is ``True``.
     server_port:

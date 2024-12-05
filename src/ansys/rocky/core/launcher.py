@@ -36,6 +36,7 @@ MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 
 
 def launch_rocky(
+    rocky_exe: Path | str = None,
     rocky_version: str | int = None,
     *,
     headless: bool = True,
@@ -50,9 +51,11 @@ def launch_rocky(
 
     Parameters
     ----------
+    rocky_exe:
+        Path to the Rocky executable.
     rocky_version:
-        Rocky version to run. If the version is not specified, this method tries to
-        find the path using the latest Ansys path returned by ansys-tools-path API
+        Rocky version to run. If no executable is passed and the version is not specified, this
+        method tries to find the path using the latest Ansys path returned by ansys-tools-path API.
     headless:
         Whether to launch Rocky in headless mode. The default is ``True``.
     server_port:
@@ -66,9 +69,6 @@ def launch_rocky(
     RockyClient
         Rocky client instance connected to the launched Rocky app.
     """
-    if isinstance(rocky_version, str):
-        rocky_version = int(rocky_version)
-
     if _is_port_busy(server_port):
         if close_existing:
             # Will try to connect to an existing session using the
@@ -84,32 +84,38 @@ def launch_rocky(
 
     ansys_installations = get_available_ansys_installations()
 
-    if rocky_version is None:
-        for installation in sorted(ansys_installations, reverse=True):
-            rocky_exe = Path(ansys_installations[installation]) / "Rocky/bin/Rocky.exe"
-            if rocky_exe.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
-                break
+    if rocky_exe is None:
+        if rocky_version is None:
+            for installation in sorted(ansys_installations, reverse=True):
+                rocky_exe = Path(ansys_installations[installation]) / "Rocky/bin/Rocky.exe"
+                if rocky_exe.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
+                    break
+            else:
+                raise FileNotFoundError("Rocky executable is not found.")
         else:
-            raise FileNotFoundError("Rocky executable is not found.")
-    else:
-        if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-            raise ValueError(
-                f"Rocky version {rocky_version} is not supported. "
-                f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
-            )
+            if isinstance(rocky_version, str):
+                rocky_version = int(rocky_version)
 
-        if rocky_version in ansys_installations:
-            ansys_installation = ansys_installations.get(rocky_version)
-        else:
-            raise FileNotFoundError(
-                f"Rocky executable for version {rocky_version} is not found."
-            )
+            if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
+                raise ValueError(
+                    f"Rocky version {rocky_version} is not supported. "
+                    f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
+                )
 
-        rocky_exe = Path(ansys_installation) / "Rocky/bin/Rocky.exe"
-        if not rocky_exe.is_file():
-            raise FileNotFoundError(
-                f"Rocky executable for version {rocky_version} is not found."
-            )
+            if rocky_version in ansys_installations:
+                ansys_installation = ansys_installations.get(rocky_version)
+            else:
+                raise FileNotFoundError(
+                    f"Rocky executable for version {rocky_version} is not found."
+                )
+
+            rocky_exe = Path(ansys_installation) / "Rocky/bin/Rocky.exe"
+            if not rocky_exe.is_file():
+                raise FileNotFoundError(
+                    f"Rocky executable for version {rocky_version} is not found."
+                )
+    elif isinstance(rocky_exe, str):
+        rocky_exe = Path(rocky_exe)
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

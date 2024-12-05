@@ -121,6 +121,8 @@ def launch_rocky(
                 )
     elif isinstance(rocky_exe, str):
         rocky_exe = Path(rocky_exe)
+        if not rocky_exe.is_file():
+            raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

@@ -1,0 +1,14 @@
+.. py:class:: RAMplWindow
+
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_workspace_window.KAWorkspaceWindow`
+
+   .. py:method:: GetFigure()
+
+
+   .. py:method:: GetCanvas()
+
+
+   .. py:method:: Redraw()
+
+

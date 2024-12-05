@@ -1,0 +1,59 @@
+:py:mod:`ansys.rocky.core`
+==========================
+
+.. py:module:: ansys.rocky.core
+
+.. autoapi-nested-parse::
+
+   
+   PyRocky is a Python client for Ansys Rocky application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   client/index.rst
+   examples/index.rst
+   exceptions/index.rst
+   launcher/index.rst
+   rocky_api_proxies/index.rst
+   serializers/index.rst
+
+
+Package Contents
+----------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   ansys.rocky.core.connect_to_rocky
+   ansys.rocky.core.launch_rocky
+
+
+
+
+

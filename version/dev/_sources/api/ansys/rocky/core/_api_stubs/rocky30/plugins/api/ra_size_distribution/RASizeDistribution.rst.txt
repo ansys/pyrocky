@@ -1,0 +1,31 @@
+.. py:class:: RASizeDistribution(id: str, model_id: Optional[str] = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: GetCumulativePercentage() -> float
+
+
+   .. py:method:: SetCumulativePercentage(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetScaleFactor(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetScaleFactor(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSize(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

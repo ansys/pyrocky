@@ -1,0 +1,37 @@
+.. py:class:: ApiListProxy(pyro_api: Pyro5.api.Proxy, pool_id: str)
+
+
+   Bases: :py:obj:`ApiElementProxy`
+
+   
+   Provides a proxy object for API elements that implement the sequence interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: __len__() -> int
+
+
+   .. py:method:: __getitem__(index: int) -> ApiElementProxy
+
+
+   .. py:method:: __iter__() -> collections.abc.Generator[ApiElementProxy, None, None]
+
+
+   .. py:method:: __delitem__(index: int) -> None
+
+

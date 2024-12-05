@@ -87,8 +87,13 @@ def launch_rocky(
     if rocky_exe is None:
         if rocky_version is None:
             for installation in sorted(ansys_installations, reverse=True):
-                rocky_exe = Path(ansys_installations[installation]) / "Rocky/bin/Rocky.exe"
-                if rocky_exe.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
+                rocky_exe = (
+                    Path(ansys_installations[installation]) / "Rocky/bin/Rocky.exe"
+                )
+                if (
+                    rocky_exe.is_file()
+                    and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED
+                ):
                     break
             else:
                 raise FileNotFoundError("Rocky executable is not found.")

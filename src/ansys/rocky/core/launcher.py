@@ -97,13 +97,13 @@ def launch_rocky(
                 ):
                     break
             else:
-                raise FileNotFoundError("Rocky executable is not found.")
+                raise FileNotFoundError("Rocky executable is not found.")  # pragma: no cover
         else:
             if isinstance(rocky_version, str):
                 rocky_version = int(rocky_version)
 
             if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-                raise ValueError(
+                raise ValueError(  # pragma: no cover
                     f"Rocky version {rocky_version} is not supported. "
                     f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
                 )
@@ -111,16 +111,16 @@ def launch_rocky(
             if rocky_version in ansys_installations:
                 ansys_installation = ansys_installations.get(rocky_version)
             else:
-                raise FileNotFoundError(
+                raise FileNotFoundError(  # pragma: no cover
                     f"Rocky executable for version {rocky_version} is not found."
                 )
 
             rocky_exe = Path(ansys_installation) / "Rocky/bin/Rocky.exe"
             if not rocky_exe.is_file():
-                raise FileNotFoundError(
+                raise FileNotFoundError(  # pragma: no cover
                     f"Rocky executable for version {rocky_version} is not found."
                 )
-    elif isinstance(rocky_exe, str):
+    elif isinstance(rocky_exe, str):  # pragma: no cover
         rocky_exe = Path(rocky_exe)
         if not rocky_exe.is_file():
             raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")

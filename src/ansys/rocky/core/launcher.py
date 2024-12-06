@@ -97,7 +97,9 @@ def launch_rocky(
                 ):
                     break
             else:
-                raise FileNotFoundError("Rocky executable is not found.")  # pragma: no cover
+                raise FileNotFoundError(
+                    "Rocky executable is not found."
+                )  # pragma: no cover
         else:
             if isinstance(rocky_version, str):
                 rocky_version = int(rocky_version)

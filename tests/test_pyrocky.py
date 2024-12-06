@@ -66,8 +66,8 @@ def create_basic_project_with_results(
 @pytest.mark.parametrize(
     "version, expected_version",
     [
-        ("251", 251),
-        ("242", 240),
+        (251, 251),
+        (242, 240),
     ],
 )
 def test_minimal_simulation(version, expected_version, tmp_path, request):

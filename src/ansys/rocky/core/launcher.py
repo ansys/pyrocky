@@ -24,6 +24,7 @@ import contextlib
 from pathlib import Path
 import subprocess
 import time
+from typing import Optional, Union
 
 from Pyro5.errors import CommunicationError
 from ansys.tools.path import get_available_ansys_installations
@@ -36,8 +37,8 @@ MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 
 
 def launch_rocky(
-    rocky_exe: Path | str = None,
-    rocky_version: str | int = None,
+    rocky_exe: Optional[Union[Path, str]] = None,
+    rocky_version: Optional[int] = None,
     *,
     headless: bool = True,
     server_port: int = DEFAULT_SERVER_PORT,
@@ -96,14 +97,11 @@ def launch_rocky(
                     and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED
                 ):
                     break
-            else:
+            else:  # pragma: no cover
                 raise FileNotFoundError(
                     "Rocky executable is not found."
-                )  # pragma: no cover
+                )
         else:
-            if isinstance(rocky_version, str):
-                rocky_version = int(rocky_version)
-
             if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
                 raise ValueError(  # pragma: no cover
                     f"Rocky version {rocky_version} is not supported. "
@@ -112,14 +110,12 @@ def launch_rocky(
 
             if rocky_version in ansys_installations:
                 ansys_installation = ansys_installations.get(rocky_version)
-            else:
-                raise FileNotFoundError(  # pragma: no cover
-                    f"Rocky executable for version {rocky_version} is not found."
-                )
+            else:  # pragma: no cover
+                raise FileNotFoundError("Rocky executable is not found.")
 
             rocky_exe = Path(ansys_installation) / "Rocky/bin/Rocky.exe"
-            if not rocky_exe.is_file():
-                raise FileNotFoundError(  # pragma: no cover
+            if not rocky_exe.is_file():  # pragma: no cover
+                raise FileNotFoundError(
                     f"Rocky executable for version {rocky_version} is not found."
                 )
     elif isinstance(rocky_exe, str):  # pragma: no cover

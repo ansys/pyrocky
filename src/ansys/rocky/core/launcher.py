@@ -98,9 +98,7 @@ def launch_rocky(
                 ):
                     break
             else:  # pragma: no cover
-                raise FileNotFoundError(
-                    "Rocky executable is not found."
-                )
+                raise FileNotFoundError("Rocky executable is not found.")
         else:
             if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
                 raise ValueError(  # pragma: no cover

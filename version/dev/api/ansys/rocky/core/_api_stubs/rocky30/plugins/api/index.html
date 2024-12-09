@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ansys.rocky.core._api_stubs.rocky30.plugins.api &#8212; pyrocky</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/css\ansys_sphinx_theme.css?v=77703c5e" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  
+    <link href="../../../../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../../../../_static/documentation_options.js?v=c66a0e83"></script>
+    <script src="../../../../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../../../../../_static/js\table.js?v=b64f5182"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://rocky.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = false;
+        </script>
+    <link rel="icon" href="../../../../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <link rel="canonical" href="https://rocky.docs.pyansys.com/version/stable/api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/index.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="pyrocky - Home"/>
+    <script>document.write(`<img src="../../../../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark" alt="pyrocky - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api</span></code></span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-ansys.rocky.core._api_stubs.rocky30.plugins.api">
+<span id="ansys-rocky-core-api-stubs-rocky30-plugins-api"></span><h1><a class="reference internal" href="#module-ansys.rocky.core._api_stubs.rocky30.plugins.api" title="ansys.rocky.core._api_stubs.rocky30.plugins.api"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api</span></code></a><a class="headerlink" href="#module-ansys.rocky.core._api_stubs.rocky30.plugins.api" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="conveyors/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="conveyors/ra_base_conveyor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_base_conveyor</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="conveyors/ra_feed_conveyor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_feed_conveyor</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="conveyors/ra_five_rolls_belt_profile/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_five_rolls_belt_profile</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="conveyors/ra_one_roll_belt_profile/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_one_roll_belt_profile</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="conveyors/ra_receiving_conveyor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_receiving_conveyor</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="conveyors/ra_three_rolls_belt_profile/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_three_rolls_belt_profile</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="conveyors/ra_two_rolls_belt_profile/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_two_rolls_belt_profile</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="motion/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_base_motion/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_cone_crusher_frame/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_cone_crusher_frame</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_fbm_rotation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_fbm_rotation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_fbm_translation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_fbm_translation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_linear_time_variable_force/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_linear_time_variable_force</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_linear_time_variable_moment/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_linear_time_variable_moment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_motion/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_motion_frame/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_motion_frame_source/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame_source</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_motion_list/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_list</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_pendulum/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_pendulum</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_prescribed_force/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_prescribed_force</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_prescribed_moment/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_prescribed_moment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_rotation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_rotation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_spring_dashpot_force/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_spring_dashpot_force</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_spring_dashpot_moment/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_spring_dashpot_moment</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_time_series_rotation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_time_series_rotation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_time_series_translation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_time_series_translation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_translation/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_translation</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="motion/ra_vibration/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_vibration</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ra_addin_list/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_addin_process/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_process</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_addins/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_additional_features/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_additional_features</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_airflow/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_base_geometry/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_base_subject_element/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_subject_element</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_base_tagging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_tagging</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_calculations/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_calculations</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_cfd_coupling/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_cfd_parameters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_parameters</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_circular_surface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_circular_surface</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_contact_data/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contact_data</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_contact_to_particle_process/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contact_to_particle_process</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_contacts_data_mesh_coloring/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contacts_data_mesh_coloring</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_coupled_wall/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_coupled_wall</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_custom_calculators/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_calculators</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_custom_input/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_input</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_divisions_tagging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_divisions_tagging</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_domain_settings/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_domain_settings</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_eulerian_statistics/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_eulerian_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_export_toolkit/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_export_toolkit</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_fluent_coupling/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_fluid_inlet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_inlet</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_fluid_material/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_geometry_collection/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_geometry_collection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_grid_process_element/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_inlet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_inlet</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_inlets_outlets_collection/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_inlets_outlets_collection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_input_variables/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_input_variables</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_joints_data_mesh_coloring/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_joints_data_mesh_coloring</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_list/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_macro_hooks/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_macro_hooks</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_material_manager/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_material_manager</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_materials_collection/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_collection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_materials_interaction/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_materials_interaction_collection/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction_collection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_matplotlib_window/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_mesh_coloring/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_outlet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_outlet</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_parametric_variables/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_parametric_variables</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particle/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particle_assembly/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_assembly</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particle_collection/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_collection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particle_inlet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particle_inlet_properties/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet_properties</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particle_joints_data/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_joints_data</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particle_time_selection_process/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_time_selection_process</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particle_to_contact_process/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_to_contact_process</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_particles_process/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particles_process</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_physics/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_physics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_point_cloud/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_point_cloud</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_point_cloud_collection/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_point_cloud_collection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_process_element/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_project/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_rectangular_surface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_rectangular_surface</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_region_of_interest_cube/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_region_of_interest_cube</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_region_of_interest_cylinder/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_region_of_interest_cylinder</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_regions_of_interest_collection/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_regions_of_interest_collection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_residence_time/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_residence_time</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_semi_resolved_coupling/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_semi_resolved_coupling</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_simulator_run/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_simulator_run</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_size_distribution/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_size_distribution</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_solid_material/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_sph_eulerian_solution/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_eulerian_solution</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_sph_settings/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_sph_tagging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_tagging</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_streamlines_user_process/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_streamlines_user_process</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_study/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_study</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_surface/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_surface</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_system_coupling_wall/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_system_coupling_wall</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_tagging/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_tagging</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_time_filter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_filter</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_time_range_filter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_range_filter</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_time_statistics/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_user_process_collection/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_user_process_collection</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_volumetric_inlet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_volumetric_inlet_properties/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ra_wall/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="rocky_api_application/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="rocky_api_deprecated_decorator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_deprecated_decorator</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="rocky_api_plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_plugin</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="rocky_api_utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_utils</span></code></a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<!-- If there is no fix edit button function, use the PyData edit-this-button-->
+</div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../../../../../../../_sources/api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/index.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+<link rel="stylesheet" href="../../../../../../../../_static/css/fuse-search.css">
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../../../../_static/search.json";
+</script>
+
+
+<script src="../../../../../../../../_static/js/search.js"></script>
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2024 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.2.1. <br />Last updated on
+  <span id="date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var lastModifiedDate = new Date(document.lastModified);
+  var date = lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("date").innerHTML = date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

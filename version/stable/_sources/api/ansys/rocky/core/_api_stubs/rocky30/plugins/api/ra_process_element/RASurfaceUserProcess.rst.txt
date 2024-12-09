@@ -1,0 +1,46 @@
+.. py:class:: RASurfaceUserProcess
+
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.plugins.sph.surface_user_process.surface_user_process_subject.SurfaceUserProcessSubject]
+      :classmethod:
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+   .. py:method:: SetSTL(filename: str, mesh_unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetRotation(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetRotation(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetSize(unit: Union[str, None] = ...) -> list[float]
+
+
+   .. py:method:: SetSize(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetCenter(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetCenter(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetScale(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetScale(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+

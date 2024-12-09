@@ -63,6 +63,27 @@ def create_basic_project_with_results(
     return study
 
 
+def test_not_supported_version_error():
+    with pytest.raises(ValueError, match="Rocky version 222 is not supported.*"):
+        pyrocky.launch_rocky(rocky_version=222)
+
+
+def test_rocky_exe_parameter():
+    from ansys.rocky.core.client import RockyClient
+
+    exe_file = "C:\\Program Files\\ANSYS Inc\\v251\\Rocky\\bin\\Rocky.exe"
+    rocky = pyrocky.launch_rocky(rocky_exe=exe_file)
+
+    assert isinstance(rocky, RockyClient)
+
+    rocky.close()
+
+
+def test_invalid_rocky_exe_parameter():
+    with pytest.raises(FileNotFoundError, match=f"Rocky executable is not found at*"):
+        pyrocky.launch_rocky(rocky_exe="C:\\Folder\\Rocky.exe")
+
+
 @pytest.mark.parametrize(
     "version, expected_version",
     [

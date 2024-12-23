@@ -30,7 +30,7 @@ from Pyro5.errors import CommunicationError
 from ansys.tools.path import get_available_ansys_installations
 
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect
-from ansys.rocky.core.exceptions import RockyLaunchError, FreeflowLaunchError
+from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
 
 _CONNECT_TO_SERVER_TIMEOUT = 60
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
@@ -233,7 +233,9 @@ def launch_freeflow(
     elif isinstance(freeflow_exe, str):
         freeflow_exe = Path(freeflow_exe)
         if not freeflow_exe.is_file():
-            raise FileNotFoundError(f"Freeflow executable is not found at {freeflow_exe}.")
+            raise FileNotFoundError(
+                f"Freeflow executable is not found at {freeflow_exe}."
+            )
 
     cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

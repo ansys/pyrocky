@@ -23,8 +23,8 @@
 Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
-import warnings
 from typing import TYPE_CHECKING, Final
+import warnings
 
 import Pyro5.api
 
@@ -47,14 +47,12 @@ def connect_to_rocky(
     """
     warnings.warn(
         "connect_to_rocky() is deprecated, please use connect() instead.",
-        DeprecationWarning
+        DeprecationWarning,
     )
     return connect(host, port)
 
 
-def connect(
-    host: str = "localhost", port: int = DEFAULT_SERVER_PORT
-) -> "RockyClient":
+def connect(host: str = "localhost", port: int = DEFAULT_SERVER_PORT) -> "RockyClient":
     """Connect to a Rocky/Freeflow app instance.
 
     Parameters

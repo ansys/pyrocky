@@ -23,7 +23,7 @@
 import importlib.metadata as importlib_metadata
 
 from .client import connect
-from .launcher import launch_rocky, launch_freeflow
+from .launcher import launch_freeflow, launch_rocky
 
 __version__ = importlib_metadata.version(__name__.replace(".", "-"))
 """PyRocky version."""

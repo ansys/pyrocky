@@ -47,7 +47,8 @@ def find_executable(
         if version is None:
             for installation in sorted(ansys_installations, reverse=True):
                 executable = (
-                    Path(ansys_installations[installation]) / f"{product_name}/bin/{product_name}.exe"
+                    Path(ansys_installations[installation])
+                    / f"{product_name}/bin/{product_name}.exe"
                 )
                 if (
                     executable.is_file()
@@ -68,7 +69,9 @@ def find_executable(
             else:  # pragma: no cover
                 raise FileNotFoundError(f"{product_name} executable is not found.")
 
-            executable = Path(ansys_installation) / f"{product_name}/bin/{product_name}.exe"
+            executable = (
+                Path(ansys_installation) / f"{product_name}/bin/{product_name}.exe"
+            )
             if not executable.is_file():  # pragma: no cover
                 raise FileNotFoundError(
                     f"{product_name} executable for version {version} is not found."
@@ -76,7 +79,9 @@ def find_executable(
     elif isinstance(executable, str):
         executable = Path(executable)
         if not executable.is_file():
-            raise FileNotFoundError(f"{product_name} executable is not found at {executable}.")
+            raise FileNotFoundError(
+                f"{product_name} executable is not found at {executable}."
+            )
 
     return executable
 
@@ -129,7 +134,9 @@ def launch_rocky(
         else:
             raise RockyLaunchError(f"Port {server_port} is already in use.")
 
-    rocky_exe = find_executable(product_name='Rocky', executable=rocky_exe, version=rocky_version)
+    rocky_exe = find_executable(
+        product_name="Rocky", executable=rocky_exe, version=rocky_version
+    )
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -208,7 +215,9 @@ def launch_freeflow(
         else:
             raise FreeflowLaunchError(f"Port {server_port} is already in use.")
 
-    freeflow_exe = find_executable(product_name='Freeflow', executable=freeflow_exe, version=freeflow_version)
+    freeflow_exe = find_executable(
+        product_name="Freeflow", executable=freeflow_exe, version=freeflow_version
+    )
 
     cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

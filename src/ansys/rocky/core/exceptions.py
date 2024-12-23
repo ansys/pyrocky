@@ -30,5 +30,10 @@ class RockyLaunchError(PyRockyError):
     """Provides the error raised when problems occurs during launch of the Rocky app."""
 
 
+class FreeflowLaunchError(PyRockyError):
+    """Provides the error raised when problems occurs during launch of the Freeflow
+    app."""
+
+
 class RockyApiError(Exception):
     """Provides the ``Exception`` class for an error generated in the API layer."""

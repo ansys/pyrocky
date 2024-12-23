@@ -34,6 +34,13 @@ def rocky_session():
     rocky.close()
 
 
+@pytest.fixture()
+def freeflow_session():
+    freeflow = pyrocky.launch_freeflow()
+    yield freeflow
+    freeflow.close()
+
+
 def create_basic_project_with_results(
     rocky_api,
     project_filename,
@@ -188,3 +195,30 @@ def test_close_existing_session():
     assert _get_numerical_version(rocky_two.api) is not None
 
     rocky_two.close()
+
+
+def test_freeflow_launcher(freeflow_session):
+    """Test to check if freeflow launcher is working as expected"""
+    project = freeflow_session.api.CreateProject()
+
+    study = project.GetStudy()
+
+    inlets_outlets = study.GetInletsOutletsCollection()
+    inlet = inlets_outlets.AddVolumetricInlet()
+    inlet.SetName("Inlet1")
+
+    # Test __len__
+    assert len(inlets_outlets) == 1
+    # Test __getitem__
+    assert inlets_outlets[0].GetName() == "Inlet1"
+
+
+def test_freeflow_launcher_with_specified_version(request):
+    """Test to check if freeflow launcher works when a version is specified"""
+    freeflow = pyrocky.launch_freeflow(freeflow_version=251)
+    request.addfinalizer(freeflow.close)
+
+    from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
+
+    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
+    assert ROCKY_VERSION == 251

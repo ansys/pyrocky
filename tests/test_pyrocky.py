@@ -198,6 +198,8 @@ def test_close_existing_session():
 
 
 def test_freeflow_launcher(freeflow_session):
+    """Test to check if freeflow launcher is working as expected
+    """
     project = freeflow_session.api.CreateProject()
 
     study = project.GetStudy()
@@ -213,8 +215,7 @@ def test_freeflow_launcher(freeflow_session):
 
 
 def test_freeflow_launcher_with_specified_version(request):
-    """Minimal test to be run with all the supported Rocky version to ensure
-    minimal backwards compatibility.
+    """Test to check if freeflow launcher works when a version is specified
     """
     freeflow = pyrocky.launch_freeflow(freeflow_version=251)
     request.addfinalizer(freeflow.close)

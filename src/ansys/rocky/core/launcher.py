@@ -36,6 +36,51 @@ _CONNECT_TO_SERVER_TIMEOUT = 60
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 
 
+def find_executable(
+    product_name: str,
+    executable: Optional[Union[Path, str]] = None,
+    version: Optional[int] = None,
+) -> Path:
+    ansys_installations = get_available_ansys_installations()
+
+    if executable is None:
+        if version is None:
+            for installation in sorted(ansys_installations, reverse=True):
+                executable = (
+                    Path(ansys_installations[installation]) / f"{product_name}/bin/{product_name}.exe"
+                )
+                if (
+                    executable.is_file()
+                    and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED
+                ):
+                    break
+            else:  # pragma: no cover
+                raise FileNotFoundError(f"{product_name} executable is not found.")
+        else:
+            if version < MINIMUM_ANSYS_VERSION_SUPPORTED:
+                raise ValueError(
+                    f"{product_name} version {version} is not supported. "
+                    f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
+                )
+
+            if version in ansys_installations:
+                ansys_installation = ansys_installations.get(version)
+            else:  # pragma: no cover
+                raise FileNotFoundError(f"{product_name} executable is not found.")
+
+            executable = Path(ansys_installation) / f"{product_name}/bin/{product_name}.exe"
+            if not executable.is_file():  # pragma: no cover
+                raise FileNotFoundError(
+                    f"{product_name} executable for version {version} is not found."
+                )
+    elif isinstance(executable, str):
+        executable = Path(executable)
+        if not executable.is_file():
+            raise FileNotFoundError(f"{product_name} executable is not found at {executable}.")
+
+    return executable
+
+
 def launch_rocky(
     rocky_exe: Optional[Union[Path, str]] = None,
     rocky_version: Optional[int] = None,
@@ -84,42 +129,7 @@ def launch_rocky(
         else:
             raise RockyLaunchError(f"Port {server_port} is already in use.")
 
-    ansys_installations = get_available_ansys_installations()
-
-    if rocky_exe is None:
-        if rocky_version is None:
-            for installation in sorted(ansys_installations, reverse=True):
-                rocky_exe = (
-                    Path(ansys_installations[installation]) / "Rocky/bin/Rocky.exe"
-                )
-                if (
-                    rocky_exe.is_file()
-                    and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED
-                ):
-                    break
-            else:  # pragma: no cover
-                raise FileNotFoundError("Rocky executable is not found.")
-        else:
-            if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-                raise ValueError(
-                    f"Rocky version {rocky_version} is not supported. "
-                    f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
-                )
-
-            if rocky_version in ansys_installations:
-                ansys_installation = ansys_installations.get(rocky_version)
-            else:  # pragma: no cover
-                raise FileNotFoundError("Rocky executable is not found.")
-
-            rocky_exe = Path(ansys_installation) / "Rocky/bin/Rocky.exe"
-            if not rocky_exe.is_file():  # pragma: no cover
-                raise FileNotFoundError(
-                    f"Rocky executable for version {rocky_version} is not found."
-                )
-    elif isinstance(rocky_exe, str):
-        rocky_exe = Path(rocky_exe)
-        if not rocky_exe.is_file():
-            raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")
+    rocky_exe = find_executable(product_name='Rocky', executable=rocky_exe, version=rocky_version)
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -159,7 +169,7 @@ def launch_freeflow(
     close_existing: bool = False,
 ) -> RockyClient:
     """
-    Launch the Freeflow executable with the PyRocky server enabled.
+    Launch the FreeFlow executable with the PyRocky server enabled.
 
     This method waits for Rocky to start up and then returns a
     ```RockyClient`` instance.
@@ -198,44 +208,7 @@ def launch_freeflow(
         else:
             raise FreeflowLaunchError(f"Port {server_port} is already in use.")
 
-    ansys_installations = get_available_ansys_installations()
-
-    if freeflow_exe is None:
-        if freeflow_version is None:
-            for installation in sorted(ansys_installations, reverse=True):
-                freeflow_exe = (
-                    Path(ansys_installations[installation]) / "Freeflow/bin/Freeflow.exe"
-                )
-                if (
-                    freeflow_exe.is_file()
-                    and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED
-                ):
-                    break
-            else:  # pragma: no cover
-                raise FileNotFoundError("Freeflow executable is not found.")
-        else:
-            if freeflow_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-                raise ValueError(
-                    f"Freeflow version {freeflow_version} is not supported. "
-                    f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
-                )
-
-            if freeflow_version in ansys_installations:
-                ansys_installation = ansys_installations.get(freeflow_version)
-            else:  # pragma: no cover
-                raise FileNotFoundError("Freeflow executable is not found.")
-
-            freeflow_exe = Path(ansys_installation) / "Freeflow/bin/Freeflow.exe"
-            if not freeflow_exe.is_file():  # pragma: no cover
-                raise FileNotFoundError(
-                    f"Freeflow executable for version {freeflow_version} is not found."
-                )
-    elif isinstance(freeflow_exe, str):
-        freeflow_exe = Path(freeflow_exe)
-        if not freeflow_exe.is_file():
-            raise FileNotFoundError(
-                f"Freeflow executable is not found at {freeflow_exe}."
-            )
+    freeflow_exe = find_executable(product_name='Freeflow', executable=freeflow_exe, version=freeflow_version)
 
     cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

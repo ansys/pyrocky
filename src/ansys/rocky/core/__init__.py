@@ -22,8 +22,8 @@
 """PyRocky is a Python client for Ansys Rocky application."""
 import importlib.metadata as importlib_metadata
 
-from .client import connect_to_rocky
-from .launcher import launch_rocky
+from .client import connect, connect_to_rocky
+from .launcher import launch_freeflow, launch_rocky
 
 __version__ = importlib_metadata.version(__name__.replace(".", "-"))
 """PyRocky version."""
@@ -31,5 +31,7 @@ __version__ = importlib_metadata.version(__name__.replace(".", "-"))
 
 __all__ = [
     "connect_to_rocky",
+    "connect",
     "launch_rocky",
+    "launch_freeflow",
 ]

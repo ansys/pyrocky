@@ -29,11 +29,61 @@ from typing import Optional, Union
 from Pyro5.errors import CommunicationError
 from ansys.tools.path import get_available_ansys_installations
 
-from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect_to_rocky
-from ansys.rocky.core.exceptions import RockyLaunchError
+from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect
+from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
 
 _CONNECT_TO_SERVER_TIMEOUT = 60
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
+
+
+def find_executable(
+    product_name: str,
+    executable: Optional[Union[Path, str]] = None,
+    version: Optional[int] = None,
+) -> Path:
+    ansys_installations = get_available_ansys_installations()
+
+    if executable is None:
+        if version is None:
+            for installation in sorted(ansys_installations, reverse=True):
+                executable = (
+                    Path(ansys_installations[installation])
+                    / f"{product_name}/bin/{product_name}.exe"
+                )
+                if (
+                    executable.is_file()
+                    and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED
+                ):
+                    break
+            else:  # pragma: no cover
+                raise FileNotFoundError(f"{product_name} executable is not found.")
+        else:
+            if version < MINIMUM_ANSYS_VERSION_SUPPORTED:
+                raise ValueError(
+                    f"{product_name} version {version} is not supported. "
+                    f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
+                )
+
+            if version in ansys_installations:
+                ansys_installation = ansys_installations.get(version)
+            else:  # pragma: no cover
+                raise FileNotFoundError(f"{product_name} executable is not found.")
+
+            executable = (
+                Path(ansys_installation) / f"{product_name}/bin/{product_name}.exe"
+            )
+            if not executable.is_file():  # pragma: no cover
+                raise FileNotFoundError(
+                    f"{product_name} executable for version {version} is not found."
+                )
+    elif isinstance(executable, str):
+        executable = Path(executable)
+        if not executable.is_file():
+            raise FileNotFoundError(
+                f"{product_name} executable is not found at {executable}."
+            )
+
+    return executable
 
 
 def launch_rocky(
@@ -75,7 +125,7 @@ def launch_rocky(
         if close_existing:
             # Will try to connect to an existing session using the
             # given server port and attempt to close it.
-            client = connect_to_rocky(port=server_port)
+            client = connect(port=server_port)
             try:
                 client.close()
             except CommunicationError:
@@ -84,42 +134,9 @@ def launch_rocky(
         else:
             raise RockyLaunchError(f"Port {server_port} is already in use.")
 
-    ansys_installations = get_available_ansys_installations()
-
-    if rocky_exe is None:
-        if rocky_version is None:
-            for installation in sorted(ansys_installations, reverse=True):
-                rocky_exe = (
-                    Path(ansys_installations[installation]) / "Rocky/bin/Rocky.exe"
-                )
-                if (
-                    rocky_exe.is_file()
-                    and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED
-                ):
-                    break
-            else:  # pragma: no cover
-                raise FileNotFoundError("Rocky executable is not found.")
-        else:
-            if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-                raise ValueError(
-                    f"Rocky version {rocky_version} is not supported. "
-                    f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
-                )
-
-            if rocky_version in ansys_installations:
-                ansys_installation = ansys_installations.get(rocky_version)
-            else:  # pragma: no cover
-                raise FileNotFoundError("Rocky executable is not found.")
-
-            rocky_exe = Path(ansys_installation) / "Rocky/bin/Rocky.exe"
-            if not rocky_exe.is_file():  # pragma: no cover
-                raise FileNotFoundError(
-                    f"Rocky executable for version {rocky_version} is not found."
-                )
-    elif isinstance(rocky_exe, str):
-        rocky_exe = Path(rocky_exe)
-        if not rocky_exe.is_file():
-            raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")
+    rocky_exe = find_executable(
+        product_name="Rocky", executable=rocky_exe, version=rocky_version
+    )
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -129,10 +146,10 @@ def launch_rocky(
         rocky_process.wait(timeout=3)
 
     # Rocky.exe call returned to soon, something happen
-    if rocky_process.returncode is not None:
+    if rocky_process.returncode is not None:  # pragma: no cover
         raise RockyLaunchError(f"Error launching Rocky:\n  {' '.join(cmd)}")
 
-    client = connect_to_rocky(port=server_port)
+    client = connect(port=server_port)
 
     # TODO: A more elegant way to find out that Rocky Pyro server started.
     now = time.time()
@@ -145,6 +162,87 @@ def launch_rocky(
             break
     else:
         raise RockyLaunchError("Could not connect Rocky remote server: timed out")
+
+    client._process = rocky_process
+    return client
+
+
+def launch_freeflow(  # pragma: no cover
+    freeflow_exe: Optional[Union[Path, str]] = None,
+    freeflow_version: Optional[int] = None,
+    *,
+    headless: bool = True,
+    server_port: int = DEFAULT_SERVER_PORT,
+    close_existing: bool = False,
+) -> RockyClient:
+    """
+    Launch the FreeFlow executable with the PyRocky server enabled.
+
+    This method waits for Rocky to start up and then returns a
+    ```RockyClient`` instance.
+
+    Parameters
+    ----------
+    freeflow_exe:
+        Path to the Freeflow executable.
+    freeflow_version:
+        Freeflow version to run. If no executable is passed and the version is not
+        specified, this method tries to find the path using the latest Ansys path
+        returned by ansys-tools-path API.
+    headless:
+        Whether to launch Freeflow in headless mode. The default is ``True``.
+    server_port:
+        Set the port for Rocky RPC server.
+    close_existing:
+        Checks if a session exists under the given server_port and closes it
+        before attempting to launch a new session.
+
+    Returns
+    -------
+    RockyClient
+        Rocky client instance connected to the launched Rocky/Freeflow app.
+    """
+    if _is_port_busy(server_port):
+        if close_existing:
+            # Will try to connect to an existing session using the
+            # given server port and attempt to close it.
+            client = connect(port=server_port)
+            try:
+                client.close()
+            except CommunicationError:
+                # Maybe the session closed in the meantime so we just pass
+                pass
+        else:
+            raise FreeflowLaunchError(f"Port {server_port} is already in use.")
+
+    freeflow_exe = find_executable(
+        product_name="Freeflow", executable=freeflow_exe, version=freeflow_version
+    )
+
+    cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
+    if headless:
+        cmd.append("--headless")
+    with contextlib.suppress(subprocess.TimeoutExpired):
+        rocky_process = subprocess.Popen(cmd)
+        rocky_process.wait(timeout=3)
+
+    # Freeflow.exe call returned to soon, something happen
+    if rocky_process.returncode is not None:
+        raise FreeflowLaunchError(f"Error launching Freeflow:\n  {' '.join(cmd)}")
+
+    client = connect(port=server_port)
+
+    # TODO: A more elegant way to find out that Rocky Pyro server started.
+    now = time.time()
+    while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
+        try:
+            client.api.GetProject()
+        except CommunicationError:
+            time.sleep(1)
+        else:
+            break
+    else:
+        raise FreeflowLaunchError("Could not connect Freeflow remote server: timed out")
 
     client._process = rocky_process
     return client

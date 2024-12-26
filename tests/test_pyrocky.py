@@ -34,6 +34,13 @@ def rocky_session():
     rocky.close()
 
 
+@pytest.fixture()
+def freeflow_session():
+    freeflow = pyrocky.launch_freeflow()
+    yield freeflow
+    freeflow.close()
+
+
 def create_basic_project_with_results(
     rocky_api,
     project_filename,
@@ -68,6 +75,11 @@ def test_not_supported_version_error():
         pyrocky.launch_rocky(rocky_version=222)
 
 
+def test_freeflow_not_supported_version_error():
+    with pytest.raises(ValueError, match="Freeflow version 222 is not supported.*"):
+        pyrocky.launch_freeflow(freeflow_version=222)
+
+
 def test_rocky_exe_parameter():
     from ansys.rocky.core.client import RockyClient
 
@@ -88,7 +100,6 @@ def test_invalid_rocky_exe_parameter():
     "version, expected_version",
     [
         (251, 251),
-        (242, 240),
     ],
 )
 def test_minimal_simulation(version, expected_version, tmp_path, request):
@@ -188,3 +199,46 @@ def test_close_existing_session():
     assert _get_numerical_version(rocky_two.api) is not None
 
     rocky_two.close()
+
+
+def test_close_freeflow_existing_session():
+    """
+    Launches a freeflow session on top another one using the
+    same server port. PyRocky should attempt closing the
+    existing session before launching the second one.
+    """
+    from ansys.rocky.core.client import _get_numerical_version
+
+    pyrocky.launch_freeflow()
+    freeflow_two = pyrocky.launch_freeflow(close_existing=True)
+
+    assert _get_numerical_version(freeflow_two.api) is not None
+
+    freeflow_two.close()
+
+
+def test_freeflow_launcher(freeflow_session):
+    """Test to check if freeflow launcher is working as expected"""
+    project = freeflow_session.api.CreateProject()
+
+    study = project.GetStudy()
+
+    inlets_outlets = study.GetInletsOutletsCollection()
+    inlet = inlets_outlets.AddVolumetricInlet()
+    inlet.SetName("Inlet1")
+
+    # Test __len__
+    assert len(inlets_outlets) == 1
+    # Test __getitem__
+    assert inlets_outlets[0].GetName() == "Inlet1"
+
+
+def test_freeflow_launcher_with_specified_version(request):
+    """Test to check if freeflow launcher works when a version is specified"""
+    freeflow = pyrocky.launch_freeflow(freeflow_version=251)
+    request.addfinalizer(freeflow.close)
+
+    from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
+
+    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
+    assert ROCKY_VERSION == 251

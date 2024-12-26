@@ -167,7 +167,7 @@ def launch_rocky(
     return client
 
 
-def launch_freeflow(
+def launch_freeflow(  # pragma: no cover
     freeflow_exe: Optional[Union[Path, str]] = None,
     freeflow_version: Optional[int] = None,
     *,
@@ -227,7 +227,7 @@ def launch_freeflow(
         rocky_process.wait(timeout=3)
 
     # Freeflow.exe call returned to soon, something happen
-    if rocky_process.returncode is not None:  # pragma: no cover
+    if rocky_process.returncode is not None:
         raise FreeflowLaunchError(f"Error launching Freeflow:\n  {' '.join(cmd)}")
 
     client = connect(port=server_port)

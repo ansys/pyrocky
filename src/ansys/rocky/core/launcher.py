@@ -146,7 +146,7 @@ def launch_rocky(
         rocky_process.wait(timeout=3)
 
     # Rocky.exe call returned to soon, something happen
-    if rocky_process.returncode is not None:
+    if rocky_process.returncode is not None:  # pragma: no cover
         raise RockyLaunchError(f"Error launching Rocky:\n  {' '.join(cmd)}")
 
     client = connect(port=server_port)
@@ -227,7 +227,7 @@ def launch_freeflow(
         rocky_process.wait(timeout=3)
 
     # Freeflow.exe call returned to soon, something happen
-    if rocky_process.returncode is not None:
+    if rocky_process.returncode is not None:  # pragma: no cover
         raise FreeflowLaunchError(f"Error launching Freeflow:\n  {' '.join(cmd)}")
 
     client = connect(port=server_port)

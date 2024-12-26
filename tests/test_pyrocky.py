@@ -75,6 +75,11 @@ def test_not_supported_version_error():
         pyrocky.launch_rocky(rocky_version=222)
 
 
+def test_freeflow_not_supported_version_error():
+    with pytest.raises(ValueError, match="Freeflow version 222 is not supported.*"):
+        pyrocky.launch_freeflow(freeflow_version=222)
+
+
 def test_rocky_exe_parameter():
     from ansys.rocky.core.client import RockyClient
 
@@ -194,6 +199,22 @@ def test_close_existing_session():
     assert _get_numerical_version(rocky_two.api) is not None
 
     rocky_two.close()
+
+
+def test_close_freeflow_existing_session():
+    """
+    Launches a freeflow session on top another one using the
+    same server port. PyRocky should attempt closing the
+    existing session before launching the second one.
+    """
+    from ansys.rocky.core.client import _get_numerical_version
+
+    pyrocky.launch_freeflow()
+    freeflow_two = pyrocky.launch_freeflow(close_existing=True)
+
+    assert _get_numerical_version(freeflow_two.api) is not None
+
+    freeflow_two.close()
 
 
 def test_freeflow_launcher(freeflow_session):

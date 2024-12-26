@@ -39,7 +39,7 @@ DEFAULT_SERVER_PORT: Final[int] = 50615
 _ROCKY_API: Pyro5.api.Proxy | None = None
 
 
-def connect_to_rocky(
+def connect_to_rocky(  # pragma: no cover
     host: str = "localhost", port: int = DEFAULT_SERVER_PORT
 ) -> "RockyClient":
     """This function is deprecated.

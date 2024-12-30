@@ -45,7 +45,7 @@ def get_exec_using_winreg(
     executable: Optional[Union[Path, str]] = None,
 ) -> Path:
     """
-    This method will search for the Rocky/Freeflow executable using the
+    This function will search for the Rocky/Freeflow executable using the
     Windows registry.
 
     Parameters
@@ -102,7 +102,7 @@ def get_exec_using_tools_path(
     version: Optional[int] = None,
 ) -> Path:
     """
-    This method will search for the Rocky/Freeflow executable using the
+    This function will search for the Rocky/Freeflow executable using the
     ansys-tools-path module. Currently, we are using this approach only
     for Linux, since the ansys-tools-path depends on the AWP_ROOT variable,
     which may not be defined in Rocky standalone for Windows.

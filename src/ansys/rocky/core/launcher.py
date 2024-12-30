@@ -21,6 +21,8 @@
 # SOFTWARE.
 """Module that exposes functions to launch a Rocky application session."""
 import contextlib
+import sys
+import winreg
 from pathlib import Path
 import subprocess
 import time
@@ -34,13 +36,87 @@ from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
 
 _CONNECT_TO_SERVER_TIMEOUT = 60
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
+COMPANY = 'Ansys'
 
 
-def find_executable(
+def get_exec_using_winreg(
+    product_name: str,
+    version: Optional[str] = None,
+    executable: Optional[Union[Path, str]] = None,
+) -> Path:
+    """
+    This method will search for the Rocky/Freeflow executable using the
+    Windows registry.
+
+    Parameters
+    ----------
+    product_name:
+        The name of the product (Rocky or Freeflow)
+    version:
+        The version of the executable
+    executable:
+        The path to the executable, in case the user wants to pass this directly
+
+    Returns
+    -------
+    Path
+        The Path to the executable
+    """
+    if executable is None:
+        product_reg_path = rf"SOFTWARE\{COMPANY}\{product_name}"
+
+        try:
+            if version is None:
+                # If no version is defined, the default is the 'current_version' attribute
+                with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, product_reg_path) as wr_key:
+                    version, _ = winreg.QueryValueEx(wr_key, 'current_version')
+
+            version_reg_path = rf"{product_reg_path}\{version}"
+            with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, version_reg_path) as wr_key:
+                executable_str, _ = winreg.QueryValueEx(wr_key, 'local_executable')
+                executable_path = Path(executable_str)
+                if not executable_path.is_file():
+                    raise FileNotFoundError(
+                        f"{product_name} executable is not found at {executable_str}."
+                    )
+                return executable_path
+        except FileNotFoundError:
+            raise FileNotFoundError(f"Local executable not found for {product_name} {version}.")
+    elif isinstance(executable, str):
+        executable = Path(executable)
+        if not executable.is_file():
+            raise FileNotFoundError(
+                f"{product_name} executable is not found at {executable}."
+            )
+
+    return executable
+
+
+def get_exec_using_tools_path(
     product_name: str,
     executable: Optional[Union[Path, str]] = None,
     version: Optional[int] = None,
 ) -> Path:
+    """
+    This method will search for the Rocky/Freeflow executable using the
+    ansys-tools-path module. Currently, we are using this approach only
+    for Linux, since the ansys-tools-path depends on the AWP_ROOT variable,
+    which may not be defined in Rocky standalone for Windows.
+
+    Parameters
+    ----------
+    product_name:
+        The name of the product (Rocky or Freeflow)
+    executable:
+        The path to the executable, in case the user wants to pass this directly
+    version:
+        The version of the executable
+
+    Returns
+    -------
+    Path
+        The Path to the executable
+    """
     ansys_installations = get_available_ansys_installations()
 
     if executable is None:
@@ -58,12 +134,6 @@ def find_executable(
             else:  # pragma: no cover
                 raise FileNotFoundError(f"{product_name} executable is not found.")
         else:
-            if version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-                raise ValueError(
-                    f"{product_name} version {version} is not supported. "
-                    f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
-                )
-
             if version in ansys_installations:
                 ansys_installation = ansys_installations.get(version)
             else:  # pragma: no cover
@@ -134,9 +204,21 @@ def launch_rocky(
         else:
             raise RockyLaunchError(f"Port {server_port} is already in use.")
 
-    rocky_exe = find_executable(
-        product_name="Rocky", executable=rocky_exe, version=rocky_version
-    )
+    if rocky_version is not None:
+        if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
+            raise ValueError(
+                f"Rocky version {rocky_version} is not supported. "
+                f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
+            )
+
+    if sys.platform == 'win32':
+        if rocky_version is not None:
+            rocky_version = f"{rocky_version // 10}.{rocky_version % 10}.0"
+        rocky_exe = get_exec_using_winreg(product_name="Rocky", version=rocky_version, executable=rocky_exe)
+    else:  # pragma: no cover
+        rocky_exe = get_exec_using_tools_path(
+            product_name="Rocky", executable=rocky_exe, version=rocky_version
+        )
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -215,9 +297,21 @@ def launch_freeflow(  # pragma: no cover
         else:
             raise FreeflowLaunchError(f"Port {server_port} is already in use.")
 
-    freeflow_exe = find_executable(
-        product_name="Freeflow", executable=freeflow_exe, version=freeflow_version
-    )
+    if freeflow_version is not None:
+        if freeflow_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
+            raise ValueError(
+                f"Freeflow version {freeflow_version} is not supported. "
+                f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
+            )
+
+    if sys.platform == 'win32':
+        if freeflow_version is not None:
+            freeflow_version = f"{freeflow_version // 10}.{freeflow_version % 10}.0-BETA"
+        freeflow_exe = get_exec_using_winreg(product_name="Freeflow", version=freeflow_version)
+    else:  # pragma: no cover
+        freeflow_exe = get_exec_using_tools_path(
+            product_name="Freeflow", executable=freeflow_exe, version=freeflow_version
+        )
 
     cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

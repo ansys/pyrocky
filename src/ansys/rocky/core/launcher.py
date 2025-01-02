@@ -77,7 +77,7 @@ def get_exec_using_winreg(
             with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, version_reg_path) as wr_key:
                 executable_str, _ = winreg.QueryValueEx(wr_key, "local_executable")
                 executable_path = Path(executable_str)
-                if not executable_path.is_file():
+                if not executable_path.is_file():  # pragma: no cover
                     raise FileNotFoundError(
                         f"{product_name} executable is not found at {executable_str}."
                     )

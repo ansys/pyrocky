@@ -95,15 +95,13 @@ def launch_rocky(
             )
 
     if rocky_exe is None:
-        rocky_exe = _find_executable(product_name='Rocky', version=rocky_version)
+        rocky_exe = _find_executable(product_name="Rocky", version=rocky_version)
     else:
         if isinstance(rocky_exe, str):
             rocky_exe = Path(rocky_exe)
 
     if rocky_exe is None or not rocky_exe.is_file():
-        raise FileNotFoundError(
-            f"Rocky executable is not found at {rocky_exe}."
-        )
+        raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -190,15 +188,13 @@ def launch_freeflow(  # pragma: no cover
             )
 
     if freeflow_exe is None:
-        freeflow_exe = _find_executable(product_name='Freeflow', version=freeflow_version)
+        freeflow_exe = _find_executable(product_name="Freeflow", version=freeflow_version)
     else:
         if isinstance(freeflow_exe, str):
             freeflow_exe = Path(freeflow_exe)
 
     if freeflow_exe is None or not freeflow_exe.is_file():
-        raise FileNotFoundError(
-            f"Freeflow executable is not found at {freeflow_exe}."
-        )
+        raise FileNotFoundError(f"Freeflow executable is not found at {freeflow_exe}.")
 
     cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -270,14 +266,12 @@ def _find_executable(
     """
     if sys.platform == "win32":
         if version is not None:
-            if product_name == 'Rocky':
+            if product_name == "Rocky":
                 version = f"{version // 10}.{version % 10}.0"
             else:
                 version = f"{version // 10}.{version % 10}.0-BETA"
 
-        executable = _get_exec_using_winreg(
-            product_name=product_name, version=version
-        )
+        executable = _get_exec_using_winreg(product_name=product_name, version=version)
     else:  # pragma: no cover
         executable = _get_exec_using_tools_path(
             product_name=product_name, version=version
@@ -311,9 +305,7 @@ def _get_exec_using_winreg(
     try:
         if version is None:
             # If no version is defined, the default is the 'current_version' attribute
-            with winreg.OpenKey(
-                winreg.HKEY_LOCAL_MACHINE, product_reg_path
-            ) as wr_key:
+            with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, product_reg_path) as wr_key:
                 version, _ = winreg.QueryValueEx(wr_key, "current_version")
 
         version_reg_path = rf"{product_reg_path}\{version}"
@@ -356,10 +348,7 @@ def _get_exec_using_tools_path(
                 Path(ansys_installations[installation])
                 / f"{product_name}/bin/{product_name}.exe"
             )
-            if (
-                executable.is_file()
-                and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED
-            ):
+            if executable.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
                 break
         else:  # pragma: no cover
             raise FileNotFoundError(f"{product_name} executable is not found.")
@@ -369,8 +358,6 @@ def _get_exec_using_tools_path(
         else:  # pragma: no cover
             raise FileNotFoundError(f"{product_name} executable is not found.")
 
-        executable = (
-            Path(ansys_installation) / f"{product_name}/bin/{product_name}.exe"
-        )
+        executable = Path(ansys_installation) / f"{product_name}/bin/{product_name}.exe"
 
     return executable

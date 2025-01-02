@@ -318,7 +318,7 @@ def _get_exec_using_winreg(
         )
 
 
-def _get_exec_using_tools_path(
+def _get_exec_using_tools_path(  # pragma: no cover
     product_name: str,
     version: Optional[int] = None,
 ) -> Path:
@@ -350,12 +350,12 @@ def _get_exec_using_tools_path(
             )
             if executable.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
                 break
-        else:  # pragma: no cover
+        else:
             raise FileNotFoundError(f"{product_name} executable is not found.")
     else:
         if version in ansys_installations:
             ansys_installation = ansys_installations.get(version)
-        else:  # pragma: no cover
+        else:
             raise FileNotFoundError(f"{product_name} executable is not found.")
 
         executable = Path(ansys_installation) / f"{product_name}/bin/{product_name}.exe"

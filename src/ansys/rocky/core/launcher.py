@@ -247,7 +247,7 @@ def _is_port_busy(port: int) -> bool:
 
 def _find_executable(
     product_name: str,
-    version: int,
+    version: Optional[int],
 ) -> Path:
     """
     This function will search for the Rocky/Freeflow executable

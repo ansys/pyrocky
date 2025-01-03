@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2024 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -242,3 +242,8 @@ def test_freeflow_launcher_with_specified_version(request):
 
     ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
     assert ROCKY_VERSION == 251
+
+
+def test_no_valid_local_winreg_exe():
+    with pytest.raises(FileNotFoundError, match=f"Local executable not found for*"):
+        pyrocky.launch_rocky(rocky_version=900)

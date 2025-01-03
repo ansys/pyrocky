@@ -1,0 +1,40 @@
+:py:mod:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list`
+=======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyListItem
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList
+
+
+
+
+.. py:class:: RAModulePropertyListItem(id: str, model_id: Optional[str] = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+.. py:class:: RAModulePropertyList
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`RAModulePropertyListItem`\ ]
+
+

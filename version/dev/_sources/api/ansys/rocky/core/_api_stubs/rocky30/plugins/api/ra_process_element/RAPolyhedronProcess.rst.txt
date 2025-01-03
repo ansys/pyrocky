@@ -1,0 +1,49 @@
+.. py:class:: RAPolyhedronProcess
+
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.process.user_process.polyhedron_process_with_movement.PolyhedronProcessWithMovement]
+      :classmethod:
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+   .. py:method:: GetCenter(unit: _typeshed.Incomplete | None = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetCenter(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetCenterAfterMovement(timestep: int) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: GetSize(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetSize(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetRotation(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetRotation(x: float, y: float, z: float, unit: Union[str, None] = ...)
+
+
+   .. py:method:: SetSTL(filename: str, mesh_unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetScale(unit: Union[str, None] = ...) -> list[float]
+
+
+   .. py:method:: SetScale(values: collections.abc.Sequence[Union[str, float]], unit: Union[str, None] = ...) -> None
+
+

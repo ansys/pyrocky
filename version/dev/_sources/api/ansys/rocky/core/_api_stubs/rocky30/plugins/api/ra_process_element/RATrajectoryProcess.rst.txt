@@ -1,0 +1,46 @@
+.. py:class:: RATrajectoryProcess
+
+
+   Bases: :py:obj:`RAUserProcess`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: SetStartingTimeStep(time_step) -> None
+
+
+   .. py:method:: SetStartingTime(time: Union[str, coilib50.time.time_step_interface.ITimeStep, int]) -> None
+
+
+   .. py:method:: GetStartingTimeStep()
+
+
+   .. py:method:: GetStartingTime() -> coilib50.time.time_step_interface.ITimeStep
+
+
+   .. py:method:: SetNumberOfTimeSteps(number_of_intervals) -> None
+
+
+   .. py:method:: SetNumberOfIntervals(number_of_intervals: int)
+
+
+   .. py:method:: GetNumberOfTimeSteps()
+
+
+   .. py:method:: GetNumberOfIntervals() -> int
+
+
+   .. py:method:: SetParticleStride(particle_stride) -> None
+
+
+   .. py:method:: GetParticleStride()
+
+
+   .. py:method:: UpdateParticlesSelection() -> None
+
+

@@ -1,0 +1,34 @@
+.. py:class:: RATwoRollsBeltProfile(id: str, model_id: Optional[str] = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: GetLowerCornerRadius(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetLowerCornerRadius(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTroughingAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTroughingAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMaterial()
+
+
+   .. py:method:: SetMaterial(value) -> None
+
+
+   .. py:method:: GetAvailableMaterials()
+
+

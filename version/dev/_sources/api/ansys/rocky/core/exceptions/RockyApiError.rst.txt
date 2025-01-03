@@ -1,0 +1,25 @@
+.. py:exception:: RockyApiError
+
+
+   Bases: :py:obj:`Exception`
+
+   
+   Provides the ``Exception`` class for an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!

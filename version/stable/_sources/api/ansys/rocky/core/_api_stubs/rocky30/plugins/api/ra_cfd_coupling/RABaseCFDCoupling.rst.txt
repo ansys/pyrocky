@@ -1,0 +1,77 @@
+.. py:class:: RABaseCFDCoupling
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+   .. py:method:: GetCFDParametersList()
+
+
+   .. py:method:: SetPartIdIfValid() -> None
+
+
+   .. py:method:: GetConvectiveHeatTransferLaw()
+
+
+   .. py:method:: SetConvectiveHeatTransferLaw(value) -> None
+
+
+   .. py:method:: GetDragLaw()
+
+
+   .. py:method:: SetDragLaw(value) -> None
+
+
+   .. py:method:: GetLiftLaw()
+
+
+   .. py:method:: SetLiftLaw(value) -> None
+
+
+   .. py:method:: GetMorsiAndAlexanderK1()
+
+
+   .. py:method:: SetMorsiAndAlexanderK1(value) -> None
+
+
+   .. py:method:: GetMorsiAndAlexanderK2()
+
+
+   .. py:method:: SetMorsiAndAlexanderK2(value) -> None
+
+
+   .. py:method:: GetMorsiAndAlexanderK3()
+
+
+   .. py:method:: SetMorsiAndAlexanderK3(value) -> None
+
+
+   .. py:method:: GetSyamlalObrienC1()
+
+
+   .. py:method:: SetSyamlalObrienC1(value) -> None
+
+
+   .. py:method:: GetSyamlalObrienD1()
+
+
+   .. py:method:: SetSyamlalObrienD1(value) -> None
+
+
+   .. py:method:: GetTorqueLaw()
+
+
+   .. py:method:: SetTorqueLaw(value) -> None
+
+
+   .. py:method:: GetUseUserDefinedConstants()
+
+
+   .. py:method:: SetUseUserDefinedConstants(value) -> None
+
+
+   .. py:method:: GetVirtualMassLaw()
+
+
+   .. py:method:: SetVirtualMassLaw(value) -> None
+
+

@@ -1,0 +1,23 @@
+.. py:class:: RATimeStatistics(id, ra_process, model_id: _typeshed.Incomplete | None = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+   .. py:method:: AddGridFunction(start_time, stop_time, operation, grid_function_name, location: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: RemoveGridFunction(name_or_calculator) -> None
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: CreateFor(ra_process)
+      :classmethod:
+
+

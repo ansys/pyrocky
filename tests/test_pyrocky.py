@@ -85,9 +85,7 @@ def test_not_supported_version_error():
 
 
 def test_freeflow_not_supported_version_error():
-    with pytest.raises(
-        ValueError, match=f"Freeflow version 222 is not supported.*"
-    ):
+    with pytest.raises(ValueError, match=f"Freeflow version 222 is not supported.*"):
         pyrocky.launch_freeflow(freeflow_version=222)
 
 

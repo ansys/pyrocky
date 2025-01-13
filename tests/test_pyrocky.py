@@ -80,15 +80,15 @@ def create_basic_project_with_results(
 
 
 def test_not_supported_version_error():
-    with pytest.raises(ValueError, match=f"Rocky version {VERSION} is not supported.*"):
-        pyrocky.launch_rocky(rocky_version=VERSION)
+    with pytest.raises(ValueError, match=f"Rocky version 222 is not supported.*"):
+        pyrocky.launch_rocky(rocky_version=222)
 
 
 def test_freeflow_not_supported_version_error():
     with pytest.raises(
-        ValueError, match=f"Freeflow version {FREEFLOW_VERSION} is not supported.*"
+        ValueError, match=f"Freeflow version 222 is not supported.*"
     ):
-        pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+        pyrocky.launch_freeflow(freeflow_version=222)
 
 
 def test_rocky_exe_parameter():

@@ -49,17 +49,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
 
-  tests:
-    name: Tests
+  tests_setup:
+    name: Tests Setup
     runs-on: [self-hosted, Windows, pyrocky]
     timeout-minutes: 10
-    strategy:
-      fail-fast: false
-      matrix:
-        ansys-version: [242, 251, 252]
-    env:
-      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
-
 
     steps:
       - uses: actions/checkout@v4
@@ -79,6 +72,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install .[tests]
 
+  tests_run:
+    name: Tests Run
+    needs: tests_setup
+    runs-on: [self-hosted, Windows, pyrocky]
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        ansys-version: [242, 251, 252]
+    env:
+      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
+
+    steps:
       - name: "Run unit tests"
         env:
           ANSYS_VERSION: ${{ matrix.ansys-version }}
@@ -92,6 +98,7 @@ jobs:
           CODECOV_TOKEN:  ${{ secrets.CODECOV_TOKEN }}
         with:
           files: .cov/xml
+          flags: ${{ matrix.ansys-version }}
 
   docs_build:
     name: Build Documentation

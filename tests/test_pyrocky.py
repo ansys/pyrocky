@@ -163,7 +163,9 @@ def test_sequences_interface(rocky_session):
     assert {e.GetName() for e in inlets_outlets} == {"Inlet2"}
 
 
-@pytest.mark.skipif(VERSION < 251, reason="PyRocky support for RAExportToolkit was added in 2025R1.")
+@pytest.mark.skipif(
+    VERSION < 251, reason="PyRocky support for RAExportToolkit was added in 2025R1."
+)
 def test_export_toolkit(rocky_session, tmp_path):
     study = create_basic_project_with_results(
         rocky_session.api,

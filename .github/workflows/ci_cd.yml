@@ -73,7 +73,7 @@ jobs:
           pip install .[tests]
 
   tests_run:
-    name: Tests Run
+    name: Tests
     needs: tests_setup
     runs-on: [self-hosted, Windows, pyrocky]
     timeout-minutes: 10

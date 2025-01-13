@@ -28,10 +28,10 @@ from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
-if os.getenv('ANSYS_VERSION'):
-    VERSION = os.getenv('ANSYS_VERSION')
+if os.getenv("ANSYS_VERSION"):
+    VERSION = os.getenv("ANSYS_VERSION")
 else:
-    raise EnvironmentError('No ANSYS_VERSION environment variable set.')
+    raise EnvironmentError("No ANSYS_VERSION environment variable set.")
 
 FREEFLOW_VERSION = 251
 
@@ -85,7 +85,9 @@ def test_not_supported_version_error():
 
 
 def test_freeflow_not_supported_version_error():
-    with pytest.raises(ValueError, match=f"Freeflow version {FREEFLOW_VERSION} is not supported.*"):
+    with pytest.raises(
+        ValueError, match=f"Freeflow version {FREEFLOW_VERSION} is not supported.*"
+    ):
         pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
 
 
@@ -213,7 +215,9 @@ def test_close_freeflow_existing_session():
     from ansys.rocky.core.client import _get_numerical_version
 
     pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
-    freeflow_two = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION, close_existing=True)
+    freeflow_two = pyrocky.launch_freeflow(
+        freeflow_version=FREEFLOW_VERSION, close_existing=True
+    )
 
     assert _get_numerical_version(freeflow_two.api) is not None
 

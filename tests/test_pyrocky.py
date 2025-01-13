@@ -29,7 +29,7 @@ from ansys.rocky.core.launcher import RockyLaunchError
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
 if os.getenv("ANSYS_VERSION"):
-    VERSION = os.getenv("ANSYS_VERSION")
+    VERSION = int(os.getenv("ANSYS_VERSION"))
 else:
     raise EnvironmentError("No ANSYS_VERSION environment variable set.")
 

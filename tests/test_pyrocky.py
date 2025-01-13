@@ -114,8 +114,13 @@ def test_minimal_simulation(tmp_path, request):
 
     from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
 
-    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
-    assert ROCKY_VERSION == VERSION
+    if VERSION < 251:
+        expected_rocky_version = 240
+    else:
+        expected_rocky_version = VERSION
+
+    rocky_version = _get_numerical_version(_ROCKY_API)
+    assert rocky_version == expected_rocky_version
 
     study = create_basic_project_with_results(
         rocky.api, str(tmp_path / "rocky-testing.rocky")
@@ -158,6 +163,7 @@ def test_sequences_interface(rocky_session):
     assert {e.GetName() for e in inlets_outlets} == {"Inlet2"}
 
 
+@pytest.mark.skipif(VERSION < 251, reason="PyRocky support for RAExportToolkit was added in 2025R1.")
 def test_export_toolkit(rocky_session, tmp_path):
     study = create_basic_project_with_results(
         rocky_session.api,

@@ -62,3 +62,9 @@ When the Rocky session is started in this way, you can connect to it with PyRock
     import ansys.rocky.core as pyrocky
 
     rocky = pyrocky.connect_to_rocky()
+
+Rocky Installation
+------------------
+
+To benefit fully from using PyRocky, you must have a licensed copy of Ansys Rocky
+installed. The minimum Rocky version supported by PyRocky is 2024 R2.

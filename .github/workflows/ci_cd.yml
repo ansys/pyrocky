@@ -18,6 +18,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
+  labeler:
+    name: "Labels"
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      github.event.type != 'labeled'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Update labels"
+        uses: micnncim/action-label-syncer@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Label pull-request"
+        uses: actions/labeler@v5.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
   docs-style:
     name: Documentation Style Check
     runs-on: ubuntu-latest

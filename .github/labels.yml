@@ -1,35 +1,75 @@
-- name: bug
+# The labels declared in this file are the ones availables
+# https://github.com/ansys/pyrocky/labels
+
+# -- Defects and glitches labels----------------------------------------------
+- name: 'bug'
   description: Something isn't working
   color: d42a34
 
-- name: dependencies
-  description: Related with project dependencies
-  color: ffc0cb
+- name: 'fix'
+  description:  Pull requests related to resolving problems or errors
+  color: d42a34
 
-- name: documentation
+# -- CI/CD labels ------------------------------------------------------------
+
+- name: 'ci'
+  description: Pipelines maintenance related
+  color: a9a9a9
+
+- name: 'ci:skip'
+  description: Skip CI/CD runs
+  color: a9a9a9
+
+# -- Tests labels ------------------------------------------------------------
+- name: 'tests'
+  description: Related with improvements of the test suite
+  color: ffd8b1
+
+- name: 'tests:skip'
+  description: Skip tests runs in CI/CD
+  color: ffd8b1
+
+# -- Documentation labels ----------------------------------------------------
+- name: 'docs'
   description: Improvements or additions to documentation
   color: 0677ba
 
-- name: enhancement
+- name: 'docs:skip'
+  description: Skip documentation runs in CI/CD
+  color: 0677ba
+
+# -- Dependencies labels -----------------------------------------------------
+- name: 'dependencies'
+  description: Related with project dependencies
+  color: ffc0cb
+
+# -- Style labels ------------------------------------------------------------
+
+- name: 'style'
+  description: Improvements related to general project style
+  color: dcbeff
+
+- name: 'style:skip'
+  description: Skip style runs in CI/CD
+  color: dcbeff
+
+# -- Other labels ------------------------------------------------------------
+- name: 'enhancement'
   description: New features or code improvements
   color: FFD827
 
-- name: good first issue
+- name: 'good first issue'
   description: Easy to solve for newcomers
   color: 62ca50
 
-- name: maintenance
+- name: 'maintenance'
   description: Package and maintenance related
   color: f78c37
 
-- name: release
+- name: 'release'
   description: Anything related to an incoming release
   color: ffffff
 
-- name: testing
-  description: Anything related to tests
-  color: BFE4D6
-
-- name: security
-  description: Anything related to security advisories
-  color: FF0000
+- name: 'github_actions'
+  description: Pull requests that update GitHub Actions code
+  color: BFD4F2

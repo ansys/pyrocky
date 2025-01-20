@@ -1,0 +1,21 @@
+.. py:class:: RACustomCurveAndGridProperty
+
+
+   .. py:method:: AddCustomCurve(name: str, curve_type: str = ..., output_unit: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+   .. py:method:: EditCustomCurve(edit_curve: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+   .. py:method:: RemoveCustomCurve(name: str) -> None
+
+
+   .. py:method:: AddCustomProperty(name: str, property_type: str = ..., output_unit: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+   .. py:method:: EditCustomProperty(edit_property: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+   .. py:method:: RemoveCustomProperty(name: str) -> None
+
+

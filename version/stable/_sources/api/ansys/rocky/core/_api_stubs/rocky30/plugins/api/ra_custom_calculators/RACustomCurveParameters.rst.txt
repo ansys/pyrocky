@@ -1,0 +1,18 @@
+.. py:class:: RACustomCurveParameters(process: RACustomCurveAndGridProperty, sources: Union[dict[str, str], None] = ...)
+
+
+   .. py:attribute:: variable_to_association_and_unit
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: output_quantity
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: domain_association
+      :type: _typeshed.Incomplete
+
+      
+

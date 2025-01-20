@@ -1,0 +1,8 @@
+:orphan:
+
+:py:mod:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin`
+=====================================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin
+
+

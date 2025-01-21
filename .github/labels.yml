@@ -1,5 +1,5 @@
 # The labels declared in this file are the ones availables
-# https://github.com/ansys/pyrocky/labels
+# https://github.com/ansys/pyrocky/labels test
 
 # -- Defects and glitches labels----------------------------------------------
 - name: 'bug'

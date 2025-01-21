@@ -19,6 +19,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import os
+
 import pytest
 
 import ansys.rocky.core as pyrocky
@@ -26,17 +28,24 @@ from ansys.rocky.core.client import DEFAULT_SERVER_PORT
 from ansys.rocky.core.launcher import RockyLaunchError
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
+if os.getenv("ANSYS_VERSION"):
+    VERSION = int(os.getenv("ANSYS_VERSION"))
+else:
+    raise EnvironmentError("No ANSYS_VERSION environment variable set.")
+
+FREEFLOW_VERSION = 251
+
 
 @pytest.fixture()
 def rocky_session():
-    rocky = pyrocky.launch_rocky()
+    rocky = pyrocky.launch_rocky(rocky_version=VERSION)
     yield rocky
     rocky.close()
 
 
 @pytest.fixture()
 def freeflow_session():
-    freeflow = pyrocky.launch_freeflow()
+    freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
     yield freeflow
     freeflow.close()
 
@@ -71,12 +80,12 @@ def create_basic_project_with_results(
 
 
 def test_not_supported_version_error():
-    with pytest.raises(ValueError, match="Rocky version 222 is not supported.*"):
+    with pytest.raises(ValueError, match=f"Rocky version 222 is not supported.*"):
         pyrocky.launch_rocky(rocky_version=222)
 
 
 def test_freeflow_not_supported_version_error():
-    with pytest.raises(ValueError, match="Freeflow version 222 is not supported.*"):
+    with pytest.raises(ValueError, match=f"Freeflow version 222 is not supported.*"):
         pyrocky.launch_freeflow(freeflow_version=222)
 
 
@@ -96,23 +105,22 @@ def test_invalid_rocky_exe_parameter():
         pyrocky.launch_rocky(rocky_exe="C:\\Folder\\Rocky.exe")
 
 
-@pytest.mark.parametrize(
-    "version, expected_version",
-    [
-        (251, 251),
-    ],
-)
-def test_minimal_simulation(version, expected_version, tmp_path, request):
+def test_minimal_simulation(tmp_path, request):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
-    rocky = pyrocky.launch_rocky(rocky_version=version)
+    rocky = pyrocky.launch_rocky(rocky_version=VERSION)
     request.addfinalizer(rocky.close)
 
     from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
 
-    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
-    assert ROCKY_VERSION == expected_version
+    if VERSION < 251:
+        expected_rocky_version = 240
+    else:
+        expected_rocky_version = VERSION
+
+    rocky_version = _get_numerical_version(_ROCKY_API)
+    assert rocky_version == expected_rocky_version
 
     study = create_basic_project_with_results(
         rocky.api, str(tmp_path / "rocky-testing.rocky")
@@ -155,6 +163,9 @@ def test_sequences_interface(rocky_session):
     assert {e.GetName() for e in inlets_outlets} == {"Inlet2"}
 
 
+@pytest.mark.skipif(
+    VERSION < 251, reason="PyRocky support for RAExportToolkit was added in 2025R1."
+)
 def test_export_toolkit(rocky_session, tmp_path):
     study = create_basic_project_with_results(
         rocky_session.api,
@@ -182,7 +193,7 @@ def test_pyrocky_launch_multiple_servers():
         s.listen(10)
 
         with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
-            pyrocky.launch_rocky()
+            pyrocky.launch_rocky(rocky_version=VERSION)
 
 
 def test_close_existing_session():
@@ -193,8 +204,8 @@ def test_close_existing_session():
     """
     from ansys.rocky.core.client import _get_numerical_version
 
-    rocky_one = pyrocky.launch_rocky()
-    rocky_two = pyrocky.launch_rocky(close_existing=True)
+    rocky_one = pyrocky.launch_rocky(rocky_version=VERSION)
+    rocky_two = pyrocky.launch_rocky(rocky_version=VERSION, close_existing=True)
 
     assert _get_numerical_version(rocky_two.api) is not None
 
@@ -209,8 +220,10 @@ def test_close_freeflow_existing_session():
     """
     from ansys.rocky.core.client import _get_numerical_version
 
-    pyrocky.launch_freeflow()
-    freeflow_two = pyrocky.launch_freeflow(close_existing=True)
+    pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+    freeflow_two = pyrocky.launch_freeflow(
+        freeflow_version=FREEFLOW_VERSION, close_existing=True
+    )
 
     assert _get_numerical_version(freeflow_two.api) is not None
 
@@ -235,13 +248,13 @@ def test_freeflow_launcher(freeflow_session):
 
 def test_freeflow_launcher_with_specified_version(request):
     """Test to check if freeflow launcher works when a version is specified"""
-    freeflow = pyrocky.launch_freeflow(freeflow_version=251)
+    freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
     request.addfinalizer(freeflow.close)
 
     from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
 
     ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
-    assert ROCKY_VERSION == 251
+    assert ROCKY_VERSION == FREEFLOW_VERSION
 
 
 def test_no_valid_local_winreg_exe():

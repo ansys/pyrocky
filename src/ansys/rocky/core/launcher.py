@@ -26,7 +26,6 @@ import subprocess
 import sys
 import time
 from typing import Optional, Union
-import winreg
 
 from Pyro5.errors import CommunicationError
 from ansys.tools.path import get_available_ansys_installations
@@ -300,6 +299,8 @@ def _get_exec_using_winreg(
     Path
         The Path to the executable
     """
+    import winreg
+
     product_reg_path = rf"SOFTWARE\{COMPANY}\{product_name}"
 
     try:

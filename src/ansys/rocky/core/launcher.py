@@ -359,6 +359,8 @@ def _get_exec_using_tools_path(  # pragma: no cover
         else:
             raise FileNotFoundError(f"{product_name} executable is not found.")
 
-        executable = Path(ansys_installation) / f"{product_name.lower()}/bin/{product_name}"
+        executable = (
+            Path(ansys_installation) / f"{product_name.lower()}/bin/{product_name}"
+        )
 
     return executable

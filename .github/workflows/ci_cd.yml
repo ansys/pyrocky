@@ -18,9 +18,35 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
+  labeler:
+    name: "Labels"
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      github.event.type != 'labeled'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: "Update labels"
+        uses: micnncim/action-label-syncer@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Label pull-request"
+        uses: actions/labeler@v5.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
   docs-style:
     name: Documentation Style Check
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'style:skip')
     steps:
       - name: PyAnsys documentation style checks
         uses: ansys/actions/doc-style@v8
@@ -30,6 +56,9 @@ jobs:
   smoke-tests:
     name: Build and Smoke tests
     runs-on: ${{ matrix.os }}
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     strategy:
       fail-fast: false
       matrix:
@@ -52,6 +81,9 @@ jobs:
   tests_setup:
     name: Tests Setup
     runs-on: [self-hosted, Windows, pyrocky]
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     timeout-minutes: 10
 
     steps:
@@ -76,6 +108,9 @@ jobs:
     name: Tests
     needs: tests_setup
     runs-on: [self-hosted, Windows, pyrocky]
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     timeout-minutes: 10
     strategy:
       fail-fast: false
@@ -103,6 +138,9 @@ jobs:
   docs_build:
     name: Build Documentation
     runs-on: [self-hosted, Windows, pyrocky]
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
@@ -152,6 +190,8 @@ jobs:
     name: Package library
     needs: [tests_run, docs_build]
     runs-on: ubuntu-latest
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     steps:
       - name: Build library source and wheel artifacts
         uses: ansys/actions/build-library@v8
@@ -162,7 +202,9 @@ jobs:
 # Uncomment when ready to release
   release:
     name: Release project
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    if: |
+      github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') &&
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     needs: [package, smoke-tests]
     runs-on: ubuntu-latest
     permissions:
@@ -184,7 +226,9 @@ jobs:
   upload_docs_dev:
     name: "Deploy development documentation"
     # Deploy development only when merging or pushing to the 'main' branch
-    if: github.ref == 'refs/heads/main'
+    if: |
+      github.ref == 'refs/heads/main' &&
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     runs-on: ubuntu-latest
     needs: docs_build
     steps:
@@ -197,7 +241,11 @@ jobs:
 
   upload_docs_release:
     name: "Deploy stable documentation"
-    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && !contains(github.ref, 'dev')
+    if: |
+      github.event_name == 'push' &&
+      startsWith(github.ref, 'refs/tags/v') &&
+      !contains(github.ref, 'dev') &&
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     runs-on: ubuntu-latest
     needs: [release]
     steps:

@@ -1,0 +1,49 @@
+.. py:class:: RAFilterProcess
+
+
+   Bases: :py:obj:`RAUserProcess`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: GetType()
+
+
+   .. py:method:: SetType(filter_type) -> None
+
+
+   .. py:method:: GetMode()
+
+
+   .. py:method:: SetMode(property_mode) -> None
+
+
+   .. py:method:: GetMinValue(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetMinValue(value, unit: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: GetMaxValue(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetMaxValue(value, unit: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: GetCutValue(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetCutValue(value, unit: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: SetPropertyGridFunction(grid_function, realization: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: GetPropertyGridFunction()
+
+

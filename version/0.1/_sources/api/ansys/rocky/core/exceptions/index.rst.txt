@@ -1,0 +1,87 @@
+
+
+
+
+
+The ``exceptions.py`` module
+============================
+
+.. py:module:: ansys.rocky.core.exceptions
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: exceptions
+.. tab-set::
+
+
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:attr:`~PyRockyError`
+            - Provides the generic exception for the PyRocky API.
+
+
+          * - :py:attr:`~RockyLaunchError`
+            - Provides the error raised when problems occurs during launch of the Rocky app.
+
+
+          * - :py:attr:`~RockyApiError`
+            - Provides the ``Exception`` class for an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    🗲 PyRockyError<PyRockyError>
+    🗲 RockyLaunchError<RockyLaunchError>
+    🗲 RockyApiError<RockyApiError>
+
+
+
+
+
+
+
+Description
+-----------
+
+Module where the exceptions of the project are contained.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+

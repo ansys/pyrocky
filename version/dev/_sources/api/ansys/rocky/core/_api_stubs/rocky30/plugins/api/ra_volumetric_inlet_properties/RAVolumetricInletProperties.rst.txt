@@ -1,0 +1,34 @@
+.. py:class:: RAVolumetricInletProperties(id: str, model_id: Optional[str] = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.input.volume_fill.VolumeFillProperties]
+      :classmethod:
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+   .. py:method:: GetMass(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMass(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetParticle()
+
+
+   .. py:method:: SetParticle(value) -> None
+
+
+   .. py:method:: GetAvailableParticles()
+
+

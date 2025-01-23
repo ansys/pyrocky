@@ -100,7 +100,7 @@ def launch_rocky(
             rocky_exe = Path(rocky_exe)
 
     if rocky_exe is None or not rocky_exe.is_file():
-        raise FileNotFoundError(f"Rocky executable is not found at {rocky_exe}.")
+        raise FileNotFoundError(f"Rocky executable is not found.")
 
     cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -193,7 +193,7 @@ def launch_freeflow(  # pragma: no cover
             freeflow_exe = Path(freeflow_exe)
 
     if freeflow_exe is None or not freeflow_exe.is_file():
-        raise FileNotFoundError(f"Freeflow executable is not found at {freeflow_exe}.")
+        raise FileNotFoundError(f"Freeflow executable is not found.")
 
     cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -322,7 +322,7 @@ def _get_exec_using_winreg(
 def _get_exec_using_tools_path(  # pragma: no cover
     product_name: str,
     version: Optional[int] = None,
-) -> Path:
+) -> Optional[Path]:
     """
     This function will search for the Rocky/Freeflow executable using the
     ansys-tools-path module. Currently, we are using this approach only
@@ -347,18 +347,20 @@ def _get_exec_using_tools_path(  # pragma: no cover
         for installation in sorted(ansys_installations, reverse=True):
             executable = (
                 Path(ansys_installations[installation])
-                / f"{product_name}/bin/{product_name}.exe"
+                / f"{product_name.lower()}/bin/{product_name}"
             )
             if executable.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
                 break
         else:
-            raise FileNotFoundError(f"{product_name} executable is not found.")
+            return
     else:
         if version in ansys_installations:
             ansys_installation = ansys_installations.get(version)
         else:
             raise FileNotFoundError(f"{product_name} executable is not found.")
 
-        executable = Path(ansys_installation) / f"{product_name}/bin/{product_name}.exe"
+        executable = (
+            Path(ansys_installation) / f"{product_name.lower()}/bin/{product_name}"
+        )
 
     return executable

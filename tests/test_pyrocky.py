@@ -101,7 +101,7 @@ def test_rocky_exe_parameter():
 
 
 def test_invalid_rocky_exe_parameter():
-    with pytest.raises(FileNotFoundError, match=f"Rocky executable is not found at*"):
+    with pytest.raises(FileNotFoundError, match=f"Rocky executable is not found."):
         pyrocky.launch_rocky(rocky_exe="C:\\Folder\\Rocky.exe")
 
 

@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import os
+import sys
 
 import pytest
 
@@ -92,7 +93,11 @@ def test_freeflow_not_supported_version_error():
 def test_rocky_exe_parameter():
     from ansys.rocky.core.client import RockyClient
 
-    exe_file = "C:\\Program Files\\ANSYS Inc\\v251\\Rocky\\bin\\Rocky.exe"
+    if sys.platform.startswith('linux'):
+        exe_file = "/ansys_inc/v251/rocky/bin/Rocky"
+    else:
+        exe_file = "C:\\Program Files\\ANSYS Inc\\v251\\Rocky\\bin\\Rocky.exe"
+
     rocky = pyrocky.launch_rocky(rocky_exe=exe_file)
 
     assert isinstance(rocky, RockyClient)

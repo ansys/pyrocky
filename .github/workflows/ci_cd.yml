@@ -79,8 +79,11 @@ jobs:
 
 
   tests_setup:
-    name: Tests Setup
-    runs-on: [self-hosted, Windows, pyrocky]
+    name: ${{ matrix.os }} Tests Setup
+    runs-on: [self-hosted, ${{ matrix.os }}, pyrocky]
+    strategy:
+      matrix:
+        os: [Windows, Linux]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -105,9 +108,9 @@ jobs:
           pip install .[tests]
 
   tests_run:
-    name: Tests
+    name: ${{ matrix.os }} Tests
     needs: tests_setup
-    runs-on: [self-hosted, Windows, pyrocky]
+    runs-on: [self-hosted, ${{ matrix.os }}, pyrocky]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -115,6 +118,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        os: [Windows, Linux]
         ansys-version: [242, 251, 252]
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}

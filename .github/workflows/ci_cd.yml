@@ -119,7 +119,7 @@ jobs:
           pip install .[tests]
 
   tests_run:
-    name: ${{ matrix.os }} Tests
+    name: ${{ matrix.os }} v${{ matrix.ansys-version }} Tests
     needs: tests_setup
     runs-on:
       - self-hosted

@@ -79,11 +79,14 @@ jobs:
 
 
   tests_setup:
-    runs-on: [self-hosted, ${{ matrix.os }}, pyrocky]
+    name: ${{ matrix.os }} Tests Setup
+    runs-on:
+      - self-hosted
+      - ${{ matrix.os }}
+      - pyrocky
     strategy:
       matrix:
         os: [Windows, Linux]
-    name: ${{ matrix.os }} Tests Setup
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')

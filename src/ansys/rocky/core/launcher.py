@@ -294,7 +294,7 @@ def _get_exec_using_winreg(
             return Path(executable_str)
     except FileNotFoundError:
         raise FileNotFoundError(
-            f"Local executable not found for {product_name} {version}."
+            f"Local executable is not found for {product_name} {version}."
         )
 
 

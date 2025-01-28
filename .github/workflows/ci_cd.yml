@@ -106,7 +106,11 @@ jobs:
 
       - name: Install packages for tests
         run: |
-          .\.venv\Scripts\Activate.ps1
+          if [ "${{ matrix.os }}" == "Windows" ]; then
+            .\.venv\Scripts\Activate.ps1
+          elif [ "${{ matrix.os }}" == "Linux" ]; then
+            source .venv/bin/activate
+          fi
           python -m pip install --upgrade pip
           pip install .[tests]
 

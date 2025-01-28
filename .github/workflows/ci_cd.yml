@@ -104,18 +104,17 @@ jobs:
         run: |
           python -m venv .venv
 
-      - name: Activate Environment (Windows)
+      - name: Install packages for tests (Windows)
         if: matrix.os == 'Windows'
         run: |
           .\.venv\Scripts\Activate.ps1
+          python -m pip install --upgrade pip
+          pip install .[tests]
 
-      - name: Activate Environment (Linux)
+      - name: Install packages for tests (Linux)
         if: matrix.os == 'Linux'
         run: |
           source .venv/bin/activate
-
-      - name: Install packages for tests
-        run: |
           python -m pip install --upgrade pip
           pip install .[tests]
 
@@ -139,20 +138,20 @@ jobs:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
-      - name: Activate Environment (Windows)
+      - name: Run unit tests (Windows)
+        env:
+          ANSYS_VERSION: ${{ matrix.ansys-version }}
         if: matrix.os == 'Windows'
         run: |
           .\.venv\Scripts\Activate.ps1
+          pytest tests
 
-      - name: Activate Environment (Linux)
+      - name: Run unit tests (Linux)
+        env:
+          ANSYS_VERSION: ${{ matrix.ansys-version }}
         if: matrix.os == 'Linux'
         run: |
           source .venv/bin/activate
-
-      - name: "Run unit tests"
-        env:
-          ANSYS_VERSION: ${{ matrix.ansys-version }}
-        run: |
           pytest tests
 
       - uses: codecov/codecov-action@v4

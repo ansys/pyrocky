@@ -336,7 +336,7 @@ def _get_exec_using_tools_path(  # pragma: no cover
         if version in ansys_installations:
             ansys_installation = ansys_installations.get(version)
         else:
-            raise FileNotFoundError(f"{product_name} executable is not found.")
+            raise FileNotFoundError(f"Local executable not found.")
 
         executable = (
             Path(ansys_installation) / f"{product_name.lower()}/bin/{product_name}"

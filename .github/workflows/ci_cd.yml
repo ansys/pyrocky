@@ -111,9 +111,12 @@ jobs:
           pip install .[tests]
 
   tests_run:
-    name: Tests
+    name: ${{ matrix.os }} Tests
     needs: tests_setup
-    runs-on: [self-hosted, ${{ matrix.os }}, pyrocky]
+    runs-on:
+      - self-hosted
+      - ${{ matrix.os }}
+      - pyrocky
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')

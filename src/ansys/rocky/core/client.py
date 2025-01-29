@@ -35,7 +35,7 @@ if TYPE_CHECKING:
         RockyApiApplication,
     )
 
-DEFAULT_SERVER_PORT: Final[int] = 50615
+DEFAULT_SERVER_PORT: Final[int] = 20615
 _ROCKY_API: Pyro5.api.Proxy | None = None
 
 

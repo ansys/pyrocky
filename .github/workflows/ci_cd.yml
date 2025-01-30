@@ -1,5 +1,6 @@
 name: CI
 on:
+  workflow_dispatch:
   pull_request:
   push:
     tags:
@@ -79,8 +80,14 @@ jobs:
 
 
   tests_setup:
-    name: Tests Setup
-    runs-on: [self-hosted, Windows, pyrocky]
+    name: ${{ matrix.os }} Tests Setup
+    runs-on:
+      - self-hosted
+      - ${{ matrix.os }}
+      - pyrocky
+    strategy:
+      matrix:
+        os: [Windows, Linux]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -98,16 +105,27 @@ jobs:
         run: |
           python -m venv .venv
 
-      - name: Install packages for tests
+      - name: Install packages for tests (Windows)
+        if: matrix.os == 'Windows'
         run: |
           .\.venv\Scripts\Activate.ps1
           python -m pip install --upgrade pip
           pip install .[tests]
 
+      - name: Install packages for tests (Linux)
+        if: matrix.os == 'Linux'
+        run: |
+          source .venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install .[tests]
+
   tests_run:
-    name: Tests
+    name: ${{ matrix.os }} v${{ matrix.ansys-version }} Tests
     needs: tests_setup
-    runs-on: [self-hosted, Windows, pyrocky]
+    runs-on:
+      - self-hosted
+      - ${{ matrix.os }}
+      - pyrocky
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -115,16 +133,26 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        os: [Windows, Linux]
         ansys-version: [242, 251, 252]
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
-      - name: "Run unit tests"
+      - name: Run unit tests (Windows)
         env:
           ANSYS_VERSION: ${{ matrix.ansys-version }}
+        if: matrix.os == 'Windows'
         run: |
           .\.venv\Scripts\Activate.ps1
+          pytest tests
+
+      - name: Run unit tests (Linux)
+        env:
+          ANSYS_VERSION: ${{ matrix.ansys-version }}
+        if: matrix.os == 'Linux'
+        run: |
+          source .venv/bin/activate
           pytest tests
 
       - uses: codecov/codecov-action@v4

@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import os
+import sys
 
 import pytest
 
@@ -84,6 +85,9 @@ def test_not_supported_version_error():
         pyrocky.launch_rocky(rocky_version=222)
 
 
+@pytest.mark.skipif(
+    sys.platform.startswith("linux"), reason="Freeflow tests do not run on Linux."
+)
 def test_freeflow_not_supported_version_error():
     with pytest.raises(ValueError, match=f"Freeflow version 222 is not supported.*"):
         pyrocky.launch_freeflow(freeflow_version=222)
@@ -92,7 +96,11 @@ def test_freeflow_not_supported_version_error():
 def test_rocky_exe_parameter():
     from ansys.rocky.core.client import RockyClient
 
-    exe_file = "C:\\Program Files\\ANSYS Inc\\v251\\Rocky\\bin\\Rocky.exe"
+    if sys.platform.startswith("linux"):
+        exe_file = "/ansys_inc/v251/rocky/bin/Rocky"
+    else:
+        exe_file = "C:\\Program Files\\ANSYS Inc\\v251\\Rocky\\bin\\Rocky.exe"
+
     rocky = pyrocky.launch_rocky(rocky_exe=exe_file)
 
     assert isinstance(rocky, RockyClient)
@@ -212,6 +220,9 @@ def test_close_existing_session():
     rocky_two.close()
 
 
+@pytest.mark.skipif(
+    sys.platform.startswith("linux"), reason="Freeflow tests do not run on Linux."
+)
 def test_close_freeflow_existing_session():
     """
     Launches a freeflow session on top another one using the
@@ -230,6 +241,9 @@ def test_close_freeflow_existing_session():
     freeflow_two.close()
 
 
+@pytest.mark.skipif(
+    sys.platform.startswith("linux"), reason="Freeflow tests do not run on Linux."
+)
 def test_freeflow_launcher(freeflow_session):
     """Test to check if freeflow launcher is working as expected"""
     project = freeflow_session.api.CreateProject()
@@ -246,6 +260,9 @@ def test_freeflow_launcher(freeflow_session):
     assert inlets_outlets[0].GetName() == "Inlet1"
 
 
+@pytest.mark.skipif(
+    sys.platform.startswith("linux"), reason="Freeflow tests do not run on Linux."
+)
 def test_freeflow_launcher_with_specified_version(request):
     """Test to check if freeflow launcher works when a version is specified"""
     freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
@@ -257,6 +274,6 @@ def test_freeflow_launcher_with_specified_version(request):
     assert ROCKY_VERSION == FREEFLOW_VERSION
 
 
-def test_no_valid_local_winreg_exe():
-    with pytest.raises(FileNotFoundError, match=f"Local executable not found for*"):
+def test_invalid_rocky_version():
+    with pytest.raises(FileNotFoundError, match=f"Local executable is not found*"):
         pyrocky.launch_rocky(rocky_version=900)

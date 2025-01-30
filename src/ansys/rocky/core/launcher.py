@@ -102,7 +102,7 @@ def launch_rocky(
     if rocky_exe is None or not rocky_exe.is_file():
         raise FileNotFoundError(f"Rocky executable is not found.")
 
-    cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
+    cmd = [str(rocky_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
         cmd.append("--headless")
     with contextlib.suppress(subprocess.TimeoutExpired):
@@ -195,7 +195,7 @@ def launch_freeflow(  # pragma: no cover
     if freeflow_exe is None or not freeflow_exe.is_file():
         raise FileNotFoundError(f"Freeflow executable is not found.")
 
-    cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
+    cmd = [str(freeflow_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
         cmd.append("--headless")
     with contextlib.suppress(subprocess.TimeoutExpired):
@@ -315,7 +315,7 @@ def _get_exec_using_winreg(
             return Path(executable_str)
     except FileNotFoundError:
         raise FileNotFoundError(
-            f"Local executable not found for {product_name} {version}."
+            f"Local executable is not found for {product_name} {version}."
         )
 
 
@@ -347,7 +347,7 @@ def _get_exec_using_tools_path(  # pragma: no cover
         for installation in sorted(ansys_installations, reverse=True):
             executable = (
                 Path(ansys_installations[installation])
-                / f"{product_name.lower()}/bin/{product_name}"
+                / f"{product_name.lower()}/{product_name}"
             )
             if executable.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
                 break
@@ -357,10 +357,8 @@ def _get_exec_using_tools_path(  # pragma: no cover
         if version in ansys_installations:
             ansys_installation = ansys_installations.get(version)
         else:
-            raise FileNotFoundError(f"{product_name} executable is not found.")
+            raise FileNotFoundError(f"Local executable is not found.")
 
-        executable = (
-            Path(ansys_installation) / f"{product_name.lower()}/bin/{product_name}"
-        )
+        executable = Path(ansys_installation) / f"{product_name.lower()}/{product_name}"
 
     return executable

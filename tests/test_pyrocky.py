@@ -91,9 +91,7 @@ def test_freeflow_not_supported_version_error():
         pyrocky.launch_freeflow(freeflow_version=222)
 
 
-@pytest.mark.skipif(
-    sys.platform.startswith("linux"), reason="Debugging."
-)
+@pytest.mark.skipif(sys.platform.startswith("linux"), reason="Debugging.")
 def test_rocky_exe_parameter():
     from ansys.rocky.core.client import RockyClient
 

@@ -326,7 +326,7 @@ def _get_exec_using_tools_path(  # pragma: no cover
         for installation in sorted(ansys_installations, reverse=True):
             executable = (
                 Path(ansys_installations[installation])
-                / f"{product_name.lower()}/bin/{product_name}"
+                / f"{product_name.lower()}/{product_name}"
             )
             if executable.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
                 break
@@ -339,7 +339,7 @@ def _get_exec_using_tools_path(  # pragma: no cover
             raise FileNotFoundError(f"Local executable is not found.")
 
         executable = (
-            Path(ansys_installation) / f"{product_name.lower()}/bin/{product_name}"
+            Path(ansys_installation) / f"{product_name.lower()}/{product_name}"
         )
 
     return executable

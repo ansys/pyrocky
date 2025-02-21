@@ -57,7 +57,7 @@ def connect_to_rocky(  # pragma: no cover
 
 
 def connect(host: str = "localhost", port: int = DEFAULT_SERVER_PORT) -> "RockyClient":
-    """Connect to a Rocky/Freeflow app instance.
+    """Connect to a Rocky/FreeFlow app instance.
 
     Parameters
     ----------
@@ -70,7 +70,7 @@ def connect(host: str = "localhost", port: int = DEFAULT_SERVER_PORT) -> "RockyC
     Returns
     -------
     RockyClient
-        Client object for interacting with the Rocky/Freeflow app.
+        Client object for interacting with the Rocky/FreeFlow app.
     """
     uri = f"PYRO:rocky.api@{host}:{port}"
     global _ROCKY_API
@@ -98,7 +98,7 @@ def connect(host: str = "localhost", port: int = DEFAULT_SERVER_PORT) -> "RockyC
 
 
 class RockyClient:
-    """Provides the client object for interacting with the Rocky/Freeflow app.
+    """Provides the client object for interacting with the Rocky/FreeFlow app.
 
     Parameters
     ----------

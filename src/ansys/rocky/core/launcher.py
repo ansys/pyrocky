@@ -23,6 +23,7 @@
 import contextlib
 from pathlib import Path
 import subprocess
+import socket
 import sys
 import time
 
@@ -32,6 +33,7 @@ from ansys.tools.path import get_available_ansys_installations
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect
 from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
 
+_CONNECT_TO_SERVER_TIMEOUT = 60
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 COMPANY = "Ansys"
 
@@ -133,13 +135,13 @@ def launch_freeflow(  # pragma: no cover
     Parameters
     ----------
     freeflow_exe:
-        Path to the Freeflow executable.
+        Path to the FreeFlow executable.
     freeflow_version:
-        Freeflow version to run. If no executable is passed and the version is not
+        FreeFlow version to run. If no executable is passed and the version is not
         specified, this method tries to find the path using the latest Ansys path
         returned by ansys-tools-path API.
     headless:
-        Whether to launch Freeflow in headless mode. The default is ``True``.
+        Whether to launch FreeFlow in headless mode. The default is ``True``.
     server_port:
         Set the port for Rocky RPC server.
     close_existing:
@@ -149,7 +151,7 @@ def launch_freeflow(  # pragma: no cover
     Returns
     -------
     RockyClient
-        Rocky client instance connected to the launched Rocky/Freeflow app.
+        Rocky client instance connected to the launched FreeFlow app.
     """
     if _is_port_busy(server_port):
         if close_existing:
@@ -167,18 +169,18 @@ def launch_freeflow(  # pragma: no cover
     if freeflow_version is not None:
         if freeflow_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
             raise ValueError(
-                f"Freeflow version {freeflow_version} is not supported. "
+                f"FreeFlow version {freeflow_version} is not supported. "
                 f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
             )
 
     if freeflow_exe is None:
-        freeflow_exe = _find_executable(product_name="Freeflow", version=freeflow_version)
+        freeflow_exe = _find_executable(product_name="FreeFlow", version=freeflow_version)
     else:
         if isinstance(freeflow_exe, str):
             freeflow_exe = Path(freeflow_exe)
 
     if freeflow_exe is None or not freeflow_exe.is_file():
-        raise FileNotFoundError(f"Freeflow executable is not found.")
+        raise FileNotFoundError(f"FreeFlow executable is not found.")
 
     cmd = [str(freeflow_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
@@ -187,11 +189,24 @@ def launch_freeflow(  # pragma: no cover
         rocky_process = subprocess.Popen(cmd)
         rocky_process.wait(timeout=3)
 
-    # Freeflow.exe call returned to soon, something happen
+    # FreeFlow.exe call returned to soon, something happen
     if rocky_process.returncode is not None:
-        raise FreeflowLaunchError(f"Error launching Freeflow:\n  {' '.join(cmd)}")
+        raise FreeflowLaunchError(f"Error launching FreeFlow:\n  {' '.join(cmd)}")
 
     client = connect(port=server_port)
+
+    # TODO: A more elegant way to find out that Rocky Pyro server started.
+    now = time.time()
+    while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
+        try:
+            client.api.GetProject()
+        except CommunicationError:
+            time.sleep(1)
+        else:
+            break
+    else:
+        raise FreeflowLaunchError("Could not connect FreeFlow remote server: timed out")
+
     client._process = rocky_process
     return client
 
@@ -212,14 +227,16 @@ def _is_port_busy(port: int, timeout: int = 10) -> bool:
     bool
         ``True`` if the port is busy, ``False`` otherwise.
     """
-    import socket
-
     for _ in range(timeout):
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            if s.connect_ex(("localhost", port)) == 0:
-                time.sleep(1)
-            else:
-                return False
+        # Pyro supports IPv6, and it's up to the operating system to decide, unless we set
+        # "PREFER_IP_VERSION" to a specific version (4 or 6). So, we need to check for IPv4
+        # and IPv6 connections.
+        for address_family in [socket.AF_INET, socket.AF_INET6]:
+            with socket.socket(address_family, socket.SOCK_STREAM) as s:
+                if s.connect_ex(("localhost", port)) == 0:
+                    time.sleep(1)
+                else:
+                    return False
     return True
 
 
@@ -228,12 +245,12 @@ def _find_executable(
     version: int | None,
 ) -> Path:
     """
-    This function will search for the Rocky/Freeflow executable
+    This function will search for the Rocky/FreeFlow executable
 
     Parameters
     ----------
     product_name:
-        The name of the product (Rocky or Freeflow)
+        The name of the product (Rocky or FreeFlow)
     version:
         The version of the executable
 
@@ -263,13 +280,13 @@ def _get_exec_using_winreg(
     version: str | None = None,
 ) -> Path:
     """
-    This function will search for the Rocky/Freeflow executable using the
+    This function will search for the Rocky/FreeFlow executable using the
     Windows registry.
 
     Parameters
     ----------
     product_name:
-        The name of the product (Rocky or Freeflow)
+        The name of the product (Rocky or FreeFlow)
     version:
         The version of the executable
 
@@ -303,7 +320,7 @@ def _get_exec_using_tools_path(  # pragma: no cover
     version: int | None = None,
 ) -> Path | None:
     """
-    This function will search for the Rocky/Freeflow executable using the
+    This function will search for the Rocky/FreeFlow executable using the
     ansys-tools-path module. Currently, we are using this approach only
     for Linux, since the ansys-tools-path depends on the AWP_ROOT variable,
     which may not be defined in Rocky standalone for Windows.
@@ -311,7 +328,7 @@ def _get_exec_using_tools_path(  # pragma: no cover
     Parameters
     ----------
     product_name:
-        The name of the product (Rocky or Freeflow
+        The name of the product (Rocky or FreeFlow
     version:
         The version of the executable
 
@@ -338,6 +355,8 @@ def _get_exec_using_tools_path(  # pragma: no cover
         else:
             raise FileNotFoundError(f"Local executable is not found.")
 
-        executable = Path(ansys_installation) / f"{product_name.lower()}/{product_name}"
+        executable = (
+            Path(ansys_installation) / f"{product_name.lower()}/bin/{product_name}"
+        )
 
     return executable

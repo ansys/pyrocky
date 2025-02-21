@@ -19,34 +19,50 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+from functools import partial
 import os
-import sys
+import time
 
+from Pyro5.errors import CommunicationError
 import pytest
 
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT
-from ansys.rocky.core.exceptions import PyRockyError
-from ansys.rocky.core.launcher import RockyLaunchError
+from ansys.rocky.core.exceptions import PyRockyError, RockyLaunchError
+from ansys.rocky.core.launcher import _CONNECT_TO_SERVER_TIMEOUT, _find_executable
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
 VERSION = int(os.getenv("ANSYS_VERSION", "252"))
 
-FREEFLOW_VERSION = 251
+def close_pyro_session(client):
+    """Closes the supplied Pyro client. Raise a "PyRockyError" if it is not possible to
+    close the client within the expected time."""
+    session_uri = client.api._pyroUri
+    now = time.time()
+    while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
+        try:
+            client.close()
+            time.sleep(1)
+        except CommunicationError:
+            break
+    else:
+        raise PyRockyError(f"Unable to close the Pyro session: {session_uri}")
 
 
 @pytest.fixture()
-def rocky_session():
-    rocky = pyrocky.launch_rocky(rocky_version=VERSION)
+def rocky_session(rocky_version):
+    """Launch a Rocky session."""
+    rocky = pyrocky.launch_rocky(rocky_version=rocky_version)
     yield rocky
-    rocky.close()
+    close_pyro_session(rocky)
 
 
 @pytest.fixture()
-def freeflow_session():
-    freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+def freeflow_session(freeflow_version):
+    """Launch a FreeFlow session."""
+    freeflow = pyrocky.launch_freeflow(freeflow_version=freeflow_version)
     yield freeflow
-    freeflow.close()
+    close_pyro_session(freeflow)
 
 
 def create_basic_project_with_results(
@@ -83,53 +99,42 @@ def test_not_supported_version_error():
         pyrocky.launch_rocky(rocky_version=222)
 
 
-@pytest.mark.skipif(
-    sys.platform.startswith("linux"), reason="Freeflow tests do not run on Linux."
-)
-def test_freeflow_not_supported_version_error():
-    with pytest.raises(ValueError, match=f"Freeflow version 222 is not supported.*"):
-        pyrocky.launch_freeflow(freeflow_version=222)
-
-
-def test_rocky_exe_parameter():
+def test_rocky_exe_parameter(request, rocky_version):
     from ansys.rocky.core.client import RockyClient
 
-    if sys.platform.startswith("linux"):
-        exe_file = "/ansys_inc/v251/rocky/bin/Rocky"
-    else:
-        exe_file = "C:\\Program Files\\ANSYS Inc\\v251\\Rocky\\bin\\Rocky.exe"
+    rocky_exe = _find_executable("Rocky", rocky_version)
 
-    rocky = pyrocky.launch_rocky(rocky_exe=exe_file)
+    rocky = pyrocky.launch_rocky(rocky_exe)
+    request.addfinalizer(partial(close_pyro_session, rocky))
 
     assert isinstance(rocky, RockyClient)
 
-    rocky.close()
-
 
 def test_invalid_rocky_exe_parameter():
-    with pytest.raises(FileNotFoundError, match=f"Rocky executable is not found."):
-        pyrocky.launch_rocky(rocky_exe="C:\\Folder\\Rocky.exe")
+    import tempfile
+
+    with pytest.raises(FileNotFoundError, match="Rocky executable is not found."):
+        pyrocky.launch_rocky(
+            rocky_exe=os.path.join(tempfile.gettempdir(), "invalid_rocky_exe")
+        )
 
 
-def test_minimal_simulation(tmp_path, request):
+def test_minimal_simulation(rocky_session, tmp_path, rocky_version):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.
     """
-    rocky = pyrocky.launch_rocky(rocky_version=VERSION)
-    request.addfinalizer(rocky.close)
-
     from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
 
-    if VERSION < 251:
+    if rocky_version < 251:
         expected_rocky_version = 240
     else:
-        expected_rocky_version = VERSION
+        expected_rocky_version = rocky_version
 
-    rocky_version = _get_numerical_version(_ROCKY_API)
-    assert rocky_version == expected_rocky_version
+    obtained_rocky_version = _get_numerical_version(_ROCKY_API)
+    assert obtained_rocky_version == expected_rocky_version
 
     study = create_basic_project_with_results(
-        rocky.api, str(tmp_path / "rocky-testing.rocky")
+        rocky_session.api, str(tmp_path / "rocky-testing.rocky")
     )
 
     seconds = study.GetTimeSet()
@@ -146,7 +151,7 @@ def test_minimal_simulation(tmp_path, request):
     assert len(pid_values) > 20, "Too few values for the grid function"
 
 
-def test_sequences_interface(rocky_session):
+def test_sequences_interface(rocky_session, rocky_version):
     """Ensure that API objects that are sequences have their dunder methods exposed."""
     project = rocky_session.api.CreateProject()
 
@@ -169,10 +174,10 @@ def test_sequences_interface(rocky_session):
     assert {e.GetName() for e in inlets_outlets} == {"Inlet2"}
 
 
-@pytest.mark.skipif(
-    VERSION < 251, reason="PyRocky support for RAExportToolkit was added in 2025R1."
-)
-def test_export_toolkit(rocky_session, tmp_path):
+def test_export_toolkit(rocky_session, tmp_path, rocky_version):
+    if rocky_version < 251:
+        pytest.skip("PyRocky support for RAExportToolkit was added in 2025R1.")
+
     study = create_basic_project_with_results(
         rocky_session.api,
         str(tmp_path / "rocky-testing-export.rocky"),
@@ -187,22 +192,18 @@ def test_export_toolkit(rocky_session, tmp_path):
     export_toolkit.ExportParticleToStl(stl_to_save, "Particle <01>")
 
 
-def test_pyrocky_launch_multiple_servers():
+def test_pyrocky_launch_multiple_servers(request, rocky_version):
     """
     Test that start multiple rocky servers is not allowed.
     """
-    import socket
+    rocky = pyrocky.launch_rocky(rocky_version=rocky_version)
+    request.addfinalizer(partial(close_pyro_session, rocky))
 
-    # Emulating Rocky server already running by binding socket to the server address.
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(("localhost", DEFAULT_SERVER_PORT))
-        s.listen(10)
-
-        with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
-            pyrocky.launch_rocky(rocky_version=VERSION)
+    with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
+        pyrocky.launch_rocky(rocky_version=rocky_version)
 
 
-def test_close_existing_session():
+def test_close_existing_session(request, rocky_version):
     """
     Launches a pyrocky session on top another one using the
     same server port. PyRocky should attempt closing the
@@ -210,18 +211,20 @@ def test_close_existing_session():
     """
     from ansys.rocky.core.client import _get_numerical_version
 
-    rocky_one = pyrocky.launch_rocky(rocky_version=VERSION)
-    rocky_two = pyrocky.launch_rocky(rocky_version=VERSION, close_existing=True)
+    pyrocky.launch_rocky(rocky_version=rocky_version)
+
+    rocky_two = pyrocky.launch_rocky(rocky_version=rocky_version, close_existing=True)
+    request.addfinalizer(partial(close_pyro_session, rocky_two))
 
     assert _get_numerical_version(rocky_two.api) is not None
 
-    rocky_two.close()
+
+def test_invalid_rocky_version():
+    with pytest.raises(FileNotFoundError, match=f"Local executable is not found*"):
+        pyrocky.launch_rocky(rocky_version=900)
 
 
-@pytest.mark.skipif(
-    sys.platform.startswith("linux"), reason="Freeflow tests do not run on Linux."
-)
-def test_close_freeflow_existing_session():
+def test_close_freeflow_existing_session(request, freeflow_version):
     """
     Launches a freeflow session on top another one using the
     same server port. PyRocky should attempt closing the
@@ -229,19 +232,16 @@ def test_close_freeflow_existing_session():
     """
     from ansys.rocky.core.client import _get_numerical_version
 
-    pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+    pyrocky.launch_freeflow(freeflow_version=freeflow_version)
+
     freeflow_two = pyrocky.launch_freeflow(
-        freeflow_version=FREEFLOW_VERSION, close_existing=True
+        freeflow_version=freeflow_version, close_existing=True
     )
+    request.addfinalizer(partial(close_pyro_session, freeflow_two))
 
     assert _get_numerical_version(freeflow_two.api) is not None
 
-    freeflow_two.close()
 
-
-@pytest.mark.skipif(
-    sys.platform.startswith("linux"), reason="Freeflow tests do not run on Linux."
-)
 def test_freeflow_launcher(freeflow_session):
     """Test to check if freeflow launcher is working as expected"""
     project = freeflow_session.api.CreateProject()
@@ -258,18 +258,17 @@ def test_freeflow_launcher(freeflow_session):
     assert inlets_outlets[0].GetName() == "Inlet1"
 
 
-@pytest.mark.skipif(
-    sys.platform.startswith("linux"), reason="Freeflow tests do not run on Linux."
-)
-def test_freeflow_launcher_with_specified_version(request):
+def test_freeflow_launcher_with_specified_version(freeflow_session, freeflow_version):
     """Test to check if freeflow launcher works when a version is specified"""
-    freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
-    request.addfinalizer(freeflow.close)
-
     from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
 
-    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
-    assert ROCKY_VERSION == FREEFLOW_VERSION
+    if freeflow_version < 251:
+        expected_freeflow_version = 240
+    else:
+        expected_freeflow_version = freeflow_version
+
+    obtained_freeflow_version = _get_numerical_version(_ROCKY_API)
+    assert obtained_freeflow_version == expected_freeflow_version
 
 
 def test_invalid_rocky_version():
@@ -294,3 +293,8 @@ def test_connection_check(request, monkeypatch):
     assert cli.api._pyroConnection
     assert cli.api.CreateProject()
     assert cli.api.CloseProject(check_save_state=False) is None
+
+
+def test_freeflow_not_supported_version_error():
+    with pytest.raises(ValueError, match=f"FreeFlow version 222 is not supported.*"):
+        pyrocky.launch_freeflow(freeflow_version=222)

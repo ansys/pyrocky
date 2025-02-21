@@ -79,15 +79,12 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
 
-  tests_setup:
-    name: ${{ matrix.os }} Tests Setup
+  tests_setup_windows:
+    name: Windows Tests Setup
     runs-on:
       - self-hosted
-      - ${{ matrix.os }}
+      - Windows
       - pyrocky
-    strategy:
-      matrix:
-        os: [Windows, Linux]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -106,25 +103,46 @@ jobs:
           python -m venv .venv
 
       - name: Install packages for tests (Windows)
-        if: matrix.os == 'Windows'
         run: |
           .\.venv\Scripts\Activate.ps1
           python -m pip install --upgrade pip
           pip install .[tests]
 
+  tests_setup_linux:
+    name: Linux Tests Setup
+    runs-on:
+      - self-hosted
+      - Linux
+      - pyrocky
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Create Python venv
+        run: |
+          python -m venv .venv
+
       - name: Install packages for tests (Linux)
-        if: matrix.os == 'Linux'
         run: |
           source .venv/bin/activate
           python -m pip install --upgrade pip
           pip install .[tests]
 
-  tests_run:
-    name: ${{ matrix.os }} v${{ matrix.ansys-version }} Tests
-    needs: tests_setup
+  tests_run_windows:
+    name: Windows v${{ matrix.ansys-version }} Tests
+    needs: tests_setup_windows
     runs-on:
       - self-hosted
-      - ${{ matrix.os }}
+      - Windows
       - pyrocky
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
@@ -133,27 +151,47 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [Windows, Linux]
         ansys-version: [242, 251, 252]
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
       - name: Run unit tests (Windows)
-        env:
-          ANSYS_VERSION: ${{ matrix.ansys-version }}
-        if: matrix.os == 'Windows'
         run: |
           .\.venv\Scripts\Activate.ps1
-          pytest tests
+          pytest tests --rocky-version ${{ matrix.ansys-version }} --freeflow-version ${{ matrix.ansys-version }}
 
-      - name: Run unit tests (Linux)
+      - uses: codecov/codecov-action@v4
+        name: 'Upload coverage to CodeCov'
         env:
-          ANSYS_VERSION: ${{ matrix.ansys-version }}
-        if: matrix.os == 'Linux'
+          CODECOV_TOKEN:  ${{ secrets.CODECOV_TOKEN }}
+        with:
+          files: .cov/xml
+          flags: ${{ matrix.ansys-version }}
+
+  tests_run_linux:
+    name: Linux v${{ matrix.ansys-version }} Tests
+    needs: tests_setup_linux
+    runs-on:
+      - self-hosted
+      - Linux
+      - pyrocky
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        ansys-version: [251, 252]
+    env:
+      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
+
+    steps:
+      - name: Run unit tests (Linux)
         run: |
           source .venv/bin/activate
-          pytest tests
+          pytest tests --rocky-version ${{ matrix.ansys-version }} --freeflow-version ${{ matrix.ansys-version }}
 
       - uses: codecov/codecov-action@v4
         name: 'Upload coverage to CodeCov'
@@ -215,7 +253,7 @@ jobs:
 
   package:
     name: Package library
-    needs: [tests_run, docs_build]
+    needs: [tests_run_windows, tests_run_linux, docs_build]
     runs-on: ubuntu-latest
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip')

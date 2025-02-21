@@ -19,21 +19,33 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-"""Module where the exceptions of the project are contained."""
+import pytest
 
 
-class PyRockyError(Exception):
-    """Provides the generic exception for the PyRocky API."""
+def pytest_addoption(parser):
+    parser.addoption(
+        "--rocky-version",
+        action="store",
+        default="251",
+        help="The version of Rocky to be launched.",
+    )
+    parser.addoption(
+        "--freeflow-version",
+        action="store",
+        default="251",
+        help="The version of FreeFlow to be launched.",
+    )
 
 
-class RockyLaunchError(PyRockyError):
-    """Provides the error raised when problems occurs during launch of the Rocky app."""
+@pytest.fixture(scope="session")
+def rocky_version(request):
+    """The version of Rocky to be launched (retrieved from --rocky-version)."""
+    rocky_version = request.config.option.rocky_version
+    return int(rocky_version)
 
 
-class FreeflowLaunchError(PyRockyError):
-    """Provides the error raised when problems occurs during launch of the FreeFlow
-    app."""
-
-
-class RockyApiError(Exception):
-    """Provides the ``Exception`` class for an error generated in the API layer."""
+@pytest.fixture(scope="session")
+def freeflow_version(request):
+    """The version of FreeFlow to be launched (retrieved from --freeflow-version)."""
+    freeflow_version = request.config.option.freeflow_version
+    return int(freeflow_version)

@@ -23,11 +23,14 @@
 Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
+import time
 from typing import TYPE_CHECKING, Final
 import warnings
 
 import Pyro5.api
+from Pyro5.errors import CommunicationError
 
+from ansys.rocky.core.exceptions import PyRockyError
 from ansys.rocky.core.serializers import register_proxies
 
 if TYPE_CHECKING:
@@ -37,6 +40,7 @@ if TYPE_CHECKING:
 
 DEFAULT_SERVER_PORT: Final[int] = 50615
 _ROCKY_API: Pyro5.api.Proxy | None = None
+_CONNECT_TO_SERVER_TIMEOUT = 60
 
 
 def connect_to_rocky(  # pragma: no cover
@@ -75,6 +79,19 @@ def connect(host: str = "localhost", port: int = DEFAULT_SERVER_PORT) -> "RockyC
         register_proxies()
 
     _ROCKY_API = Pyro5.api.Proxy(uri)
+
+    # Check if the connection succeeded
+    now = time.time()
+    while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
+        try:
+            _ROCKY_API._pyroBind()
+            assert _ROCKY_API._pyroConnection is not None
+        except (CommunicationError, AssertionError):
+            time.sleep(1)
+        else:
+            break
+    else:
+        raise PyRockyError("Could not connect to the remote server: timed out")
 
     rocky_client = RockyClient(_ROCKY_API)
     return rocky_client

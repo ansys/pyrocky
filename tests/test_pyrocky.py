@@ -25,6 +25,7 @@ import pytest
 
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT
+from ansys.rocky.core.exceptions import PyRockyError
 from ansys.rocky.core.launcher import RockyLaunchError
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
@@ -260,3 +261,22 @@ def test_freeflow_launcher_with_specified_version(request):
 def test_no_valid_local_winreg_exe():
     with pytest.raises(FileNotFoundError, match=f"Local executable not found for*"):
         pyrocky.launch_rocky(rocky_version=900)
+
+
+def test_connection_check(request, monkeypatch):
+    """Test if the connection check works as expected."""
+    from ansys.rocky.core import client
+
+    with pytest.raises(
+        PyRockyError, match="Could not connect to the remote server: timed out"
+    ):
+        with monkeypatch.context() as m:
+            m.setattr(client, "_CONNECT_TO_SERVER_TIMEOUT", 0)
+            pyrocky.launch_rocky(server_port=DEFAULT_SERVER_PORT)
+
+    cli = pyrocky.connect(port=DEFAULT_SERVER_PORT)
+    request.addfinalizer(cli.close)
+
+    assert cli.api._pyroConnection
+    assert cli.api.CreateProject()
+    assert cli.api.CloseProject(check_save_state=False) is None

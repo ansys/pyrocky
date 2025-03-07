@@ -24,7 +24,6 @@ import contextlib
 from pathlib import Path
 import subprocess
 import sys
-import time
 from typing import Optional, Union
 
 from Pyro5.errors import CommunicationError
@@ -33,7 +32,6 @@ from ansys.tools.path import get_available_ansys_installations
 from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect
 from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
 
-_CONNECT_TO_SERVER_TIMEOUT = 60
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 COMPANY = "Ansys"
 
@@ -114,19 +112,6 @@ def launch_rocky(
         raise RockyLaunchError(f"Error launching Rocky:\n  {' '.join(cmd)}")
 
     client = connect(port=server_port)
-
-    # TODO: A more elegant way to find out that Rocky Pyro server started.
-    now = time.time()
-    while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
-        try:
-            client.api.GetProject()
-        except CommunicationError:
-            time.sleep(1)
-        else:
-            break
-    else:
-        raise RockyLaunchError("Could not connect Rocky remote server: timed out")
-
     client._process = rocky_process
     return client
 
@@ -207,19 +192,6 @@ def launch_freeflow(  # pragma: no cover
         raise FreeflowLaunchError(f"Error launching Freeflow:\n  {' '.join(cmd)}")
 
     client = connect(port=server_port)
-
-    # TODO: A more elegant way to find out that Rocky Pyro server started.
-    now = time.time()
-    while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
-        try:
-            client.api.GetProject()
-        except CommunicationError:
-            time.sleep(1)
-        else:
-            break
-    else:
-        raise FreeflowLaunchError("Could not connect Freeflow remote server: timed out")
-
     client._process = rocky_process
     return client
 

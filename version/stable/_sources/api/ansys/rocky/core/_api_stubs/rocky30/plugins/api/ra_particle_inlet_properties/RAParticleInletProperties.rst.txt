@@ -1,0 +1,40 @@
+.. py:class:: RAParticleInletProperties(id: str, model_id: Optional[str] = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.input.particle_inlet.ParticleInletProperties]
+      :classmethod:
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+   .. py:method:: GetMassFlowRate(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMassFlowRate(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTonnage(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTonnage(value: float, unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetParticle()
+
+
+   .. py:method:: SetParticle(value) -> None
+
+
+   .. py:method:: GetAvailableParticles()
+
+

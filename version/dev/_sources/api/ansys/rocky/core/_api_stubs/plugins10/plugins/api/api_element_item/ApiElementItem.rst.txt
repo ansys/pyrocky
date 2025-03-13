@@ -1,0 +1,51 @@
+.. py:class:: ApiElementItem(id: str, model_id: Optional[str] = ...)
+
+
+   .. py:attribute:: id
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: subject
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: name
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:method:: GetWrappedClass() -> Type
+      :classmethod:
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+   .. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+      :classmethod:
+
+
+   .. py:method:: GetDataId() -> str
+
+
+   .. py:method:: IsValid() -> bool
+
+
+   .. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(name: str) -> None
+
+
+   .. py:method:: SetSelected() -> None
+
+
+   .. py:method:: Select(element_names: List[str]) -> None
+
+

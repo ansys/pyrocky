@@ -1,0 +1,67 @@
+:py:mod:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element`
+=================================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem
+
+
+
+
+.. py:class:: RAGridProcessElementItem
+
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_grid.KAGrid`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_subject_with_coloring_mixin._RASubjectWithColoringMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_calculators.RACustomCurveAndGridProperty`
+
+   .. py:attribute:: VALID_OPERATIONS
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: VALID_TIME_RANGE_DEFINITIONS
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: VALID_DOMAIN_RANGE
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:method:: GetGridFunction(grid_function_name, simulation_name: _typeshed.Incomplete | None = ..., translated: bool = ...)
+
+
+   .. py:method:: GetGeometry(time_step: str = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall.RAWall
+
+
+   .. py:method:: GetTimeStatistics() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatistics
+
+
+   .. py:method:: CreateTransientCurveOutputVariable(curve_name: str, operation: str = ..., time_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ..., domain_range: str = ..., initial_domain_range: float = ..., final_domain_range: float = ..., domain_unit: Union[str, None] = ...)
+
+
+   .. py:method:: CreateCurveOutputVariable(curve_name: str, operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...)
+
+
+   .. py:method:: CreateGridFunctionStatisticOutputVariable(grid_function_name: str, operation: str = ..., statistic_operation: str = ..., time_range: str = ..., initial_time_range: float = ..., final_time_range: float = ...) -> str
+
+
+   .. py:method:: GetOutputVariableValue(variable_name: str) -> barril.units.Scalar
+
+
+   .. py:method:: RemoveOutputVariable(variable_name: str) -> None
+
+
+   .. py:method:: RemoveProcess() -> None
+
+
+

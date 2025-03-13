@@ -1,0 +1,13 @@
+.. py:class:: RAContactToParticleProcess
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAUserProcess`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+

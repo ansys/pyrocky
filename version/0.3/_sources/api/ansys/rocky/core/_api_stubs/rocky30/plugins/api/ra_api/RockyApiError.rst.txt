@@ -1,0 +1,25 @@
+.. py:exception:: RockyApiError
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiError`
+
+   
+   Unspecified run-time error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!

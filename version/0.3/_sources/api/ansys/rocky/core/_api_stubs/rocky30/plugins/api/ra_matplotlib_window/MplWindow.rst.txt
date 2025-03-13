@@ -1,0 +1,28 @@
+.. py:class:: MplWindow(parent, central_editor_id)
+
+
+   Bases: :py:obj:`esss_qt10.qt_traits.QWidget`, :py:obj:`plugins10.plugins.mainwindow.mainwindowplugins.centralwidget.DefaultCentralEditor`
+
+   .. py:attribute:: frame
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: canvas
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: mpltoolbar
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:attribute:: vbl
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:method:: GetFigure()
+
+

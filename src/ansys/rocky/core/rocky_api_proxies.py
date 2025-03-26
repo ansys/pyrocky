@@ -44,6 +44,11 @@ class ApiElementProxy:
         self._pyro_api = pyro_api
         self._pool_id = pool_id
 
+    @property
+    def _api(self) -> Pyro5.api.Proxy:
+        """Access to the internal Pyro API proxy (in serializers)."""
+        return self._pyro_api
+
     def __getattr__(self, attr_name: str) -> object:
         def CallProxy(*args: tuple, **kwargs: dict) -> Any:
             return self._pyro_api.SendToApiElement(

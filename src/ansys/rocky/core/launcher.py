@@ -29,7 +29,12 @@ from typing import Optional, Union
 from Pyro5.errors import CommunicationError
 from ansys.tools.path import get_available_ansys_installations
 
-from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect, _thread_local
+from ansys.rocky.core.client import (
+    DEFAULT_SERVER_PORT,
+    RockyClient,
+    _thread_local,
+    connect,
+)
 from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
 
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242

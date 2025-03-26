@@ -23,10 +23,10 @@
 Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
+import threading
 import time
 from typing import TYPE_CHECKING, Final
 import warnings
-import threading
 
 import Pyro5.api
 from Pyro5.errors import CommunicationError
@@ -102,6 +102,7 @@ class RockyClient:
     rocky_api : Pyro5.api.Proxy
         Pyro5 proxy object for interacting with the Rocky app.
     """
+
     _thread_local = threading.local()
 
     def __init__(self, rocky_api):

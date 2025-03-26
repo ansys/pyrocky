@@ -86,6 +86,7 @@ def deserialize_api_element(classname: str, serialized: dict) -> ApiElementProxy
         Deserialized object.
     """
     from .client import RockyClient
+
     rocky_api = RockyClient._thread_local.rocky_api
     assert rocky_api is not None, "API Proxy not initialized"
     return ApiElementProxy(rocky_api, serialized["_api_element_id"])
@@ -108,6 +109,7 @@ def deserialize_api_list(classname: str, serialized: dict) -> ApiListProxy:
         Deserialized object.
     """
     from .client import RockyClient
+
     rocky_api = RockyClient._thread_local.rocky_api
     assert rocky_api is not None, "API Proxy not initialized"
     return ApiListProxy(rocky_api, serialized["_api_element_id"])
@@ -132,6 +134,7 @@ def deserialize_api_grid_function(
         Deserialized object.
     """
     from .client import RockyClient
+
     rocky_api = RockyClient._thread_local.rocky_api
     assert rocky_api is not None, "API Proxy not initialized"
     return ApiGridFunctionProxy(
@@ -158,6 +161,7 @@ def deserialize_api_exporttoolkit(
         Deserialized object.
     """
     from .client import RockyClient
+
     rocky_api = RockyClient._thread_local.rocky_api
     assert rocky_api is not None, "API Proxy not initialized"
     return ApiExportToolkitProxy(rocky_api)

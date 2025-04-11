@@ -113,6 +113,7 @@ def launch_rocky(
 
     client = connect(port=server_port)
     client._process = rocky_process
+    client._thread_local.rocky_api = client._api_adapter
     return client
 
 
@@ -193,6 +194,7 @@ def launch_freeflow(  # pragma: no cover
 
     client = connect(port=server_port)
     client._process = rocky_process
+    client._thread_local.rocky_api = client._api_adapter
     return client
 
 

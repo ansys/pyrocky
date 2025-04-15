@@ -1,0 +1,48 @@
+:py:mod:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_eulerian_statistics`
+================================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_eulerian_statistics
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_eulerian_statistics.RAEulerianStatistics
+
+
+
+
+.. py:class:: RAEulerianStatistics
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAUserProcess`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: GetDivisions()
+
+
+   .. py:method:: SetDivisions(divisions) -> None
+
+
+   .. py:method:: GetParticleGridFunctionNames()
+
+
+   .. py:method:: GetAvailableOperations()
+
+
+   .. py:method:: CreateEulerianGridFunction(operation_name, value_name, weight_name: _typeshed.Incomplete | None = ...)
+
+
+

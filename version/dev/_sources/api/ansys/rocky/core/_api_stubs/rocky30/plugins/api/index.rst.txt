@@ -1,0 +1,108 @@
+:py:mod:`ansys.rocky.core._api_stubs.rocky30.plugins.api`
+=========================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   conveyors/index.rst
+   motion/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   ra_addin_list/index.rst
+   ra_addin_process/index.rst
+   ra_addins/index.rst
+   ra_additional_features/index.rst
+   ra_airflow/index.rst
+   ra_api/index.rst
+   ra_base_geometry/index.rst
+   ra_base_subject_element/index.rst
+   ra_base_tagging/index.rst
+   ra_calculations/index.rst
+   ra_cfd_coupling/index.rst
+   ra_cfd_parameters/index.rst
+   ra_circular_surface/index.rst
+   ra_contact_data/index.rst
+   ra_contact_to_particle_process/index.rst
+   ra_contacts_data_mesh_coloring/index.rst
+   ra_coupled_wall/index.rst
+   ra_custom_calculators/index.rst
+   ra_custom_input/index.rst
+   ra_divisions_tagging/index.rst
+   ra_domain_settings/index.rst
+   ra_eulerian_statistics/index.rst
+   ra_export_toolkit/index.rst
+   ra_fluent_coupling/index.rst
+   ra_fluid_inlet/index.rst
+   ra_fluid_material/index.rst
+   ra_geometry_collection/index.rst
+   ra_grid_process_element/index.rst
+   ra_inlet/index.rst
+   ra_inlets_outlets_collection/index.rst
+   ra_input_variables/index.rst
+   ra_joints_data_mesh_coloring/index.rst
+   ra_list/index.rst
+   ra_macro_hooks/index.rst
+   ra_material_manager/index.rst
+   ra_materials_collection/index.rst
+   ra_materials_interaction/index.rst
+   ra_materials_interaction_collection/index.rst
+   ra_matplotlib_window/index.rst
+   ra_mesh_coloring/index.rst
+   ra_outlet/index.rst
+   ra_parametric_variables/index.rst
+   ra_particle/index.rst
+   ra_particle_assembly/index.rst
+   ra_particle_collection/index.rst
+   ra_particle_inlet/index.rst
+   ra_particle_inlet_properties/index.rst
+   ra_particle_joints_data/index.rst
+   ra_particle_time_selection_process/index.rst
+   ra_particle_to_contact_process/index.rst
+   ra_particles_process/index.rst
+   ra_physics/index.rst
+   ra_point_cloud/index.rst
+   ra_point_cloud_collection/index.rst
+   ra_process_element/index.rst
+   ra_project/index.rst
+   ra_rectangular_surface/index.rst
+   ra_region_of_interest_cube/index.rst
+   ra_region_of_interest_cylinder/index.rst
+   ra_regions_of_interest_collection/index.rst
+   ra_residence_time/index.rst
+   ra_semi_resolved_coupling/index.rst
+   ra_simulator_run/index.rst
+   ra_size_distribution/index.rst
+   ra_solid_material/index.rst
+   ra_sph_eulerian_solution/index.rst
+   ra_sph_settings/index.rst
+   ra_sph_tagging/index.rst
+   ra_streamlines_user_process/index.rst
+   ra_study/index.rst
+   ra_surface/index.rst
+   ra_system_coupling_wall/index.rst
+   ra_tagging/index.rst
+   ra_time_filter/index.rst
+   ra_time_range_filter/index.rst
+   ra_time_statistics/index.rst
+   ra_user_process_collection/index.rst
+   ra_volumetric_inlet/index.rst
+   ra_volumetric_inlet_properties/index.rst
+   ra_wall/index.rst
+   rocky_api_application/index.rst
+   rocky_api_deprecated_decorator/index.rst
+   rocky_api_plugin/index.rst
+   rocky_api_utils/index.rst
+
+

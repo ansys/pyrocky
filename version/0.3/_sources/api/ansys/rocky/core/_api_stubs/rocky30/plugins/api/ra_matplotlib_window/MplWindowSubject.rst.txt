@@ -1,0 +1,17 @@
+.. py:class:: MplWindowSubject
+
+
+   Bases: :py:obj:`plugins10.plugins.workspace.workspace_editor_subjects.workspace_editor_subjects.WorkspaceEditorSubject`
+
+   .. py:method:: GetGUIClass()
+
+
+   .. py:method:: GetIgnoreChanges()
+
+
+   .. py:method:: GetIgnoreAddRemove()
+
+
+   .. py:method:: GetIgnoreAdd()
+
+

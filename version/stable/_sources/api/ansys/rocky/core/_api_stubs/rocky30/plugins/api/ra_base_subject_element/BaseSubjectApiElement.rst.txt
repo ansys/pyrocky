@@ -1,0 +1,6 @@
+.. py:class:: BaseSubjectApiElement(base_subject)
+
+
+   .. py:method:: GetSubject()
+
+

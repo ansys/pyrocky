@@ -1,0 +1,25 @@
+.. py:exception:: ApiError
+
+
+   Bases: :py:obj:`RuntimeError`
+
+   
+   Unspecified run-time error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!

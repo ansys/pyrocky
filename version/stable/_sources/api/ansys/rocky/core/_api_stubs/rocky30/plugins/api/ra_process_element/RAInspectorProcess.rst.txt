@@ -1,0 +1,16 @@
+.. py:class:: RAInspectorProcess
+
+
+   Bases: :py:obj:`RAUserProcess`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: SetCellId(cell_id) -> None
+
+

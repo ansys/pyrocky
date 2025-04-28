@@ -1,7 +1,37 @@
-from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin import _WithMovementMixin
-from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry import RABaseGeometry as RABaseGeometry
-from rocky30.process.geometry.system_coupling_wall import SystemCouplingWall as SystemCouplingWall
+# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 from typing import List, Optional, Union
+
+from rocky30.process.geometry.system_coupling_wall import (
+    SystemCouplingWall as SystemCouplingWall,
+)
+
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin import (
+    _WithMovementMixin,
+)
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry import (
+    RABaseGeometry as RABaseGeometry,
+)
 
 class RASystemCouplingWall(RABaseGeometry, _WithMovementMixin):
     @classmethod
@@ -20,14 +50,18 @@ class RASystemCouplingWall(RABaseGeometry, _WithMovementMixin):
     def DisableStructuralCouplingType(self) -> None: ...
     def IsStructuralCouplingTypeEnabled(self) -> bool: ...
     def GetSurfaceTensionContactAngle(self, unit: Optional[str] = ...) -> float: ...
-    def SetSurfaceTensionContactAngle(self, value: Union[str, float], unit: Optional[str] = ...) -> None: ...
+    def SetSurfaceTensionContactAngle(
+        self, value: Union[str, float], unit: Optional[str] = ...
+    ) -> None: ...
     def GetThermalCouplingTypeEnabled(self) -> bool: ...
     def SetThermalCouplingTypeEnabled(self, value: bool) -> None: ...
     def EnableThermalCouplingType(self) -> None: ...
     def DisableThermalCouplingType(self) -> None: ...
     def IsThermalCouplingTypeEnabled(self) -> bool: ...
     def GetTriangleSize(self, unit: Optional[str] = ...) -> float: ...
-    def SetTriangleSize(self, value: Union[str, float], unit: Optional[str] = ...) -> None: ...
+    def SetTriangleSize(
+        self, value: Union[str, float], unit: Optional[str] = ...
+    ) -> None: ...
     def GetMaterial(self): ...
     def SetMaterial(self, value) -> None: ...
     def GetAvailableMaterials(self): ...

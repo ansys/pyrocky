@@ -22,6 +22,9 @@
 
 from typing import Optional, Union
 
+from rocky30.models.input.volume_fill import (
+    VolumeFillPropertiesList as VolumeFillPropertiesList,
+)
 from rocky30.models.input.volume_fill import VolumeFillProperties as VolumeFillProperties
 
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
@@ -31,6 +34,9 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins import (
     ElementWithAddins as ElementWithAddins,
 )
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list import RAList as RAList
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle import (
+    RAParticle as RAParticle,
+)
 
 class RAVolumetricInletProperties(ApiElementItem, ElementWithAddins):
     @classmethod
@@ -49,6 +55,6 @@ class RAVolumetricInletProperties(ApiElementItem, ElementWithAddins):
 
 class RAVolumetricInletPropertiesList(RAList[RAVolumetricInletProperties]):
     @classmethod
-    def GetWrappedClass(self): ...
+    def GetWrappedClass(self) -> type[VolumeFillPropertiesList]: ...
     @classmethod
-    def GetClassName(self): ...
+    def GetClassName(self) -> str: ...

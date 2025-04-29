@@ -24,8 +24,10 @@ from collections.abc import Iterable
 from typing import List, Optional, Union
 
 from _typeshed import Incomplete
-from coilib50.process import IProcess as IProcess
 
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api import (
+    RockyApiError as RockyApiError,
+)
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling import (
     RABaseCFDCoupling as RABaseCFDCoupling,
 )

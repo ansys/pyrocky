@@ -20,6 +20,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from rocky30.plugins.addins.model.property_list import (
+    AddinPropertiesList as AddinPropertiesList,
+)
+from rocky30.plugins.addins.model.property_set import PropertySet as PropertySet
+
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
     ApiElementItem,
 )
@@ -30,8 +35,12 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list import RAList as RA
 
 class RAModulePropertyListItem(ApiElementItem, ElementWithAddins):
     @classmethod
-    def GetWrappedClass(self): ...
+    def GetWrappedClass(self) -> type[PropertySet]: ...
     @classmethod
-    def GetClassName(self): ...
+    def GetClassName(self) -> str: ...
 
-class RAModulePropertyList(RAList[RAModulePropertyListItem]): ...
+class RAModulePropertyList(RAList[RAModulePropertyListItem]):
+    @classmethod
+    def GetWrappedClass(self) -> type[AddinPropertiesList]: ...
+    @classmethod
+    def GetClassName(self) -> str: ...

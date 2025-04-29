@@ -28,10 +28,12 @@ from ben10.element_function.semantic_association import (
 from ben10.element_function.semantic_association_crossed_curve import (
     SemanticAssociationCrossedCurve as SemanticAssociationCrossedCurve,
 )
+from coilib50.time.time_step_interface import ITimeStep as ITimeStep
 from kraken20.plugins.api.ka_grid import KAGrid
 from rocky30.plugins.curve_calculation.grid_function.pre_calculated_grid_function_calculators import (
     Rocky30PreCalculatedGridFunctionCalculation as Rocky30PreCalculatedGridFunctionCalculation,
 )
+from sci20.core.geometry import IGeometry as IGeometry
 
 from ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_subject_with_coloring_mixin import (
     _RASubjectWithColoringMixin,
@@ -53,7 +55,7 @@ class RAGridProcessElementItem(
         simulation_name: Incomplete | None = ...,
         translated: bool = ...,
     ): ...
-    def GetGeometry(self, time_step: str = ...) -> RAWall: ...
+    def GetGeometry(self, time_step: Union[str, int, ITimeStep] = ...) -> IGeometry: ...
     def GetTimeStatistics(self) -> RATimeStatistics: ...
     VALID_OPERATIONS: Incomplete
     VALID_TIME_RANGE_DEFINITIONS: Incomplete

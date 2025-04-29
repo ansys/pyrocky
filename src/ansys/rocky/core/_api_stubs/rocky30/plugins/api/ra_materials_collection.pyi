@@ -33,6 +33,9 @@ from rocky30.models.naming import CreateNewName as CreateNewName
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
     ApiElementItem,
 )
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api import (
+    RockyApiError as RockyApiError,
+)
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material import (
     RAFluidMaterial as RAFluidMaterial,
 )

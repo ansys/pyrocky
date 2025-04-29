@@ -22,6 +22,10 @@
 
 from plugins10core.plugin import Plugin
 
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import (
+    RACylinderGroup as RACylinderGroup,
+)
+
 class RockyModels:
     def GetWrapperClasses(self): ...
     def GetExtraAPIClasses(self): ...

@@ -20,6 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+# (C) 2024 ANSYS, Inc. Unauthorized use, distribution, or duplication is prohibited.
 from collections.abc import Generator
 from typing import Generic, TypeVar
 

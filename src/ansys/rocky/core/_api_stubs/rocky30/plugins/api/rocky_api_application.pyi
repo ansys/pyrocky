@@ -24,6 +24,9 @@ from pathlib import Path
 from typing import Union
 
 from kraken20.plugins.api.ka_application import KAApplication
+from kraken20.plugins.api.ka_workspace_window import (
+    KAWorkspaceWindow as KAWorkspaceWindow,
+)
 from sci20.app.base_process import BaseProcess as BaseProcess
 
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
@@ -45,6 +48,9 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project import (
     RAProject as RAProject,
 )
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_study import RAStudy as RAStudy
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_deprecated_decorator import (
+    ApiDeprecated as ApiDeprecated,
+)
 
 class RockyApiApplication(KAApplication):
     def CreateProject(self) -> RAProject: ...

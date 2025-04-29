@@ -22,14 +22,30 @@
 
 from _typeshed import Incomplete
 from coilib50.process import Process as Process
+from kraken20.plugins.api.ka_element_item import KAElementItem as KAElementItem
 from rocky30.models.rocky_model_type import MatchModelType as MatchModelType
 from rocky30.models.rocky_model_type import RockyModelTypeEnum as RockyModelTypeEnum
+from rocky30.plugins.user_process.process_factories.group_process_factory_constants import (
+    CUBE_GROUP_FACTORY_COMMAND_ID as CUBE_GROUP_FACTORY_COMMAND_ID,
+)
+from rocky30.plugins.user_process.process_factories.group_process_factory_constants import (
+    CYLINDER_GROUP_FACTORY_COMMAND_ID as CYLINDER_GROUP_FACTORY_COMMAND_ID,
+)
 
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
     ApiElementItem,
 )
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api import (
     RockyApiError as RockyApiError,
+)
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element import (
+    RAGridProcessElementItem as RAGridProcessElementItem,
+)
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import (
+    RACubeGroup as RACubeGroup,
+)
+from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import (
+    RACylinderGroup as RACylinderGroup,
 )
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import (
     RAPolyhedronProcess as RAPolyhedronProcess,
@@ -63,6 +79,25 @@ class RAUserProcessCollection(ApiElementItem):
     def CreateInspectorProcess(self, parent, name: Incomplete | None = ...): ...
     def GetPlaneProcessNames(self): ...
     def GetInspectorProcessNames(self): ...
+    def CreateCylinderGroupProcess(
+        self,
+        parent_processes,
+        name: Incomplete | None = ...,
+        center: Incomplete | None = ...,
+        size: Incomplete | None = ...,
+        rotation: Incomplete | None = ...,
+        internal_factor: Incomplete | None = ...,
+        initial_angle: Incomplete | None = ...,
+        final_angle: Incomplete | None = ...,
+    ) -> RACylinderGroup: ...
+    def CreateCubeGroupProcess(
+        self,
+        parent_processes,
+        name: Incomplete | None = ...,
+        center: Incomplete | None = ...,
+        magnitude: Incomplete | None = ...,
+        rotation: Incomplete | None = ...,
+    ) -> RACubeGroup: ...
     def CreateCubeProcess(
         self,
         parent,
@@ -70,6 +105,7 @@ class RAUserProcessCollection(ApiElementItem):
         center: Incomplete | None = ...,
         magnitude: Incomplete | None = ...,
         rotation: Incomplete | None = ...,
+        parent_pool_id: Incomplete | None = ...,
     ): ...
     def GetCubeProcessNames(self): ...
     def GetTrajectoryProcessNames(self): ...

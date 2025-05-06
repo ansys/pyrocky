@@ -23,6 +23,7 @@
 Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
+import threading
 import time
 from typing import TYPE_CHECKING, Final
 import warnings
@@ -39,7 +40,7 @@ if TYPE_CHECKING:
     )
 
 DEFAULT_SERVER_PORT: Final[int] = 50615
-_ROCKY_API: Pyro5.api.Proxy | None = None
+_thread_local = threading.local()
 _CONNECT_TO_SERVER_TIMEOUT = 60
 
 
@@ -73,19 +74,15 @@ def connect(host: str = "localhost", port: int = DEFAULT_SERVER_PORT) -> "RockyC
         Client object for interacting with the Rocky/Freeflow app.
     """
     uri = f"PYRO:rocky.api@{host}:{port}"
-    global _ROCKY_API
-
-    if _ROCKY_API is None:
-        register_proxies()
-
-    _ROCKY_API = Pyro5.api.Proxy(uri)
+    register_proxies()
+    _thread_local.rocky_api = Pyro5.api.Proxy(uri)
 
     # Check if the connection succeeded
     now = time.time()
     while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
         try:
-            _ROCKY_API._pyroBind()
-            assert _ROCKY_API._pyroConnection is not None
+            _thread_local.rocky_api._pyroBind()
+            assert _thread_local.rocky_api._pyroConnection is not None
         except (CommunicationError, AssertionError):
             time.sleep(1)
         else:
@@ -93,7 +90,7 @@ def connect(host: str = "localhost", port: int = DEFAULT_SERVER_PORT) -> "RockyC
     else:
         raise PyRockyError("Could not connect to the remote server: timed out")
 
-    rocky_client = RockyClient(_ROCKY_API)
+    rocky_client = RockyClient(_thread_local.rocky_api)
     return rocky_client
 
 
@@ -106,12 +103,15 @@ class RockyClient:
         Pyro5 proxy object for interacting with the Rocky app.
     """
 
+    _thread_local = _thread_local
+
     def __init__(self, rocky_api):
         self._api_adapter = rocky_api
+        self._thread_local.rocky_api = rocky_api
 
     @property
-    def api(self) -> "RockyApiApplication":
-        return self._api_adapter
+    def api(self):
+        return self._thread_local.rocky_api
 
     def close(self):
         self._api_adapter.Exit()

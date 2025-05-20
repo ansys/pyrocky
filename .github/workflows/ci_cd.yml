@@ -137,10 +137,10 @@ jobs:
 
   docs_build:
     name: Build Documentation
-    runs-on: [self-hosted, Windows, pyrocky]
+    runs-on: [self-hosted, Linux, pyrocky]
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'docs:skip')
+      contains(github.event.pull_request.labels.*.name, 'docs') ||
+      github.ref == 'refs/heads/main'
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
@@ -154,18 +154,17 @@ jobs:
 
       - name: Create Python venv
         run: |
-          python -m venv .venv
+          python -m venv .venv-docs
 
       - name: Install packages for documentation build
         run: |
-          .\.venv\Scripts\Activate.bat
-          pip install msvc-runtime
+          source .venv-docs/bin/activate
           pip install .[doc]
 
       - name: Build Source Documentation (HTML)
         run: |
-          .\.venv\Scripts\Activate.bat
-          doc\make.bat html
+          source .venv-docs/bin/activate
+          make -C doc/ html
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v4
@@ -176,8 +175,8 @@ jobs:
 
       - name: Build Source Documentation (PDF)
         run: |
-          .\.venv\Scripts\Activate.bat
-          doc\make.bat pdf
+          source .venv-docs/bin/activate
+          make -C doc/ pdf
 
       - name: Upload PDF documentation
         uses: actions/upload-artifact@v4

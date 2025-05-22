@@ -114,6 +114,7 @@ class RockyClient:
         return self._api_adapter
 
     def close(self):
+        self._api_adapter.CloseProject(check_save_state=False)
         self._api_adapter.Exit()
 
 

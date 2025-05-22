@@ -24,6 +24,7 @@ import contextlib
 from pathlib import Path
 import subprocess
 import sys
+import time
 from typing import Optional, Union
 
 from Pyro5.errors import CommunicationError
@@ -196,7 +197,7 @@ def launch_freeflow(  # pragma: no cover
     return client
 
 
-def _is_port_busy(port: int) -> bool:
+def _is_port_busy(port: int, timeout: int = 10) -> bool:
     """
     Check if there is already a Rocky server running.
 
@@ -204,6 +205,8 @@ def _is_port_busy(port: int) -> bool:
     ----------
     port : int
         Port to check.
+    timeout : int
+        How long to wait for the port to be freed.
 
     Returns
     -------
@@ -212,8 +215,13 @@ def _is_port_busy(port: int) -> bool:
     """
     import socket
 
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        return s.connect_ex(("localhost", port)) == 0
+    for _ in range(timeout):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            if s.connect_ex(("localhost", port)) == 0:
+                time.sleep(1)
+            else:
+                return False
+    return True
 
 
 def _find_executable(

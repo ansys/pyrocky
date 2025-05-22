@@ -114,6 +114,9 @@ class RockyClient:
         return self._api_adapter
 
     def close(self):
+        if self._api_adapter.GetProject() is not None:
+            # Make sure "Exit" won't be blocked by the "Unsaved Changes" dialog.
+            self._api_adapter.CloseProject(check_save_state=False)
         self._api_adapter.Exit()
 
 

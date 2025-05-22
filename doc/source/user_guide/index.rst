@@ -4,10 +4,8 @@
 User guide
 ==========
 
-.. vale off
 Use Rocky PrePost Scripting
 ---------------------------
-.. vale on
 
 In its current form, PyRocky is a thin layer that enables remote calls to Rocky using the
 PrePost Scripting API. This API is available through the ``RockyClient.api`` object. For

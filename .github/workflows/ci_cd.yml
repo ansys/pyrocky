@@ -164,7 +164,7 @@ jobs:
       - name: Build Source Documentation (HTML)
         run: |
           source .venv-docs/bin/activate
-          make -C doc/ html
+          make -C doc/ html --quiet
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v4
@@ -176,7 +176,7 @@ jobs:
       - name: Build Source Documentation (PDF)
         run: |
           source .venv-docs/bin/activate
-          make -C doc/ pdf
+          make -C doc/ pdf --quiet
 
       - name: Upload PDF documentation
         uses: actions/upload-artifact@v4

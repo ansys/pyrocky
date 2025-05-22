@@ -167,3 +167,7 @@ ax2.legend(loc="upper left")
 plt.draw()
 
 rocky.close()
+
+import time
+
+time.sleep(5)

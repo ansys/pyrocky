@@ -25,7 +25,6 @@ from pathlib import Path
 import subprocess
 import sys
 import time
-from typing import Optional, Union
 
 from Pyro5.errors import CommunicationError
 from ansys.tools.path import get_available_ansys_installations
@@ -38,8 +37,8 @@ COMPANY = "Ansys"
 
 
 def launch_rocky(
-    rocky_exe: Optional[Union[Path, str]] = None,
-    rocky_version: Optional[int] = None,
+    rocky_exe: Path | str | None = None,
+    rocky_version: int | None = None,
     *,
     headless: bool = True,
     server_port: int = DEFAULT_SERVER_PORT,
@@ -118,8 +117,8 @@ def launch_rocky(
 
 
 def launch_freeflow(  # pragma: no cover
-    freeflow_exe: Optional[Union[Path, str]] = None,
-    freeflow_version: Optional[int] = None,
+    freeflow_exe: Path | str | None = None,
+    freeflow_version: int | None = None,
     *,
     headless: bool = True,
     server_port: int = DEFAULT_SERVER_PORT,
@@ -226,7 +225,7 @@ def _is_port_busy(port: int, timeout: int = 10) -> bool:
 
 def _find_executable(
     product_name: str,
-    version: Optional[int],
+    version: int | None,
 ) -> Path:
     """
     This function will search for the Rocky/Freeflow executable
@@ -261,7 +260,7 @@ def _find_executable(
 
 def _get_exec_using_winreg(
     product_name: str,
-    version: Optional[str] = None,
+    version: str | None = None,
 ) -> Path:
     """
     This function will search for the Rocky/Freeflow executable using the
@@ -301,8 +300,8 @@ def _get_exec_using_winreg(
 
 def _get_exec_using_tools_path(  # pragma: no cover
     product_name: str,
-    version: Optional[int] = None,
-) -> Optional[Path]:
+    version: int | None = None,
+) -> Path | None:
     """
     This function will search for the Rocky/Freeflow executable using the
     ansys-tools-path module. Currently, we are using this approach only

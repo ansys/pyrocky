@@ -22,7 +22,6 @@
 """Helper module to download project code examples."""
 import logging
 import os
-from typing import Optional
 
 try:
     import requests
@@ -40,7 +39,7 @@ ANSYS_EXAMPLE_DATA_REPO = "https://github.com/ansys/example-data/raw/master"
 
 def _get_file_url(
     file_name: str,
-    directory: Optional[str] = None,
+    directory: str | None = None,
     file_host: str = ANSYS_EXAMPLE_DATA_REPO,
 ) -> str:
     """Get a file using a URL.
@@ -112,7 +111,7 @@ def _retrieve_file(
 def download_file(
     save_path: str,
     file_name: str,
-    directory: Optional[str] = None,
+    directory: str | None = None,
 ) -> str:
     """Download an example file from the Ansys example data repository.
 

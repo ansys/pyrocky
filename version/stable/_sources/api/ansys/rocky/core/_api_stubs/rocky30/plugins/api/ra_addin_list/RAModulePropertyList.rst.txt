@@ -1,0 +1,5 @@
+.. py:class:: RAModulePropertyList
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`RAModulePropertyListItem`\ ]
+

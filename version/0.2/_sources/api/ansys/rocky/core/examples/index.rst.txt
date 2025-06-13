@@ -1,0 +1,144 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core.examples
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: examples
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~download_file`
+            - Download an example file from the Ansys example data repository.
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~logger`
+            - 
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ANSYS_EXAMPLE_DATA_REPO`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Helper module to download project code examples.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: download_file(save_path: str, file_name: str, directory: Optional[str] = None) -> str
+
+   
+   Download an example file from the Ansys example data repository.
+
+
+   :Parameters:
+
+       **save_path** : :class:`python:str`
+           Path to download the file to.
+
+       **file_name** : :class:`python:str`
+           Name of the file.
+
+       **directory** : :class:`python:str`, :obj:`optional`
+           Name of the directory in the Ansys example data repository where the file
+           is located. If a directory is not specified, this method looks for the file
+           in the root directory of the repository.
+
+   :Returns:
+
+       :class:`python:str`
+           Path of the downloaded file.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> from ansys.rocky.core.examples import download_file
+   >>> file_path = download_file('<path_to_save>', 'bracket.iges', 'geometry')
+   '<path_to_save>/bracket.iges'
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: ANSYS_EXAMPLE_DATA_REPO
+   :value: 'https://github.com/ansys/example-data/raw/master'
+
+   
+
+.. py:data:: logger
+
+   
+
+
+

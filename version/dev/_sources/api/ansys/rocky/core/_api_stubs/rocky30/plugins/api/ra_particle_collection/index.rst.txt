@@ -1,0 +1,41 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_collection
+======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_collection
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_collection.RAParticleCollection
+
+
+Module Contents
+---------------
+
+.. py:class:: RAParticleCollection
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle.RAParticle`\ ]
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetParticleNames() -> list[str]
+
+
+   .. py:method:: GetParticle(particle_name: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle.RAParticle
+
+
+   .. py:method:: New() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle.RAParticle
+
+

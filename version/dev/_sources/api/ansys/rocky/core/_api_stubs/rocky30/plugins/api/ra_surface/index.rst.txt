@@ -1,0 +1,59 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_surface
+==========================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_surface
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_surface.RASurface
+
+
+Module Contents
+---------------
+
+.. py:class:: RASurface
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[object]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: HasMotionFrame() -> bool
+
+
+   .. py:method:: GetTranslation(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetTranslation(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInvertNormal() -> bool
+
+
+   .. py:method:: SetInvertNormal(value: bool) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetPivotPoint(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetPivotPoint(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+

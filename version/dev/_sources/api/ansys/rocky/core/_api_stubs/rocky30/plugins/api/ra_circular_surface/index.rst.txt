@@ -1,0 +1,59 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_circular_surface
+===================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_circular_surface
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_circular_surface.RACircularSurface
+
+
+Module Contents
+---------------
+
+.. py:class:: RACircularSurface
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[object]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: HasMotionFrame() -> bool
+
+
+   .. py:method:: GetCenter(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetCenter(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMinRadius(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMinRadius(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetMaxRadius(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMaxRadius(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

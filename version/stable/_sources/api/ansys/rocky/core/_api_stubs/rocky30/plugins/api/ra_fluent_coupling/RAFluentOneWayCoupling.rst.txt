@@ -1,0 +1,52 @@
+.. py:class:: RAFluentOneWayCoupling
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: SetupStoreFiles(filename) -> None
+
+
+   .. py:method:: GetAvailableCoupledBoundaryNames() -> collections.abc.Iterable[str]
+
+
+   .. py:method:: CreateCoupledBoundaries(coupled_boundary_names: list[str]) -> None
+
+
+   .. py:method:: GetIsOneWayPeriodic() -> bool
+
+
+   .. py:method:: SetIsOneWayPeriodic(value: bool) -> None
+
+
+   .. py:method:: GetOverwriteCfdUpdateDistance() -> bool
+
+
+   .. py:method:: SetOverwriteCfdUpdateDistance(value: bool) -> None
+
+
+   .. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetUseTurbulentDispersion() -> bool
+
+
+   .. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+
+   .. py:method:: GetUserCfdUpdateDistance(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetUserCfdUpdateDistance(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

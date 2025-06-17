@@ -34,6 +34,7 @@ from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
 VERSION = int(os.getenv("ANSYS_VERSION", "252"))
 
+
 def close_pyro_session(client):
     """Closes the supplied Pyro client. Raise a "PyRockyError" if it is not possible to
     close the client within the expected time."""
@@ -196,11 +197,11 @@ def test_pyrocky_launch_multiple_servers(request, rocky_version):
     """
     Test that start multiple rocky servers is not allowed.
     """
-    rocky = pyrocky.launch_rocky(rocky_version=rocky_version)
+    rocky = pyrocky.launch_rocky(rocky_version=rocky_version, headless=False)
     request.addfinalizer(partial(close_pyro_session, rocky))
 
     with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
-        pyrocky.launch_rocky(rocky_version=rocky_version)
+        pyrocky.launch_rocky(rocky_version=rocky_version, headless=False)
 
 
 def test_close_existing_session(request, rocky_version):

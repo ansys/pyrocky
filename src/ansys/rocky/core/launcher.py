@@ -153,19 +153,6 @@ def launch_freeflow(  # pragma: no cover
     RockyClient
         Rocky client instance connected to the launched FreeFlow app.
     """
-    if _is_port_busy(server_port):
-        if close_existing:
-            # Will try to connect to an existing session using the
-            # given server port and attempt to close it.
-            client = connect(port=server_port)
-            try:
-                client.close()
-            except CommunicationError:
-                # Maybe the session closed in the meantime so we just pass
-                pass
-        else:
-            raise FreeflowLaunchError(f"Port {server_port} is already in use.")
-
     if freeflow_version is not None:
         if freeflow_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
             raise ValueError(
@@ -181,6 +168,19 @@ def launch_freeflow(  # pragma: no cover
 
     if freeflow_exe is None or not freeflow_exe.is_file():
         raise FileNotFoundError(f"FreeFlow executable is not found.")
+
+    if _is_port_busy(server_port):
+        if close_existing:
+            # Will try to connect to an existing session using the
+            # given server port and attempt to close it.
+            client = connect(port=server_port)
+            try:
+                client.close()
+            except CommunicationError:
+                # Maybe the session closed in the meantime so we just pass
+                pass
+        else:
+            raise FreeflowLaunchError(f"Port {server_port} is already in use.")
 
     cmd = [str(freeflow_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:

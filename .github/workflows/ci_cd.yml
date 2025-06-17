@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  MAIN_PYTHON_VERSION : '3.12'
+  MAIN_PYTHON_VERSION : '3.13'
   LIBRARY_NAME: 'ansys-rocky-core'
   DOCUMENTATION_CNAME: 'rocky.docs.pyansys.com'
   DOC_DEPLOYMENT_IMAGE_TAG: v24.1.0
@@ -81,14 +81,11 @@ jobs:
 
   tests_setup_windows:
     name: Windows Tests Setup
-    runs-on:
-      - self-hosted
-      - Windows
-      - pyrocky
+    runs-on: [self-hosted, Windows, pyrocky]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
-    timeout-minutes: 10
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v4
@@ -105,31 +102,28 @@ jobs:
       - name: Install packages for tests (Windows)
         run: |
           .\.venv\Scripts\Activate.ps1
+
           python -m pip install --upgrade pip
           pip install .[tests]
 
   tests_run_windows:
     name: Windows Tests
     needs: tests_setup_windows
-    runs-on:
-      - self-hosted
-      - Windows
-      - pyrocky
+    runs-on: [self-hosted, Windows, pyrocky]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     timeout-minutes: 10
     env:
-      ANSYS_VERSION: 252
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
-      PYTEST_ADDOPTS: "--cov=ansys.rocky --cov-report html:.cov/html --cov-report xml:.cov/xml --cov-report term"
 
     steps:
       - name: Run unit tests (Windows)
         run: |
           .\.venv\Scripts\Activate.ps1
-          pytest tests --rocky-version ${{ env.ANSYS_VERSION }} --freeflow-version ${{ env.ANSYS_VERSION }}
 
+          pytest tests --cov=ansys.rocky `
+            --cov-report html:.cov/html --cov-report xml:.cov/xml --cov-report term
       - uses: codecov/codecov-action@v4
         name: 'Upload coverage to CodeCov'
         env:
@@ -140,14 +134,11 @@ jobs:
 
   tests_setup_linux:
     name: Linux Tests Setup
-    runs-on:
-      - self-hosted
-      - Linux
-      - pyrocky
+    runs-on: [self-hosted, Linux, pyrocky]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
-    timeout-minutes: 10
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v4
@@ -170,10 +161,7 @@ jobs:
   tests_run_linux:
     name: Linux v${{ matrix.ansys-version }} Tests
     needs: tests_setup_linux
-    runs-on:
-      - self-hosted
-      - Linux
-      - pyrocky
+    runs-on: [self-hosted, Linux, pyrocky]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')

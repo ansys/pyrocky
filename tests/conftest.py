@@ -26,13 +26,13 @@ def pytest_addoption(parser):
     parser.addoption(
         "--rocky-version",
         action="store",
-        default="251",
+        default="252",
         help="The version of Rocky to be launched.",
     )
     parser.addoption(
         "--freeflow-version",
         action="store",
-        default="251",
+        default="252",
         help="The version of FreeFlow to be launched.",
     )
 

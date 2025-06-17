@@ -22,8 +22,8 @@
 """Module that exposes functions to launch a Rocky application session."""
 import contextlib
 from pathlib import Path
-import subprocess
 import socket
+import subprocess
 import sys
 import time
 
@@ -227,17 +227,14 @@ def _is_port_busy(port: int, timeout: int = 10) -> bool:
     bool
         ``True`` if the port is busy, ``False`` otherwise.
     """
-    for _ in range(timeout):
-        # Pyro supports IPv6, and it's up to the operating system to decide, unless we set
-        # "PREFER_IP_VERSION" to a specific version (4 or 6). So, we need to check for IPv4
-        # and IPv6 connections.
-        for address_family in [socket.AF_INET, socket.AF_INET6]:
-            with socket.socket(address_family, socket.SOCK_STREAM) as s:
-                if s.connect_ex(("localhost", port)) == 0:
-                    time.sleep(1)
-                else:
-                    return False
-    return True
+    # Pyro supports IPv6, and it's up to the operating system to decide, unless we set
+    # "PREFER_IP_VERSION" to a specific version (4 or 6). So, we need to check for IPv4
+    # and IPv6 connections.
+    for address_family in [socket.AF_INET, socket.AF_INET6]:
+        with socket.socket(address_family, socket.SOCK_STREAM) as s:
+            if s.connect_ex(("localhost", port)) == 0:
+                return True
+    return False
 
 
 def _find_executable(

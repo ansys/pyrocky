@@ -197,11 +197,11 @@ def test_pyrocky_launch_multiple_servers(request, rocky_version):
     """
     Test that start multiple rocky servers is not allowed.
     """
-    rocky = pyrocky.launch_rocky(rocky_version=rocky_version, headless=False)
+    rocky = pyrocky.launch_rocky(rocky_version=rocky_version)
     request.addfinalizer(partial(close_pyro_session, rocky))
 
     with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
-        pyrocky.launch_rocky(rocky_version=rocky_version, headless=False)
+        pyrocky.launch_rocky(rocky_version=rocky_version)
 
 
 def test_close_existing_session(request, rocky_version):

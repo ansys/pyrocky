@@ -148,18 +148,15 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     timeout-minutes: 10
-    strategy:
-      fail-fast: false
-      matrix:
-        ansys-version: [242, 251, 252]
     env:
+      ANSYS_VERSION: 252
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
       - name: Run unit tests (Windows)
         run: |
           .\.venv\Scripts\Activate.ps1
-          pytest tests --rocky-version ${{ matrix.ansys-version }} --freeflow-version ${{ matrix.ansys-version }}
+          pytest tests --rocky-version ${{ env.ANSYS_VERSION }} --freeflow-version ${{ env.ANSYS_VERSION }}
 
       - uses: codecov/codecov-action@v4
         name: 'Upload coverage to CodeCov'

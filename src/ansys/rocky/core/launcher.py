@@ -29,7 +29,7 @@ import time
 from Pyro5.errors import CommunicationError
 from ansys.tools.path import get_available_ansys_installations
 
-from ansys.rocky.core.client import DEFAULT_SERVER_PORT, RockyClient, connect
+from ansys.rocky.core.client import PYROCKY_DEFAULT_PORT, RockyClient, connect
 from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
 
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
@@ -41,7 +41,7 @@ def launch_rocky(
     rocky_version: int | None = None,
     *,
     headless: bool = True,
-    server_port: int = DEFAULT_SERVER_PORT,
+    server_port: int = PYROCKY_DEFAULT_PORT,
     close_existing: bool = False,
 ) -> RockyClient:
     """
@@ -121,7 +121,7 @@ def launch_freeflow(  # pragma: no cover
     freeflow_version: int | None = None,
     *,
     headless: bool = True,
-    server_port: int = DEFAULT_SERVER_PORT,
+    server_port: int = PYROCKY_DEFAULT_PORT,
     close_existing: bool = False,
 ) -> RockyClient:
     """

@@ -21,6 +21,7 @@
 # SOFTWARE.
 import hashlib
 import os
+import time
 
 import pytest
 
@@ -32,8 +33,6 @@ from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
 VERSION = int(os.getenv("ANSYS_VERSION", "261"))
 
-FREEFLOW_VERSION = 261
-
 
 @pytest.fixture()
 def rocky_session():
@@ -44,7 +43,7 @@ def rocky_session():
 
 @pytest.fixture()
 def freeflow_session():
-    freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+    freeflow = pyrocky.launch_freeflow(freeflow_version=VERSION)
     yield freeflow
     freeflow.close()
 
@@ -118,7 +117,8 @@ def test_minimal_simulation(tmp_path, request):
         expected_rocky_version = VERSION
 
     session_uid = hashlib.md5(f"localhost:{PYROCKY_DEFAULT_PORT}".encode()).hexdigest()
-    rocky_version = _get_numerical_version(ROCKY_API_PROXIES[session_uid])
+    key = session_uid if VERSION >= 261 else 'old_version'
+    rocky_version = _get_numerical_version(ROCKY_API_PROXIES[key])
     assert rocky_version == expected_rocky_version
 
     study = create_basic_project_with_results(
@@ -188,6 +188,7 @@ def test_pyrocky_launch_multiple_servers():
 
     # Emulating Rocky server already running by binding socket to the server address.
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        time.sleep(1)  # Wait to ensure the address is properly released before binding
         s.bind(("localhost", PYROCKY_DEFAULT_PORT))
         s.listen(10)
 
@@ -219,9 +220,9 @@ def test_close_freeflow_existing_session():
     """
     from ansys.rocky.core.client import _get_numerical_version
 
-    pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+    pyrocky.launch_freeflow(freeflow_version=VERSION)
     freeflow_two = pyrocky.launch_freeflow(
-        freeflow_version=FREEFLOW_VERSION, close_existing=True
+        freeflow_version=VERSION, close_existing=True
     )
 
     assert _get_numerical_version(freeflow_two.api) is not None
@@ -247,14 +248,14 @@ def test_freeflow_launcher(freeflow_session):
 
 def test_freeflow_launcher_with_specified_version(request):
     """Test to check if freeflow launcher works when a version is specified"""
-    freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+    from ansys.rocky.core.client import ROCKY_API_PROXIES, _get_numerical_version
+    freeflow = pyrocky.launch_freeflow(freeflow_version=VERSION)
     request.addfinalizer(freeflow.close)
 
-    from ansys.rocky.core.client import ROCKY_API_PROXIES, _get_numerical_version
-
     session_uid = hashlib.md5(f"localhost:{PYROCKY_DEFAULT_PORT}".encode()).hexdigest()
-    freeflow_version = _get_numerical_version(ROCKY_API_PROXIES[session_uid])
-    assert freeflow_version == FREEFLOW_VERSION
+    key = session_uid if VERSION >= 261 else 'old_version'
+    freeflow_version = _get_numerical_version(ROCKY_API_PROXIES[key])
+    assert freeflow_version == VERSION
 
 
 def test_no_valid_local_winreg_exe():

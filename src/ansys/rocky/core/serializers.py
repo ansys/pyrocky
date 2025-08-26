@@ -61,7 +61,8 @@ def _ApiElementProxySerializer(obj: ApiElementProxy) -> dict:
 
     serialized = ApiElementProxy.serialize(obj)
     session_uid = serialized.get("_session_uid")
-    proxy = ROCKY_API_PROXIES.get(session_uid, OLD_VERSION_PROXY_KEY)
+    old_version_proxy = ROCKY_API_PROXIES.get(OLD_VERSION_PROXY_KEY)
+    proxy = ROCKY_API_PROXIES.get(session_uid, old_version_proxy)
     rocky_version = _get_numerical_version(proxy)
 
     if rocky_version is not None:

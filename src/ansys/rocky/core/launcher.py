@@ -244,7 +244,7 @@ def _find_executable(
     """
     if sys.platform == "win32":
         if version is not None:
-            if product_name == "Rocky":
+            if product_name == "Rocky" or version >= 261:
                 version = f"{version // 10}.{version % 10}.0"
             else:
                 version = f"{version // 10}.{version % 10}.0-BETA"

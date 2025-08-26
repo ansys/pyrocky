@@ -81,14 +81,10 @@ def connect(host: str = "localhost", port: int = PYROCKY_DEFAULT_PORT) -> "Rocky
     if not ROCKY_API_PROXIES:
         register_proxies()
 
-    proxy_instance = Pyro5.api.Proxy(uri)
-    rocky_version = _get_numerical_version(proxy_instance)
+    # Remove any existing proxy for this host:port to prevent using a stale or invalid connection
+    ROCKY_API_PROXIES.pop(md5_hash, None)
 
-    if rocky_version >= 261:
-        # Returns the value if the key exists, otherwise sets and returns the proxy_instance
-        proxy = ROCKY_API_PROXIES.setdefault(md5_hash, proxy_instance)
-    else:
-        proxy = ROCKY_API_PROXIES[OLD_VERSION_PROXY_KEY] = proxy_instance  # For backward compatibility
+    proxy = Pyro5.api.Proxy(uri)
 
     # Check if the connection succeeded
     now = time.time()
@@ -102,6 +98,12 @@ def connect(host: str = "localhost", port: int = PYROCKY_DEFAULT_PORT) -> "Rocky
             break
     else:
         raise PyRockyError("Could not connect to the remote server: timed out")
+
+    rocky_version = _get_numerical_version(proxy)
+    if rocky_version >= 261:
+        ROCKY_API_PROXIES[md5_hash] = proxy
+    else:
+        ROCKY_API_PROXIES[OLD_VERSION_PROXY_KEY] = proxy  # For backward compatibility
 
     rocky_client = RockyClient(proxy)
     return rocky_client

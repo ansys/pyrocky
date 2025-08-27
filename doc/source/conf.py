@@ -133,3 +133,8 @@ suppress_warnings = ["autoapi.python_import_resolution"]
 autoapi_python_use_implicit_namespaces = True
 autoapi_keep_files = True
 autoapi_render_in_single_page = ["class", "enum", "exception"]
+
+# PyAnsys tags configuration
+html_context = {
+    "pyansys_tags": ['Fluids']
+}

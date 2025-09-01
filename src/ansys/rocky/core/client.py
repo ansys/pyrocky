@@ -39,14 +39,14 @@ if TYPE_CHECKING:
         RockyApiApplication,
     )
 
-PYROCKY_DEFAULT_PORT: Final[int] = 18615
-ROCKY_API_PROXIES: dict[str, Pyro5.api.Proxy] = {}
-OLD_VERSION_PROXY_KEY: Final[str] = "old_version"  # Used for backward compatibility with versions < 26.1
+_PYROCKY_DEFAULT_PORT: Final[int] = 18615
+_API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}
+_LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = None  # Used for backward compatibility with versions < 26.1
 _CONNECT_TO_SERVER_TIMEOUT = 60
 
 
 def connect_to_rocky(  # pragma: no cover
-    host: str = "localhost", port: int = PYROCKY_DEFAULT_PORT
+    host: str = "localhost", port: int = _PYROCKY_DEFAULT_PORT
 ) -> "RockyClient":
     """This function is deprecated.
     Use connect() instead.
@@ -58,7 +58,7 @@ def connect_to_rocky(  # pragma: no cover
     return connect(host, port)
 
 
-def connect(host: str = "localhost", port: int = PYROCKY_DEFAULT_PORT) -> "RockyClient":
+def connect(host: str = "localhost", port: int = _PYROCKY_DEFAULT_PORT) -> "RockyClient":
     """Connect to a Rocky/Freeflow app instance.
 
     Parameters
@@ -66,8 +66,7 @@ def connect(host: str = "localhost", port: int = PYROCKY_DEFAULT_PORT) -> "Rocky
     host : str, optional
         Host name where the app is running. The default is ``"localhost"``.
     port : int, optional
-        Service port to connect to. The default is ``PYROCKY_DEFAULT_PORT``,
-        which is 50615.
+        Service port to connect to.
 
     Returns
     -------
@@ -78,20 +77,22 @@ def connect(host: str = "localhost", port: int = PYROCKY_DEFAULT_PORT) -> "Rocky
     hash_str = f"{host}:{port}"
     md5_hash = hashlib.md5(hash_str.encode()).hexdigest()
 
-    if not ROCKY_API_PROXIES:
+    global _LEGACY_PROXY_INSTANCE
+
+    if not _API_PROXY_INSTANCES and _LEGACY_PROXY_INSTANCE is None:
         register_proxies()
 
     # Remove any existing proxy for this host:port to prevent using a stale or invalid connection
-    ROCKY_API_PROXIES.pop(md5_hash, None)
+    _API_PROXY_INSTANCES.pop(md5_hash, None)
 
-    proxy = Pyro5.api.Proxy(uri)
+    proxy_instance = Pyro5.api.Proxy(uri)
 
     # Check if the connection succeeded
     now = time.time()
     while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
         try:
-            proxy._pyroBind()
-            assert proxy._pyroConnection is not None
+            proxy_instance._pyroBind()
+            assert proxy_instance._pyroConnection is not None
         except (CommunicationError, AssertionError):
             time.sleep(1)
         else:
@@ -99,13 +100,13 @@ def connect(host: str = "localhost", port: int = PYROCKY_DEFAULT_PORT) -> "Rocky
     else:
         raise PyRockyError("Could not connect to the remote server: timed out")
 
-    rocky_version = _get_numerical_version(proxy)
+    rocky_version = _get_numerical_version(proxy_instance)
     if rocky_version >= 261:
-        ROCKY_API_PROXIES[md5_hash] = proxy
+        _API_PROXY_INSTANCES[md5_hash] = proxy_instance
     else:
-        ROCKY_API_PROXIES[OLD_VERSION_PROXY_KEY] = proxy  # For backward compatibility
+        _LEGACY_PROXY_INSTANCE = proxy_instance  # For backward compatibility
 
-    rocky_client = RockyClient(proxy)
+    rocky_client = RockyClient(proxy_instance)
     return rocky_client
 
 

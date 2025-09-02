@@ -55,15 +55,21 @@ def register_proxies() -> None:
 def _ApiElementProxySerializer(obj: ApiElementProxy) -> dict:
     """
     Serialize an `ApiElementProxy` ensuring backward compatibility with
-    ROCKY 24.2 and older versions.
+    ROCKY 25.2 and older versions.
     """
-    from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
+    from .client import _get_numerical_version
 
-    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
     serialized = ApiElementProxy.serialize(obj)
+    session_uid = serialized.get("_session_uid")
+    proxy = _GetProxyInstance(session_uid)
+    rocky_version = _get_numerical_version(proxy)
 
-    if ROCKY_VERSION is not None and ROCKY_VERSION < 250:
-        serialized["__class__"] = f'_{serialized["__class__"]}'
+    if rocky_version is not None:
+        if rocky_version < 250:
+            serialized["__class__"] = f'_{serialized["__class__"]}'
+        if rocky_version < 261 and "_session_uid" in serialized:
+            del serialized["_session_uid"]
+
     return serialized
 
 
@@ -83,10 +89,10 @@ def deserialize_api_element(classname: str, serialized: dict) -> ApiElementProxy
     ApiElementProxy
         Deserialized object.
     """
-    from .client import _ROCKY_API
+    session_uid = serialized.get("_session_uid")
+    proxy = _GetProxyInstance(session_uid)
 
-    assert _ROCKY_API is not None, "API Proxy not initialized"
-    return ApiElementProxy(_ROCKY_API, serialized["_api_element_id"])
+    return ApiElementProxy(proxy, serialized["_api_element_id"], session_uid)
 
 
 def deserialize_api_list(classname: str, serialized: dict) -> ApiListProxy:
@@ -105,10 +111,10 @@ def deserialize_api_list(classname: str, serialized: dict) -> ApiListProxy:
     ApiListProxy
         Deserialized object.
     """
-    from .client import _ROCKY_API
+    session_uid = serialized.get("_session_uid")
+    proxy = _GetProxyInstance(session_uid)
 
-    assert _ROCKY_API is not None, "API Proxy not initialized"
-    return ApiListProxy(_ROCKY_API, serialized["_api_element_id"])
+    return ApiListProxy(proxy, serialized["_api_element_id"], session_uid)
 
 
 def deserialize_api_grid_function(
@@ -129,11 +135,14 @@ def deserialize_api_grid_function(
     ApiGridFunctionProxy
         Deserialized object.
     """
-    from .client import _ROCKY_API
+    session_uid = serialized.get("_session_uid")
+    proxy = _GetProxyInstance(session_uid)
 
-    assert _ROCKY_API is not None, "API Proxy not initialized"
     return ApiGridFunctionProxy(
-        serialized["grid_pool_id"], serialized["gf_name"], _ROCKY_API
+        serialized["grid_pool_id"],
+        serialized["gf_name"],
+        proxy,
+        session_uid,
     )
 
 
@@ -155,10 +164,10 @@ def deserialize_api_exporttoolkit(
     ApiExportToolkitProxy
         Deserialized object.
     """
-    from .client import _ROCKY_API
+    session_uid = serialized.get("_session_uid")
+    proxy = _GetProxyInstance(session_uid)
 
-    assert _ROCKY_API is not None, "API Proxy not initialized"
-    return ApiExportToolkitProxy(_ROCKY_API)
+    return ApiExportToolkitProxy(proxy, session_uid)
 
 
 def deserialize_api_error(classname: str, serialized: dict) -> Exception:
@@ -200,3 +209,12 @@ def deserialize_numpy(classname: str, serialized: dict) -> Any:
     """
     deserialized_bytes = serpent.tobytes(serialized["bytes"])
     return pickle.loads(deserialized_bytes)
+
+
+def _GetProxyInstance(session_uid: str) -> Pyro5.api.Proxy:
+    from .client import _LEGACY_PROXY_INSTANCE, _API_PROXY_INSTANCES
+
+    proxy = _API_PROXY_INSTANCES.get(session_uid, _LEGACY_PROXY_INSTANCE)
+    assert proxy is not None, "API Proxy not initialized"
+
+    return proxy

@@ -40,9 +40,10 @@ class ApiElementProxy:
         ID of the API element.
     """
 
-    def __init__(self, pyro_api: Pyro5.api.Proxy, pool_id: str) -> None:
+    def __init__(self, pyro_api: Pyro5.api.Proxy, pool_id: str, session_uid: str | None = None) -> None:
         self._pyro_api = pyro_api
         self._pool_id = pool_id
+        self._session_uid = session_uid
 
     def __getattr__(self, attr_name: str) -> object:
         def CallProxy(*args: tuple, **kwargs: dict) -> Any:
@@ -66,7 +67,11 @@ class ApiElementProxy:
         dict
             Dictionary of the serialized object.
         """
-        return {"__class__": obj.__class__.__name__, "_api_element_id": obj._pool_id}
+        return {
+            "__class__": obj.__class__.__name__,
+            "_api_element_id": obj._pool_id,
+            "_session_uid": obj._session_uid if obj._session_uid is not None else None,
+        }
 
 
 class ApiListProxy(ApiElementProxy):
@@ -88,11 +93,16 @@ class ApiListProxy(ApiElementProxy):
 
 class ApiGridFunctionProxy:
     def __init__(
-        self, grid_pool_id: str, gf_name: str, pyro_api: Pyro5.api.Proxy
+        self,
+        grid_pool_id: str,
+        gf_name: str,
+        pyro_api: Pyro5.api.Proxy,
+        session_uid: str | None = None,
     ) -> None:
         self._grid_pool_id = grid_pool_id
         self._gf_name = gf_name
         self._pyro_api = pyro_api
+        self._session_uid = session_uid
 
     def __getattr__(self, attr_name: str) -> Callable:
         def CallProxy(*args: tuple, **kwargs: dict) -> Any:
@@ -120,12 +130,14 @@ class ApiGridFunctionProxy:
             "__class__": cls.__name__,
             "grid_pool_id": obj._grid_pool_id,
             "gf_name": obj._gf_name,
+            "_session_uid": obj._session_uid if obj._session_uid is not None else None,
         }
 
 
 class ApiExportToolkitProxy:
-    def __init__(self, pyro_api: Pyro5.api.Proxy) -> None:
+    def __init__(self, pyro_api: Pyro5.api.Proxy, session_uid: str | None = None) -> None:
         self._pyro_api = pyro_api
+        self._session_uid = session_uid
 
     def __getattr__(self, attr_name: str) -> Callable:
         def CallProxy(*args: tuple, **kwargs: dict) -> Any:
@@ -149,4 +161,7 @@ class ApiExportToolkitProxy:
         dict
             Dictionary of the serialized object.
         """
-        return {"__class__": cls.__name__}
+        return {
+            "__class__": cls.__name__,
+            "_session_uid": obj._session_uid if obj._session_uid is not None else None,
+        }

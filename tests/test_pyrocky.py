@@ -19,19 +19,19 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import hashlib
 import os
+import time
 
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import DEFAULT_SERVER_PORT
+from ansys.rocky.core.client import _PYROCKY_DEFAULT_PORT
 from ansys.rocky.core.exceptions import PyRockyError
 from ansys.rocky.core.launcher import RockyLaunchError
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
-VERSION = int(os.getenv("ANSYS_VERSION", "252"))
-
-FREEFLOW_VERSION = 251
+VERSION = int(os.getenv("ANSYS_VERSION", "261"))
 
 
 @pytest.fixture()
@@ -43,7 +43,7 @@ def rocky_session():
 
 @pytest.fixture()
 def freeflow_session():
-    freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+    freeflow = pyrocky.launch_freeflow(freeflow_version=VERSION)
     yield freeflow
     freeflow.close()
 
@@ -110,14 +110,16 @@ def test_minimal_simulation(tmp_path, request):
     rocky = pyrocky.launch_rocky(rocky_version=VERSION)
     request.addfinalizer(rocky.close)
 
-    from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
-
     if VERSION < 251:
         expected_rocky_version = 240
     else:
         expected_rocky_version = VERSION
 
-    rocky_version = _get_numerical_version(_ROCKY_API)
+    from ansys.rocky.core.client import _LEGACY_PROXY_INSTANCE, _API_PROXY_INSTANCES, _get_numerical_version
+
+    session_uid = hashlib.md5(f"localhost:{_PYROCKY_DEFAULT_PORT}".encode()).hexdigest()
+    proxy = _API_PROXY_INSTANCES[session_uid] if VERSION >= 261 else _LEGACY_PROXY_INSTANCE
+    rocky_version = _get_numerical_version(proxy)
     assert rocky_version == expected_rocky_version
 
     study = create_basic_project_with_results(
@@ -187,7 +189,8 @@ def test_pyrocky_launch_multiple_servers():
 
     # Emulating Rocky server already running by binding socket to the server address.
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.bind(("localhost", DEFAULT_SERVER_PORT))
+        time.sleep(1)  # Wait to ensure the address is properly released before binding
+        s.bind(("localhost", _PYROCKY_DEFAULT_PORT))
         s.listen(10)
 
         with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
@@ -218,9 +221,9 @@ def test_close_freeflow_existing_session():
     """
     from ansys.rocky.core.client import _get_numerical_version
 
-    pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+    pyrocky.launch_freeflow(freeflow_version=VERSION)
     freeflow_two = pyrocky.launch_freeflow(
-        freeflow_version=FREEFLOW_VERSION, close_existing=True
+        freeflow_version=VERSION, close_existing=True
     )
 
     assert _get_numerical_version(freeflow_two.api) is not None
@@ -246,13 +249,15 @@ def test_freeflow_launcher(freeflow_session):
 
 def test_freeflow_launcher_with_specified_version(request):
     """Test to check if freeflow launcher works when a version is specified"""
-    freeflow = pyrocky.launch_freeflow(freeflow_version=FREEFLOW_VERSION)
+    freeflow = pyrocky.launch_freeflow(freeflow_version=VERSION)
     request.addfinalizer(freeflow.close)
 
-    from ansys.rocky.core.client import _ROCKY_API, _get_numerical_version
+    from ansys.rocky.core.client import _LEGACY_PROXY_INSTANCE, _API_PROXY_INSTANCES, _get_numerical_version
 
-    ROCKY_VERSION = _get_numerical_version(_ROCKY_API)
-    assert ROCKY_VERSION == FREEFLOW_VERSION
+    session_uid = hashlib.md5(f"localhost:{_PYROCKY_DEFAULT_PORT}".encode()).hexdigest()
+    proxy = _API_PROXY_INSTANCES[session_uid] if VERSION >= 261 else _LEGACY_PROXY_INSTANCE
+    freeflow_version = _get_numerical_version(proxy)
+    assert freeflow_version == VERSION
 
 
 def test_no_valid_local_winreg_exe():
@@ -269,9 +274,9 @@ def test_connection_check(request, monkeypatch):
     ):
         with monkeypatch.context() as m:
             m.setattr(client, "_CONNECT_TO_SERVER_TIMEOUT", 0)
-            pyrocky.launch_rocky(server_port=DEFAULT_SERVER_PORT)
+            pyrocky.launch_rocky(server_port=_PYROCKY_DEFAULT_PORT)
 
-    cli = pyrocky.connect(port=DEFAULT_SERVER_PORT)
+    cli = pyrocky.connect(port=_PYROCKY_DEFAULT_PORT)
     request.addfinalizer(cli.close)
 
     assert cli.api._pyroConnection

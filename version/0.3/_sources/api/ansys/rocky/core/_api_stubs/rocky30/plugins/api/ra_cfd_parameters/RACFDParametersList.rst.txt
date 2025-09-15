@@ -1,0 +1,28 @@
+.. py:class:: RACFDParametersList
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`RACFDPerParticleParameters`\ ]
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: GetParametersFor(particle)
+
+
+   .. py:method:: New() -> None
+
+
+   .. py:method:: Remove(item) -> None
+
+
+   .. py:method:: Clear() -> None
+
+
+   .. py:method:: __delitem__(index) -> None
+
+

@@ -1,0 +1,65 @@
+.. py:class:: ApiElementProxy(pyro_api: Pyro5.api.Proxy, pool_id: str)
+
+
+   
+   Provides a proxy object for an API element.
+
+
+   :Parameters:
+
+       **pyro_api** : :obj:`Pyro5.api.Proxy`
+           Pyro5 proxy object for interacting with the Rocky app.
+
+       **pool_id** : :class:`python:int`
+           ID of the API element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:method:: __getattr__(attr_name: str) -> object
+
+
+   .. py:method:: serialize(obj: ApiElementProxy) -> dict
+      :classmethod:
+
+      
+      Serialize a proxy object of the API element.
+
+
+      :Parameters:
+
+          **obj** : :obj:`Any`
+              Object to serialize.
+
+
+
+      :Returns:
+
+          :class:`python:dict`
+              Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+

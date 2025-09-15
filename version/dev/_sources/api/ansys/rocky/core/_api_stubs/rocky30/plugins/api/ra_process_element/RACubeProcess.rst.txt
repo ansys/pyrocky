@@ -1,0 +1,31 @@
+.. py:class:: RACubeProcess
+
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractCubeMixin`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: GetCubeCenter(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetCubeCenter(x, y, z, unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetCubeMagnitude(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetCubeMagnitude(x, y, z, unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetCubeRotation(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetCubeRotation(x, y, z, unit: _typeshed.Incomplete | None = ...)
+
+

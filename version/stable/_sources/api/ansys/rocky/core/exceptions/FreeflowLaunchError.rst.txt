@@ -1,0 +1,26 @@
+.. py:exception:: FreeflowLaunchError
+
+
+   Bases: :py:obj:`PyRockyError`
+
+   
+   Provides the error raised when problems occurs during launch of the Freeflow
+   app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!

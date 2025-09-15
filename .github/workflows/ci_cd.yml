@@ -191,7 +191,7 @@ jobs:
 
   docs_build:
     name: Build Documentation
-    runs-on: [self-hosted, Linux, pyrocky]
+    runs-on: [self-hosted, Windows, pyrocky]
     if: |
       contains(github.event.pull_request.labels.*.name, 'docs') ||
       github.ref == 'refs/heads/main'
@@ -208,17 +208,17 @@ jobs:
 
       - name: Create Python venv
         run: |
-          python -m venv .venv-docs
+          python -m venv .venv
 
       - name: Install packages for documentation build
         run: |
-          source .venv-docs/bin/activate
+          .\.venv\Scripts\Activate.bat
           pip install .[doc]
 
       - name: Build Source Documentation (HTML)
         run: |
-          source .venv-docs/bin/activate
-          make -C doc/ html --quiet
+          .\.venv\Scripts\Activate.bat
+          doc\make.bat html
 
       - name: Upload HTML Documentation
         uses: actions/upload-artifact@v4
@@ -229,8 +229,8 @@ jobs:
 
       - name: Build Source Documentation (PDF)
         run: |
-          source .venv-docs/bin/activate
-          make -C doc/ pdf --quiet
+          .\.venv\Scripts\Activate.bat
+          doc\make.bat pdf
 
       - name: Upload PDF documentation
         uses: actions/upload-artifact@v4

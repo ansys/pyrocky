@@ -100,7 +100,7 @@ def launch_rocky(
     if rocky_exe is None or not rocky_exe.is_file():
         raise FileNotFoundError(f"Rocky executable is not found.")
 
-    cmd = [rocky_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
+    cmd = [str(rocky_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
         cmd.append("--headless")
     with contextlib.suppress(subprocess.TimeoutExpired):
@@ -180,7 +180,7 @@ def launch_freeflow(  # pragma: no cover
     if freeflow_exe is None or not freeflow_exe.is_file():
         raise FileNotFoundError(f"Freeflow executable is not found.")
 
-    cmd = [freeflow_exe, "--pyrocky", "--pyrocky-port", str(server_port)]
+    cmd = [str(freeflow_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
     if headless:
         cmd.append("--headless")
     with contextlib.suppress(subprocess.TimeoutExpired):

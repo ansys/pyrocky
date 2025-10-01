@@ -24,6 +24,8 @@ Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
 import hashlib
+import os
+import sys
 import time
 from typing import TYPE_CHECKING, Final
 import warnings
@@ -60,6 +62,19 @@ def connect_to_rocky(  # pragma: no cover
     return connect(host, port)
 
 
+def _uds_socket_path(socket_number: int) -> str:
+    """
+    ``socket_number`` parameter is used to enable the creation of different socket
+    files based on the provided number.
+    """
+    socket_folder = (
+        os.environ["XDG_RUNTIME_DIR"]
+        if "XDG_RUNTIME_DIR" in os.environ
+        else os.path.expanduser("~/.ansys")
+    )
+    return os.path.join(socket_folder, f"ansys-rocky-{socket_number}.sock")
+
+
 def connect(host: str = "localhost", port: int = _PYROCKY_DEFAULT_PORT) -> "RockyClient":
     """Connect to a Rocky/Freeflow app instance.
 
@@ -75,8 +90,16 @@ def connect(host: str = "localhost", port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
     RockyClient
         Client object for interacting with the Rocky/Freeflow app.
     """
-    uri = f"PYRO:rocky.api@{host}:{port}"
-    hash_str = f"{host}:{port}"
+    socket_path = _uds_socket_path(port)
+    if sys.platform == "linux" and os.path.exists(socket_path):
+        # Use UDS for Linux as default
+        uri = f"PYRO:rocky.api@./u:{socket_path}"
+        hash_str = socket_path
+    else:
+        # Use TCP for Windows and for Linux if UDS is not supported on the server side
+        uri = f"PYRO:rocky.api@{host}:{port}"
+        hash_str = f"{host}:{port}"
+
     md5_hash = hashlib.md5(hash_str.encode()).hexdigest()
 
     global _LEGACY_PROXY_INSTANCE

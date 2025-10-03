@@ -1,0 +1,22 @@
+.. py:class:: RAOneRollBeltProfile(id: str, model_id: Optional[str] = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: GetMaterial()
+
+
+   .. py:method:: SetMaterial(value) -> None
+
+
+   .. py:method:: GetAvailableMaterials()
+
+

@@ -1,0 +1,79 @@
+.. py:class:: RAParticleAssemblyCustom(id: str, model_id: Optional[str] = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.particle.particle_assembly.ParticleAssemblyCustom]
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: GetArea(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetArea(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetCenterOfMass(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetCenterOfMass(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetEnabled() -> bool
+
+
+   .. py:method:: SetEnabled(value: bool) -> None
+
+
+   .. py:method:: GetGeometricCenter(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetGeometricCenter(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInertiaXAxis(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInertiaXAxis(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInertiaYAxis(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInertiaYAxis(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInertiaZAxis(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInertiaZAxis(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMass(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMass(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMomentOfInertia(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetMomentOfInertia(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPorosity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPorosity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetVolume(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetVolume(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

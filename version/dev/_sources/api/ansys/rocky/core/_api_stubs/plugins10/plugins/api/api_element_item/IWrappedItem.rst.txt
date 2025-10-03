@@ -1,0 +1,17 @@
+.. py:class:: IWrappedItem
+
+
+   Bases: :py:obj:`ben10.interface.Interface`
+
+   .. py:method:: GetWrappedClass() -> None
+      :classmethod:
+
+
+   .. py:method:: GetClassName() -> None
+      :classmethod:
+
+
+   .. py:method:: GetChildrenClassesToIgnore() -> None
+      :classmethod:
+
+

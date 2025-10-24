@@ -165,3 +165,16 @@ class ApiExportToolkitProxy:
             "__class__": cls.__name__,
             "_session_uid": obj._session_uid if obj._session_uid is not None else None,
         }
+
+
+class ApiProjectProxy(ApiElementProxy):
+    def __init__(self, pyro_api: Pyro5.api.Proxy, session_uid: str | None = None) -> None:
+        super().__init__(pyro_api, 'project', session_uid)
+
+    def CloseProject(self, check_save_state: bool = True) -> None:
+        if check_save_state and self.HasUnsavedChanges():
+            raise RuntimeError(
+                "Project has unsaved changes. Save the project before closing or use check_save_state=False."
+            )
+
+        self._pyro_api.SendToApiElement(self._pool_id, "CloseProject", check_save_state=check_save_state)

@@ -34,6 +34,7 @@ from ansys.rocky.core.rocky_api_proxies import (
     ApiExportToolkitProxy,
     ApiGridFunctionProxy,
     ApiListProxy,
+    ApiProjectProxy,
 )
 
 
@@ -45,6 +46,9 @@ def register_proxies() -> None:
     )
     Pyro5.api.register_dict_to_class(
         "ApiExportToolkitProxy", deserialize_api_exporttoolkit
+    )
+    Pyro5.api.register_dict_to_class(
+        "ApiProjectProxy", deserialize_api_project
     )
     Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
     Pyro5.api.register_dict_to_class("ndarray", deserialize_numpy)
@@ -168,6 +172,30 @@ def deserialize_api_exporttoolkit(
     proxy = _GetProxyInstance(session_uid)
 
     return ApiExportToolkitProxy(proxy, session_uid)
+
+
+def deserialize_api_project(
+    classname: str, serialized: dict
+) -> ApiProjectProxy:
+    """Deserialize the proxy objects for the API project.
+
+    Parameters
+    ----------
+    classname : str
+        Name of the class to deserialize. This parameter is required by the
+        superclass but is not used.
+    serialized : dict
+        Dictionary of serialized objects.
+
+    Returns
+    -------
+    ApiProjectProxy
+        Deserialized object.
+    """
+    session_uid = serialized.get("_session_uid")
+    proxy = _GetProxyInstance(session_uid)
+
+    return ApiProjectProxy(proxy, session_uid)
 
 
 def deserialize_api_error(classname: str, serialized: dict) -> Exception:

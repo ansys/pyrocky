@@ -1,0 +1,25 @@
+.. py:class:: UserWindowSubjectContainer(app)
+
+
+   Bases: :py:obj:`coilib50.subject.Subject`
+
+   .. py:attribute:: app
+      :type: _typeshed.Incomplete
+
+      
+
+   .. py:method:: GetIgnoreChanges()
+
+
+   .. py:method:: GetIgnoreAddRemove()
+
+
+   .. py:method:: GetIgnoreAdd()
+
+
+   .. py:method:: Add(window_subject)
+
+
+   .. py:method:: __iter__()
+
+

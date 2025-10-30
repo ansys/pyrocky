@@ -1,0 +1,8 @@
+.. py:class:: RAProcessElementItem
+
+
+   Bases: :py:obj:`sci20.plugins.api.api_process_element.SciApiProcessElementItem`
+
+   .. py:method:: GetCurve(curve_name, simulation_name: _typeshed.Incomplete | None = ..., realization: _typeshed.Incomplete | None = ..., time_step: _typeshed.Incomplete | None = ...)
+
+

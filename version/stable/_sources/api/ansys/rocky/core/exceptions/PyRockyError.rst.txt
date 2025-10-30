@@ -1,0 +1,25 @@
+.. py:exception:: PyRockyError
+
+
+   Bases: :py:obj:`Exception`
+
+   
+   Provides the generic exception for the PyRocky API.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!

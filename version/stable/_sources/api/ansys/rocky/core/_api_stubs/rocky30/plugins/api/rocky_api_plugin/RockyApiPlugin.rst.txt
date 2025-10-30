@@ -1,0 +1,8 @@
+.. py:class:: RockyApiPlugin
+
+
+   Bases: :py:obj:`plugins10core.plugin.Plugin`
+
+   .. py:method:: Install() -> None
+
+

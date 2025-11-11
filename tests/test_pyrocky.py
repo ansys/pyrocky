@@ -260,9 +260,12 @@ def test_freeflow_launcher_with_specified_version(request):
     assert freeflow_version == VERSION
 
 
-def test_no_valid_local_winreg_exe():
-    with pytest.raises(FileNotFoundError, match=f"Local executable not found for*"):
+def test_no_valid_local_executable():
+    with pytest.raises(FileNotFoundError, match=f"Rocky executable is not found"):
         pyrocky.launch_rocky(rocky_version=900)
+
+    with pytest.raises(FileNotFoundError, match=f"Freeflow executable is not found"):
+        pyrocky.launch_freeflow(freeflow_version=900)
 
 
 def test_connection_check(request, monkeypatch):

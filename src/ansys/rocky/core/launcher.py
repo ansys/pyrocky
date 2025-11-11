@@ -25,6 +25,7 @@ from pathlib import Path
 import subprocess
 import sys
 import time
+from typing import Literal
 
 from Pyro5.errors import CommunicationError
 from ansys.tools.path import get_available_ansys_installations
@@ -172,7 +173,7 @@ def launch_freeflow(  # pragma: no cover
             )
 
     if freeflow_exe is None:
-        freeflow_exe = _find_executable(product_name="Freeflow", version=freeflow_version)
+        freeflow_exe = _find_executable(product_name="FreeFlow", version=freeflow_version)
     else:
         if isinstance(freeflow_exe, str):
             freeflow_exe = Path(freeflow_exe)
@@ -189,7 +190,7 @@ def launch_freeflow(  # pragma: no cover
 
     # Freeflow.exe call returned to soon, something happen
     if rocky_process.returncode is not None:
-        raise FreeflowLaunchError(f"Error launching Freeflow:\n  {' '.join(cmd)}")
+        raise FreeflowLaunchError(f"Error launching FreeFlow:\n  {' '.join(cmd)}")
 
     client = connect(port=server_port)
     client._process = rocky_process
@@ -224,94 +225,17 @@ def _is_port_busy(port: int, timeout: int = 10) -> bool:
 
 
 def _find_executable(
-    product_name: str,
-    version: int | None,
-) -> Path:
-    """
-    This function will search for the Rocky/Freeflow executable
-
-    Parameters
-    ----------
-    product_name:
-        The name of the product (Rocky or Freeflow)
-    version:
-        The version of the executable
-
-    Returns
-    -------
-    Path
-        The Path to the executable
-    """
-    if sys.platform == "win32":
-        if version is not None:
-            if product_name == "Rocky" or version >= 261:
-                version = f"{version // 10}.{version % 10}.0"
-            else:
-                version = f"{version // 10}.{version % 10}.0-BETA"
-
-        executable = _get_exec_using_winreg(product_name=product_name, version=version)
-    else:  # pragma: no cover
-        executable = _get_exec_using_tools_path(
-            product_name=product_name, version=version
-        )
-
-    return executable
-
-
-def _get_exec_using_winreg(
-    product_name: str,
-    version: str | None = None,
-) -> Path:
-    """
-    This function will search for the Rocky/Freeflow executable using the
-    Windows registry.
-
-    Parameters
-    ----------
-    product_name:
-        The name of the product (Rocky or Freeflow)
-    version:
-        The version of the executable
-
-    Returns
-    -------
-    Path
-        The Path to the executable
-    """
-    import winreg
-
-    product_reg_path = rf"SOFTWARE\{COMPANY}\{product_name}"
-
-    try:
-        if version is None:
-            # If no version is defined, the default is the 'current_version' attribute
-            with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, product_reg_path) as wr_key:
-                version, _ = winreg.QueryValueEx(wr_key, "current_version")
-
-        version_reg_path = rf"{product_reg_path}\{version}"
-        with winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, version_reg_path) as wr_key:
-            executable_str, _ = winreg.QueryValueEx(wr_key, "local_executable")
-            return Path(executable_str)
-    except FileNotFoundError:
-        raise FileNotFoundError(
-            f"Local executable not found for {product_name} {version}."
-        )
-
-
-def _get_exec_using_tools_path(  # pragma: no cover
-    product_name: str,
+    product_name: Literal["Rocky", "FreeFlow"],
     version: int | None = None,
 ) -> Path | None:
     """
-    This function will search for the Rocky/Freeflow executable using the
-    ansys-tools-path module. Currently, we are using this approach only
-    for Linux, since the ansys-tools-path depends on the AWP_ROOT variable,
-    which may not be defined in Rocky standalone for Windows.
+    This function will search for the Rocky/FreeFlow executable using the
+    ansys-tools-path module.
 
     Parameters
     ----------
     product_name:
-        The name of the product (Rocky or Freeflow
+        The name of the product (Rocky or FreeFlow)
     version:
         The version of the executable
 
@@ -320,26 +244,32 @@ def _get_exec_using_tools_path(  # pragma: no cover
     Path
         The Path to the executable
     """
+
     ansys_installations = get_available_ansys_installations()
+    executable: Path | None = None
+
+    def get_platform_executable_path(
+        installation_path: str, product_name: Literal["Rocky", "FreeFlow"]
+    ) -> Path:
+        """
+        Get the executable path for the current platform (Windows or Linux).
+        """
+        if sys.platform == "win32":
+            return Path(installation_path) / f"{product_name}/bin/{product_name}.exe"
+        else:  # pragma: no cover
+            return Path(installation_path) / f"{product_name.lower()}/bin/{product_name}"
 
     if version is None:
         for installation in sorted(ansys_installations, reverse=True):
-            executable = (
-                Path(ansys_installations[installation])
-                / f"{product_name.lower()}/bin/{product_name}"
+            executable = get_platform_executable_path(
+                ansys_installations[installation], product_name
             )
+
             if executable.is_file() and installation >= MINIMUM_ANSYS_VERSION_SUPPORTED:
                 break
-        else:
-            return
     else:
         if version in ansys_installations:
             ansys_installation = ansys_installations.get(version)
-        else:
-            raise FileNotFoundError(f"{product_name} executable is not found.")
-
-        executable = (
-            Path(ansys_installation) / f"{product_name.lower()}/bin/{product_name}"
-        )
+            executable = get_platform_executable_path(ansys_installation, product_name)
 
     return executable

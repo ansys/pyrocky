@@ -28,7 +28,7 @@ import time
 from typing import Literal
 
 from Pyro5.errors import CommunicationError
-from ansys.tools.path import get_available_ansys_installations
+from ansys.tools.common.path import get_available_ansys_installations
 
 from ansys.rocky.core.client import _PYROCKY_DEFAULT_PORT, RockyClient, connect
 from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError

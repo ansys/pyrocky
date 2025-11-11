@@ -44,6 +44,8 @@ _API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}
 _LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = None  # Used for backward compatibility with versions < 26.1
 _CONNECT_TO_SERVER_TIMEOUT = 60
 
+DEFAULT_SERVER_PORT = _PYROCKY_DEFAULT_PORT  # Compatibility with dependants that still import this constant.
+
 
 def connect_to_rocky(  # pragma: no cover
     host: str = "localhost", port: int = _PYROCKY_DEFAULT_PORT

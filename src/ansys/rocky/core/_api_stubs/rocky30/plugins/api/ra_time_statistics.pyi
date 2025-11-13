@@ -20,8 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from _typeshed import Incomplete
-
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
     ApiElementItem,
 )
@@ -37,14 +35,9 @@ class RATimeStatisticsCalculator(BaseSubjectApiElement):
     def GetGridFunctionName(self): ...
 
 class RATimeStatistics(ApiElementItem):
-    def __init__(self, id, ra_process, model_id: Incomplete | None = ...) -> None: ...
+    def __init__(self, id, ra_process, model_id=None) -> None: ...
     def AddGridFunction(
-        self,
-        start_time,
-        stop_time,
-        operation,
-        grid_function_name,
-        location: Incomplete | None = ...,
+        self, start_time, stop_time, operation, grid_function_name, location=None
     ): ...
     def RemoveGridFunction(self, name_or_calculator) -> None: ...
     @classmethod

@@ -41,15 +41,15 @@ class RACustomCurveAndGridProperty:
         curve_type: str = ...,
         output_unit: str = ...,
         scope: str = ...,
-        sources: Union[dict[str, str], None] = ...,
-        expression: str = ...,
+        sources: dict[str, str] | None = None,
+        expression: str = "",
     ) -> None: ...
     def EditCustomCurve(
         self,
         edit_curve: str,
-        new_name: Union[str, None] = ...,
-        sources: Union[dict[str, str], None] = ...,
-        expression: Union[str, None] = ...,
+        new_name: str | None = None,
+        sources: dict[str, str] | None = None,
+        expression: str | None = None,
     ) -> None: ...
     def RemoveCustomCurve(self, name: str) -> None: ...
     def AddCustomProperty(
@@ -58,24 +58,22 @@ class RACustomCurveAndGridProperty:
         property_type: str = ...,
         output_unit: str = ...,
         scope: str = ...,
-        sources: Union[dict[str, str], None] = ...,
-        expression: str = ...,
+        sources: dict[str, str] | None = None,
+        expression: str = "",
     ) -> None: ...
     def EditCustomProperty(
         self,
         edit_property: str,
-        new_name: Union[str, None] = ...,
-        sources: Union[dict[str, str], None] = ...,
-        expression: Union[str, None] = ...,
+        new_name: str | None = None,
+        sources: dict[str, str] | None = None,
+        expression: str | None = None,
     ) -> None: ...
     def RemoveCustomProperty(self, name: str) -> None: ...
 
 class RACustomCurveParameters:
-    variable_to_association_and_unit: Incomplete
+    variable_to_association_and_unit: dict[str, tuple[SemanticAssociation, str]]
     output_quantity: Incomplete
     domain_association: Incomplete
     def __init__(
-        self,
-        process: RACustomCurveAndGridProperty,
-        sources: Union[dict[str, str], None] = ...,
+        self, process: RACustomCurveAndGridProperty, sources: dict[str, str] | None = None
     ) -> None: ...

@@ -32,8 +32,8 @@ class _RAOrientationMixin:
         self,
         rotation: Tuple3F,
         unit: str = ...,
-        local_angles: bool = ...,
-        order: str = ...,
+        local_angles: bool = True,
+        order: str = "XYZ",
     ) -> None: ...
     def SetOrientationFromAngleAndVector(
         self, angle: float, vector: Tuple3F, unit: str = ...

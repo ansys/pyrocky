@@ -20,12 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from typing import Union
-
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame import (
     RAMotionFrame as RAMotionFrame,
 )
 
 class _WithMovementMixin:
-    def SetMotionFrame(self, motion_frame: Union["RAMotionFrame", str, None]) -> None: ...
-    def GetMotionFrame(self) -> RAMotionFrame: ...
+    def SetMotionFrame(self, motion_frame: RAMotionFrame | str | None) -> None: ...
+    def GetMotionFrame(self) -> RAMotionFrame | None: ...

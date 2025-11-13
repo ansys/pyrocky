@@ -50,12 +50,12 @@ class RAGridProcessElementItem(
     KAGrid, _RASubjectWithColoringMixin, RACustomCurveAndGridProperty
 ):
     def GetGridFunction(
-        self,
-        grid_function_name,
-        simulation_name: Incomplete | None = ...,
-        translated: bool = ...,
+        self, grid_function_name, simulation_name=None, translated: bool = False
     ): ...
-    def GetGeometry(self, time_step: Union[str, int, ITimeStep] = ...) -> IGeometry: ...
+    def GetGridFunctionNames(
+        self, translated: bool = False, context: str | None = None
+    ) -> list[str]: ...
+    def GetGeometry(self, time_step: str | int | ITimeStep = "current") -> IGeometry: ...
     def GetTimeStatistics(self) -> RATimeStatistics: ...
     VALID_OPERATIONS: Incomplete
     VALID_TIME_RANGE_DEFINITIONS: Incomplete
@@ -63,32 +63,32 @@ class RAGridProcessElementItem(
     def CreateTransientCurveOutputVariable(
         self,
         curve_name: str,
-        operation: str = ...,
-        time_operation: str = ...,
-        time_range: str = ...,
-        initial_time_range: float = ...,
-        final_time_range: float = ...,
-        domain_range: str = ...,
-        initial_domain_range: float = ...,
-        final_domain_range: float = ...,
-        domain_unit: Union[str, None] = ...,
+        operation: str = "max",
+        time_operation: str = "max",
+        time_range: str = "last_output",
+        initial_time_range: float = 0.0,
+        final_time_range: float = 0.0,
+        domain_range: str = "all",
+        initial_domain_range: float = 0.0,
+        final_domain_range: float = 0.0,
+        domain_unit: str | None = None,
     ): ...
     def CreateCurveOutputVariable(
         self,
         curve_name: str,
-        operation: str = ...,
-        time_range: str = ...,
-        initial_time_range: float = ...,
-        final_time_range: float = ...,
+        operation: str = "max",
+        time_range: str = "all",
+        initial_time_range: float = 0.0,
+        final_time_range: float = 0.0,
     ): ...
     def CreateGridFunctionStatisticOutputVariable(
         self,
         grid_function_name: str,
-        operation: str = ...,
-        statistic_operation: str = ...,
-        time_range: str = ...,
-        initial_time_range: float = ...,
-        final_time_range: float = ...,
+        operation: str = "max",
+        statistic_operation: str = "max",
+        time_range: str = "last_output",
+        initial_time_range: float = 0.0,
+        final_time_range: float = 0.0,
     ) -> str: ...
     def GetOutputVariableValue(self, variable_name: str) -> Scalar: ...
     def RemoveOutputVariable(self, variable_name: str) -> None: ...

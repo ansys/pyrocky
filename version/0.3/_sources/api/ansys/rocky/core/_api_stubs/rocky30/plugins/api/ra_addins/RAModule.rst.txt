@@ -1,0 +1,34 @@
+.. py:class:: RAModule(id: str, model_id: Optional[str] = ...)
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ElementWithAddins`
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+   .. py:method:: EnableModule() -> None
+
+
+   .. py:method:: DisableModule() -> None
+
+
+   .. py:method:: SetModuleEnabled(enabled) -> None
+
+
+   .. py:method:: IsModuleEnabled()
+
+
+   .. py:method:: GetName()
+
+
+   .. py:method:: SetName(name) -> None
+
+
+   .. py:method:: GetOutputObject() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_process.RAModuleOutput, None]
+
+

@@ -1,0 +1,110 @@
+.. py:class:: ModulePropertyIdentifier(name, modules, all_captions)
+
+
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: modules
+      :type: set[str]
+
+      
+
+   .. py:attribute:: all_captions
+      :type: dict[str, str]
+
+      
+
+   .. py:method:: __lt__(other)
+
+      
+      Return self<value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: __le__(other)
+
+      
+      Return self<=value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: __gt__(other)
+
+      
+      Return self>value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+   .. py:method:: __ge__(other)
+
+      
+      Return self>=value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+

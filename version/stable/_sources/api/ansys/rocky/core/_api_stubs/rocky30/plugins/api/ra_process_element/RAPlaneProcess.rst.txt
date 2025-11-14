@@ -1,0 +1,49 @@
+.. py:class:: RAPlaneProcess
+
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+   .. py:method:: GetWrappedClass() -> type[sci20.plugins.process.plane_process.plane_process_subject.PlaneProcessSubject]
+      :classmethod:
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+   .. py:method:: GetType() -> str
+
+
+   .. py:method:: SetType(plane_type: str) -> None
+
+
+   .. py:method:: GetMode() -> str
+
+
+   .. py:method:: SetMode(plane_mode: str) -> None
+
+
+   .. py:method:: GetOrigin() -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: GetPlaneOrigin() -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetOrigin(x: float, y: float, z: float) -> None
+
+
+   .. py:method:: SetPlaneOrigin(x: float, y: float, z: float) -> None
+
+
+   .. py:method:: GetNormal() -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: GetPlaneNormal() -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetNormal(x: float, y: float, z: float) -> None
+
+
+   .. py:method:: SetPlaneNormal(x: float, y: float, z: float) -> None
+
+

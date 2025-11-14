@@ -1,0 +1,16 @@
+.. py:class:: RACylinderGroup
+
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_element_item.KAElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractCylinderMixin`
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.plugins.user_process.group.cylinder_process_group.CylinderProcessGroup]
+      :classmethod:
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+   .. py:method:: AddProcess(source_process: coilib50.process.base_process_subject.AbstractProcessSubject) -> None
+
+

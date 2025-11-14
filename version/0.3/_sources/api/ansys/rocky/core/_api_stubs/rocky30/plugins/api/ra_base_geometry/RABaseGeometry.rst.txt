@@ -1,0 +1,5 @@
+.. py:class:: RABaseGeometry
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+

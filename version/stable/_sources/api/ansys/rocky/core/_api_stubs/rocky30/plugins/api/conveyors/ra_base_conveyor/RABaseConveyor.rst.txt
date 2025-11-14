@@ -1,0 +1,17 @@
+.. py:class:: RABaseConveyor
+
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry`
+
+   .. py:method:: GetBeltProfileName()
+
+
+   .. py:method:: GetBeltProfile()
+
+
+   .. py:method:: SetBeltProfile(belt_profile_name)
+
+
+   .. py:method:: GetValidBeltProfileNames()
+
+

@@ -1,0 +1,34 @@
+.. py:class:: MplCanvas
+
+
+   Bases: :py:obj:`matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg`
+
+   
+   The canvas the figure renders into.
+
+
+
+   :Attributes:
+
+       **figure** : `~matplotlib.figure.Figure`
+           A high-level figure instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+   .. py:attribute:: figure
+      :type: _typeshed.Incomplete
+
+      
+

@@ -9,6 +9,7 @@
 * [Adrian Brandemarte Moreira](https://github.com/Adrian-B-Moreira)
 * [Alex Fernandez](https://github.com/AlejandroFernandezLuces)
 * [Augusto Finger Pacheco](https://github.com/fingeraugusto)
+* [Felipe Marchi](https://github.com/femarchi)
 * [Gustavo Corrêa Martins](https://github.com/gcmartins)
 * [Jorge Martínez](https://github.com/jorgepiloto)
 * [Kathy Pippert](https://github.com/PipKat)

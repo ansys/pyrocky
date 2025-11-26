@@ -24,8 +24,11 @@ Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
 import hashlib
+import os
+from pathlib import Path
+import sys
 import time
-from typing import TYPE_CHECKING, Final
+from typing import TYPE_CHECKING, Callable, Final
 import warnings
 
 import Pyro5.api
@@ -41,10 +44,88 @@ if TYPE_CHECKING:
 
 _PYROCKY_DEFAULT_PORT: Final[int] = 18615
 _API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}
-_LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = None  # Used for backward compatibility with versions < 26.1
+_LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = (
+    None  # Used for backward compatibility with versions < 26.1
+)
 _CONNECT_TO_SERVER_TIMEOUT = 60
 
-DEFAULT_SERVER_PORT = _PYROCKY_DEFAULT_PORT  # Compatibility with dependants that still import this constant.
+# Compatibility with dependants that still import this constant.
+DEFAULT_SERVER_PORT = _PYROCKY_DEFAULT_PORT
+
+
+def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "RockyClient":
+    """Connect to a Rocky/Freeflow app instance.
+
+    Parameters
+    ----------
+    host : str, optional
+        Host name where the app is running. On Windows, default is ``"localhost"`. On
+        Linux, it defaults to a unix domain socket connection.
+    port : int, optional
+        Service port to connect to.
+
+    Returns
+    -------
+    RockyClient
+        Client object for interacting with the Rocky/Freeflow app.
+    """
+    if sys.platform == "win32":
+        # Use TCP for Windows as default
+        if host is None:
+            host = "localhost"
+        pyro_uri = f"PYRO:rocky.api@{host}:{port}"
+        hash_str = f"{host}:{port}"
+    else:
+        # Use UDS for Linux as default
+        if host:
+            raise PyRockyError(
+                "TCP connections are not supported on Linux. Please omit the"
+                " 'host' parameter."
+            )
+
+        socket_path = _uds_socket_path(port)
+        # Wait for Rocky app to create the socket file.
+        try:
+            wait_for(socket_path.is_socket, timeout=_CONNECT_TO_SERVER_TIMEOUT)
+        except TimeoutError:
+            raise ConnectionRefusedError(f"No socket open at '{socket_path.name}'")
+
+        pyro_uri = f"PYRO:rocky.api@./u:{socket_path}"
+        hash_str = str(socket_path)
+
+    md5_hash = hashlib.md5(hash_str.encode()).hexdigest()
+
+    global _LEGACY_PROXY_INSTANCE
+
+    if not _API_PROXY_INSTANCES and _LEGACY_PROXY_INSTANCE is None:
+        register_proxies()
+
+    # Remove any existing proxy for this host:port to prevent using a stale or invalid
+    # connection
+    _API_PROXY_INSTANCES.pop(md5_hash, None)
+
+    proxy_instance = Pyro5.api.Proxy(pyro_uri)
+
+    def is_proxy_connected() -> bool:
+        try:
+            proxy_instance._pyroBind()
+        except CommunicationError:
+            return False
+        return proxy_instance._pyroConnection is not None
+
+    try:
+        wait_for(is_proxy_connected, timeout=_CONNECT_TO_SERVER_TIMEOUT)
+    except TimeoutError:
+        raise ConnectionRefusedError("Could not connect to the remote server: timed out")
+
+    rocky_version = _get_numerical_version(proxy_instance)
+    if rocky_version >= 261:
+        _API_PROXY_INSTANCES[md5_hash] = proxy_instance
+    else:
+        _LEGACY_PROXY_INSTANCE = proxy_instance  # For backward compatibility
+
+    rocky_client = RockyClient(proxy_instance)
+    return rocky_client
 
 
 def connect_to_rocky(  # pragma: no cover
@@ -60,56 +141,17 @@ def connect_to_rocky(  # pragma: no cover
     return connect(host, port)
 
 
-def connect(host: str = "localhost", port: int = _PYROCKY_DEFAULT_PORT) -> "RockyClient":
-    """Connect to a Rocky/Freeflow app instance.
-
-    Parameters
-    ----------
-    host : str, optional
-        Host name where the app is running. The default is ``"localhost"``.
-    port : int, optional
-        Service port to connect to.
-
-    Returns
-    -------
-    RockyClient
-        Client object for interacting with the Rocky/Freeflow app.
+def _uds_socket_path(socket_number: int) -> Path:
     """
-    uri = f"PYRO:rocky.api@{host}:{port}"
-    hash_str = f"{host}:{port}"
-    md5_hash = hashlib.md5(hash_str.encode()).hexdigest()
-
-    global _LEGACY_PROXY_INSTANCE
-
-    if not _API_PROXY_INSTANCES and _LEGACY_PROXY_INSTANCE is None:
-        register_proxies()
-
-    # Remove any existing proxy for this host:port to prevent using a stale or invalid connection
-    _API_PROXY_INSTANCES.pop(md5_hash, None)
-
-    proxy_instance = Pyro5.api.Proxy(uri)
-
-    # Check if the connection succeeded
-    now = time.time()
-    while (time.time() - now) < _CONNECT_TO_SERVER_TIMEOUT:
-        try:
-            proxy_instance._pyroBind()
-            assert proxy_instance._pyroConnection is not None
-        except (CommunicationError, AssertionError):
-            time.sleep(1)
-        else:
-            break
-    else:
-        raise PyRockyError("Could not connect to the remote server: timed out")
-
-    rocky_version = _get_numerical_version(proxy_instance)
-    if rocky_version >= 261:
-        _API_PROXY_INSTANCES[md5_hash] = proxy_instance
-    else:
-        _LEGACY_PROXY_INSTANCE = proxy_instance  # For backward compatibility
-
-    rocky_client = RockyClient(proxy_instance)
-    return rocky_client
+    ``socket_number`` parameter is used to enable the creation of different socket
+    files based on the provided number.
+    """
+    socket_folder = (
+        os.environ["XDG_RUNTIME_DIR"]
+        if "XDG_RUNTIME_DIR" in os.environ
+        else os.path.expanduser("~/.ansys")
+    )
+    return Path(socket_folder) / f"ansys-rocky-{socket_number}.sock"
 
 
 class RockyClient:
@@ -158,3 +200,25 @@ def _get_numerical_version(rocky_api: Pyro5.api.Proxy) -> int:
         # The rocky version is older than 25.1, the specific version is not really
         # important.
         return 240
+
+
+def wait_for(predicate_callback: Callable[[], bool], *, timeout: int) -> None:
+    """
+    Waits until the given predicate callback returns True or raises ``TimeoutError``.
+
+    Parameters
+    ----------
+    predicate_callback :
+        a function that returns a boolean value.
+    timeout :
+        for how long to wait in seconds. If the timeout is reached, a ``TimeoutError``
+        is raised.
+
+    """
+    started = time.time()
+    while (time.time() - started) < timeout:
+        if predicate_callback():
+            return
+        else:
+            time.sleep(1)
+    raise TimeoutError("Operation timed out")

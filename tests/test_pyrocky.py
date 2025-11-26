@@ -27,7 +27,6 @@ import pytest
 
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core.client import _PYROCKY_DEFAULT_PORT
-from ansys.rocky.core.exceptions import PyRockyError
 from ansys.rocky.core.launcher import RockyLaunchError
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
@@ -115,10 +114,16 @@ def test_minimal_simulation(tmp_path, request):
     else:
         expected_rocky_version = VERSION
 
-    from ansys.rocky.core.client import _LEGACY_PROXY_INSTANCE, _API_PROXY_INSTANCES, _get_numerical_version
+    from ansys.rocky.core.client import (
+        _API_PROXY_INSTANCES,
+        _LEGACY_PROXY_INSTANCE,
+        _get_numerical_version,
+    )
 
     session_uid = hashlib.md5(f"localhost:{_PYROCKY_DEFAULT_PORT}".encode()).hexdigest()
-    proxy = _API_PROXY_INSTANCES[session_uid] if VERSION >= 261 else _LEGACY_PROXY_INSTANCE
+    proxy = (
+        _API_PROXY_INSTANCES[session_uid] if VERSION >= 261 else _LEGACY_PROXY_INSTANCE
+    )
     rocky_version = _get_numerical_version(proxy)
     assert rocky_version == expected_rocky_version
 
@@ -222,9 +227,7 @@ def test_close_freeflow_existing_session():
     from ansys.rocky.core.client import _get_numerical_version
 
     pyrocky.launch_freeflow(freeflow_version=VERSION)
-    freeflow_two = pyrocky.launch_freeflow(
-        freeflow_version=VERSION, close_existing=True
-    )
+    freeflow_two = pyrocky.launch_freeflow(freeflow_version=VERSION, close_existing=True)
 
     assert _get_numerical_version(freeflow_two.api) is not None
 
@@ -252,10 +255,16 @@ def test_freeflow_launcher_with_specified_version(request):
     freeflow = pyrocky.launch_freeflow(freeflow_version=VERSION)
     request.addfinalizer(freeflow.close)
 
-    from ansys.rocky.core.client import _LEGACY_PROXY_INSTANCE, _API_PROXY_INSTANCES, _get_numerical_version
+    from ansys.rocky.core.client import (
+        _API_PROXY_INSTANCES,
+        _LEGACY_PROXY_INSTANCE,
+        _get_numerical_version,
+    )
 
     session_uid = hashlib.md5(f"localhost:{_PYROCKY_DEFAULT_PORT}".encode()).hexdigest()
-    proxy = _API_PROXY_INSTANCES[session_uid] if VERSION >= 261 else _LEGACY_PROXY_INSTANCE
+    proxy = (
+        _API_PROXY_INSTANCES[session_uid] if VERSION >= 261 else _LEGACY_PROXY_INSTANCE
+    )
     freeflow_version = _get_numerical_version(proxy)
     assert freeflow_version == VERSION
 
@@ -272,9 +281,7 @@ def test_connection_check(request, monkeypatch):
     """Test if the connection check works as expected."""
     from ansys.rocky.core import client
 
-    with pytest.raises(
-        PyRockyError, match="Could not connect to the remote server: timed out"
-    ):
+    with pytest.raises(ConnectionRefusedError, match="Could not connect"):
         with monkeypatch.context() as m:
             m.setattr(client, "_CONNECT_TO_SERVER_TIMEOUT", 0)
             pyrocky.launch_rocky(server_port=_PYROCKY_DEFAULT_PORT)

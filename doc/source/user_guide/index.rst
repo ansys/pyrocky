@@ -13,6 +13,7 @@ example, the following code creates a project and saves it to disk:
 
 .. vale off
 ..  code:: python
+
     rocky = pyrocky.launch_rocky()
     api = rocky.api
 

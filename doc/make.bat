@@ -44,7 +44,7 @@ goto end
 	cd "%BUILDDIR%\latex"
 	for %%f in (*.tex) do (
 	pdflatex "%%f" --interaction=nonstopmode)
-	if NOT EXIST pyrocky.pdf (
+	if NOT EXIST ansys-rocky-core.pdf (
 
 		Echo "no pdf generated!"
 		exit /b 1)

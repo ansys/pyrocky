@@ -1,0 +1,103 @@
+
+
+
+
+
+
+:class:`RATimeRangeFilter`
+==========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_range_filter.RATimeRangeFilter(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RATimeRangeFilter
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDomainRange`
+            - 
+          * - :py:attr:`~SetDomainRange`
+            - 
+          * - :py:attr:`~GetValidDomainRangeValues`
+            - 
+          * - :py:attr:`~GetFinal`
+            - 
+          * - :py:attr:`~SetFinal`
+            - 
+          * - :py:attr:`~GetInitial`
+            - 
+          * - :py:attr:`~SetInitial`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_range_filter import RATimeRangeFilter
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetDomainRange() -> str
+
+.. py:method:: SetDomainRange(value: str)
+
+.. py:method:: GetValidDomainRangeValues() -> list[str]
+
+.. py:method:: GetFinal(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetFinal(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetInitial(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetInitial(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+
+

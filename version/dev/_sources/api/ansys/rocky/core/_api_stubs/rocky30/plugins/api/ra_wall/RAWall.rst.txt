@@ -1,0 +1,347 @@
+
+
+
+
+
+
+:class:`RAWall`
+===============
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall.RAWall
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+
+
+
+.. py:currentmodule:: RAWall
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~LoadFile`
+            - 
+          * - :py:attr:`~GetUseWear`
+            - 
+          * - :py:attr:`~SetUseWear`
+            - 
+          * - :py:attr:`~HasMotionFrame`
+            - 
+          * - :py:attr:`~GetHorizontalOffset`
+            - 
+          * - :py:attr:`~SetHorizontalOffset`
+            - 
+          * - :py:attr:`~GetVerticalOffset`
+            - 
+          * - :py:attr:`~SetVerticalOffset`
+            - 
+          * - :py:attr:`~GetOutOfPlaneOffset`
+            - 
+          * - :py:attr:`~SetOutOfPlaneOffset`
+            - 
+          * - :py:attr:`~GetOrientation`
+            - 
+          * - :py:attr:`~SetOrientation`
+            - 
+          * - :py:attr:`~SetOrientationFromAngles`
+            - 
+          * - :py:attr:`~SetOrientationFromAngleAndVector`
+            - 
+          * - :py:attr:`~SetOrientationFromBasisVector`
+            - 
+          * - :py:attr:`~GetOrientationFromAngles`
+            - 
+          * - :py:attr:`~GetOrientationFromAngleAndVector`
+            - 
+          * - :py:attr:`~GetOrientationFromBasisVector`
+            - 
+          * - :py:attr:`~GetDisableTime`
+            - 
+          * - :py:attr:`~SetDisableTime`
+            - 
+          * - :py:attr:`~GetEnableTime`
+            - 
+          * - :py:attr:`~SetEnableTime`
+            - 
+          * - :py:attr:`~GetPivotPoint`
+            - 
+          * - :py:attr:`~SetPivotPoint`
+            - 
+          * - :py:attr:`~GetTemperature`
+            - 
+          * - :py:attr:`~SetTemperature`
+            - 
+          * - :py:attr:`~GetThermalBoundaryConditionType`
+            - 
+          * - :py:attr:`~SetThermalBoundaryConditionType`
+            - 
+          * - :py:attr:`~GetValidThermalBoundaryConditionTypeValues`
+            - 
+          * - :py:attr:`~GetTranslation`
+            - 
+          * - :py:attr:`~SetTranslation`
+            - 
+          * - :py:attr:`~GetTriangleSize`
+            - 
+          * - :py:attr:`~SetTriangleSize`
+            - 
+          * - :py:attr:`~GetBoundaryMass`
+            - 
+          * - :py:attr:`~SetBoundaryMass`
+            - 
+          * - :py:attr:`~GetGravityCenter`
+            - 
+          * - :py:attr:`~SetGravityCenter`
+            - 
+          * - :py:attr:`~GetMomentXDirection`
+            - 
+          * - :py:attr:`~SetMomentXDirection`
+            - 
+          * - :py:attr:`~GetMomentYDirection`
+            - 
+          * - :py:attr:`~SetMomentYDirection`
+            - 
+          * - :py:attr:`~GetMomentZDirection`
+            - 
+          * - :py:attr:`~SetMomentZDirection`
+            - 
+          * - :py:attr:`~GetPrincipalMomentOfInertia`
+            - 
+          * - :py:attr:`~SetPrincipalMomentOfInertia`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetPeriodicReplication`
+            - 
+          * - :py:attr:`~SetPeriodicReplication`
+            - 
+          * - :py:attr:`~GetNumberOfReplications`
+            - 
+          * - :py:attr:`~SetNumberOfReplications`
+            - 
+          * - :py:attr:`~GetReplicateGeometry`
+            - 
+          * - :py:attr:`~SetReplicateGeometry`
+            - 
+          * - :py:attr:`~GetReplicateTime`
+            - 
+          * - :py:attr:`~SetReplicateTime`
+            - 
+          * - :py:attr:`~GetSphBoundaryType`
+            - 
+          * - :py:attr:`~SetSphBoundaryType`
+            - 
+          * - :py:attr:`~GetValidSphBoundaryTypeValues`
+            - 
+          * - :py:attr:`~GetSurfaceTensionContactAngle`
+            - 
+          * - :py:attr:`~SetSurfaceTensionContactAngle`
+            - 
+          * - :py:attr:`~GetVolumeShearWorkRatio`
+            - 
+          * - :py:attr:`~SetVolumeShearWorkRatio`
+            - 
+          * - :py:attr:`~GetWearModel`
+            - 
+          * - :py:attr:`~SetWearModel`
+            - 
+          * - :py:attr:`~GetValidWearModelValues`
+            - 
+          * - :py:attr:`~GetMaterial`
+            - 
+          * - :py:attr:`~SetMaterial`
+            - 
+          * - :py:attr:`~GetAvailableMaterials`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall import RAWall
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: LoadFile(file_path: str, import_scale: float = ..., convert_yz: bool = ...) -> None
+
+.. py:method:: GetUseWear() -> bool
+
+.. py:method:: SetUseWear(value: bool) -> None
+
+.. py:method:: HasMotionFrame() -> bool
+
+.. py:method:: GetHorizontalOffset(unit: Union[str, None] = ...) -> float
+
+.. py:method:: SetHorizontalOffset(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+.. py:method:: GetVerticalOffset(unit: Union[str, None] = ...) -> float
+
+.. py:method:: SetVerticalOffset(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+.. py:method:: GetOutOfPlaneOffset(unit: Union[str, None] = ...) -> float
+
+.. py:method:: SetOutOfPlaneOffset(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+.. py:method:: GetOrientation(unit: str = ...) -> rocky30.base_types.Tuple3F
+
+.. py:method:: SetOrientation(rotation: rocky30.base_types.Tuple3F, unit: str = ...) -> None
+
+.. py:method:: SetOrientationFromAngles(rotation: rocky30.base_types.Tuple3F, unit: str = ..., local_angles: bool = ..., order: str = ...) -> None
+
+.. py:method:: SetOrientationFromAngleAndVector(angle: float, vector: rocky30.base_types.Tuple3F, unit: str = ...) -> None
+
+.. py:method:: SetOrientationFromBasisVector(vector_x: rocky30.base_types.Tuple3F, vector_y: rocky30.base_types.Tuple3F, vector_z: rocky30.base_types.Tuple3F) -> None
+
+.. py:method:: GetOrientationFromAngles(unit: str = ...) -> rocky30.base_types.Tuple3F
+
+.. py:method:: GetOrientationFromAngleAndVector(unit: str = ...) -> tuple[float, rocky30.base_types.Tuple3F]
+
+.. py:method:: GetOrientationFromBasisVector() -> tuple[rocky30.base_types.Tuple3F, rocky30.base_types.Tuple3F, rocky30.base_types.Tuple3F]
+
+.. py:method:: GetDisableTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetDisableTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetEnableTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetEnableTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetPivotPoint(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetPivotPoint(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetThermalBoundaryConditionType() -> str
+
+.. py:method:: SetThermalBoundaryConditionType(value: str) -> None
+
+.. py:method:: GetValidThermalBoundaryConditionTypeValues() -> List[str]
+
+.. py:method:: GetTranslation(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetTranslation(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetTriangleSize(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetTriangleSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetBoundaryMass(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetBoundaryMass(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetGravityCenter(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetGravityCenter(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetMomentXDirection() -> List[float]
+
+.. py:method:: SetMomentXDirection(values: List[Union[str, float]]) -> None
+
+.. py:method:: GetMomentYDirection() -> List[float]
+
+.. py:method:: SetMomentYDirection(values: List[Union[str, float]]) -> None
+
+.. py:method:: GetMomentZDirection() -> List[float]
+
+.. py:method:: SetMomentZDirection(values: List[Union[str, float]]) -> None
+
+.. py:method:: GetPrincipalMomentOfInertia(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetPrincipalMomentOfInertia(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetName() -> str
+
+.. py:method:: SetName(value: str) -> None
+
+.. py:method:: GetPeriodicReplication() -> bool
+
+.. py:method:: SetPeriodicReplication(value: bool) -> None
+
+.. py:method:: GetNumberOfReplications() -> int
+
+.. py:method:: SetNumberOfReplications(value: Union[str, int]) -> None
+
+.. py:method:: GetReplicateGeometry() -> bool
+
+.. py:method:: SetReplicateGeometry(value: bool) -> None
+
+.. py:method:: GetReplicateTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetReplicateTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetSphBoundaryType() -> str
+
+.. py:method:: SetSphBoundaryType(value: str) -> None
+
+.. py:method:: GetValidSphBoundaryTypeValues() -> List[str]
+
+.. py:method:: GetSurfaceTensionContactAngle(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetSurfaceTensionContactAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetVolumeShearWorkRatio(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetVolumeShearWorkRatio(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetWearModel() -> str
+
+.. py:method:: SetWearModel(value: str) -> None
+
+.. py:method:: GetValidWearModelValues() -> List[str]
+
+.. py:method:: GetMaterial()
+
+.. py:method:: SetMaterial(value) -> None
+
+.. py:method:: GetAvailableMaterials()
+
+
+
+

@@ -1,0 +1,122 @@
+ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item
+==================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiError
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.IWrappedItem
+   ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem
+
+
+Module Contents
+---------------
+
+.. py:exception:: ApiError
+
+   Bases: :py:obj:`RuntimeError`
+
+
+   
+   Unspecified run-time error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:class:: IWrappedItem
+
+   Bases: :py:obj:`ben10.interface.Interface`
+
+
+   .. py:method:: GetWrappedClass() -> None
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> None
+      :classmethod:
+
+
+
+   .. py:method:: GetChildrenClassesToIgnore() -> None
+      :classmethod:
+
+
+
+.. py:class:: ApiElementItem(id: str, model_id: Optional[str] = ...)
+
+   .. py:method:: GetWrappedClass() -> Type
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetChildrenClassesToIgnore() -> List[Type]
+      :classmethod:
+
+
+
+   .. py:method:: GetDataId() -> str
+
+
+   .. py:attribute:: id
+      :type:  _typeshed.Incomplete
+
+
+   .. py:method:: IsValid() -> bool
+
+
+   .. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+   .. py:attribute:: subject
+      :type:  _typeshed.Incomplete
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(name: str) -> None
+
+
+   .. py:attribute:: name
+      :type:  _typeshed.Incomplete
+
+
+   .. py:method:: SetSelected() -> None
+
+
+   .. py:method:: Select(element_names: List[str]) -> None
+
+

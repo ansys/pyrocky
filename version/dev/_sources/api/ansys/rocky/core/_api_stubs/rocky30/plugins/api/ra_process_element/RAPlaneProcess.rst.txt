@@ -1,0 +1,123 @@
+
+
+
+
+
+
+:class:`RAPlaneProcess`
+=======================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAPlaneProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+
+
+
+.. py:currentmodule:: RAPlaneProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetType`
+            - 
+          * - :py:attr:`~SetType`
+            - 
+          * - :py:attr:`~GetMode`
+            - 
+          * - :py:attr:`~SetMode`
+            - 
+          * - :py:attr:`~GetOrigin`
+            - 
+          * - :py:attr:`~GetPlaneOrigin`
+            - 
+          * - :py:attr:`~SetOrigin`
+            - 
+          * - :py:attr:`~SetPlaneOrigin`
+            - 
+          * - :py:attr:`~GetNormal`
+            - 
+          * - :py:attr:`~GetPlaneNormal`
+            - 
+          * - :py:attr:`~SetNormal`
+            - 
+          * - :py:attr:`~SetPlaneNormal`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import RAPlaneProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[sci20.plugins.process.plane_process.plane_process_subject.PlaneProcessSubject]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetType() -> str
+
+.. py:method:: SetType(plane_type: str) -> None
+
+.. py:method:: GetMode() -> str
+
+.. py:method:: SetMode(plane_mode: str) -> None
+
+.. py:method:: GetOrigin() -> rocky30.base_types.Tuple3F
+
+.. py:method:: GetPlaneOrigin() -> rocky30.base_types.Tuple3F
+
+.. py:method:: SetOrigin(x: float, y: float, z: float) -> None
+
+.. py:method:: SetPlaneOrigin(x: float, y: float, z: float) -> None
+
+.. py:method:: GetNormal() -> rocky30.base_types.Tuple3F
+
+.. py:method:: GetPlaneNormal() -> rocky30.base_types.Tuple3F
+
+.. py:method:: SetNormal(x: float, y: float, z: float) -> None
+
+.. py:method:: SetPlaneNormal(x: float, y: float, z: float) -> None
+
+
+
+

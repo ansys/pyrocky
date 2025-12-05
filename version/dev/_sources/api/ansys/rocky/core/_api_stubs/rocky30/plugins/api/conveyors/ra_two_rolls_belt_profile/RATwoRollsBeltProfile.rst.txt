@@ -1,0 +1,103 @@
+
+
+
+
+
+
+:class:`RATwoRollsBeltProfile`
+==============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_two_rolls_belt_profile.RATwoRollsBeltProfile(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RATwoRollsBeltProfile
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetLowerCornerRadius`
+            - 
+          * - :py:attr:`~SetLowerCornerRadius`
+            - 
+          * - :py:attr:`~GetTroughingAngle`
+            - 
+          * - :py:attr:`~SetTroughingAngle`
+            - 
+          * - :py:attr:`~GetMaterial`
+            - 
+          * - :py:attr:`~SetMaterial`
+            - 
+          * - :py:attr:`~GetAvailableMaterials`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_two_rolls_belt_profile import RATwoRollsBeltProfile
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetLowerCornerRadius(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetLowerCornerRadius(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetTroughingAngle(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetTroughingAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetMaterial()
+
+.. py:method:: SetMaterial(value) -> None
+
+.. py:method:: GetAvailableMaterials()
+
+
+
+

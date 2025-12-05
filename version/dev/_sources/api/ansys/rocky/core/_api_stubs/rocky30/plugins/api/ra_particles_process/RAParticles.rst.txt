@@ -1,0 +1,87 @@
+
+
+
+
+
+
+:class:`RAParticles`
+====================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particles_process.RAParticles
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+
+
+
+.. py:currentmodule:: RAParticles
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetNumberOfParticles`
+            - 
+          * - :py:attr:`~IterParticles`
+            - 
+          * - :py:attr:`~RemoveProcess`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particles_process import RAParticles
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetNumberOfParticles(time_step)
+
+.. py:method:: IterParticles(time_step)
+
+.. py:method:: RemoveProcess() -> None
+
+
+
+

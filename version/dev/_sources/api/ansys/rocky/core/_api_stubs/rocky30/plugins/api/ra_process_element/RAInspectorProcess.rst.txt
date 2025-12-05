@@ -1,0 +1,79 @@
+
+
+
+
+
+
+:class:`RAInspectorProcess`
+===========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAInspectorProcess
+
+   Bases: :py:obj:`RAUserProcess`
+
+
+
+
+
+.. py:currentmodule:: RAInspectorProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetCellId`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import RAInspectorProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetCellId(cell_id) -> None
+
+
+
+

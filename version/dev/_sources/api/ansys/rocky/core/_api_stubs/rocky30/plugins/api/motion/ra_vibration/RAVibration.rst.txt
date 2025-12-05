@@ -1,0 +1,123 @@
+
+
+
+
+
+
+:class:`RAVibration`
+====================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_vibration.RAVibration(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RAVibration
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAmplitudeVariation`
+            - 
+          * - :py:attr:`~SetAmplitudeVariation`
+            - 
+          * - :py:attr:`~GetDirection`
+            - 
+          * - :py:attr:`~SetDirection`
+            - 
+          * - :py:attr:`~GetFrequencyVariation`
+            - 
+          * - :py:attr:`~SetFrequencyVariation`
+            - 
+          * - :py:attr:`~GetInitialAmplitude`
+            - 
+          * - :py:attr:`~SetInitialAmplitude`
+            - 
+          * - :py:attr:`~GetInitialFrequency`
+            - 
+          * - :py:attr:`~SetInitialFrequency`
+            - 
+          * - :py:attr:`~GetInitialPhase`
+            - 
+          * - :py:attr:`~SetInitialPhase`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_vibration import RAVibration
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetAmplitudeVariation(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetAmplitudeVariation(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetDirection() -> List[float]
+
+.. py:method:: SetDirection(values: List[Union[str, float]]) -> None
+
+.. py:method:: GetFrequencyVariation(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetFrequencyVariation(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetInitialAmplitude(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetInitialAmplitude(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetInitialFrequency(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetInitialFrequency(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetInitialPhase(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetInitialPhase(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+
+

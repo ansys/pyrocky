@@ -1,0 +1,123 @@
+
+
+
+
+
+
+:class:`RAPolyhedronProcess`
+============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAPolyhedronProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+
+
+
+.. py:currentmodule:: RAPolyhedronProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCenter`
+            - 
+          * - :py:attr:`~SetCenter`
+            - 
+          * - :py:attr:`~GetCenterAfterMovement`
+            - 
+          * - :py:attr:`~GetSize`
+            - 
+          * - :py:attr:`~SetSize`
+            - 
+          * - :py:attr:`~GetRotation`
+            - 
+          * - :py:attr:`~SetRotation`
+            - 
+          * - :py:attr:`~SetSTL`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetScale`
+            - 
+          * - :py:attr:`~SetScale`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import RAPolyhedronProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.process.user_process.polyhedron_process_with_movement.PolyhedronProcessWithMovement]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetCenter(unit: _typeshed.Incomplete | None = ...) -> rocky30.base_types.Tuple3F
+
+.. py:method:: SetCenter(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+.. py:method:: GetCenterAfterMovement(timestep: int) -> rocky30.base_types.Tuple3F
+
+.. py:method:: GetSize(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+.. py:method:: SetSize(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+.. py:method:: GetRotation(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+.. py:method:: SetRotation(x: float, y: float, z: float, unit: Union[str, None] = ...)
+
+.. py:method:: SetSTL(filename: str, mesh_unit: Union[str, None] = ...) -> None
+
+.. py:method:: GetName() -> str
+
+.. py:method:: SetName(value: str) -> None
+
+.. py:method:: GetScale(unit: Union[str, None] = ...) -> list[float]
+
+.. py:method:: SetScale(values: collections.abc.Sequence[Union[str, float]], unit: Union[str, None] = ...) -> None
+
+
+
+

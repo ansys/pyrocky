@@ -35,6 +35,4 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring import (
 ColorType = tuple[float, float, float]
 
 class _RASubjectWithColoringMixin:
-    def GetMeshColoring(
-        self, window: Union[str, type["KAWorkspaceWindow"]]
-    ) -> RAMeshColoring: ...
+    def GetMeshColoring(self, window: str | KAWorkspaceWindow) -> RAMeshColoring: ...

@@ -20,8 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from _typeshed import Incomplete
-
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import (
     RAUserProcess as RAUserProcess,
 )
@@ -31,12 +29,8 @@ class RAParticleTimeSelectionProcess(RAUserProcess):
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def SetAbsoluteTimeRange(self, initial_time, final_time, unit: str = ...) -> None: ...
+    def SetAbsoluteTimeRange(self, initial_time, final_time, unit: str = "s") -> None: ...
     def SetTimeRange(
-        self,
-        range_definition: Incomplete | None = ...,
-        initial: Incomplete | None = ...,
-        final: Incomplete | None = ...,
-        unit: str = ...,
+        self, range_definition=None, initial=None, final=None, unit: str = "s"
     ) -> None: ...
     def GetTimeRange(self): ...

@@ -23,5 +23,5 @@
 from collections.abc import Callable as Callable
 
 def ApiDeprecated(
-    new_name: str, release_version: str, show_error: bool = ...
+    new_name: str, release_version: str, show_error: bool = False
 ) -> Callable: ...

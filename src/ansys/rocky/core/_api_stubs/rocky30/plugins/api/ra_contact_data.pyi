@@ -23,9 +23,6 @@
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element import (
     RAGridProcessElementItem as RAGridProcessElementItem,
 )
-from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_deprecated_decorator import (
-    ApiDeprecated as ApiDeprecated,
-)
 
 class RAContactData(RAGridProcessElementItem):
     @classmethod

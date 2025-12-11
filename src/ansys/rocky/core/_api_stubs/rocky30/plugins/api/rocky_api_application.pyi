@@ -21,28 +21,36 @@
 # SOFTWARE.
 
 from pathlib import Path
-from typing import Union
 
-from kraken20.plugins.api.ka_application import KAApplication
+from coilib50.process import IProcess as IProcess
+from coilib50.subject import Subject as Subject
+from coilib50.time.time_set import TimeSet as TimeSet
+from coilib50.time.time_step import TimeStep as TimeStep
+from coilib50.time.time_step_interface import ITimeStep
+from esss_qt10.qt_traits import QWidget as QWidget
+from kraken20.plugins.api.ka_3dwindow import RA3DWindow
+from kraken20.plugins.api.ka_cross_plot import KACrossPlotWindow
+from kraken20.plugins.api.ka_histogram_window import KAHistogramWindow
+from kraken20.plugins.api.ka_multi_time_plot_window import KAMultiTimePlotWindow
+from kraken20.plugins.api.ka_space_plot import KASpacePlotWindow
+from kraken20.plugins.api.ka_time_plot_window import RATimePlotWindow
 from kraken20.plugins.api.ka_workspace_window import (
     KAWorkspaceWindow as KAWorkspaceWindow,
 )
 from sci20.app.base_process import BaseProcess as BaseProcess
 
+from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_application import (
+    ApiApplication,
+)
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
     ApiElementItem as ApiElementItem,
 )
+from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_expose import ApiExpose
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_additional_features import (
     RAAdditionalFeatures as RAAdditionalFeatures,
 )
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api import (
     RockyApiError as RockyApiError,
-)
-from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import (
-    RAMplWindow as RAMplWindow,
-)
-from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import (
-    UserWindowSubjectContainer as UserWindowSubjectContainer,
 )
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project import (
     RAProject as RAProject,
@@ -52,14 +60,35 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_deprecated_decora
     ApiDeprecated as ApiDeprecated,
 )
 
-class RockyApiApplication(KAApplication):
+Windows_Types = (
+    RA3DWindow
+    | RATimePlotWindow
+    | KACrossPlotWindow
+    | KAHistogramWindow
+    | KASpacePlotWindow
+    | KAMultiTimePlotWindow
+)
+
+class RockyApiApplication(ApiApplication):
+    TYPE_3D_WINDOW: str
+    TYPE_TIME_PLOT_WINDOW: str
+    TYPE_CROSS_PLOT_WINDOW: str
+    TYPE_HISTOGRAM_PLOT_WINDOW: str
+    TYPE_SPACE_PLOT_WINDOW: str
+    TYPE_MULTI_TIME_PLOT_WINDOW: str
     def CreateProject(self) -> RAProject: ...
     def GetProject(self) -> RAProject: ...
+    @ApiExpose
     def OpenProject(self, filename: str) -> RAProject: ...
-    def CloseProject(self, check_save_state: bool = ...) -> None: ...
-    def SaveProject(self, filename: Union[str, None] = ...) -> None: ...
+    @ApiExpose
+    def CloseProject(self, check_save_state: bool = True) -> None: ...
+    @ApiExpose
+    def SaveProject(self, filename: str | None = None) -> None: ...
+    @ApiExpose
     def PlaybackMacroFile(self, filename: str) -> None: ...
+    @ApiExpose
     def PlaybackMacro(self, macro_name: str) -> None: ...
+    @ApiExpose
     def GetAdditionalFeatures(self) -> RAAdditionalFeatures: ...
     def GetVersion(self) -> str: ...
-    def GetStudy(self, study_name: Union[str, None] = ...) -> RAStudy: ...
+    def GetStudy(self, study_name: str | None = None) -> RAStudy: ...

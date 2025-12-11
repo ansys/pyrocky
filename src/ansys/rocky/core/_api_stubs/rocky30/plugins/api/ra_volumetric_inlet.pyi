@@ -45,55 +45,352 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_propert
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall import RAWall as RAWall
 
 class RAVolumetricInlet(ApiElementItem, _RAOrientationMixin):
+    """
+    Rocky PrePost Scripting wrapper for a single Volume Fill input.
+
+    This wrapper class corresponds to an individual entry under the "Inputs" item on the project\'s
+    data tree. Particle inputs can be retrieved from the :class:`RAStudy` or the
+    :class:`RAInletsOutletsCollection` via:
+
+    .. code-block:: python
+
+        input_1 = study.GetElement(\'Volume Fill <1>\')
+        input_2 = input_collection.GetParticleInput(\'Volume Fill <2>\')
+
+    Instances of :class:`RAVolumetricInlet` comprise two parts: Properties that can be manipulated
+    directly, such as the input\'s name and the seed point, and the input properties list
+    that describe which particles enter via this input and with its mass, temperature, etc.
+    This list must be manipulated via the :class:`RAParticleInputPropertiesList` returned by
+    :meth:`GetInputPropertiesList()`.
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[VolumeFill]: ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def GetInputPropertiesList(self) -> RAVolumetricInletPropertiesList: ...
-    def AddParticle(self, particle: RAParticle | str) -> RAVolumetricInletProperties: ...
-    def RemoveParticle(self, particle: RAParticle | str) -> None: ...
-    def GetBoxCenter(self, unit: str | None = None) -> list[float]: ...
+    def GetInputPropertiesList(self) -> RAVolumetricInletPropertiesList:
+        """
+        Return a list of input properties
+        """
+
+    def AddParticle(self, particle: RAParticle | str) -> RAVolumetricInletProperties:
+        """
+        Add a new particle to the Volumetric Inlet input properties list.
+
+        : return: A new :class:`RAVolumetricInletProperties` object that can be used to set
+        """
+
+    def RemoveParticle(self, particle: RAParticle | str) -> None:
+        """
+        Remove a particle from the Particle Inlet input properties list.
+
+        :param particle: The particle to remove, either as an :class:`RAParticle` object or by name.
+        """
+
+    def GetBoxCenter(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Box Center".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        """
+
     def SetBoxCenter(
         self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
-    def GetBoxDimensions(self, unit: str | None = None) -> list[float]: ...
+    ) -> None:
+        """
+        Set the values of "Box Center".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """
+
+    def GetBoxDimensions(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Box Dimensions".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        """
+
     def SetBoxDimensions(
         self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
-    def GetUseGeometriesToCompute(self) -> bool: ...
-    def SetUseGeometriesToCompute(self, value: bool) -> None: ...
-    def GetGapScaleFactor(self) -> float: ...
-    def SetGapScaleFactor(self, value: str | float) -> None: ...
-    def GetInitialVelocity(self, unit: str | None = None) -> list[float]: ...
+    ) -> None:
+        """
+        Set the values of "Box Dimensions".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """
+
+    def GetUseGeometriesToCompute(self) -> bool:
+        """
+        Get the value of "Use Geometries To Compute".
+
+        """
+
+    def SetUseGeometriesToCompute(self, value: bool) -> None:
+        """
+        Set the value of "Use Geometries To Compute".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetGapScaleFactor(self) -> float:
+        """
+        Get the value of "Gap Scale Factor".
+
+        """
+
+    def SetGapScaleFactor(self, value: str | float) -> None:
+        """
+        Set the value of "Gap Scale Factor".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        """
+
+    def GetInitialVelocity(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Initial Velocity".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m/s".
+        """
+
     def SetInitialVelocity(
         self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
-    def GetPeriodic(self) -> bool: ...
-    def SetPeriodic(self, value: bool) -> None: ...
-    def EnablePeriodic(self) -> None: ...
-    def DisablePeriodic(self) -> None: ...
-    def IsPeriodicEnabled(self) -> bool: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
-    def GetPeriod(self, unit: str | None = None) -> float: ...
-    def SetPeriod(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetSeedCoordinates(self, unit: str | None = None) -> list[float]: ...
+    ) -> None:
+        """
+        Set the values of "Initial Velocity".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "m/s".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """
+
+    def GetPeriodic(self) -> bool:
+        """
+        Get the value of "Periodic".
+
+        """
+
+    def SetPeriodic(self, value: bool) -> None:
+        """
+        Set the value of "Periodic".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnablePeriodic(self) -> None:
+        """
+        Set the value of "Periodic" to True.
+        """
+
+    def DisablePeriodic(self) -> None:
+        """
+        Set the value of "Periodic" to False.
+        """
+
+    def IsPeriodicEnabled(self) -> bool:
+        """
+        Check if the "Periodic" is enabled.
+
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetPeriod(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Period".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetPeriod(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Period".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetSeedCoordinates(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Seed Coordinates".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        """
+
     def SetSeedCoordinates(
         self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
-    def GetInjectionTime(self, unit: str | None = None) -> float: ...
-    def SetInjectionTime(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetStopTime(self, unit: str | None = None) -> float: ...
-    def SetStopTime(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetSphMass(self, unit: str | None = None) -> float: ...
-    def SetSphMass(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetSphTemperature(self, unit: str | None = None) -> float: ...
-    def SetSphTemperature(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetUseBoxCenterAsSeedPoint(self) -> bool: ...
-    def SetUseBoxCenterAsSeedPoint(self, value: bool) -> None: ...
-    def EnableUseBoxCenterAsSeedPoint(self) -> None: ...
-    def DisableUseBoxCenterAsSeedPoint(self) -> None: ...
-    def IsUseBoxCenterAsSeedPointEnabled(self) -> bool: ...
-    def GetGeometries(self): ...
-    def SetGeometries(self, values) -> None: ...
-    def GetAvailableGeometries(self): ...
+    ) -> None:
+        """
+        Set the values of "Seed Coordinates".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """
+
+    def GetInjectionTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Injection Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetInjectionTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Injection Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetStopTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Stop Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetStopTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Stop Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetSphMass(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Sph Mass".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "kg".
+        """
+
+    def SetSphMass(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Sph Mass".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "kg".
+        """
+
+    def GetSphTemperature(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Sph Temperature".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "K".
+        """
+
+    def SetSphTemperature(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Sph Temperature".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+        """
+
+    def GetUseBoxCenterAsSeedPoint(self) -> bool:
+        """
+        Get the value of "Use Box Center As Seed Point".
+
+        """
+
+    def SetUseBoxCenterAsSeedPoint(self, value: bool) -> None:
+        """
+        Set the value of "Use Box Center As Seed Point".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableUseBoxCenterAsSeedPoint(self) -> None:
+        """
+        Set the value of "Use Box Center As Seed Point" to True.
+        """
+
+    def DisableUseBoxCenterAsSeedPoint(self) -> None:
+        """
+        Set the value of "Use Box Center As Seed Point" to False.
+        """
+
+    def IsUseBoxCenterAsSeedPointEnabled(self) -> bool:
+        """
+        Check if the "Use Box Center As Seed Point" is enabled.
+
+        """
+
+    def GetGeometries(self):
+        """
+        Get the "Geometries".
+
+        :rtype: List[:class:`RAWall`]
+            A list of :class:`RAWall`.
+        """
+
+    def SetGeometries(self, values) -> None:
+        """
+        Set the "Geometries".
+
+        :param List[str, :class:`RAWall`] values:
+            A list with names, :class:`RAWall`.
+        """
+
+    def GetAvailableGeometries(self):
+        """
+        Get all available Geometries.
+
+        :rtype: List[:class:`RAWall`]
+            A list of :class:`RAWall`.
+        """

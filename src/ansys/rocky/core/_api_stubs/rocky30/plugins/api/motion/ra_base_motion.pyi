@@ -32,9 +32,50 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame impo
 )
 
 class RABaseMotionFrame(ApiElementItem):
-    def NewFrame(self) -> RAMotionFrame: ...
-    def NewConeCrusherFrame(self): ...
-    def IterMotionFrames(self) -> Generator[Incomplete]: ...
-    def GetMotionFrame(self, frame_name): ...
-    def RemoveFrame(self, motion_frame) -> None: ...
-    def GetParentMotionFrame(self): ...
+    """
+    Base class for Api representations of MotionFrames and MotionFrameSources. Provides methods
+    to create, iterate and remove motion frames.
+    """
+
+    def NewFrame(self) -> RAMotionFrame:
+        """
+        Creates a new motion frame.
+        """
+
+    def NewConeCrusherFrame(self):
+        """
+        Creates a new cone crusher frame.
+
+        :rtype: RAConeCrusherFrame
+        """
+
+    def IterMotionFrames(self) -> Generator[Incomplete]:
+        """
+        Iterates over all the motion frames available (recursively).
+
+        :return iter(RAMotionFrame):
+        """
+
+    def GetMotionFrame(self, frame_name):
+        """
+        Get a specific motion frame given its name.
+
+        :param unicode frame_name:
+
+        :rtype: RAMotionFrame
+        """
+
+    def RemoveFrame(self, motion_frame) -> None:
+        """
+        Removes a previously-created motion frame.
+
+        :param RAMotionFrame or RAConeCrusherFrame motion_frame:
+        """
+
+    def GetParentMotionFrame(self):
+        """
+        Gets the parent motion frame.
+        If the Motion Frame is a RAMotionFrameSource it returns None.
+
+        :rtype: RAMotionFrame
+        """

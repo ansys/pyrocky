@@ -25,8 +25,19 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RAParametricVariables(ApiElementItem):
+    """
+    Rocky PrePost Scripting wrapper for the parametric variables (both input and output) in a project.
+
+    Currently the wrapper only provides a project's input variables via :meth:`GetInputVariables`.
+    """
+
     @classmethod
     def GetWrappedClass(cls): ...
     @classmethod
     def GetClassName(cls): ...
-    def GetInputVariables(self): ...
+    def GetInputVariables(self):
+        """
+        Get the PrePost Scripting wrapper that handles the Input Variables in the project.
+
+        :rtype: RAInputVariables
+        """

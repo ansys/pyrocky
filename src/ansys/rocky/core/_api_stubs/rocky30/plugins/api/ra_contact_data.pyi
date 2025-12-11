@@ -29,14 +29,68 @@ class RAContactData(RAGridProcessElementItem):
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def RemoveProcess(self) -> None: ...
-    def GetCollectContactsData(self) -> bool: ...
-    def SetCollectContactsData(self, value: bool) -> None: ...
-    def EnableCollectContactsData(self) -> None: ...
-    def DisableCollectContactsData(self) -> None: ...
-    def IsCollectContactsDataEnabled(self) -> bool: ...
-    def GetIncludeAdhesiveContacts(self) -> bool: ...
-    def SetIncludeAdhesiveContacts(self, value: bool) -> None: ...
-    def EnableIncludeAdhesiveContacts(self) -> None: ...
-    def DisableIncludeAdhesiveContacts(self) -> None: ...
-    def IsIncludeAdhesiveContactsEnabled(self) -> bool: ...
+    def RemoveProcess(self) -> None:
+        """
+        It is not possible to remove the item "Contacts" from the project. It\'s a standard Rocky
+        item in project.
+        """
+
+    def GetCollectContactsData(self) -> bool:
+        """
+        Get the value of "Collect Contacts Data".
+
+        """
+
+    def SetCollectContactsData(self, value: bool) -> None:
+        """
+        Set the value of "Collect Contacts Data".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableCollectContactsData(self) -> None:
+        """
+        Set the value of "Collect Contacts Data" to True.
+        """
+
+    def DisableCollectContactsData(self) -> None:
+        """
+        Set the value of "Collect Contacts Data" to False.
+        """
+
+    def IsCollectContactsDataEnabled(self) -> bool:
+        """
+        Check if the "Collect Contacts Data" is enabled.
+
+        """
+
+    def GetIncludeAdhesiveContacts(self) -> bool:
+        """
+        Get the value of "Include Adhesive Contacts".
+
+        """
+
+    def SetIncludeAdhesiveContacts(self, value: bool) -> None:
+        """
+        Set the value of "Include Adhesive Contacts".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableIncludeAdhesiveContacts(self) -> None:
+        """
+        Set the value of "Include Adhesive Contacts" to True.
+        """
+
+    def DisableIncludeAdhesiveContacts(self) -> None:
+        """
+        Set the value of "Include Adhesive Contacts" to False.
+        """
+
+    def IsIncludeAdhesiveContactsEnabled(self) -> bool:
+        """
+        Check if the "Include Adhesive Contacts" is enabled.
+
+        """

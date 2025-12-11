@@ -22,7 +22,22 @@
 
 from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import ApiError
 
-class RockyApiError(ApiError): ...
+class RockyApiError(ApiError):
+    """
+    Exception class representing an error generated in the API layer.
 
-def CheckResults(ra_object) -> None: ...
-def CheckPropAffectsSimulation(prop_owner, prop_name): ...
+    RockyApiErrors should be raised for circumstances that are known to be user errors and not
+    software bugs - things like trying to make a setup change without deleting results beforehand,
+    trying to remove by name items that don't exist, etc.
+    """
+
+def CheckResults(ra_object) -> None:
+    """
+    Helper function to check if the project has simulation results and raise an error with a
+    helpful message. Should be called by API methods that would invalidate simulation results.
+    """
+
+def CheckPropAffectsSimulation(prop_owner, prop_name):
+    """
+    Helper function to check if the property (given by prop_name) affects the simulation results.
+    """

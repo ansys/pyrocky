@@ -25,10 +25,46 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RAFreeBodyRotation(ApiElementItem):
+    """
+    Rocky PrePost Scripting wrapper representing a Free Body Rotation motion.
+
+    Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+    example:
+
+    .. code-block:: python
+
+        motions = motion_frame.GetMotions()
+        motion_1 = motions.New()
+        motion_1.SetType('Free Body Rotation')
+        free_body_rotation = motion_1.GetTypeObject()
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def GetFreeMotionDirection(self) -> str: ...
-    def SetFreeMotionDirection(self, value: str) -> None: ...
-    def GetValidFreeMotionDirectionValues(self) -> list[str]: ...
+    def GetFreeMotionDirection(self) -> str:
+        """
+        Get "Free Motion Direction" as a string.
+
+        :return:
+            The returned value will be one of [\'none\', \'x\', \'y\', \'xy\', \'z\', \'xz\', \'yz\', \'xyz\'].
+        """
+
+    def SetFreeMotionDirection(self, value: str) -> None:
+        """
+        Set the value of "Free Motion Direction".
+
+        :param value:
+            The value to set. Must be one of [\'none\', \'x\', \'y\', \'xy\', \'z\', \'xz\', \'yz\', \'xyz\'].
+        :raises RockyApiError:
+            If `value` is not a valid "Free Motion Direction" option.
+        """
+
+    def GetValidFreeMotionDirectionValues(self) -> list[str]:
+        """
+        Get a list of all possible values for "Free Motion Direction".
+
+        :return:
+            The returned list is [\'none\', \'x\', \'y\', \'xy\', \'z\', \'xz\', \'yz\', \'xyz\'].
+        """

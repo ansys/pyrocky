@@ -34,21 +34,118 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins import (
 )
 
 class RACustomInput(ApiElementItem, ElementWithAddins, _WithMovementMixin):
+    """
+    Rocky PrePost Scripting wrapper for a single Custom Input.
+
+    This wrapper class corresponds to an individual entry under the "Inputs" item on the project\'s
+    data tree. Particle inputs can be retrieved from the :class:`RAStudy` or the
+    :class:`RAInletsOutletsCollection` via:
+
+    .. code-block:: python
+
+        input_1 = study.GetElement(\'Custom Input <1>\')
+        input_2 = input_collection.GetParticleInput(\'Custom Input <2>\')
+
+    Instances of :class:`RACustomInput` gives access to its two properties:
+    The id of the Particle that will be used in the particle generation and the path of the csv file which will
+    contain the information for each desired particle to be generated, such as, positioning, size, release time.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def GetFilePath(self): ...
-    def SetFilePath(self, file_path) -> None: ...
-    def GetMotionFrame(self): ...
-    def SetMotionFrame(self, motion_frame: RAMotionFrame | str | None) -> None: ...
-    def GetAvailableMotionFrames(self): ...
-    def GetDefaultTemperature(self, unit: str | None = None) -> float: ...
-    def SetDefaultTemperature(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
-    def GetParticle(self): ...
-    def SetParticle(self, value) -> None: ...
-    def GetAvailableParticles(self): ...
+    def GetFilePath(self):
+        """
+        Get the value of "File Path".
+
+        :rtype: str
+        """
+
+    def SetFilePath(self, file_path) -> None:
+        """
+        Set the path of the file that will be used to generate the particles
+        described on the content of the file.
+
+        The accepted file extensions are [".csv", ".xls", ".xlsx", ".xlsm", ".xlsb", ".odf"].
+
+        :param str or Path file_path:
+        """
+
+    def GetMotionFrame(self):
+        """
+        Get the "Motion Frame".
+
+        :rtype: :class:`RAMotionFrame`
+        """
+
+    def SetMotionFrame(self, motion_frame: RAMotionFrame | str | None) -> None:
+        """
+        Assign a Motion Frame to the custom input.
+
+        :param motion_frame:
+            Either the API object or its name.
+        """
+
+    def GetAvailableMotionFrames(self):
+        """
+        Get all available Motion Frames.
+
+        :rtype: List[:class:`RAMotionFrame`]
+            A list of :class:`RAMotionFrame`.
+        """
+
+    def GetDefaultTemperature(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Default Temperature".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "K".
+        """
+
+    def SetDefaultTemperature(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Default Temperature".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetParticle(self):
+        """
+        Get the "Particle".
+
+        :rtype: :class:`RAParticle`
+        """
+
+    def SetParticle(self, value) -> None:
+        """
+        Set the "Particle".
+
+        :param unicode, :class:`RAParticle` value:
+            Either the API object wrapping the desired entity or its name.
+        """
+
+    def GetAvailableParticles(self):
+        """
+        Get all available Particles.
+
+        :rtype: List[:class:`RAParticle`]
+            A list of :class:`RAParticle`.
+        """

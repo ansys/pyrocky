@@ -25,10 +25,33 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RAOneRollBeltProfile(ApiElementItem):
+    """
+    Rocky API for a One Roll Belt Profile model.
+    """
+
     @classmethod
     def GetWrappedClass(cls): ...
     @classmethod
     def GetClassName(cls): ...
-    def GetMaterial(self): ...
-    def SetMaterial(self, value) -> None: ...
-    def GetAvailableMaterials(self): ...
+    def GetMaterial(self):
+        """
+        Get the "Material".
+
+        :rtype: :class:`RASolidMaterial`
+        """
+
+    def SetMaterial(self, value) -> None:
+        """
+        Set the "Material".
+
+        :param unicode, :class:`RASolidMaterial` value:
+            Either the API object wrapping the desired entity or its name.
+        """
+
+    def GetAvailableMaterials(self):
+        """
+        Get all available Materials.
+
+        :rtype: List[:class:`RASolidMaterial`]
+            A list of :class:`RASolidMaterial`.
+        """

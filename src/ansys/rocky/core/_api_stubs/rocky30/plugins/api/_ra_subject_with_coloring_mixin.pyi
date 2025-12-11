@@ -35,4 +35,19 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring import (
 ColorType = tuple[float, float, float]
 
 class _RASubjectWithColoringMixin:
-    def GetMeshColoring(self, window: str | KAWorkspaceWindow) -> RAMeshColoring: ...
+    """
+    Mixin to be used for RASubjects that can have coloring.
+    """
+
+    def GetMeshColoring(self, window: str | KAWorkspaceWindow) -> RAMeshColoring:
+        """
+        Get the RAMeshColoring related to the current object and a window.
+
+        :param window:
+            The window that the coloring is acting. The window must be a str of the name of the
+            window or a KAWorkspaceWindow.
+        :raises RockyApiError:
+            If window is not a str or KAWorkspaceWindow. Additionally, raises an error if no window
+            is found or no coloring for the given item exists.
+
+        """

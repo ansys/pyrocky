@@ -28,8 +28,27 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api import (
 )
 
 class RATimeSeriesRotation(ApiElementItem):
+    """
+    Rocky PrePost Scripting wrapper representing a Time Series Rotation motion.
+
+    Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+    example:
+
+    .. code-block:: python
+
+        motions = motion_frame.GetMotions()
+        motion_1 = motions.New()
+        motion_1.SetType('Time Series Rotation')
+        time_series_rotation = motion_1.GetTypeObject()
+    """
+
     @classmethod
     def GetWrappedClass(cls) -> type: ...
     @classmethod
     def GetClassName(cls) -> str: ...
-    def ImportTimeSeriesMotion(self, file_path: str) -> None: ...
+    def ImportTimeSeriesMotion(self, file_path: str) -> None:
+        """
+        Generate the Time Series Motion Frame described on the contents of the file.
+
+        The accepted file extensions are CSV and XLSX.
+        """

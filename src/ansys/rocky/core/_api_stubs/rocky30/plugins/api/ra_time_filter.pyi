@@ -25,6 +25,10 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RATimeFilter(ApiElementItem):
+    """
+    Rocky api time filter model.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
@@ -33,10 +37,46 @@ class RATimeFilter(ApiElementItem):
     def SetFinalTime(self, value: str | float, unit: str | None = None) -> None: ...
     def GetInitialTime(self, unit: str | None = None) -> float: ...
     def SetInitialTime(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetEnabled(self) -> bool: ...
-    def SetEnabled(self, value: bool) -> None: ...
-    def EnableTimeFilter(self) -> None: ...
-    def DisableTimeFilter(self) -> None: ...
-    def IsTimeFilterEnabled(self) -> bool: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
+    def GetEnabled(self) -> bool:
+        """
+        Get the value of "Enabled".
+
+        """
+
+    def SetEnabled(self, value: bool) -> None:
+        """
+        Set the value of "Enabled".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableTimeFilter(self) -> None:
+        """
+        Set the value of "Time Filter" to True.
+        """
+
+    def DisableTimeFilter(self) -> None:
+        """
+        Set the value of "Time Filter" to False.
+        """
+
+    def IsTimeFilterEnabled(self) -> bool:
+        """
+        Check if the "Time Filter" is enabled.
+
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """

@@ -39,13 +39,38 @@ class RAEulerianStatistics(RAUserProcess):
     @classmethod
     def GetClassName(cls) -> str: ...
     @ApiExpose
-    def GetDivisions(self) -> tuple[int, int, int]: ...
+    def GetDivisions(self) -> tuple[int, int, int]:
+        """
+        Get the number of divisions in i/j/k.
+
+        :rtype: tuple(int)
+        """
+
     @ApiExpose
-    def SetDivisions(self, divisions: tuple[int, int, int]) -> None: ...
+    def SetDivisions(self, divisions: tuple[int, int, int]) -> None:
+        """
+        Set the number of divisions in i/j/k. Note that the minimum value for each number is 1.
+
+        :param tuple(int) divisions:
+            The divisions in (i,j,k) order.
+        """
+
     @ApiExpose
-    def GetParticleGridFunctionNames(self) -> list[str]: ...
+    def GetParticleGridFunctionNames(self) -> list[str]:
+        """
+        Get a list with the particle grid function names that can be passed to `CreateGridFunction()`.
+
+        :rtype: list(unicode)
+        """
+
     @ApiExpose
-    def GetAvailableOperations(self) -> list[str]: ...
+    def GetAvailableOperations(self) -> list[str]:
+        """
+        Get a list with the operations that can be passed to `CreateGridFunction()`.
+
+        :rtype: list(unicode)
+        """
+
     @ApiExpose
     def CreateEulerianGridFunction(
         self,
@@ -53,4 +78,29 @@ class RAEulerianStatistics(RAUserProcess):
         value_name: str,
         weight_name: str | None = None,
         grid_function_source: None | RAGridProcessElementItem = None,
-    ) -> RAGridFunction: ...
+    ) -> RAGridFunction:
+        """
+        Add a new grid function to the Eulerian Statistics.
+
+        This method takes an operation and one (or two) particle grid function names and creates
+        a new grid function for this EulerianStatistics. For instance, the call:
+
+            CreateEulerianGridFunction(\'Weighted Average\', \'Velocity : Translational : Absolute\', \'Particle Mass\')
+
+        ... will create the `Weighted Average of Velocity : Translational : Absolute by Particle Mass`
+        grid function. The grid function PrePost Scripting wrapper is returned.
+
+        :param unicode operation_name:
+            The name of the operation to be performed on the particles in each grid block. Must be
+            one of `GetAvailableOperations()`.
+
+        :param unicode value_name:
+            The name of the first particle grid function to be used (the "value"). Must be one of
+            `GetParticleGridFunctionNames()`.
+
+        :param weight_name:
+            The name of the second particle grid function to be used (the "weight"). Only used for
+            operations that take two grid functions. Must be one of `GetParticleGridFunctionNames()`.
+
+        :rtype: RAGridFunction
+        """

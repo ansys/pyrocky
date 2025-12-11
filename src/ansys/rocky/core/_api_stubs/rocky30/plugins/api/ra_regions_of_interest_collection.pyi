@@ -33,9 +33,28 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_region_of_interest_cylin
 )
 
 class RARegionsOfInterestCollection(RAList):
+    """
+    Rocky PrePost Scripting wrapper for the collection of Regions of Interest in a project.
+
+    This wrapper corresponds to the "Regions Of Interest" item in the project\'s data tree. To
+    retrieve the :class:`RARegionsOfInterestCollection` from a :class:`RAStudy`, use:
+
+        roi_collection = study.GetRegionsOfInterestCollection()
+
+    Instances of the :class:`RARegionsOfInterestCollection` class act as regular Python lists, and
+    can be iterated on, accessed via index, etc:
+    """
+
     @classmethod
     def GetWrappedClass(cls) -> type[RoiCollection]: ...
     @classmethod
     def GetClassName(cls) -> str: ...
-    def AddCube(self, name: str | None = None) -> RARegionOfInterestCube: ...
-    def AddCylinder(self, name: str | None = None) -> RARegionOfInterestCylinder: ...
+    def AddCube(self, name: str | None = None) -> RARegionOfInterestCube:
+        """
+        Add a new Cube. Returns the newly created item.
+        """
+
+    def AddCylinder(self, name: str | None = None) -> RARegionOfInterestCylinder:
+        """
+        Add a new Cylinder. Returns the newly created item.
+        """

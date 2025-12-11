@@ -24,4 +24,14 @@ from collections.abc import Callable as Callable
 
 def ApiDeprecated(
     new_name: str, release_version: str, show_error: bool = False
-) -> Callable: ...
+) -> Callable:
+    """
+    Decorator that marks API method as deprecated, showing errors or warnings to the Rocky app user.
+
+    :param new_name:
+        The name of the method that substitutes this one, if any.
+    :param release_version:
+        The release version when the method was deprecated.
+    :param show_error:
+        Flag to raise an exception with the deprecation message instead of warning.
+    """

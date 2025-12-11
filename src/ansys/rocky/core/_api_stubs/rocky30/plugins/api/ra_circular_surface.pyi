@@ -33,18 +33,89 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry import (
 )
 
 class RACircularSurface(RABaseGeometry, _RAOrientationMixin, _WithMovementMixin):
+    """
+    Rocky API for "Circular Surface" model.
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[object]: ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def HasMotionFrame(self) -> bool: ...
-    def GetCenter(self, unit: str | None = None) -> list[float]: ...
-    def SetCenter(
-        self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
-    def GetMinRadius(self, unit: str | None = None) -> float: ...
-    def SetMinRadius(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
-    def GetMaxRadius(self, unit: str | None = None) -> float: ...
-    def SetMaxRadius(self, value: str | float, unit: str | None = None) -> None: ...
+    def HasMotionFrame(self) -> bool:
+        """
+        Whether the geometry is linked to a motion frame.
+
+        :return:
+            True if geometry is linked to a motion frame False otherwise
+        """
+
+    def GetCenter(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Center".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        """
+
+    def SetCenter(self, values: Sequence[str | float], unit: str | None = None) -> None:
+        """
+        Set the values of "Center".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """
+
+    def GetMinRadius(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Min Radius".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMinRadius(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Min Radius".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetMaxRadius(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Max Radius".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMaxRadius(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Max Radius".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """

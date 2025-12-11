@@ -27,6 +27,10 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element imp
 )
 
 class RAModuleOutput(RAGridProcessElementItem):
+    """
+    Wrapper class for the object that represents a Module's unique output.
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[IProcess]: ...
     @classmethod

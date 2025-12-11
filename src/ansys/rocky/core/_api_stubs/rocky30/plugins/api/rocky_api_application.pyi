@@ -76,19 +76,67 @@ class RockyApiApplication(ApiApplication):
     TYPE_HISTOGRAM_PLOT_WINDOW: str
     TYPE_SPACE_PLOT_WINDOW: str
     TYPE_MULTI_TIME_PLOT_WINDOW: str
-    def CreateProject(self) -> RAProject: ...
-    def GetProject(self) -> RAProject: ...
+    def CreateProject(self) -> RAProject:
+        """
+        Creates a new project.
+        """
+
+    def GetProject(self) -> RAProject:
+        """
+        Overrides Kraken API implementation to use the base class.
+        If there is no project don't create a new one.
+        """
+
     @ApiExpose
-    def OpenProject(self, filename: str) -> RAProject: ...
+    def OpenProject(self, filename: str) -> RAProject:
+        """
+        Closes the current project, if any, and opens the project with the given filename.
+
+        :param str filename:
+        The complete path of the project to be opened.
+        :rtype RAProject:
+        """
+
     @ApiExpose
-    def CloseProject(self, check_save_state: bool = True) -> None: ...
+    def CloseProject(self, check_save_state: bool = True) -> None:
+        """
+        Close the current project.
+
+        :param bool check_save_state:
+            If False, it will close without asking the user to save it first.
+        """
+
     @ApiExpose
-    def SaveProject(self, filename: str | None = None) -> None: ...
+    def SaveProject(self, filename: str | None = None) -> None:
+        """
+        Save the currently opened project.
+
+        :param str filename:
+            The name of the file to save the project or None if to update the current file
+        """
+
     @ApiExpose
     def PlaybackMacroFile(self, filename: str) -> None: ...
     @ApiExpose
     def PlaybackMacro(self, macro_name: str) -> None: ...
     @ApiExpose
-    def GetAdditionalFeatures(self) -> RAAdditionalFeatures: ...
-    def GetVersion(self) -> str: ...
-    def GetStudy(self, study_name: str | None = None) -> RAStudy: ...
+    def GetAdditionalFeatures(self) -> RAAdditionalFeatures:
+        """
+        Get the PrePost Scripting wrapper that corresponds to the "Additional Features" page on the application\'s Preferences
+
+        :rtype: RAAdditionalFeatures
+        """
+
+    def GetVersion(self) -> str:
+        """
+        Return the current version of the application.
+        """
+
+    def GetStudy(self, study_name: str | None = None) -> RAStudy:
+        """
+        Get the project's Study.
+
+        :param study_name:
+            The name of the study
+            If None is given the first model will be returned
+        """

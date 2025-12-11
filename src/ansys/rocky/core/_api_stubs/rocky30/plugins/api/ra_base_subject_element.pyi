@@ -21,5 +21,14 @@
 # SOFTWARE.
 
 class BaseSubjectApiElement:
+    """
+    PrePost Scripting wrapper for model elements without a pool ID.
+    """
+
     def __init__(self, base_subject) -> None: ...
-    def GetSubject(self): ...
+    def GetSubject(self):
+        """
+        :rtype: BaseSubject
+        :returns:
+            The element associated with the element id
+        """

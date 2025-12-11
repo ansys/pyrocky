@@ -39,7 +39,44 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry import (
 )
 
 class RABaseConveyor(RABaseGeometry):
-    def GetBeltProfileName(self): ...
-    def GetBeltProfile(self): ...
-    def SetBeltProfile(self, belt_profile_name): ...
-    def GetValidBeltProfileNames(self): ...
+    """
+    Base class for Rocky API conveyor models.
+    """
+
+    def GetBeltProfileName(self):
+        """
+        Get the name of the belt profile.
+
+        :rtype: str
+        :return:
+            A string describing the type of belt profile. The returned value will be one of the strings
+            in the "Belt Profile" drop-down menu in the UI.
+        """
+
+    def GetBeltProfile(self):
+        """
+        :rtype: ApiElementItem
+        :return:
+            The API object that wraps the current belt profile.
+        """
+
+    def SetBeltProfile(self, belt_profile_name):
+        """
+        Set the belt profile object through its name as shown in the UI.
+
+        :param str belt_profile_name:
+            Accepted values are the strings in the "Belt Profile" dropdown menu in the UI.
+
+        :rtype: ApiElementItem
+        :return:
+            The PrePost Scripting wrapper representing the belt profile.
+        """
+
+    def GetValidBeltProfileNames(self):
+        """
+        Return a list with possible values for belt profile.
+
+        :rtype: list(str)
+        :return:
+            A list of accepted values for `SetBeltProfile()`.
+        """

@@ -81,26 +81,85 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_tagging import (
 )
 
 class RACalculations(ApiElementItem):
+    """
+    Rocky api for particles calculations
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[ParticlesCalculations]: ...
     @classmethod
     def GetClassName(self) -> str: ...
     def CreateSelectionResidenceTime(
         self, selection: RAGridProcessElementItem | str
-    ) -> ParticlesSelectionCalculator: ...
+    ) -> ParticlesSelectionCalculator:
+        """
+        Create a residence time grid function for the given selection process
+        """
+
     def CreateSelectionFlipCount(
         self, selection: RAGridProcessElementItem
-    ) -> ParticlesSelectionCalculator: ...
-    def GetTagging(self, name: str) -> RATagging: ...
-    def GetDivisionsTagging(self, name: str) -> RADivisionsTagging: ...
-    def GetTaggingNames(self) -> list[str]: ...
-    def GetDivisionsTaggingNames(self) -> list[str]: ...
+    ) -> ParticlesSelectionCalculator:
+        """
+        Create a flip count grid function for the given selection process
+        """
+
+    def GetTagging(self, name: str) -> RATagging:
+        """
+        Get the Tagging calculator with the given name.
+        """
+
+    def GetDivisionsTagging(self, name: str) -> RADivisionsTagging:
+        """
+        Get the Divisions Tagging calculator with the given name.
+        """
+
+    def GetTaggingNames(self) -> list[str]:
+        """
+        Get a list of the names of all Taggings in Particles Calculations.
+        """
+
+    def GetDivisionsTaggingNames(self) -> list[str]:
+        """
+        Get a list of the names of all Divisions Taggings in Particles Calculations.
+        """
+
     def CreateTagging(
         self, selection: RAGridProcessElementItem
-    ) -> ParticlesSelectionCalculator | None: ...
+    ) -> ParticlesSelectionCalculator | None:
+        """
+        Create a Tagging calculator for the given particle-based selection process.
+
+        :param selection:
+            Must be a particle selection type.
+        """
+
     def CreateDivisionsTagging(
         self, selection: RAGridProcessElementItem
-    ) -> RADivisionsTagging: ...
-    def __iter__(self) -> Iterator: ...
-    def __len__(self) -> int: ...
-    def __getitem__(self, index: int) -> ParticlesSelectionCalculator: ...
+    ) -> RADivisionsTagging:
+        """
+        Create a Divisions Tagging calculator for the given particle-based selection process.
+
+        :param selection:
+            Must be a particle selection type.
+        """
+
+    def __iter__(self) -> Iterator:
+        """
+        Iterates over the wrapped particle calculations.
+        """
+
+    def __len__(self) -> int:
+        """
+        :rtype: int
+        :return:
+            The number of particle calculations
+        """
+
+    def __getitem__(self, index: int) -> ParticlesSelectionCalculator:
+        """
+        :param index:
+            The calculation index
+
+        :return:
+            The particle calculation at the given index
+        """

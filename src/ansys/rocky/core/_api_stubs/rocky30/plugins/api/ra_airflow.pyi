@@ -25,43 +25,296 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element imp
 )
 
 class RAAirFlow(RAGridProcessElementItem):
+    """
+    Rocky PrePost Scripting wrapper for Lattice Boltzmann Air Flow.
+
+    This wrapper can be accessed via the project's :class:`RACFDCoupling`:
+
+    .. code-block:: python
+
+        cfd_coupling = study.GetCFDCoupling()
+        cfd_coupling.SetupAirFlow()
+        airflow = cfd_coupling.GetAirFlow()
+
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def SetPartIdIfValid(self) -> None: ...
-    def GetAirDensity(self, unit: str | None = None) -> float: ...
-    def SetAirDensity(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetAirKinematicViscosity(self, unit: str | None = None) -> float: ...
+    def SetPartIdIfValid(self) -> None:
+        """
+        Set the AirFlow's part_id, but only if AirFlow is enabled in the simulation.
+        """
+
+    def GetAirDensity(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Air Density".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+        """
+
+    def SetAirDensity(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Air Density".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+        """
+
+    def GetAirKinematicViscosity(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Air Kinematic Viscosity".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m2/s".
+        """
+
     def SetAirKinematicViscosity(
         self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetBoundaryConditionType(self) -> str: ...
-    def SetBoundaryConditionType(self, value: str) -> None: ...
-    def GetValidBoundaryConditionTypeValues(self) -> list[str]: ...
-    def GetCellSize(self, unit: str | None = None) -> float: ...
-    def SetCellSize(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetInteractionScale(self, unit: str | None = None) -> float: ...
-    def SetInteractionScale(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetMaxX(self, unit: str | None = None) -> float: ...
-    def SetMaxX(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetMaxY(self, unit: str | None = None) -> float: ...
-    def SetMaxY(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetMaxZ(self, unit: str | None = None) -> float: ...
-    def SetMaxZ(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetMinX(self, unit: str | None = None) -> float: ...
-    def SetMinX(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetMinY(self, unit: str | None = None) -> float: ...
-    def SetMinY(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetMinZ(self, unit: str | None = None) -> float: ...
-    def SetMinZ(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetSpeedOfSound(self, unit: str | None = None) -> float: ...
-    def SetSpeedOfSound(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetStartWhenParticlesEnter(self) -> bool: ...
-    def SetStartWhenParticlesEnter(self, value: bool) -> None: ...
-    def GetStartTime(self, unit: str | None = None) -> float: ...
-    def SetStartTime(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetUseAirflow(self) -> bool: ...
-    def SetUseAirflow(self, value: bool) -> None: ...
+    ) -> None:
+        """
+        Set the value of "Air Kinematic Viscosity".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m2/s".
+        """
+
+    def GetBoundaryConditionType(self) -> str:
+        """
+        Get "Boundary Condition Type" as a string.
+
+        :return:
+            The returned value will be one of [\'first_derivative\', \'second_derivative\'].
+        """
+
+    def SetBoundaryConditionType(self, value: str) -> None:
+        """
+        Set the value of "Boundary Condition Type".
+
+        :param value:
+            The value to set. Must be one of [\'first_derivative\', \'second_derivative\'].
+        :raises RockyApiError:
+            If `value` is not a valid "Boundary Condition Type" option.
+        """
+
+    def GetValidBoundaryConditionTypeValues(self) -> list[str]:
+        """
+        Get a list of all possible values for "Boundary Condition Type".
+
+        :return:
+            The returned list is [\'first_derivative\', \'second_derivative\'].
+        """
+
+    def GetCellSize(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Cell Size".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetCellSize(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Cell Size".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetInteractionScale(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Interaction Scale".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "-".
+        """
+
+    def SetInteractionScale(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Interaction Scale".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+        """
+
+    def GetMaxX(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Max X".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMaxX(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Max X".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetMaxY(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Max Y".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMaxY(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Max Y".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetMaxZ(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Max Z".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMaxZ(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Max Z".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetMinX(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Min X".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMinX(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Min X".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetMinY(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Min Y".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMinY(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Min Y".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetMinZ(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Min Z".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMinZ(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Min Z".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetSpeedOfSound(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Speed of Sound".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m/s".
+        """
+
+    def SetSpeedOfSound(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Speed of Sound".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s".
+        """
+
+    def GetStartWhenParticlesEnter(self) -> bool:
+        """
+        Get the value of "Start When Particles Enter".
+
+        """
+
+    def SetStartWhenParticlesEnter(self, value: bool) -> None:
+        """
+        Set the value of "Start When Particles Enter".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetStartTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Start Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetStartTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Start Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetUseAirflow(self) -> bool:
+        """
+        Get the value of "Use Airflow".
+
+        """
+
+    def SetUseAirflow(self, value: bool) -> None:
+        """
+        Set the value of "Use Airflow".
+
+        :param value:
+            The value to set.
+        """

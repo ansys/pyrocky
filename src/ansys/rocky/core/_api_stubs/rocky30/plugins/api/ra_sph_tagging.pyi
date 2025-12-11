@@ -29,11 +29,48 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_tagging import (
 )
 
 class RASPHTagging(RABaseTagging):
+    """
+    Rocky PrePost Scripting wrapper to manipulate Tagging Calculators for SPH.
+
+    The class corresponds to an individual "Tagging" calculation under the
+    "Calculations" item on the project\'s data tree. To create the
+    :class:`RASPHTagging` from a :class:`RACalculations`, use:
+
+    .. code-block:: python
+
+        selection_process = study.GetElement(\'SPH\')
+        particles_calculations = study.GetCalculations()
+        tagging = particles_calculations.CreateTagging(selection_process)
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[SPHTaggingCalculator]: ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def GetNameMask(self) -> str: ...
-    def SetNameMask(self, value: str) -> None: ...
-    def GetTagValue(self) -> int: ...
-    def SetTagValue(self, value: str | int) -> None: ...
+    def GetNameMask(self) -> str:
+        """
+        Get the value of "Name Mask".
+
+        """
+
+    def SetNameMask(self, value: str) -> None:
+        """
+        Set the value of "Name Mask".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetTagValue(self) -> int:
+        """
+        Get the value of "Tag Value".
+
+        """
+
+    def SetTagValue(self, value: str | int) -> None:
+        """
+        Set the value of "Tag Value".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or int type.
+        """

@@ -25,6 +25,27 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion impor
 )
 
 class RAMotionFrameSource(RABaseMotionFrame):
+    """
+    Rocky PrePost Scripting wrapper for the root element for Motion Frames
+
+    This class represents the "Motion Frame" item on the project\'s data tree. Get the :class:`RAMotionFrameSource`
+    from a :class:`RAStudy` via:
+
+    .. code-block:: python
+
+        motion_frame_source = study.GetMotionFrameSource()
+
+    This is the element through which motion frames with no parent frames can be created, and through
+    which all motion frames can be directly accessed:
+
+    .. code-block:: python
+
+        motion_frame_1 = motion_frame_source.NewFrame()
+        motion_frame_2 = motion_frame.GetMotionFrame(\'My Frame\')
+        for motion_frame in motion_frame.IterMotionFrames():
+            motion_frame.SetRelativePosition([1.0, 2.0, 3.0], \'m\')
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod

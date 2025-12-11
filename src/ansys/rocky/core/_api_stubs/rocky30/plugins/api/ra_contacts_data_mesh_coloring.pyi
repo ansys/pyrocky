@@ -37,28 +37,142 @@ class RAContactsDataMeshColoring:
     def GetSubject(self) -> Subject: ...
     def SetVisible(self, value: bool) -> None: ...
     def GetVisible(self) -> bool: ...
-    def GetValidColoringModes(self) -> list[str]: ...
-    def GetAvailableGridFunctionsNames(self) -> set[str]: ...
-    def GetAvailableGridFunctions(self) -> set[type["SemanticAssociation"]]: ...
+    def GetValidColoringModes(self) -> list[str]:
+        """
+        Get a list with all possible coloring modes names.
+
+        :return:
+            The returned values will be a combination of ['Contacts', 'Contacts Network']
+        """
+
+    def GetAvailableGridFunctionsNames(self) -> set[str]:
+        """
+        Get a list of all possible values for "GridFunctions" names.
+
+        :return:
+            The returned set contains the names of the available Grid Functions.
+        """
+
+    def GetAvailableGridFunctions(self) -> set[type["SemanticAssociation"]]:
+        """
+        Get a list of all possible values for "GridFunctions".
+
+        :return:
+            The returned set contains the SemanticAssociation of the available Grid Functions.
+        """
+
     def SetStride(self, value: int) -> None: ...
     def GetStride(self) -> int: ...
-    def SetContactsVisible(self, value: bool) -> None: ...
-    def GetContactsVisible(self) -> bool: ...
-    def SetContactsColor(self, values: ColorType) -> None: ...
-    def GetContactsColor(self) -> ColorType: ...
+    def SetContactsVisible(self, value: bool) -> None:
+        """
+        Set the value of "Contacts Visible".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetContactsVisible(self) -> bool:
+        """
+        Get the value of "Contacts Visible".
+
+        """
+
+    def SetContactsColor(self, values: ColorType) -> None:
+        """
+        Set the values of "Contacts Color".
+
+        :param values:
+            The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+        """
+
+    def GetContactsColor(self) -> ColorType:
+        """
+        Get the value of "Node Color".
+        """
+
     def SetContactsProperty(
         self, value: type["SemanticAssociation"] | str | None
-    ) -> None: ...
-    def GetContactsProperty(self) -> type["SemanticAssociation"] | None: ...
-    def SetContactsPointSize(self, value: float) -> None: ...
-    def GetContactsPointSize(self) -> float: ...
-    def SetContactsNetworkVisible(self, value: bool) -> None: ...
-    def GetContactsNetworkVisible(self) -> bool: ...
-    def SetContactsNetworkColor(self, values: ColorType) -> None: ...
-    def GetContactsNetworkColor(self) -> ColorType: ...
+    ) -> None:
+        """
+        Set the values of "Contacts Property".
+
+        :param value:
+            The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+            of its name or `None` for solid colors.
+        """
+
+    def GetContactsProperty(self) -> type["SemanticAssociation"] | None:
+        """
+        Get the value of "Contacts Property".
+        """
+
+    def SetContactsPointSize(self, value: float) -> None:
+        """
+        Set the value of "Contacts Point Size".
+
+        :param value:
+            The value to set. This value must be a float type.
+        """
+
+    def GetContactsPointSize(self) -> float:
+        """
+        Get the value of "Contacts Point Size".
+        """
+
+    def SetContactsNetworkVisible(self, value: bool) -> None:
+        """
+        Set the value of "Contacts Network Visible".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetContactsNetworkVisible(self) -> bool:
+        """
+        Get the value of "Contacts Network Visible".
+
+        """
+
+    def SetContactsNetworkColor(self, values: ColorType) -> None:
+        """
+        Set the values of "Contacts Network Color".
+
+        :param values:
+            The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+        """
+
+    def GetContactsNetworkColor(self) -> ColorType:
+        """
+        Get the value of "Contacts Network Color".
+
+        """
+
     def SetContactsNetworkProperty(
         self, value: type["SemanticAssociation"] | str | None
-    ) -> None: ...
-    def GetContactsNetworkProperty(self) -> type["SemanticAssociation"] | None: ...
-    def SetContactsNetworkLineWidth(self, value: float) -> None: ...
-    def GetContactsNetworkLineWidth(self) -> float: ...
+    ) -> None:
+        """
+        Set the values of "Contacts Network GridFunction".
+
+        :param value:
+            The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+            of its name or `None` for solid colors.
+        """
+
+    def GetContactsNetworkProperty(self) -> type["SemanticAssociation"] | None:
+        """
+        Get the value of "Contacts Network GridFunction".
+
+        """
+
+    def SetContactsNetworkLineWidth(self, value: float) -> None:
+        """
+        Set the value of "Contacts Network Line Width".
+
+        :param value:
+           The value to set. This value must be a float type.
+        """
+
+    def GetContactsNetworkLineWidth(self) -> float:
+        """
+        Get the value of "Contacts Network Line Width".
+        """

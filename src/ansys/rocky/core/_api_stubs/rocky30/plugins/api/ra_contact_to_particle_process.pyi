@@ -25,6 +25,10 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import (
 )
 
 class RAContactToParticleProcess(RAUserProcess):
+    """
+    Process that computes particles from a selection of contacts.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod

@@ -36,18 +36,60 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_expose import (
     ApiExpose as ApiExpose,
 )
 
-class ApiError(RuntimeError): ...
+class ApiError(RuntimeError):
+    """
+    Exception class representing an error generated in the API layer.
+
+    ApiErrors should be raised for circumstances that are known to be user errors and not
+    software bugs - things like trying to make a setup change without deleting results beforehand,
+    trying to remove by name items that don't exist, etc.
+    """
 
 class IWrappedItem(interface.Interface):
+    """
+    Interface for wrapped items.
+    """
+
     @classmethod
-    def GetWrappedClass(cls) -> None: ...
+    def GetWrappedClass(cls) -> None:
+        """
+        :rtype: class
+        :returns:
+            The class that is wrapped by the object.
+        """
+
     @classmethod
-    def GetClassName(cls) -> None: ...
+    def GetClassName(cls) -> None:
+        """
+        :rtype: unicode
+        :returns:
+            The classname that is wrapped by the object.
+        """
+
     @classmethod
-    def GetChildrenClassesToIgnore(cls) -> None: ...
+    def GetChildrenClassesToIgnore(cls) -> None:
+        """
+        :rtype: list of classes
+        :returns:
+            The children of wrapped class that should be ignored.
+        """
 
 class ApiElementItem:
-    def __init__(self, id: str, model_id: str | None = None) -> None: ...
+    """
+    Base wrapper class for all subjects.
+
+    :ivar unicode id:
+        The id of the subject
+
+    :ivar unicode _model_id:
+        The id of the input reader associated with the subject
+    """
+
+    def __init__(self, id: str, model_id: str | None = None) -> None:
+        """
+        .. see:: class docs
+        """
+
     @classmethod
     @Abstract
     def GetWrappedClass(cls) -> type: ...
@@ -55,16 +97,57 @@ class ApiElementItem:
     @Abstract
     def GetClassName(cls) -> str: ...
     @classmethod
-    def GetChildrenClassesToIgnore(cls) -> list[type]: ...
-    def GetDataId(self) -> str: ...
+    def GetChildrenClassesToIgnore(cls) -> list[type]:
+        """
+        If there are some children classes to ignore the children should override and return them
+        in this method.
+        """
+
+    def GetDataId(self) -> str:
+        """
+        :returns:
+            The element pool id
+        """
     id: Incomplete
-    def IsValid(self) -> bool: ...
-    def GetSubject(self) -> Subject: ...
+    def IsValid(self) -> bool:
+        """
+        :returns:
+            True if the given API object is associated to a valid/existing subject
+        """
+
+    def GetSubject(self) -> Subject:
+        """
+        :returns:
+            The element associated with the element id
+        """
     subject: Incomplete
     @ApiExpose
-    def GetName(self) -> str: ...
+    def GetName(self) -> str:
+        """
+        Get the element's name.
+
+        :returns:
+            The name of the element in the application
+        """
+
     @ApiExpose
-    def SetName(self, name: str) -> None: ...
+    def SetName(self, name: str) -> None:
+        """
+        Set the process name
+
+        :param name:
+            The name of the process
+        """
     name: Incomplete
-    def SetSelected(self) -> None: ...
-    def Select(self, element_names: list[str]) -> None: ...
+    def SetSelected(self) -> None:
+        """
+        Sets this item as the current item (selected).
+        """
+
+    def Select(self, element_names: list[str]) -> None:
+        """
+        Select all the elements in the application that are child of this element with the given names
+
+        :param list(unicode) element_names:
+            The list of element names
+        """

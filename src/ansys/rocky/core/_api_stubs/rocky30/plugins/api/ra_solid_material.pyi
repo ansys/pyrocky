@@ -28,29 +28,185 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins import (
 )
 
 class RASolidMaterial(ApiElementItem, ElementWithAddins):
+    """
+    Rocky PrePost Scripting wrapper for individual materials in a project.
+
+    Retrieve individual materials from the :class:`RAStudy` or the :class:`RAMaterialCollection` via:
+
+    .. code-block:: python
+
+        material_1 = study.GetElement('Default Particles')
+        material_2 = material_collection.GetMaterial('Default Boundaries')
+        material_3 = material_collection[2]
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def GetUseBulkDensity(self) -> bool: ...
-    def SetUseBulkDensity(self, value: bool) -> None: ...
-    def GetBulkDensity(self, unit: str | None = None) -> float: ...
-    def SetBulkDensity(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetBulkSolidFraction(self) -> float: ...
-    def SetBulkSolidFraction(self, value: str | float) -> None: ...
-    def GetCurrentDensity(self, unit: str | None = None) -> float: ...
-    def SetCurrentDensity(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetDensity(self, unit: str | None = None) -> float: ...
-    def SetDensity(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetYoungsModulus(self, unit: str | None = None) -> float: ...
-    def SetYoungsModulus(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
-    def GetPoissonRatio(self, unit: str | None = None) -> float: ...
-    def SetPoissonRatio(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetSpecificHeat(self, unit: str | None = None) -> float: ...
-    def SetSpecificHeat(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetThermalConductivity(self, unit: str | None = None) -> float: ...
-    def SetThermalConductivity(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
+    def GetUseBulkDensity(self) -> bool:
+        """
+        Get the value of "Use Bulk Density".
+        """
+
+    def SetUseBulkDensity(self, value: bool) -> None:
+        """
+        Set the value of "Use Bulk Density".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetBulkDensity(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Bulk Density".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+        """
+
+    def SetBulkDensity(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Bulk Density".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+        """
+
+    def GetBulkSolidFraction(self) -> float:
+        """
+        Get the value of "Bulk Solid Fraction".
+
+        """
+
+    def SetBulkSolidFraction(self, value: str | float) -> None:
+        """
+        Set the value of "Bulk Solid Fraction".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        """
+
+    def GetCurrentDensity(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Current Density".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+        """
+
+    def SetCurrentDensity(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Current Density".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+        """
+
+    def GetDensity(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Density".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+        """
+
+    def SetDensity(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Density".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+        """
+
+    def GetYoungsModulus(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Youngs Modulus".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "N/m2".
+        """
+
+    def SetYoungsModulus(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Youngs Modulus".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "N/m2".
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetPoissonRatio(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Poisson Ratio".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "-".
+        """
+
+    def SetPoissonRatio(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Poisson Ratio".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+        """
+
+    def GetSpecificHeat(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Specific Heat".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "J/kg.K".
+        """
+
+    def SetSpecificHeat(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Specific Heat".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "J/kg.K".
+        """
+
+    def GetThermalConductivity(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Thermal Conductivity".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "W/m.K".
+        """
+
+    def SetThermalConductivity(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Thermal Conductivity".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "W/m.K".
+        """

@@ -44,15 +44,77 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet import 
 )
 
 class RAInletsOutletsCollection(RAList[RAParticleInlet]):
+    """
+    Rocky PrePost Scripting wrapper for the collection of particle inputs in a project.
+
+    This wrapper corresponds to the "Inputs" item in the project\'s data tree. To retrieve the
+    :class:`RAInletsOutletsCollection` from a :class:`RAStudy`, use:
+
+    .. code-block:: python
+
+        input_collection = study.GetInletsOutletsCollection()
+
+    Instances of the :class:`RAInletsOutletsCollection` class act as regular Python lists, and can be
+    iterated on, accessed via index, etc:
+
+    .. code-block:: python
+
+        input_1 = input_collection.New()
+        input_2 = input_collection[1]
+        del input_collection[0]
+        for input in input_collection:
+            print(input.GetName())
+
+    Items in this list are of type :class:`RAParticleInlet`.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def New(self): ...
-    def AddParticleInlet(self) -> RAParticleInlet: ...
-    def AddOutlet(self) -> RAOutlet: ...
-    def AddVolumetricInlet(self) -> RAVolumetricInlet: ...
-    def AddCustomInput(self) -> RACustomInput: ...
-    def AddFluidInlet(self) -> RAFluidInlet: ...
-    def GetParticleInputNames(self): ...
-    def GetParticleInput(self, input_name): ...
+    def New(self):
+        """
+        Add a new item. Returns the newly created item.
+
+        :rtype: ApiElementItem
+        """
+
+    def AddParticleInlet(self) -> RAParticleInlet:
+        """
+        Add a new ParticleInlet. Returns the newly created item.
+        """
+
+    def AddOutlet(self) -> RAOutlet:
+        """
+        Add a new Outlet. Returns the newly created item.
+        """
+
+    def AddVolumetricInlet(self) -> RAVolumetricInlet:
+        """
+        Add a new VolumeFill. Returns the newly created item.
+        """
+
+    def AddCustomInput(self) -> RACustomInput:
+        """
+        Add a new CustomInput. Returns the newly created item.
+        """
+
+    def AddFluidInlet(self) -> RAFluidInlet:
+        """
+        Add a new SPHInlet. Returns the newly created item.
+        """
+
+    def GetParticleInputNames(self):
+        """
+        Get the names of all particle inputs.
+
+        :rtype: list(unicode)
+        """
+
+    def GetParticleInput(self, input_name):
+        """
+        Get the particle input with the given name.
+
+        :param unicode input_name:
+        :rtype: RAParticleInlet
+        """

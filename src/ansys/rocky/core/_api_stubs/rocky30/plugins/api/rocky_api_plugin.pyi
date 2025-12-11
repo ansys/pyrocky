@@ -28,7 +28,19 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import (
 
 class RockyModels:
     def GetWrapperClasses(self): ...
-    def GetExtraAPIClasses(self): ...
+    def GetExtraAPIClasses(self):
+        """
+        Get a list of classes that don't necessarily wrap a single model class but are part of the
+        scripting API nonetheless.
+
+        Used by the generate-api-docs task to add these classes to the Scripting API Manual.
+
+        :rtype: list(class)
+        """
 
 class RockyApiPlugin(Plugin):
+    """
+    Install Rocky API plugins
+    """
+
     def Install(self) -> None: ...

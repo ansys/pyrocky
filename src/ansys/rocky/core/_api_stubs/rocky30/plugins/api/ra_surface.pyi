@@ -35,20 +35,92 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry import (
 )
 
 class RASurface(RABaseGeometry, _RAOrientationMixin, _WithMovementMixin):
+    """
+    Rocky API "Surface" model.
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[object]: ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def HasMotionFrame(self) -> bool: ...
-    def GetTranslation(self, unit: str | None = None) -> list[float]: ...
+    def HasMotionFrame(self) -> bool:
+        """
+        Whether the geometry is linked to a motion frame.
+
+        :return:
+            True if geometry is linked to a motion frame False otherwise
+        """
+
+    def GetTranslation(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Translation".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        """
+
     def SetTranslation(
         self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
-    def GetInvertNormal(self) -> bool: ...
-    def SetInvertNormal(self, value: bool) -> None: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
-    def GetPivotPoint(self, unit: str | None = None) -> list[float]: ...
+    ) -> None:
+        """
+        Set the values of "Translation".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """
+
+    def GetInvertNormal(self) -> bool:
+        """
+        Get the value of "Invert Normal".
+
+        """
+
+    def SetInvertNormal(self, value: bool) -> None:
+        """
+        Set the value of "Invert Normal".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetPivotPoint(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Pivot Point".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        """
+
     def SetPivotPoint(
         self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
+    ) -> None:
+        """
+        Set the values of "Pivot Point".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """

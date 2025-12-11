@@ -25,14 +25,68 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RATimeRangeFilter(ApiElementItem):
+    """
+    Rocky PrePost Scripting wrapper to manipulate Time Range Filter.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def GetDomainRange(self) -> str: ...
-    def SetDomainRange(self, value: str): ...
-    def GetValidDomainRangeValues(self) -> list[str]: ...
-    def GetFinal(self, unit: str | None = None) -> float: ...
-    def SetFinal(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetInitial(self, unit: str | None = None) -> float: ...
-    def SetInitial(self, value: str | float, unit: str | None = None) -> None: ...
+    def GetDomainRange(self) -> str:
+        """
+        Get the value of "Domain Range".
+        """
+
+    def SetDomainRange(self, value: str):
+        """
+        Set the value of "Domain Range".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetValidDomainRangeValues(self) -> list[str]:
+        """
+        Get a list of all possible values for "Domain Range".
+
+        :return:
+              The returned list is [\'Application Time Filter\', \'All\', \'Last Output\', \'Time Range\',
+              \'Specific Time\', \'After Time\', \'Time Range Relative to Simulation End\'].
+        """
+
+    def GetFinal(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Final".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetFinal(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Final".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetInitial(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Initial".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetInitial(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Initial".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """

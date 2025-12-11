@@ -26,6 +26,28 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_point_cloud import (
 )
 
 class RAPointCloudCollection(RAList[RAPointCloud]):
+    """
+    Rocky PrePost Scripting wrapper for the collection of point clouds in a project.
+
+    This wrapper corresponds to the "Point Clouds" item in the project\'s data tree. To retrieve the
+    :class:`RAPointCloudCollection` from a :class:`RAStudy`, use:
+
+    .. code-block:: python
+
+        point_cloud_collection = study.GetPointCloudCollection()
+
+    Instances of the :class:`RAPointCloudCollection` class act as regular Python lists, and can be
+    iterated on, accessed via index, etc:
+
+    .. code-block:: python
+
+        point_cloud_1 = point_cloud_collection.New()
+        point_cloud_2 = point_cloud_collection[1]
+        del point_cloud_collection[0]
+
+    Items in this list are of type :class:`RAPointCloud`.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod

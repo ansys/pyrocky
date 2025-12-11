@@ -26,10 +26,44 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle import (
 )
 
 class RAParticleCollection(RAList[RAParticle]):
+    """
+    Rocky PrePost Scripting wrapper for the collection of particles in a project.
+
+    This wrapper corresponds to the "Particles" item in the project\'s data tree. To retrieve the
+    :class:`RAParticleCollection` from a :class:`RAStudy`, use:
+
+    .. code-block:: python
+
+        particle_collection = study.GetParticleCollection()
+
+    Instances of the :class:`RAParticleCollection` class act as regular Python lists, and can be
+    iterated on, accessed via index, etc:
+
+    .. code-block:: python
+
+        particle_1 = particle_collection.New()
+        particle_2 = particle_collection[1]
+        del particle_collection[0]
+        for particle in particle_collection:
+            particle.SetMaterial(\'My Particle Material\')
+
+    Items in this list are of type :class:`RAParticle`.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def GetParticleNames(self) -> list[str]: ...
-    def GetParticle(self, particle_name: str) -> RAParticle: ...
+    def GetParticleNames(self) -> list[str]:
+        """
+        Get a list of the names of all the particles in this collection.
+
+        :rtype: list
+        """
+
+    def GetParticle(self, particle_name: str) -> RAParticle:
+        """
+        Get a particle given its name.
+        """
+
     def New(self) -> RAParticle: ...

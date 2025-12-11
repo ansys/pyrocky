@@ -25,15 +25,123 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RAMotion(ApiElementItem):
+    """
+    Rocky PrePost Scripting wrapper representing a single Motion in a Motion Frame.
+
+    Access individual motions via a :class:`RAMotionFrame`\'s motion list:
+
+    .. code-block:: python
+
+        motions = motion_frame.GetMotions()
+        motion_1 = motions[0]
+        motion_2 = motions.New()
+
+    Every :class:`RAMotion` contains properties that are common to all motions (such as start
+    and stop times) and properties that are specific to the motion\'s type (translation, vibration,
+    etc). These latter properties must be accessed by a "sub-object" that is retrieved via
+    :meth:`GetTypeObject()` after the specific motion type is configured via :meth:`SetType()`.
+
+    .. code-block:: python
+
+        motions = motion_frame.GetMotions()
+        motion_1 = motions.New()
+        motion_1.SetType(\'Translation\')
+        translation = motion_1.GetTypeObject()
+        # `translation` is a RATranslation
+        translation.SetVelocity([1.0, 0.0, 0.0], \'m/s\')
+
+    Refer to the specific PrePost Scripting wrappers for documentation on the individual motion types:
+
+    * :class:`RATranslation`
+    * :class:`RARotation`
+    * :class:`RAPendulum`
+    * :class:`RAVibration`
+    * :class:`RAFreeBodyRotation`
+    * :class:`RAFreeBodyTranslation`
+    * :class:`RAPrescribedForce`
+    * :class:`RAPrescribedMoment`
+    * :class:`RASpringDashpotForce`
+    * :class:`RASpringDashpotMoment`
+    * :class:`RALinearTimeVariableForce`
+    * :class:`RALinearTimeVariableMoment`
+    * :class:`RATimeSeriesTranslation`
+    * :class:`RATimeSeriesRotation`
+
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def SetType(self, motion_type): ...
-    def GetType(self): ...
-    def GetTypeObject(self): ...
-    def GetValidTypes(self): ...
-    def GetStartTime(self, unit: str | None = None) -> float: ...
-    def SetStartTime(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetStopTime(self, unit: str | None = None) -> float: ...
-    def SetStopTime(self, value: str | float, unit: str | None = None) -> None: ...
+    def SetType(self, motion_type):
+        """
+        Set the concrete type of motion.
+
+        :param unicode motion_type:
+            The concrete motion type. Accepted values are the strings in the "Type" drop-down menu
+            in the UI.
+        :return:
+            The PrePost Scripting wrapper representing the concrete motion type.
+        """
+
+    def GetType(self):
+        """
+        Get the concrete type of motion.
+
+        :rtype: unicode
+        :return:
+            A string describing the type of motion. The returned value will be one of the strings
+            in the "Type" drop-down menu in the UI.
+        """
+
+    def GetTypeObject(self):
+        """
+        Get the API object that wraps the specific motion type.
+
+        :rtype: ApiElementItem
+        """
+
+    def GetValidTypes(self):
+        """
+        Return a list with the possible values for the motion's type.
+
+        :rtype: list(unicode)
+        :return:
+            A list of accepted values for `SetType()`.
+        """
+
+    def GetStartTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Start Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetStartTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Start Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetStopTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Stop Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetStopTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Stop Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """

@@ -34,12 +34,42 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins import (
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list import RAList as RAList
 
 class RAModulePropertyListItem(ApiElementItem, ElementWithAddins):
+    """
+    Rocky PrePost Scripting wrapper for an item inside a :class:`RAModulePropertyList`.
+
+    The wrapper corresponds to a single row in a table of module properties inside the editor of
+    an individual Module or simulation entity. It is retrieved from its containing list, via:
+
+    .. code-block:: python
+
+        my_module = study.GetElement('My Module')
+        module_list = my_module.GetModuleProperty('List of Items')
+        module_item = module_list.New()
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[PropertySet]: ...
     @classmethod
     def GetClassName(self) -> str: ...
 
 class RAModulePropertyList(RAList[RAModulePropertyListItem]):
+    """
+    Rocky PrePost Scripting wrapper for a Module property that is a list of other Modules properties.
+
+    The wrapper corresponds to a table of module properties inside the editor of an individual
+    Module or a simulation entity. Such a list can be obtained via the PrePost Scripting wrapper for the object
+    that contains it (that is, a Module or simulation entity), via:
+
+    .. code-block:: python
+
+        my_module = study.GetElement('My Module')
+        module_list = my_module.GetModuleProperty('List of Items')
+
+    The RAModulePropertyList supports iteration like regular lists and item manipulation via
+    :meth:`New()`, :meth:`Remove()` and :meth:`Clear()`. It contains items of type
+    :class:`RAModulePropertyListItem`.
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[AddinPropertiesList]: ...
     @classmethod

@@ -26,14 +26,60 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction im
 )
 
 class RAMaterialsInteractionCollection(RAList[RAMaterialsInteraction]):
+    """
+    Rocky PrePost Scripting wrapper for the collection of materials interactions in a project.
+
+    This wrapper corresponds to the "Materials Interactions" item on the project\'s data tree. Retrieve
+    the :class:`RAMaterialsInteractionCollection` from a :class:`RAStudy` via:
+
+    .. code-block:: python
+
+        interaction_collection = RAMaterialCollection.GetMaterialsInteractionCollection()
+
+    Instances of the :class:`RAMaterialsInteractionCollection` class act as regular Python lists and can be
+    iterated on, individual materials accessed via index, etc:
+
+    .. code-block:: python
+
+        interaction_1 = interaction_collection[3]
+        for interaction in interaction_collection:
+            interaction.SetAdhesiveFraction(80, \'%\')
+        interaction_2 = interaction_collection.GetMaterialsInteraction(\'Default Particles\', \'Default Boundaries\')
+
+    Note that individual interactions can\'t be created or removed by the user: they are created and
+    removed as necessary as new materials are created or removed.
+
+    Items in this list are of type :class:`RAMaterialsInteraction`.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def New(self) -> None: ...
-    def __delitem__(self, index) -> None: ...
-    def Remove(self, item) -> None: ...
-    def Clear(self) -> None: ...
-    def GetMaterialsInteraction(
-        self, material_1, material_2
-    ) -> RAMaterialsInteraction: ...
+    def New(self) -> None:
+        """
+        Unused: Materials Interactions are automatically created when Materials are created.
+        """
+
+    def __delitem__(self, index) -> None:
+        """
+        Unused: Materials Interactions are automatically deleted when Materials are created.
+        """
+
+    def Remove(self, item) -> None:
+        """
+        Unused: Materials Interactions are automatically deleted when Materials are created.
+        """
+
+    def Clear(self) -> None:
+        """
+        Unused: Materials Interactions are automatically deleted when Materials are created.
+        """
+
+    def GetMaterialsInteraction(self, material_1, material_2) -> RAMaterialsInteraction:
+        """
+        Get the materials interaction for the given pair of materials.
+
+        For both `material_1` and `material_2` parameters, the parameter can be either an instance
+        of :class:`RASolidMaterial` or the material's name.
+        """

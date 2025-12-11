@@ -35,12 +35,46 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings import (
 )
 
 class RASPHEulerianSolution(ApiElementItem, _RASubjectWithColoringMixin):
+    """
+    Rocky PrePost Scripting wrapper for SPH Eulerian Solution properties.
+
+    This wrapper corresponds to the "Eulerian Solution" item on a project\'s data tree. Access it from
+    the :class:`RAStudy` with:
+
+    .. code-block:: python
+
+        eulerian_solution = study.GetSphEulerianSolution()
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def GetEulerianSolutionEnabled(self) -> bool: ...
-    def SetEulerianSolutionEnabled(self, value: bool) -> None: ...
-    def EnableEulerianSolution(self) -> None: ...
-    def DisableEulerianSolution(self) -> None: ...
-    def IsEulerianSolutionEnabled(self) -> bool: ...
+    def GetEulerianSolutionEnabled(self) -> bool:
+        """
+        Delegates the method to the project sph settings.
+        """
+
+    def SetEulerianSolutionEnabled(self, value: bool) -> None:
+        """
+        Delegate the method to the project sph settings.
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableEulerianSolution(self) -> None:
+        """
+        Set the value of "Eulerian Solution" to True.
+        """
+
+    def DisableEulerianSolution(self) -> None:
+        """
+        Set the value of "Eulerian Solution" to False.
+        """
+
+    def IsEulerianSolutionEnabled(self) -> bool:
+        """
+        Check if the "Eulerian Solution" is enabled.
+
+        """

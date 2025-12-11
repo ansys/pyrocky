@@ -50,16 +50,102 @@ class RAStreamlinesUserProcess(RAUserProcess):
     def GetWrappedClass(cls) -> type[StreamlinesUserProcessSubject]: ...
     @classmethod
     def GetClassName(cls) -> str: ...
-    def UpdateStreamlines(self) -> None: ...
-    def GetSources(self) -> list[SurfaceTypes] | None: ...
-    def SetSources(self, surfaces: str | SurfaceTypes | list) -> None: ...
-    def GetAvailableSources(self) -> list[SurfaceTypes]: ...
-    def GetDirection(self) -> str: ...
-    def SetDirection(self, value: str) -> None: ...
-    def GetValidDirectionValues(self) -> list[str]: ...
-    def GetMaximumLength(self, unit: str | None = None) -> float: ...
-    def SetMaximumLength(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
-    def GetSpacing(self, unit: str | None = None) -> float: ...
-    def SetSpacing(self, value: str | float, unit: str | None = None) -> None: ...
+    def UpdateStreamlines(self) -> None:
+        """
+        Recompute the streamlines from the current values of sources, spacing, direction and
+        maximum length.
+
+        Since computing the streamlines is potentially slow when the spacing is small, this method
+        must be explicitly called in order to update the streamlines.
+        """
+
+    def GetSources(self) -> list[SurfaceTypes] | None:
+        """
+        Get the surfaces defined as sources to generate Streamlines.
+        """
+
+    def SetSources(self, surfaces: str | SurfaceTypes | list) -> None:
+        """
+        Set the surfaces as sources to generate Streamlines.
+        """
+
+    def GetAvailableSources(self) -> list[SurfaceTypes]:
+        """
+        Get available planar surfaces that can be used to generate Streamlines.
+        """
+
+    def GetDirection(self) -> str:
+        """
+        Get "Direction" as a string.
+
+        :return:
+            The returned value will be one of [\'forward\', \'backward\', \'both\'].
+        """
+
+    def SetDirection(self, value: str) -> None:
+        """
+        Set the value of "Direction".
+
+        :param value:
+            The value to set. Must be one of [\'forward\', \'backward\', \'both\'].
+        :raises RockyApiError:
+            If `value` is not a valid "Direction" option.
+        """
+
+    def GetValidDirectionValues(self) -> list[str]:
+        """
+        Get a list of all possible values for "Direction".
+
+        :return:
+            The returned list is [\'forward\', \'backward\', \'both\'].
+        """
+
+    def GetMaximumLength(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Maximum Length".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetMaximumLength(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Maximum Length".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetSpacing(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Spacing".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetSpacing(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Spacing".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """

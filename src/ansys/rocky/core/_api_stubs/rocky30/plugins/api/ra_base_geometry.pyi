@@ -24,4 +24,7 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element imp
     RAGridProcessElementItem as RAGridProcessElementItem,
 )
 
-class RABaseGeometry(RAGridProcessElementItem): ...
+class RABaseGeometry(RAGridProcessElementItem):
+    """
+    Rocky api geometry (boundary) model.
+    """

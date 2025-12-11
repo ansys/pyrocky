@@ -25,10 +25,49 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element imp
 )
 
 class RAParticles(RAGridProcessElementItem):
+    """
+    Rocky api Particles model.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def GetNumberOfParticles(self, time_step): ...
-    def IterParticles(self, time_step): ...
-    def RemoveProcess(self) -> None: ...
+    def GetNumberOfParticles(self, time_step):
+        """
+        Get the number of active particles at the given time step.
+
+        :type time_step: unicode, ITimeStep or int
+        :param time_step:
+            Either a 'current' string with meaning the current time step
+            or an ITimeStep identifying the time to get the topology shape
+            or an int identifying the time step index to be used based on the global time set
+
+        :rtype: int
+        :returns:
+            The number of particles
+        """
+
+    def IterParticles(self, time_step):
+        """
+        Iterate on the active particles at the given time step.
+
+        :type time_step: unicode, ITimeStep or int
+        :param time_step:
+            Either a 'current' string with meaning the current time step
+            or an ITimeStep identifying the time to get the topology shape
+            or an int identifying the time step index to be used based on the global time set
+
+        :rtype: iterator(Particle)
+        :returns:
+            An iterator over the particles.
+            A Particle has:
+            - x, y, z, size
+            - x_axis, y_axis, z_axis, orientation_angle
+        """
+
+    def RemoveProcess(self) -> None:
+        """
+        It is not possible to remove the item "Particles" from the project. It\'s a standard Rocky
+        item in project.
+        """

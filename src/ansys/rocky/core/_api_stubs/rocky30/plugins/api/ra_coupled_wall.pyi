@@ -35,17 +35,91 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry import (
 )
 
 class RACoupledWall(RABaseGeometry, ElementWithAddins, _WithMovementMixin):
+    """
+    Rocky API Geometry model.
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type[object]: ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def HasMotionFrame(self) -> bool: ...
-    def GetDisableTime(self, unit: str | None = None) -> float: ...
-    def SetDisableTime(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetEnableTime(self, unit: str | None = None) -> float: ...
-    def SetEnableTime(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
-    def GetMaterial(self): ...
-    def SetMaterial(self, value) -> None: ...
-    def GetAvailableMaterials(self): ...
+    def HasMotionFrame(self) -> bool:
+        """
+        Whether the boundary is linked to a motion frame.
+
+        :return:
+            True if boundary is linked to a motion frame False otherwise
+        """
+
+    def GetDisableTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Disable Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetDisableTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Disable Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetEnableTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Enable Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetEnableTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Enable Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetMaterial(self):
+        """
+        Get the "Material".
+
+        :rtype: :class:`RASolidMaterial`
+        """
+
+    def SetMaterial(self, value) -> None:
+        """
+        Set the "Material".
+
+        :param unicode, :class:`RASolidMaterial` value:
+            Either the API object wrapping the desired entity or its name.
+        """
+
+    def GetAvailableMaterials(self):
+        """
+        Get all available Materials.
+
+        :rtype: List[:class:`RASolidMaterial`]
+            A list of :class:`RASolidMaterial`.
+        """

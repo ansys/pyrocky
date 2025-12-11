@@ -25,16 +25,69 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RATwoRollsBeltProfile(ApiElementItem):
+    """
+    Rocky API for a Two Rolls Belt Profile model.
+    """
+
     @classmethod
     def GetWrappedClass(cls): ...
     @classmethod
     def GetClassName(cls): ...
-    def GetLowerCornerRadius(self, unit: str | None = None) -> float: ...
-    def SetLowerCornerRadius(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetTroughingAngle(self, unit: str | None = None) -> float: ...
-    def SetTroughingAngle(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetMaterial(self): ...
-    def SetMaterial(self, value) -> None: ...
-    def GetAvailableMaterials(self): ...
+    def GetLowerCornerRadius(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Lower Corner Radius".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetLowerCornerRadius(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Lower Corner Radius".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetTroughingAngle(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Troughing Angle".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+        """
+
+    def SetTroughingAngle(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Troughing Angle".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+        """
+
+    def GetMaterial(self):
+        """
+        Get the "Material".
+
+        :rtype: :class:`RASolidMaterial`
+        """
+
+    def SetMaterial(self, value) -> None:
+        """
+        Set the "Material".
+
+        :param unicode, :class:`RASolidMaterial` value:
+            Either the API object wrapping the desired entity or its name.
+        """
+
+    def GetAvailableMaterials(self):
+        """
+        Get all available Materials.
+
+        :rtype: List[:class:`RASolidMaterial`]
+            A list of :class:`RASolidMaterial`.
+        """

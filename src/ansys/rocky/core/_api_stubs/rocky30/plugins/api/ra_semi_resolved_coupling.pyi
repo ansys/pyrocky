@@ -32,28 +32,143 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api import (
 )
 
 class RAFluentSemiResolvedCoupling(ApiElementItem):
+    """
+    PrePost Scripting wrapper class for the Fluent Two-Way Semi Resolved coupling mode
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type: ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def SetPartIdIfValid(self) -> None: ...
+    def SetPartIdIfValid(self) -> None:
+        """
+        Set the process' part id (unused for now)
+        """
+
     def SetupDatFilename(self, dat_filename: str) -> bool: ...
     def SetupStoreFiles(
         self, cas_filename: str, case_config: FluentCaseConfig | None = None
-    ) -> None: ...
-    def GetFluentReleases(self) -> list[str]: ...
-    def GetFluentVersion(self) -> str: ...
-    def SetFluentVersion(self, fluent_version: str) -> str: ...
-    def GetCouplingFilesKept(self) -> int: ...
-    def SetCouplingFilesKept(self, value: str | int) -> None: ...
-    def GetFluentAdditionalArgs(self) -> str: ...
-    def SetFluentAdditionalArgs(self, value: str) -> None: ...
-    def GetFluentExecutionMode(self) -> str: ...
-    def SetFluentExecutionMode(self, value: str) -> None: ...
-    def GetValidFluentExecutionModeValues(self) -> list[str]: ...
-    def GetFluentOutputFrequencyMultiplier(self) -> int: ...
-    def SetFluentOutputFrequencyMultiplier(self, value: str | int) -> None: ...
-    def GetFluentSolverProcesses(self) -> int: ...
-    def SetFluentSolverProcesses(self, value: str | int) -> None: ...
-    def GetUseDatInitialization(self) -> bool: ...
-    def SetUseDatInitialization(self, value: bool) -> None: ...
+    ) -> None:
+        """
+        Copies CAS file to Rocky's project folder and update Fluent info
+        """
+
+    def GetFluentReleases(self) -> list[str]:
+        """
+        Get a list of available Fluent releases.
+
+        :rtype: list(unicode)
+        :return: The list of available Fluent releases
+        """
+
+    def GetFluentVersion(self) -> str:
+        """
+        Get the value of "Version".
+
+        :rtype: str
+        """
+
+    def SetFluentVersion(self, fluent_version: str) -> str:
+        """
+        Set the Ansys Fluent version to be used in CFD coupling (deprecated).
+
+        Currently, it's not possible to change the version of Ansys Fluent used for CFD coupling.
+        This method is being kept for backward compatibility (and also because there's a chance
+        of this feature to be brought back in future version).
+        """
+
+    def GetCouplingFilesKept(self) -> int:
+        """
+        Get the value of "Coupling Files Kept".
+
+        """
+
+    def SetCouplingFilesKept(self, value: str | int) -> None:
+        """
+        Set the value of "Coupling Files Kept".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or int type.
+        """
+
+    def GetFluentAdditionalArgs(self) -> str:
+        """
+        Get the value of "Fluent Additional Args".
+
+        """
+
+    def SetFluentAdditionalArgs(self, value: str) -> None:
+        """
+        Set the value of "Fluent Additional Args".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetFluentExecutionMode(self) -> str:
+        """
+        Get "Fluent Execution Mode" as a string.
+
+        :return:
+            The returned value will be one of [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+        """
+
+    def SetFluentExecutionMode(self, value: str) -> None:
+        """
+        Set the value of "Fluent Execution Mode".
+
+        :param value:
+            The value to set. Must be one of [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+        :raises RockyApiError:
+            If `value` is not a valid "Fluent Execution Mode" option.
+        """
+
+    def GetValidFluentExecutionModeValues(self) -> list[str]:
+        """
+        Get a list of all possible values for "Fluent Execution Mode".
+
+        :return:
+            The returned list is [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+        """
+
+    def GetFluentOutputFrequencyMultiplier(self) -> int:
+        """
+        Get the value of "Fluent Output Frequency Multiplier".
+
+        """
+
+    def SetFluentOutputFrequencyMultiplier(self, value: str | int) -> None:
+        """
+        Set the value of "Fluent Output Frequency Multiplier".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or int type.
+        """
+
+    def GetFluentSolverProcesses(self) -> int:
+        """
+        Get the value of "Fluent Solver Processes".
+
+        """
+
+    def SetFluentSolverProcesses(self, value: str | int) -> None:
+        """
+        Set the value of "Fluent Solver Processes".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or int type.
+        """
+
+    def GetUseDatInitialization(self) -> bool:
+        """
+        Get the value of "Use Dat Initialization".
+
+        """
+
+    def SetUseDatInitialization(self, value: bool) -> None:
+        """
+        Set the value of "Use Dat Initialization".
+
+        :param value:
+            The value to set.
+        """

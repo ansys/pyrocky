@@ -37,28 +37,141 @@ class RAJointsDataMeshColoring:
     def GetSubject(self) -> Subject: ...
     def SetVisible(self, value: bool) -> None: ...
     def GetVisible(self) -> bool: ...
-    def GetValidColoringModes(self) -> list[str]: ...
-    def GetAvailableGridFunctionsNames(self) -> set[str]: ...
-    def GetAvailableGridFunctions(self) -> set[type["SemanticAssociation"]]: ...
+    def GetValidColoringModes(self) -> list[str]:
+        """
+        Get a list with all possible coloring modes names.
+
+        :return:
+            The returned values will be a combination of ['Joints', 'Joints Connectivity']
+        """
+
+    def GetAvailableGridFunctionsNames(self) -> set[str]:
+        """
+        Get a list of all possible values for "GridFunctions" names.
+
+        :return:
+            The returned set contains the names of the available Grid Functions.
+        """
+
+    def GetAvailableGridFunctions(self) -> set[type["SemanticAssociation"]]:
+        """
+        Get a list of all possible values for "GridFunctions".
+
+        :return:
+            The returned set contains the SemanticAssociation of the available Grid Functions.
+        """
+
     def SetStride(self, value: int) -> None: ...
     def GetStride(self) -> int: ...
-    def SetJointsVisible(self, value: bool) -> None: ...
-    def GetJointsVisible(self) -> bool: ...
-    def SetJointsColor(self, values: ColorType) -> None: ...
-    def GetJointsColor(self) -> ColorType: ...
-    def SetJointsProperty(
-        self, value: type["SemanticAssociation"] | str | None
-    ) -> None: ...
-    def GetJointsProperty(self) -> type["SemanticAssociation"] | None: ...
-    def SetJointsPointSize(self, value: float) -> None: ...
-    def GetJointsPointSize(self) -> float: ...
-    def SetJointsConnectivityVisible(self, value: bool) -> None: ...
-    def GetJointsConnectivityVisible(self) -> bool: ...
-    def SetJointsConnectivityColor(self, values: ColorType) -> None: ...
-    def GetJointsConnectivityColor(self) -> ColorType: ...
+    def SetJointsVisible(self, value: bool) -> None:
+        """
+        Set the value of "Joints Visible".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetJointsVisible(self) -> bool:
+        """
+        Get the value of "Joints Visible".
+
+        """
+
+    def SetJointsColor(self, values: ColorType) -> None:
+        """
+        Set the values of "Joints Color".
+
+        :param values:
+            The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+        """
+
+    def GetJointsColor(self) -> ColorType:
+        """
+        Get the value of "Node Color".
+
+        """
+
+    def SetJointsProperty(self, value: type["SemanticAssociation"] | str | None) -> None:
+        """
+        Set the values of "Joints Property".
+
+        :param value:
+            The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+            of its name or `None` for solid colors.
+        """
+
+    def GetJointsProperty(self) -> type["SemanticAssociation"] | None:
+        """
+        Get the value of "Joints Property".
+        """
+
+    def SetJointsPointSize(self, value: float) -> None:
+        """
+        Set the value of "Joints Point Size".
+
+        :param value:
+            The value to set. This value must be a float type.
+        """
+
+    def GetJointsPointSize(self) -> float:
+        """
+        Get the value of "Joints Point Size".
+        """
+
+    def SetJointsConnectivityVisible(self, value: bool) -> None:
+        """
+        Set the value of "Joints Connectivity Visible".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetJointsConnectivityVisible(self) -> bool:
+        """
+        Get the value of "Joints Connectivity Visible".
+
+        """
+
+    def SetJointsConnectivityColor(self, values: ColorType) -> None:
+        """
+        Set the values of "Joints Connectivity Color".
+
+        :param values:
+            The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+        """
+
+    def GetJointsConnectivityColor(self) -> ColorType:
+        """
+        Get the value of "Joints Connectivity Color".
+
+        """
+
     def SetJointsConnectivityProperty(
         self, value: type["SemanticAssociation"] | str | None
-    ) -> None: ...
-    def GetJointsConnectivityProperty(self) -> type["SemanticAssociation"] | None: ...
-    def SetJointsConnectivityLineWidth(self, value: float) -> None: ...
-    def GetJointsConnectivityLineWidth(self) -> float: ...
+    ) -> None:
+        """
+        Set the values of "Joints Connectivity GridFunction".
+
+        :param value:
+            The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+            of its name or `None` for solid colors.
+        """
+
+    def GetJointsConnectivityProperty(self) -> type["SemanticAssociation"] | None:
+        """
+        Get the value of "Joints Connectivity GridFunction".
+
+        """
+
+    def SetJointsConnectivityLineWidth(self, value: float) -> None:
+        """
+        Set the value of "Joints Connectivity Line Width".
+
+        :param value:
+           The value to set. This value must be a float type.
+        """
+
+    def GetJointsConnectivityLineWidth(self) -> float:
+        """
+        Get the value of "Joints Connectivity Line Width".
+        """

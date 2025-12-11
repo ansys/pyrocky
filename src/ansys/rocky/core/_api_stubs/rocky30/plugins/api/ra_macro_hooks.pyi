@@ -25,6 +25,10 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RAMacroHooks(ApiElementItem):
+    """
+    Rocky api for macro hooks.
+    """
+
     @classmethod
     def GetWrappedClass(self) -> type: ...
     @classmethod

@@ -37,9 +37,35 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project import (
 )
 
 class RAAdditionalFeatures:
-    def GetBetaFeaturesEnabled(self) -> bool: ...
-    def SetBetaFeaturesEnabled(self, enable: bool) -> None: ...
-    def GetAdvancedFeaturesEnabled(self) -> bool: ...
-    def SetAdvancedFeaturesEnabled(self, enable: bool) -> None: ...
-    def GetCustomFeatures(self) -> list[str]: ...
-    def SetCustomFeatures(self, features: Iterable[str]) -> None: ...
+    def GetBetaFeaturesEnabled(self) -> bool:
+        """
+        Get whether 'beta features' are enabled in the application preferences.
+        """
+
+    def SetBetaFeaturesEnabled(self, enable: bool) -> None:
+        """
+        Set whether 'beta features' are enabled in the application preferences.
+        """
+
+    def GetAdvancedFeaturesEnabled(self) -> bool:
+        """
+        Get whether 'advanced features' are enabled in the application preferences.
+        """
+
+    def SetAdvancedFeaturesEnabled(self, enable: bool) -> None:
+        """
+        Set whether 'advanced features' are enabled in the application preferences.
+        """
+
+    def GetCustomFeatures(self) -> list[str]:
+        """
+        Get a list with all enabled features in application preferences.
+        """
+
+    def SetCustomFeatures(self, features: Iterable[str]) -> None:
+        """
+        Use a list of custom features to enable them in the application preferences.
+
+        :param features:
+            A list of names that represents the custom features.
+        """

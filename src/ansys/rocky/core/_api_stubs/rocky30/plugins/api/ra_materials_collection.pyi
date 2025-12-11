@@ -49,6 +49,29 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_deprecated_decora
 )
 
 class RAMaterialCollection(RAList):
+    """
+    Rocky PrePost Scripting wrapper for the collection of materials in a project.
+
+    This wrapper corresponds to the "Materials" item on the project\'s data tree. Retrieve the
+    :class:`RAMaterialCollection` from a :class:`RAStudy` via:
+
+    .. code-block:: python
+
+        material_collection = study.GetMaterialCollection()
+
+    Instances of the :class:`RAMaterialCollection` class act as regular Python lists and can be
+    iterated on, individual materials accessed and deleted via index, etc:
+
+    .. code-block:: python
+
+        material_1 = material_collection.AddSolidMaterial()
+        material_2 = material_collection.AddFluidMaterial()
+        material_2 = material_collection[3]
+        del material_collection[2]
+
+    Items in this list are of type :class:`RASolidMaterial` and :class:`RAFluidMaterial`.
+    """
+
     @classmethod
     def GetWrappedClass(cls) -> type["MaterialCollection"]: ...
     @classmethod
@@ -59,16 +82,47 @@ class RAMaterialCollection(RAList):
     def __iter__(self) -> ApiElementItem: ...
     def __getitem__(self, index: int) -> ApiElementItem: ...
     def Clear(self) -> None: ...
-    def New(self) -> RASolidMaterial: ...
+    def New(self) -> RASolidMaterial:
+        """
+        Deprecated: Use :meth:`Add{Solid, Fluid}Material()` instead.
+        """
+
     def AddSolidMaterial(self, name: str | None = None) -> RASolidMaterial: ...
     def AddFluidMaterial(self, name: str | None = None) -> RAFluidMaterial: ...
-    def GetDefaultSolidMaterials(self) -> list["RASolidMaterial"]: ...
+    def GetDefaultSolidMaterials(self) -> list["RASolidMaterial"]:
+        """
+        Get a list with the default solid materials, in order of Particle, Belt and Boundary.
+        """
+
     def GetDefaultParticleMaterial(self) -> RASolidMaterial: ...
     def GetDefaultBeltMaterial(self) -> RASolidMaterial: ...
     def GetDefaultBoundaryMaterial(self) -> RASolidMaterial: ...
-    def GetSolidMaterial(self, material_name: str) -> RASolidMaterial: ...
+    def GetSolidMaterial(self, material_name: str) -> RASolidMaterial:
+        """
+        Get the solid material with the given name.
+        """
+
     def GetDefaultFluidMaterial(self) -> RAFluidMaterial: ...
-    def GetFluidMaterial(self, material_name: str) -> RAFluidMaterial: ...
-    def GetMaterialsInteractionCollection(self) -> RAMaterialsInteractionCollection: ...
-    def GetBulkSolidFraction(self) -> float: ...
-    def SetBulkSolidFraction(self, value: str | float) -> None: ...
+    def GetFluidMaterial(self, material_name: str) -> RAFluidMaterial:
+        """
+        Get the fluid material with the given name.
+        """
+
+    def GetMaterialsInteractionCollection(self) -> RAMaterialsInteractionCollection:
+        """
+        Get the study's Materials Interaction Collection.
+        """
+
+    def GetBulkSolidFraction(self) -> float:
+        """
+        Get the value of "Bulk Solid Fraction".
+
+        """
+
+    def SetBulkSolidFraction(self, value: str | float) -> None:
+        """
+        Set the value of "Bulk Solid Fraction".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        """

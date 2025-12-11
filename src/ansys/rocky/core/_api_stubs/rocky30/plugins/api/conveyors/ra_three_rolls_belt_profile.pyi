@@ -25,25 +25,117 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RAThreeRollsBeltProfile(ApiElementItem):
+    """
+    Rocky API for a Three Rolls Belt Profile model.
+    """
+
     @classmethod
     def GetWrappedClass(cls): ...
     @classmethod
     def GetClassName(cls): ...
-    def GetCenterRollLength(self, unit: str | None = None) -> float: ...
-    def SetCenterRollLength(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetLowerCornerRadius(self, unit: str | None = None) -> float: ...
-    def SetLowerCornerRadius(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetTroughingAngle(self, unit: str | None = None) -> float: ...
-    def SetTroughingAngle(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetUse0371RatioForRollLengths(self) -> bool: ...
-    def SetUse0371RatioForRollLengths(self, value: bool) -> None: ...
-    def EnableUse0371RatioForRollLengths(self) -> None: ...
-    def DisableUse0371RatioForRollLengths(self) -> None: ...
-    def IsUse0371RatioForRollLengthsEnabled(self) -> bool: ...
-    def GetMaterial(self): ...
-    def SetMaterial(self, value) -> None: ...
-    def GetAvailableMaterials(self): ...
+    def GetCenterRollLength(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Center Roll Length".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetCenterRollLength(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Center Roll Length".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetLowerCornerRadius(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Lower Corner Radius".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetLowerCornerRadius(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Lower Corner Radius".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetTroughingAngle(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Troughing Angle".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+        """
+
+    def SetTroughingAngle(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Troughing Angle".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+        """
+
+    def GetUse0371RatioForRollLengths(self) -> bool:
+        """
+        Get the value of "Use 0371 Ratio For Roll Lengths".
+
+        """
+
+    def SetUse0371RatioForRollLengths(self, value: bool) -> None:
+        """
+        Set the value of "Use 0371 Ratio For Roll Lengths".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableUse0371RatioForRollLengths(self) -> None:
+        """
+        Set the value of "Use 0371 Ratio For Roll Lengths" to True.
+        """
+
+    def DisableUse0371RatioForRollLengths(self) -> None:
+        """
+        Set the value of "Use 0371 Ratio For Roll Lengths" to False.
+        """
+
+    def IsUse0371RatioForRollLengthsEnabled(self) -> bool:
+        """
+        Check if the "Use 0371 Ratio For Roll Lengths" is enabled.
+
+        """
+
+    def GetMaterial(self):
+        """
+        Get the "Material".
+
+        :rtype: :class:`RASolidMaterial`
+        """
+
+    def SetMaterial(self, value) -> None:
+        """
+        Set the "Material".
+
+        :param unicode, :class:`RASolidMaterial` value:
+            Either the API object wrapping the desired entity or its name.
+        """
+
+    def GetAvailableMaterials(self):
+        """
+        Get all available Materials.
+
+        :rtype: List[:class:`RASolidMaterial`]
+            A list of :class:`RASolidMaterial`.
+        """

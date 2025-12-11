@@ -25,5 +25,20 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame impo
 )
 
 class _WithMovementMixin:
-    def SetMotionFrame(self, motion_frame: RAMotionFrame | str | None) -> None: ...
-    def GetMotionFrame(self) -> RAMotionFrame | None: ...
+    """
+    Mixin class to be used by API classes that can get/set motion frames.
+    """
+
+    def SetMotionFrame(self, motion_frame: RAMotionFrame | str | None) -> None:
+        """
+        Assign a Motion Frame to the process.
+
+        :param motion_frame:
+            Either the API object or its name.
+        """
+
+    def GetMotionFrame(self) -> RAMotionFrame | None:
+        """
+        :returns:
+            The motion frame set in the process, or None if no motion is set.
+        """

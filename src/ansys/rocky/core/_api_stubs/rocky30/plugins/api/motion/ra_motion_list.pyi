@@ -26,6 +26,32 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion import (
 from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list import RAList as RAList
 
 class RAMotionList(RAList[RAMotion]):
+    """
+    Rocky PrePost Scripting wrapper to manipulate the motions in a single Motion Frame.
+
+    To get the :class:`RAMotionList` from a :class:`RAMotionFrame`, use:
+
+    .. code-block:: python
+
+        motions = motion_frame.GetMotions()
+
+    The :class:`RAMotionList` class acts as a regular Python list, with the usual methods to iterate
+    and access individual motions:
+
+    .. code-block:: python
+
+        motion_1 = motions.New()
+        motion_2 = motions.New()
+
+        for motion in motions:
+            motion.SetStartTime(1, 's')
+
+        del motions[0]
+        motions.Clear()
+
+    The items in the motion list are of type :class:`RAMotion`.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod

@@ -29,9 +29,37 @@ class RAParticleJointsData(RAGridProcessElementItem):
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def RemoveProcess(self) -> None: ...
-    def GetCollectJointData(self) -> bool: ...
-    def SetCollectJointData(self, value: bool) -> None: ...
-    def EnableCollectJointData(self) -> None: ...
-    def DisableCollectJointData(self) -> None: ...
-    def IsCollectJointDataEnabled(self) -> bool: ...
+    def RemoveProcess(self) -> None:
+        """
+        It is not possible to remove the item "Joints" from the project.
+        """
+
+    def GetCollectJointData(self) -> bool:
+        """
+        Get the value of "Collect Joint Data".
+
+        """
+
+    def SetCollectJointData(self, value: bool) -> None:
+        """
+        Set the value of "Collect Joint Data".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableCollectJointData(self) -> None:
+        """
+        Set the value of "Collect Joint Data" to True.
+        """
+
+    def DisableCollectJointData(self) -> None:
+        """
+        Set the value of "Collect Joint Data" to False.
+        """
+
+    def IsCollectJointDataEnabled(self) -> bool:
+        """
+        Check if the "Collect Joint Data" is enabled.
+
+        """

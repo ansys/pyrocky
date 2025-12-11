@@ -25,5 +25,20 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RABaseTagging(ApiElementItem):
-    def GetTimeRangeFilter(self): ...
-    def GetGridFunctionName(self): ...
+    """
+    Base class for Api representations of Tagging and Divisions Tagging calculators.
+    Provides methods to get the RATimeRangeFilter and get the Tagging Grid Function name.
+    """
+
+    def GetTimeRangeFilter(self):
+        """
+        Get the API object that wraps the specific Time Range Filter.
+        :rtype: RATimeRangeFilter
+        """
+
+    def GetGridFunctionName(self):
+        """
+        Get the tagging grid function name. This name can be used to access the tagging grid
+        function on a particle-based process.
+        :rtype: str
+        """

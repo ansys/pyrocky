@@ -30,31 +30,173 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_utils import (
 )
 
 class RAInletGeometry(RABaseGeometry):
+    """
+    Rocky API Inlet model.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
-    def SetGeometryType(self, geometry_type: str) -> None: ...
-    def GetGeometryType(self) -> str: ...
-    def GetRectangularSize(self, unit: str | None = None) -> tuple[float, float]: ...
+    def SetGeometryType(self, geometry_type: str) -> None:
+        """
+        Sets Inlet geometry type, rectangular or circular
+
+        :param geometry_type:
+            Inlet geometry's type, 'rectangular' or 'circular'.
+        """
+
+    def GetGeometryType(self) -> str:
+        """
+        Get the Inlet geometry type, which is either 'rectangular' or 'circular'.
+        """
+
+    def GetRectangularSize(self, unit: str | None = None) -> tuple[float, float]:
+        """
+        Get the rectangular length and width of the inlet.
+
+        :param unit:
+            The optional unit of the returned values. If no unit is passed, the values will be in 'm'.
+        :return:
+            A (length, width) tuple.
+        """
+
     def SetRectangularSize(
         self, length: float, width: float, unit: str | None = None
-    ) -> None: ...
+    ) -> None:
+        """
+        Sets inlet rectangular size.
+
+        :param width: Inlet width
+        :param length: Inlet length
+        :param unit:
+            The optional unit. If no unit is passed, 'm' is used.
+        """
+
     @classmethod
     def GetClassName(self) -> str: ...
-    def GetCircularMinMaxRadius(self, unit: str | None = None) -> tuple[float, float]: ...
+    def GetCircularMinMaxRadius(self, unit: str | None = None) -> tuple[float, float]:
+        """
+        Get the minimum and maximum radiuses for circular inlets.
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        :return:
+            A tuple with (minimum_radius, maximum_radius)
+        """
+
     def SetCircularMinMaxRadius(
         self, min_radius: float, max_radius: float, unit: str | None = None
-    ) -> None: ...
-    def GetAlignmentAngle(self, unit: str | None = None) -> float: ...
-    def SetAlignmentAngle(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetCenter(self, unit: str | None = None) -> list[float]: ...
-    def SetCenter(
-        self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
-    def GetLength(self, unit: str | None = None) -> float: ...
-    def SetLength(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetWidth(self, unit: str | None = None) -> float: ...
-    def SetWidth(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetInclineAngle(self, unit: str | None = None) -> float: ...
-    def SetInclineAngle(self, value: str | float, unit: str | None = None) -> None: ...
-    def GetName(self) -> str: ...
-    def SetName(self, value: str) -> None: ...
+    ) -> None:
+        """
+        Set the minimum and maximum radiuses for circular inlets.
+
+        :param unit:
+            The unit for the radiuses. If no unit is provided, the radiuses will be assumed to be
+            in "m".
+        """
+
+    def GetAlignmentAngle(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Alignment Angle".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+        """
+
+    def SetAlignmentAngle(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Alignment Angle".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+        """
+
+    def GetCenter(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Center".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        """
+
+    def SetCenter(self, values: Sequence[str | float], unit: str | None = None) -> None:
+        """
+        Set the values of "Center".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """
+
+    def GetLength(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Length".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetLength(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Length".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetWidth(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Width".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetWidth(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Width".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetInclineAngle(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Incline Angle".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+        """
+
+    def SetInclineAngle(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Incline Angle".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+        """
+
+    def GetName(self) -> str:
+        """
+        Get the value of "Name".
+
+        """
+
+    def SetName(self, value: str) -> None:
+        """
+        Set the value of "Name".
+
+        :param value:
+            The value to set.
+        """

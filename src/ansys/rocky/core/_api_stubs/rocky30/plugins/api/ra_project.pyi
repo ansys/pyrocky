@@ -48,38 +48,154 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_user_process_collection 
 RATimeOrIndex = TimeStep | int
 
 class RAProject(ApiElementItem):
+    """
+    Rocky PrePost Scripting wrapper for a project.
+
+    The :class:`RAProject` class serves as the main access point for a project's :class:`RAStudy`
+    and the project entities that aren't directly related to a simulation's configuration, such as
+    the time filter, the collection of user processes, etc.
+
+    The :class:`RAProject` can be obtained directly via the `app` global object. Example usage:
+
+    .. code-block:: python
+
+        project = app.CreateProject()
+        study = project.GetStudy()
+        user_processes = project.GetUserProcessCollection()
+        input_variables = project.GetInputVariables()
+
+        project.SaveProject('my_project.rocky')
+        project.SaveProjectForRestart('my_restart_project.rocky', timestep_or_index=10)
+    """
+
     def __init__(self) -> None: ...
     @ApiExpose
-    def CloseProject(self, check_save_state: bool = True) -> None: ...
+    def CloseProject(self, check_save_state: bool = True) -> None:
+        """
+        Close the current project.
+
+        :param check_save_state:
+            If False, it will close without asking the user to save it first.
+        """
+
     @ApiExpose
-    def SaveProject(self, filename: str | None = None) -> None: ...
+    def SaveProject(self, filename: str | None = None) -> None:
+        """
+        Save the currently opened project.
+
+        :param filename:
+            The name of the file to save the project or None if to update the current file
+        """
+
     @ApiExpose
     def SaveProjectForRestart(
         self, filename: str, timestep_or_index: RATimeOrIndex | None = None
-    ) -> None: ...
+    ) -> None:
+        """
+        Create a new restart project from the current project.
+
+        :param filename:
+            The new filename to be saved.
+        :param timestep_or_index:
+            Either the index of the timestep, or the timestep itself, in which to create the restart
+            project. If None is passed, the application's current timestep will be used.
+        """
+
     @ApiExpose
-    def GetProjectFilename(self) -> str: ...
+    def GetProjectFilename(self) -> str:
+        """
+        Get the current project's filename.
+
+        :return:
+            The current project's file name, or None if there is no current project or if the
+            project hasn't been saved yet.
+        """
+
     @ApiExpose
-    def HasUnsavedChanges(self) -> bool: ...
+    def HasUnsavedChanges(self) -> bool:
+        """
+        Check if the current project has unsaved changes.
+
+        :return:
+            True if the project is modified (unsaved changes), False otherwise.
+        """
+
     @classmethod
     def GetWrappedClass(self) -> type["Petroapp10Project"]: ...
     @classmethod
     def GetClassName(self) -> str: ...
-    def CreateStudy(self, study_name: str | None = None) -> RAStudy: ...
+    def CreateStudy(self, study_name: str | None = None) -> RAStudy:
+        """
+        Creates a new study and returns its wrapper
+
+        :param study_name:
+            The name of the study
+        """
+
     @ApiExpose
     def GetStudyNames(self) -> list[str]: ...
     @ApiExpose
-    def GetStudy(self, study_name: str | None = None) -> RAStudy | None: ...
+    def GetStudy(self, study_name: str | None = None) -> RAStudy | None:
+        """
+        Get the project's Study.
+
+        :param study_name:
+            The name of the study
+            If None is given the first model will be returned
+        """
+
     @classmethod
     @ApiExpose
-    def GetModelStudy(cls, model_item): ...
-    def GetModelElement(self, model_element_id): ...
-    def GetUserProcessCollection(self) -> RAUserProcessCollection | None: ...
+    def GetModelStudy(cls, model_item):
+        """
+        Get the study model associated with a given model item
+
+        :param Subject model_item:
+            A study child
+
+        @return RAStudy or None if no study was found for the given element
+        """
+
+    def GetModelElement(self, model_element_id):
+        """
+        Get the model element associated with the given ID
+
+        :param unicode model_element_id:
+            The element id
+
+        @return
+            The wrapped object with the given ID
+        """
+
+    def GetUserProcessCollection(self) -> RAUserProcessCollection | None:
+        """
+        Get the project's collection of User Processes.
+        """
+
     def GetUserProcess(self, process_name): ...
-    def GetTimeFilter(self) -> RATimeFilter | None: ...
-    def GetParametricVariables(self) -> RAParametricVariables: ...
-    def GetInputVariables(self) -> RAInputVariables: ...
-    def RemoveProcess(self, process: RAGridProcessElementItem | str) -> None: ...
+    def GetTimeFilter(self) -> RATimeFilter | None:
+        """
+        Utility function to return the api object representing the project's time filter
+        """
+
+    def GetParametricVariables(self) -> RAParametricVariables:
+        """
+        Get the PrePost Scripting wrapper for the project's Parametric Variables.
+        """
+
+    def GetInputVariables(self) -> RAInputVariables:
+        """
+        Get the PrePost Scripting wrapper for the project's Input Variables.
+        """
+
+    def RemoveProcess(self, process: RAGridProcessElementItem | str) -> None:
+        """
+        Removes the given process from the project.
+
+        :param process:
+            a process or process name
+        """
+
     @ApiExpose
     def GetElementNames(self, type_name=None): ...
     @ApiExpose

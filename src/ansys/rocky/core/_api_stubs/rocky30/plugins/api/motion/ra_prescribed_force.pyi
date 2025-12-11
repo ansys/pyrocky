@@ -27,11 +27,43 @@ from ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item import (
 )
 
 class RAPrescribedForce(ApiElementItem):
+    """
+    Rocky PrePost Scripting wrapper representing an Additional Force motion.
+
+    Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+    example:
+
+    .. code-block:: python
+
+        motions = motion_frame.GetMotions()
+        motion_1 = motions.New()
+        motion_1.SetType('Additional Force')
+        additional_force = motion_1.GetTypeObject()
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def GetForceValue(self, unit: str | None = None) -> list[float]: ...
+    def GetForceValue(self, unit: str | None = None) -> list[float]:
+        """
+        Get the value of "Force Value".
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "N".
+        """
+
     def SetForceValue(
         self, values: Sequence[str | float], unit: str | None = None
-    ) -> None: ...
+    ) -> None:
+        """
+        Set the values of "Force Value".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :param unit:
+            The unit for `values`. If no unit is provided, `values` is assumed to be in "N".
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """

@@ -25,12 +25,54 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import (
 )
 
 class RAParticleTimeSelectionProcess(RAUserProcess):
+    """
+    Select particles over a time range.
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def SetAbsoluteTimeRange(self, initial_time, final_time, unit: str = "s") -> None: ...
+    def SetAbsoluteTimeRange(self, initial_time, final_time, unit: str = "s") -> None:
+        """
+        Configure this process to use an absolute time range.
+
+        :param float initial_time:
+            The initial time for the particle time selection to consider particles.
+
+        :param float final_time:
+            The final time for the particle time selection to consider particles.
+
+        :param unicode unit:
+            The unit for the range given (by default seconds).
+        """
+
     def SetTimeRange(
         self, range_definition=None, initial=None, final=None, unit: str = "s"
-    ) -> None: ...
-    def GetTimeRange(self): ...
+    ) -> None:
+        """
+        Set the values for this process' time range.
+
+        :param range_definition:
+            One of:
+            'app_time_filter', 'all', 'last_output', 'absolute', 'single', 'absolute_only_start', 'relative_to_end'.
+
+        :param float initial:
+            The initial value for the particle time selection to consider particles. May be ignored
+            depending on the range definition.
+
+        :param float final:
+            The final time for the particle time selection to consider particles. May be ignored
+            depending on the range definition.
+
+        :param unit:
+            The unit for the initial/final values passed.
+        """
+
+    def GetTimeRange(self):
+        """
+        Get a dictionary with the current time range configuration.
+
+        :return {'range_definition': unicode, 'initial': int, 'final': int, 'unit': unicode}:
+            Returns a dict with the details currently set as the time range.
+        """

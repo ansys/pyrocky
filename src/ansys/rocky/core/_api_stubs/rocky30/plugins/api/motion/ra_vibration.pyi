@@ -28,27 +28,127 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project import (
 )
 
 class RAVibration(ApiElementItem):
+    """
+    Rocky PrePost Scripting wrapper representing a Vibration motion.
+
+    Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+    example:
+
+    .. code-block:: python
+
+        motions = motion_frame.GetMotions()
+        motion_1 = motions.New()
+        motion_1.SetType('Vibration')
+        vibration = motion_1.GetTypeObject()
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def GetAmplitudeVariation(self, unit: str | None = None) -> float: ...
-    def SetAmplitudeVariation(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetDirection(self) -> list[float]: ...
-    def SetDirection(self, values: list[str | float]) -> None: ...
-    def GetFrequencyVariation(self, unit: str | None = None) -> float: ...
-    def SetFrequencyVariation(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetInitialAmplitude(self, unit: str | None = None) -> float: ...
-    def SetInitialAmplitude(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetInitialFrequency(self, unit: str | None = None) -> float: ...
-    def SetInitialFrequency(
-        self, value: str | float, unit: str | None = None
-    ) -> None: ...
-    def GetInitialPhase(self, unit: str | None = None) -> float: ...
-    def SetInitialPhase(self, value: str | float, unit: str | None = None) -> None: ...
+    def GetAmplitudeVariation(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Amplitude Variation".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m/s".
+        """
+
+    def SetAmplitudeVariation(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Amplitude Variation".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s".
+        """
+
+    def GetDirection(self) -> list[float]:
+        """
+        Get the value of "Direction".
+
+        """
+
+    def SetDirection(self, values: list[str | float]) -> None:
+        """
+        Set the values of "Direction".
+
+        :param values:
+            The values to set. The values can be heterogeneous, the element of values can be an
+            expression with input variables or a float. Must have exactly 3 elements.
+        :raises RockyApiError:
+            If `values` doesn\'t have exactly 3 elements.
+        """
+
+    def GetFrequencyVariation(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Frequency Variation".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "Hz/s".
+        """
+
+    def SetFrequencyVariation(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Frequency Variation".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "Hz/s".
+        """
+
+    def GetInitialAmplitude(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Initial Amplitude".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+        """
+
+    def SetInitialAmplitude(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Initial Amplitude".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+        """
+
+    def GetInitialFrequency(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Initial Frequency".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "Hz".
+        """
+
+    def SetInitialFrequency(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Initial Frequency".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "Hz".
+        """
+
+    def GetInitialPhase(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Initial Phase".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "rad".
+        """
+
+    def SetInitialPhase(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Initial Phase".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "rad".
+        """

@@ -25,11 +25,48 @@ from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_tagging import (
 )
 
 class RATagging(RABaseTagging):
+    """
+    Rocky PrePost Scripting wrapper to manipulate Tagging Calculators in a project.
+
+    The class corresponds to an individual "Tagging" calculation under the
+    "Particles Calculation" item on the project\'s data tree. To create the
+    :class:`RATagging` from a :class:`RACalculations`, use:
+
+    .. code-block:: python
+
+        selection_process = study.GetElement(\'Particles\')
+        particles_calculations = study.GetCalculations()
+        tagging = particles_calculations.CreateTagging(selection_process)
+    """
+
     @classmethod
     def GetWrappedClass(self): ...
     @classmethod
     def GetClassName(self): ...
-    def GetNameMask(self) -> str: ...
-    def SetNameMask(self, value: str) -> None: ...
-    def GetTagValue(self) -> int: ...
-    def SetTagValue(self, value: str | int) -> None: ...
+    def GetNameMask(self) -> str:
+        """
+        Get the value of "Name Mask".
+
+        """
+
+    def SetNameMask(self, value: str) -> None:
+        """
+        Set the value of "Name Mask".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetTagValue(self) -> int:
+        """
+        Get the value of "Tag Value".
+
+        """
+
+    def SetTagValue(self, value: str | int) -> None:
+        """
+        Set the value of "Tag Value".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or int type.
+        """

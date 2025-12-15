@@ -229,7 +229,7 @@ jobs:
           doc\make.bat html
 
       - name: Upload HTML Documentation
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: documentation-html
           path:  doc/_build/html
@@ -241,7 +241,7 @@ jobs:
           doc\make.bat pdf
 
       - name: Upload PDF documentation
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: documentation-pdf
           path: doc/_build/latex/*.pdf

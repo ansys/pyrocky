@@ -195,7 +195,7 @@ jobs:
           pytest tests
 
   docs_build:
-    name: Build Documentation
+    name: Documentation
     runs-on: [self-hosted, Windows, pyrocky]
     if: |
       contains(github.event.pull_request.labels.*.name, 'docs') ||
@@ -207,45 +207,10 @@ jobs:
       PYRO_PREFER_IP_VERSION: 4
 
     steps:
-      - uses: actions/checkout@v6
-
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - name: Build Documentation
+        uses: ansys/actions/doc-build@v10
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
-
-      - name: Create Python venv
-        run: |
-          python -m venv .venv
-
-      - name: Install packages for documentation build
-        run: |
-          .\.venv\Scripts\Activate.bat
-          pip install .[doc]
-
-      - name: Build Source Documentation (HTML)
-        run: |
-          .\.venv\Scripts\Activate.bat
-          doc\make.bat html
-
-      - name: Upload HTML Documentation
-        uses: actions/upload-artifact@v5
-        with:
-          name: documentation-html
-          path:  doc/_build/html
-          retention-days: 7
-
-      - name: Build Source Documentation (PDF)
-        run: |
-          .\.venv\Scripts\Activate.bat
-          doc\make.bat pdf
-
-      - name: Upload PDF documentation
-        uses: actions/upload-artifact@v5
-        with:
-          name: documentation-pdf
-          path: doc/_build/latex/*.pdf
-          retention-days: 7
 
   package:
     name: Package library

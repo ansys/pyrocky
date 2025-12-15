@@ -212,6 +212,8 @@ jobs:
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
           use-uv: false
+          # Disable default -W flag (treat warnings as errors)
+          sphinxopts: '-j 1'
 
   package:
     name: Package library

@@ -42,7 +42,7 @@ doc = [
     "sphinx-copybutton==0.5.2",
     "sphinx-gallery==0.19.0",
     "sphinx-design==0.6.1",
-    "matplotlib==3.10.7", # required by sphinx-gallery
+    "matplotlib==3.10.8", # required by sphinx-gallery
 ]
 
 [project.urls]

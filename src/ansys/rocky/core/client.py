@@ -38,9 +38,7 @@ from ansys.rocky.core.exceptions import PyRockyError
 from ansys.rocky.core.serializers import register_proxies
 
 if TYPE_CHECKING:
-    from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application import (
-        RockyApiApplication,
-    )
+    from ansys.rocky.app.rocky_api_application import RockyApiApplication
 
 _PYROCKY_DEFAULT_PORT: Final[int] = 18615
 _API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}

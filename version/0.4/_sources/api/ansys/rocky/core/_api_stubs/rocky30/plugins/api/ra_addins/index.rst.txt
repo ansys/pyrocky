@@ -1,0 +1,94 @@
+
+
+
+
+
+
+The ``ra_addins.py`` module
+===========================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_addins
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ModulePropertyIdentifier`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.RAModule`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.RAModuleCollection`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> ModulePropertyIdentifier</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addins/ModulePropertyIdentifier>
+    <span class="nf nf-cod-symbol_class"></span> ElementWithAddins</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addins/ElementWithAddins>
+    <span class="nf nf-cod-symbol_class"></span> RAModule</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addins/RAModule>
+    <span class="nf nf-cod-symbol_class"></span> RAModuleCollection</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addins/RAModuleCollection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

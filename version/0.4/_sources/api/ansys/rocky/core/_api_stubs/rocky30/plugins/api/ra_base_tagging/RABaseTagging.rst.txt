@@ -1,0 +1,62 @@
+
+
+
+
+
+
+:class:`RABaseTagging`
+======================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_tagging.RABaseTagging(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+.. py:currentmodule:: RABaseTagging
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetTimeRangeFilter`
+            - 
+          * - :py:attr:`~GetGridFunctionName`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_tagging import RABaseTagging
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetTimeRangeFilter()
+
+.. py:method:: GetGridFunctionName()
+
+
+
+

@@ -1,0 +1,35 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_parametric_variables
+=======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_parametric_variables
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_parametric_variables.RAParametricVariables
+
+
+Module Contents
+---------------
+
+.. py:class:: RAParametricVariables(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetInputVariables()
+
+

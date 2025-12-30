@@ -1,0 +1,103 @@
+
+
+
+
+
+
+:class:`RASpringDashpotMoment`
+==============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_spring_dashpot_moment.RASpringDashpotMoment(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RASpringDashpotMoment
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDashpotCoefficient`
+            - 
+          * - :py:attr:`~SetDashpotCoefficient`
+            - 
+          * - :py:attr:`~GetDirection`
+            - 
+          * - :py:attr:`~SetDirection`
+            - 
+          * - :py:attr:`~GetValidDirectionValues`
+            - 
+          * - :py:attr:`~GetSpringCoefficient`
+            - 
+          * - :py:attr:`~SetSpringCoefficient`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_spring_dashpot_moment import RASpringDashpotMoment
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetDashpotCoefficient(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetDashpotCoefficient(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetDirection() -> str
+
+.. py:method:: SetDirection(value: str) -> None
+
+.. py:method:: GetValidDirectionValues() -> List[str]
+
+.. py:method:: GetSpringCoefficient(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetSpringCoefficient(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+
+

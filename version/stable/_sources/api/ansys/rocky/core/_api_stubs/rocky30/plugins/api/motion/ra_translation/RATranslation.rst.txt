@@ -1,0 +1,111 @@
+
+
+
+
+
+
+:class:`RATranslation`
+======================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_translation.RATranslation(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RATranslation
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAcceleration`
+            - 
+          * - :py:attr:`~SetAcceleration`
+            - 
+          * - :py:attr:`~GetInput`
+            - 
+          * - :py:attr:`~SetInput`
+            - 
+          * - :py:attr:`~GetValidInputValues`
+            - 
+          * - :py:attr:`~GetFinalVelocity`
+            - 
+          * - :py:attr:`~SetFinalVelocity`
+            - 
+          * - :py:attr:`~GetVelocity`
+            - 
+          * - :py:attr:`~SetVelocity`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_translation import RATranslation
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetAcceleration(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetAcceleration(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetInput() -> str
+
+.. py:method:: SetInput(value: str) -> None
+
+.. py:method:: GetValidInputValues() -> List[str]
+
+.. py:method:: GetFinalVelocity(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetFinalVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetVelocity(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+
+

@@ -1,0 +1,143 @@
+
+
+
+
+
+
+:class:`RACFDCoupling`
+======================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RACFDCoupling(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RACFDCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetupNoCoupling`
+            - 
+          * - :py:attr:`~SetupAirFlow`
+            - 
+          * - :py:attr:`~SetupOneWayLBM`
+            - 
+          * - :py:attr:`~GetAirFlow`
+            - 
+          * - :py:attr:`~GetOneWayLBM`
+            - 
+          * - :py:attr:`~SetupFluentOneWaySteadyState`
+            - 
+          * - :py:attr:`~SetupOneWayFluentSteadyState`
+            - 
+          * - :py:attr:`~SetupOneWayFluent`
+            - 
+          * - :py:attr:`~SetupFluentTwoWay`
+            - 
+          * - :py:attr:`~SetupTwoWayFluent`
+            - 
+          * - :py:attr:`~SetupFluentTwoWaySemiResolved`
+            - 
+          * - :py:attr:`~SetupOneWayConstant`
+            - 
+          * - :py:attr:`~SetupConstantOneWay`
+            - 
+          * - :py:attr:`~SetupCFDConstantOneWayCouplingProcess`
+            - 
+          * - :py:attr:`~GetCouplingMode`
+            - 
+          * - :py:attr:`~GetCouplingProcess`
+            - 
+          * - :py:attr:`~SetCurrentCouplingPartId`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling import RACFDCoupling
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetupNoCoupling()
+
+.. py:method:: SetupAirFlow() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow.RAAirFlow, None]
+
+.. py:method:: SetupOneWayLBM() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow.RAAirFlow, None]
+
+.. py:method:: GetAirFlow() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow.RAAirFlow, None]
+
+.. py:method:: GetOneWayLBM() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow.RAAirFlow, None]
+
+.. py:method:: SetupFluentOneWaySteadyState(f2r_filename: str) -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetupOneWayFluentSteadyState(f2r_filename: str) -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetupOneWayFluent(f2r_filename: str) -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetupFluentTwoWay(cas_filename: str) -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetupTwoWayFluent(cas_filename: str) -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetupFluentTwoWaySemiResolved(cas_filename: str) -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetupOneWayConstant() -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetupConstantOneWay() -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetupCFDConstantOneWayCouplingProcess() -> Optional[RACFDCouplingTypes]
+
+.. py:method:: GetCouplingMode() -> str
+
+.. py:method:: GetCouplingProcess() -> Optional[RACFDCouplingTypes]
+
+.. py:method:: SetCurrentCouplingPartId() -> None
+
+
+
+

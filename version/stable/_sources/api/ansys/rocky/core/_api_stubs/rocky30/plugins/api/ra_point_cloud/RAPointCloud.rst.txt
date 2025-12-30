@@ -1,0 +1,131 @@
+
+
+
+
+
+
+:class:`RAPointCloud`
+=====================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_point_cloud.RAPointCloud
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`
+
+
+
+
+
+.. py:currentmodule:: RAPointCloud
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFilePath`
+            - 
+          * - :py:attr:`~SetFilePath`
+            - 
+          * - :py:attr:`~IsTransient`
+            - 
+          * - :py:attr:`~GetEnablePeriodic`
+            - 
+          * - :py:attr:`~SetEnablePeriodic`
+            - 
+          * - :py:attr:`~EnablePeriodic`
+            - 
+          * - :py:attr:`~DisablePeriodic`
+            - 
+          * - :py:attr:`~IsPeriodicEnabled`
+            - 
+          * - :py:attr:`~GetPeriodicStartTime`
+            - 
+          * - :py:attr:`~SetPeriodicStartTime`
+            - 
+          * - :py:attr:`~GetPeriodicStopTime`
+            - 
+          * - :py:attr:`~SetPeriodicStopTime`
+            - 
+          * - :py:attr:`~GetSearchCutOff`
+            - 
+          * - :py:attr:`~SetSearchCutOff`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_point_cloud import RAPointCloud
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.point_cloud.point_cloud.PointCloud]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetFilePath() -> str
+
+.. py:method:: SetFilePath(file_path: Union[str, pathlib.Path]) -> None
+
+.. py:method:: IsTransient() -> bool
+
+.. py:method:: GetEnablePeriodic() -> bool
+
+.. py:method:: SetEnablePeriodic(value: bool) -> None
+
+.. py:method:: EnablePeriodic() -> None
+
+.. py:method:: DisablePeriodic() -> None
+
+.. py:method:: IsPeriodicEnabled() -> bool
+
+.. py:method:: GetPeriodicStartTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetPeriodicStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetPeriodicStopTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetPeriodicStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetSearchCutOff() -> bool
+
+.. py:method:: SetSearchCutOff(value: bool) -> None
+
+
+
+

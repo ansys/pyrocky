@@ -1,0 +1,103 @@
+
+
+
+
+
+
+:class:`RAModule`
+=================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.RAModule(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ElementWithAddins`
+
+
+
+
+
+.. py:currentmodule:: RAModule
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~EnableModule`
+            - 
+          * - :py:attr:`~DisableModule`
+            - 
+          * - :py:attr:`~SetModuleEnabled`
+            - 
+          * - :py:attr:`~IsModuleEnabled`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetOutputObject`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins import RAModule
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: EnableModule() -> None
+
+.. py:method:: DisableModule() -> None
+
+.. py:method:: SetModuleEnabled(enabled) -> None
+
+.. py:method:: IsModuleEnabled()
+
+.. py:method:: GetName()
+
+.. py:method:: SetName(name) -> None
+
+.. py:method:: GetOutputObject() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_process.RAModuleOutput, None]
+
+
+
+

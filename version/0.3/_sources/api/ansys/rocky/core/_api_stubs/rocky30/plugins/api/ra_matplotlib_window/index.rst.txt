@@ -1,0 +1,134 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window
+====================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.MplCanvas
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.MplWindow
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.MplWindowSubject
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.RAMplWindow
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.UserWindowSubjectContainer
+
+
+Module Contents
+---------------
+
+.. py:class:: MplCanvas
+
+   Bases: :py:obj:`matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg`
+
+
+   
+   The canvas the figure renders into.
+
+
+
+   :Attributes:
+
+       **figure** : `~matplotlib.figure.Figure`
+           A high-level figure instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:attribute:: figure
+      :type:  _typeshed.Incomplete
+
+
+.. py:class:: MplWindow(parent, central_editor_id)
+
+   Bases: :py:obj:`esss_qt10.qt_traits.QWidget`, :py:obj:`plugins10.plugins.mainwindow.mainwindowplugins.centralwidget.DefaultCentralEditor`
+
+
+   .. py:attribute:: frame
+      :type:  _typeshed.Incomplete
+
+
+   .. py:attribute:: canvas
+      :type:  _typeshed.Incomplete
+
+
+   .. py:attribute:: mpltoolbar
+      :type:  _typeshed.Incomplete
+
+
+   .. py:attribute:: vbl
+      :type:  _typeshed.Incomplete
+
+
+   .. py:method:: GetFigure()
+
+
+.. py:class:: MplWindowSubject
+
+   Bases: :py:obj:`plugins10.plugins.workspace.workspace_editor_subjects.workspace_editor_subjects.WorkspaceEditorSubject`
+
+
+   .. py:method:: GetGUIClass()
+
+
+   .. py:method:: GetIgnoreChanges()
+
+
+   .. py:method:: GetIgnoreAddRemove()
+
+
+   .. py:method:: GetIgnoreAdd()
+
+
+.. py:class:: RAMplWindow
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_workspace_window.KAWorkspaceWindow`
+
+
+   .. py:method:: GetFigure()
+
+
+   .. py:method:: GetCanvas()
+
+
+   .. py:method:: Redraw()
+
+
+.. py:class:: UserWindowSubjectContainer(app)
+
+   Bases: :py:obj:`coilib50.subject.Subject`
+
+
+   .. py:attribute:: app
+      :type:  _typeshed.Incomplete
+
+
+   .. py:method:: GetIgnoreChanges()
+
+
+   .. py:method:: GetIgnoreAddRemove()
+
+
+   .. py:method:: GetIgnoreAdd()
+
+
+   .. py:method:: Add(window_subject)
+
+
+   .. py:method:: __iter__()
+
+

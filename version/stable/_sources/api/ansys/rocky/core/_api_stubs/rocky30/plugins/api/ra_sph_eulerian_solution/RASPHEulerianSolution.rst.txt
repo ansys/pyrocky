@@ -1,0 +1,95 @@
+
+
+
+
+
+
+:class:`RASPHEulerianSolution`
+==============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_eulerian_solution.RASPHEulerianSolution(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_subject_with_coloring_mixin._RASubjectWithColoringMixin`
+
+
+
+
+
+.. py:currentmodule:: RASPHEulerianSolution
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetEulerianSolutionEnabled`
+            - 
+          * - :py:attr:`~SetEulerianSolutionEnabled`
+            - 
+          * - :py:attr:`~EnableEulerianSolution`
+            - 
+          * - :py:attr:`~DisableEulerianSolution`
+            - 
+          * - :py:attr:`~IsEulerianSolutionEnabled`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_eulerian_solution import RASPHEulerianSolution
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetEulerianSolutionEnabled() -> bool
+
+.. py:method:: SetEulerianSolutionEnabled(value: bool) -> None
+
+.. py:method:: EnableEulerianSolution() -> None
+
+.. py:method:: DisableEulerianSolution() -> None
+
+.. py:method:: IsEulerianSolutionEnabled() -> bool
+
+
+
+

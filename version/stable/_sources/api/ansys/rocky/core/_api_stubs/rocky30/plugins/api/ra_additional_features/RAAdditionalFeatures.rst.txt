@@ -1,0 +1,83 @@
+
+
+
+
+
+
+:class:`RAAdditionalFeatures`
+=============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_additional_features.RAAdditionalFeatures
+
+
+.. py:currentmodule:: RAAdditionalFeatures
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetBetaFeaturesEnabled`
+            - 
+          * - :py:attr:`~SetBetaFeaturesEnabled`
+            - 
+          * - :py:attr:`~GetAdvancedFeaturesEnabled`
+            - 
+          * - :py:attr:`~SetAdvancedFeaturesEnabled`
+            - 
+          * - :py:attr:`~GetCustomFeatures`
+            - 
+          * - :py:attr:`~SetCustomFeatures`
+            - 
+          * - :py:attr:`~GetMeshedParticlesUpscalingEnabled`
+            - 
+          * - :py:attr:`~SetMeshedParticlesUpscalingEnabled`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_additional_features import RAAdditionalFeatures
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetBetaFeaturesEnabled() -> bool
+
+.. py:method:: SetBetaFeaturesEnabled(enable: bool) -> None
+
+.. py:method:: GetAdvancedFeaturesEnabled() -> bool
+
+.. py:method:: SetAdvancedFeaturesEnabled(enable: bool) -> None
+
+.. py:method:: GetCustomFeatures() -> list[str]
+
+.. py:method:: SetCustomFeatures(features: collections.abc.Iterable[str]) -> None
+
+.. py:method:: GetMeshedParticlesUpscalingEnabled() -> bool
+
+.. py:method:: SetMeshedParticlesUpscalingEnabled(enable: bool) -> None
+
+
+
+

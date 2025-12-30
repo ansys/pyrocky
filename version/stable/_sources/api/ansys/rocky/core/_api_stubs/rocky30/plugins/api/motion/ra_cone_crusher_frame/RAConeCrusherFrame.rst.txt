@@ -1,0 +1,123 @@
+
+
+
+
+
+
+:class:`RAConeCrusherFrame`
+===========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_cone_crusher_frame.RAConeCrusherFrame(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion.RABaseMotionFrame`
+
+
+
+
+
+.. py:currentmodule:: RAConeCrusherFrame
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetInitialOrientation`
+            - 
+          * - :py:attr:`~SetInitialOrientation`
+            - 
+          * - :py:attr:`~GetPivotPoint`
+            - 
+          * - :py:attr:`~SetPivotPoint`
+            - 
+          * - :py:attr:`~GetRotationAxis`
+            - 
+          * - :py:attr:`~SetRotationAxis`
+            - 
+          * - :py:attr:`~GetRotationalVelocity`
+            - 
+          * - :py:attr:`~SetRotationalVelocity`
+            - 
+          * - :py:attr:`~GetStartTime`
+            - 
+          * - :py:attr:`~SetStartTime`
+            - 
+          * - :py:attr:`~GetStopTime`
+            - 
+          * - :py:attr:`~SetStopTime`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_cone_crusher_frame import RAConeCrusherFrame
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetInitialOrientation(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetInitialOrientation(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetPivotPoint(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetPivotPoint(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetRotationAxis(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetRotationAxis(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetRotationalVelocity(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetRotationalVelocity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetStopTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+
+

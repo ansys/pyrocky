@@ -1,0 +1,94 @@
+
+
+
+
+
+
+The ``ra_addins.py`` module
+===========================
+
+.. py:module:: ansys.rocky.app.ra_addins
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_addins
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_addins.ModulePropertyIdentifier`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_addins.ElementWithAddins`
+            - Rocky PrePost Scripting wrapper for properties in a module or elements with module properties
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_addins.RAModule`
+            - Rocky PrePost Scripting wrapper for an individual module in a project, below the "Modules"
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_addins.RAModuleCollection`
+            - Rocky PrePost Scripting wrapper for the collection of module in a project.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> ModulePropertyIdentifier</api/ansys/rocky/app/ra_addins/ModulePropertyIdentifier>
+    <span class="nf nf-cod-symbol_class"></span> ElementWithAddins</api/ansys/rocky/app/ra_addins/ElementWithAddins>
+    <span class="nf nf-cod-symbol_class"></span> RAModule</api/ansys/rocky/app/ra_addins/RAModule>
+    <span class="nf nf-cod-symbol_class"></span> RAModuleCollection</api/ansys/rocky/app/ra_addins/RAModuleCollection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

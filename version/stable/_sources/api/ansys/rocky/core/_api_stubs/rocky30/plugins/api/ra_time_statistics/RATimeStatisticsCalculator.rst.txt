@@ -1,0 +1,74 @@
+
+
+
+
+
+
+:class:`RATimeStatisticsCalculator`
+===================================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatisticsCalculator(base_subject)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_subject_element.BaseSubjectApiElement`
+
+
+
+.. py:currentmodule:: RATimeStatisticsCalculator
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetStartTime`
+            - 
+          * - :py:attr:`~SetStartTime`
+            - 
+          * - :py:attr:`~GetStopTime`
+            - 
+          * - :py:attr:`~SetStopTime`
+            - 
+          * - :py:attr:`~GetGridFunctionName`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics import RATimeStatisticsCalculator
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetStartTime()
+
+.. py:method:: SetStartTime(time_value) -> None
+
+.. py:method:: GetStopTime()
+
+.. py:method:: SetStopTime(time_value) -> None
+
+.. py:method:: GetGridFunctionName()
+
+
+
+

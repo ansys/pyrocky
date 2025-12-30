@@ -1,0 +1,98 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction
+========================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction.RAMaterialsInteraction
+
+
+Module Contents
+---------------
+
+.. py:class:: RAMaterialsInteraction(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetFirstMaterial() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+   .. py:method:: GetSecondMaterial() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+   .. py:method:: GetAdhesiveDistance(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAdhesiveDistance(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetAdhesiveFraction(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAdhesiveFraction(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetContactStiffnessMultiplier(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetContactStiffnessMultiplier(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRestitutionCoefficient(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetRestitutionCoefficient(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDynamicFriction(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDynamicFriction(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStaticFriction(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStaticFriction(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSurfaceEnergy(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSurfaceEnergy(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTangentialStiffnessRatio(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTangentialStiffnessRatio(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetVelocityExponent(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetVelocityExponent(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetVelocityLimit(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetVelocityLimit(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

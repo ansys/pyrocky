@@ -1,0 +1,119 @@
+
+
+
+
+
+
+:class:`RAContactData`
+======================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contact_data.RAContactData
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+
+
+
+.. py:currentmodule:: RAContactData
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~RemoveProcess`
+            - 
+          * - :py:attr:`~GetCollectContactsData`
+            - 
+          * - :py:attr:`~SetCollectContactsData`
+            - 
+          * - :py:attr:`~EnableCollectContactsData`
+            - 
+          * - :py:attr:`~DisableCollectContactsData`
+            - 
+          * - :py:attr:`~IsCollectContactsDataEnabled`
+            - 
+          * - :py:attr:`~GetIncludeAdhesiveContacts`
+            - 
+          * - :py:attr:`~SetIncludeAdhesiveContacts`
+            - 
+          * - :py:attr:`~EnableIncludeAdhesiveContacts`
+            - 
+          * - :py:attr:`~DisableIncludeAdhesiveContacts`
+            - 
+          * - :py:attr:`~IsIncludeAdhesiveContactsEnabled`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contact_data import RAContactData
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: RemoveProcess() -> None
+
+.. py:method:: GetCollectContactsData() -> bool
+
+.. py:method:: SetCollectContactsData(value: bool) -> None
+
+.. py:method:: EnableCollectContactsData() -> None
+
+.. py:method:: DisableCollectContactsData() -> None
+
+.. py:method:: IsCollectContactsDataEnabled() -> bool
+
+.. py:method:: GetIncludeAdhesiveContacts() -> bool
+
+.. py:method:: SetIncludeAdhesiveContacts(value: bool) -> None
+
+.. py:method:: EnableIncludeAdhesiveContacts() -> None
+
+.. py:method:: DisableIncludeAdhesiveContacts() -> None
+
+.. py:method:: IsIncludeAdhesiveContactsEnabled() -> bool
+
+
+
+

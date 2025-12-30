@@ -1,0 +1,111 @@
+
+
+
+
+
+
+The ``api_element_item.py`` module
+==================================
+
+.. py:module:: ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: api_element_item
+.. tab-set::
+
+
+
+    .. tab-item:: Interfaces
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.IWrappedItem`
+            - 
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+            - 
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiError`
+            - Unspecified run-time error.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_interface"></span> IWrappedItem</api/ansys/rocky/core/_api_stubs/plugins10/plugins/api/api_element_item/IWrappedItem>
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> ApiElementItem</api/ansys/rocky/core/_api_stubs/plugins10/plugins/api/api_element_item/ApiElementItem>
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-lightning_bolt"></span> ApiError</api/ansys/rocky/core/_api_stubs/plugins10/plugins/api/api_element_item/ApiError>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

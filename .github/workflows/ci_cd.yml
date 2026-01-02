@@ -237,14 +237,22 @@ jobs:
     needs: [package, smoke-tests]
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: write
     steps:
-      - name: Release to the public PyPI repository
-        uses: ansys/actions/release-pypi-public@v10
+      - name: "Download the library artifacts from build-library step"
+        uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
         with:
-          library-name: ${{ env.LIBRARY_NAME }}
-          twine-username: "__token__"
-          twine-token: ${{ secrets.PYPI_TOKEN }}
+          name: ${{ env.LIBRARY_NAME }}-artifacts
+          path: ${{ env.LIBRARY_NAME }}-artifacts
+
+      - name: "Upload artifacts to PyPI using trusted publisher"
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc # v1.12.4
+        with:
+          repository-url: "https://upload.pypi.org/legacy/"
+          print-hash: true
+          packages-dir: ${{ env.LIBRARY_NAME }}-artifacts
+          skip-existing: false
 
       - name: Release to GitHub
         uses: ansys/actions/release-github@v10

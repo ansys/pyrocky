@@ -1,0 +1,62 @@
+
+
+
+
+
+
+:class:`RAUserProcess`
+======================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAUserProcess
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+
+.. py:currentmodule:: RAUserProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetNumberOfParticles`
+            - 
+          * - :py:attr:`~IterParticles`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import RAUserProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetNumberOfParticles(time_step)
+
+.. py:method:: IterParticles(time_step)
+
+
+
+

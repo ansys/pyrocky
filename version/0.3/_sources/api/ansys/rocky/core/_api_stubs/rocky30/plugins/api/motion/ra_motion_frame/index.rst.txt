@@ -1,0 +1,140 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame
+======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame.RAMotionFrame
+
+
+Module Contents
+---------------
+
+.. py:class:: RAMotionFrame(id, model_id: _typeshed.Incomplete | None = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion.RABaseMotionFrame`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: AddPendulumMotion(start_time=..., stop_time=..., initial_frequency=..., angular_initial_amplitude=..., direction=..., angular_initial_phase=..., frequency_variation=..., angular_amplitude_variation=...)
+
+
+   .. py:method:: AddVibrationMotion(start_time=..., stop_time=..., initial_frequency=..., initial_amplitude=..., direction=..., frequency_variation=..., amplitude_variation=...)
+
+
+   .. py:method:: AddRotationMotion(start_time=..., stop_time=..., angular_velocity=..., angular_acceleration=...)
+
+
+   .. py:method:: AddTranslationMotion(start_time=..., stop_time=..., velocity=..., acceleration=..., define_as: str = ..., final_velocity=...)
+
+
+   .. py:method:: ApplyTo(obj) -> None
+
+
+   .. py:method:: GetMotions() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_list.RAMotionList
+
+
+   .. py:method:: GetRotationAngle(unit: Union[str, None] = ...) -> float
+
+
+   .. py:method:: SetRotationAngle(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetRelativeRotationVector(unit: Union[str, None] = ...) -> list[float]
+
+
+   .. py:method:: SetRelativeRotationVector(values: collections.abc.Sequence[Union[str, float]], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetFbmMaxAngularLimits(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetFbmMaxAngularLimits(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetFbmMaxLinearLimits(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetFbmMaxLinearLimits(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetFbmMinAngularLimits(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetFbmMinAngularLimits(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetFbmMinLinearLimits(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetFbmMinLinearLimits(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetEnableFbmAngularLimits() -> bool
+
+
+   .. py:method:: SetEnableFbmAngularLimits(value: bool) -> None
+
+
+   .. py:method:: GetEnableFbmLinearLimits() -> bool
+
+
+   .. py:method:: SetEnableFbmLinearLimits(value: bool) -> None
+
+
+   .. py:method:: GetEnablePeriodicMotion() -> bool
+
+
+   .. py:method:: SetEnablePeriodicMotion(value: bool) -> None
+
+
+   .. py:method:: GetKeepInPlace() -> int
+
+
+   .. py:method:: SetKeepInPlace(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetPeriodicMotionPeriod(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPeriodicMotionPeriod(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPeriodicMotionStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPeriodicMotionStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPeriodicMotionStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPeriodicMotionStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRelativePosition(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetRelativePosition(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+

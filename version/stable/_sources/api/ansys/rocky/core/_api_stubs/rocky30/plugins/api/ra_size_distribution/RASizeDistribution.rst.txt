@@ -1,0 +1,99 @@
+
+
+
+
+
+
+:class:`RASizeDistribution`
+===========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_size_distribution.RASizeDistribution(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RASizeDistribution
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCumulativePercentage`
+            - 
+          * - :py:attr:`~SetCumulativePercentage`
+            - 
+          * - :py:attr:`~GetScaleFactor`
+            - 
+          * - :py:attr:`~SetScaleFactor`
+            - 
+          * - :py:attr:`~GetSize`
+            - 
+          * - :py:attr:`~SetSize`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_size_distribution import RASizeDistribution
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetCumulativePercentage() -> float
+
+.. py:method:: SetCumulativePercentage(value: Union[str, float]) -> None
+
+.. py:method:: GetScaleFactor(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetScaleFactor(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetSize(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+
+

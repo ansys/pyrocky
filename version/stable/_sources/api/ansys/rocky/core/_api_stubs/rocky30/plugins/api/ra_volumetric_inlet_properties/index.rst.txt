@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_volumetric_inlet_properties.py`` module
+================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_volumetric_inlet_properties
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties.RAVolumetricInletProperties`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties.RAVolumetricInletPropertiesList`
+            - Base class for API classes that wrap SubjectLists (and related list classes).
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAVolumetricInletProperties</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_volumetric_inlet_properties/RAVolumetricInletProperties>
+    <span class="nf nf-cod-symbol_class"></span> RAVolumetricInletPropertiesList</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_volumetric_inlet_properties/RAVolumetricInletPropertiesList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+
+
+
+
+
+
+:class:`RAParametricVar`
+========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_input_variables.RAParametricVar(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RAParametricVar
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~GetValue`
+            - 
+          * - :py:attr:`~SetValue`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_input_variables import RAParametricVar
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetName() -> str
+
+.. py:method:: GetValue() -> float
+
+.. py:method:: SetValue(value: float) -> None
+
+
+
+

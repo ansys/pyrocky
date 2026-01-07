@@ -1,0 +1,68 @@
+
+
+
+
+
+
+:class:`RAModulePropertyList`
+=============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`RAModulePropertyListItem`\ ]
+
+
+
+
+
+.. py:currentmodule:: RAModulePropertyList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list import RAModulePropertyList
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.addins.model.property_list.AddinPropertiesList]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+
+
+

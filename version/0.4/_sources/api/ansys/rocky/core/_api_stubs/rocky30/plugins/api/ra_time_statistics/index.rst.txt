@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_time_statistics.py`` module
+====================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_time_statistics
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatisticsCalculator`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatistics`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RATimeStatisticsCalculator</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_time_statistics/RATimeStatisticsCalculator>
+    <span class="nf nf-cod-symbol_class"></span> RATimeStatistics</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_time_statistics/RATimeStatistics>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

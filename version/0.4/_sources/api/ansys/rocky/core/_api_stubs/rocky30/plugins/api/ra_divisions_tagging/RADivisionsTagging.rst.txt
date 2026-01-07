@@ -1,0 +1,123 @@
+
+
+
+
+
+
+:class:`RADivisionsTagging`
+===========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_divisions_tagging.RADivisionsTagging(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_tagging.RABaseTagging`
+
+
+
+
+
+.. py:currentmodule:: RADivisionsTagging
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDivisionsI`
+            - 
+          * - :py:attr:`~SetDivisionsI`
+            - 
+          * - :py:attr:`~GetDivisionsJ`
+            - 
+          * - :py:attr:`~SetDivisionsJ`
+            - 
+          * - :py:attr:`~GetDivisionsK`
+            - 
+          * - :py:attr:`~SetDivisionsK`
+            - 
+          * - :py:attr:`~GetNameMask`
+            - 
+          * - :py:attr:`~SetNameMask`
+            - 
+          * - :py:attr:`~GetTagStride`
+            - 
+          * - :py:attr:`~SetTagStride`
+            - 
+          * - :py:attr:`~GetTagValue`
+            - 
+          * - :py:attr:`~SetTagValue`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_divisions_tagging import RADivisionsTagging
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetDivisionsI() -> int
+
+.. py:method:: SetDivisionsI(value: Union[str, int]) -> None
+
+.. py:method:: GetDivisionsJ() -> int
+
+.. py:method:: SetDivisionsJ(value: Union[str, int]) -> None
+
+.. py:method:: GetDivisionsK() -> int
+
+.. py:method:: SetDivisionsK(value: Union[str, int]) -> None
+
+.. py:method:: GetNameMask() -> str
+
+.. py:method:: SetNameMask(value: str) -> None
+
+.. py:method:: GetTagStride() -> int
+
+.. py:method:: SetTagStride(value: Union[str, int]) -> None
+
+.. py:method:: GetTagValue() -> int
+
+.. py:method:: SetTagValue(value: Union[str, int]) -> None
+
+
+
+

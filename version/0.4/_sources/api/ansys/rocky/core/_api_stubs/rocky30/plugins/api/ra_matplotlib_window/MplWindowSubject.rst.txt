@@ -1,0 +1,70 @@
+
+
+
+
+
+
+:class:`MplWindowSubject`
+=========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.MplWindowSubject
+
+   Bases: :py:obj:`plugins10.plugins.workspace.workspace_editor_subjects.workspace_editor_subjects.WorkspaceEditorSubject`
+
+
+
+.. py:currentmodule:: MplWindowSubject
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetGUIClass`
+            - 
+          * - :py:attr:`~GetIgnoreChanges`
+            - 
+          * - :py:attr:`~GetIgnoreAddRemove`
+            - 
+          * - :py:attr:`~GetIgnoreAdd`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import MplWindowSubject
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetGUIClass()
+
+.. py:method:: GetIgnoreChanges()
+
+.. py:method:: GetIgnoreAddRemove()
+
+.. py:method:: GetIgnoreAdd()
+
+
+
+

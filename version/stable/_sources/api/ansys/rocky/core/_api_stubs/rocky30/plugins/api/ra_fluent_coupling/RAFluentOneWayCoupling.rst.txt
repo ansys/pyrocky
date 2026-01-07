@@ -1,0 +1,127 @@
+
+
+
+
+
+
+:class:`RAFluentOneWayCoupling`
+===============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling`
+
+
+
+
+
+.. py:currentmodule:: RAFluentOneWayCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetupStoreFiles`
+            - 
+          * - :py:attr:`~GetAvailableCoupledBoundaryNames`
+            - 
+          * - :py:attr:`~CreateCoupledBoundaries`
+            - 
+          * - :py:attr:`~GetIsOneWayPeriodic`
+            - 
+          * - :py:attr:`~SetIsOneWayPeriodic`
+            - 
+          * - :py:attr:`~GetOverwriteCfdUpdateDistance`
+            - 
+          * - :py:attr:`~SetOverwriteCfdUpdateDistance`
+            - 
+          * - :py:attr:`~GetStartTime`
+            - 
+          * - :py:attr:`~SetStartTime`
+            - 
+          * - :py:attr:`~GetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~SetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~GetUserCfdUpdateDistance`
+            - 
+          * - :py:attr:`~SetUserCfdUpdateDistance`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling import RAFluentOneWayCoupling
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetupStoreFiles(filename) -> None
+
+.. py:method:: GetAvailableCoupledBoundaryNames() -> collections.abc.Iterable[str]
+
+.. py:method:: CreateCoupledBoundaries(coupled_boundary_names: list[str]) -> None
+
+.. py:method:: GetIsOneWayPeriodic() -> bool
+
+.. py:method:: SetIsOneWayPeriodic(value: bool) -> None
+
+.. py:method:: GetOverwriteCfdUpdateDistance() -> bool
+
+.. py:method:: SetOverwriteCfdUpdateDistance(value: bool) -> None
+
+.. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetUseTurbulentDispersion() -> bool
+
+.. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+.. py:method:: GetUserCfdUpdateDistance(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetUserCfdUpdateDistance(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+
+

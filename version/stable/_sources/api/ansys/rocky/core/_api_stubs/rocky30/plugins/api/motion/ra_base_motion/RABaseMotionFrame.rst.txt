@@ -1,0 +1,78 @@
+
+
+
+
+
+
+:class:`RABaseMotionFrame`
+==========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion.RABaseMotionFrame(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+.. py:currentmodule:: RABaseMotionFrame
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~NewFrame`
+            - 
+          * - :py:attr:`~NewConeCrusherFrame`
+            - 
+          * - :py:attr:`~IterMotionFrames`
+            - 
+          * - :py:attr:`~GetMotionFrame`
+            - 
+          * - :py:attr:`~RemoveFrame`
+            - 
+          * - :py:attr:`~GetParentMotionFrame`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion import RABaseMotionFrame
+
+
+
+Method detail
+-------------
+
+.. py:method:: NewFrame() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame.RAMotionFrame
+
+.. py:method:: NewConeCrusherFrame()
+
+.. py:method:: IterMotionFrames() -> collections.abc.Generator[_typeshed.Incomplete, None, None]
+
+.. py:method:: GetMotionFrame(frame_name)
+
+.. py:method:: RemoveFrame(motion_frame) -> None
+
+.. py:method:: GetParentMotionFrame()
+
+
+
+

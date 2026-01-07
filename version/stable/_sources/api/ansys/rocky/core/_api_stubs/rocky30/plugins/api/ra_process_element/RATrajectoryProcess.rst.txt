@@ -1,0 +1,119 @@
+
+
+
+
+
+
+:class:`RATrajectoryProcess`
+============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RATrajectoryProcess
+
+   Bases: :py:obj:`RAUserProcess`
+
+
+
+
+
+.. py:currentmodule:: RATrajectoryProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetStartingTimeStep`
+            - 
+          * - :py:attr:`~SetStartingTime`
+            - 
+          * - :py:attr:`~GetStartingTimeStep`
+            - 
+          * - :py:attr:`~GetStartingTime`
+            - 
+          * - :py:attr:`~SetNumberOfTimeSteps`
+            - 
+          * - :py:attr:`~SetNumberOfIntervals`
+            - 
+          * - :py:attr:`~GetNumberOfTimeSteps`
+            - 
+          * - :py:attr:`~GetNumberOfIntervals`
+            - 
+          * - :py:attr:`~SetParticleStride`
+            - 
+          * - :py:attr:`~GetParticleStride`
+            - 
+          * - :py:attr:`~UpdateParticlesSelection`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element import RATrajectoryProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetStartingTimeStep(time_step) -> None
+
+.. py:method:: SetStartingTime(time: Union[str, coilib50.time.time_step_interface.ITimeStep, int]) -> None
+
+.. py:method:: GetStartingTimeStep()
+
+.. py:method:: GetStartingTime() -> coilib50.time.time_step_interface.ITimeStep
+
+.. py:method:: SetNumberOfTimeSteps(number_of_intervals) -> None
+
+.. py:method:: SetNumberOfIntervals(number_of_intervals: int)
+
+.. py:method:: GetNumberOfTimeSteps()
+
+.. py:method:: GetNumberOfIntervals() -> int
+
+.. py:method:: SetParticleStride(particle_stride) -> None
+
+.. py:method:: GetParticleStride()
+
+.. py:method:: UpdateParticlesSelection() -> None
+
+
+
+

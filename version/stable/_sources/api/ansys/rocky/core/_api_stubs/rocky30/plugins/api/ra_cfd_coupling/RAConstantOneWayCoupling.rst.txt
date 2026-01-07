@@ -1,0 +1,167 @@
+
+
+
+
+
+
+:class:`RAConstantOneWayCoupling`
+=================================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RAConstantOneWayCoupling
+
+   Bases: :py:obj:`RABaseCFDCoupling`
+
+
+
+
+
+.. py:currentmodule:: RAConstantOneWayCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDensity`
+            - 
+          * - :py:attr:`~SetDensity`
+            - 
+          * - :py:attr:`~GetSpecificHeat`
+            - 
+          * - :py:attr:`~SetSpecificHeat`
+            - 
+          * - :py:attr:`~GetStartTime`
+            - 
+          * - :py:attr:`~SetStartTime`
+            - 
+          * - :py:attr:`~GetTemperature`
+            - 
+          * - :py:attr:`~SetTemperature`
+            - 
+          * - :py:attr:`~GetThermalConductivity`
+            - 
+          * - :py:attr:`~SetThermalConductivity`
+            - 
+          * - :py:attr:`~GetTurbulentDissipationRate`
+            - 
+          * - :py:attr:`~SetTurbulentDissipationRate`
+            - 
+          * - :py:attr:`~GetTurbulentKineticEnergy`
+            - 
+          * - :py:attr:`~SetTurbulentKineticEnergy`
+            - 
+          * - :py:attr:`~GetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~SetUseTurbulentDispersion`
+            - 
+          * - :py:attr:`~EnableTurbulentDispersion`
+            - 
+          * - :py:attr:`~DisableTurbulentDispersion`
+            - 
+          * - :py:attr:`~IsTurbulentDispersionEnabled`
+            - 
+          * - :py:attr:`~GetVelocity`
+            - 
+          * - :py:attr:`~SetVelocity`
+            - 
+          * - :py:attr:`~GetViscosity`
+            - 
+          * - :py:attr:`~SetViscosity`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling import RAConstantOneWayCoupling
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetDensity(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetSpecificHeat(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetSpecificHeat(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetThermalConductivity(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetThermalConductivity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetTurbulentDissipationRate(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetTurbulentDissipationRate(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetTurbulentKineticEnergy(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetTurbulentKineticEnergy(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetUseTurbulentDispersion() -> bool
+
+.. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+.. py:method:: EnableTurbulentDispersion() -> None
+
+.. py:method:: DisableTurbulentDispersion() -> None
+
+.. py:method:: IsTurbulentDispersionEnabled() -> bool
+
+.. py:method:: GetVelocity(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetViscosity(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetViscosity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+
+

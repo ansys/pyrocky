@@ -1,0 +1,183 @@
+
+
+
+
+
+
+:class:`RACFDPerParticleParameters`
+===================================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_parameters.RACFDPerParticleParameters(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RACFDPerParticleParameters
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~SetConvectiveHeatTransferLaw`
+            - 
+          * - :py:attr:`~GetValidConvectiveHeatTransferLawValues`
+            - 
+          * - :py:attr:`~GetDragLaw`
+            - 
+          * - :py:attr:`~SetDragLaw`
+            - 
+          * - :py:attr:`~GetValidDragLawValues`
+            - 
+          * - :py:attr:`~GetLiftLaw`
+            - 
+          * - :py:attr:`~SetLiftLaw`
+            - 
+          * - :py:attr:`~GetValidLiftLawValues`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK1`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK2`
+            - 
+          * - :py:attr:`~GetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~SetMorsiAndAlexanderK3`
+            - 
+          * - :py:attr:`~GetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienC1`
+            - 
+          * - :py:attr:`~GetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~SetSyamlalObrienD1`
+            - 
+          * - :py:attr:`~GetTorqueLaw`
+            - 
+          * - :py:attr:`~SetTorqueLaw`
+            - 
+          * - :py:attr:`~GetValidTorqueLawValues`
+            - 
+          * - :py:attr:`~GetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~SetUseUserDefinedConstants`
+            - 
+          * - :py:attr:`~GetVirtualMassLaw`
+            - 
+          * - :py:attr:`~SetVirtualMassLaw`
+            - 
+          * - :py:attr:`~GetValidVirtualMassLawValues`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_parameters import RACFDPerParticleParameters
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetConvectiveHeatTransferLaw() -> str
+
+.. py:method:: SetConvectiveHeatTransferLaw(value: str) -> None
+
+.. py:method:: GetValidConvectiveHeatTransferLawValues() -> List[str]
+
+.. py:method:: GetDragLaw() -> str
+
+.. py:method:: SetDragLaw(value: str) -> None
+
+.. py:method:: GetValidDragLawValues() -> List[str]
+
+.. py:method:: GetLiftLaw() -> str
+
+.. py:method:: SetLiftLaw(value: str) -> None
+
+.. py:method:: GetValidLiftLawValues() -> List[str]
+
+.. py:method:: GetMorsiAndAlexanderK1() -> float
+
+.. py:method:: SetMorsiAndAlexanderK1(value: Union[str, float]) -> None
+
+.. py:method:: GetMorsiAndAlexanderK2() -> float
+
+.. py:method:: SetMorsiAndAlexanderK2(value: Union[str, float]) -> None
+
+.. py:method:: GetMorsiAndAlexanderK3() -> float
+
+.. py:method:: SetMorsiAndAlexanderK3(value: Union[str, float]) -> None
+
+.. py:method:: GetSyamlalObrienC1() -> float
+
+.. py:method:: SetSyamlalObrienC1(value: Union[str, float]) -> None
+
+.. py:method:: GetSyamlalObrienD1() -> float
+
+.. py:method:: SetSyamlalObrienD1(value: Union[str, float]) -> None
+
+.. py:method:: GetTorqueLaw() -> str
+
+.. py:method:: SetTorqueLaw(value: str) -> None
+
+.. py:method:: GetValidTorqueLawValues() -> List[str]
+
+.. py:method:: GetUseUserDefinedConstants() -> bool
+
+.. py:method:: SetUseUserDefinedConstants(value: bool) -> None
+
+.. py:method:: GetVirtualMassLaw() -> str
+
+.. py:method:: SetVirtualMassLaw(value: str) -> None
+
+.. py:method:: GetValidVirtualMassLawValues() -> List[str]
+
+
+
+

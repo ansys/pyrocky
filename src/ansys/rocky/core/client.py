@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -123,6 +123,10 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
         _LEGACY_PROXY_INSTANCE = proxy_instance  # For backward compatibility
 
     rocky_client = RockyClient(proxy_instance)
+
+    # Install Pyro hook to automatically print remote error tracebacks.
+    sys.excepthook = Pyro5.errors.excepthook
+
     return rocky_client
 
 

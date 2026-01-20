@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -35,6 +35,7 @@ from ansys.rocky.core.rocky_api_proxies import (
     ApiGridFunctionProxy,
     ApiListProxy,
     ApiProjectProxy,
+    ApiTimeStatisticsProxy,
 )
 
 
@@ -47,8 +48,9 @@ def register_proxies() -> None:
     Pyro5.api.register_dict_to_class(
         "ApiExportToolkitProxy", deserialize_api_exporttoolkit
     )
+    Pyro5.api.register_dict_to_class("ApiProjectProxy", deserialize_api_project)
     Pyro5.api.register_dict_to_class(
-        "ApiProjectProxy", deserialize_api_project
+        "ApiTimeStatisticsProxy", deserialize_api_time_statistics
     )
     Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
     Pyro5.api.register_dict_to_class("ndarray", deserialize_numpy)
@@ -174,9 +176,7 @@ def deserialize_api_exporttoolkit(
     return ApiExportToolkitProxy(proxy, session_uid)
 
 
-def deserialize_api_project(
-    classname: str, serialized: dict
-) -> ApiProjectProxy:
+def deserialize_api_project(classname: str, serialized: dict) -> ApiProjectProxy:
     """Deserialize the proxy objects for the API project.
 
     Parameters
@@ -196,6 +196,30 @@ def deserialize_api_project(
     proxy = _GetProxyInstance(session_uid)
 
     return ApiProjectProxy(proxy, session_uid)
+
+
+def deserialize_api_time_statistics(
+    classname: str, serialized: dict
+) -> ApiTimeStatisticsProxy:
+    """Deserialize the proxy objects for the Time Statistics API element.
+
+    Parameters
+    ----------
+    classname : str
+        Name of the class to deserialize. This parameter is required by the
+        superclass but is not used.
+    serialized : dict
+        Dictionary of serialized objects.
+
+    Returns
+    -------
+    ApiTimeStatisticsProxy
+        Deserialized object.
+    """
+    session_uid = serialized.get("_session_uid")
+    proxy = _GetProxyInstance(session_uid)
+
+    return ApiTimeStatisticsProxy(proxy, serialized["_api_element_id"], session_uid)
 
 
 def deserialize_api_error(classname: str, serialized: dict) -> Exception:
@@ -240,7 +264,7 @@ def deserialize_numpy(classname: str, serialized: dict) -> Any:
 
 
 def _GetProxyInstance(session_uid: str) -> Pyro5.api.Proxy:
-    from .client import _LEGACY_PROXY_INSTANCE, _API_PROXY_INSTANCES
+    from .client import _API_PROXY_INSTANCES, _LEGACY_PROXY_INSTANCE
 
     proxy = _API_PROXY_INSTANCES.get(session_uid, _LEGACY_PROXY_INSTANCE)
     assert proxy is not None, "API Proxy not initialized"

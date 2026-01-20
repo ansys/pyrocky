@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -40,7 +40,9 @@ class ApiElementProxy:
         ID of the API element.
     """
 
-    def __init__(self, pyro_api: Pyro5.api.Proxy, pool_id: str, session_uid: str | None = None) -> None:
+    def __init__(
+        self, pyro_api: Pyro5.api.Proxy, pool_id: str, session_uid: str | None = None
+    ) -> None:
         self._pyro_api = pyro_api
         self._pool_id = pool_id
         self._session_uid = session_uid
@@ -169,12 +171,27 @@ class ApiExportToolkitProxy:
 
 class ApiProjectProxy(ApiElementProxy):
     def __init__(self, pyro_api: Pyro5.api.Proxy, session_uid: str | None = None) -> None:
-        super().__init__(pyro_api, 'project', session_uid)
+        super().__init__(pyro_api, "project", session_uid)
 
     def CloseProject(self, check_save_state: bool = True) -> None:
         if check_save_state and self.HasUnsavedChanges():
             raise RuntimeError(
-                "Project has unsaved changes. Save the project before closing or use check_save_state=False."
+                "Project has unsaved changes."
+                "Save the project before closing or use check_save_state=False."
             )
 
-        self._pyro_api.SendToApiElement(self._pool_id, "CloseProject", check_save_state=check_save_state)
+        self._pyro_api.SendToApiElement(
+            self._pool_id, "CloseProject", check_save_state=check_save_state
+        )
+
+
+class ApiTimeStatisticsProxy(ApiElementProxy):
+    """Proxy of Time Statistics api objects."""
+
+    def __getattr__(self, attr_name: str) -> Callable:
+        def CallProxy(*args: tuple, **kwargs: dict) -> Any:
+            return self._pyro_api.SendToRATimeStatistics(
+                self._pool_id, attr_name, *args, **kwargs
+            )
+
+        return CallProxy

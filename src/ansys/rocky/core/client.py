@@ -72,7 +72,6 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
         if host is None:
             host = "localhost"
         pyro_uri = f"PYRO:rocky.api@{host}:{port}"
-        hash_str = f"{host}:{port}"
     else:
         # Use UDS for Linux as default
         if host:
@@ -89,8 +88,8 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
             raise ConnectionRefusedError(f"No socket open at '{socket_path.name}'")
 
         pyro_uri = f"PYRO:rocky.api@./u:{socket_path}"
-        hash_str = str(socket_path)
 
+    hash_str = f"localhost:{port}"
     md5_hash = hashlib.md5(hash_str.encode()).hexdigest()
 
     global _LEGACY_PROXY_INSTANCE

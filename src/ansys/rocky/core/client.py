@@ -130,7 +130,7 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
 
 
 def connect_to_rocky(  # pragma: no cover
-    host: str = "localhost", port: int = _PYROCKY_DEFAULT_PORT
+    host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT
 ) -> "RockyClient":
     """This function is deprecated.
     Use connect() instead.

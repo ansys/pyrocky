@@ -1,0 +1,84 @@
+
+
+
+
+
+
+:class:`MplCanvas`
+==================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.MplCanvas
+
+   Bases: :py:obj:`matplotlib.backends.backend_qt5agg.FigureCanvasQTAgg`
+
+
+   
+   The canvas the figure renders into.
+
+
+
+   :Attributes:
+
+       **figure** : `~matplotlib.figure.Figure`
+           A high-level figure instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: MplCanvas
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~figure`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window import MplCanvas
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: figure
+   :type:  _typeshed.Incomplete
+
+
+
+
+

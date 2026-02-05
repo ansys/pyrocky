@@ -1,0 +1,167 @@
+
+
+
+
+
+
+:class:`RASystemCouplingWall`
+=============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_system_coupling_wall.RASystemCouplingWall
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`
+
+
+
+
+
+.. py:currentmodule:: RASystemCouplingWall
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~HasMotionFrame`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetSphBoundaryType`
+            - 
+          * - :py:attr:`~SetSphBoundaryType`
+            - 
+          * - :py:attr:`~GetValidSphBoundaryTypeValues`
+            - 
+          * - :py:attr:`~GetStructuralCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~SetStructuralCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~EnableStructuralCouplingType`
+            - 
+          * - :py:attr:`~DisableStructuralCouplingType`
+            - 
+          * - :py:attr:`~IsStructuralCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~GetSurfaceTensionContactAngle`
+            - 
+          * - :py:attr:`~SetSurfaceTensionContactAngle`
+            - 
+          * - :py:attr:`~GetThermalCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~SetThermalCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~EnableThermalCouplingType`
+            - 
+          * - :py:attr:`~DisableThermalCouplingType`
+            - 
+          * - :py:attr:`~IsThermalCouplingTypeEnabled`
+            - 
+          * - :py:attr:`~GetTriangleSize`
+            - 
+          * - :py:attr:`~SetTriangleSize`
+            - 
+          * - :py:attr:`~GetMaterial`
+            - 
+          * - :py:attr:`~SetMaterial`
+            - 
+          * - :py:attr:`~GetAvailableMaterials`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_system_coupling_wall import RASystemCouplingWall
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[object]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: HasMotionFrame() -> bool
+
+.. py:method:: GetName() -> str
+
+.. py:method:: SetName(value: str) -> None
+
+.. py:method:: GetSphBoundaryType() -> str
+
+.. py:method:: SetSphBoundaryType(value: str) -> None
+
+.. py:method:: GetValidSphBoundaryTypeValues() -> List[str]
+
+.. py:method:: GetStructuralCouplingTypeEnabled() -> bool
+
+.. py:method:: SetStructuralCouplingTypeEnabled(value: bool) -> None
+
+.. py:method:: EnableStructuralCouplingType() -> None
+
+.. py:method:: DisableStructuralCouplingType() -> None
+
+.. py:method:: IsStructuralCouplingTypeEnabled() -> bool
+
+.. py:method:: GetSurfaceTensionContactAngle(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetSurfaceTensionContactAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetThermalCouplingTypeEnabled() -> bool
+
+.. py:method:: SetThermalCouplingTypeEnabled(value: bool) -> None
+
+.. py:method:: EnableThermalCouplingType() -> None
+
+.. py:method:: DisableThermalCouplingType() -> None
+
+.. py:method:: IsThermalCouplingTypeEnabled() -> bool
+
+.. py:method:: GetTriangleSize(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetTriangleSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetMaterial()
+
+.. py:method:: SetMaterial(value) -> None
+
+.. py:method:: GetAvailableMaterials()
+
+
+
+

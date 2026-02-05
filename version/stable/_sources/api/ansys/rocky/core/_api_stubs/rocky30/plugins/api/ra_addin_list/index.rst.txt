@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_addin_list.py`` module
+===============================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_addin_list
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyListItem`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAModulePropertyListItem</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addin_list/RAModulePropertyListItem>
+    <span class="nf nf-cod-symbol_class"></span> RAModulePropertyList</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_addin_list/RAModulePropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

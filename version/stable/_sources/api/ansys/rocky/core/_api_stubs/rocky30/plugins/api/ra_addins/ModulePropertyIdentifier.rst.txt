@@ -1,0 +1,97 @@
+
+
+
+
+
+
+:class:`ModulePropertyIdentifier`
+=================================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ModulePropertyIdentifier(name, modules, all_captions)
+
+
+
+
+
+
+.. py:currentmodule:: ModulePropertyIdentifier
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~name`
+            - 
+          * - :py:attr:`~modules`
+            - 
+          * - :py:attr:`~all_captions`
+            - 
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__lt__`
+            - 
+          * - :py:attr:`~__le__`
+            - 
+          * - :py:attr:`~__gt__`
+            - 
+          * - :py:attr:`~__ge__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins import ModulePropertyIdentifier
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: name
+   :type:  str
+
+.. py:attribute:: modules
+   :type:  set[str]
+
+.. py:attribute:: all_captions
+   :type:  dict[str, str]
+
+
+
+Method detail
+-------------
+
+.. py:method:: __lt__(other)
+
+.. py:method:: __le__(other)
+
+.. py:method:: __gt__(other)
+
+.. py:method:: __ge__(other)
+
+
+
+

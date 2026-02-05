@@ -1,0 +1,101 @@
+
+
+
+
+
+
+The ``ra_matplotlib_window.py`` module
+======================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_matplotlib_window
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.MplCanvas`
+            - The canvas the figure renders into.
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.MplWindow`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.MplWindowSubject`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.RAMplWindow`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_matplotlib_window.UserWindowSubjectContainer`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> MplCanvas</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/MplCanvas>
+    <span class="nf nf-cod-symbol_class"></span> MplWindow</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/MplWindow>
+    <span class="nf nf-cod-symbol_class"></span> MplWindowSubject</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/MplWindowSubject>
+    <span class="nf nf-cod-symbol_class"></span> RAMplWindow</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/RAMplWindow>
+    <span class="nf nf-cod-symbol_class"></span> UserWindowSubjectContainer</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_matplotlib_window/UserWindowSubjectContainer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

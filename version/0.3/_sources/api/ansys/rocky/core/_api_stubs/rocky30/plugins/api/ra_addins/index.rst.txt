@@ -1,0 +1,120 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins
+=========================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ModulePropertyIdentifier
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.RAModule
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.RAModuleCollection
+
+
+Module Contents
+---------------
+
+.. py:class:: ModulePropertyIdentifier(name, modules, all_captions)
+
+   .. py:attribute:: name
+      :type:  str
+
+
+   .. py:attribute:: modules
+      :type:  set[str]
+
+
+   .. py:attribute:: all_captions
+      :type:  dict[str, str]
+
+
+   .. py:method:: __lt__(other)
+
+
+   .. py:method:: __le__(other)
+
+
+   .. py:method:: __gt__(other)
+
+
+   .. py:method:: __ge__(other)
+
+
+.. py:class:: ElementWithAddins
+
+   .. py:method:: GetModuleProperties() -> collections.abc.Sequence[ModulePropertyIdentifier]
+
+
+   .. py:method:: GetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], unit: Union[str, None] = ...) -> Union[float, bool, str, ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_list.RAModulePropertyList]
+
+
+   .. py:method:: SetModuleProperty(property_name: Union[str, ModulePropertyIdentifier], value: Union[float, bool, str], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetValidOptionsForModuleProperty(property_name)
+
+
+.. py:class:: RAModule(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ElementWithAddins`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: EnableModule() -> None
+
+
+   .. py:method:: DisableModule() -> None
+
+
+   .. py:method:: SetModuleEnabled(enabled) -> None
+
+
+   .. py:method:: IsModuleEnabled()
+
+
+   .. py:method:: GetName()
+
+
+   .. py:method:: SetName(name) -> None
+
+
+   .. py:method:: GetOutputObject() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_process.RAModuleOutput, None]
+
+
+.. py:class:: RAModuleCollection(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.plugins.addins.model.addin_manager.AddinManager]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetModuleNames() -> list[str]
+
+
+   .. py:method:: GetEnabledModules() -> list[str]
+
+
+   .. py:method:: GetModule(module_name: str) -> RAModule
+
+

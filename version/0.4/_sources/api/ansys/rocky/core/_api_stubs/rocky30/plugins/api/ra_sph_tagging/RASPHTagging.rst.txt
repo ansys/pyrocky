@@ -1,0 +1,91 @@
+
+
+
+
+
+
+:class:`RASPHTagging`
+=====================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_tagging.RASPHTagging(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_tagging.RABaseTagging`
+
+
+
+
+
+.. py:currentmodule:: RASPHTagging
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetNameMask`
+            - 
+          * - :py:attr:`~SetNameMask`
+            - 
+          * - :py:attr:`~GetTagValue`
+            - 
+          * - :py:attr:`~SetTagValue`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_tagging import RASPHTagging
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.sph.calculations.tagging.sph_tagging_calculator.SPHTaggingCalculator]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetNameMask() -> str
+
+.. py:method:: SetNameMask(value: str) -> None
+
+.. py:method:: GetTagValue() -> int
+
+.. py:method:: SetTagValue(value: Union[str, int]) -> None
+
+
+
+

@@ -1,0 +1,68 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_cone_crusher_frame
+============================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_cone_crusher_frame
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_cone_crusher_frame.RAConeCrusherFrame
+
+
+Module Contents
+---------------
+
+.. py:class:: RAConeCrusherFrame(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion.RABaseMotionFrame`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetInitialOrientation(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInitialOrientation(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPivotPoint(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetPivotPoint(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRotationAxis(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetRotationAxis(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRotationalVelocity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetRotationalVelocity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

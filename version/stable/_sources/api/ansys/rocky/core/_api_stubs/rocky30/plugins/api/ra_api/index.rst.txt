@@ -1,0 +1,94 @@
+
+
+
+
+
+
+The ``ra_api.py`` module
+========================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_api
+.. tab-set::
+
+
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api.RockyApiError`
+            - Unspecified run-time error.
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~CheckResults`
+            - 
+
+
+          * - :py:obj:`~CheckPropAffectsSimulation`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-lightning_bolt"></span> RockyApiError</api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_api/RockyApiError>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: CheckResults(ra_object) -> None
+
+.. py:function:: CheckPropAffectsSimulation(prop_owner, prop_name)
+
+
+

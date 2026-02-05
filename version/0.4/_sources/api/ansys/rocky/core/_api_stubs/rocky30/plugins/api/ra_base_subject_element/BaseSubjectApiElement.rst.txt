@@ -1,0 +1,55 @@
+
+
+
+
+
+
+:class:`BaseSubjectApiElement`
+==============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_subject_element.BaseSubjectApiElement(base_subject)
+
+
+.. py:currentmodule:: BaseSubjectApiElement
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetSubject`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_subject_element import BaseSubjectApiElement
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetSubject()
+
+
+
+

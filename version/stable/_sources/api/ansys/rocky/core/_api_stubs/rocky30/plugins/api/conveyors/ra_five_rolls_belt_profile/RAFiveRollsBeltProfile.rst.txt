@@ -1,0 +1,155 @@
+
+
+
+
+
+
+:class:`RAFiveRollsBeltProfile`
+===============================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_five_rolls_belt_profile.RAFiveRollsBeltProfile(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+.. py:currentmodule:: RAFiveRollsBeltProfile
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCenterRollLength`
+            - 
+          * - :py:attr:`~SetCenterRollLength`
+            - 
+          * - :py:attr:`~GetLastRollAngle`
+            - 
+          * - :py:attr:`~SetLastRollAngle`
+            - 
+          * - :py:attr:`~GetLowerCornerRadius`
+            - 
+          * - :py:attr:`~SetLowerCornerRadius`
+            - 
+          * - :py:attr:`~GetSideRollLength`
+            - 
+          * - :py:attr:`~SetSideRollLength`
+            - 
+          * - :py:attr:`~GetTroughingAngle`
+            - 
+          * - :py:attr:`~SetTroughingAngle`
+            - 
+          * - :py:attr:`~GetUpperCornerRadius`
+            - 
+          * - :py:attr:`~SetUpperCornerRadius`
+            - 
+          * - :py:attr:`~GetUse0223RatioForRollLengths`
+            - 
+          * - :py:attr:`~SetUse0223RatioForRollLengths`
+            - 
+          * - :py:attr:`~EnableUse0223RatioForRollLengths`
+            - 
+          * - :py:attr:`~DisableUse0223RatioForRollLengths`
+            - 
+          * - :py:attr:`~IsUse0223RatioForRollLengthsEnabled`
+            - 
+          * - :py:attr:`~GetMaterial`
+            - 
+          * - :py:attr:`~SetMaterial`
+            - 
+          * - :py:attr:`~GetAvailableMaterials`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_five_rolls_belt_profile import RAFiveRollsBeltProfile
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetCenterRollLength(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetCenterRollLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetLastRollAngle(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetLastRollAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetLowerCornerRadius(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetLowerCornerRadius(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetSideRollLength(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetSideRollLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetTroughingAngle(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetTroughingAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetUpperCornerRadius(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetUpperCornerRadius(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetUse0223RatioForRollLengths() -> bool
+
+.. py:method:: SetUse0223RatioForRollLengths(value: bool) -> None
+
+.. py:method:: EnableUse0223RatioForRollLengths() -> None
+
+.. py:method:: DisableUse0223RatioForRollLengths() -> None
+
+.. py:method:: IsUse0223RatioForRollLengthsEnabled() -> bool
+
+.. py:method:: GetMaterial()
+
+.. py:method:: SetMaterial(value) -> None
+
+.. py:method:: GetAvailableMaterials()
+
+
+
+

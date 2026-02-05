@@ -1,0 +1,135 @@
+
+
+
+
+
+
+:class:`RARegionOfInterestCylinder`
+===================================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_region_of_interest_cylinder.RARegionOfInterestCylinder
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+
+
+
+.. py:currentmodule:: RARegionOfInterestCylinder
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCenterAfterMovement`
+            - 
+          * - :py:attr:`~GetCenter`
+            - 
+          * - :py:attr:`~SetCenter`
+            - 
+          * - :py:attr:`~GetFinalAngle`
+            - 
+          * - :py:attr:`~SetFinalAngle`
+            - 
+          * - :py:attr:`~GetHeight`
+            - 
+          * - :py:attr:`~SetHeight`
+            - 
+          * - :py:attr:`~GetInitialAngle`
+            - 
+          * - :py:attr:`~SetInitialAngle`
+            - 
+          * - :py:attr:`~GetInternalFactor`
+            - 
+          * - :py:attr:`~SetInternalFactor`
+            - 
+          * - :py:attr:`~GetName`
+            - 
+          * - :py:attr:`~SetName`
+            - 
+          * - :py:attr:`~GetRadius`
+            - 
+          * - :py:attr:`~SetRadius`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_region_of_interest_cylinder import RARegionOfInterestCylinder
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetCenterAfterMovement(timestep: int) -> rocky30.base_types.Tuple3F
+
+.. py:method:: GetCenter(unit: Optional[str] = ...) -> List[float]
+
+.. py:method:: SetCenter(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetFinalAngle(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetFinalAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetHeight(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetHeight(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetInitialAngle(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetInitialAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetInternalFactor(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetInternalFactor(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+.. py:method:: GetName() -> str
+
+.. py:method:: SetName(value: str) -> None
+
+.. py:method:: GetRadius(unit: Optional[str] = ...) -> float
+
+.. py:method:: SetRadius(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+
+

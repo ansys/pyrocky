@@ -1,0 +1,90 @@
+
+
+
+
+
+
+:class:`RATimeStatistics`
+=========================
+
+
+.. py:class:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics.RATimeStatistics(id, ra_process, model_id: _typeshed.Incomplete | None = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+
+
+
+
+.. py:currentmodule:: RATimeStatistics
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~CreateFor`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~AddGridFunction`
+            - 
+          * - :py:attr:`~RemoveGridFunction`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_statistics import RATimeStatistics
+
+
+
+Method detail
+-------------
+
+.. py:method:: AddGridFunction(start_time, stop_time, operation, grid_function_name, location: _typeshed.Incomplete | None = ...)
+
+.. py:method:: RemoveGridFunction(name_or_calculator) -> None
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: CreateFor(ra_process)
+   :classmethod:
+
+
+
+
+

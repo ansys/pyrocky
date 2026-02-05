@@ -103,6 +103,7 @@ def test_invalid_rocky_exe_parameter():
         pyrocky.launch_rocky(rocky_exe="C:\\Folder\\Rocky.exe")
 
 
+@pytest.mark.xfail(VERSION == 261, reason="Simulation failing to create .log file on CI")
 def test_minimal_simulation(tmp_path, request):
     """Minimal test to be run with all the supported Rocky version to ensure
     minimal backwards compatibility.

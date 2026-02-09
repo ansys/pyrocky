@@ -1,6 +1,12 @@
 name: CI
 on:
   workflow_dispatch:
+    inputs:
+      RUN_DOCKER_TESTS:
+        description: "Run Docker tests (pull image)"
+        required: false
+        default: 0
+        type: number
   pull_request:
   push:
     tags:
@@ -13,6 +19,7 @@ env:
   LIBRARY_NAME: 'ansys-rocky-core'
   DOCUMENTATION_CNAME: 'rocky.docs.pyansys.com'
   DOC_DEPLOYMENT_IMAGE_TAG: v24.1.0
+  RUN_DOCKER_TESTS: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.RUN_DOCKER_TESTS || '0' }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -166,13 +173,23 @@ jobs:
           python -m pip install --upgrade pip
           pip install .[tests]
 
+      - name: Login to Github Container registry
+        if: env.RUN_DOCKER_TESTS == '1'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.PYANSYS_CI_BOT_USERNAME }}
+          password: ${{ secrets.PYANSYS_CI_BOT_TOKEN }}
+
+      - name: Pull Docker Image
+        if: env.RUN_DOCKER_TESTS == '1'
+        run: docker pull ghcr.io/ansys/freeflow:26.1.0
+
   tests_run_linux:
     name: Linux v${{ matrix.ansys-version }} Tests
     needs: tests_setup_linux
     runs-on: [self-hosted, Linux, pyrocky]
-    # Temporarily disable Linux setup and tests
     if: |
-      false &&
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     timeout-minutes: 10

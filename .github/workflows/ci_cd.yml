@@ -117,9 +117,6 @@ jobs:
       fail-fast: false
       matrix:
         ansys-version: [251, 252, 261]
-        # Temporarily skipping v261 because it is failing on Pyro connection
-        exclude:
-          - ansys-version: 261
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
       # Windows TCP client authentication still doesn't support IPv6

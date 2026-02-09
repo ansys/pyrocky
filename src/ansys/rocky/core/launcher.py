@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,7 +20,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 """Module that exposes functions to launch a Rocky application session."""
+
 import contextlib
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -30,7 +32,12 @@ from typing import Literal
 from Pyro5.errors import CommunicationError
 from ansys.tools.common.path import get_available_ansys_installations
 
-from ansys.rocky.core.client import _PYROCKY_DEFAULT_PORT, RockyClient, connect
+from ansys.rocky.core.client import (
+    _PYROCKY_DEFAULT_PORT,
+    RockyClient,
+    _uds_socket_path,
+    connect,
+)
 from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
 
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
@@ -194,6 +201,70 @@ def launch_freeflow(  # pragma: no cover
 
     client = connect(port=server_port)
     client._process = rocky_process
+    return client
+
+
+def launch_container(
+    product: Literal["rocky", "freeflow"] = "rocky",
+    version_tag: str = "26.1.0",
+    port: int = _PYROCKY_DEFAULT_PORT,
+    license_server: str | None = None,
+) -> RockyClient:
+    """
+    Launch a Rocky or FreeFlow container with the PyRocky server enabled.
+
+    Parameters
+    ----------
+    product:
+        The product variant of the container to launch ("rocky" or "freeflow").
+    version_tag:
+        Semantic version tag of the container image. e.g. "26.1.0".
+    port:
+        Port to use for the PyRocky server inside the container.
+    license_server:
+        Optional license server string to set in the container. If not provided,
+        the function will attempt to read the `ANSYSLMD_LICENSE_FILE` environment
+        variable from the host system.
+
+    Returns
+    -------
+    RockyClient
+        Rocky client instance connected to the launched container.
+    """
+    import docker
+
+    image = f"{product}:{version_tag}"
+    uds_socket_dir = _uds_socket_path(port).parent
+
+    if license_server is not None:
+        license_file = f"1055@{license_server}"
+    else:
+        license_file = os.environ.get("ANSYSLMD_LICENSE_FILE")
+
+    if license_file is None:
+        error_cls = FreeflowLaunchError if product == "freeflow" else RockyLaunchError
+        raise error_cls("Could not obtain the license file.")
+
+    try:
+        docker_client = docker.from_env()
+
+        container = docker_client.containers.run(
+            image=image,
+            command=["--pyrocky", "--pyrocky-port", str(port), "--headless"],
+            detach=True,
+            volumes={str(uds_socket_dir): {"bind": str(uds_socket_dir), "mode": "rw"}},
+            environment={
+                "ANSYSLMD_LICENSE_FILE": license_file,
+                "XDG_RUNTIME_DIR": str(uds_socket_dir),
+            },
+            remove=True,
+        )
+    except docker.errors.DockerException as e:
+        error_cls = FreeflowLaunchError if product == "freeflow" else RockyLaunchError
+        raise error_cls(f"Failed to start {product.capitalize()} container: {e}")
+
+    client = connect(port=port)
+    client._process = container
     return client
 
 

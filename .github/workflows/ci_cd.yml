@@ -154,6 +154,8 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     timeout-minutes: 5
+    outputs:
+      ld_library_path: ${{ steps.create_python_env.outputs.ld_library_path }}
 
     steps:
       - uses: actions/checkout@v6
@@ -164,8 +166,10 @@ jobs:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
       - name: Create Python venv
+        id: create_python_env
         run: |
           python -m venv .venv
+          echo "ld_library_path=$LD_LIBRARY_PATH" >> "$GITHUB_OUTPUT"
 
       - name: Install packages for tests (Linux)
         run: |
@@ -204,6 +208,7 @@ jobs:
       - name: Run unit tests (Linux)
         env:
           ANSYS_VERSION: ${{ matrix.ansys-version }}
+          LD_LIBRARY_PATH: ${{ needs.tests_setup_linux.outputs.ld_library_path }}
         run: |
           source .venv/bin/activate
           pytest tests

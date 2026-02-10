@@ -153,7 +153,7 @@ jobs:
       false &&
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
-    timeout-minutes: 5
+    timeout-minutes: 10
     outputs:
       ld_library_path: ${{ steps.create_python_env.outputs.ld_library_path }}
 

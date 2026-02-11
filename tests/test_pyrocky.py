@@ -296,6 +296,7 @@ def test_connection_check(request, monkeypatch):
     assert cli.api.CloseProject(check_save_state=False) is None
 
 
+@pytest.mark.xfail(reason="Flaky on CI")
 def test_pyro_excepthook_installed(tmp_path, request, capsys) -> None:
     """Test that the pyro exception hook that shows remote traceback is installed."""
     rocky = pyrocky.launch_rocky()

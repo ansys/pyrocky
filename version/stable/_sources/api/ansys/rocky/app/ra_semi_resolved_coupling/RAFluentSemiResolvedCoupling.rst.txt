@@ -1,0 +1,574 @@
+
+
+
+
+
+
+:class:`RAFluentSemiResolvedCoupling`
+=====================================
+
+
+.. py:class:: ansys.rocky.app.ra_semi_resolved_coupling.RAFluentSemiResolvedCoupling(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   PrePost Scripting wrapper class for the Fluent Two-Way Semi Resolved coupling mode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAFluentSemiResolvedCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetPartIdIfValid`
+            - Set the process' part id (unused for now)
+          * - :py:attr:`~SetupDatFilename`
+            - 
+          * - :py:attr:`~SetupStoreFiles`
+            - Copies CAS file to Rocky's project folder and update Fluent info
+          * - :py:attr:`~GetFluentReleases`
+            - Get a list of available Fluent releases.
+          * - :py:attr:`~GetFluentVersion`
+            - Get the value of "Version".
+          * - :py:attr:`~SetFluentVersion`
+            - Set the Ansys Fluent version to be used in CFD coupling (deprecated).
+          * - :py:attr:`~GetCouplingFilesKept`
+            - Get the value of "Coupling Files Kept".
+          * - :py:attr:`~SetCouplingFilesKept`
+            - Set the value of "Coupling Files Kept".
+          * - :py:attr:`~GetFluentAdditionalArgs`
+            - Get the value of "Fluent Additional Args".
+          * - :py:attr:`~SetFluentAdditionalArgs`
+            - Set the value of "Fluent Additional Args".
+          * - :py:attr:`~GetFluentExecutionMode`
+            - Get "Fluent Execution Mode" as a string.
+          * - :py:attr:`~SetFluentExecutionMode`
+            - Set the value of "Fluent Execution Mode".
+          * - :py:attr:`~GetValidFluentExecutionModeValues`
+            - Get a list of all possible values for "Fluent Execution Mode".
+          * - :py:attr:`~GetFluentOutputFrequencyMultiplier`
+            - Get the value of "Fluent Output Frequency Multiplier".
+          * - :py:attr:`~SetFluentOutputFrequencyMultiplier`
+            - Set the value of "Fluent Output Frequency Multiplier".
+          * - :py:attr:`~GetFluentSolverProcesses`
+            - Get the value of "Fluent Solver Processes".
+          * - :py:attr:`~SetFluentSolverProcesses`
+            - Set the value of "Fluent Solver Processes".
+          * - :py:attr:`~GetUseDatInitialization`
+            - Get the value of "Use Dat Initialization".
+          * - :py:attr:`~SetUseDatInitialization`
+            - Set the value of "Use Dat Initialization".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_semi_resolved_coupling import RAFluentSemiResolvedCoupling
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+   
+   Set the process' part id (unused for now)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupDatFilename(dat_filename: str) -> bool
+
+.. py:method:: SetupStoreFiles(cas_filename: str, case_config: rocky30coupling.fluent.io.fluent_cas_description.FluentCaseConfig | None = None) -> None
+
+   
+   Copies CAS file to Rocky's project folder and update Fluent info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentReleases() -> list[str]
+
+   
+   Get a list of available Fluent releases.
+
+   :rtype: list(unicode)
+   :return: The list of available Fluent releases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentVersion() -> str
+
+   
+   Get the value of "Version".
+
+   :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentVersion(fluent_version: str) -> str
+
+   
+   Set the Ansys Fluent version to be used in CFD coupling (deprecated).
+
+   Currently, it's not possible to change the version of Ansys Fluent used for CFD coupling.
+   This method is being kept for backward compatibility (and also because there's a chance
+   of this feature to be brought back in future version).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCouplingFilesKept() -> int
+
+   
+   Get the value of "Coupling Files Kept".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCouplingFilesKept(value: str | int) -> None
+
+   
+   Set the value of "Coupling Files Kept".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentAdditionalArgs() -> str
+
+   
+   Get the value of "Fluent Additional Args".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentAdditionalArgs(value: str) -> None
+
+   
+   Set the value of "Fluent Additional Args".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentExecutionMode() -> str
+
+   
+   Get "Fluent Execution Mode" as a string.
+
+   :return:
+       The returned value will be one of ['serial', 'local_parallel', 'distributed_parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentExecutionMode(value: str) -> None
+
+   
+   Set the value of "Fluent Execution Mode".
+
+   :param value:
+       The value to set. Must be one of ['serial', 'local_parallel', 'distributed_parallel'].
+   :raises RockyApiError:
+       If `value` is not a valid "Fluent Execution Mode" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidFluentExecutionModeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Fluent Execution Mode".
+
+   :return:
+       The returned list is ['serial', 'local_parallel', 'distributed_parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentOutputFrequencyMultiplier() -> int
+
+   
+   Get the value of "Fluent Output Frequency Multiplier".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentOutputFrequencyMultiplier(value: str | int) -> None
+
+   
+   Set the value of "Fluent Output Frequency Multiplier".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentSolverProcesses() -> int
+
+   
+   Get the value of "Fluent Solver Processes".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentSolverProcesses(value: str | int) -> None
+
+   
+   Set the value of "Fluent Solver Processes".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseDatInitialization() -> bool
+
+   
+   Get the value of "Use Dat Initialization".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseDatInitialization(value: bool) -> None
+
+   
+   Set the value of "Use Dat Initialization".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

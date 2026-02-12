@@ -1,0 +1,471 @@
+
+
+
+
+
+
+:class:`RAThreeRollsBeltProfile`
+================================
+
+
+.. py:class:: ansys.rocky.app.conveyors.ra_three_rolls_belt_profile.RAThreeRollsBeltProfile(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky API for a Three Rolls Belt Profile model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAThreeRollsBeltProfile
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCenterRollLength`
+            - Get the value of "Center Roll Length".
+          * - :py:attr:`~SetCenterRollLength`
+            - Set the value of "Center Roll Length".
+          * - :py:attr:`~GetLowerCornerRadius`
+            - Get the value of "Lower Corner Radius".
+          * - :py:attr:`~SetLowerCornerRadius`
+            - Set the value of "Lower Corner Radius".
+          * - :py:attr:`~GetTroughingAngle`
+            - Get the value of "Troughing Angle".
+          * - :py:attr:`~SetTroughingAngle`
+            - Set the value of "Troughing Angle".
+          * - :py:attr:`~GetUse0371RatioForRollLengths`
+            - Get the value of "Use 0371 Ratio For Roll Lengths".
+          * - :py:attr:`~SetUse0371RatioForRollLengths`
+            - Set the value of "Use 0371 Ratio For Roll Lengths".
+          * - :py:attr:`~EnableUse0371RatioForRollLengths`
+            - Set the value of "Use 0371 Ratio For Roll Lengths" to True.
+          * - :py:attr:`~DisableUse0371RatioForRollLengths`
+            - Set the value of "Use 0371 Ratio For Roll Lengths" to False.
+          * - :py:attr:`~IsUse0371RatioForRollLengthsEnabled`
+            - Check if the "Use 0371 Ratio For Roll Lengths" is enabled.
+          * - :py:attr:`~GetMaterial`
+            - Get the "Material".
+          * - :py:attr:`~SetMaterial`
+            - Set the "Material".
+          * - :py:attr:`~GetAvailableMaterials`
+            - Get all available Materials.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.conveyors.ra_three_rolls_belt_profile import RAThreeRollsBeltProfile
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetCenterRollLength(unit: str | None = None) -> float
+
+   
+   Get the value of "Center Roll Length".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCenterRollLength(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Center Roll Length".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLowerCornerRadius(unit: str | None = None) -> float
+
+   
+   Get the value of "Lower Corner Radius".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLowerCornerRadius(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Lower Corner Radius".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTroughingAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Troughing Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTroughingAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Troughing Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUse0371RatioForRollLengths() -> bool
+
+   
+   Get the value of "Use 0371 Ratio For Roll Lengths".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUse0371RatioForRollLengths(value: bool) -> None
+
+   
+   Set the value of "Use 0371 Ratio For Roll Lengths".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableUse0371RatioForRollLengths() -> None
+
+   
+   Set the value of "Use 0371 Ratio For Roll Lengths" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableUse0371RatioForRollLengths() -> None
+
+   
+   Set the value of "Use 0371 Ratio For Roll Lengths" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsUse0371RatioForRollLengthsEnabled() -> bool
+
+   
+   Check if the "Use 0371 Ratio For Roll Lengths" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaterial()
+
+   
+   Get the "Material".
+
+   :rtype: :class:`RASolidMaterial`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaterial(value) -> None
+
+   
+   Set the "Material".
+
+   :param unicode, :class:`RASolidMaterial` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableMaterials()
+
+   
+   Get all available Materials.
+
+   :rtype: List[:class:`RASolidMaterial`]
+       A list of :class:`RASolidMaterial`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

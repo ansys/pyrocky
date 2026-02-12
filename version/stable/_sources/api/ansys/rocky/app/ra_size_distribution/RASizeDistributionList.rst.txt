@@ -1,0 +1,262 @@
+
+
+
+
+
+
+:class:`RASizeDistributionList`
+===============================
+
+
+.. py:class:: ansys.rocky.app.ra_size_distribution.RASizeDistributionList(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`RASizeDistribution`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate the size properties in a single Particle.
+
+   To get the :class:`RASizeDistributionList` from a :class:`RAParticle`, use:
+
+   .. code-block:: python
+
+       size_distribution_list = particle.GetSizeDistributionList()
+
+   :class:`RASizeDistributionList` contains methods to set the size type and add, remove and
+   retrieve individual size distribution entries. It corresponds to the items on a Particle's
+   "Size" tab on the Rocky UI.
+
+   The following examples add, remove and access individual entries in the size distribution list:
+
+   .. code-block:: python
+
+       # Add new items
+       size_distribution = size_distribution_list.New()
+
+       # Access and modify items
+       size_distribution = size_distribution_list[0]
+       size_distribution.SetSize(1.0, 'm')
+
+       # Remove items
+       size_distribution_list.Remove(size_distribution)
+       del size_distribution_list[0]
+       size_distribution_list.Clear()
+
+   Note that this list is used even if the configured particle only has a single size, such as when
+   it is composed of Multiple Elements. In these cases, the single size refers to the first item
+   on the list (and no other items are used).
+
+   The :class:`RASizeDistributionList` is a list of :class:`RASizeDistribution`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASizeDistributionList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCgmScaleFactor`
+            - Get the value of "Cgm Scale Factor".
+          * - :py:attr:`~SetCgmScaleFactor`
+            - Set the value of "Cgm Scale Factor".
+          * - :py:attr:`~GetSizeType`
+            - Get "Size Type" as a string.
+          * - :py:attr:`~SetSizeType`
+            - Set the value of "Size Type".
+          * - :py:attr:`~GetValidSizeTypeValues`
+            - Get a list of all possible values for "Size Type".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_size_distribution import RASizeDistributionList
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetCgmScaleFactor() -> float
+
+   
+   Get the value of "Cgm Scale Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCgmScaleFactor(value: str | float) -> None
+
+   
+   Set the value of "Cgm Scale Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSizeType() -> str
+
+   
+   Get "Size Type" as a string.
+
+   :return:
+       The returned value will be one of ['sieve', 'equivalent_diameter', 'original_size_scale'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSizeType(value: str) -> None
+
+   
+   Set the value of "Size Type".
+
+   :param value:
+       The value to set. Must be one of ['sieve', 'equivalent_diameter', 'original_size_scale'].
+   :raises RockyApiError:
+       If `value` is not a valid "Size Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidSizeTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Size Type".
+
+   :return:
+       The returned list is ['sieve', 'equivalent_diameter', 'original_size_scale'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

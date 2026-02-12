@@ -1,0 +1,510 @@
+
+
+
+
+
+
+:class:`RAProject`
+==================
+
+
+.. py:class:: ansys.rocky.app.ra_project.RAProject
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for a project.
+
+   The :class:`RAProject` class serves as the main access point for a project's :class:`RAStudy`
+   and the project entities that aren't directly related to a simulation's configuration, such as
+   the time filter, the collection of user processes, etc.
+
+   The :class:`RAProject` can be obtained directly via the `app` global object. Example usage:
+
+   .. code-block:: python
+
+       project = app.CreateProject()
+       study = project.GetStudy()
+       user_processes = project.GetUserProcessCollection()
+       input_variables = project.GetInputVariables()
+
+       project.SaveProject('my_project.rocky')
+       project.SaveProjectForRestart('my_restart_project.rocky', timestep_or_index=10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:currentmodule:: RAProject
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetModelStudy`
+            - Get the study model associated with a given model item
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~CloseProject`
+            - Close the current project.
+          * - :py:attr:`~SaveProject`
+            - Save the currently opened project.
+          * - :py:attr:`~SaveProjectForRestart`
+            - Create a new restart project from the current project.
+          * - :py:attr:`~GetProjectFilename`
+            - Get the current project's filename.
+          * - :py:attr:`~HasUnsavedChanges`
+            - Check if the current project has unsaved changes.
+          * - :py:attr:`~CreateStudy`
+            - Creates a new study and returns its wrapper
+          * - :py:attr:`~GetStudyNames`
+            - 
+          * - :py:attr:`~GetStudy`
+            - Get the project's Study.
+          * - :py:attr:`~GetModelElement`
+            - Get the model element associated with the given ID
+          * - :py:attr:`~GetUserProcessCollection`
+            - Get the project's collection of User Processes.
+          * - :py:attr:`~GetUserProcess`
+            - 
+          * - :py:attr:`~GetTimeFilter`
+            - Utility function to return the api object representing the project's time filter
+          * - :py:attr:`~GetParametricVariables`
+            - Get the PrePost Scripting wrapper for the project's Parametric Variables.
+          * - :py:attr:`~GetInputVariables`
+            - Get the PrePost Scripting wrapper for the project's Input Variables.
+          * - :py:attr:`~RemoveProcess`
+            - Removes the given process from the project.
+          * - :py:attr:`~GetElementNames`
+            - 
+          * - :py:attr:`~GetElement`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_project import RAProject
+
+
+
+Method detail
+-------------
+
+.. py:method:: CloseProject(check_save_state: bool = True) -> None
+
+   
+   Close the current project.
+
+   :param check_save_state:
+       If False, it will close without asking the user to save it first.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SaveProject(filename: str | None = None) -> None
+
+   
+   Save the currently opened project.
+
+   :param filename:
+       The name of the file to save the project or None if to update the current file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SaveProjectForRestart(filename: str, timestep_or_index: RATimeOrIndex | None = None) -> None
+
+   
+   Create a new restart project from the current project.
+
+   :param filename:
+       The new filename to be saved.
+   :param timestep_or_index:
+       Either the index of the timestep, or the timestep itself, in which to create the restart
+       project. If None is passed, the application's current timestep will be used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetProjectFilename() -> str
+
+   
+   Get the current project's filename.
+
+   :return:
+       The current project's file name, or None if there is no current project or if the
+       project hasn't been saved yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: HasUnsavedChanges() -> bool
+
+   
+   Check if the current project has unsaved changes.
+
+   :return:
+       True if the project is modified (unsaved changes), False otherwise.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWrappedClass() -> type[petroapp10.plugins.entities.petroapp10_project.Petroapp10Project]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: CreateStudy(study_name: str | None = None) -> ansys.rocky.app.ra_study.RAStudy
+
+   
+   Creates a new study and returns its wrapper
+
+   :param study_name:
+       The name of the study
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStudyNames() -> list[str]
+
+.. py:method:: GetStudy(study_name: str | None = None) -> ansys.rocky.app.ra_study.RAStudy | None
+
+   
+   Get the project's Study.
+
+   :param study_name:
+       The name of the study
+       If None is given the first model will be returned
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModelStudy(model_item)
+   :classmethod:
+
+
+   
+   Get the study model associated with a given model item
+
+   :param Subject model_item:
+       A study child
+
+   @return RAStudy or None if no study was found for the given element
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModelElement(model_element_id)
+
+   
+   Get the model element associated with the given ID
+
+   :param unicode model_element_id:
+       The element id
+
+   @return
+       The wrapped object with the given ID
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUserProcessCollection() -> ansys.rocky.app.ra_user_process_collection.RAUserProcessCollection | None
+
+   
+   Get the project's collection of User Processes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUserProcess(process_name)
+
+.. py:method:: GetTimeFilter() -> ansys.rocky.app.ra_time_filter.RATimeFilter | None
+
+   
+   Utility function to return the api object representing the project's time filter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParametricVariables() -> ansys.rocky.app.ra_parametric_variables.RAParametricVariables
+
+   
+   Get the PrePost Scripting wrapper for the project's Parametric Variables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInputVariables() -> ansys.rocky.app.ra_input_variables.RAInputVariables
+
+   
+   Get the PrePost Scripting wrapper for the project's Input Variables.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveProcess(process: ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem | str) -> None
+
+   
+   Removes the given process from the project.
+
+   :param process:
+       a process or process name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetElementNames(type_name=None)
+
+.. py:method:: GetElement(element_name=None, type_name=None, raise_if_no_found: bool = True)
+
+
+
+

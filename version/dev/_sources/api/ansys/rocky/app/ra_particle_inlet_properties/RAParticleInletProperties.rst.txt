@@ -1,0 +1,296 @@
+
+
+
+
+
+
+:class:`RAParticleInletProperties`
+==================================
+
+
+.. py:class:: ansys.rocky.app.ra_particle_inlet_properties.RAParticleInletProperties(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`
+
+
+   
+   Rocky PrePost Scripting wrapper for a single entry in a single Particle Input's input list.
+
+   Access this wrapper from a given :class:`RAParticleInlet` with:
+
+   .. code-block:: python
+
+       input_properties_list = particle_input.GetInputPropertiesList()
+       input_properties_1 = input_properties_list.New()
+       input_properties_1.SetParticle('Particle 1')
+       input_properties_1.SetMassFlowRate(100, 't/h')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParticleInletProperties
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetMassFlowRate`
+            - Get the value of "Mass Flow Rate".
+          * - :py:attr:`~SetMassFlowRate`
+            - Set the value of "Mass Flow Rate".
+          * - :py:attr:`~GetTemperature`
+            - Get the value of "Temperature".
+          * - :py:attr:`~SetTemperature`
+            - Set the value of "Temperature".
+          * - :py:attr:`~GetParticle`
+            - Get the "Particle".
+          * - :py:attr:`~SetParticle`
+            - Set the "Particle".
+          * - :py:attr:`~GetAvailableParticles`
+            - Get all available Particles.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_particle_inlet_properties import RAParticleInletProperties
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.input.particle_inlet.ParticleInletProperties]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetMassFlowRate(unit: str | None = None) -> float
+
+   
+   Get the value of "Mass Flow Rate".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "t/h".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMassFlowRate(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Mass Flow Rate".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "t/h".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTemperature(unit: str | None = None) -> float
+
+   
+   Get the value of "Temperature".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTemperature(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Temperature".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticle()
+
+   
+   Get the "Particle".
+
+   :rtype: :class:`RAParticle`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetParticle(value) -> None
+
+   
+   Set the "Particle".
+
+   :param unicode, :class:`RAParticle` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableParticles()
+
+   
+   Get all available Particles.
+
+   :rtype: List[:class:`RAParticle`]
+       A list of :class:`RAParticle`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

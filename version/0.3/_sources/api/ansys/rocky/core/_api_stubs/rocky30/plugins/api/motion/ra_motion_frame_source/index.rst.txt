@@ -1,0 +1,32 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame_source
+=============================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame_source
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame_source.RAMotionFrameSource
+
+
+Module Contents
+---------------
+
+.. py:class:: RAMotionFrameSource(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_base_motion.RABaseMotionFrame`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+

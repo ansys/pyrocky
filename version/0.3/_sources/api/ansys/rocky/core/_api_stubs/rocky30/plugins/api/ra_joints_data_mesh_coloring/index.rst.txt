@@ -1,0 +1,91 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_joints_data_mesh_coloring
+============================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_joints_data_mesh_coloring
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_joints_data_mesh_coloring.RAJointsDataMeshColoring
+
+
+Module Contents
+---------------
+
+.. py:class:: RAJointsDataMeshColoring(id: str)
+
+   .. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+   .. py:method:: SetVisible(value: bool) -> None
+
+
+   .. py:method:: GetVisible() -> bool
+
+
+   .. py:method:: GetValidColoringModes() -> list[str]
+
+
+   .. py:method:: GetAvailableGridFunctionsNames() -> set[str]
+
+
+   .. py:method:: GetAvailableGridFunctions() -> set[type[coilib50.element_function.semantic_association.SemanticAssociation]]
+
+
+   .. py:method:: SetStride(value: int) -> None
+
+
+   .. py:method:: GetStride() -> int
+
+
+   .. py:method:: SetJointsVisible(value: bool) -> None
+
+
+   .. py:method:: GetJointsVisible() -> bool
+
+
+   .. py:method:: SetJointsColor(values: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType) -> None
+
+
+   .. py:method:: GetJointsColor() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType
+
+
+   .. py:method:: SetJointsProperty(value: Union[type[coilib50.element_function.semantic_association.SemanticAssociation], str, None]) -> None
+
+
+   .. py:method:: GetJointsProperty() -> Union[type[coilib50.element_function.semantic_association.SemanticAssociation], None]
+
+
+   .. py:method:: SetJointsPointSize(value: float) -> None
+
+
+   .. py:method:: GetJointsPointSize() -> float
+
+
+   .. py:method:: SetJointsConnectivityVisible(value: bool) -> None
+
+
+   .. py:method:: GetJointsConnectivityVisible() -> bool
+
+
+   .. py:method:: SetJointsConnectivityColor(values: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType) -> None
+
+
+   .. py:method:: GetJointsConnectivityColor() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType
+
+
+   .. py:method:: SetJointsConnectivityProperty(value: Union[type[coilib50.element_function.semantic_association.SemanticAssociation], str, None]) -> None
+
+
+   .. py:method:: GetJointsConnectivityProperty() -> Union[type[coilib50.element_function.semantic_association.SemanticAssociation], None]
+
+
+   .. py:method:: SetJointsConnectivityLineWidth(value: float) -> None
+
+
+   .. py:method:: GetJointsConnectivityLineWidth() -> float
+
+

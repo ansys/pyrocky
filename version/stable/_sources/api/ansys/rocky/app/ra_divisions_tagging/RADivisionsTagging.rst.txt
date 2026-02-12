@@ -1,0 +1,417 @@
+
+
+
+
+
+
+:class:`RADivisionsTagging`
+===========================
+
+
+.. py:class:: ansys.rocky.app.ra_divisions_tagging.RADivisionsTagging(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_base_tagging.RABaseTagging`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate Divisions Tagging Calculators in a project.
+
+   The class corresponds to an individual "Divisions Tagging" calculation under
+   the "Particles Calculation" item on the project's data tree. To create the
+   :class:`RADivisionsTagging` from a :class:`RACalculations`, use:
+
+   .. code-block:: python
+
+       selection_process = study.GetElement('Cube <01>)
+       particles_calculations = study.GetCalculations()
+       divisions_tagging = particles_calculations.CreateDivisionsTagging(selection_process)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RADivisionsTagging
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDivisionsI`
+            - Get the value of "Divisions I".
+          * - :py:attr:`~SetDivisionsI`
+            - Set the value of "Divisions I".
+          * - :py:attr:`~GetDivisionsJ`
+            - Get the value of "Divisions J".
+          * - :py:attr:`~SetDivisionsJ`
+            - Set the value of "Divisions J".
+          * - :py:attr:`~GetDivisionsK`
+            - Get the value of "Divisions K".
+          * - :py:attr:`~SetDivisionsK`
+            - Set the value of "Divisions K".
+          * - :py:attr:`~GetNameMask`
+            - Get the value of "Name Mask".
+          * - :py:attr:`~SetNameMask`
+            - Set the value of "Name Mask".
+          * - :py:attr:`~GetTagStride`
+            - Get the value of "Tag Stride".
+          * - :py:attr:`~SetTagStride`
+            - Set the value of "Tag Stride".
+          * - :py:attr:`~GetTagValue`
+            - Get the value of "Tag Value".
+          * - :py:attr:`~SetTagValue`
+            - Set the value of "Tag Value".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_divisions_tagging import RADivisionsTagging
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetDivisionsI() -> int
+
+   
+   Get the value of "Divisions I".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDivisionsI(value: str | int) -> None
+
+   
+   Set the value of "Divisions I".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDivisionsJ() -> int
+
+   
+   Get the value of "Divisions J".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDivisionsJ(value: str | int) -> None
+
+   
+   Set the value of "Divisions J".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDivisionsK() -> int
+
+   
+   Get the value of "Divisions K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDivisionsK(value: str | int) -> None
+
+   
+   Set the value of "Divisions K".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNameMask() -> str
+
+   
+   Get the value of "Name Mask".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNameMask(value: str) -> None
+
+   
+   Set the value of "Name Mask".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTagStride() -> int
+
+   
+   Get the value of "Tag Stride".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTagStride(value: str | int) -> None
+
+   
+   Set the value of "Tag Stride".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTagValue() -> int
+
+   
+   Get the value of "Tag Value".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTagValue(value: str | int) -> None
+
+   
+   Set the value of "Tag Value".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

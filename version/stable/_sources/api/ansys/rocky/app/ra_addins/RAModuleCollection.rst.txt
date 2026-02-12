@@ -1,0 +1,179 @@
+
+
+
+
+
+
+:class:`RAModuleCollection`
+===========================
+
+
+.. py:class:: ansys.rocky.app.ra_addins.RAModuleCollection(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for the collection of module in a project.
+
+   This wrapper corresponds to the "Modules" item on the project's data tree. Retrieve the
+   :class:`RAModuleCollection` from a :class:`RAStudy` via:
+
+   .. code-block:: python
+
+       module_collection = study.GetModuleCollection()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAModuleCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetModuleNames`
+            - Get the names of the modules in project.
+          * - :py:attr:`~GetEnabledModules`
+            - Get the names of the enabled modules in project.
+          * - :py:attr:`~GetModule`
+            - Get a module given its name.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_addins import RAModuleCollection
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.addins.model.addin_manager.AddinManager]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetModuleNames() -> list[str]
+
+   
+   Get the names of the modules in project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEnabledModules() -> list[str]
+
+   
+   Get the names of the enabled modules in project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModule(module_name: str) -> RAModule
+
+   
+   Get a module given its name.
+
+   :param module_name:
+       The name of the module to get.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

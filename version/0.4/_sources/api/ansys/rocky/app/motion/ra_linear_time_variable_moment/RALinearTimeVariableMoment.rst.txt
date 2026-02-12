@@ -1,0 +1,223 @@
+
+
+
+
+
+
+:class:`RALinearTimeVariableMoment`
+===================================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_linear_time_variable_moment.RALinearTimeVariableMoment(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper representing an Linear Time Variable Moment motion.
+
+   Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+   example:
+
+   .. code-block:: python
+
+       motions = motion_frame.GetMotions()
+       motion_1 = motions.New()
+       motion_1.SetType('Linear Time Variable Moment')
+       additional_force = motion_1.GetTypeObject()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RALinearTimeVariableMoment
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetInitialMomentValue`
+            - Get the value of "Initial Moment Value".
+          * - :py:attr:`~SetInitialMomentValue`
+            - Set the values of "Initial Moment Value".
+          * - :py:attr:`~GetTimeCoefficients`
+            - Get the value of "Time Coefficients".
+          * - :py:attr:`~SetTimeCoefficients`
+            - Set the values of "Time Coefficients".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_linear_time_variable_moment import RALinearTimeVariableMoment
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetInitialMomentValue(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Initial Moment Value".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "N.m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitialMomentValue(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Initial Moment Value".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "N.m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTimeCoefficients(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Time Coefficients".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "N.m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTimeCoefficients(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Time Coefficients".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "N.m/s".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

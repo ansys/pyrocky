@@ -1,0 +1,344 @@
+
+
+
+
+
+
+:class:`RACFDCoupling`
+======================
+
+
+.. py:class:: ansys.rocky.app.ra_cfd_coupling.RACFDCoupling(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper to configure the CFD coupling mode in a project.
+
+   This wrapper can be accessed directly via the project's :class:`RAStudy`:
+
+   .. code-block:: python
+
+       cfd_coupling = study.GetCFDCoupling()
+       cfd_coupling.SetupFluentTwoWay('fluent.cas')
+       two_way_process = cfd_coupling.GetCouplingProcess()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RACFDCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetupNoCoupling`
+            - Configure the project to use no CFD coupling.
+          * - :py:attr:`~SetupOneWayLBM`
+            - Configure the project to use 1-Way LBM.
+          * - :py:attr:`~GetOneWayLBM`
+            - Get the PrePost Scripting wrapper for 1-Way LBM properties.
+          * - :py:attr:`~SetupOneWayFluent`
+            - Configure the project to use 1-Way Fluent.
+          * - :py:attr:`~SetupTwoWayFluent`
+            - Configure the project to use 2-Way Fluent.
+          * - :py:attr:`~SetupFluentTwoWaySemiResolved`
+            - Configure the project to use Fluent Two-Way Semi Resolved.
+          * - :py:attr:`~SetupOneWayConstant`
+            - Configure the project to use 1-Way Constant.
+          * - :py:attr:`~GetCouplingMode`
+            - :rtype: unicode
+          * - :py:attr:`~GetCouplingProcess`
+            - :return:
+          * - :py:attr:`~SetCurrentCouplingPartId`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_cfd_coupling import RACFDCoupling
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetupNoCoupling()
+
+   
+   Configure the project to use no CFD coupling.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupOneWayLBM() -> ansys.rocky.app.ra_airflow.RAAirFlow | None
+
+   
+   Configure the project to use 1-Way LBM.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOneWayLBM() -> ansys.rocky.app.ra_airflow.RAAirFlow | None
+
+   
+   Get the PrePost Scripting wrapper for 1-Way LBM properties.
+
+   Returns `None` if the current CFD coupling mode isn't Air Flow.
+
+   :rtype: RAAirFlow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupOneWayFluent(f2r_filename: str) -> RACFDCouplingTypes | None
+
+   
+   Configure the project to use 1-Way Fluent.
+
+   :param f2r_filename: str
+       The exported file name describing the Fluent simulation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupTwoWayFluent(cas_filename: str) -> RACFDCouplingTypes | None
+
+   
+   Configure the project to use 2-Way Fluent.
+
+   :param cas_filename: str
+       The Fluent file name describing the Fluent simulation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupFluentTwoWaySemiResolved(cas_filename: str) -> RACFDCouplingTypes | None
+
+   
+   Configure the project to use Fluent Two-Way Semi Resolved.
+
+   :param cas_filename:
+       The filename describing the Fluent simulation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupOneWayConstant() -> RACFDCouplingTypes | None
+
+   
+   Configure the project to use 1-Way Constant.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCouplingMode() -> str
+
+   
+   :rtype: unicode
+   :return:
+       The current coupling mode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCouplingProcess() -> RACFDCouplingTypes | None
+
+   
+   :return:
+       The configured coupling process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCurrentCouplingPartId() -> None
+
+
+
+

@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_rectangular_surface.py`` module
+========================================
+
+.. py:module:: ansys.rocky.app.ra_rectangular_surface
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_rectangular_surface
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_rectangular_surface.RARectangularSurface`
+            - Rocky API "Rectangular Surface" model.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RARectangularSurface</api/ansys/rocky/app/ra_rectangular_surface/RARectangularSurface>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1680 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>RAPhysics &#8212; pyrocky</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/ansys-sphinx-theme.css?v=a23b20f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles\ansys-sphinx-theme.css?v=a23b20f3" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../_static/documentation_options.js?v=bd778e0b"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/rocky/app/ra_physics/RAPhysics';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://rocky.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.4';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="The ra_point_cloud.py module" href="../ra_point_cloud/index.html" />
+    <link rel="prev" title="The ra_physics.py module" href="index.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.4.1" />
+  <meta property="og:site_name" content="PyAnsys" />
+  <meta name="physics" content="Fluids" />
+  <link rel="canonical" href="https://rocky.docs.pyansys.com/version/stable/api/ansys/rocky/app/ra_physics/RAPhysics.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="pyrocky - Home"/>
+    <img src="../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="pyrocky - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../index.html" title="pyrocky home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    
+<!--
+  Announcement Version Loader
+  Dynamically loads the announcement.html content into the announcement_msg div.
+-->
+<div id="announcement_msg" aria-live="polite"></div>
+<script>
+  // Fetch and inject the announcement HTML content
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status} Announcement.html file not found, Please ignore this, if you are in dev/stable documentation`);
+      }
+      return response.text();
+    })
+    .then((text) => {
+      var msgDiv = document.getElementById("announcement_msg");
+      if (msgDiv) {
+        msgDiv.innerHTML = text;
+      }
+    })
+    .catch((error) => {
+      // Log only unexpected fetch errors
+      if (!(error.message && error.message.startsWith("HTTP error: 404"))) {
+        console.error(`Fetch problem: ${error.message} Announcement.html could not be loaded.`);
+      }
+    });
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../index.html" title="pyrocky home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html"><span class="nf nf-md-package"></span> ansys.rocky.app</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../conveyors/index.html"> <span class="nf nf-md-package"></span> conveyors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../motion/index.html"> <span class="nf nf-md-package"></span> motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_element_item/index.html"> <span class="nf nf-fa-file"></span> api_element_item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_addin_list/index.html"> <span class="nf nf-fa-file"></span> ra_addin_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_addin_process/index.html"> <span class="nf nf-fa-file"></span> ra_addin_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_addins/index.html"> <span class="nf nf-fa-file"></span> ra_addins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_additional_features/index.html"> <span class="nf nf-fa-file"></span> ra_additional_features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_airflow/index.html"> <span class="nf nf-fa-file"></span> ra_airflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_api/index.html"> <span class="nf nf-fa-file"></span> ra_api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_base_geometry/index.html"> <span class="nf nf-fa-file"></span> ra_base_geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_base_subject_element/index.html"> <span class="nf nf-fa-file"></span> ra_base_subject_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_base_tagging/index.html"> <span class="nf nf-fa-file"></span> ra_base_tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_calculations/index.html"> <span class="nf nf-fa-file"></span> ra_calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_cfd_coupling/index.html"> <span class="nf nf-fa-file"></span> ra_cfd_coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_cfd_parameters/index.html"> <span class="nf nf-fa-file"></span> ra_cfd_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_circular_surface/index.html"> <span class="nf nf-fa-file"></span> ra_circular_surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_contact_data/index.html"> <span class="nf nf-fa-file"></span> ra_contact_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_contact_to_particle_process/index.html"> <span class="nf nf-fa-file"></span> ra_contact_to_particle_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_contacts_data_mesh_coloring/index.html"> <span class="nf nf-fa-file"></span> ra_contacts_data_mesh_coloring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_coupled_wall/index.html"> <span class="nf nf-fa-file"></span> ra_coupled_wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_custom_calculators/index.html"> <span class="nf nf-fa-file"></span> ra_custom_calculators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_custom_input/index.html"> <span class="nf nf-fa-file"></span> ra_custom_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_divisions_tagging/index.html"> <span class="nf nf-fa-file"></span> ra_divisions_tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_domain_settings/index.html"> <span class="nf nf-fa-file"></span> ra_domain_settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_eulerian_statistics/index.html"> <span class="nf nf-fa-file"></span> ra_eulerian_statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_export_toolkit/index.html"> <span class="nf nf-fa-file"></span> ra_export_toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_fluent_coupling/index.html"> <span class="nf nf-fa-file"></span> ra_fluent_coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_fluid_inlet/index.html"> <span class="nf nf-fa-file"></span> ra_fluid_inlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_fluid_material/index.html"> <span class="nf nf-fa-file"></span> ra_fluid_material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_geometry_collection/index.html"> <span class="nf nf-fa-file"></span> ra_geometry_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_grid_process_element/index.html"> <span class="nf nf-fa-file"></span> ra_grid_process_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_inlet/index.html"> <span class="nf nf-fa-file"></span> ra_inlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_inlets_outlets_collection/index.html"> <span class="nf nf-fa-file"></span> ra_inlets_outlets_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_input_variables/index.html"> <span class="nf nf-fa-file"></span> ra_input_variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_joints_data_mesh_coloring/index.html"> <span class="nf nf-fa-file"></span> ra_joints_data_mesh_coloring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_list/index.html"> <span class="nf nf-fa-file"></span> ra_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_macro_hooks/index.html"> <span class="nf nf-fa-file"></span> ra_macro_hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_materials_collection/index.html"> <span class="nf nf-fa-file"></span> ra_materials_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_materials_interaction/index.html"> <span class="nf nf-fa-file"></span> ra_materials_interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_materials_interaction_collection/index.html"> <span class="nf nf-fa-file"></span> ra_materials_interaction_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_mesh_coloring/index.html"> <span class="nf nf-fa-file"></span> ra_mesh_coloring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_outlet/index.html"> <span class="nf nf-fa-file"></span> ra_outlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_parametric_variables/index.html"> <span class="nf nf-fa-file"></span> ra_parametric_variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle/index.html"> <span class="nf nf-fa-file"></span> ra_particle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_assembly/index.html"> <span class="nf nf-fa-file"></span> ra_particle_assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_collection/index.html"> <span class="nf nf-fa-file"></span> ra_particle_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_inlet/index.html"> <span class="nf nf-fa-file"></span> ra_particle_inlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_inlet_properties/index.html"> <span class="nf nf-fa-file"></span> ra_particle_inlet_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_joints_data/index.html"> <span class="nf nf-fa-file"></span> ra_particle_joints_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_time_selection_process/index.html"> <span class="nf nf-fa-file"></span> ra_particle_time_selection_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_to_contact_process/index.html"> <span class="nf nf-fa-file"></span> ra_particle_to_contact_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particles_process/index.html"> <span class="nf nf-fa-file"></span> ra_particles_process</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html"> <span class="nf nf-fa-file"></span> ra_physics</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"> <span class="nf nf-cod-symbol_class"></span> RAPhysics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_point_cloud/index.html"> <span class="nf nf-fa-file"></span> ra_point_cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_point_cloud_collection/index.html"> <span class="nf nf-fa-file"></span> ra_point_cloud_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_process_element/index.html"> <span class="nf nf-fa-file"></span> ra_process_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_project/index.html"> <span class="nf nf-fa-file"></span> ra_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_rectangular_surface/index.html"> <span class="nf nf-fa-file"></span> ra_rectangular_surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_region_of_interest_cube/index.html"> <span class="nf nf-fa-file"></span> ra_region_of_interest_cube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_region_of_interest_cylinder/index.html"> <span class="nf nf-fa-file"></span> ra_region_of_interest_cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_regions_of_interest_collection/index.html"> <span class="nf nf-fa-file"></span> ra_regions_of_interest_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_residence_time/index.html"> <span class="nf nf-fa-file"></span> ra_residence_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_semi_resolved_coupling/index.html"> <span class="nf nf-fa-file"></span> ra_semi_resolved_coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_simulator_run/index.html"> <span class="nf nf-fa-file"></span> ra_simulator_run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_size_distribution/index.html"> <span class="nf nf-fa-file"></span> ra_size_distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_solid_material/index.html"> <span class="nf nf-fa-file"></span> ra_solid_material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_sph_eulerian_solution/index.html"> <span class="nf nf-fa-file"></span> ra_sph_eulerian_solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_sph_settings/index.html"> <span class="nf nf-fa-file"></span> ra_sph_settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_sph_tagging/index.html"> <span class="nf nf-fa-file"></span> ra_sph_tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_streamlines_user_process/index.html"> <span class="nf nf-fa-file"></span> ra_streamlines_user_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_study/index.html"> <span class="nf nf-fa-file"></span> ra_study</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_surface/index.html"> <span class="nf nf-fa-file"></span> ra_surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_system_coupling_wall/index.html"> <span class="nf nf-fa-file"></span> ra_system_coupling_wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_tagging/index.html"> <span class="nf nf-fa-file"></span> ra_tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_time_filter/index.html"> <span class="nf nf-fa-file"></span> ra_time_filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_time_range_filter/index.html"> <span class="nf nf-fa-file"></span> ra_time_range_filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_time_statistics/index.html"> <span class="nf nf-fa-file"></span> ra_time_statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_user_process_collection/index.html"> <span class="nf nf-fa-file"></span> ra_user_process_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_volumetric_inlet/index.html"> <span class="nf nf-fa-file"></span> ra_volumetric_inlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_volumetric_inlet_properties/index.html"> <span class="nf nf-fa-file"></span> ra_volumetric_inlet_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_wall/index.html"> <span class="nf nf-fa-file"></span> ra_wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocky_api_application/index.html"> <span class="nf nf-fa-file"></span> rocky_api_application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocky_api_deprecated_decorator/index.html"> <span class="nf nf-fa-file"></span> rocky_api_deprecated_decorator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocky_api_plugin/index.html"> <span class="nf nf-fa-file"></span> rocky_api_plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocky_api_utils/index.html"> <span class="nf nf-fa-file"></span> rocky_api_utils</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/index.html"><span class="nf nf-md-package"></span> ansys.rocky.core</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../../../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">ansys.rocky.app</span></code> library</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">ra_physics.py</span></code> module</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAPhysics</span></code></span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="raphysics">
+<h1><code class="xref py py-class docutils literal notranslate"><span class="pre">RAPhysics</span></code><a class="headerlink" href="#raphysics" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.rocky.app.ra_physics.RAPhysics">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.rocky.app.ra_physics.</span></span><span class="sig-name descname"><span class="pre">RAPhysics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.app.ra_physics.RAPhysics" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../api_element_item/ApiElementItem.html#ansys.rocky.app.api_element_item.ApiElementItem" title="ansys.rocky.app.api_element_item.ApiElementItem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ansys.rocky.app.api_element_item.ApiElementItem</span></code></a></p>
+<p>Rocky PrePost Scripting wrapper to manipulate physics properties.</p>
+<p>This class represents the “Physics” item on the project data tree. To get the <code class="xref py py-class docutils literal notranslate"><span class="pre">RAPhysics</span></code>
+from a <code class="xref py py-class docutils literal notranslate"><span class="pre">RAStudy</span></code>, use:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">physics</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">GetPhysics</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Constructors</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetWrappedClass" title="RAPhysics.GetWrappedClass"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetWrappedClass</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetClassName" title="RAPhysics.GetClassName"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetClassName</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Methods</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetAdhesionModel" title="RAPhysics.GetAdhesionModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetAdhesionModel</span></code></a></p></td>
+<td><p>Get “Adhesion Model” as a string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetAdhesionModel" title="RAPhysics.SetAdhesionModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetAdhesionModel</span></code></a></p></td>
+<td><p>Set the value of “Adhesion Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetValidAdhesionModelValues" title="RAPhysics.GetValidAdhesionModelValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidAdhesionModelValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Adhesion Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetClosePackingVolumeFraction" title="RAPhysics.GetClosePackingVolumeFraction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetClosePackingVolumeFraction</span></code></a></p></td>
+<td><p>Get the value of “Close Packing Volume Fraction”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetClosePackingVolumeFraction" title="RAPhysics.SetClosePackingVolumeFraction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetClosePackingVolumeFraction</span></code></a></p></td>
+<td><p>Set the value of “Close Packing Volume Fraction”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetEnableCoarseGrainModeling" title="RAPhysics.GetEnableCoarseGrainModeling"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetEnableCoarseGrainModeling</span></code></a></p></td>
+<td><p>Get the value of “Enable Coarse Grain Modeling”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetEnableCoarseGrainModeling" title="RAPhysics.SetEnableCoarseGrainModeling"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetEnableCoarseGrainModeling</span></code></a></p></td>
+<td><p>Set the value of “Enable Coarse Grain Modeling”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetEnableThermalModel" title="RAPhysics.GetEnableThermalModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetEnableThermalModel</span></code></a></p></td>
+<td><p>Get the value of “Enable Thermal Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetEnableThermalModel" title="RAPhysics.SetEnableThermalModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetEnableThermalModel</span></code></a></p></td>
+<td><p>Set the value of “Enable Thermal Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetGravityStartTime" title="RAPhysics.GetGravityStartTime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetGravityStartTime</span></code></a></p></td>
+<td><p>Get the value of “Gravity Start Time”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetGravityStartTime" title="RAPhysics.SetGravityStartTime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetGravityStartTime</span></code></a></p></td>
+<td><p>Set the value of “Gravity Start Time”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetGravityStopTime" title="RAPhysics.GetGravityStopTime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetGravityStopTime</span></code></a></p></td>
+<td><p>Get the value of “Gravity Stop Time”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetGravityStopTime" title="RAPhysics.SetGravityStopTime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetGravityStopTime</span></code></a></p></td>
+<td><p>Set the value of “Gravity Stop Time”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetGravityXDirection" title="RAPhysics.GetGravityXDirection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetGravityXDirection</span></code></a></p></td>
+<td><p>Get the value of “Gravity X Direction”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetGravityXDirection" title="RAPhysics.SetGravityXDirection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetGravityXDirection</span></code></a></p></td>
+<td><p>Set the value of “Gravity X Direction”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetGravityYDirection" title="RAPhysics.GetGravityYDirection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetGravityYDirection</span></code></a></p></td>
+<td><p>Get the value of “Gravity Y Direction”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetGravityYDirection" title="RAPhysics.SetGravityYDirection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetGravityYDirection</span></code></a></p></td>
+<td><p>Set the value of “Gravity Y Direction”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetGravityZDirection" title="RAPhysics.GetGravityZDirection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetGravityZDirection</span></code></a></p></td>
+<td><p>Get the value of “Gravity Z Direction”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetGravityZDirection" title="RAPhysics.SetGravityZDirection"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetGravityZDirection</span></code></a></p></td>
+<td><p>Set the value of “Gravity Z Direction”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetImpactEnergyModel" title="RAPhysics.GetImpactEnergyModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetImpactEnergyModel</span></code></a></p></td>
+<td><p>Get “Impact Energy Model” as a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetImpactEnergyModel" title="RAPhysics.SetImpactEnergyModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetImpactEnergyModel</span></code></a></p></td>
+<td><p>Set the value of “Impact Energy Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetValidImpactEnergyModelValues" title="RAPhysics.GetValidImpactEnergyModelValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidImpactEnergyModelValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Impact Energy Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetName" title="RAPhysics.GetName"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetName</span></code></a></p></td>
+<td><p>Get the value of “Name”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetName" title="RAPhysics.SetName"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetName</span></code></a></p></td>
+<td><p>Set the value of “Name”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetNormalForceModel" title="RAPhysics.GetNormalForceModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetNormalForceModel</span></code></a></p></td>
+<td><p>Get “Normal Force Model” as a string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetNormalForceModel" title="RAPhysics.SetNormalForceModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetNormalForceModel</span></code></a></p></td>
+<td><p>Set the value of “Normal Force Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetValidNormalForceModelValues" title="RAPhysics.GetValidNormalForceModelValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidNormalForceModelValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Normal Force Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetRollingResistanceModel" title="RAPhysics.GetRollingResistanceModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetRollingResistanceModel</span></code></a></p></td>
+<td><p>Get “Rolling Resistance Model” as a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetRollingResistanceModel" title="RAPhysics.SetRollingResistanceModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetRollingResistanceModel</span></code></a></p></td>
+<td><p>Set the value of “Rolling Resistance Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetValidRollingResistanceModelValues" title="RAPhysics.GetValidRollingResistanceModelValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidRollingResistanceModelValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Rolling Resistance Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetExponentLimit" title="RAPhysics.GetExponentLimit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetExponentLimit</span></code></a></p></td>
+<td><p>Get the value of “Exponent Limit”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetExponentLimit" title="RAPhysics.SetExponentLimit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetExponentLimit</span></code></a></p></td>
+<td><p>Set the value of “Exponent Limit”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetVolumeFractionLimit" title="RAPhysics.GetVolumeFractionLimit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetVolumeFractionLimit</span></code></a></p></td>
+<td><p>Get the value of “Volume Fraction Limit”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetVolumeFractionLimit" title="RAPhysics.SetVolumeFractionLimit"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetVolumeFractionLimit</span></code></a></p></td>
+<td><p>Set the value of “Volume Fraction Limit”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetRestitutionModel" title="RAPhysics.GetRestitutionModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetRestitutionModel</span></code></a></p></td>
+<td><p>Get “Restitution Model” as a string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetRestitutionModel" title="RAPhysics.SetRestitutionModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetRestitutionModel</span></code></a></p></td>
+<td><p>Set the value of “Restitution Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetValidRestitutionModelValues" title="RAPhysics.GetValidRestitutionModelValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidRestitutionModelValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Restitution Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetSearchDistanceMultiplier" title="RAPhysics.GetSearchDistanceMultiplier"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetSearchDistanceMultiplier</span></code></a></p></td>
+<td><p>Get the value of “Search Distance Multiplier”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetSearchDistanceMultiplier" title="RAPhysics.SetSearchDistanceMultiplier"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetSearchDistanceMultiplier</span></code></a></p></td>
+<td><p>Set the value of “Search Distance Multiplier”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetSphThermalTransferModel" title="RAPhysics.GetSphThermalTransferModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetSphThermalTransferModel</span></code></a></p></td>
+<td><p>Get “Sph Thermal Transfer Model” as a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetSphThermalTransferModel" title="RAPhysics.SetSphThermalTransferModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetSphThermalTransferModel</span></code></a></p></td>
+<td><p>Set the value of “Sph Thermal Transfer Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetValidSphThermalTransferModelValues" title="RAPhysics.GetValidSphThermalTransferModelValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidSphThermalTransferModelValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Sph Thermal Transfer Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetNumericalSofteningFactor" title="RAPhysics.GetNumericalSofteningFactor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetNumericalSofteningFactor</span></code></a></p></td>
+<td><p>Get the value of “Numerical Softening Factor”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetNumericalSofteningFactor" title="RAPhysics.SetNumericalSofteningFactor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetNumericalSofteningFactor</span></code></a></p></td>
+<td><p>Set the value of “Numerical Softening Factor”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetTangentialForceModel" title="RAPhysics.GetTangentialForceModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetTangentialForceModel</span></code></a></p></td>
+<td><p>Get “Tangential Force Model” as a string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetTangentialForceModel" title="RAPhysics.SetTangentialForceModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetTangentialForceModel</span></code></a></p></td>
+<td><p>Set the value of “Tangential Force Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetValidTangentialForceModelValues" title="RAPhysics.GetValidTangentialForceModelValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidTangentialForceModelValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Tangential Force Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetThermalCorrectionModel" title="RAPhysics.GetThermalCorrectionModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetThermalCorrectionModel</span></code></a></p></td>
+<td><p>Get “Thermal Correction Model” as a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.SetThermalCorrectionModel" title="RAPhysics.SetThermalCorrectionModel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetThermalCorrectionModel</span></code></a></p></td>
+<td><p>Set the value of “Thermal Correction Model”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.GetValidThermalCorrectionModelValues" title="RAPhysics.GetValidThermalCorrectionModelValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidThermalCorrectionModelValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Thermal Correction Model”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetUpdateDistanceMultiplier" title="RAPhysics.GetUpdateDistanceMultiplier"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetUpdateDistanceMultiplier</span></code></a></p></td>
+<td><p>Get the value of “Update Distance Multiplier”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetUpdateDistanceMultiplier" title="RAPhysics.SetUpdateDistanceMultiplier"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetUpdateDistanceMultiplier</span></code></a></p></td>
+<td><p>Set the value of “Update Distance Multiplier”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.GetUseRadlEtAl" title="RAPhysics.GetUseRadlEtAl"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetUseRadlEtAl</span></code></a></p></td>
+<td><p>Get the value of “Use Radl Et Al”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAPhysics.SetUseRadlEtAl" title="RAPhysics.SetUseRadlEtAl"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetUseRadlEtAl</span></code></a></p></td>
+<td><p>Set the value of “Use Radl Et Al”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Properties</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAPhysics.enable_thermal_model" title="RAPhysics.enable_thermal_model"><code class="xref py py-attr docutils literal notranslate"><span class="pre">enable_thermal_model</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="import-detail">
+<h2>Import detail<a class="headerlink" href="#import-detail" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.rocky.app.ra_physics</span><span class="w"> </span><span class="kn">import</span> <span class="n">RAPhysics</span>
+</pre></div>
+</div>
+</section>
+<section id="property-detail">
+<h2>Property detail<a class="headerlink" href="#property-detail" title="Link to this heading">#</a></h2>
+<dl class="py property">
+<dt class="sig sig-object py" id="RAPhysics.enable_thermal_model">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">enable_thermal_model</span></span><a class="headerlink" href="#RAPhysics.enable_thermal_model" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="method-detail">
+<h2>Method detail<a class="headerlink" href="#method-detail" title="Link to this heading">#</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetWrappedClass">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetWrappedClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RAPhysics.GetWrappedClass" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetClassName">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetClassName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetClassName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetAdhesionModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetAdhesionModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetAdhesionModel" title="Link to this definition">#</a></dt>
+<dd><p>Get “Adhesion Model” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘none’, ‘constant’, ‘linear’, ‘JKR’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetAdhesionModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetAdhesionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetAdhesionModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Adhesion Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘none’, ‘constant’, ‘linear’, ‘JKR’, ‘custom’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Adhesion Model” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetValidAdhesionModelValues">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetValidAdhesionModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAPhysics.GetValidAdhesionModelValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Adhesion Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘none’, ‘constant’, ‘linear’, ‘JKR’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetClosePackingVolumeFraction">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetClosePackingVolumeFraction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetClosePackingVolumeFraction" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Close Packing Volume Fraction”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetClosePackingVolumeFraction">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetClosePackingVolumeFraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetClosePackingVolumeFraction" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Close Packing Volume Fraction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetEnableCoarseGrainModeling">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetEnableCoarseGrainModeling</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAPhysics.GetEnableCoarseGrainModeling" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Enable Coarse Grain Modeling”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetEnableCoarseGrainModeling">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetEnableCoarseGrainModeling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetEnableCoarseGrainModeling" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Enable Coarse Grain Modeling”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetEnableThermalModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetEnableThermalModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAPhysics.GetEnableThermalModel" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Enable Thermal Model”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetEnableThermalModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetEnableThermalModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetEnableThermalModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Enable Thermal Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetGravityStartTime">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetGravityStartTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetGravityStartTime" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Gravity Start Time”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unit</strong> – The unit for the returned value. If no unit is provided, the returned value will be in “s”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetGravityStartTime">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetGravityStartTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetGravityStartTime" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Gravity Start Time”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p></li>
+<li><p><strong>unit</strong> – The unit for <cite>value</cite>. If no unit is provided, <cite>value</cite> is assumed to be in “s”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetGravityStopTime">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetGravityStopTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetGravityStopTime" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Gravity Stop Time”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unit</strong> – The unit for the returned value. If no unit is provided, the returned value will be in “s”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetGravityStopTime">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetGravityStopTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetGravityStopTime" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Gravity Stop Time”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p></li>
+<li><p><strong>unit</strong> – The unit for <cite>value</cite>. If no unit is provided, <cite>value</cite> is assumed to be in “s”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetGravityXDirection">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetGravityXDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetGravityXDirection" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Gravity X Direction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unit</strong> – The unit for the returned value. If no unit is provided, the returned value will be in “m/s2”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetGravityXDirection">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetGravityXDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetGravityXDirection" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Gravity X Direction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p></li>
+<li><p><strong>unit</strong> – The unit for <cite>value</cite>. If no unit is provided, <cite>value</cite> is assumed to be in “m/s2”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetGravityYDirection">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetGravityYDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetGravityYDirection" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Gravity Y Direction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unit</strong> – The unit for the returned value. If no unit is provided, the returned value will be in “m/s2”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetGravityYDirection">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetGravityYDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetGravityYDirection" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Gravity Y Direction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p></li>
+<li><p><strong>unit</strong> – The unit for <cite>value</cite>. If no unit is provided, <cite>value</cite> is assumed to be in “m/s2”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetGravityZDirection">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetGravityZDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetGravityZDirection" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Gravity Z Direction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unit</strong> – The unit for the returned value. If no unit is provided, the returned value will be in “m/s2”.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetGravityZDirection">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetGravityZDirection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetGravityZDirection" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Gravity Z Direction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p></li>
+<li><p><strong>unit</strong> – The unit for <cite>value</cite>. If no unit is provided, <cite>value</cite> is assumed to be in “m/s2”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetImpactEnergyModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetImpactEnergyModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetImpactEnergyModel" title="Link to this definition">#</a></dt>
+<dd><p>Get “Impact Energy Model” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘default’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetImpactEnergyModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetImpactEnergyModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetImpactEnergyModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Impact Energy Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘default’, ‘custom’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Impact Energy Model” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetValidImpactEnergyModelValues">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetValidImpactEnergyModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAPhysics.GetValidImpactEnergyModelValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Impact Energy Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘default’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetName">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetName" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Name”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetName">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetName" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Name”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetNormalForceModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetNormalForceModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetNormalForceModel" title="Link to this definition">#</a></dt>
+<dd><p>Get “Normal Force Model” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘linear_hysteresis’, ‘linear_elastic_viscous’, ‘damped_hertzian’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetNormalForceModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetNormalForceModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetNormalForceModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Normal Force Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘linear_hysteresis’, ‘linear_elastic_viscous’, ‘damped_hertzian’, ‘custom’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Normal Force Model” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetValidNormalForceModelValues">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetValidNormalForceModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAPhysics.GetValidNormalForceModelValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Normal Force Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘linear_hysteresis’, ‘linear_elastic_viscous’, ‘damped_hertzian’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetRollingResistanceModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetRollingResistanceModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetRollingResistanceModel" title="Link to this definition">#</a></dt>
+<dd><p>Get “Rolling Resistance Model” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘type_1’, ‘type_3’, ‘none’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetRollingResistanceModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetRollingResistanceModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetRollingResistanceModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Rolling Resistance Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘type_1’, ‘type_3’, ‘none’, ‘custom’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Rolling Resistance Model” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetValidRollingResistanceModelValues">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetValidRollingResistanceModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAPhysics.GetValidRollingResistanceModelValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Rolling Resistance Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘type_1’, ‘type_3’, ‘none’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetExponentLimit">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetExponentLimit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetExponentLimit" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Exponent Limit”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetExponentLimit">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetExponentLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetExponentLimit" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Exponent Limit”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetVolumeFractionLimit">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetVolumeFractionLimit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetVolumeFractionLimit" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Volume Fraction Limit”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetVolumeFractionLimit">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetVolumeFractionLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetVolumeFractionLimit" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Volume Fraction Limit”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetRestitutionModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetRestitutionModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetRestitutionModel" title="Link to this definition">#</a></dt>
+<dd><p>Get “Restitution Model” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘constant’, ‘velocity_dependent’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetRestitutionModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetRestitutionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetRestitutionModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Restitution Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘constant’, ‘velocity_dependent’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Restitution Model” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetValidRestitutionModelValues">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetValidRestitutionModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAPhysics.GetValidRestitutionModelValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Restitution Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘constant’, ‘velocity_dependent’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetSearchDistanceMultiplier">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetSearchDistanceMultiplier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetSearchDistanceMultiplier" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Search Distance Multiplier”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetSearchDistanceMultiplier">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetSearchDistanceMultiplier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetSearchDistanceMultiplier" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Search Distance Multiplier”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetSphThermalTransferModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetSphThermalTransferModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetSphThermalTransferModel" title="Link to this definition">#</a></dt>
+<dd><p>Get “Sph Thermal Transfer Model” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘cleary’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetSphThermalTransferModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetSphThermalTransferModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetSphThermalTransferModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Sph Thermal Transfer Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘cleary’, ‘custom’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Sph Thermal Transfer Model” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetValidSphThermalTransferModelValues">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetValidSphThermalTransferModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAPhysics.GetValidSphThermalTransferModelValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Sph Thermal Transfer Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘cleary’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetNumericalSofteningFactor">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetNumericalSofteningFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetNumericalSofteningFactor" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Numerical Softening Factor”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetNumericalSofteningFactor">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetNumericalSofteningFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetNumericalSofteningFactor" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Numerical Softening Factor”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetTangentialForceModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetTangentialForceModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetTangentialForceModel" title="Link to this definition">#</a></dt>
+<dd><p>Get “Tangential Force Model” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘elastic_coulomb’, ‘coulomb_limit’, ‘mindlin_deresiewicz’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetTangentialForceModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetTangentialForceModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetTangentialForceModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Tangential Force Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘elastic_coulomb’, ‘coulomb_limit’, ‘mindlin_deresiewicz’, ‘custom’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Tangential Force Model” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetValidTangentialForceModelValues">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetValidTangentialForceModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAPhysics.GetValidTangentialForceModelValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Tangential Force Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘elastic_coulomb’, ‘coulomb_limit’, ‘mindlin_deresiewicz’, ‘custom’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetThermalCorrectionModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetThermalCorrectionModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAPhysics.GetThermalCorrectionModel" title="Link to this definition">#</a></dt>
+<dd><p>Get “Thermal Correction Model” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘none’, ‘morris_et_al_area’, ‘morris_et_al_area_time’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetThermalCorrectionModel">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetThermalCorrectionModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetThermalCorrectionModel" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Thermal Correction Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘none’, ‘morris_et_al_area’, ‘morris_et_al_area_time’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Thermal Correction Model” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetValidThermalCorrectionModelValues">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetValidThermalCorrectionModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAPhysics.GetValidThermalCorrectionModelValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Thermal Correction Model”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘none’, ‘morris_et_al_area’, ‘morris_et_al_area_time’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetUpdateDistanceMultiplier">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetUpdateDistanceMultiplier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAPhysics.GetUpdateDistanceMultiplier" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Update Distance Multiplier”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetUpdateDistanceMultiplier">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetUpdateDistanceMultiplier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetUpdateDistanceMultiplier" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Update Distance Multiplier”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value can be an expression with input variables or float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.GetUseRadlEtAl">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">GetUseRadlEtAl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAPhysics.GetUseRadlEtAl" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Use Radl Et Al”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAPhysics.SetUseRadlEtAl">
+<span class="sig-prename descclassname"><span class="pre">RAPhysics.</span></span><span class="sig-name descname"><span class="pre">SetUseRadlEtAl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAPhysics.SetUseRadlEtAl" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Use Radl Et Al”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.app.ra_physics.RAPhysics"><code class="docutils literal notranslate"><span class="pre">ansys.rocky.app.ra_physics.RAPhysics</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-detail">Import detail</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#property-detail">Property detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.enable_thermal_model"><code class="docutils literal notranslate"><span class="pre">enable_thermal_model</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-detail">Method detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetWrappedClass"><code class="docutils literal notranslate"><span class="pre">GetWrappedClass()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetClassName"><code class="docutils literal notranslate"><span class="pre">GetClassName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetAdhesionModel"><code class="docutils literal notranslate"><span class="pre">GetAdhesionModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetAdhesionModel"><code class="docutils literal notranslate"><span class="pre">SetAdhesionModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetValidAdhesionModelValues"><code class="docutils literal notranslate"><span class="pre">GetValidAdhesionModelValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetClosePackingVolumeFraction"><code class="docutils literal notranslate"><span class="pre">GetClosePackingVolumeFraction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetClosePackingVolumeFraction"><code class="docutils literal notranslate"><span class="pre">SetClosePackingVolumeFraction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetEnableCoarseGrainModeling"><code class="docutils literal notranslate"><span class="pre">GetEnableCoarseGrainModeling()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetEnableCoarseGrainModeling"><code class="docutils literal notranslate"><span class="pre">SetEnableCoarseGrainModeling()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetEnableThermalModel"><code class="docutils literal notranslate"><span class="pre">GetEnableThermalModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetEnableThermalModel"><code class="docutils literal notranslate"><span class="pre">SetEnableThermalModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetGravityStartTime"><code class="docutils literal notranslate"><span class="pre">GetGravityStartTime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetGravityStartTime"><code class="docutils literal notranslate"><span class="pre">SetGravityStartTime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetGravityStopTime"><code class="docutils literal notranslate"><span class="pre">GetGravityStopTime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetGravityStopTime"><code class="docutils literal notranslate"><span class="pre">SetGravityStopTime()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetGravityXDirection"><code class="docutils literal notranslate"><span class="pre">GetGravityXDirection()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetGravityXDirection"><code class="docutils literal notranslate"><span class="pre">SetGravityXDirection()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetGravityYDirection"><code class="docutils literal notranslate"><span class="pre">GetGravityYDirection()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetGravityYDirection"><code class="docutils literal notranslate"><span class="pre">SetGravityYDirection()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetGravityZDirection"><code class="docutils literal notranslate"><span class="pre">GetGravityZDirection()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetGravityZDirection"><code class="docutils literal notranslate"><span class="pre">SetGravityZDirection()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetImpactEnergyModel"><code class="docutils literal notranslate"><span class="pre">GetImpactEnergyModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetImpactEnergyModel"><code class="docutils literal notranslate"><span class="pre">SetImpactEnergyModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetValidImpactEnergyModelValues"><code class="docutils literal notranslate"><span class="pre">GetValidImpactEnergyModelValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetName"><code class="docutils literal notranslate"><span class="pre">GetName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetName"><code class="docutils literal notranslate"><span class="pre">SetName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetNormalForceModel"><code class="docutils literal notranslate"><span class="pre">GetNormalForceModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetNormalForceModel"><code class="docutils literal notranslate"><span class="pre">SetNormalForceModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetValidNormalForceModelValues"><code class="docutils literal notranslate"><span class="pre">GetValidNormalForceModelValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetRollingResistanceModel"><code class="docutils literal notranslate"><span class="pre">GetRollingResistanceModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetRollingResistanceModel"><code class="docutils literal notranslate"><span class="pre">SetRollingResistanceModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetValidRollingResistanceModelValues"><code class="docutils literal notranslate"><span class="pre">GetValidRollingResistanceModelValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetExponentLimit"><code class="docutils literal notranslate"><span class="pre">GetExponentLimit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetExponentLimit"><code class="docutils literal notranslate"><span class="pre">SetExponentLimit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetVolumeFractionLimit"><code class="docutils literal notranslate"><span class="pre">GetVolumeFractionLimit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetVolumeFractionLimit"><code class="docutils literal notranslate"><span class="pre">SetVolumeFractionLimit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetRestitutionModel"><code class="docutils literal notranslate"><span class="pre">GetRestitutionModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetRestitutionModel"><code class="docutils literal notranslate"><span class="pre">SetRestitutionModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetValidRestitutionModelValues"><code class="docutils literal notranslate"><span class="pre">GetValidRestitutionModelValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetSearchDistanceMultiplier"><code class="docutils literal notranslate"><span class="pre">GetSearchDistanceMultiplier()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetSearchDistanceMultiplier"><code class="docutils literal notranslate"><span class="pre">SetSearchDistanceMultiplier()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetSphThermalTransferModel"><code class="docutils literal notranslate"><span class="pre">GetSphThermalTransferModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetSphThermalTransferModel"><code class="docutils literal notranslate"><span class="pre">SetSphThermalTransferModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetValidSphThermalTransferModelValues"><code class="docutils literal notranslate"><span class="pre">GetValidSphThermalTransferModelValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetNumericalSofteningFactor"><code class="docutils literal notranslate"><span class="pre">GetNumericalSofteningFactor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetNumericalSofteningFactor"><code class="docutils literal notranslate"><span class="pre">SetNumericalSofteningFactor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetTangentialForceModel"><code class="docutils literal notranslate"><span class="pre">GetTangentialForceModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetTangentialForceModel"><code class="docutils literal notranslate"><span class="pre">SetTangentialForceModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetValidTangentialForceModelValues"><code class="docutils literal notranslate"><span class="pre">GetValidTangentialForceModelValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetThermalCorrectionModel"><code class="docutils literal notranslate"><span class="pre">GetThermalCorrectionModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetThermalCorrectionModel"><code class="docutils literal notranslate"><span class="pre">SetThermalCorrectionModel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetValidThermalCorrectionModelValues"><code class="docutils literal notranslate"><span class="pre">GetValidThermalCorrectionModelValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetUpdateDistanceMultiplier"><code class="docutils literal notranslate"><span class="pre">GetUpdateDistanceMultiplier()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetUpdateDistanceMultiplier"><code class="docutils literal notranslate"><span class="pre">SetUpdateDistanceMultiplier()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.GetUseRadlEtAl"><code class="docutils literal notranslate"><span class="pre">GetUseRadlEtAl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAPhysics.SetUseRadlEtAl"><code class="docutils literal notranslate"><span class="pre">SetUseRadlEtAl()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/api/ansys/rocky/app/ra_physics/RAPhysics.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../../../../../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../../../../../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2026 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<!--
+  Theme Version Footer
+  Displays the Sphinx theme version and the last updated date.
+  Accessibility and semantic improvements included.
+-->
+<footer class="theme-version" aria-label="Theme version and last update">
+  <span>
+    
+      Built with the
+      <a href="https://sphinxdocs.ansys.com/version/stable/index.html" target="_blank" rel="noopener noreferrer">
+        Ansys Sphinx Theme
+      </a>
+      1.7.0.
+    
+  </span>
+  <br />
+  <span>Last updated on <time id="ast_build_date"></time></span>
+</footer>
+<script>
+  // Set the last updated date in a readable format
+  (function() {
+    var options = { day: "numeric", month: "long", year: "numeric" };
+    var ast_lastModifiedDate = new Date(document.lastModified);
+    var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+    var dateElem = document.getElementById("ast_build_date");
+    if (dateElem) {
+      dateElem.textContent = ast_build_date;
+    }
+  })();
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

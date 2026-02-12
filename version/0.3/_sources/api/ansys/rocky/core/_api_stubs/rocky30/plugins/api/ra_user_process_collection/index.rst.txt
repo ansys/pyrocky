@@ -1,0 +1,128 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_user_process_collection
+==========================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_user_process_collection
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_user_process_collection.RAUserProcessCollection
+
+
+Module Contents
+---------------
+
+.. py:class:: RAUserProcessCollection(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetProcessNames()
+
+
+   .. py:method:: GetProcess(process_name)
+
+
+   .. py:method:: CreatePlaneProcess(parent, name: _typeshed.Incomplete | None = ..., origin: _typeshed.Incomplete | None = ..., normal: _typeshed.Incomplete | None = ..., plane_type: _typeshed.Incomplete | None = ..., plane_mode: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: CreateInspectorProcess(parent, name: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetPlaneProcessNames()
+
+
+   .. py:method:: GetInspectorProcessNames()
+
+
+   .. py:method:: CreateCylinderGroupProcess(parent_processes, name: _typeshed.Incomplete | None = ..., center: _typeshed.Incomplete | None = ..., size: _typeshed.Incomplete | None = ..., rotation: _typeshed.Incomplete | None = ..., internal_factor: _typeshed.Incomplete | None = ..., initial_angle: _typeshed.Incomplete | None = ..., final_angle: _typeshed.Incomplete | None = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RACylinderGroup
+
+
+   .. py:method:: CreateCubeGroupProcess(parent_processes, name: _typeshed.Incomplete | None = ..., center: _typeshed.Incomplete | None = ..., magnitude: _typeshed.Incomplete | None = ..., rotation: _typeshed.Incomplete | None = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RACubeGroup
+
+
+   .. py:method:: CreateCubeProcess(parent, name: _typeshed.Incomplete | None = ..., center: _typeshed.Incomplete | None = ..., magnitude: _typeshed.Incomplete | None = ..., rotation: _typeshed.Incomplete | None = ..., parent_pool_id: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetCubeProcessNames()
+
+
+   .. py:method:: GetTrajectoryProcessNames()
+
+
+   .. py:method:: CreateCylinderProcess(parent, name: _typeshed.Incomplete | None = ..., center: _typeshed.Incomplete | None = ..., size: _typeshed.Incomplete | None = ..., rotation: _typeshed.Incomplete | None = ..., internal_factor: _typeshed.Incomplete | None = ..., initial_angle: _typeshed.Incomplete | None = ..., final_angle: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: CreateParticleTimeSelectionProcess(parent, range_definition: str = ..., initial: int = ..., final: int = ..., unit: str = ...)
+
+
+   .. py:method:: CreateTrajectoryProcess(parent, starting_timestep: _typeshed.Incomplete | None = ..., number_timesteps: _typeshed.Incomplete | None = ..., particle_stride: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetCylinderProcessNames()
+
+
+   .. py:method:: GetParticleTimeSelectionProcessNames()
+
+
+   .. py:method:: CreateEulerianStatistics(parent, name: _typeshed.Incomplete | None = ..., divisions: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetEulerianStatisticsNames()
+
+
+   .. py:method:: CreateFilterProcess(parent, name: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: CreatePropertyProcess(parent, name: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetFilterProcessNames()
+
+
+   .. py:method:: GetPropertyProcessNames()
+
+
+   .. py:method:: CreatePolyhedronProcess(parent: ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem, stl_filename: str, name: Union[str, None] = ..., import_scale: float = ..., convert_yz: bool = ...) -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAPolyhedronProcess, None]
+
+
+   .. py:method:: GetPolyhedronProcessNames()
+
+
+   .. py:method:: CreateSurfaceUserProcess(parent: ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem, stl_filename: str, name: Union[str, None] = ..., import_scale: float = ..., convert_yz: bool = ...) -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RASurfaceUserProcess, None]
+
+
+   .. py:method:: GetSurfaceUserProcessNames() -> list[str]
+
+
+   .. py:method:: CreateParticleToContactProcess(parent, name: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: CreateContactToParticleProcess(parent, name: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetParticleToContactProcessNames()
+
+
+   .. py:method:: GetContactToParticleProcessNames()
+
+
+   .. py:method:: CreateStreamlinesUserProcess(parent: ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem, name: Union[str, None] = ...) -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_streamlines_user_process.RAStreamlinesUserProcess, None]
+
+
+   .. py:method:: GetStreamlinesUserProcessNames() -> list[str]
+
+

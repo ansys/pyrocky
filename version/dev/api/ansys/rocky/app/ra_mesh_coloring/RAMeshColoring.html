@@ -1,0 +1,1665 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>RAMeshColoring &#8212; pyrocky</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles/ansys-sphinx-theme.css?v=a23b20f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/styles\ansys-sphinx-theme.css?v=a23b20f3" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../_static/documentation_options.js?v=59a9b892"></script>
+    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/rocky/app/ra_mesh_coloring/RAMeshColoring';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://rocky.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="The ra_outlet.py module" href="../ra_outlet/index.html" />
+    <link rel="prev" title="The ra_mesh_coloring.py module" href="index.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.4.dev0" />
+  <meta property="og:site_name" content="PyAnsys" />
+  <meta name="physics" content="Fluids" />
+  <link rel="canonical" href="https://rocky.docs.pyansys.com/version/stable/api/ansys/rocky/app/ra_mesh_coloring/RAMeshColoring.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="pyrocky - Home"/>
+    <img src="../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="pyrocky - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../index.html" title="pyrocky home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    
+<!--
+  Announcement Version Loader
+  Dynamically loads the announcement.html content into the announcement_msg div.
+-->
+<div id="announcement_msg" aria-live="polite"></div>
+<script>
+  // Fetch and inject the announcement HTML content
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status} Announcement.html file not found, Please ignore this, if you are in dev/stable documentation`);
+      }
+      return response.text();
+    })
+    .then((text) => {
+      var msgDiv = document.getElementById("announcement_msg");
+      if (msgDiv) {
+        msgDiv.innerHTML = text;
+      }
+    })
+    .catch((error) => {
+      // Log only unexpected fetch errors
+      if (!(error.message && error.message.startsWith("HTTP error: 404"))) {
+        console.error(`Fetch problem: ${error.message} Announcement.html could not be loaded.`);
+      }
+    });
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../index.html" title="pyrocky home">Home</a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../../../index.html">
+    API reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+  
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html"><span class="nf nf-md-package"></span> ansys.rocky.app</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../conveyors/index.html"> <span class="nf nf-md-package"></span> conveyors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../motion/index.html"> <span class="nf nf-md-package"></span> motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api_element_item/index.html"> <span class="nf nf-fa-file"></span> api_element_item</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_addin_list/index.html"> <span class="nf nf-fa-file"></span> ra_addin_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_addin_process/index.html"> <span class="nf nf-fa-file"></span> ra_addin_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_addins/index.html"> <span class="nf nf-fa-file"></span> ra_addins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_additional_features/index.html"> <span class="nf nf-fa-file"></span> ra_additional_features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_airflow/index.html"> <span class="nf nf-fa-file"></span> ra_airflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_api/index.html"> <span class="nf nf-fa-file"></span> ra_api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_base_geometry/index.html"> <span class="nf nf-fa-file"></span> ra_base_geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_base_subject_element/index.html"> <span class="nf nf-fa-file"></span> ra_base_subject_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_base_tagging/index.html"> <span class="nf nf-fa-file"></span> ra_base_tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_calculations/index.html"> <span class="nf nf-fa-file"></span> ra_calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_cfd_coupling/index.html"> <span class="nf nf-fa-file"></span> ra_cfd_coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_cfd_parameters/index.html"> <span class="nf nf-fa-file"></span> ra_cfd_parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_circular_surface/index.html"> <span class="nf nf-fa-file"></span> ra_circular_surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_contact_data/index.html"> <span class="nf nf-fa-file"></span> ra_contact_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_contact_to_particle_process/index.html"> <span class="nf nf-fa-file"></span> ra_contact_to_particle_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_contacts_data_mesh_coloring/index.html"> <span class="nf nf-fa-file"></span> ra_contacts_data_mesh_coloring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_coupled_wall/index.html"> <span class="nf nf-fa-file"></span> ra_coupled_wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_custom_calculators/index.html"> <span class="nf nf-fa-file"></span> ra_custom_calculators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_custom_input/index.html"> <span class="nf nf-fa-file"></span> ra_custom_input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_divisions_tagging/index.html"> <span class="nf nf-fa-file"></span> ra_divisions_tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_domain_settings/index.html"> <span class="nf nf-fa-file"></span> ra_domain_settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_eulerian_statistics/index.html"> <span class="nf nf-fa-file"></span> ra_eulerian_statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_export_toolkit/index.html"> <span class="nf nf-fa-file"></span> ra_export_toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_fluent_coupling/index.html"> <span class="nf nf-fa-file"></span> ra_fluent_coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_fluid_inlet/index.html"> <span class="nf nf-fa-file"></span> ra_fluid_inlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_fluid_material/index.html"> <span class="nf nf-fa-file"></span> ra_fluid_material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_geometry_collection/index.html"> <span class="nf nf-fa-file"></span> ra_geometry_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_grid_process_element/index.html"> <span class="nf nf-fa-file"></span> ra_grid_process_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_inlet/index.html"> <span class="nf nf-fa-file"></span> ra_inlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_inlets_outlets_collection/index.html"> <span class="nf nf-fa-file"></span> ra_inlets_outlets_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_input_variables/index.html"> <span class="nf nf-fa-file"></span> ra_input_variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_joints_data_mesh_coloring/index.html"> <span class="nf nf-fa-file"></span> ra_joints_data_mesh_coloring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_list/index.html"> <span class="nf nf-fa-file"></span> ra_list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_macro_hooks/index.html"> <span class="nf nf-fa-file"></span> ra_macro_hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_materials_collection/index.html"> <span class="nf nf-fa-file"></span> ra_materials_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_materials_interaction/index.html"> <span class="nf nf-fa-file"></span> ra_materials_interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_materials_interaction_collection/index.html"> <span class="nf nf-fa-file"></span> ra_materials_interaction_collection</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html"> <span class="nf nf-fa-file"></span> ra_mesh_coloring</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#"> <span class="nf nf-cod-symbol_class"></span> RAMeshColoring</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_outlet/index.html"> <span class="nf nf-fa-file"></span> ra_outlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_parametric_variables/index.html"> <span class="nf nf-fa-file"></span> ra_parametric_variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle/index.html"> <span class="nf nf-fa-file"></span> ra_particle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_assembly/index.html"> <span class="nf nf-fa-file"></span> ra_particle_assembly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_collection/index.html"> <span class="nf nf-fa-file"></span> ra_particle_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_inlet/index.html"> <span class="nf nf-fa-file"></span> ra_particle_inlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_inlet_properties/index.html"> <span class="nf nf-fa-file"></span> ra_particle_inlet_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_joints_data/index.html"> <span class="nf nf-fa-file"></span> ra_particle_joints_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_time_selection_process/index.html"> <span class="nf nf-fa-file"></span> ra_particle_time_selection_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particle_to_contact_process/index.html"> <span class="nf nf-fa-file"></span> ra_particle_to_contact_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_particles_process/index.html"> <span class="nf nf-fa-file"></span> ra_particles_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_physics/index.html"> <span class="nf nf-fa-file"></span> ra_physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_point_cloud/index.html"> <span class="nf nf-fa-file"></span> ra_point_cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_point_cloud_collection/index.html"> <span class="nf nf-fa-file"></span> ra_point_cloud_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_process_element/index.html"> <span class="nf nf-fa-file"></span> ra_process_element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_project/index.html"> <span class="nf nf-fa-file"></span> ra_project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_rectangular_surface/index.html"> <span class="nf nf-fa-file"></span> ra_rectangular_surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_region_of_interest_cube/index.html"> <span class="nf nf-fa-file"></span> ra_region_of_interest_cube</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_region_of_interest_cylinder/index.html"> <span class="nf nf-fa-file"></span> ra_region_of_interest_cylinder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_regions_of_interest_collection/index.html"> <span class="nf nf-fa-file"></span> ra_regions_of_interest_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_residence_time/index.html"> <span class="nf nf-fa-file"></span> ra_residence_time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_semi_resolved_coupling/index.html"> <span class="nf nf-fa-file"></span> ra_semi_resolved_coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_simulator_run/index.html"> <span class="nf nf-fa-file"></span> ra_simulator_run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_size_distribution/index.html"> <span class="nf nf-fa-file"></span> ra_size_distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_solid_material/index.html"> <span class="nf nf-fa-file"></span> ra_solid_material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_sph_eulerian_solution/index.html"> <span class="nf nf-fa-file"></span> ra_sph_eulerian_solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_sph_settings/index.html"> <span class="nf nf-fa-file"></span> ra_sph_settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_sph_tagging/index.html"> <span class="nf nf-fa-file"></span> ra_sph_tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_streamlines_user_process/index.html"> <span class="nf nf-fa-file"></span> ra_streamlines_user_process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_study/index.html"> <span class="nf nf-fa-file"></span> ra_study</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_surface/index.html"> <span class="nf nf-fa-file"></span> ra_surface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_system_coupling_wall/index.html"> <span class="nf nf-fa-file"></span> ra_system_coupling_wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_tagging/index.html"> <span class="nf nf-fa-file"></span> ra_tagging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_time_filter/index.html"> <span class="nf nf-fa-file"></span> ra_time_filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_time_range_filter/index.html"> <span class="nf nf-fa-file"></span> ra_time_range_filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_time_statistics/index.html"> <span class="nf nf-fa-file"></span> ra_time_statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_user_process_collection/index.html"> <span class="nf nf-fa-file"></span> ra_user_process_collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_volumetric_inlet/index.html"> <span class="nf nf-fa-file"></span> ra_volumetric_inlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_volumetric_inlet_properties/index.html"> <span class="nf nf-fa-file"></span> ra_volumetric_inlet_properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ra_wall/index.html"> <span class="nf nf-fa-file"></span> ra_wall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocky_api_application/index.html"> <span class="nf nf-fa-file"></span> rocky_api_application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocky_api_deprecated_decorator/index.html"> <span class="nf nf-fa-file"></span> rocky_api_deprecated_decorator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocky_api_plugin/index.html"> <span class="nf nf-fa-file"></span> rocky_api_plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rocky_api_utils/index.html"> <span class="nf nf-fa-file"></span> rocky_api_utils</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../core/index.html"><span class="nf nf-md-package"></span> ansys.rocky.core</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../../../../index.html" class="nav-link">API reference</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="../index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">ansys.rocky.app</span></code> library</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a href="index.html" class="nav-link">The <code class="docutils literal notranslate"><span class="pre">ra_mesh_coloring.py</span></code> module</a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><code class="xref py py-class docutils literal notranslate"><span class="pre">RAMeshColoring</span></code></span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="rameshcoloring">
+<h1><code class="xref py py-class docutils literal notranslate"><span class="pre">RAMeshColoring</span></code><a class="headerlink" href="#rameshcoloring" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.rocky.app.ra_mesh_coloring.RAMeshColoring">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.rocky.app.ra_mesh_coloring.</span></span><span class="sig-name descname"><span class="pre">RAMeshColoring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.app.ra_mesh_coloring.RAMeshColoring" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../api_element_item/ApiElementItem.html#ansys.rocky.app.api_element_item.ApiElementItem" title="ansys.rocky.app.api_element_item.ApiElementItem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ansys.rocky.app.api_element_item.ApiElementItem</span></code></a></p>
+<p>Rocky PrePost Scripting wrapper to manipulate Mesh Colorings.</p>
+<p>This wrapper can be accessed via the project’s classes <code class="xref py py-class docutils literal notranslate"><span class="pre">GetMeshColoring</span></code> that allow
+coloring:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">window</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">Create3DWindow</span><span class="p">(</span><span class="s1">&#39;Win 01&#39;</span><span class="p">)</span>
+<span class="n">particles</span> <span class="o">=</span> <span class="n">study</span><span class="o">.</span><span class="n">GetParticles</span><span class="p">()</span>
+<span class="n">particles_coloring</span> <span class="o">=</span> <span class="n">particles</span><span class="o">.</span><span class="n">GetMeshColoring</span><span class="p">(</span><span class="s1">&#39;Win 01&#39;</span><span class="p">)</span>
+<span class="n">particles_coloring</span><span class="o">.</span><span class="n">SetNodeVisible</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Valid coloring modes, i.e. Node, Edges, Faces or Vectors can be accessed via
+<code class="xref py py-class docutils literal notranslate"><span class="pre">GetValidColoringModes</span></code>. The property being shown can be additionally modified:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">particles_coloring</span><span class="o">.</span><span class="n">SetNodeGridFunction</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># for solid colors</span>
+<span class="n">particles_coloring</span><span class="o">.</span><span class="n">SetNodeColor</span><span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="n">particles_coloring</span><span class="o">.</span><span class="n">SetNodeGridFunction</span><span class="p">(</span><span class="s1">&#39;Absolute Rotational Velocity&#39;</span><span class="p">)</span>  <span class="c1"># for properties</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Constructors</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetWrappedClass" title="RAMeshColoring.GetWrappedClass"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetWrappedClass</span></code></a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetClassName" title="RAMeshColoring.GetClassName"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetClassName</span></code></a></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Methods</label><div class="sd-tab-content docutils">
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetVisible" title="RAMeshColoring.SetVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetVisible</span></code></a></p></td>
+<td><p>Set the value of “Visible”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetVisible" title="RAMeshColoring.GetVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetVisible</span></code></a></p></td>
+<td><p>Get the value of “Visible”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetLevelOfDetail" title="RAMeshColoring.SetLevelOfDetail"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetLevelOfDetail</span></code></a></p></td>
+<td><p>Set the value of “Level of Detail”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetValidLevelOfDetailValues" title="RAMeshColoring.GetValidLevelOfDetailValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidLevelOfDetailValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Level of Detail”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetLevelOfDetail" title="RAMeshColoring.GetLevelOfDetail"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetLevelOfDetail</span></code></a></p></td>
+<td><p>Get “Level of Detail” as a string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.SetStride" title="RAMeshColoring.SetStride"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetStride</span></code></a></p></td>
+<td><p>Set the value of “Stride”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetStride" title="RAMeshColoring.GetStride"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetStride</span></code></a></p></td>
+<td><p>Get the value of “Stride”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetAvailableGridFunctions" title="RAMeshColoring.GetAvailableGridFunctions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetAvailableGridFunctions</span></code></a></p></td>
+<td><p>Get a list of all possible values for “GridFunctions”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetAvailableGridFunctionsNames" title="RAMeshColoring.GetAvailableGridFunctionsNames"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetAvailableGridFunctionsNames</span></code></a></p></td>
+<td><p>Get a list of all possible values for “GridFunctions” names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetAvailableVectorGridFunctions" title="RAMeshColoring.GetAvailableVectorGridFunctions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetAvailableVectorGridFunctions</span></code></a></p></td>
+<td><p>Get a list of all possible values for Vector “GridFunctions”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetAvailableVectorGridFunctionsNames" title="RAMeshColoring.GetAvailableVectorGridFunctionsNames"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetAvailableVectorGridFunctionsNames</span></code></a></p></td>
+<td><p>Get a list of all possible values for Vector “GridFunctions” names.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetValidColoringModes" title="RAMeshColoring.GetValidColoringModes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidColoringModes</span></code></a></p></td>
+<td><p>Get a list with all possible coloring modes names.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetTransparencyEnabled" title="RAMeshColoring.SetTransparencyEnabled"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetTransparencyEnabled</span></code></a></p></td>
+<td><p>Set the value of “Transparency”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetTransparencyEnabled" title="RAMeshColoring.GetTransparencyEnabled"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetTransparencyEnabled</span></code></a></p></td>
+<td><p>Get the value of “Transparency”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetTransparency" title="RAMeshColoring.SetTransparency"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetTransparency</span></code></a></p></td>
+<td><p>Set the value of “Transparency”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetTransparency" title="RAMeshColoring.GetTransparency"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetTransparency</span></code></a></p></td>
+<td><p>Get the value of “Transparency”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetNodeVisible" title="RAMeshColoring.SetNodeVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetNodeVisible</span></code></a></p></td>
+<td><p>Set the value of “Node Visible”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetNodeVisible" title="RAMeshColoring.GetNodeVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetNodeVisible</span></code></a></p></td>
+<td><p>Get the value of “Node Visible”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetNodeColor" title="RAMeshColoring.SetNodeColor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetNodeColor</span></code></a></p></td>
+<td><p>Set the values of “Node Color”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetNodeColor" title="RAMeshColoring.GetNodeColor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetNodeColor</span></code></a></p></td>
+<td><p>Get the value of “Node Color”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetNodeGridFunction" title="RAMeshColoring.SetNodeGridFunction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetNodeGridFunction</span></code></a></p></td>
+<td><p>Set the values of “Node GridFunction”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetNodeGridFunction" title="RAMeshColoring.GetNodeGridFunction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetNodeGridFunction</span></code></a></p></td>
+<td><p>Get the value of “Node GridFunction”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetNodePointSize" title="RAMeshColoring.SetNodePointSize"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetNodePointSize</span></code></a></p></td>
+<td><p>Set the value of “Node Point Size”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetNodePointSize" title="RAMeshColoring.GetNodePointSize"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetNodePointSize</span></code></a></p></td>
+<td><p>Get the value of “Node Point Size”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetEdgeVisible" title="RAMeshColoring.SetEdgeVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetEdgeVisible</span></code></a></p></td>
+<td><p>Set the value of “Edge Visible”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetEdgeVisible" title="RAMeshColoring.GetEdgeVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetEdgeVisible</span></code></a></p></td>
+<td><p>Get the value of “Edge Visible”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetEdgeColor" title="RAMeshColoring.SetEdgeColor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetEdgeColor</span></code></a></p></td>
+<td><p>Set the values of “Edge Color”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetEdgeColor" title="RAMeshColoring.GetEdgeColor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetEdgeColor</span></code></a></p></td>
+<td><p>Get the value of “Edge Color”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetEdgeGridFunction" title="RAMeshColoring.SetEdgeGridFunction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetEdgeGridFunction</span></code></a></p></td>
+<td><p>Set the values of “Edge GridFunction”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetEdgeGridFunction" title="RAMeshColoring.GetEdgeGridFunction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetEdgeGridFunction</span></code></a></p></td>
+<td><p>Get the value of “Edge GridFunction”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetEdgeLineWidth" title="RAMeshColoring.SetEdgeLineWidth"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetEdgeLineWidth</span></code></a></p></td>
+<td><p>Set the value of “Edge Line Width”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetEdgeLineWidth" title="RAMeshColoring.GetEdgeLineWidth"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetEdgeLineWidth</span></code></a></p></td>
+<td><p>Get the value of “Edge Line Width”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetFaceVisible" title="RAMeshColoring.SetFaceVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetFaceVisible</span></code></a></p></td>
+<td><p>Set the value of “Face Visible”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetFaceVisible" title="RAMeshColoring.GetFaceVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFaceVisible</span></code></a></p></td>
+<td><p>Get the value of “Face Visible”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetFaceColor" title="RAMeshColoring.SetFaceColor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetFaceColor</span></code></a></p></td>
+<td><p>Set the values of “Face Color”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetFaceColor" title="RAMeshColoring.GetFaceColor"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFaceColor</span></code></a></p></td>
+<td><p>Get the value of “Face Color”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetFaceGridFunction" title="RAMeshColoring.SetFaceGridFunction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetFaceGridFunction</span></code></a></p></td>
+<td><p>Set the values of “Face GridFunction”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetFaceGridFunction" title="RAMeshColoring.GetFaceGridFunction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFaceGridFunction</span></code></a></p></td>
+<td><p>Get the value of “Face GridFunction”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetValidFaceScopes" title="RAMeshColoring.GetValidFaceScopes"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidFaceScopes</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Face Scope”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.SetFaceScope" title="RAMeshColoring.SetFaceScope"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetFaceScope</span></code></a></p></td>
+<td><p>Set the value of “Face Scope”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetFaceScope" title="RAMeshColoring.GetFaceScope"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFaceScope</span></code></a></p></td>
+<td><p>Get “Face Scope” as a string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetValidFaceStructuredPartitionsValues" title="RAMeshColoring.GetValidFaceStructuredPartitionsValues"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidFaceStructuredPartitionsValues</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Face Structured Partitions”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.SetFaceStructuredPartitions" title="RAMeshColoring.SetFaceStructuredPartitions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetFaceStructuredPartitions</span></code></a></p></td>
+<td><p>Set the value of “Face Structured Partitions”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.GetFaceStructuredPartitions" title="RAMeshColoring.GetFaceStructuredPartitions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFaceStructuredPartitions</span></code></a></p></td>
+<td><p>Get “Face Structured Partitions” as a string.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetValidFaceCustomStructuredPartitions" title="RAMeshColoring.GetValidFaceCustomStructuredPartitions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetValidFaceCustomStructuredPartitions</span></code></a></p></td>
+<td><p>Get a list of all possible values for “Face Custom Structured Partitions”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.SetFaceCustomStructuredPartitions" title="RAMeshColoring.SetFaceCustomStructuredPartitions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetFaceCustomStructuredPartitions</span></code></a></p></td>
+<td><p>Set the value of “Face Custom Structured Partitions”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetFaceCustomStructuredPartitions" title="RAMeshColoring.GetFaceCustomStructuredPartitions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFaceCustomStructuredPartitions</span></code></a></p></td>
+<td><p>Get the value of “Face Custom Structured Partitions”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.SetFaceShowOnNode" title="RAMeshColoring.SetFaceShowOnNode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetFaceShowOnNode</span></code></a></p></td>
+<td><p>Set the value of “Show On Node”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetFaceShowOnNode" title="RAMeshColoring.GetFaceShowOnNode"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetFaceShowOnNode</span></code></a></p></td>
+<td><p>Get the value of “Show On Node”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.SetVectorVisible" title="RAMeshColoring.SetVectorVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetVectorVisible</span></code></a></p></td>
+<td><p>Set the value of “Vector Visible”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetVectorVisible" title="RAMeshColoring.GetVectorVisible"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetVectorVisible</span></code></a></p></td>
+<td><p>Get the value of “Vector Visible”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.SetVectorGridFunction" title="RAMeshColoring.SetVectorGridFunction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetVectorGridFunction</span></code></a></p></td>
+<td><p>Set the values of “Vector GridFunction”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetVectorGridFunction" title="RAMeshColoring.GetVectorGridFunction"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetVectorGridFunction</span></code></a></p></td>
+<td><p>Get the value of “Vector GridFunction”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.SetVectorScale" title="RAMeshColoring.SetVectorScale"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetVectorScale</span></code></a></p></td>
+<td><p>Set the value of “Vector Scale”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetVectorScale" title="RAMeshColoring.GetVectorScale"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetVectorScale</span></code></a></p></td>
+<td><p>Get the value of “Vector Scale”.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#RAMeshColoring.SetNormalizedVectorsEnabled" title="RAMeshColoring.SetNormalizedVectorsEnabled"><code class="xref py py-attr docutils literal notranslate"><span class="pre">SetNormalizedVectorsEnabled</span></code></a></p></td>
+<td><p>Set the value of “Normalized Vectors”.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#RAMeshColoring.GetNormalizedVectorsEnabled" title="RAMeshColoring.GetNormalizedVectorsEnabled"><code class="xref py py-attr docutils literal notranslate"><span class="pre">GetNormalizedVectorsEnabled</span></code></a></p></td>
+<td><p>Get the value of “Normalized Vector”.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="import-detail">
+<h2>Import detail<a class="headerlink" href="#import-detail" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ansys.rocky.app.ra_mesh_coloring</span><span class="w"> </span><span class="kn">import</span> <span class="n">RAMeshColoring</span>
+</pre></div>
+</div>
+</section>
+<section id="method-detail">
+<h2>Method detail<a class="headerlink" href="#method-detail" title="Link to this heading">#</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetWrappedClass">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetWrappedClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.14)"><span class="pre">type</span></a><span class="p"><span class="pre">[</span></span><span class="pre">sci20.plugins.process.coloring_process.MeshAssemblyColoringProcessSubject</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetWrappedClass" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetClassName">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetClassName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetClassName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetVisible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetVisible" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Visible”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetVisible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetVisible" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Visible”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetLevelOfDetail">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetLevelOfDetail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetLevelOfDetail" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Level of Detail”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. Must be one of [‘Rich’, ‘Automatic’, ‘Simple’].</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Level of Detail” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetValidLevelOfDetailValues">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetValidLevelOfDetailValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetValidLevelOfDetailValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Level of Detail”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘Rich’, ‘Automatic’, ‘Simple’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetLevelOfDetail">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetLevelOfDetail</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetLevelOfDetail" title="Link to this definition">#</a></dt>
+<dd><p>Get “Level of Detail” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘Rich’, ‘Automatic’, ‘Simple’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetStride">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetStride</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetStride" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Stride”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value must be an int type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetStride">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetStride</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetStride" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Stride”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetAvailableGridFunctions">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetAvailableGridFunctions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.14)"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetAvailableGridFunctions" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “GridFunctions”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned set contains the SemanticAssociation of the available Grid Functions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetAvailableGridFunctionsNames">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetAvailableGridFunctionsNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.14)"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetAvailableGridFunctionsNames" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “GridFunctions” names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned set contains the names of the available Grid Functions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetAvailableVectorGridFunctions">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetAvailableVectorGridFunctions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.14)"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetAvailableVectorGridFunctions" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for Vector “GridFunctions”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned set contains the SemanticAssociation of the available Vector Grid
+Functions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetAvailableVectorGridFunctionsNames">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetAvailableVectorGridFunctionsNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#set" title="(in Python v3.14)"><span class="pre">set</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetAvailableVectorGridFunctionsNames" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for Vector “GridFunctions” names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned set contains the names of the available Vector Grid Functions.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetValidColoringModes">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetValidColoringModes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetValidColoringModes" title="Link to this definition">#</a></dt>
+<dd><p>Get a list with all possible coloring modes names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned values will be a combination of [‘Node’, ‘Edge’, ‘Face’, ‘Vector’]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetTransparencyEnabled">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetTransparencyEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetTransparencyEnabled" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Transparency”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetTransparencyEnabled">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetTransparencyEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetTransparencyEnabled" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Transparency”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetTransparency">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetTransparency</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetTransparency" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Transparency”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value must be a float type between 0 and 100.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetTransparency">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetTransparency</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetTransparency" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Transparency”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetNodeVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetNodeVisible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetNodeVisible" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Node Visible”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetNodeVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetNodeVisible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetNodeVisible" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Node Visible”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetNodeColor">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetNodeColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ColorType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetNodeColor" title="Link to this definition">#</a></dt>
+<dd><p>Set the values of “Node Color”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – The values to set. The values must be a tuple of floats. Must have exactly 3 elements.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>values</cite> doesn’t have exactly 3 elements or <cite>values</cite> is not a tuple.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetNodeColor">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetNodeColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ColorType</span></span></span><a class="headerlink" href="#RAMeshColoring.GetNodeColor" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Node Color”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetNodeGridFunction">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetNodeGridFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetNodeGridFunction" title="Link to this definition">#</a></dt>
+<dd><p>Set the values of “Node GridFunction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+of its name or <cite>None</cite> for solid colors.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid type or is not available for the current coloring.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetNodeGridFunction">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetNodeGridFunction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetNodeGridFunction" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Node GridFunction”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetNodePointSize">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetNodePointSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetNodePointSize" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Node Point Size”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value must be a float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetNodePointSize">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetNodePointSize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetNodePointSize" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Node Point Size”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetEdgeVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetEdgeVisible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetEdgeVisible" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Edge Visible”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetEdgeVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetEdgeVisible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetEdgeVisible" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Edge Visible”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetEdgeColor">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetEdgeColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ColorType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetEdgeColor" title="Link to this definition">#</a></dt>
+<dd><p>Set the values of “Edge Color”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – The values to set. The values must be a tuple of floats. Must have exactly 3 elements.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>values</cite> doesn’t have exactly 3 elements or <cite>values</cite> is not a tuple.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetEdgeColor">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetEdgeColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ColorType</span></span></span><a class="headerlink" href="#RAMeshColoring.GetEdgeColor" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Edge Color”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetEdgeGridFunction">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetEdgeGridFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetEdgeGridFunction" title="Link to this definition">#</a></dt>
+<dd><p>Set the values of “Edge GridFunction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+of its name or <cite>None</cite> for solid colors.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid type or is not available for the current coloring.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetEdgeGridFunction">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetEdgeGridFunction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetEdgeGridFunction" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Edge GridFunction”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetEdgeLineWidth">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetEdgeLineWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetEdgeLineWidth" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Edge Line Width”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value must be a float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetEdgeLineWidth">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetEdgeLineWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetEdgeLineWidth" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Edge Line Width”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetFaceVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetFaceVisible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetFaceVisible" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Face Visible”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetFaceVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetFaceVisible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetFaceVisible" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Face Visible”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetFaceColor">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetFaceColor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ColorType</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetFaceColor" title="Link to this definition">#</a></dt>
+<dd><p>Set the values of “Face Color”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – The values to set. The values must be a tuple of floats. Must have exactly 3 elements.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>values</cite> doesn’t have exactly 3 elements or <cite>values</cite> is not a tuple.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetFaceColor">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetFaceColor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ColorType</span></span></span><a class="headerlink" href="#RAMeshColoring.GetFaceColor" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Face Color”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetFaceGridFunction">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetFaceGridFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetFaceGridFunction" title="Link to this definition">#</a></dt>
+<dd><p>Set the values of “Face GridFunction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+of its name or <cite>None</cite> for solid colors.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid type or is not available for the current coloring.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetFaceGridFunction">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetFaceGridFunction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetFaceGridFunction" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Face GridFunction”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetValidFaceScopes">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetValidFaceScopes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetValidFaceScopes" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Face Scope”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list with the valid scope options.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetFaceScope">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetFaceScope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetFaceScope" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Face Scope”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Face Scope” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetFaceScope">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetFaceScope</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetFaceScope" title="Link to this definition">#</a></dt>
+<dd><p>Get “Face Scope” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The return will be one of the “GetValidFaceScopes” values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetValidFaceStructuredPartitionsValues">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetValidFaceStructuredPartitionsValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetValidFaceStructuredPartitionsValues" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Face Structured Partitions”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘All’, ‘Custom…’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetFaceStructuredPartitions">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetFaceStructuredPartitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetFaceStructuredPartitions" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Face Structured Partitions”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid “Face Structured Partitions” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetFaceStructuredPartitions">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetFaceStructuredPartitions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetFaceStructuredPartitions" title="Link to this definition">#</a></dt>
+<dd><p>Get “Face Structured Partitions” as a string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be one of [‘All’, ‘Custom…’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetValidFaceCustomStructuredPartitions">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetValidFaceCustomStructuredPartitions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetValidFaceCustomStructuredPartitions" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of all possible values for “Face Custom Structured Partitions”.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned list is [‘Top’, ‘Bottom’, ‘North’, ‘South’, ‘East’, ‘West’].</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetFaceCustomStructuredPartitions">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetFaceCustomStructuredPartitions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetFaceCustomStructuredPartitions" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Face Custom Structured Partitions”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> – A list containing all the custom partitions.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If any of <cite>values</cite> is not a valid “Face Custom Structured Partitions” option.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetFaceCustomStructuredPartitions">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetFaceCustomStructuredPartitions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#RAMeshColoring.GetFaceCustomStructuredPartitions" title="Link to this definition">#</a></dt>
+<dd><blockquote>
+<div><p>Get the value of “Face Custom Structured Partitions”.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The returned value will be a combination of [‘Top’, ‘Bottom’, ‘North’, ‘South’, ‘East’,
+‘West’].</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetFaceShowOnNode">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetFaceShowOnNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetFaceShowOnNode" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Show On Node”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetFaceShowOnNode">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetFaceShowOnNode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetFaceShowOnNode" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Show On Node”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetVectorVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetVectorVisible</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetVectorVisible" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Vector Visible”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetVectorVisible">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetVectorVisible</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetVectorVisible" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Vector Visible”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetVectorGridFunction">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetVectorGridFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetVectorGridFunction" title="Link to this definition">#</a></dt>
+<dd><p>Set the values of “Vector GridFunction”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+of its name or <cite>None</cite> for solid colors.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../ra_api/RockyApiError.html#ansys.rocky.app.ra_api.RockyApiError" title="ansys.rocky.app.ra_api.RockyApiError"><strong>RockyApiError</strong></a> – If <cite>value</cite> is not a valid type or is not available for the current coloring.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetVectorGridFunction">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetVectorGridFunction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ben10.element_function.semantic_association.SemanticAssociation</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetVectorGridFunction" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Vector GridFunction”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetVectorScale">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetVectorScale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetVectorScale" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Vector Scale”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set. This value must be a float type.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetVectorScale">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetVectorScale</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetVectorScale" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Vector Scale”.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.SetNormalizedVectorsEnabled">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">SetNormalizedVectorsEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#RAMeshColoring.SetNormalizedVectorsEnabled" title="Link to this definition">#</a></dt>
+<dd><p>Set the value of “Normalized Vectors”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> – The value to set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="RAMeshColoring.GetNormalizedVectorsEnabled">
+<span class="sig-prename descclassname"><span class="pre">RAMeshColoring.</span></span><span class="sig-name descname"><span class="pre">GetNormalizedVectorsEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#RAMeshColoring.GetNormalizedVectorsEnabled" title="Link to this definition">#</a></dt>
+<dd><p>Get the value of “Normalized Vector”.</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.app.ra_mesh_coloring.RAMeshColoring"><code class="docutils literal notranslate"><span class="pre">ansys.rocky.app.ra_mesh_coloring.RAMeshColoring</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-detail">Import detail</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-detail">Method detail</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetWrappedClass"><code class="docutils literal notranslate"><span class="pre">GetWrappedClass()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetClassName"><code class="docutils literal notranslate"><span class="pre">GetClassName()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetVisible"><code class="docutils literal notranslate"><span class="pre">SetVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetVisible"><code class="docutils literal notranslate"><span class="pre">GetVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetLevelOfDetail"><code class="docutils literal notranslate"><span class="pre">SetLevelOfDetail()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetValidLevelOfDetailValues"><code class="docutils literal notranslate"><span class="pre">GetValidLevelOfDetailValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetLevelOfDetail"><code class="docutils literal notranslate"><span class="pre">GetLevelOfDetail()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetStride"><code class="docutils literal notranslate"><span class="pre">SetStride()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetStride"><code class="docutils literal notranslate"><span class="pre">GetStride()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetAvailableGridFunctions"><code class="docutils literal notranslate"><span class="pre">GetAvailableGridFunctions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetAvailableGridFunctionsNames"><code class="docutils literal notranslate"><span class="pre">GetAvailableGridFunctionsNames()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetAvailableVectorGridFunctions"><code class="docutils literal notranslate"><span class="pre">GetAvailableVectorGridFunctions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetAvailableVectorGridFunctionsNames"><code class="docutils literal notranslate"><span class="pre">GetAvailableVectorGridFunctionsNames()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetValidColoringModes"><code class="docutils literal notranslate"><span class="pre">GetValidColoringModes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetTransparencyEnabled"><code class="docutils literal notranslate"><span class="pre">SetTransparencyEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetTransparencyEnabled"><code class="docutils literal notranslate"><span class="pre">GetTransparencyEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetTransparency"><code class="docutils literal notranslate"><span class="pre">SetTransparency()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetTransparency"><code class="docutils literal notranslate"><span class="pre">GetTransparency()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetNodeVisible"><code class="docutils literal notranslate"><span class="pre">SetNodeVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetNodeVisible"><code class="docutils literal notranslate"><span class="pre">GetNodeVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetNodeColor"><code class="docutils literal notranslate"><span class="pre">SetNodeColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetNodeColor"><code class="docutils literal notranslate"><span class="pre">GetNodeColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetNodeGridFunction"><code class="docutils literal notranslate"><span class="pre">SetNodeGridFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetNodeGridFunction"><code class="docutils literal notranslate"><span class="pre">GetNodeGridFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetNodePointSize"><code class="docutils literal notranslate"><span class="pre">SetNodePointSize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetNodePointSize"><code class="docutils literal notranslate"><span class="pre">GetNodePointSize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetEdgeVisible"><code class="docutils literal notranslate"><span class="pre">SetEdgeVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetEdgeVisible"><code class="docutils literal notranslate"><span class="pre">GetEdgeVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetEdgeColor"><code class="docutils literal notranslate"><span class="pre">SetEdgeColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetEdgeColor"><code class="docutils literal notranslate"><span class="pre">GetEdgeColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetEdgeGridFunction"><code class="docutils literal notranslate"><span class="pre">SetEdgeGridFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetEdgeGridFunction"><code class="docutils literal notranslate"><span class="pre">GetEdgeGridFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetEdgeLineWidth"><code class="docutils literal notranslate"><span class="pre">SetEdgeLineWidth()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetEdgeLineWidth"><code class="docutils literal notranslate"><span class="pre">GetEdgeLineWidth()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetFaceVisible"><code class="docutils literal notranslate"><span class="pre">SetFaceVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetFaceVisible"><code class="docutils literal notranslate"><span class="pre">GetFaceVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetFaceColor"><code class="docutils literal notranslate"><span class="pre">SetFaceColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetFaceColor"><code class="docutils literal notranslate"><span class="pre">GetFaceColor()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetFaceGridFunction"><code class="docutils literal notranslate"><span class="pre">SetFaceGridFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetFaceGridFunction"><code class="docutils literal notranslate"><span class="pre">GetFaceGridFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetValidFaceScopes"><code class="docutils literal notranslate"><span class="pre">GetValidFaceScopes()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetFaceScope"><code class="docutils literal notranslate"><span class="pre">SetFaceScope()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetFaceScope"><code class="docutils literal notranslate"><span class="pre">GetFaceScope()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetValidFaceStructuredPartitionsValues"><code class="docutils literal notranslate"><span class="pre">GetValidFaceStructuredPartitionsValues()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetFaceStructuredPartitions"><code class="docutils literal notranslate"><span class="pre">SetFaceStructuredPartitions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetFaceStructuredPartitions"><code class="docutils literal notranslate"><span class="pre">GetFaceStructuredPartitions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetValidFaceCustomStructuredPartitions"><code class="docutils literal notranslate"><span class="pre">GetValidFaceCustomStructuredPartitions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetFaceCustomStructuredPartitions"><code class="docutils literal notranslate"><span class="pre">SetFaceCustomStructuredPartitions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetFaceCustomStructuredPartitions"><code class="docutils literal notranslate"><span class="pre">GetFaceCustomStructuredPartitions()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetFaceShowOnNode"><code class="docutils literal notranslate"><span class="pre">SetFaceShowOnNode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetFaceShowOnNode"><code class="docutils literal notranslate"><span class="pre">GetFaceShowOnNode()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetVectorVisible"><code class="docutils literal notranslate"><span class="pre">SetVectorVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetVectorVisible"><code class="docutils literal notranslate"><span class="pre">GetVectorVisible()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetVectorGridFunction"><code class="docutils literal notranslate"><span class="pre">SetVectorGridFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetVectorGridFunction"><code class="docutils literal notranslate"><span class="pre">GetVectorGridFunction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetVectorScale"><code class="docutils literal notranslate"><span class="pre">SetVectorScale()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetVectorScale"><code class="docutils literal notranslate"><span class="pre">GetVectorScale()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.SetNormalizedVectorsEnabled"><code class="docutils literal notranslate"><span class="pre">SetNormalizedVectorsEnabled()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#RAMeshColoring.GetNormalizedVectorsEnabled"><code class="docutils literal notranslate"><span class="pre">GetNormalizedVectorsEnabled()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/api/ansys/rocky/app/ra_mesh_coloring/RAMeshColoring.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../../../../../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../../../../../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2026 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<!--
+  Theme Version Footer
+  Displays the Sphinx theme version and the last updated date.
+  Accessibility and semantic improvements included.
+-->
+<footer class="theme-version" aria-label="Theme version and last update">
+  <span>
+    
+      Built with the
+      <a href="https://sphinxdocs.ansys.com/version/stable/index.html" target="_blank" rel="noopener noreferrer">
+        Ansys Sphinx Theme
+      </a>
+      1.7.0.
+    
+  </span>
+  <br />
+  <span>Last updated on <time id="ast_build_date"></time></span>
+</footer>
+<script>
+  // Set the last updated date in a readable format
+  (function() {
+    var options = { day: "numeric", month: "long", year: "numeric" };
+    var ast_lastModifiedDate = new Date(document.lastModified);
+    var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+    var dateElem = document.getElementById("ast_build_date");
+    if (dateElem) {
+      dateElem.textContent = ast_build_date;
+    }
+  })();
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+ansys.rocky.core.examples
+=========================
+
+.. py:module:: ansys.rocky.core.examples
+
+.. autoapi-nested-parse::
+
+   Helper module to download project code examples.
+
+   ..
+       !! processed by numpydoc !!
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core.examples.logger
+   ansys.rocky.core.examples.ANSYS_EXAMPLE_DATA_REPO
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   ansys.rocky.core.examples.download_file
+
+
+Module Contents
+---------------
+
+.. py:data:: logger
+
+.. py:data:: ANSYS_EXAMPLE_DATA_REPO
+   :value: 'https://github.com/ansys/example-data/raw/master'
+
+
+.. py:function:: download_file(save_path: str, file_name: str, directory: str | None = None) -> str
+
+   
+   Download an example file from the Ansys example data repository.
+
+
+   :Parameters:
+
+       **save_path** : :class:`python:str`
+           Path to download the file to.
+
+       **file_name** : :class:`python:str`
+           Name of the file.
+
+       **directory** : :class:`python:str`, :obj:`optional`
+           Name of the directory in the Ansys example data repository where the file
+           is located. If a directory is not specified, this method looks for the file
+           in the root directory of the repository.
+
+
+
+   :Returns:
+
+       :class:`python:str`
+           Path of the downloaded file.
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Examples
+
+   >>> from ansys.rocky.core.examples import download_file
+   >>> file_path = download_file('<path_to_save>', 'bracket.iges', 'geometry')
+   '<path_to_save>/bracket.iges'
+
+   ..
+       !! processed by numpydoc !!
+

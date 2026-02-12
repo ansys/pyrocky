@@ -1,0 +1,75 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_input_variables
+==================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_input_variables
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_input_variables.RAInputVariables
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_input_variables.RAParametricVar
+
+
+Module Contents
+---------------
+
+.. py:class:: RAInputVariables(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: CreateVariable(name: str, value: float = ...) -> RAParametricVar
+
+
+   .. py:method:: RemoveVariable(variable: Union[RAParametricVar, str]) -> None
+
+
+   .. py:method:: GetVariableByName(name: str) -> RAParametricVar
+
+
+   .. py:method:: __len__()
+
+
+   .. py:method:: __getitem__(index)
+
+
+   .. py:method:: __iter__()
+
+
+.. py:class:: RAParametricVar(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: GetValue() -> float
+
+
+   .. py:method:: SetValue(value: float) -> None
+
+

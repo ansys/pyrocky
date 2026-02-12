@@ -1,0 +1,1359 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling &#8212; pyrocky</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/styles/ansys-sphinx-theme.css?v=9e79609d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/styles\ansys-sphinx-theme.css?v=9e79609d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../../../../../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../../../../../_static/documentation_options.js?v=d198571b"></script>
+    <script src="../../../../../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_fluent_coupling/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://rocky.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../../../../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.3.3" />
+  <meta property="og:site_name" content="PyAnsys" />
+  <meta name="physics" content="Fluids" />
+  <link rel="canonical" href="https://rocky.docs.pyansys.com/version/stable/api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_fluent_coupling/index.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="pyrocky - Home"/>
+    <img src="../../../../../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="pyrocky - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling">
+<span id="ansys-rocky-core-api-stubs-rocky30-plugins-api-ra-fluent-coupling"></span><h1>ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling<a class="headerlink" href="#module-ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling" title="Link to this heading">#</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling" title="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling" title="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.</span></span><span class="sig-name descname"><span class="pre">RAFluentOneWayCoupling</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../ra_cfd_coupling/index.html#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling" title="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetWrappedClass">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetWrappedClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetWrappedClass" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetClassName">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetClassName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetClassName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetupStoreFiles">
+<span class="sig-name descname"><span class="pre">SetupStoreFiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetupStoreFiles" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetAvailableCoupledBoundaryNames">
+<span class="sig-name descname"><span class="pre">GetAvailableCoupledBoundaryNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">collections.abc.Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetAvailableCoupledBoundaryNames" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.CreateCoupledBoundaries">
+<span class="sig-name descname"><span class="pre">CreateCoupledBoundaries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coupled_boundary_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.CreateCoupledBoundaries" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetIsOneWayPeriodic">
+<span class="sig-name descname"><span class="pre">GetIsOneWayPeriodic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetIsOneWayPeriodic" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetIsOneWayPeriodic">
+<span class="sig-name descname"><span class="pre">SetIsOneWayPeriodic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetIsOneWayPeriodic" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetOverwriteCfdUpdateDistance">
+<span class="sig-name descname"><span class="pre">GetOverwriteCfdUpdateDistance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetOverwriteCfdUpdateDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetOverwriteCfdUpdateDistance">
+<span class="sig-name descname"><span class="pre">SetOverwriteCfdUpdateDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetOverwriteCfdUpdateDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetStartTime">
+<span class="sig-name descname"><span class="pre">GetStartTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetStartTime" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetStartTime">
+<span class="sig-name descname"><span class="pre">SetStartTime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetStartTime" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetUseTurbulentDispersion">
+<span class="sig-name descname"><span class="pre">GetUseTurbulentDispersion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetUseTurbulentDispersion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetUseTurbulentDispersion">
+<span class="sig-name descname"><span class="pre">SetUseTurbulentDispersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetUseTurbulentDispersion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetUserCfdUpdateDistance">
+<span class="sig-name descname"><span class="pre">GetUserCfdUpdateDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetUserCfdUpdateDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetUserCfdUpdateDistance">
+<span class="sig-name descname"><span class="pre">SetUserCfdUpdateDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetUserCfdUpdateDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.</span></span><span class="sig-name descname"><span class="pre">RAFluentTwoWayCoupling</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../ra_cfd_coupling/index.html#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling" title="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetWrappedClass">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetWrappedClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetWrappedClass" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetClassName">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetClassName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetClassName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetPartIdIfValid">
+<span class="sig-name descname"><span class="pre">SetPartIdIfValid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetPartIdIfValid" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentReleases">
+<span class="sig-name descname"><span class="pre">GetFluentReleases</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentReleases" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_release">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fluent_release</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_release" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_phases">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fluent_phases</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_phases" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_rocky_phase">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fluent_rocky_phase</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_rocky_phase" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_solver_processes">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fluent_solver_processes</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_solver_processes" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.use_dat_initialization">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">use_dat_initialization</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.use_dat_initialization" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_output_frequency_multiplier">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fluent_output_frequency_multiplier</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_output_frequency_multiplier" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.coupling_files_kept">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">coupling_files_kept</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.coupling_files_kept" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_time_step">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fluent_time_step</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_time_step" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.additional_input_variables">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">additional_input_variables</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.additional_input_variables" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.additional_output_variables">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">additional_output_variables</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.additional_output_variables" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.disabled_input_variables">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disabled_input_variables</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.disabled_input_variables" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.disabled_output_variables">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">disabled_output_variables</span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.disabled_output_variables" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetupDatFilename">
+<span class="sig-name descname"><span class="pre">SetupDatFilename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dat_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetupDatFilename" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.dat_filename">
+<span class="sig-name descname"><span class="pre">dat_filename</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_typeshed.Incomplete</span></em><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.dat_filename" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.cas_filename">
+<span class="sig-name descname"><span class="pre">cas_filename</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">_typeshed.Incomplete</span></em><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.cas_filename" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.StartFluent">
+<span class="sig-name descname"><span class="pre">StartFluent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.StartFluent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsFluentRunning">
+<span class="sig-name descname"><span class="pre">IsFluentRunning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsFluentRunning" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.CloseFluent">
+<span class="sig-name descname"><span class="pre">CloseFluent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.CloseFluent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.UpdateFluentInfo">
+<span class="sig-name descname"><span class="pre">UpdateFluentInfo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.UpdateFluentInfo" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetupStoreFiles">
+<span class="sig-name descname"><span class="pre">SetupStoreFiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cas_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_typeshed.Incomplete</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetupStoreFiles" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentVersion">
+<span class="sig-name descname"><span class="pre">GetFluentVersion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentVersion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentVersion">
+<span class="sig-name descname"><span class="pre">SetFluentVersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fluent_version</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentVersion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumVolumeFractionTarget">
+<span class="sig-name descname"><span class="pre">GetMaximumVolumeFractionTarget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumVolumeFractionTarget" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumVolumeFractionTarget">
+<span class="sig-name descname"><span class="pre">SetMaximumVolumeFractionTarget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumVolumeFractionTarget" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAvailableCoupledBoundaryNames">
+<span class="sig-name descname"><span class="pre">GetAvailableCoupledBoundaryNames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/collections.abc.html#collections.abc.Iterable" title="(in Python v3.14)"><span class="pre">collections.abc.Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAvailableCoupledBoundaryNames" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.CreateCoupledBoundaries">
+<span class="sig-name descname"><span class="pre">CreateCoupledBoundaries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coupled_boundary_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.CreateCoupledBoundaries" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAbsoluteValue">
+<span class="sig-name descname"><span class="pre">GetAbsoluteValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAbsoluteValue" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAbsoluteValue">
+<span class="sig-name descname"><span class="pre">SetAbsoluteValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAbsoluteValue" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumIterations">
+<span class="sig-name descname"><span class="pre">GetMaximumIterations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumIterations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumIterations">
+<span class="sig-name descname"><span class="pre">SetMaximumIterations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumIterations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMappingMethod">
+<span class="sig-name descname"><span class="pre">GetMappingMethod</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMappingMethod" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMappingMethod">
+<span class="sig-name descname"><span class="pre">SetMappingMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMappingMethod" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidMappingMethodValues">
+<span class="sig-name descname"><span class="pre">GetValidMappingMethodValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidMappingMethodValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAveragingMethod">
+<span class="sig-name descname"><span class="pre">GetAveragingMethod</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAveragingMethod" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAveragingMethod">
+<span class="sig-name descname"><span class="pre">SetAveragingMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAveragingMethod" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidAveragingMethodValues">
+<span class="sig-name descname"><span class="pre">GetValidAveragingMethodValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidAveragingMethodValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMinimumIterations">
+<span class="sig-name descname"><span class="pre">GetMinimumIterations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMinimumIterations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMinimumIterations">
+<span class="sig-name descname"><span class="pre">SetMinimumIterations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMinimumIterations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAveragingRadiusType">
+<span class="sig-name descname"><span class="pre">GetAveragingRadiusType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAveragingRadiusType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAveragingRadiusType">
+<span class="sig-name descname"><span class="pre">SetAveragingRadiusType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAveragingRadiusType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidAveragingRadiusTypeValues">
+<span class="sig-name descname"><span class="pre">GetValidAveragingRadiusTypeValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidAveragingRadiusTypeValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetSolidsMaximumVolumeFractionTarget">
+<span class="sig-name descname"><span class="pre">GetSolidsMaximumVolumeFractionTarget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetSolidsMaximumVolumeFractionTarget" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetSolidsMaximumVolumeFractionTarget">
+<span class="sig-name descname"><span class="pre">SetSolidsMaximumVolumeFractionTarget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetSolidsMaximumVolumeFractionTarget" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetVolumeFractionTarget">
+<span class="sig-name descname"><span class="pre">GetVolumeFractionTarget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetVolumeFractionTarget" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetVolumeFractionTarget">
+<span class="sig-name descname"><span class="pre">SetVolumeFractionTarget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetVolumeFractionTarget" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetCouplingFilesKept">
+<span class="sig-name descname"><span class="pre">GetCouplingFilesKept</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetCouplingFilesKept" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetCouplingFilesKept">
+<span class="sig-name descname"><span class="pre">SetCouplingFilesKept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetCouplingFilesKept" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetDecompositionFactor">
+<span class="sig-name descname"><span class="pre">GetDecompositionFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetDecompositionFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetDecompositionFactor">
+<span class="sig-name descname"><span class="pre">SetDecompositionFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetDecompositionFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetDiffusionCoefficient">
+<span class="sig-name descname"><span class="pre">GetDiffusionCoefficient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetDiffusionCoefficient" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetDiffusionCoefficient">
+<span class="sig-name descname"><span class="pre">SetDiffusionCoefficient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetDiffusionCoefficient" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentAdditionalArgs">
+<span class="sig-name descname"><span class="pre">GetFluentAdditionalArgs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentAdditionalArgs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentAdditionalArgs">
+<span class="sig-name descname"><span class="pre">SetFluentAdditionalArgs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentAdditionalArgs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentExecutionMode">
+<span class="sig-name descname"><span class="pre">GetFluentExecutionMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentExecutionMode" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentExecutionMode">
+<span class="sig-name descname"><span class="pre">SetFluentExecutionMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentExecutionMode" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidFluentExecutionModeValues">
+<span class="sig-name descname"><span class="pre">GetValidFluentExecutionModeValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidFluentExecutionModeValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentOutputFrequencyMultiplier">
+<span class="sig-name descname"><span class="pre">GetFluentOutputFrequencyMultiplier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentOutputFrequencyMultiplier" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentOutputFrequencyMultiplier">
+<span class="sig-name descname"><span class="pre">SetFluentOutputFrequencyMultiplier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentOutputFrequencyMultiplier" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentSolverProcesses">
+<span class="sig-name descname"><span class="pre">GetFluentSolverProcesses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentSolverProcesses" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentSolverProcesses">
+<span class="sig-name descname"><span class="pre">SetFluentSolverProcesses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentSolverProcesses" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFractionParticleSize">
+<span class="sig-name descname"><span class="pre">GetFractionParticleSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFractionParticleSize" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFractionParticleSize">
+<span class="sig-name descname"><span class="pre">SetFractionParticleSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFractionParticleSize" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumResidualTolerance">
+<span class="sig-name descname"><span class="pre">GetMaximumResidualTolerance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumResidualTolerance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumResidualTolerance">
+<span class="sig-name descname"><span class="pre">SetMaximumResidualTolerance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumResidualTolerance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumTimeSteps">
+<span class="sig-name descname"><span class="pre">GetMaximumTimeSteps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumTimeSteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumTimeSteps">
+<span class="sig-name descname"><span class="pre">SetMaximumTimeSteps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumTimeSteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMinimumTimeSteps">
+<span class="sig-name descname"><span class="pre">GetMinimumTimeSteps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMinimumTimeSteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMinimumTimeSteps">
+<span class="sig-name descname"><span class="pre">SetMinimumTimeSteps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMinimumTimeSteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetNumberOfSubsteps">
+<span class="sig-name descname"><span class="pre">GetNumberOfSubsteps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetNumberOfSubsteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetNumberOfSubsteps">
+<span class="sig-name descname"><span class="pre">SetNumberOfSubsteps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetNumberOfSubsteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetNumberOfThreads">
+<span class="sig-name descname"><span class="pre">GetNumberOfThreads</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetNumberOfThreads" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetNumberOfThreads">
+<span class="sig-name descname"><span class="pre">SetNumberOfThreads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetNumberOfThreads" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetOverwriteCfdUpdateDistance">
+<span class="sig-name descname"><span class="pre">GetOverwriteCfdUpdateDistance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetOverwriteCfdUpdateDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetOverwriteCfdUpdateDistance">
+<span class="sig-name descname"><span class="pre">SetOverwriteCfdUpdateDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetOverwriteCfdUpdateDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumVolumeFraction">
+<span class="sig-name descname"><span class="pre">GetMaximumVolumeFraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumVolumeFraction" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumVolumeFraction">
+<span class="sig-name descname"><span class="pre">SetMaximumVolumeFraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumVolumeFraction" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetBackDiffusion">
+<span class="sig-name descname"><span class="pre">GetBackDiffusion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetBackDiffusion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetBackDiffusion">
+<span class="sig-name descname"><span class="pre">SetBackDiffusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetBackDiffusion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.EnableBackDiffusion">
+<span class="sig-name descname"><span class="pre">EnableBackDiffusion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.EnableBackDiffusion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.DisableBackDiffusion">
+<span class="sig-name descname"><span class="pre">DisableBackDiffusion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.DisableBackDiffusion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsBackDiffusionEnabled">
+<span class="sig-name descname"><span class="pre">IsBackDiffusionEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsBackDiffusionEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUseDatInitialization">
+<span class="sig-name descname"><span class="pre">GetUseDatInitialization</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUseDatInitialization" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUseDatInitialization">
+<span class="sig-name descname"><span class="pre">SetUseDatInitialization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUseDatInitialization" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetSubstepping">
+<span class="sig-name descname"><span class="pre">GetSubstepping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetSubstepping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetSubstepping">
+<span class="sig-name descname"><span class="pre">SetSubstepping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetSubstepping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.EnableSubstepping">
+<span class="sig-name descname"><span class="pre">EnableSubstepping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.EnableSubstepping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.DisableSubstepping">
+<span class="sig-name descname"><span class="pre">DisableSubstepping</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.DisableSubstepping" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsSubsteppingEnabled">
+<span class="sig-name descname"><span class="pre">IsSubsteppingEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsSubsteppingEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUseTurbulentDispersion">
+<span class="sig-name descname"><span class="pre">GetUseTurbulentDispersion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUseTurbulentDispersion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUseTurbulentDispersion">
+<span class="sig-name descname"><span class="pre">SetUseTurbulentDispersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUseTurbulentDispersion" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUserCfdUpdateDistance">
+<span class="sig-name descname"><span class="pre">GetUserCfdUpdateDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUserCfdUpdateDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUserCfdUpdateDistance">
+<span class="sig-name descname"><span class="pre">SetUserCfdUpdateDistance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUserCfdUpdateDistance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetWrappedClass"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.GetWrappedClass()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetClassName"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.GetClassName()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetupStoreFiles"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.SetupStoreFiles()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetAvailableCoupledBoundaryNames"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.GetAvailableCoupledBoundaryNames()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.CreateCoupledBoundaries"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.CreateCoupledBoundaries()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetIsOneWayPeriodic"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.GetIsOneWayPeriodic()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetIsOneWayPeriodic"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.SetIsOneWayPeriodic()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetOverwriteCfdUpdateDistance"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.GetOverwriteCfdUpdateDistance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetOverwriteCfdUpdateDistance"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.SetOverwriteCfdUpdateDistance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetStartTime"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.GetStartTime()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetStartTime"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.SetStartTime()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetUseTurbulentDispersion"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.GetUseTurbulentDispersion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetUseTurbulentDispersion"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.SetUseTurbulentDispersion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.GetUserCfdUpdateDistance"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.GetUserCfdUpdateDistance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling.SetUserCfdUpdateDistance"><code class="docutils literal notranslate"><span class="pre">RAFluentOneWayCoupling.SetUserCfdUpdateDistance()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetWrappedClass"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetWrappedClass()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetClassName"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetClassName()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetPartIdIfValid"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetPartIdIfValid()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentReleases"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetFluentReleases()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_release"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.fluent_release</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_phases"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.fluent_phases</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_rocky_phase"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.fluent_rocky_phase</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_solver_processes"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.fluent_solver_processes</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.use_dat_initialization"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.use_dat_initialization</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_output_frequency_multiplier"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.fluent_output_frequency_multiplier</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.coupling_files_kept"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.coupling_files_kept</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.fluent_time_step"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.fluent_time_step</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.additional_input_variables"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.additional_input_variables</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.additional_output_variables"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.additional_output_variables</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.disabled_input_variables"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.disabled_input_variables</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.disabled_output_variables"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.disabled_output_variables</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetupDatFilename"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetupDatFilename()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.dat_filename"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.dat_filename</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.cas_filename"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.cas_filename</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.StartFluent"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.StartFluent()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsFluentRunning"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.IsFluentRunning()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.CloseFluent"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.CloseFluent()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.UpdateFluentInfo"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.UpdateFluentInfo()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetupStoreFiles"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetupStoreFiles()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentVersion"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetFluentVersion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentVersion"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetFluentVersion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumVolumeFractionTarget"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetMaximumVolumeFractionTarget()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumVolumeFractionTarget"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetMaximumVolumeFractionTarget()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAvailableCoupledBoundaryNames"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetAvailableCoupledBoundaryNames()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.CreateCoupledBoundaries"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.CreateCoupledBoundaries()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAbsoluteValue"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetAbsoluteValue()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAbsoluteValue"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetAbsoluteValue()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumIterations"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetMaximumIterations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumIterations"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetMaximumIterations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMappingMethod"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetMappingMethod()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMappingMethod"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetMappingMethod()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidMappingMethodValues"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetValidMappingMethodValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAveragingMethod"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetAveragingMethod()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAveragingMethod"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetAveragingMethod()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidAveragingMethodValues"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetValidAveragingMethodValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMinimumIterations"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetMinimumIterations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMinimumIterations"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetMinimumIterations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetAveragingRadiusType"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetAveragingRadiusType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetAveragingRadiusType"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetAveragingRadiusType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidAveragingRadiusTypeValues"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetValidAveragingRadiusTypeValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetSolidsMaximumVolumeFractionTarget"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetSolidsMaximumVolumeFractionTarget()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetSolidsMaximumVolumeFractionTarget"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetSolidsMaximumVolumeFractionTarget()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetVolumeFractionTarget"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetVolumeFractionTarget()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetVolumeFractionTarget"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetVolumeFractionTarget()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetCouplingFilesKept"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetCouplingFilesKept()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetCouplingFilesKept"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetCouplingFilesKept()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetDecompositionFactor"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetDecompositionFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetDecompositionFactor"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetDecompositionFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetDiffusionCoefficient"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetDiffusionCoefficient()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetDiffusionCoefficient"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetDiffusionCoefficient()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentAdditionalArgs"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetFluentAdditionalArgs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentAdditionalArgs"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetFluentAdditionalArgs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentExecutionMode"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetFluentExecutionMode()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentExecutionMode"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetFluentExecutionMode()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetValidFluentExecutionModeValues"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetValidFluentExecutionModeValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentOutputFrequencyMultiplier"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetFluentOutputFrequencyMultiplier()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentOutputFrequencyMultiplier"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetFluentOutputFrequencyMultiplier()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFluentSolverProcesses"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetFluentSolverProcesses()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFluentSolverProcesses"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetFluentSolverProcesses()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetFractionParticleSize"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetFractionParticleSize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetFractionParticleSize"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetFractionParticleSize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumResidualTolerance"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetMaximumResidualTolerance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumResidualTolerance"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetMaximumResidualTolerance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumTimeSteps"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetMaximumTimeSteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumTimeSteps"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetMaximumTimeSteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMinimumTimeSteps"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetMinimumTimeSteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMinimumTimeSteps"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetMinimumTimeSteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetNumberOfSubsteps"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetNumberOfSubsteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetNumberOfSubsteps"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetNumberOfSubsteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetNumberOfThreads"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetNumberOfThreads()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetNumberOfThreads"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetNumberOfThreads()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetOverwriteCfdUpdateDistance"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetOverwriteCfdUpdateDistance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetOverwriteCfdUpdateDistance"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetOverwriteCfdUpdateDistance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetMaximumVolumeFraction"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetMaximumVolumeFraction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetMaximumVolumeFraction"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetMaximumVolumeFraction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetBackDiffusion"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetBackDiffusion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetBackDiffusion"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetBackDiffusion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.EnableBackDiffusion"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.EnableBackDiffusion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.DisableBackDiffusion"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.DisableBackDiffusion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsBackDiffusionEnabled"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.IsBackDiffusionEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUseDatInitialization"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetUseDatInitialization()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUseDatInitialization"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetUseDatInitialization()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetSubstepping"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetSubstepping()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetSubstepping"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetSubstepping()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.EnableSubstepping"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.EnableSubstepping()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.DisableSubstepping"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.DisableSubstepping()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.IsSubsteppingEnabled"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.IsSubsteppingEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUseTurbulentDispersion"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetUseTurbulentDispersion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUseTurbulentDispersion"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetUseTurbulentDispersion()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.GetUserCfdUpdateDistance"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.GetUserCfdUpdateDistance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling.SetUserCfdUpdateDistance"><code class="docutils literal notranslate"><span class="pre">RAFluentTwoWayCoupling.SetUserCfdUpdateDistance()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<!-- If there is no fix edit button function, use the PyData edit-this-button-->
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../_sources/api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_fluent_coupling/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../../../../../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../../../../../../../../../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../../../../../../../../../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.6.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

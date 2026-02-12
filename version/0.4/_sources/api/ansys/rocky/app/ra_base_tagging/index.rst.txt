@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_base_tagging.py`` module
+=================================
+
+.. py:module:: ansys.rocky.app.ra_base_tagging
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_base_tagging
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_base_tagging.RABaseTagging`
+            - Base class for Api representations of Tagging and Divisions Tagging calculators.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RABaseTagging</api/ansys/rocky/app/ra_base_tagging/RABaseTagging>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_addin_process.py`` module
+==================================
+
+.. py:module:: ansys.rocky.app.ra_addin_process
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_addin_process
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_addin_process.RAModuleOutput`
+            - Wrapper class for the object that represents a Module's unique output.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAModuleOutput</api/ansys/rocky/app/ra_addin_process/RAModuleOutput>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

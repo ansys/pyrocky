@@ -1,0 +1,49 @@
+
+
+
+
+
+
+:class:`RABaseGeometry`
+=======================
+
+
+.. py:class:: ansys.rocky.app.ra_base_geometry.RABaseGeometry
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   
+   Rocky api geometry (boundary) model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_base_geometry import RABaseGeometry
+
+
+
+
+

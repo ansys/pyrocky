@@ -1,0 +1,528 @@
+
+
+
+
+
+
+:class:`RAPointCloud`
+=====================
+
+
+.. py:class:: ansys.rocky.app.ra_point_cloud.RAPointCloud
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`
+
+
+   
+   Rocky PrePost Scripting wrapper for a point cloud in the project.
+
+   The wrapper corresponds to an individual PointCloud in the project's data tree, below the
+   "Point Clouds" item. PointCloud can be retrieved from the :class:`RAStudy` or the
+   :class:`RAPointCloudCollection` via:
+
+   .. code-block:: python
+
+       point_cloud_1 = study.GetElement('Point Cloud 1')
+       point_cloud_2 = point_cloud_collection[1]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAPointCloud
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFilePath`
+            - Get the value of "File Path".
+          * - :py:attr:`~SetFilePath`
+            - Set the path of the file that will be used to generate the point cloud
+          * - :py:attr:`~IsTransient`
+            - Returns True if the Point Cloud is transient, False otherwise.
+          * - :py:attr:`~GetEnablePeriodic`
+            - Get the value of "Enable Periodic".
+          * - :py:attr:`~SetEnablePeriodic`
+            - Set the value of "Enable Periodic".
+          * - :py:attr:`~EnablePeriodic`
+            - Set the value of "Periodic" to True.
+          * - :py:attr:`~DisablePeriodic`
+            - Set the value of "Periodic" to False.
+          * - :py:attr:`~IsPeriodicEnabled`
+            - Check if the "Periodic" is enabled.
+          * - :py:attr:`~GetPeriodicStartTime`
+            - Get the value of "Periodic Start Time".
+          * - :py:attr:`~SetPeriodicStartTime`
+            - Set the value of "Periodic Start Time".
+          * - :py:attr:`~GetPeriodicStopTime`
+            - Get the value of "Periodic Stop Time".
+          * - :py:attr:`~SetPeriodicStopTime`
+            - Set the value of "Periodic Stop Time".
+          * - :py:attr:`~GetSearchCutOff`
+            - Get the value of "Search Cut Off".
+          * - :py:attr:`~SetSearchCutOff`
+            - Set the value of "Search Cut Off".
+          * - :py:attr:`~GetSearchCutOffDistance`
+            - Get the value of "Search Cut Off Distance".
+          * - :py:attr:`~SetSearchCutOffDistance`
+            - Set the value of "Search Cut Off Distance".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_point_cloud import RAPointCloud
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.point_cloud.point_cloud.PointCloud]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetFilePath() -> str
+
+   
+   Get the value of "File Path".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFilePath(file_path: str | pathlib.Path) -> None
+
+   
+   Set the path of the file that will be used to generate the point cloud
+   described on the content of the file.
+
+   The accepted file extensions is ".txt".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsTransient() -> bool
+
+   
+   Returns True if the Point Cloud is transient, False otherwise.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEnablePeriodic() -> bool
+
+   
+   Get the value of "Enable Periodic".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnablePeriodic(value: bool) -> None
+
+   
+   Set the value of "Enable Periodic".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnablePeriodic() -> None
+
+   
+   Set the value of "Periodic" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisablePeriodic() -> None
+
+   
+   Set the value of "Periodic" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsPeriodicEnabled() -> bool
+
+   
+   Check if the "Periodic" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriodicStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Periodic Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriodicStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Periodic Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriodicStopTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Periodic Stop Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriodicStopTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Periodic Stop Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSearchCutOff() -> bool
+
+   
+   Get the value of "Search Cut Off".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSearchCutOff(value: bool) -> None
+
+   
+   Set the value of "Search Cut Off".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSearchCutOffDistance(unit: str | None = None) -> float
+
+   
+   Get the value of "Search Cut Off Distance".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSearchCutOffDistance(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Search Cut Off Distance".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,0 +1,190 @@
+
+
+
+
+
+
+:class:`RABaseConveyor`
+=======================
+
+
+.. py:class:: ansys.rocky.app.conveyors.ra_base_conveyor.RABaseConveyor
+
+   Bases: :py:obj:`ansys.rocky.app.ra_base_geometry.RABaseGeometry`
+
+
+   
+   Base class for Rocky API conveyor models.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RABaseConveyor
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetBeltProfileName`
+            - Get the name of the belt profile.
+          * - :py:attr:`~GetBeltProfile`
+            - :rtype: ApiElementItem
+          * - :py:attr:`~SetBeltProfile`
+            - Set the belt profile object through its name as shown in the UI.
+          * - :py:attr:`~GetValidBeltProfileNames`
+            - Return a list with possible values for belt profile.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.conveyors.ra_base_conveyor import RABaseConveyor
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetBeltProfileName()
+
+   
+   Get the name of the belt profile.
+
+   :rtype: str
+   :return:
+       A string describing the type of belt profile. The returned value will be one of the strings
+       in the "Belt Profile" drop-down menu in the UI.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBeltProfile()
+
+   
+   :rtype: ApiElementItem
+   :return:
+       The API object that wraps the current belt profile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBeltProfile(belt_profile_name)
+
+   
+   Set the belt profile object through its name as shown in the UI.
+
+   :param str belt_profile_name:
+       Accepted values are the strings in the "Belt Profile" dropdown menu in the UI.
+
+   :rtype: ApiElementItem
+   :return:
+       The PrePost Scripting wrapper representing the belt profile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidBeltProfileNames()
+
+   
+   Return a list with possible values for belt profile.
+
+   :rtype: list(str)
+   :return:
+       A list of accepted values for `SetBeltProfile()`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

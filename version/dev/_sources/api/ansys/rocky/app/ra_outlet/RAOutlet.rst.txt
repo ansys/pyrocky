@@ -1,0 +1,521 @@
+
+
+
+
+
+
+:class:`RAOutlet`
+=================
+
+
+.. py:class:: ansys.rocky.app.ra_outlet.RAOutlet(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for a single Outlet.
+
+   This wrapper class corresponds to an individual entry under the "Inlets and Outlets" item on
+   the project's data tree. It can be retrieved from the :class:`RAStudy` via:
+
+   .. code-block:: python
+
+       input_1 = study.GetElement('Outlet <1>')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAOutlet
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetEnabledForParticles`
+            - Get the value of "Enabled For Particles".
+          * - :py:attr:`~SetEnabledForParticles`
+            - Set the value of "Enabled For Particles".
+          * - :py:attr:`~GetEnabledForSph`
+            - Get the value of "Enabled For Sph".
+          * - :py:attr:`~SetEnabledForSph`
+            - Set the value of "Enabled For Sph".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetPressure`
+            - Get the value of "Pressure".
+          * - :py:attr:`~SetPressure`
+            - Set the value of "Pressure".
+          * - :py:attr:`~GetPrescribedPressureEnabled`
+            - Get the value of "Prescribed Pressure Enabled".
+          * - :py:attr:`~SetPrescribedPressureEnabled`
+            - Set the value of "Prescribed Pressure Enabled".
+          * - :py:attr:`~EnablePrescribedPressure`
+            - Set the value of "Prescribed Pressure" to True.
+          * - :py:attr:`~DisablePrescribedPressure`
+            - Set the value of "Prescribed Pressure" to False.
+          * - :py:attr:`~IsPrescribedPressureEnabled`
+            - Check if the "Prescribed Pressure" is enabled.
+          * - :py:attr:`~GetExitPoint`
+            - Get the "Exit Point".
+          * - :py:attr:`~SetExitPoint`
+            - Set the "Exit Point".
+          * - :py:attr:`~GetAvailableExitPoints`
+            - Get all available Exit Points.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_outlet import RAOutlet
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetEnabledForParticles() -> bool
+
+   
+   Get the value of "Enabled For Particles".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnabledForParticles(value: bool) -> None
+
+   
+   Set the value of "Enabled For Particles".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEnabledForSph() -> bool
+
+   
+   Get the value of "Enabled For Sph".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnabledForSph(value: bool) -> None
+
+   
+   Set the value of "Enabled For Sph".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPressure(unit: str | None = None) -> float
+
+   
+   Get the value of "Pressure".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Pa".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPressure(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Pressure".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Pa".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPrescribedPressureEnabled() -> bool
+
+   
+   Get the value of "Prescribed Pressure Enabled".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPrescribedPressureEnabled(value: bool) -> None
+
+   
+   Set the value of "Prescribed Pressure Enabled".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnablePrescribedPressure() -> None
+
+   
+   Set the value of "Prescribed Pressure" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisablePrescribedPressure() -> None
+
+   
+   Set the value of "Prescribed Pressure" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsPrescribedPressureEnabled() -> bool
+
+   
+   Check if the "Prescribed Pressure" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetExitPoint()
+
+   
+   Get the "Exit Point".
+
+   :rtype: :class:`RARectangularSurface`, :class:`RACircularSurface`, :class:`RASurface`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetExitPoint(value) -> None
+
+   
+   Set the "Exit Point".
+
+   :param unicode, :class:`RARectangularSurface`, :class:`RACircularSurface`, :class:`RASurface` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableExitPoints()
+
+   
+   Get all available Exit Points.
+
+   :rtype: List[:class:`RARectangularSurface`, :class:`RACircularSurface`, :class:`RASurface`]
+       A list of :class:`RARectangularSurface`, :class:`RACircularSurface`, :class:`RASurface`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

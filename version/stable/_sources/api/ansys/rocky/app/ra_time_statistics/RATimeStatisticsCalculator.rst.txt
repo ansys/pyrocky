@@ -1,0 +1,207 @@
+
+
+
+
+
+
+:class:`RATimeStatisticsCalculator`
+===================================
+
+
+.. py:class:: ansys.rocky.app.ra_time_statistics.RATimeStatisticsCalculator(base_subject)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_base_subject_element.BaseSubjectApiElement`
+
+
+   
+   PrePost Scripting wrapper for TimeStatisticsCalculators.
+
+   Supports getting/setting the start and stop times, and retrieving the name of the grid function
+   generated (for use with the rest of the API).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RATimeStatisticsCalculator
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetStartTime`
+            - Get the start time of this time statistics grid function.
+          * - :py:attr:`~SetStartTime`
+            - Set the start time of this time statistics grid function.
+          * - :py:attr:`~GetStopTime`
+            - Get the stop time of this time statistics grid function.
+          * - :py:attr:`~SetStopTime`
+            - Get the stop time of this time statistics grid function.
+          * - :py:attr:`~GetGridFunctionName`
+            - Get the name of this time statistics grid function, usable on the rest of the API.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_time_statistics import RATimeStatisticsCalculator
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetStartTime()
+
+   
+   Get the start time of this time statistics grid function.
+
+   :rtype: Scalar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStartTime(time_value) -> None
+
+   
+   Set the start time of this time statistics grid function.
+
+   :type time_value: float or tuple(float, unicode) or Scalar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStopTime()
+
+   
+   Get the stop time of this time statistics grid function.
+
+   :rtype: Scalar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStopTime(time_value) -> None
+
+   
+   Get the stop time of this time statistics grid function.
+
+   :type time_value: float or tuple(float, unicode) or Scalar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGridFunctionName()
+
+   
+   Get the name of this time statistics grid function, usable on the rest of the API.
+
+   :rtype: unicode
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,0 +1,197 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_physics
+==========================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_physics
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_physics.RAPhysics
+
+
+Module Contents
+---------------
+
+.. py:class:: RAPhysics(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:property:: enable_thermal_model
+
+
+   .. py:method:: GetAdhesionModel() -> str
+
+
+   .. py:method:: SetAdhesionModel(value: str) -> None
+
+
+   .. py:method:: GetValidAdhesionModelValues() -> List[str]
+
+
+   .. py:method:: GetClosePackingVolumeFraction() -> float
+
+
+   .. py:method:: SetClosePackingVolumeFraction(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetEnableCoarseGrainModeling() -> bool
+
+
+   .. py:method:: SetEnableCoarseGrainModeling(value: bool) -> None
+
+
+   .. py:method:: GetEnableThermalModel() -> bool
+
+
+   .. py:method:: SetEnableThermalModel(value: bool) -> None
+
+
+   .. py:method:: GetGravityStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetGravityStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetGravityStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetGravityStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetGravityXDirection(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetGravityXDirection(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetGravityYDirection(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetGravityYDirection(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetGravityZDirection(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetGravityZDirection(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetImpactEnergyModel() -> str
+
+
+   .. py:method:: SetImpactEnergyModel(value: str) -> None
+
+
+   .. py:method:: GetValidImpactEnergyModelValues() -> List[str]
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetNormalForceModel() -> str
+
+
+   .. py:method:: SetNormalForceModel(value: str) -> None
+
+
+   .. py:method:: GetValidNormalForceModelValues() -> List[str]
+
+
+   .. py:method:: GetRollingResistanceModel() -> str
+
+
+   .. py:method:: SetRollingResistanceModel(value: str) -> None
+
+
+   .. py:method:: GetValidRollingResistanceModelValues() -> List[str]
+
+
+   .. py:method:: GetExponentLimit() -> float
+
+
+   .. py:method:: SetExponentLimit(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetVolumeFractionLimit() -> float
+
+
+   .. py:method:: SetVolumeFractionLimit(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetRestitutionModel() -> str
+
+
+   .. py:method:: SetRestitutionModel(value: str) -> None
+
+
+   .. py:method:: GetValidRestitutionModelValues() -> List[str]
+
+
+   .. py:method:: GetSearchDistanceMultiplier() -> float
+
+
+   .. py:method:: SetSearchDistanceMultiplier(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSphThermalTransferModel() -> str
+
+
+   .. py:method:: SetSphThermalTransferModel(value: str) -> None
+
+
+   .. py:method:: GetValidSphThermalTransferModelValues() -> List[str]
+
+
+   .. py:method:: GetNumericalSofteningFactor() -> float
+
+
+   .. py:method:: SetNumericalSofteningFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetTangentialForceModel() -> str
+
+
+   .. py:method:: SetTangentialForceModel(value: str) -> None
+
+
+   .. py:method:: GetValidTangentialForceModelValues() -> List[str]
+
+
+   .. py:method:: GetThermalCorrectionModel() -> str
+
+
+   .. py:method:: SetThermalCorrectionModel(value: str) -> None
+
+
+   .. py:method:: GetValidThermalCorrectionModelValues() -> List[str]
+
+
+   .. py:method:: GetUpdateDistanceMultiplier() -> float
+
+
+   .. py:method:: SetUpdateDistanceMultiplier(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetUseRadlEtAl() -> bool
+
+
+   .. py:method:: SetUseRadlEtAl(value: bool) -> None
+
+

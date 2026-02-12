@@ -1,0 +1,74 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_three_rolls_belt_profile
+=====================================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_three_rolls_belt_profile
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_three_rolls_belt_profile.RAThreeRollsBeltProfile
+
+
+Module Contents
+---------------
+
+.. py:class:: RAThreeRollsBeltProfile(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetCenterRollLength(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetCenterRollLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetLowerCornerRadius(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetLowerCornerRadius(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTroughingAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTroughingAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetUse0371RatioForRollLengths() -> bool
+
+
+   .. py:method:: SetUse0371RatioForRollLengths(value: bool) -> None
+
+
+   .. py:method:: EnableUse0371RatioForRollLengths() -> None
+
+
+   .. py:method:: DisableUse0371RatioForRollLengths() -> None
+
+
+   .. py:method:: IsUse0371RatioForRollLengthsEnabled() -> bool
+
+
+   .. py:method:: GetMaterial()
+
+
+   .. py:method:: SetMaterial(value) -> None
+
+
+   .. py:method:: GetAvailableMaterials()
+
+

@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_fluid_inlet.py`` module
+================================
+
+.. py:module:: ansys.rocky.app.ra_fluid_inlet
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_fluid_inlet
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_fluid_inlet.RAFluidInlet`
+            - Rocky PrePost Scripting wrapper for a single Fluid Inlet input.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAFluidInlet</api/ansys/rocky/app/ra_fluid_inlet/RAFluidInlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

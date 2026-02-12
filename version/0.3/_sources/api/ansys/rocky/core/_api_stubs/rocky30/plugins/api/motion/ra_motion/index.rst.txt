@@ -1,0 +1,56 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion
+================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion.RAMotion
+
+
+Module Contents
+---------------
+
+.. py:class:: RAMotion(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: SetType(motion_type)
+
+
+   .. py:method:: GetType()
+
+
+   .. py:method:: GetTypeObject()
+
+
+   .. py:method:: GetValidTypes()
+
+
+   .. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

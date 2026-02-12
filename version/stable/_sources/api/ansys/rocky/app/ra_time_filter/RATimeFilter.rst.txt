@@ -1,0 +1,291 @@
+
+
+
+
+
+
+:class:`RATimeFilter`
+=====================
+
+
+.. py:class:: ansys.rocky.app.ra_time_filter.RATimeFilter(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky api time filter model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RATimeFilter
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFinalTime`
+            - 
+          * - :py:attr:`~SetFinalTime`
+            - 
+          * - :py:attr:`~GetInitialTime`
+            - 
+          * - :py:attr:`~SetInitialTime`
+            - 
+          * - :py:attr:`~GetEnabled`
+            - Get the value of "Enabled".
+          * - :py:attr:`~SetEnabled`
+            - Set the value of "Enabled".
+          * - :py:attr:`~EnableTimeFilter`
+            - Set the value of "Time Filter" to True.
+          * - :py:attr:`~DisableTimeFilter`
+            - Set the value of "Time Filter" to False.
+          * - :py:attr:`~IsTimeFilterEnabled`
+            - Check if the "Time Filter" is enabled.
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_time_filter import RATimeFilter
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetFinalTime(unit: str | None = None) -> float
+
+.. py:method:: SetFinalTime(value: str | float, unit: str | None = None) -> None
+
+.. py:method:: GetInitialTime(unit: str | None = None) -> float
+
+.. py:method:: SetInitialTime(value: str | float, unit: str | None = None) -> None
+
+.. py:method:: GetEnabled() -> bool
+
+   
+   Get the value of "Enabled".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnabled(value: bool) -> None
+
+   
+   Set the value of "Enabled".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableTimeFilter() -> None
+
+   
+   Set the value of "Time Filter" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableTimeFilter() -> None
+
+   
+   Set the value of "Time Filter" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsTimeFilterEnabled() -> bool
+
+   
+   Check if the "Time Filter" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

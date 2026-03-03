@@ -204,7 +204,7 @@ def launch_freeflow(  # pragma: no cover
     return client
 
 
-def launch_container(
+def launch_container(  # pragma: no cover
     product: Literal["rocky", "freeflow"] = "rocky",
     version_tag: str = "26.1.0",
     port: int = _PYROCKY_DEFAULT_PORT,

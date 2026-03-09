@@ -212,6 +212,28 @@ jobs:
           # Disable default -W flag (treat warnings as errors)
           sphinxopts: '-j 1'
 
+  check-vulnerabilities:
+    name: "Check library vulnerabilities"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ansys/actions/check-vulnerabilities@v10.0
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          python-package-name: ${{ env.LIBRARY_NAME }}
+          dev-mode: ${{ github.ref != 'refs/heads/main' }}
+
+  actions-security:
+    name: "Check actions security"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ansys/actions/check-actions-security@v10.0
+        with:
+          generate-summary: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          auditing-level: 'high'
+          trust-ansys-actions: true
+
   package:
     name: Package library
     needs: [tests_run_windows, docs_build]

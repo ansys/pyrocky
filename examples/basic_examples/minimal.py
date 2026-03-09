@@ -38,11 +38,14 @@ import tempfile
 
 import ansys.rocky.core as pyrocky
 
+# Temporarily pin to v252 because next version is failing on Pyro connection
+ROCKY_VERSION = 252
+
 # Create a temp directory to save the project.
 project_dir = tempfile.mkdtemp(prefix="pyrocky_")
 
 # Launch Rocky and open a project.
-rocky = pyrocky.launch_rocky()
+rocky = pyrocky.launch_rocky(rocky_version=ROCKY_VERSION)
 project = rocky.api.CreateProject()
 
 ###############################################################################

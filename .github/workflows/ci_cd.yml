@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  MAIN_PYTHON_VERSION : '3.13'
+  MAIN_PYTHON_VERSION : '3.14'
   LIBRARY_NAME: 'ansys-rocky-core'
   DOCUMENTATION_CNAME: 'rocky.docs.pyansys.com'
   DOC_DEPLOYMENT_IMAGE_TAG: v24.1.0
@@ -30,7 +30,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       github.event.type != 'labeled'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: "Update labels"
         uses: micnncim/action-label-syncer@v1
@@ -64,7 +64,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ['3.10', '3.11', '3.12', '3.13']
+        python-version: ['3.10', '3.11', '3.12', '3.13', '3.14']
         should-release:
           - ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags') }}
         exclude:
@@ -88,7 +88,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -119,6 +119,8 @@ jobs:
         ansys-version: [251, 252, 261]
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
+      # Windows TCP client authentication still doesn't support IPv6
+      PYRO_PREFER_IP_VERSION: 4
 
     steps:
       - name: Run unit tests (Windows)
@@ -147,7 +149,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -190,7 +192,7 @@ jobs:
           pytest tests
 
   docs_build:
-    name: Build Documentation
+    name: Documentation
     runs-on: [self-hosted, Windows, pyrocky]
     if: |
       contains(github.event.pull_request.labels.*.name, 'docs') ||
@@ -198,47 +200,17 @@ jobs:
       (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v'))
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
+      # Windows TCP client authentication still doesn't support IPv6
+      PYRO_PREFER_IP_VERSION: 4
 
     steps:
-      - uses: actions/checkout@v5
-
-      - name: Set up Python
-        uses: actions/setup-python@v6
+      - name: Build Documentation
+        uses: ansys/actions/doc-build@v10
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
-
-      - name: Create Python venv
-        run: |
-          python -m venv .venv
-
-      - name: Install packages for documentation build
-        run: |
-          .\.venv\Scripts\Activate.bat
-          pip install .[doc]
-
-      - name: Build Source Documentation (HTML)
-        run: |
-          .\.venv\Scripts\Activate.bat
-          doc\make.bat html
-
-      - name: Upload HTML Documentation
-        uses: actions/upload-artifact@v5
-        with:
-          name: documentation-html
-          path:  doc/_build/html
-          retention-days: 7
-
-      - name: Build Source Documentation (PDF)
-        run: |
-          .\.venv\Scripts\Activate.bat
-          doc\make.bat pdf
-
-      - name: Upload PDF documentation
-        uses: actions/upload-artifact@v5
-        with:
-          name: documentation-pdf
-          path: doc/_build/latex/*.pdf
-          retention-days: 7
+          use-uv: false
+          # Disable default -W flag (treat warnings as errors)
+          sphinxopts: '-j 1'
 
   package:
     name: Package library
@@ -262,14 +234,22 @@ jobs:
     needs: [package, smoke-tests]
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: write
     steps:
-      - name: Release to the public PyPI repository
-        uses: ansys/actions/release-pypi-public@v10
+      - name: "Download the library artifacts from build-library step"
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
-          library-name: ${{ env.LIBRARY_NAME }}
-          twine-username: "__token__"
-          twine-token: ${{ secrets.PYPI_TOKEN }}
+          name: ${{ env.LIBRARY_NAME }}-artifacts
+          path: ${{ env.LIBRARY_NAME }}-artifacts
+
+      - name: "Upload artifacts to PyPI using trusted publisher"
+        uses: pypa/gh-action-pypi-publish@ed0c53931b1dc9bd32cbe73a98c7f6766f8a527e # v1.13.0
+        with:
+          repository-url: "https://upload.pypi.org/legacy/"
+          print-hash: true
+          packages-dir: ${{ env.LIBRARY_NAME }}-artifacts
+          skip-existing: false
 
       - name: Release to GitHub
         uses: ansys/actions/release-github@v10

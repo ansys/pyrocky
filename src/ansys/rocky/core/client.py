@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -38,9 +38,7 @@ from ansys.rocky.core.exceptions import PyRockyError
 from ansys.rocky.core.serializers import register_proxies
 
 if TYPE_CHECKING:
-    from ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application import (
-        RockyApiApplication,
-    )
+    from ansys.rocky.app.rocky_api_application import RockyApiApplication
 
 _PYROCKY_DEFAULT_PORT: Final[int] = 18615
 _API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}
@@ -74,7 +72,6 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
         if host is None:
             host = "localhost"
         pyro_uri = f"PYRO:rocky.api@{host}:{port}"
-        hash_str = f"{host}:{port}"
     else:
         # Use UDS for Linux as default
         if host:
@@ -91,8 +88,8 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
             raise ConnectionRefusedError(f"No socket open at '{socket_path.name}'")
 
         pyro_uri = f"PYRO:rocky.api@./u:{socket_path}"
-        hash_str = str(socket_path)
 
+    hash_str = f"localhost:{port}"
     md5_hash = hashlib.md5(hash_str.encode()).hexdigest()
 
     global _LEGACY_PROXY_INSTANCE
@@ -125,11 +122,15 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
         _LEGACY_PROXY_INSTANCE = proxy_instance  # For backward compatibility
 
     rocky_client = RockyClient(proxy_instance)
+
+    # Install Pyro hook to automatically print remote error tracebacks.
+    sys.excepthook = Pyro5.errors.excepthook
+
     return rocky_client
 
 
 def connect_to_rocky(  # pragma: no cover
-    host: str = "localhost", port: int = _PYROCKY_DEFAULT_PORT
+    host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT
 ) -> "RockyClient":
     """This function is deprecated.
     Use connect() instead.

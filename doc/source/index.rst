@@ -44,9 +44,6 @@ the most powerful DEM (discrete element method) software in the market.
 .. toctree::
    :hidden:
    :maxdepth: 3
-.. toctree::
-   :hidden:
-   :maxdepth: 3
 
    getting_started/index
    user_guide/index

@@ -8,7 +8,7 @@
 # -- Documentation label ----------------------------------------------------
 'docs':
 - changed-files:
-  - any-glob-to-any-file: ['doc/source/**/*', 'README.md']
+  - any-glob-to-any-file: ['doc/source/**/*', 'README.rst', 'src/ansys/rocky/app/**/*']
 
 ## -- Other labels ------------------------------------------------------------
 'ci':

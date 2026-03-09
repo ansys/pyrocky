@@ -15,7 +15,7 @@ from sphinx_gallery.sorting import FileNameSortKey
 from ansys.rocky.core import __version__
 
 # Project information
-project = "pyrocky"
+project = "ansys-rocky-core"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
@@ -25,6 +25,9 @@ cname = os.getenv("DOCUMENTATION_CNAME", "rocky.docs.pyansys.com")
 html_logo = logo
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "pyrocky"
+
+# The name of the Pygments (syntax highlighting) style to use.
+pygments_style = "sphinx"
 
 # specify the location of your github repo
 html_theme_options = {
@@ -39,10 +42,12 @@ html_theme_options = {
         "version_match": get_version_match(version),
     },
     "check_switcher": False,
+    "ansys_sphinx_theme_autoapi": {"project": project},
 }
 
 # Sphinx extensions
 extensions = [
+    "ansys_sphinx_theme.extension.autoapi",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "numpydoc",
@@ -128,13 +133,11 @@ autoapi_options = [
     "show-module-summary",
     "special-members",
 ]
-autoapi_template_dir = get_autoapi_templates_dir_relative_path(Path(__file__))
+autoapi_template_dir = get_autoapi_templates_dir_relative_path(Path(__file__).parent)
 suppress_warnings = ["autoapi.python_import_resolution"]
 autoapi_python_use_implicit_namespaces = True
 autoapi_keep_files = True
 autoapi_render_in_single_page = ["class", "enum", "exception"]
 
 # PyAnsys tags configuration
-html_context = {
-    "pyansys_tags": ['Fluids']
-}
+html_context = {"pyansys_tags": ["Fluids"]}

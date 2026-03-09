@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -23,7 +23,7 @@
 import importlib.metadata as importlib_metadata
 
 from .client import connect, connect_to_rocky
-from .launcher import launch_freeflow, launch_rocky
+from .launcher import launch_container, launch_freeflow, launch_rocky
 
 __version__ = importlib_metadata.version(__name__.replace(".", "-"))
 """PyRocky version."""
@@ -34,4 +34,5 @@ __all__ = [
     "connect",
     "launch_rocky",
     "launch_freeflow",
+    "launch_container",
 ]

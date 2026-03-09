@@ -1,0 +1,1054 @@
+
+
+
+
+
+
+:class:`RAUserProcessCollection`
+================================
+
+
+.. py:class:: ansys.rocky.app.ra_user_process_collection.RAUserProcessCollection(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky api collection of geometries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAUserProcessCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetProcessNames`
+            - Get a list with the name of the user processes.
+          * - :py:attr:`~GetProcess`
+            - Get a user process given its name.
+          * - :py:attr:`~CreatePlaneProcess`
+            - Creates a new plane process using the given parent as input.
+          * - :py:attr:`~CreateInspectorProcess`
+            - Creates a new plane process using the given parent as input.
+          * - :py:attr:`~GetPlaneProcessNames`
+            - Get the names of created plane processes.
+          * - :py:attr:`~GetInspectorProcessNames`
+            - Get the names of created inspector processes.
+          * - :py:attr:`~CreatePlaneGroupProcess`
+            - 
+          * - :py:attr:`~CreateCylinderGroupProcess`
+            - 
+          * - :py:attr:`~CreateCubeGroupProcess`
+            - 
+          * - :py:attr:`~CreateCubeProcess`
+            - Creates a new cube process using the given parent as input.
+          * - :py:attr:`~GetCubeProcessNames`
+            - Get the names of created cube processes.
+          * - :py:attr:`~GetTrajectoryProcessNames`
+            - Get the names of created trajectory processes.
+          * - :py:attr:`~CreateCylinderProcess`
+            - Creates a new cube process using the given parent as input.
+          * - :py:attr:`~CreateParticleTimeSelectionProcess`
+            - Creates a new particle time selection process using the given parent as input.
+          * - :py:attr:`~CreateTrajectoryProcess`
+            - Create a new Particle Trajectory process.
+          * - :py:attr:`~GetCylinderProcessNames`
+            - Get the names of created cylinder processes.
+          * - :py:attr:`~GetParticleTimeSelectionProcessNames`
+            - Get the names of created particle time selection processes.
+          * - :py:attr:`~CreateEulerianStatistics`
+            - Creates a new cube process using the given parent as input.
+          * - :py:attr:`~GetEulerianStatisticsNames`
+            - Get the names of created eulerian statistics processes.
+          * - :py:attr:`~CreateFilterProcess`
+            - Creates a new filter process using the given parent as input.
+          * - :py:attr:`~CreatePropertyProcess`
+            - Deprecated: Use CreateFilterProcess instead.
+          * - :py:attr:`~GetFilterProcessNames`
+            - Get the names of created property processes.
+          * - :py:attr:`~GetPropertyProcessNames`
+            - Deprecated: Use GetFilterProcessNames instead.
+          * - :py:attr:`~CreatePolyhedronProcess`
+            - Creates a new polyhedron process using the given parent as input.
+          * - :py:attr:`~GetPolyhedronProcessNames`
+            - Get the names of created polyhedron processes.
+          * - :py:attr:`~CreateSurfaceUserProcess`
+            - Creates a new Surface process using the given parent as input.
+          * - :py:attr:`~GetSurfaceUserProcessNames`
+            - Get the names of created surfaces processes.
+          * - :py:attr:`~CreateParticleToContactProcess`
+            - Creates a new ParticleToContact process using the given parent as input.
+          * - :py:attr:`~CreateContactToParticleProcess`
+            - Creates a new ContactToParticle process using the given parent as input.
+          * - :py:attr:`~GetParticleToContactProcessNames`
+            - Get the names of created Particle to Contact processes.
+          * - :py:attr:`~GetContactToParticleProcessNames`
+            - Get the names of created Contact to Particle processes.
+          * - :py:attr:`~CreateStreamlinesUserProcess`
+            - Creates a new StreamlinesUserProcess process using the given parent as input.
+          * - :py:attr:`~GetStreamlinesUserProcessNames`
+            - Get the names of created streamlines processes.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_user_process_collection import RAUserProcessCollection
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetProcessNames()
+
+   
+   Get a list with the name of the user processes.
+
+   :rtype: list(unicode)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetProcess(process_name)
+
+   
+   Get a user process given its name.
+
+   :param unicode process_name:
+   :rtype: ApiElementItem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreatePlaneProcess(parent, name=None, origin=None, normal=None, plane_type=None, plane_mode=None)
+
+   
+   Creates a new plane process using the given parent as input.
+
+   :param Grid|Process parent:
+       The plane process parent
+
+   :param str|None name:
+       The name of the new process or None for default
+
+   :param tuple(float, float, float) origin:
+       The origin X, Y and Z coordinates in meters (m)
+
+   :param tuple(float, float, float) normal:
+       The normal X, Y and Z in meters (m)
+
+   :rtype: RAPlaneProcess
+   :return:
+       A new plane process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateInspectorProcess(parent, name=None)
+
+   
+   Creates a new plane process using the given parent as input.
+
+   :param Grid|Process parent:
+       The plane process parent
+
+   :param str|None name:
+       The name of the new process or None for default
+
+   :rtype: RAPlaneProcess
+   :return:
+       A new plane process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPlaneProcessNames()
+
+   
+   Get the names of created plane processes.
+
+   :return:
+       The list of plane user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInspectorProcessNames()
+
+   
+   Get the names of created inspector processes.
+
+   :return:
+       The list of inspector user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreatePlaneGroupProcess(parent_processes: list[ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem] | ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem, name: str | None = None, plane_origin_fixed_array: coilib50.units.mapped_io.FixedArray | None = None, mode: str | None = None, type: str | None = None) -> ansys.rocky.app.ra_process_element.RAPlaneGroup
+
+.. py:method:: CreateCylinderGroupProcess(parent_processes, name=None, center: rocky30.base_types.Tuple3F | None = None, size: rocky30.base_types.Tuple3F | None = None, rotation: rocky30.base_types.Tuple3F | None = None, internal_factor=None, initial_angle=None, final_angle=None) -> ansys.rocky.app.ra_process_element.RACylinderGroup
+
+.. py:method:: CreateCubeGroupProcess(parent_processes, name: str | None = None, center: rocky30.base_types.Tuple3F | None = None, magnitude: rocky30.base_types.Tuple3F | None = None, rotation: rocky30.base_types.Tuple3F | None = None) -> ansys.rocky.app.ra_process_element.RACubeGroup
+
+.. py:method:: CreateCubeProcess(parent, name=None, center=None, magnitude=None, rotation=None, parent_pool_id=None)
+
+   
+   Creates a new cube process using the given parent as input.
+
+   :param Grid|Process parent:
+       The cube process parent
+
+   :param str|None name:
+       The name of the new process or None for default
+
+   :param tuple(float, float, float) center:
+       The center X, Y and Z coordinates in meters (m)
+
+   :param magnitude:
+       The center X, Y and Z magnitude in meters (m)
+
+   :param rotation:
+       The center X, Y and Z rotation in degress (dega)
+
+   :rtype: RACubeProcess
+   :return:
+       A new cube process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCubeProcessNames()
+
+   
+   Get the names of created cube processes.
+
+   :return:
+       The list of cube user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTrajectoryProcessNames()
+
+   
+   Get the names of created trajectory processes.
+
+   :return:
+       The list of trajectory user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateCylinderProcess(parent, name=None, center=None, size=None, rotation=None, internal_factor=None, initial_angle=None, final_angle=None)
+
+   
+   Creates a new cube process using the given parent as input.
+
+   :param Grid|Process parent:
+       The cube process parent
+
+   :param str|None name:
+       The name of the new process or None for default
+
+   :param tuple(float, float, float) center:
+       The center X, Y and Z coordinates in meters (m)
+
+   :param size:
+       The X, Y and Z size in meters (m)
+
+   :param rotation:
+       The center X, Y and Z rotation in degress (dega)
+
+   :param internal_factor:
+       The internal hole radius factor of the external given by the size in percentage (%)
+
+   :param initial_angle:
+       The initial angle in degress (dega)
+
+   :param final_angle:
+       The final angle in degress (dega)
+
+   :rtype: RACylinderProcess
+   :return:
+       A new cylinder process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateParticleTimeSelectionProcess(parent, range_definition: str = 'absolute', initial: int = 0, final: int = 0, unit: str = 's')
+
+   
+   Creates a new particle time selection process using the given parent as input.
+
+   :param parent:
+       Input for the particle time selection.
+
+   :param range_definition:
+       One of:
+       'app_time_filter', 'all', 'last_output', 'absolute', 'single', 'absolute_only_start', 'relative_to_end'.
+
+   :param float initial:
+       The initial value for the particle time selection to consider particles. May be ignored
+       depending on the range definition.
+
+   :param float final:
+       The final time for the particle time selection to consider particles. May be ignored
+       depending on the range definition.
+
+   :param unit:
+       The unit for the initial/final values passed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateTrajectoryProcess(parent, starting_timestep=None, number_timesteps=None, particle_stride=None)
+
+   
+   Create a new Particle Trajectory process.
+
+   :see: RATrajectoryProcess for a explanation of the parameters.
+   :rtype: RATrajectoryProcess
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCylinderProcessNames()
+
+   
+   Get the names of created cylinder processes.
+
+   :return:
+       The list of cylinder user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleTimeSelectionProcessNames()
+
+   
+   Get the names of created particle time selection processes.
+
+   :return:
+       The list of particle time selection user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateEulerianStatistics(parent, name=None, divisions=None)
+
+   
+   Creates a new cube process using the given parent as input.
+
+   :param Grid|Process parent:
+       The process parent. Must be either a cube or a cylinder.
+
+   :param str|None name:
+       The name of the new process or None for default
+
+   :param divisions:
+       The number of divisions in i, j and k.
+
+   :rtype: RAEulerianStatistics
+   :return:
+       A new Eulerian Statistics process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEulerianStatisticsNames()
+
+   
+   Get the names of created eulerian statistics processes.
+
+   :return:
+       The list of eulerian statistics user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateFilterProcess(parent, name=None)
+
+   
+   Creates a new filter process using the given parent as input.
+
+   :param Grid|Process parent:
+       The filter process parent
+
+   :param str|None name:
+       The name of the new process or None for default
+
+   :rtype: RAFilterProcess
+   :return:
+       A new filter process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreatePropertyProcess(parent, name=None)
+
+   
+   Deprecated: Use CreateFilterProcess instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFilterProcessNames()
+
+   
+   Get the names of created property processes.
+
+   :return:
+       The list of property user process names.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPropertyProcessNames()
+
+   
+   Deprecated: Use GetFilterProcessNames instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreatePolyhedronProcess(parent: ansys.rocky.app.api_element_item.ApiElementItem, stl_filename: str, name: str | None = None, import_scale: float = 1.0, convert_yz: bool = False) -> ansys.rocky.app.ra_process_element.RAPolyhedronProcess | None
+
+   
+   Creates a new polyhedron process using the given parent as input.
+
+   :param Grid|Process parent:
+       The polyhedron process parent.
+
+   :param str stl_filename:
+       The filename with the stl to be loaded for the polyhedron.
+
+   :param str|None name:
+       The name of the new process or None for default.
+
+   :param float import_scale:
+       The import scale to be applied on the STL's geometry when importing.
+
+   :param bool convert_yz:
+       Whether the Y and Z axes should be swapped on the STL's geometry when importing.
+
+   :rtype: RAPolyhedronProcess
+   :return:
+       A new polyhedron process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPolyhedronProcessNames()
+
+   
+   Get the names of created polyhedron processes.
+
+   :return:
+       The list of polyhedron user process names.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateSurfaceUserProcess(parent: ansys.rocky.app.api_element_item.ApiElementItem, stl_filename: str, name: str | None = None, import_scale: float = 1.0, convert_yz: bool = False) -> ansys.rocky.app.ra_process_element.RASurfaceUserProcess | None
+
+   
+   Creates a new Surface process using the given parent as input.
+
+   :param parent:
+       The surface process parent.
+
+   :param stl_filename:
+       The filename with the stl to be loaded for the surface.
+
+   :param name:
+       The name of the new process or None for default.
+
+   :param import_scale:
+       The import scale to be applied on the STL's geometry when importing.
+
+   :param convert_yz:
+       Whether the Y and Z axes should be swapped on the STL's geometry when importing.
+
+   :return:
+       A new surface process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSurfaceUserProcessNames() -> list[str]
+
+   
+   Get the names of created surfaces processes.
+
+   :return:
+       The list of surfaces user process names.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateParticleToContactProcess(parent, name=None)
+
+   
+   Creates a new ParticleToContact process using the given parent as input.
+
+   :param RAGridProcessElementItem parent:
+       The new process' parent
+
+   :param str|None name:
+       The name of the new process or None for default
+
+   :rtype: RAParticleToContactProcess
+   :return:
+       A new ParticleToContact process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateContactToParticleProcess(parent, name=None)
+
+   
+   Creates a new ContactToParticle process using the given parent as input.
+
+   :param RAGridProcessElementItem parent:
+       The new process' parent
+
+   :param str|None name:
+       The name of the new process or None for default
+
+   :rtype: RAContactToParticleProcess
+   :return:
+       A new ContactToParticle process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleToContactProcessNames()
+
+   
+   Get the names of created Particle to Contact processes.
+
+   :return:
+       The list of Particle to Contact user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetContactToParticleProcessNames()
+
+   
+   Get the names of created Contact to Particle processes.
+
+   :return:
+       The list of Contact to Particle user process names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateStreamlinesUserProcess(parent: ansys.rocky.app.api_element_item.ApiElementItem, name: str | None = None) -> ansys.rocky.app.ra_streamlines_user_process.RAStreamlinesUserProcess | None
+
+   
+   Creates a new StreamlinesUserProcess process using the given parent as input.
+
+   :param parent:
+       The parent process.
+
+   :param name:
+       The name of the new process or None for default
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStreamlinesUserProcessNames() -> list[str]
+
+   
+   Get the names of created streamlines processes.
+
+   :return:
+       The list of streamlines user process names.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

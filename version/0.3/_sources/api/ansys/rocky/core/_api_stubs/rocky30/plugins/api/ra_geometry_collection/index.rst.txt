@@ -1,0 +1,68 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_geometry_collection
+======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_geometry_collection
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_geometry_collection.RAGeometryCollection
+
+
+Module Contents
+---------------
+
+.. py:class:: RAGeometryCollection(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.geometry.geometry_collection.GeometryCollection]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetGeometryNames() -> list[str]
+
+
+   .. py:method:: GetGeometry(geometry_name)
+
+
+   .. py:method:: IterInputGeometries() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+   .. py:method:: IterInletGeometries() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+   .. py:method:: IterSurfaces() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+   .. py:method:: IterWalls() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+   .. py:method:: IterSystemCouplingWalls() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry]
+
+
+   .. py:method:: GetBoundingBox(time_step: Union[coilib50.time.time_step_interface.ITimeStep, None], force_load: bool = ...) -> tuple[barril.units.FixedArray, barril.units.FixedArray]
+
+
+   .. py:method:: RemoveGeometry(geometry: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry, str, None]) -> None
+
+
+   .. py:method:: __iter__() -> collections.abc.Iterator[ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem]
+
+
+   .. py:method:: __len__() -> int
+
+
+   .. py:method:: __getitem__(index: int) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry
+
+

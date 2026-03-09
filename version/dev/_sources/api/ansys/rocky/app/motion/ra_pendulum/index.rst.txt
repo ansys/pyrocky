@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_pendulum.py`` module
+=============================
+
+.. py:module:: ansys.rocky.app.motion.ra_pendulum
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_pendulum
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_pendulum.RAPendulum`
+            - Rocky PrePost Scripting wrapper representing a Pendulum motion.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAPendulum</api/ansys/rocky/app/motion/ra_pendulum/RAPendulum>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

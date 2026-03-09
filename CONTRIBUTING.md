@@ -9,6 +9,8 @@ The following contribution information is specific to PyRocky.
 
 [Contributing]: https://dev.docs.pyansys.com/how-to/contributing.html
 
+<!-- Begin content specific to your library here. -->
+
 For contributing to this project, see the [PyRocky Developer's Guide].
 
 [PyRocky Developer's Guide]: https://rocky.docs.pyansys.com/version/dev/contributing.html

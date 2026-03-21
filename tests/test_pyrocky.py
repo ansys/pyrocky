@@ -28,6 +28,7 @@ import pytest
 
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core.client import _PYROCKY_DEFAULT_PORT
+from ansys.rocky.core.exceptions import NotSupportedError
 from ansys.rocky.core.launcher import RockyLaunchError
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
@@ -78,12 +79,14 @@ def create_basic_project_with_results(
 
 
 def test_not_supported_version_error():
-    with pytest.raises(ValueError, match=f"Rocky version 222 is not supported.*"):
+    with pytest.raises(NotSupportedError, match=f"Rocky version 222 is not supported.*"):
         pyrocky.launch_rocky(rocky_version=222)
 
 
 def test_freeflow_not_supported_version_error():
-    with pytest.raises(ValueError, match=f"Freeflow version 222 is not supported.*"):
+    with pytest.raises(
+        NotSupportedError, match=f"Freeflow version 222 is not supported.*"
+    ):
         pyrocky.launch_freeflow(freeflow_version=222)
 
 

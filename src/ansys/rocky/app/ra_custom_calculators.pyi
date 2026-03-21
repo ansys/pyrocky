@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -59,6 +59,7 @@ class RACustomCurveAndGridProperty:
     ) -> None:
         """
         Add a custom curve in the database.
+
         :param name:
             The name of the curve to be set.
         :param curve_type:
@@ -84,6 +85,7 @@ class RACustomCurveAndGridProperty:
     ) -> None:
         """
         Edit a custom curve saved in the database.
+
         :param edit_curve:
             The name of the curve to be edited.
         :param new_name:
@@ -98,6 +100,7 @@ class RACustomCurveAndGridProperty:
     def RemoveCustomCurve(self, name: str) -> None:
         """
         Remove the curve from the database
+
         :param name:
             The name of the curve to be removed.
         """
@@ -139,6 +142,7 @@ class RACustomCurveAndGridProperty:
     ) -> None:
         """
         Edit a custom property saved in the database.
+
         :param edit_property:
             The name of the property to be edited.
         :param new_name:
@@ -153,6 +157,7 @@ class RACustomCurveAndGridProperty:
     def RemoveCustomProperty(self, name: str) -> None:
         """
         Remove the property from the database
+
         :param name:
             The name of the property to be removed.
         """
@@ -161,6 +166,7 @@ class RACustomCurveParameters:
     variable_to_association_and_unit: dict[str, tuple[SemanticAssociation, str]]
     output_quantity: Incomplete
     domain_association: Incomplete
+
     def __init__(
         self, process: RACustomCurveAndGridProperty, sources: dict[str, str] | None = None
     ) -> None: ...

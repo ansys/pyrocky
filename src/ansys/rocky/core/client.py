@@ -57,7 +57,7 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
     Parameters
     ----------
     host : str, optional
-        Host name where the app is running. On Windows, default is ``"localhost"`. On
+        Host name where the app is running. On Windows, default is ``"localhost"``. On
         Linux, it defaults to a unix domain socket connection.
     port : int, optional
         Service port to connect to.

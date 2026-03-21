@@ -91,6 +91,10 @@ numpydoc_validation_checks = {
     "RT02",  # The first line of the Returns section should contain only the
     # type, unless multiple values are being returned"
 }
+# AutoAPI currently includes many generated app API stubs (.pyi) with inherited and
+# special members lacking docstrings. Exclude this namespace from numpydoc
+# validation to avoid non-actionable GL08 floods in doc builds.
+numpydoc_validation_exclude_files = {r"^src/ansys/rocky/app/.+?\.pyi"}
 
 
 # static path
@@ -134,10 +138,11 @@ autoapi_options = [
     "special-members",
 ]
 autoapi_template_dir = get_autoapi_templates_dir_relative_path(Path(__file__).parent)
-suppress_warnings = ["autoapi.python_import_resolution"]
 autoapi_python_use_implicit_namespaces = True
 autoapi_keep_files = True
 autoapi_render_in_single_page = ["class", "enum", "exception"]
 
 # PyAnsys tags configuration
 html_context = {"pyansys_tags": ["Fluids"]}
+
+suppress_warnings = ["autoapi.python_import_resolution", "config.cache"]

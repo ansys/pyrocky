@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -475,6 +475,7 @@ class RAStudy(ApiElementItem):
     def GetInputReader(self) -> InputReader:
         """
         Get the study's input reader.
+
         :return:
             The input reader associated with the study.
         """
@@ -848,7 +849,9 @@ class RAStudy(ApiElementItem):
         Get whether the Intra Particle Collision Statistics Module is enabled.
         """
 
-    def SetMeshedParticlesUpscalingEnabled(self, value: bool) -> None: ...
+    def SetMeshedParticlesUpscalingEnabled(self, value: bool) -> None:
+        """ """
+
     def GetMeshedParticlesUpscalingEnabled(self) -> bool:
         """
         Get the Meshed Particles Upscaling value.

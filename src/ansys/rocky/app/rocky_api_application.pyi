@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -83,7 +83,7 @@ class RockyApiApplication(ApiApplication):
         Closes the current project, if any, and opens the project with the given filename.
 
         :param str filename:
-        The complete path of the project to be opened.
+            The complete path of the project to be opened.
         :rtype RAProject:
         """
 

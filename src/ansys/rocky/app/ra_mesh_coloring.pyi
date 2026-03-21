@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -420,7 +420,7 @@ class RAMeshColoring(ApiElementItem):
 
     def GetFaceCustomStructuredPartitions(self) -> list[str]:
         """
-         Get the value of "Face Custom Structured Partitions".
+        Get the value of "Face Custom Structured Partitions".
 
         :return:
             The returned value will be a combination of [\'Top\', \'Bottom\', \'North\', \'South\', \'East\',

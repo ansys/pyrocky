@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -88,18 +88,18 @@ class RATimeStatistics(ApiElementItem):
         """
         Add a new time statistics grid function.
 
-        * For both time parameters (`start_time` and `stop_time`), three kinds of values can be passed:
-            - A float or int, which will be assumed to be a value in seconds;
-            - A tuple with a float or int and an unicode. The first element is the value, and the second
-            is the value\'s unit.
-            - A time Scalar.
-        * `operation` must be the unicode string representing one of the operations that the time
-        statistics grid functions support. Currently these are limited to "average", "min", "max" and
-        "sum".
-        * `grid_function_name` must be the unicode string of the name of the input grid function over
-        which the `operation` will be performed.
-        * `location` is optional and must be one of \'cell\' or \'node\'. If no location is passed, the
-        time statistics grid function will be created on the cell.
+            * For both time parameters (`start_time` and `stop_time`), three kinds of values can be passed:
+                - A float or int, which will be assumed to be a value in seconds;
+                - A tuple with a float or int and an unicode. The first element is the value, and the second
+                  is the value\'s unit.
+                - A time Scalar.
+            * `operation` must be the unicode string representing one of the operations that the time
+               statistics grid functions support. Currently these are limited to "average", "min", "max" and
+               "sum".
+            * `grid_function_name` must be the unicode string of the name of the input grid function over
+               which the `operation` will be performed.
+            * `location` is optional and must be one of \'cell\' or \'node\'. If no location is passed, the
+               time statistics grid function will be created on the cell.
 
         :rtype: RATimeStatistics
         :return:

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -19,21 +19,25 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-"""Module where the exceptions of the project are contained."""
+"""Module where the exception classes of the project are contained."""
 
 
-class PyRockyError(Exception):
+class RockyApiClientError(Exception):
     """Provides the generic exception for the PyRocky API."""
 
 
-class RockyLaunchError(PyRockyError):
+class NotSupportedError(Exception):
+    """Provides the error to be raised when feature/parameter/version is not supported."""
+
+
+class RockyLaunchError(RockyApiClientError):
     """Provides the error raised when problems occurs during launch of the Rocky app."""
 
 
-class FreeflowLaunchError(PyRockyError):
+class FreeflowLaunchError(RockyApiClientError):
     """Provides the error raised when problems occurs during launch of the Freeflow
     app."""
 
 
-class RockyApiError(Exception):
-    """Provides the ``Exception`` class for an error generated in the API layer."""
+class RockyApiServerError(Exception):
+    """Provides the ``Exception`` class for an error generated within the API layer."""

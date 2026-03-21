@@ -38,7 +38,11 @@ from ansys.rocky.core.client import (
     _uds_socket_path,
     connect,
 )
-from ansys.rocky.core.exceptions import FreeflowLaunchError, RockyLaunchError
+from ansys.rocky.core.exceptions import (
+    FreeflowLaunchError,
+    NotSupportedError,
+    RockyLaunchError,
+)
 
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 COMPANY = "Ansys"
@@ -94,7 +98,7 @@ def launch_rocky(
 
     if rocky_version is not None:
         if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-            raise ValueError(
+            raise NotSupportedError(
                 f"Rocky version {rocky_version} is not supported. "
                 f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
             )
@@ -174,7 +178,7 @@ def launch_freeflow(  # pragma: no cover
 
     if freeflow_version is not None:
         if freeflow_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-            raise ValueError(
+            raise NotSupportedError(
                 f"Freeflow version {freeflow_version} is not supported. "
                 f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
             )

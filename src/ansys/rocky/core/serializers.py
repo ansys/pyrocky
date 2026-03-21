@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -47,9 +47,7 @@ def register_proxies() -> None:
     Pyro5.api.register_dict_to_class(
         "ApiExportToolkitProxy", deserialize_api_exporttoolkit
     )
-    Pyro5.api.register_dict_to_class(
-        "ApiProjectProxy", deserialize_api_project
-    )
+    Pyro5.api.register_dict_to_class("ApiProjectProxy", deserialize_api_project)
     Pyro5.api.register_dict_to_class("RockyApiError", deserialize_api_error)
     Pyro5.api.register_dict_to_class("ndarray", deserialize_numpy)
 
@@ -174,9 +172,7 @@ def deserialize_api_exporttoolkit(
     return ApiExportToolkitProxy(proxy, session_uid)
 
 
-def deserialize_api_project(
-    classname: str, serialized: dict
-) -> ApiProjectProxy:
+def deserialize_api_project(classname: str, serialized: dict) -> ApiProjectProxy:
     """Deserialize the proxy objects for the API project.
 
     Parameters
@@ -214,9 +210,9 @@ def deserialize_api_error(classname: str, serialized: dict) -> Exception:
     RockyApiError
         Error in the serialized object.
     """
-    from ansys.rocky.core.exceptions import RockyApiError
+    from ansys.rocky.core.exceptions import RockyApiServerError
 
-    return RockyApiError(serialized["message"])
+    return RockyApiServerError(serialized["message"])
 
 
 def deserialize_numpy(classname: str, serialized: dict) -> Any:
@@ -240,7 +236,7 @@ def deserialize_numpy(classname: str, serialized: dict) -> Any:
 
 
 def _GetProxyInstance(session_uid: str) -> Pyro5.api.Proxy:
-    from .client import _LEGACY_PROXY_INSTANCE, _API_PROXY_INSTANCES
+    from .client import _API_PROXY_INSTANCES, _LEGACY_PROXY_INSTANCE
 
     proxy = _API_PROXY_INSTANCES.get(session_uid, _LEGACY_PROXY_INSTANCE)
     assert proxy is not None, "API Proxy not initialized"

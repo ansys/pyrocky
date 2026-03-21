@@ -34,7 +34,7 @@ import warnings
 import Pyro5.api
 from Pyro5.errors import CommunicationError
 
-from ansys.rocky.core.exceptions import PyRockyError
+from ansys.rocky.core.exceptions import NotSupportedError
 from ansys.rocky.core.serializers import register_proxies
 
 if TYPE_CHECKING:
@@ -75,7 +75,7 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
     else:
         # Use UDS for Linux as default
         if host:
-            raise PyRockyError(
+            raise NotSupportedError(
                 "TCP connections are not supported on Linux. Please omit the"
                 " 'host' parameter."
             )

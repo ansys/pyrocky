@@ -116,7 +116,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ansys-version: [251, 252, 261]
+        # On branches, run tests only for the latest version.
+        ansys-version: ${{ fromJSON(github.ref == 'refs/heads/main' && '[251,252,261]' || '[261]') }}
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
       # Windows TCP client authentication still doesn't support IPv6

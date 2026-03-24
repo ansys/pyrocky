@@ -119,7 +119,8 @@ def launch_rocky(
         rocky_process = subprocess.Popen(cmd)
         rocky_process.wait(timeout=3)
 
-    # Rocky.exe call returned to soon, something happen
+    # Rocky takes many seconds to boot, so we don't expect a `returncode` to be set at
+    # this point unless something wrong happens at launch.
     if rocky_process.returncode is not None:  # pragma: no cover
         raise RockyLaunchError(f"Error launching Rocky:\n  {' '.join(cmd)}")
 

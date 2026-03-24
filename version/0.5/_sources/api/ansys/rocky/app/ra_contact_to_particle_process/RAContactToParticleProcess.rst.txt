@@ -1,0 +1,89 @@
+
+
+
+
+
+
+:class:`RAContactToParticleProcess`
+===================================
+
+
+.. py:class:: ansys.rocky.app.ra_contact_to_particle_process.RAContactToParticleProcess
+
+   Bases: :py:obj:`ansys.rocky.app.ra_process_element.RAUserProcess`
+
+
+   
+   Process that computes particles from a selection of contacts.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAContactToParticleProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_contact_to_particle_process import RAContactToParticleProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+
+
+

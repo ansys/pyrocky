@@ -192,15 +192,8 @@ def _get_numerical_version(rocky_api: Pyro5.api.Proxy) -> int:
     int
         Rocky app version as int.
     """
-    assert rocky_api is not None, "API Proxy not initialized"
-    try:
-        # From 25.1 onwards we may use this to obtain the current rocky version.
-        rocky_version = rocky_api.GetVersion().split(".")
-        return int(rocky_version[0] + rocky_version[1])  # major + minor
-    except:
-        # The rocky version is older than 25.1, the specific version is not really
-        # important.
-        return 240
+    rocky_version = rocky_api.GetVersion().split(".")
+    return int(rocky_version[0] + rocky_version[1])  # major + minor
 
 
 def wait_for(predicate_callback: Callable[[], bool], *, timeout: int) -> None:

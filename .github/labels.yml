@@ -1,4 +1,4 @@
-# The labels declared in this file are the ones availables
+# The labels declared in this file are the ones available
 # https://github.com/ansys/pyrocky/labels
 
 # -- Defects and glitches labels----------------------------------------------
@@ -42,16 +42,6 @@
 - name: 'dependencies'
   description: Related with project dependencies
   color: ffc0cb
-
-# -- Style labels ------------------------------------------------------------
-
-- name: 'style'
-  description: Improvements related to general project style
-  color: dcbeff
-
-- name: 'style:skip'
-  description: Skip style runs in CI/CD
-  color: dcbeff
 
 # -- Other labels ------------------------------------------------------------
 - name: 'enhancement'

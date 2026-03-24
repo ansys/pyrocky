@@ -29,6 +29,7 @@ from typing import Any
 import Pyro5.api
 import serpent
 
+from ansys.rocky.core.exceptions import RockyApiServerError
 from ansys.rocky.core.rocky_api_proxies import (
     ApiElementProxy,
     ApiExportToolkitProxy,
@@ -66,7 +67,7 @@ def _ApiElementProxySerializer(obj: ApiElementProxy) -> dict:
     proxy = _GetProxyInstance(session_uid)
     rocky_version = _get_numerical_version(proxy)
 
-    if rocky_version is not None:
+    if rocky_version is not None:  # pragma: no cover
         if rocky_version < 250:
             serialized["__class__"] = f'_{serialized["__class__"]}'
         if rocky_version < 261 and "_session_uid" in serialized:
@@ -210,8 +211,6 @@ def deserialize_api_error(classname: str, serialized: dict) -> Exception:
     RockyApiError
         Error in the serialized object.
     """
-    from ansys.rocky.core.exceptions import RockyApiServerError
-
     return RockyApiServerError(serialized["message"])
 
 

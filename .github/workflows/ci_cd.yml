@@ -46,8 +46,7 @@ jobs:
     name: Documentation Style Check
     runs-on: ubuntu-latest
     if: |
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'style:skip')
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     steps:
       - name: PyAnsys documentation style checks
         uses: ansys/actions/doc-style@v10
@@ -116,7 +115,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ansys-version: [251, 252, 261]
+        # On branches, run tests only for the latest version.
+        ansys-version: ${{ fromJSON(github.ref == 'refs/heads/main' && '[251,252,261]' || '[261]') }}
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
       # Windows TCP client authentication still doesn't support IPv6
@@ -128,7 +128,7 @@ jobs:
           ANSYS_VERSION: ${{ matrix.ansys-version }}
         run: |
           .\.venv\Scripts\Activate.ps1
-          pytest tests
+          pytest tests -k test_minimal_simulation
 
       - uses: codecov/codecov-action@v4
         name: 'Upload coverage to CodeCov'

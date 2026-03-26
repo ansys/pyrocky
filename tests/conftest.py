@@ -34,7 +34,7 @@ def version() -> int:
 
 @pytest.fixture(scope="module")
 def rocky_session(version):
-    rocky = pyrocky.launch_rocky(rocky_version=version, headless=False, server_port=22039)
+    rocky = pyrocky.launch_rocky(rocky_version=version, server_port=18701)
     yield rocky
     rocky.close()
 

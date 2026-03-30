@@ -1,0 +1,140 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_domain_settings
+==================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_domain_settings
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_domain_settings.RADomainSettings
+
+
+Module Contents
+---------------
+
+.. py:class:: RADomainSettings(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: CoordinateLimitsAtBoundaryLimits() -> bool
+
+
+   .. py:method:: GetCoordinateLimitsMinMax()
+
+
+   .. py:method:: GetBoundariesDirections()
+
+
+   .. py:method:: SetBoundariesDirections(value) -> None
+
+
+   .. py:method:: GetValidBoundariesDirectionsValues()
+
+
+   .. py:method:: GetCoordinateLimitsMaxValues(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetCoordinateLimitsMaxValues(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetCoordinateLimitsMinValues(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetCoordinateLimitsMinValues(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetUseBoundaryLimits() -> bool
+
+
+   .. py:method:: SetUseBoundaryLimits(value: bool) -> None
+
+
+   .. py:method:: EnableUseBoundaryLimits() -> None
+
+
+   .. py:method:: DisableUseBoundaryLimits() -> None
+
+
+   .. py:method:: IsUseBoundaryLimitsEnabled() -> bool
+
+
+   .. py:method:: GetPeriodicLimitsMaxCoordinates(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetPeriodicLimitsMaxCoordinates(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPeriodicLimitsMinCoordinates(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetPeriodicLimitsMinCoordinates(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPeriodicAtGeometryLimits() -> bool
+
+
+   .. py:method:: SetPeriodicAtGeometryLimits(value: bool) -> None
+
+
+   .. py:method:: EnablePeriodicAtGeometryLimits() -> None
+
+
+   .. py:method:: DisablePeriodicAtGeometryLimits() -> None
+
+
+   .. py:method:: IsPeriodicAtGeometryLimitsEnabled() -> bool
+
+
+   .. py:method:: GetCartesianPeriodicDirections() -> str
+
+
+   .. py:method:: SetCartesianPeriodicDirections(value: str) -> None
+
+
+   .. py:method:: GetValidCartesianPeriodicDirectionsValues() -> List[str]
+
+
+   .. py:method:: GetInitialAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetInitialAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetNumberOfDivisions() -> int
+
+
+   .. py:method:: SetNumberOfDivisions(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetCylindricalPeriodicDirections() -> str
+
+
+   .. py:method:: SetCylindricalPeriodicDirections(value: str) -> None
+
+
+   .. py:method:: GetValidCylindricalPeriodicDirectionsValues() -> List[str]
+
+
+   .. py:method:: GetDomainType() -> str
+
+
+   .. py:method:: SetDomainType(value: str) -> None
+
+
+   .. py:method:: GetValidDomainTypeValues() -> List[str]
+
+

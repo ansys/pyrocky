@@ -1,0 +1,147 @@
+
+
+
+
+
+
+:class:`RAUserProcess`
+======================
+
+
+.. py:class:: ansys.rocky.app.ra_process_element.RAUserProcess
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   
+   Base class for UserProcesses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RAUserProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetNumberOfParticles`
+            - Get the total number of particles in this selection. Only for processes created on Particles.
+          * - :py:attr:`~IterParticles`
+            - Iterate on particles in this selection at the given time. Only for processes created on Particles.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_process_element import RAUserProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetNumberOfParticles(time_step)
+
+   
+   Get the total number of particles in this selection. Only for processes created on Particles.
+
+   :type time_step: unicode, ITimeStep or int
+   :param time_step:
+       Either a 'current' string with meaning the current time step
+       or an ITimeStep identifying the time to get the topology shape
+       or an int identifying the time step index to be used based on the global time set
+
+   :rtype: int
+   :returns:
+       The number of particles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IterParticles(time_step)
+
+   
+   Iterate on particles in this selection at the given time. Only for processes created on Particles.
+
+   :type time_step: unicode, ITimeStep or int
+   :param time_step:
+       Either a 'current' string with meaning the current time step
+       or an ITimeStep identifying the time to get the topology shape
+       or an int identifying the time step index to be used based on the global time set
+
+   :rtype: iterator(Particle)
+   :returns:
+       An iterator over the particles.
+       A Particle has:
+       - x, y, z, size
+       - x_axis, y_axis, z_axis, orientation_angle
+       - type, particle_group
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

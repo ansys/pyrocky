@@ -1,0 +1,49 @@
+
+
+
+
+
+
+:class:`RockyApiClientError`
+============================
+
+
+.. py:exception:: ansys.rocky.core.exceptions.RockyApiClientError
+
+   Bases: :py:obj:`Exception`
+
+
+   
+   Provides the generic exception for the PyRocky API.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import RockyApiClientError
+
+
+
+
+

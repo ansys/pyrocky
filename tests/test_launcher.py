@@ -87,18 +87,14 @@ def test_freeflow_launcher(freeflow_session):
     assert inlets_outlets[0].GetName() == "Inlet1"
 
 
-def test_connection_timeout(request, monkeypatch):
+def test_connection_timeout(request):
     """
     Test if the connection check works as expected:
-    - Raises ConnectionRefusedError after _CONNECT_TO_SERVER_TIMEOUT
+    - Raises ConnectionRefusedError after the configured connect_timeout
     - Can connect after that.
     """
-    from ansys.rocky.core import client
-
     with pytest.raises(ConnectionRefusedError, match="Could not connect"):
-        with monkeypatch.context() as monkeypatcher:
-            monkeypatcher.setattr(client, "_CONNECT_TO_SERVER_TIMEOUT", 1)
-            pyrocky.launch_rocky()
+        pyrocky.launch_rocky(connect_timeout=1)
 
     cli = pyrocky.connect()
     request.addfinalizer(cli.close)

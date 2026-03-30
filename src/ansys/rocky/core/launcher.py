@@ -33,6 +33,7 @@ from Pyro5.errors import CommunicationError
 from ansys.tools.common.path import get_available_ansys_installations
 
 from ansys.rocky.core.client import (
+    _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
     _PYROCKY_DEFAULT_PORT,
     RockyClient,
     _uds_socket_path,
@@ -55,6 +56,7 @@ def launch_rocky(
     headless: bool = True,
     server_port: int = _PYROCKY_DEFAULT_PORT,
     close_existing: bool = False,
+    connect_timeout: int = _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
 ) -> RockyClient:
     """
     Launch the Rocky executable with the PyRocky server enabled.
@@ -77,6 +79,8 @@ def launch_rocky(
     close_existing:
         Checks if a session exists under the given server_port and closes it
         before attempting to launch a new session.
+    connect_timeout:
+        How long to wait, in seconds, when connecting to the launched Rocky session.
 
     Returns
     -------
@@ -87,7 +91,7 @@ def launch_rocky(
         if close_existing:
             # Will try to connect to an existing session using the
             # given server port and attempt to close it.
-            client = connect(port=server_port)
+            client = connect(port=server_port, timeout=connect_timeout)
             try:
                 client.close()
             except CommunicationError:
@@ -124,7 +128,7 @@ def launch_rocky(
     if rocky_process.returncode is not None:  # pragma: no cover
         raise RockyLaunchError(f"Error launching Rocky:\n  {' '.join(cmd)}")
 
-    client = connect(port=server_port)
+    client = connect(port=server_port, timeout=connect_timeout)
     client._process = rocky_process
     return client
 

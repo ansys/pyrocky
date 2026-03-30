@@ -45,13 +45,17 @@ _API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}
 _LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = (
     None  # Used for backward compatibility with versions < 26.1
 )
-_CONNECT_TO_SERVER_TIMEOUT = 60
+_DEFAULT_CONNECT_TO_SERVER_TIMEOUT: Final[int] = 60
 
 # Compatibility with dependants that still import this constant.
 DEFAULT_SERVER_PORT = _PYROCKY_DEFAULT_PORT
 
 
-def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "RockyClient":
+def connect(
+    host: str | None = None,
+    port: int = _PYROCKY_DEFAULT_PORT,
+    timeout: int = _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
+) -> "RockyClient":
     """Connect to a Rocky/Freeflow app instance.
 
     Parameters
@@ -61,6 +65,8 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
         Linux, it defaults to a unix domain socket connection.
     port : int, optional
         Service port to connect to.
+    timeout : int, optional
+        How long to wait for server availability and proxy binding.
 
     Returns
     -------
@@ -83,7 +89,7 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
         socket_path = _uds_socket_path(port)
         # Wait for Rocky app to create the socket file.
         try:
-            wait_for(socket_path.is_socket, timeout=_CONNECT_TO_SERVER_TIMEOUT)
+            wait_for(socket_path.is_socket, timeout=timeout)
         except TimeoutError:
             raise ConnectionRefusedError(f"No socket open at '{socket_path.name}'")
 
@@ -111,7 +117,7 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
         return proxy_instance._pyroConnection is not None
 
     try:
-        wait_for(is_proxy_connected, timeout=_CONNECT_TO_SERVER_TIMEOUT)
+        wait_for(is_proxy_connected, timeout=timeout)
     except TimeoutError:
         raise ConnectionRefusedError("Could not connect to the remote server: timed out")
 
@@ -130,7 +136,9 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
 
 
 def connect_to_rocky(  # pragma: no cover
-    host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT
+    host: str | None = None,
+    port: int = _PYROCKY_DEFAULT_PORT,
+    timeout: int = _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
 ) -> "RockyClient":
     """This function is deprecated.
     Use connect() instead.
@@ -139,7 +147,7 @@ def connect_to_rocky(  # pragma: no cover
         "connect_to_rocky() is deprecated, please use connect() instead.",
         DeprecationWarning,
     )
-    return connect(host, port)
+    return connect(host, port, timeout)
 
 
 def _uds_socket_path(socket_number: int) -> Path:

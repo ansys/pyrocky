@@ -24,9 +24,9 @@ import time
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import _PYROCKY_DEFAULT_PORT
+from ansys.rocky.core.client import PYROCKY_DEFAULT_PORT
 from ansys.rocky.core.exceptions import NotSupportedError
-from ansys.rocky.core.launcher import RockyLaunchError
+from ansys.rocky.core.launcher import LaunchError, _wait_for
 
 
 def test_not_supported_version_error():
@@ -48,10 +48,10 @@ def test_pyrocky_launch_multiple_servers(version):
     # Emulating Rocky server already running by binding socket to the server address.
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         time.sleep(1)  # Wait to ensure the address is properly released before binding
-        s.bind(("localhost", _PYROCKY_DEFAULT_PORT))
+        s.bind(("localhost", PYROCKY_DEFAULT_PORT))
         s.listen(10)
 
-        with pytest.raises(RockyLaunchError, match=r"Port \d+ is already in use"):
+        with pytest.raises(LaunchError, match=r"Port \d+ is already in use"):
             pyrocky.launch_rocky(rocky_version=version)
 
 
@@ -93,10 +93,10 @@ def test_connection_timeout(request):
     - Raises ConnectionRefusedError after the configured connect_timeout
     - Can connect after that.
     """
-    with pytest.raises(ConnectionRefusedError, match="Could not connect"):
+    with pytest.raises(LaunchError, match="Port \d+ is already in use"):
         pyrocky.launch_rocky(connect_timeout=1)
 
-    cli = pyrocky.connect()
+    cli = _wait_for(pyrocky.connect, timeout=30, expected_exc=ConnectionRefusedError)
     request.addfinalizer(cli.close)
 
     assert cli.api._pyroConnection

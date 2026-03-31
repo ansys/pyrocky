@@ -27,26 +27,27 @@ from pathlib import Path
 import subprocess
 import sys
 import time
-from typing import Literal
+from typing import Any, Callable, Literal
 
 from Pyro5.errors import CommunicationError
 from ansys.tools.common.path import get_available_ansys_installations
 
 from ansys.rocky.core.client import (
-    _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
-    _PYROCKY_DEFAULT_PORT,
+    PYROCKY_DEFAULT_PORT,
     RockyClient,
     _uds_socket_path,
     connect,
 )
 from ansys.rocky.core.exceptions import (
-    FreeflowLaunchError,
+    LaunchError,
     NotSupportedError,
-    RockyLaunchError,
 )
 
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 COMPANY = "Ansys"
+_DEFAULT_LAUNCH_CONNECT_TIMEOUT = (
+    120  # Cold start of Rocky/FreeFlow can take a long time.
+)
 
 
 def _launch_product(
@@ -58,20 +59,19 @@ def _launch_product(
     server_port: int,
     close_existing: bool,
     connect_timeout: int,
-    launch_error_cls: type[RockyLaunchError] | type[FreeflowLaunchError],
 ) -> RockyClient:
     if _is_port_busy(server_port):
         if close_existing:
             # Will try to connect to an existing session using the
             # given server port and attempt to close it.
-            client = connect(port=server_port, timeout=connect_timeout)
+            client = connect(port=server_port)
             try:
                 client.close()
             except CommunicationError:
                 # Maybe the session closed in the meantime so we just pass
                 pass
         else:
-            raise launch_error_cls(f"Port {server_port} is already in use.")
+            raise LaunchError(f"Port {server_port} is already in use.")
 
     if version is not None and version < MINIMUM_ANSYS_VERSION_SUPPORTED:
         raise NotSupportedError(
@@ -95,9 +95,14 @@ def _launch_product(
         rocky_process.wait(timeout=3)
 
     if rocky_process.returncode is not None:  # pragma: no cover
-        raise launch_error_cls(f"Error launching {product_name}:\n  {' '.join(cmd)}")
+        raise LaunchError(f"Error launching {product_name}:\n  {' '.join(cmd)}")
 
-    client = connect(port=server_port, timeout=connect_timeout)
+    client = _wait_for(
+        lambda: connect(port=server_port),
+        timeout=connect_timeout,
+        expected_exc=ConnectionRefusedError,
+    )
+
     client._process = rocky_process
     return client
 
@@ -107,9 +112,9 @@ def launch_rocky(
     rocky_version: int | None = None,
     *,
     headless: bool = True,
-    server_port: int = _PYROCKY_DEFAULT_PORT,
+    server_port: int = PYROCKY_DEFAULT_PORT,
     close_existing: bool = False,
-    connect_timeout: int = _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
+    connect_timeout: int | None = None,
 ) -> RockyClient:
     """
     Launch the Rocky executable with the PyRocky server enabled.
@@ -147,8 +152,9 @@ def launch_rocky(
         headless=headless,
         server_port=server_port,
         close_existing=close_existing,
-        connect_timeout=connect_timeout,
-        launch_error_cls=RockyLaunchError,
+        connect_timeout=(
+            connect_timeout if connect_timeout else _DEFAULT_LAUNCH_CONNECT_TIMEOUT
+        ),
     )
 
 
@@ -157,9 +163,9 @@ def launch_freeflow(  # pragma: no cover
     freeflow_version: int | None = None,
     *,
     headless: bool = True,
-    server_port: int = _PYROCKY_DEFAULT_PORT,
+    server_port: int = PYROCKY_DEFAULT_PORT,
     close_existing: bool = False,
-    connect_timeout: int = _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
+    connect_timeout: int = _DEFAULT_LAUNCH_CONNECT_TIMEOUT,
 ) -> RockyClient:
     """
     Launch the FreeFlow executable with the PyRocky server enabled.
@@ -197,7 +203,9 @@ def launch_freeflow(  # pragma: no cover
         headless=headless,
         server_port=server_port,
         close_existing=close_existing,
-        connect_timeout=connect_timeout,
+        connect_timeout=(
+            connect_timeout if connect_timeout else _DEFAULT_LAUNCH_CONNECT_TIMEOUT
+        ),
         launch_error_cls=FreeflowLaunchError,
     )
 
@@ -205,7 +213,7 @@ def launch_freeflow(  # pragma: no cover
 def launch_container(  # pragma: no cover
     product: Literal["rocky", "freeflow"] = "rocky",
     version_tag: str = "26.1.0",
-    port: int = _PYROCKY_DEFAULT_PORT,
+    port: int = PYROCKY_DEFAULT_PORT,
     license_server: str | None = None,
 ) -> RockyClient:
     """
@@ -240,8 +248,7 @@ def launch_container(  # pragma: no cover
         license_file = os.environ.get("ANSYSLMD_LICENSE_FILE")
 
     if license_file is None:
-        error_cls = FreeflowLaunchError if product == "freeflow" else RockyLaunchError
-        raise error_cls("Could not obtain the license file.")
+        raise LaunchError("Could not obtain the license file.")
 
     try:
         docker_client = docker.from_env()
@@ -258,8 +265,7 @@ def launch_container(  # pragma: no cover
             remove=True,
         )
     except docker.errors.DockerException as e:
-        error_cls = FreeflowLaunchError if product == "freeflow" else RockyLaunchError
-        raise error_cls(f"Failed to start {product.capitalize()} container: {e}")
+        raise LaunchError(f"Failed to start {product.capitalize()} container: {e}")
 
     client = connect(port=port)
     client._process = container
@@ -342,3 +348,27 @@ def _find_executable(
             executable = get_platform_executable_path(ansys_installation, product_name)
 
     return executable
+
+
+def _wait_for(predicate_callback: Callable, *, timeout: int, expected_exc) -> Any:
+    """
+    Waits until the given predicate callback returns True or raises ``TimeoutError``.
+
+    Parameters
+    ----------
+    predicate_callback :
+        a function that returns a boolean value.
+    timeout :
+        for how long to wait in seconds. If the timeout is reached, a ``TimeoutError``
+        is raised.
+
+    """
+    started = time.time()
+    while True:
+        try:
+            return predicate_callback()
+        except expected_exc:
+            if (time.time() - started) < timeout:
+                time.sleep(1)
+            else:
+                raise expected_exc

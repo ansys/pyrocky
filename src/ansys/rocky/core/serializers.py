@@ -29,7 +29,7 @@ from typing import Any
 import Pyro5.api
 import serpent
 
-from ansys.rocky.core.exceptions import RockyApiServerError
+from ansys.rocky.core.exceptions import ApiServerError
 from ansys.rocky.core.rocky_api_proxies import (
     ApiElementProxy,
     ApiExportToolkitProxy,
@@ -211,7 +211,7 @@ def deserialize_api_error(classname: str, serialized: dict) -> Exception:
     RockyApiError
         Error in the serialized object.
     """
-    return RockyApiServerError(serialized["message"])
+    return ApiServerError(serialized["message"])
 
 
 def deserialize_numpy(classname: str, serialized: dict) -> Any:

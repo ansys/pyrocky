@@ -22,7 +22,7 @@
 """Module where the exception classes of the project are contained."""
 
 
-class RockyApiClientError(Exception):
+class ApiClientError(Exception):
     """Provides the generic exception for the PyRocky API."""
 
 
@@ -30,14 +30,9 @@ class NotSupportedError(Exception):
     """Provides the error to be raised when feature/parameter/version is not supported."""
 
 
-class RockyLaunchError(RockyApiClientError):
+class LaunchError(ApiClientError):
     """Provides the error raised when problems occurs during launch of the Rocky app."""
 
 
-class FreeflowLaunchError(RockyApiClientError):
-    """Provides the error raised when problems occurs during launch of the Freeflow
-    app."""
-
-
-class RockyApiServerError(Exception):
+class ApiServerError(Exception):
     """Provides the ``Exception`` class for an error generated within the API layer."""

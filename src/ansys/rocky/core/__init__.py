@@ -23,16 +23,19 @@
 import importlib.metadata as importlib_metadata
 
 from .client import connect, connect_to_rocky
+from .exceptions import ApiClientError, ApiServerError, LaunchError
 from .launcher import launch_container, launch_freeflow, launch_rocky
 
 __version__ = importlib_metadata.version(__name__.replace(".", "-"))
-"""PyRocky version."""
 
 
 __all__ = [
+    "ApiServerError",
+    "ApiClientError",
     "connect_to_rocky",
     "connect",
     "launch_rocky",
     "launch_freeflow",
     "launch_container",
+    "LaunchError",
 ]

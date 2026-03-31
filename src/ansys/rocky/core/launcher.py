@@ -27,26 +27,87 @@ from pathlib import Path
 import subprocess
 import sys
 import time
-from typing import Literal
+from typing import Any, Callable, Literal
 
 from Pyro5.errors import CommunicationError
 from ansys.tools.common.path import get_available_ansys_installations
 
 from ansys.rocky.core.client import (
-    _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
-    _PYROCKY_DEFAULT_PORT,
+    PYROCKY_DEFAULT_PORT,
     RockyClient,
     _uds_socket_path,
     connect,
 )
 from ansys.rocky.core.exceptions import (
-    FreeflowLaunchError,
+    LaunchError,
     NotSupportedError,
-    RockyLaunchError,
 )
 
 MINIMUM_ANSYS_VERSION_SUPPORTED = 242
 COMPANY = "Ansys"
+_DEFAULT_LAUNCH_CONNECT_TIMEOUT = (
+    120  # Cold start of Rocky/FreeFlow can take a long time.
+)
+
+
+def _launch_product(
+    *,
+    product_name: Literal["Rocky", "FreeFlow"],
+    executable: Path | str | None,
+    version: int | None,
+    headless: bool,
+    server_port: int,
+    close_existing: bool,
+    connect_timeout: int,
+) -> RockyClient:
+    """
+    Launch `product_name` with PyRocky server enabled.
+    """
+    if _is_port_busy(server_port):
+        if close_existing:
+            # Will try to connect to an existing session using the
+            # given server port and attempt to close it.
+            client = connect(port=server_port)
+            try:
+                client.close()
+            except CommunicationError:
+                # Maybe the session closed in the meantime so we just pass
+                pass
+        else:
+            raise LaunchError(f"Port {server_port} is already in use.")
+
+    if version is not None and version < MINIMUM_ANSYS_VERSION_SUPPORTED:
+        raise NotSupportedError(
+            f"{product_name} version {version} is not supported. "
+            f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
+        )
+
+    if executable is None:
+        executable = _find_executable(product_name=product_name, version=version)
+    elif isinstance(executable, str):
+        executable = Path(executable)
+
+    if executable is None or not executable.is_file():
+        raise FileNotFoundError(f"{product_name} executable is not found.")
+
+    cmd = [str(executable), "--pyrocky", "--pyrocky-port", str(server_port)]
+    if headless:
+        cmd.append("--headless")
+    with contextlib.suppress(subprocess.TimeoutExpired):
+        rocky_process = subprocess.Popen(cmd)
+        rocky_process.wait(timeout=3)
+
+    if rocky_process.returncode is not None:  # pragma: no cover
+        raise LaunchError(f"Error launching {product_name}:\n  {' '.join(cmd)}")
+
+    client = _wait_for(
+        lambda: connect(port=server_port),
+        timeout=connect_timeout,
+        expected_exc=ConnectionRefusedError,
+    )
+
+    client._process = rocky_process
+    return client
 
 
 def launch_rocky(
@@ -54,9 +115,9 @@ def launch_rocky(
     rocky_version: int | None = None,
     *,
     headless: bool = True,
-    server_port: int = _PYROCKY_DEFAULT_PORT,
+    server_port: int = PYROCKY_DEFAULT_PORT,
     close_existing: bool = False,
-    connect_timeout: int = _DEFAULT_CONNECT_TO_SERVER_TIMEOUT,
+    connect_timeout: int | None = None,
 ) -> RockyClient:
     """
     Launch the Rocky executable with the PyRocky server enabled.
@@ -86,51 +147,27 @@ def launch_rocky(
     -------
     RockyClient
         Rocky client instance connected to the launched Rocky app.
+
+    Raises
+    ------
+    LaunchError
+        For errors starting the Rocky program instance
+    ConnectionRefusedError
+        For errors connecting to an active Rocky instance
+    NotSupportedError
+        For unsupported versions or options
     """
-    if _is_port_busy(server_port):
-        if close_existing:
-            # Will try to connect to an existing session using the
-            # given server port and attempt to close it.
-            client = connect(port=server_port, timeout=connect_timeout)
-            try:
-                client.close()
-            except CommunicationError:
-                # Maybe the session closed in the meantime so we just pass
-                pass
-        else:
-            raise RockyLaunchError(f"Port {server_port} is already in use.")
-
-    if rocky_version is not None:
-        if rocky_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-            raise NotSupportedError(
-                f"Rocky version {rocky_version} is not supported. "
-                f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
-            )
-
-    if rocky_exe is None:
-        rocky_exe = _find_executable(product_name="Rocky", version=rocky_version)
-    else:
-        if isinstance(rocky_exe, str):
-            rocky_exe = Path(rocky_exe)
-
-    if rocky_exe is None or not rocky_exe.is_file():
-        raise FileNotFoundError(f"Rocky executable is not found.")
-
-    cmd = [str(rocky_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
-    if headless:
-        cmd.append("--headless")
-    with contextlib.suppress(subprocess.TimeoutExpired):
-        rocky_process = subprocess.Popen(cmd)
-        rocky_process.wait(timeout=3)
-
-    # Rocky takes many seconds to boot, so we don't expect a `returncode` to be set at
-    # this point unless something wrong happens at launch.
-    if rocky_process.returncode is not None:  # pragma: no cover
-        raise RockyLaunchError(f"Error launching Rocky:\n  {' '.join(cmd)}")
-
-    client = connect(port=server_port, timeout=connect_timeout)
-    client._process = rocky_process
-    return client
+    return _launch_product(
+        product_name="Rocky",
+        executable=rocky_exe,
+        version=rocky_version,
+        headless=headless,
+        server_port=server_port,
+        close_existing=close_existing,
+        connect_timeout=(
+            connect_timeout if connect_timeout else _DEFAULT_LAUNCH_CONNECT_TIMEOUT
+        ),
+    )
 
 
 def launch_freeflow(  # pragma: no cover
@@ -138,8 +175,9 @@ def launch_freeflow(  # pragma: no cover
     freeflow_version: int | None = None,
     *,
     headless: bool = True,
-    server_port: int = _PYROCKY_DEFAULT_PORT,
+    server_port: int = PYROCKY_DEFAULT_PORT,
     close_existing: bool = False,
+    connect_timeout: int | None = None,
 ) -> RockyClient:
     """
     Launch the FreeFlow executable with the PyRocky server enabled.
@@ -162,61 +200,40 @@ def launch_freeflow(  # pragma: no cover
     close_existing:
         Checks if a session exists under the given server_port and closes it
         before attempting to launch a new session.
+    connect_timeout:
+        How long to wait, in seconds, when connecting to the launched Freeflow session.
 
     Returns
     -------
     RockyClient
         Rocky client instance connected to the launched Rocky/Freeflow app.
+
+    Raises
+    ------
+    LaunchError
+        For errors starting the FreeFlow program instance
+    ConnectionRefusedError
+        For errors connecting to an active FreeFlow instance
+    NotSupportedError
+        For unsupported versions or options
     """
-    if _is_port_busy(server_port):
-        if close_existing:
-            # Will try to connect to an existing session using the
-            # given server port and attempt to close it.
-            client = connect(port=server_port)
-            try:
-                client.close()
-            except CommunicationError:
-                # Maybe the session closed in the meantime so we just pass
-                pass
-        else:
-            raise FreeflowLaunchError(f"Port {server_port} is already in use.")
-
-    if freeflow_version is not None:
-        if freeflow_version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-            raise NotSupportedError(
-                f"Freeflow version {freeflow_version} is not supported. "
-                f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
-            )
-
-    if freeflow_exe is None:
-        freeflow_exe = _find_executable(product_name="FreeFlow", version=freeflow_version)
-    else:
-        if isinstance(freeflow_exe, str):
-            freeflow_exe = Path(freeflow_exe)
-
-    if freeflow_exe is None or not freeflow_exe.is_file():
-        raise FileNotFoundError(f"Freeflow executable is not found.")
-
-    cmd = [str(freeflow_exe), "--pyrocky", "--pyrocky-port", str(server_port)]
-    if headless:
-        cmd.append("--headless")
-    with contextlib.suppress(subprocess.TimeoutExpired):
-        rocky_process = subprocess.Popen(cmd)
-        rocky_process.wait(timeout=3)
-
-    # Freeflow.exe call returned to soon, something happen
-    if rocky_process.returncode is not None:
-        raise FreeflowLaunchError(f"Error launching FreeFlow:\n  {' '.join(cmd)}")
-
-    client = connect(port=server_port)
-    client._process = rocky_process
-    return client
+    return _launch_product(
+        product_name="FreeFlow",
+        executable=freeflow_exe,
+        version=freeflow_version,
+        headless=headless,
+        server_port=server_port,
+        close_existing=close_existing,
+        connect_timeout=(
+            connect_timeout if connect_timeout else _DEFAULT_LAUNCH_CONNECT_TIMEOUT
+        ),
+    )
 
 
 def launch_container(  # pragma: no cover
     product: Literal["rocky", "freeflow"] = "rocky",
     version_tag: str = "26.1.0",
-    port: int = _PYROCKY_DEFAULT_PORT,
+    port: int = PYROCKY_DEFAULT_PORT,
     license_server: str | None = None,
 ) -> RockyClient:
     """
@@ -251,8 +268,7 @@ def launch_container(  # pragma: no cover
         license_file = os.environ.get("ANSYSLMD_LICENSE_FILE")
 
     if license_file is None:
-        error_cls = FreeflowLaunchError if product == "freeflow" else RockyLaunchError
-        raise error_cls("Could not obtain the license file.")
+        raise LaunchError("Could not obtain the license file.")
 
     try:
         docker_client = docker.from_env()
@@ -269,8 +285,7 @@ def launch_container(  # pragma: no cover
             remove=True,
         )
     except docker.errors.DockerException as e:
-        error_cls = FreeflowLaunchError if product == "freeflow" else RockyLaunchError
-        raise error_cls(f"Failed to start {product.capitalize()} container: {e}")
+        raise LaunchError(f"Failed to start {product.capitalize()} container: {e}")
 
     client = connect(port=port)
     client._process = container
@@ -353,3 +368,37 @@ def _find_executable(
             executable = get_platform_executable_path(ansys_installation, product_name)
 
     return executable
+
+
+def _wait_for(predicate_callback: Callable, *, timeout: int, expected_exc) -> Any:
+    """
+    Repeatedly calls ``predicate_callback`` until it succeeds or timeout is reached.
+
+    Parameters
+    ----------
+    predicate_callback :
+        Callable invoked until it returns successfully.
+    timeout :
+        Maximum wait time in seconds.
+    expected_exc :
+        Exception type to catch and retry while waiting.
+
+    Returns
+    -------
+    Any
+        The return value from ``predicate_callback``.
+
+    Raises
+    ------
+    expected_exc
+        Raised when retries exceed ``timeout``.
+    """
+    started = time.time()
+    while True:
+        try:
+            return predicate_callback()
+        except expected_exc as exc:
+            if (time.time() - started) < timeout:
+                time.sleep(1)
+            else:
+                raise exc

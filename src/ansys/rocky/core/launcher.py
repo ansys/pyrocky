@@ -206,7 +206,6 @@ def launch_freeflow(  # pragma: no cover
         connect_timeout=(
             connect_timeout if connect_timeout else _DEFAULT_LAUNCH_CONNECT_TIMEOUT
         ),
-        launch_error_cls=FreeflowLaunchError,
     )
 
 
@@ -352,23 +351,36 @@ def _find_executable(
 
 def _wait_for(predicate_callback: Callable, *, timeout: int, expected_exc) -> Any:
     """
-    Waits until the given predicate callback returns True or raises ``TimeoutError``.
+    Repeatedly calls ``predicate_callback`` until it succeeds or timeout is reached.
 
     Parameters
     ----------
     predicate_callback :
-        a function that returns a boolean value.
+        Callable invoked until it returns successfully.
     timeout :
-        for how long to wait in seconds. If the timeout is reached, a ``TimeoutError``
-        is raised.
+        Maximum wait time in seconds.
+    expected_exc :
+        Exception type to catch and retry while waiting.
 
+    Returns
+    -------
+    Any
+        The return value from ``predicate_callback``.
+
+    Raises
+    ------
+    expected_exc
+        Raised when retries exceed ``timeout``.
     """
     started = time.time()
+    latest_exception = None
     while True:
         try:
             return predicate_callback()
-        except expected_exc:
+        except expected_exc as exception:
+            latest_exception = exception
             if (time.time() - started) < timeout:
                 time.sleep(1)
             else:
-                raise expected_exc
+                if latest_exception is not None:
+                    raise latest_exception

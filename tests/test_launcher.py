@@ -93,7 +93,7 @@ def test_connection_timeout(request):
     - Raises ConnectionRefusedError after the configured connect_timeout
     - Can connect after that.
     """
-    with pytest.raises(LaunchError, match="Port \d+ is already in use"):
+    with pytest.raises(ConnectionRefusedError, match="Could not connect"):
         pyrocky.launch_rocky(connect_timeout=1)
 
     cli = _wait_for(pyrocky.connect, timeout=30, expected_exc=ConnectionRefusedError)

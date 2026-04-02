@@ -34,7 +34,7 @@ dependencies = [
 [project.optional-dependencies]
 tests = [
     "pytest==9.0.2",
-    "pytest-cov==7.0.0",
+    "pytest-cov==7.1.0",
     "requests==2.32.5",
     "ansys-tools-common==0.4.5",
 ]

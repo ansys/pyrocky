@@ -27,8 +27,7 @@ import hashlib
 import os
 from pathlib import Path
 import sys
-import time
-from typing import TYPE_CHECKING, Callable, Final
+from typing import TYPE_CHECKING, Final
 import warnings
 
 import Pyro5.api
@@ -40,18 +39,16 @@ from ansys.rocky.core.serializers import register_proxies
 if TYPE_CHECKING:
     from ansys.rocky.app.rocky_api_application import RockyApiApplication
 
-_PYROCKY_DEFAULT_PORT: Final[int] = 18615
+PYROCKY_DEFAULT_PORT: Final[int] = 18615
 _API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}
 _LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = (
     None  # Used for backward compatibility with versions < 26.1
 )
-_CONNECT_TO_SERVER_TIMEOUT = 60
-
 # Compatibility with dependants that still import this constant.
-DEFAULT_SERVER_PORT = _PYROCKY_DEFAULT_PORT
+DEFAULT_SERVER_PORT = PYROCKY_DEFAULT_PORT
 
 
-def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "RockyClient":
+def connect(host: str | None = None, port: int = PYROCKY_DEFAULT_PORT) -> "RockyClient":
     """Connect to a Rocky/Freeflow app instance.
 
     Parameters
@@ -61,7 +58,6 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
         Linux, it defaults to a unix domain socket connection.
     port : int, optional
         Service port to connect to.
-
     Returns
     -------
     RockyClient
@@ -81,10 +77,7 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
             )
 
         socket_path = _uds_socket_path(port)
-        # Wait for Rocky app to create the socket file.
-        try:
-            wait_for(socket_path.is_socket, timeout=_CONNECT_TO_SERVER_TIMEOUT)
-        except TimeoutError:
+        if not socket_path.is_socket():
             raise ConnectionRefusedError(f"No socket open at '{socket_path.name}'")
 
         pyro_uri = f"PYRO:rocky.api@./u:{socket_path}"
@@ -110,10 +103,8 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
             return False
         return proxy_instance._pyroConnection is not None
 
-    try:
-        wait_for(is_proxy_connected, timeout=_CONNECT_TO_SERVER_TIMEOUT)
-    except TimeoutError:
-        raise ConnectionRefusedError("Could not connect to the remote server: timed out")
+    if not is_proxy_connected():
+        raise ConnectionRefusedError("Could not connect to the remote server")
 
     rocky_version = _get_numerical_version(proxy_instance)
     if rocky_version >= 261:
@@ -130,7 +121,8 @@ def connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> "Rock
 
 
 def connect_to_rocky(  # pragma: no cover
-    host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT
+    host: str | None = None,
+    port: int = PYROCKY_DEFAULT_PORT,
 ) -> "RockyClient":
     """This function is deprecated.
     Use connect() instead.
@@ -194,25 +186,3 @@ def _get_numerical_version(rocky_api: Pyro5.api.Proxy) -> int:
     """
     rocky_version = rocky_api.GetVersion().split(".")
     return int(rocky_version[0] + rocky_version[1])  # major + minor
-
-
-def wait_for(predicate_callback: Callable[[], bool], *, timeout: int) -> None:
-    """
-    Waits until the given predicate callback returns True or raises ``TimeoutError``.
-
-    Parameters
-    ----------
-    predicate_callback :
-        a function that returns a boolean value.
-    timeout :
-        for how long to wait in seconds. If the timeout is reached, a ``TimeoutError``
-        is raised.
-
-    """
-    started = time.time()
-    while (time.time() - started) < timeout:
-        if predicate_callback():
-            return
-        else:
-            time.sleep(1)
-    raise TimeoutError("Operation timed out")

@@ -138,14 +138,19 @@ jobs:
           files: .cov/xml
           flags: ${{ matrix.ansys-version }}
 
-  tests_setup_linux:
-    name: Linux Tests Setup
+  tests_run_linux:
+    name: Linux v${{ matrix.ansys-version }} Tests
     runs-on: [self-hosted, Linux, pyrocky]
-    # Temporarily disable Linux setup and tests
-#    if: |
-#      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-#      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
-    timeout-minutes: 5
+    if: |
+      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        ansys-version: [261]
+    env:
+      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
       - uses: actions/checkout@v6
@@ -157,46 +162,21 @@ jobs:
 
       - name: Create Python venv
         run: |
-          python -m venv .venv-tests
-
-      - name: Install packages for tests (Linux)
-        run: |
-          source .venv-tests/bin/activate
+          python -m venv .venv
+          source .venv/bin/activate
           python -m pip install --upgrade pip
           pip install .[tests]
-
-  tests_run_linux:
-    name: Linux v${{ matrix.ansys-version }} Tests
-    needs: tests_setup_linux
-    runs-on: [self-hosted, Linux, pyrocky]
-    # Temporarily disable Linux setup and tests
-#    if: |
-#      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-#      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
-    timeout-minutes: 10
-    strategy:
-      fail-fast: false
-      matrix:
-        ansys-version: [261]
-    env:
-      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
-
-    steps:
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
       - name: Run unit tests (Linux)
         env:
           ANSYS_VERSION: ${{ matrix.ansys-version }}
         run: |
-          source .venv-tests/bin/activate
-          pytest tests
+          source .venv/bin/activate
+          pytest tests -ra --cov=ansys.rocky --cov-report html:.cov/html --cov-report xml:.cov/xml --cov-report term -vv
 
   docs_build:
     name: Documentation
-    runs-on: [self-hosted, Windows, pyrocky]
+    runs-on: [self-hosted, Linux, pyrocky]
     if: |
       contains(github.event.pull_request.labels.*.name, 'docs') ||
       github.ref == 'refs/heads/main' ||
@@ -209,8 +189,7 @@ jobs:
         uses: ansys/actions/doc-build@v10
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
-          use-uv: false
-          use-python-cache: 'false'
+          use-uv: true
           # Disable default -W flag (treat warnings as errors)
           sphinxopts: '-j 1'
 

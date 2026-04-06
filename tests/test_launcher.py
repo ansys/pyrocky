@@ -26,7 +26,8 @@ import pytest
 import ansys.rocky.core as pyrocky
 from ansys.rocky.core.client import PYROCKY_DEFAULT_PORT, _uds_socket_path
 from ansys.rocky.core.exceptions import NotSupportedError
-from ansys.rocky.core.launcher import LaunchError, _wait_for
+from ansys.rocky.core.launcher import LaunchError
+from ansys.rocky.core.retry import wait_succeed
 
 
 def test_not_supported_version_error():
@@ -45,7 +46,7 @@ def test_port_busy_check(version):
     """
     import socket
 
-    connect_timeout = 60
+    connect_timeout = 30
 
     if sys.platform == "win32":
         # Emulating Rocky server by binding a TCP socket to the server address.
@@ -58,8 +59,9 @@ def test_port_busy_check(version):
                     rocky_version=version, connect_timeout=connect_timeout
                 )
     else:
+        socket_number = 9015
         # Emulating Rocky server by binding a UDS socket to the expected path.
-        socket_path = _uds_socket_path(PYROCKY_DEFAULT_PORT)
+        socket_path = _uds_socket_path(socket_number)
         socket_path.parent.mkdir(parents=True, exist_ok=True)
         assert not socket_path.is_file(), "Unexpected socket file"
         with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
@@ -68,7 +70,9 @@ def test_port_busy_check(version):
             try:
                 with pytest.raises(LaunchError, match=r"Port \d+ is already in use"):
                     pyrocky.launch_rocky(
-                        rocky_version=version, connect_timeout=connect_timeout
+                        rocky_version=version,
+                        connect_timeout=connect_timeout,
+                        server_port=socket_number,
                     )
             finally:
                 socket_path.unlink(missing_ok=True)
@@ -117,7 +121,9 @@ def test_connection_timeout(request):
         with pytest.raises(ConnectionRefusedError, match="Could not connect"):
             pyrocky.launch_rocky(connect_timeout=1)
 
-        cli = _wait_for(pyrocky.connect, timeout=30, expected_exc=ConnectionRefusedError)
+        cli = wait_succeed(
+            pyrocky.connect, timeout=30, expected_exc=ConnectionRefusedError
+        )
     else:
         # On Linux, Rocky uses UDS which connects much faster than TCP.
         # After the 3-second subprocess startup check, the server is already
@@ -125,7 +131,7 @@ def test_connection_timeout(request):
         # launch_rocky. Test the timeout mechanism directly instead.
         unused_port = 59999
         with pytest.raises(ConnectionRefusedError, match="No socket open"):
-            _wait_for(
+            wait_succeed(
                 lambda: pyrocky.connect(port=unused_port),
                 timeout=1,
                 expected_exc=ConnectionRefusedError,

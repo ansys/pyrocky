@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -38,14 +38,11 @@ import tempfile
 
 import ansys.rocky.core as pyrocky
 
-# Temporarily pin to v252 because next version is failing on Pyro connection
-ROCKY_VERSION = 252
-
 # Create a temp directory to save the project.
 project_dir = tempfile.mkdtemp(prefix="pyrocky_")
 
 # Launch Rocky and open a project.
-rocky = pyrocky.launch_rocky(rocky_version=ROCKY_VERSION)
+rocky = pyrocky.launch_rocky()
 project = rocky.api.CreateProject()
 
 ###############################################################################

@@ -26,12 +26,11 @@ import os
 from pathlib import Path
 import subprocess
 import sys
-import time
-from typing import Any, Callable, Literal
+from typing import Literal
 
-from Pyro5.errors import CommunicationError
 from ansys.tools.common.path import get_available_ansys_installations
 
+from ansys.rocky.core import retry
 from ansys.rocky.core.client import (
     PYROCKY_DEFAULT_PORT,
     RockyClient,
@@ -68,16 +67,12 @@ def _launch_product(
             # Will try to connect to an existing session using the
             # given server port and attempt to close it.
             client = connect(port=server_port)
-            try:
-                client.close()
-            except CommunicationError:
-                # Maybe the session closed in the meantime so we just pass
-                pass
+            client.close()
         else:
             raise LaunchError(f"Port {server_port} is already in use.")
 
     if version is not None and version < MINIMUM_ANSYS_VERSION_SUPPORTED:
-        raise NotSupportedError(
+        raise NotSupportedError(  # pragma: no cover
             f"{product_name} version {version} is not supported. "
             f"The minimum supported version is {MINIMUM_ANSYS_VERSION_SUPPORTED}"
         )
@@ -100,7 +95,7 @@ def _launch_product(
     if rocky_process.returncode is not None:  # pragma: no cover
         raise LaunchError(f"Error launching {product_name}:\n  {' '.join(cmd)}")
 
-    client = _wait_for(
+    client = retry.wait_succeed(
         lambda: connect(port=server_port),
         timeout=connect_timeout,
         expected_exc=ConnectionRefusedError,
@@ -300,8 +295,6 @@ def _is_port_busy(port: int) -> bool:
     ----------
     port : int
         Port to check.
-    timeout : int
-        How long to wait for the port to be freed.
 
     Returns
     -------
@@ -310,7 +303,12 @@ def _is_port_busy(port: int) -> bool:
     """
     import socket
 
-    if sys.platform != "win32":
+    if sys.platform == "win32":
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            # If the socket is able to connect, it means the port is busy.
+            return s.connect_ex(("localhost", port)) == 0
+
+    else:
         socket_path = _uds_socket_path(port)
         if not socket_path.exists():
             return False
@@ -319,20 +317,7 @@ def _is_port_busy(port: int) -> bool:
                 s.settimeout(2)
                 s.connect(str(socket_path))
                 return True
-        except (ConnectionRefusedError, OSError):
-            return False
-    else:
-
-        def try_connect():
-            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-                if s.connect_ex(("localhost", port)) == 0:
-                    raise ConnectionRefusedError(f"Port {port} is busy.")
-
-        try:
-            _wait_for(try_connect, timeout=10, expected_exc=ConnectionRefusedError)
-        except ConnectionRefusedError:
-            return True
-        else:
+        except (ConnectionRefusedError, OSError):  # pragma: no cover
             return False
 
 
@@ -368,7 +353,7 @@ def _find_executable(
         """
         if sys.platform == "win32":
             return Path(installation_path) / f"{product_name}/bin/{product_name}.exe"
-        else:  # pragma: no cover
+        else:
             return Path(installation_path) / f"{product_name.lower()}/{product_name}"
 
     if version is None:
@@ -385,37 +370,3 @@ def _find_executable(
             executable = get_platform_executable_path(ansys_installation, product_name)
 
     return executable
-
-
-def _wait_for(predicate_callback: Callable, *, timeout: int, expected_exc) -> Any:
-    """
-    Repeatedly calls ``predicate_callback`` until it succeeds or timeout is reached.
-
-    Parameters
-    ----------
-    predicate_callback :
-        Callable invoked until it returns successfully.
-    timeout :
-        Maximum wait time in seconds.
-    expected_exc :
-        Exception type to catch and retry while waiting.
-
-    Returns
-    -------
-    Any
-        The return value from ``predicate_callback``.
-
-    Raises
-    ------
-    expected_exc
-        Raised when retries exceed ``timeout``.
-    """
-    started = time.time()
-    while True:
-        try:
-            return predicate_callback()
-        except expected_exc as exc:
-            if (time.time() - started) < timeout:
-                time.sleep(1)
-            else:
-                raise exc

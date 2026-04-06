@@ -110,7 +110,6 @@ source_suffix = ".rst"
 # The master toctree document.
 master_doc = "index"
 
-
 sphinx_gallery_conf = {
     # path to your examples scripts
     "examples_dirs": ["../../examples/"],
@@ -146,3 +145,7 @@ autoapi_render_in_single_page = ["class", "enum", "exception"]
 html_context = {"pyansys_tags": ["Fluids"]}
 
 suppress_warnings = ["autoapi.python_import_resolution", "config.cache"]
+# Do not check Ansys Rocky website since it takes a lot of time to fully load.
+linkcheck_ignore = [
+    "https://www.ansys.com/products/fluids/ansys-rocky",
+]

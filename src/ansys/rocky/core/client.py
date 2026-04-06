@@ -39,7 +39,7 @@ from ansys.rocky.core.serializers import register_proxies
 if TYPE_CHECKING:
     from ansys.rocky.app.rocky_api_application import RockyApiApplication
 
-PYROCKY_DEFAULT_PORT: Final[int] = 9011
+PYROCKY_DEFAULT_PORT: Final[int] = 18615
 _API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}
 _LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = (
     None  # Used for backward compatibility with versions < 26.1

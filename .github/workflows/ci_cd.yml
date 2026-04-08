@@ -142,10 +142,9 @@ jobs:
     name: Linux Tests Setup
     runs-on: [self-hosted, Linux, pyrocky]
     # Temporarily disable Linux setup and tests
-    if: |
-      false &&
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+#    if: |
+#      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+#      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     timeout-minutes: 5
 
     steps:
@@ -158,11 +157,11 @@ jobs:
 
       - name: Create Python venv
         run: |
-          python -m venv .venv
+          python -m venv .venv-tests
 
       - name: Install packages for tests (Linux)
         run: |
-          source .venv/bin/activate
+          source .venv-tests/bin/activate
           python -m pip install --upgrade pip
           pip install .[tests]
 
@@ -171,24 +170,28 @@ jobs:
     needs: tests_setup_linux
     runs-on: [self-hosted, Linux, pyrocky]
     # Temporarily disable Linux setup and tests
-    if: |
-      false &&
-      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
-      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
+#    if: |
+#      !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
+#      !contains(github.event.pull_request.labels.*.name, 'tests:skip')
     timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
-        ansys-version: [251, 252, 261]
+        ansys-version: [261]
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
       - name: Run unit tests (Linux)
         env:
           ANSYS_VERSION: ${{ matrix.ansys-version }}
         run: |
-          source .venv/bin/activate
+          source .venv-tests/bin/activate
           pytest tests
 
   docs_build:
@@ -200,8 +203,6 @@ jobs:
       (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v'))
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
-      # Windows TCP client authentication still doesn't support IPv6
-      PYRO_PREFER_IP_VERSION: 4
 
     steps:
       - name: Build Documentation

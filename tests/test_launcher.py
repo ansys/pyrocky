@@ -19,12 +19,12 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-import time
+import sys
 
 import pytest
 
 import ansys.rocky.core as pyrocky
-from ansys.rocky.core.client import PYROCKY_DEFAULT_PORT
+from ansys.rocky.core.client import PYROCKY_DEFAULT_PORT, _uds_socket_path
 from ansys.rocky.core.exceptions import NotSupportedError
 from ansys.rocky.core.launcher import LaunchError, _wait_for
 
@@ -39,20 +39,39 @@ def test_invalid_rocky_exe_parameter():
         pyrocky.launch_rocky(rocky_exe="C:\\Folder\\Rocky.exe")
 
 
-def test_pyrocky_launch_multiple_servers(version):
+def test_port_busy_check(version):
     """
-    Test that start multiple rocky servers is not allowed.
+    Ensure that launcher checks for busy ports.
     """
     import socket
 
-    # Emulating Rocky server already running by binding socket to the server address.
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        time.sleep(1)  # Wait to ensure the address is properly released before binding
-        s.bind(("localhost", PYROCKY_DEFAULT_PORT))
-        s.listen(10)
+    connect_timeout = 60
 
-        with pytest.raises(LaunchError, match=r"Port \d+ is already in use"):
-            pyrocky.launch_rocky(rocky_version=version)
+    if sys.platform == "win32":
+        # Emulating Rocky server by binding a TCP socket to the server address.
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.bind(("localhost", PYROCKY_DEFAULT_PORT))
+            s.listen(connect_timeout)
+
+            with pytest.raises(LaunchError, match=r"Port \d+ is already in use"):
+                pyrocky.launch_rocky(
+                    rocky_version=version, connect_timeout=connect_timeout
+                )
+    else:
+        # Emulating Rocky server by binding a UDS socket to the expected path.
+        socket_path = _uds_socket_path(PYROCKY_DEFAULT_PORT)
+        socket_path.parent.mkdir(parents=True, exist_ok=True)
+        assert not socket_path.is_file(), "Unexpected socket file"
+        with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
+            s.bind(str(socket_path))
+            s.listen(connect_timeout)
+            try:
+                with pytest.raises(LaunchError, match=r"Port \d+ is already in use"):
+                    pyrocky.launch_rocky(
+                        rocky_version=version, connect_timeout=connect_timeout
+                    )
+            finally:
+                socket_path.unlink(missing_ok=True)
 
 
 def test_launcher_closing_existing_session(version):
@@ -71,6 +90,7 @@ def test_launcher_closing_existing_session(version):
     rocky_two.close()
 
 
+@pytest.mark.skipif(sys.platform != "win32", reason="No FreeFlow on Linux CI for now")
 def test_freeflow_launcher(freeflow_session):
     """Test to check if freeflow launcher is working as expected"""
     project = freeflow_session.api.CreateProject()
@@ -93,10 +113,25 @@ def test_connection_timeout(request):
     - Raises ConnectionRefusedError after the configured connect_timeout
     - Can connect after that.
     """
-    with pytest.raises(ConnectionRefusedError, match="Could not connect"):
-        pyrocky.launch_rocky(connect_timeout=1)
+    if sys.platform == "win32":
+        with pytest.raises(ConnectionRefusedError, match="Could not connect"):
+            pyrocky.launch_rocky(connect_timeout=1)
 
-    cli = _wait_for(pyrocky.connect, timeout=30, expected_exc=ConnectionRefusedError)
+        cli = _wait_for(pyrocky.connect, timeout=30, expected_exc=ConnectionRefusedError)
+    else:
+        # On Linux, Rocky uses UDS which connects much faster than TCP.
+        # After the 3-second subprocess startup check, the server is already
+        # available, making it impossible to trigger a connection timeout with
+        # launch_rocky. Test the timeout mechanism directly instead.
+        unused_port = 59999
+        with pytest.raises(ConnectionRefusedError, match="No socket open"):
+            _wait_for(
+                lambda: pyrocky.connect(port=unused_port),
+                timeout=1,
+                expected_exc=ConnectionRefusedError,
+            )
+        cli = pyrocky.launch_rocky()
+
     request.addfinalizer(cli.close)
 
     assert cli.api._pyroConnection

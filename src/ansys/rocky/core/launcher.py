@@ -292,7 +292,7 @@ def launch_container(  # pragma: no cover
     return client
 
 
-def _is_port_busy(port: int, timeout: int = 10) -> bool:
+def _is_port_busy(port: int) -> bool:
     """
     Check if there is already a Rocky server running.
 
@@ -310,13 +310,30 @@ def _is_port_busy(port: int, timeout: int = 10) -> bool:
     """
     import socket
 
-    for _ in range(timeout):
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            if s.connect_ex(("localhost", port)) == 0:
-                time.sleep(1)
-            else:
-                return False
-    return True
+    if sys.platform != "win32":
+        socket_path = _uds_socket_path(port)
+        if not socket_path.exists():
+            return False
+        try:
+            with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
+                s.settimeout(2)
+                s.connect(str(socket_path))
+                return True
+        except (ConnectionRefusedError, OSError):
+            return False
+    else:
+
+        def try_connect():
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                if s.connect_ex(("localhost", port)) == 0:
+                    raise ConnectionRefusedError(f"Port {port} is busy.")
+
+        try:
+            _wait_for(try_connect, timeout=10, expected_exc=ConnectionRefusedError)
+        except ConnectionRefusedError:
+            return True
+        else:
+            return False
 
 
 def _find_executable(
@@ -352,7 +369,7 @@ def _find_executable(
         if sys.platform == "win32":
             return Path(installation_path) / f"{product_name}/bin/{product_name}.exe"
         else:  # pragma: no cover
-            return Path(installation_path) / f"{product_name.lower()}/bin/{product_name}"
+            return Path(installation_path) / f"{product_name.lower()}/{product_name}"
 
     if version is None:
         for installation in sorted(ansys_installations, reverse=True):

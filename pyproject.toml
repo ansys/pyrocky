@@ -9,18 +9,18 @@ authors = [{ name="ANSYS, Inc.", email="pyansys.core@ansys.com" }]
 description = "Python client library for Ansys Rocky"
 readme = "README.rst"
 requires-python = ">=3.10,<4"
-license = { file = "LICENSE" }
+license = "MIT"
+license-files = ["LICENSE"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Information Analysis",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.14"
 ]
 dependencies = [
     "importlib-metadata>=4.0",
@@ -28,7 +28,7 @@ dependencies = [
     "numpy>=1.19, <3.0",
     "ansys-tools-common>=0.4.5",
     "click==8.3.1",  # clink 8.2.0 is failing the license check.
-    "docker>=7.1.0",
+    "docker>=7.1.0"
 ]
 
 [project.optional-dependencies]
@@ -36,7 +36,7 @@ tests = [
     "pytest==9.0.2",
     "pytest-cov==7.0.0",
     "requests==2.32.5",
-    "ansys-tools-common==0.5.0",
+    "ansys-tools-common==0.5.0"
 ]
 doc = [
     "ansys-sphinx-theme[autoapi]==1.7.2",

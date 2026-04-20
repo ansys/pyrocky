@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_inlets_outlets_collection.py`` module
+==============================================
+
+.. py:module:: ansys.rocky.app.ra_inlets_outlets_collection
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_inlets_outlets_collection
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_inlets_outlets_collection.RAInletsOutletsCollection`
+            - Rocky PrePost Scripting wrapper for the collection of particle inputs in a project.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAInletsOutletsCollection</api/ansys/rocky/app/ra_inlets_outlets_collection/RAInletsOutletsCollection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

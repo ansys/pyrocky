@@ -1,0 +1,146 @@
+
+
+
+
+
+
+:class:`RAPlaneProcess`
+=======================
+
+
+.. py:class:: ansys.rocky.app.ra_process_element.RAPlaneProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.app._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractPlaneMixin`
+
+
+   
+   Base class for UserProcesses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAPlaneProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetRelativeRotationVector`
+            - Set the X, Y and Z parameters of the plane normal
+          * - :py:attr:`~GetRelativeRotationVector`
+            - Returns the X, Y and Z plane normal
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_process_element import RAPlaneProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[sci20.plugins.process.plane_process.plane_process_subject.PlaneProcessSubject]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetRelativeRotationVector(x: float, y: float, z: float) -> None
+
+   
+   Set the X, Y and Z parameters of the plane normal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRelativeRotationVector() -> rocky30.base_types.Tuple3F
+
+   
+   Returns the X, Y and Z plane normal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

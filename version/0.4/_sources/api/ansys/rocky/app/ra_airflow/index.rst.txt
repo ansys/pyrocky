@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_airflow.py`` module
+============================
+
+.. py:module:: ansys.rocky.app.ra_airflow
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_airflow
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_airflow.RAAirFlow`
+            - Rocky PrePost Scripting wrapper for Lattice Boltzmann Air Flow.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAAirFlow</api/ansys/rocky/app/ra_airflow/RAAirFlow>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

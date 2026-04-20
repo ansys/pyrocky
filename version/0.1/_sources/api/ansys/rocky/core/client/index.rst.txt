@@ -1,0 +1,224 @@
+
+
+
+
+
+The ``client.py`` module
+========================
+
+.. py:module:: ansys.rocky.core.client
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: client
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:attr:`~RockyClient`
+            - Provides the client object for interacting with the Rocky app.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:attr:`~connect_to_rocky`
+            - Connect to a Rocky app instance.
+
+
+          * - :py:attr:`~deserialize_api_error`
+            - Deserialize an API error.
+
+
+          * - :py:attr:`~deserialize_numpy`
+            - Deserialize a numpy array.
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:attr:`~DEFAULT_SERVER_PORT`
+            - 
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    🝆 RockyClient<RockyClient>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Module with the client operations of Rocky.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: connect_to_rocky(host: str = 'localhost', port: int = DEFAULT_SERVER_PORT) -> RockyClient
+
+   
+   Connect to a Rocky app instance.
+
+
+   :Parameters:
+
+       **host** : :class:`python:str`, :obj:`optional`
+           Host name where the app is running. The default is ``"localhost"``.
+
+       **port** : :class:`python:int`, :obj:`optional`
+           Service port to connect to. The default is ``DEFAULT_SERVER_PORT``,
+           which is 50615.
+
+   :Returns:
+
+       :obj:`RockyClient`
+           Client object for interacting with the Rocky app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: deserialize_api_error(classname: str, serialized: dict) -> ansys.rocky.core.exceptions.RockyApiError
+
+   
+   Deserialize an API error.
+
+
+   :Parameters:
+
+       **classname** : :class:`python:str`
+           Name of the class to deserialize. This parameter is required by the superclass
+           but is not used.
+
+       **serialized** : :class:`python:dict`
+           Dictionary of the serialized object.
+
+   :Returns:
+
+       :obj:`RockyApiError`
+           Error in the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: deserialize_numpy(classname, serialized) -> Any
+
+   
+   Deserialize a numpy array.
+
+
+   :Parameters:
+
+       **classname** : :class:`python:str`
+           Name of the class to deserialize. This parameter is required by the
+           superclass but is not used.
+
+       **serialized** : :class:`python:dict`
+           Dictionary of the serialized object.
+
+   :Returns:
+
+       :obj:`Any`
+           Deserialized object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: DEFAULT_SERVER_PORT
+   :type: Final[int]
+   :value: 50615
+
+   
+
+
+

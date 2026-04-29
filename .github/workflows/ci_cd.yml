@@ -49,7 +49,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     steps:
       - name: PyAnsys documentation style checks
-        uses: ansys/actions/doc-style@v10
+        uses: ansys/actions/doc-style@v10.2.12
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -71,7 +71,7 @@ jobs:
             os: macos-latest
     steps:
       - name: Build wheelhouse and perform smoke test
-        uses: ansys/actions/build-wheelhouse@v10
+        uses: ansys/actions/build-wheelhouse@v10.2.12
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           operating-system: ${{ matrix.os }}
@@ -186,7 +186,7 @@ jobs:
 
     steps:
       - name: Build Documentation
-        uses: ansys/actions/doc-build@v10
+        uses: ansys/actions/doc-build@v10.2.12
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
           use-uv: true
@@ -201,7 +201,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip')
     steps:
       - name: Build library source and wheel artifacts
-        uses: ansys/actions/build-library@v10
+        uses: ansys/actions/build-library@v10.2.12
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
@@ -233,7 +233,7 @@ jobs:
           skip-existing: false
 
       - name: Release to GitHub
-        uses: ansys/actions/release-github@v10
+        uses: ansys/actions/release-github@v10.2.12
         with:
           library-name: ${{ env.LIBRARY_NAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -247,7 +247,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: docs_build
     steps:
-      - uses: ansys/actions/doc-deploy-dev@v10
+      - uses: ansys/actions/doc-deploy-dev@v10.2.12
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -265,7 +265,7 @@ jobs:
     needs: [release]
     steps:
       - name: Deploy the stable documentation
-        uses: ansys/actions/doc-deploy-stable@v10
+        uses: ansys/actions/doc-deploy-stable@v10.2.12
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}

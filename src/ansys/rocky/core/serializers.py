@@ -31,6 +31,7 @@ import serpent
 
 from ansys.rocky.core.exceptions import ApiServerError
 from ansys.rocky.core.rocky_api_proxies import (
+    ApiCurveProxy,
     ApiElementProxy,
     ApiExportToolkitProxy,
     ApiGridFunctionProxy,
@@ -45,6 +46,7 @@ def register_proxies() -> None:
     Pyro5.api.register_dict_to_class(
         "ApiGridFunctionProxy", deserialize_api_grid_function
     )
+    Pyro5.api.register_dict_to_class("ApiCurveProxy", deserialize_api_curve)
     Pyro5.api.register_dict_to_class(
         "ApiExportToolkitProxy", deserialize_api_exporttoolkit
     )
@@ -232,6 +234,33 @@ def deserialize_numpy(classname: str, serialized: dict) -> Any:
     """
     deserialized_bytes = serpent.tobytes(serialized["bytes"])
     return pickle.loads(deserialized_bytes)
+
+
+def deserialize_api_curve(classname: str, serialized: dict) -> ApiCurveProxy:
+    """Deserialize the proxy objects for the API curve.
+
+    Parameters
+    ----------
+    classname : str
+        Name of the class to deserialize. This parameter is required by the
+        superclass but is not used.
+    serialized : dict
+        Dictionary of serialized objects.
+
+    Returns
+    -------
+    ApiCurveProxy
+        Deserialized object.
+    """
+    session_uid = serialized.get("_session_uid")
+    proxy = _GetProxyInstance(session_uid)
+
+    return ApiCurveProxy(
+        serialized["element_id"],
+        serialized["curve_name"],
+        proxy,
+        session_uid,
+    )
 
 
 def _GetProxyInstance(session_uid: str) -> Pyro5.api.Proxy:

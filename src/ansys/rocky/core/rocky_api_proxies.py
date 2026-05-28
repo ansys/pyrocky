@@ -36,7 +36,7 @@ class ApiElementProxy:
     ----------
     pyro_api : Pyro5.api.Proxy
         Pyro5 proxy object for interacting with the Rocky app.
-    pool_id : int
+    pool_id : str
         ID of the API element.
     """
 

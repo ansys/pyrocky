@@ -176,7 +176,7 @@ class ApiProjectProxy(ApiElementProxy):
     def CloseProject(self, check_save_state: bool = True) -> None:
         if check_save_state and self.HasUnsavedChanges():
             raise RuntimeError(
-                "Project has unsaved changes."
+                "Project has unsaved changes. "
                 "Save the project before closing or use check_save_state=False."
             )
 

@@ -27,7 +27,7 @@ dependencies = [
     "Pyro5>=5.13",
     "numpy>=1.19, <3.0",
     "ansys-tools-common>=0.4.5",
-    "click==8.3.1",  # clink 8.2.0 is failing the license check.
+    "click==8.4.1",  # clink 8.2.0 is failing the license check.
     "docker>=7.1.0"
 ]
 
@@ -35,7 +35,7 @@ dependencies = [
 tests = [
     "pytest==9.0.3",
     "pytest-cov==7.1.0",
-    "requests==2.32.5",
+    "requests==2.34.2",
     "ansys-tools-common==0.5.0"
 ]
 doc = [
@@ -44,7 +44,7 @@ doc = [
     "Sphinx==8.2.3",
     "sphinx-copybutton==0.5.2",
     "sphinx-gallery==0.20.0",
-    "matplotlib==3.10.8", # required by sphinx-gallery
+    "matplotlib==3.10.9", # required by sphinx-gallery
 ]
 
 [project.urls]

@@ -30,7 +30,7 @@ jobs:
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       github.event.type != 'labeled'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.3
 
       - name: "Update labels"
         uses: micnncim/action-label-syncer@v1
@@ -87,7 +87,7 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.3
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -153,7 +153,7 @@ jobs:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.3
 
       - name: Set up Python
         uses: actions/setup-python@v6

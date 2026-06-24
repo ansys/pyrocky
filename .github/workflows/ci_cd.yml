@@ -80,7 +80,7 @@ jobs:
 
   tests_setup_windows:
     name: Windows Tests Setup
-    runs-on: [self-hosted, Windows, pyrocky]
+    runs-on: [self-hosted, Windows, poc]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -107,7 +107,7 @@ jobs:
   tests_run_windows:
     name: Windows Tests
     needs: tests_setup_windows
-    runs-on: [self-hosted, Windows, pyrocky]
+    runs-on: [self-hosted, Windows, poc]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -140,7 +140,7 @@ jobs:
 
   tests_run_linux:
     name: Linux v${{ matrix.ansys-version }} Tests
-    runs-on: [self-hosted, Linux, pyrocky]
+    runs-on: [self-hosted, Linux, poc]
     if: |
       !contains(github.event.pull_request.labels.*.name, 'ci:skip') &&
       !contains(github.event.pull_request.labels.*.name, 'tests:skip')
@@ -176,7 +176,7 @@ jobs:
 
   docs_build:
     name: Documentation
-    runs-on: [self-hosted, Linux, pyrocky]
+    runs-on: [self-hosted, Linux, poc]
     if: |
       contains(github.event.pull_request.labels.*.name, 'docs') ||
       github.ref == 'refs/heads/main' ||

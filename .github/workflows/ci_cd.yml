@@ -119,6 +119,7 @@ jobs:
         ansys-version: ${{ fromJSON(github.ref == 'refs/heads/main' && '[251,252,261]' || '[261]') }}
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
+      AWP_ROOT261: C:\\Program Files\\ANSYS Inc\\v261
       # Windows TCP client authentication still doesn't support IPv6
       PYRO_PREFER_IP_VERSION: 4
 

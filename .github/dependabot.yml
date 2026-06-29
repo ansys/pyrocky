@@ -2,15 +2,10 @@
 version: 2
 updates:
   - package-ecosystem: "pip" # See documentation for possible values
-    cooldown:
-      default-days: 10 # Fallback cooldown if no specific rule applies
     directory: "/"
     insecure-external-code-execution: allow
     schedule:
       interval: "weekly"
-    labels:
-      - "maintenance"
-      - "dependencies"
     groups:
       general-dependencies:
         patterns:
@@ -30,9 +25,55 @@ updates:
       pyvista:
         patterns:
           - "pyvista*"
-  - package-ecosystem: "github-actions"
     cooldown:
       default-days: 10 # Fallback cooldown if no specific rule applies
+    labels:
+      - "maintenance"
+      - "dependencies"
+    assignees:
+      - "igortg"
+      - "femarchi"
+    commit-message:
+      prefix: "build(pip)"
+
+  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      actions-dependencies:
+        patterns:
+          - "*"
+    cooldown:
+      default-days: 10 # Fallback cooldown if no specific rule applies
+      include:
+        - "*"  # Include all dependencies in cooldown
+      exclude:
+        - "ansys/actions"
+    assignees:
+      - "igortg"
+      - "femarchi"
+    labels:
+      - "maintenance"
+    commit-message:
+      prefix: "build(actions)"
+
+  - package-ecosystem: "pre-commit"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "saturday"
+      time: "06:00"
+      timezone: "Europe/Paris"
+    cooldown:
+      default-days: 7 # Fallback cooldown if no specific rule applies
+      include:
+        - "*"  # Include all dependencies in cooldown
+      exclude:
+        - "ansys/pre-commit-hooks"
+    assignees:
+      - "pyansys-ci-bot"
+    labels:
+      - "maintenance"
+    commit-message:
+      prefix: "build(pre-commit)"

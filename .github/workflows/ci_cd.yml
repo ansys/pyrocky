@@ -116,7 +116,8 @@ jobs:
       fail-fast: false
       matrix:
         # On branches, run tests only for the latest version.
-        ansys-version: ${{ fromJSON(github.ref == 'refs/heads/main' && '[251,252,261]' || '[261]') }}
+        # ansys-version: ${{ fromJSON(github.ref == 'refs/heads/main' && '[251,252,261]' || '[261]') }}
+        ansys-version: [251,252,261]
     env:
       ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
       AWP_ROOT261: C:\\Program Files\\ANSYS Inc\\v261

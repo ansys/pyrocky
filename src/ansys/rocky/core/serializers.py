@@ -263,10 +263,12 @@ def deserialize_api_curve(classname: str, serialized: dict) -> ApiCurveProxy:
     )
 
 
-def _GetProxyInstance(session_uid: str) -> Pyro5.api.Proxy:
-    from .client import _API_PROXY_INSTANCES, _LEGACY_PROXY_INSTANCE
+def _GetProxyInstance(client_id: str) -> Pyro5.api.Proxy:
+    from .client import _ACTIVE_CLIENTS, _LEGACY_PROXY_INSTANCE
 
-    proxy = _API_PROXY_INSTANCES.get(session_uid, _LEGACY_PROXY_INSTANCE)
+    client = _ACTIVE_CLIENTS.get(client_id, None)
+    proxy = _LEGACY_PROXY_INSTANCE if client is None else client.api
+
     assert proxy is not None, "API Proxy not initialized"
 
     return proxy

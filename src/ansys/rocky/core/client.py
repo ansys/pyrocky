@@ -27,6 +27,7 @@ import hashlib
 import os
 from pathlib import Path
 import sys
+import threading
 from typing import TYPE_CHECKING, Final
 import warnings
 
@@ -40,7 +41,7 @@ if TYPE_CHECKING:
     from ansys.rocky.app.rocky_api_application import RockyApiApplication
 
 PYROCKY_DEFAULT_PORT: Final[int] = 18615
-_API_PROXY_INSTANCES: dict[str, Pyro5.api.Proxy] = {}
+_ACTIVE_CLIENTS: dict[str, "RockyClient"] = {}
 _LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = (
     None  # Used for backward compatibility with versions < 26.1
 )
@@ -83,36 +84,24 @@ def connect(host: str | None = None, port: int = PYROCKY_DEFAULT_PORT) -> "Rocky
         pyro_uri = f"PYRO:rocky.api@./u:{socket_path}"
 
     hash_str = f"localhost:{port}"
-    md5_hash = hashlib.md5(hash_str.encode()).hexdigest()
+    client_id = hashlib.md5(hash_str.encode()).hexdigest()
 
     global _LEGACY_PROXY_INSTANCE
 
-    if not _API_PROXY_INSTANCES and _LEGACY_PROXY_INSTANCE is None:
+    if not _ACTIVE_CLIENTS and _LEGACY_PROXY_INSTANCE is None:
         register_proxies()
 
-    # Remove any existing proxy for this host:port to prevent using a stale or invalid
+    # Remove any existing client for this host:port to prevent using a stale or invalid
     # connection
-    _API_PROXY_INSTANCES.pop(md5_hash, None)
+    _ACTIVE_CLIENTS.pop(client_id, None)
 
-    proxy_instance = Pyro5.api.Proxy(pyro_uri)
+    rocky_client = RockyClient(pyro_uri)
 
-    def is_proxy_connected() -> bool:
-        try:
-            proxy_instance._pyroBind()
-        except CommunicationError:
-            return False
-        return proxy_instance._pyroConnection is not None
-
-    if not is_proxy_connected():
-        raise ConnectionRefusedError("Could not connect to the remote server")
-
-    rocky_version = _get_numerical_version(proxy_instance)
+    rocky_version = _get_numerical_version(rocky_client.api)
     if rocky_version >= 261:
-        _API_PROXY_INSTANCES[md5_hash] = proxy_instance
+        _ACTIVE_CLIENTS[client_id] = rocky_client
     else:
-        _LEGACY_PROXY_INSTANCE = proxy_instance  # For backward compatibility
-
-    rocky_client = RockyClient(proxy_instance)
+        _LEGACY_PROXY_INSTANCE = rocky_client.api  # For backward compatibility
 
     # Install Pyro hook to automatically print remote error tracebacks.
     sys.excepthook = Pyro5.errors.excepthook
@@ -150,24 +139,43 @@ def _uds_socket_path(socket_number: int) -> Path:
 class RockyClient:
     """Provides the client object for interacting with the Rocky/Freeflow app.
 
+    A separate Pyro proxy is created for each thread that accesses ``api``.
+    Proxies are automatically released when their owning thread exits or when
+    the client itself is closed/garbage collected.
+
     Parameters
     ----------
-    rocky_api : Pyro5.api.Proxy
-        Pyro5 proxy object for interacting with the Rocky app.
+    pyro_uri : str
+        URI of the Pyro5 proxy object that connects to the Rocky app.
     """
 
-    def __init__(self, rocky_api):
-        self._api_adapter = rocky_api
+    def __init__(self, pyro_uri: str) -> None:
+        self._pyro_uri = pyro_uri
+        self._local = threading.local()
 
     @property
     def api(self) -> "RockyApiApplication":
-        return self._api_adapter
+        proxy = getattr(self._local, "proxy", None)
+        if proxy is not None and proxy._pyroConnection is not None:
+            return proxy
 
-    def close(self):
-        if self._api_adapter.GetProject() is not None:
-            # Make sure "Exit" won't be blocked by the "Unsaved Changes" dialog.
-            self._api_adapter.CloseProject(check_save_state=False)
-        self._api_adapter.Exit()
+        proxy = Pyro5.api.Proxy(self._pyro_uri)
+        try:
+            proxy._pyroBind()
+        except CommunicationError as exc:  # pragma: no cover
+            raise ConnectionRefusedError(
+                "Could not connect to the remote server"
+            ) from exc
+
+        self._local.proxy = proxy
+        return proxy
+
+    def close(self) -> None:
+        with self.api as rocky_api:
+            if rocky_api.GetProject() is not None:
+                # Make sure "Exit" won't be blocked by the "Unsaved Changes" dialog.
+                rocky_api.CloseProject(check_save_state=False)
+            rocky_api.Exit()
 
 
 def _get_numerical_version(rocky_api: Pyro5.api.Proxy) -> int:

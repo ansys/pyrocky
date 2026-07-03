@@ -20,8 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from concurrent.futures import ThreadPoolExecutor
 import sys
 
+from ansys.rocky.core.client import RockyClient
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
 
 
@@ -101,6 +103,26 @@ def test_pyro_excepthook_installed(rocky_api, capsys) -> None:
         "AttributeError: 'RAStudy' object has no attribute 'UnknownMethod'" in out_err.err
     )
     assert "Remote traceback" in out_err.err
+
+
+def test_multithread_api_calls(rocky_session: RockyClient) -> None:
+    """Test that api calls can be executed on distinct threads."""
+
+    project = rocky_session.api.CreateProject()
+    assert project is not None
+
+    def create_particle():
+        return rocky_session.api.GetStudy().CreateParticle()
+
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        future1 = executor.submit(create_particle)
+        future2 = executor.submit(create_particle)
+
+    particle1 = future1.result()
+    particle2 = future2.result()
+
+    assert particle1 is not None
+    assert particle2 is not None
 
 
 def create_basic_project_with_results(

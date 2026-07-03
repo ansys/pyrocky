@@ -45,8 +45,6 @@ _ACTIVE_CLIENTS: dict[str, "RockyClient"] = {}
 _LEGACY_PROXY_INSTANCE: Pyro5.api.Proxy | None = (
     None  # Used for backward compatibility with versions < 26.1
 )
-# Compatibility with dependants that still import this constant.
-DEFAULT_SERVER_PORT = PYROCKY_DEFAULT_PORT
 
 
 def connect(host: str | None = None, port: int = PYROCKY_DEFAULT_PORT) -> "RockyClient":

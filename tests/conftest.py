@@ -48,7 +48,8 @@ def freeflow_session(version):
 
 @pytest.fixture()
 def rocky_api(rocky_session):
-    yield rocky_session.api
-    if rocky_session.api.GetProject() is not None:
-        # Make sure "Exit" won't be blocked by the "Unsaved Changes" dialog.
-        rocky_session.api.CloseProject(check_save_state=False)
+    with rocky_session.api as api:
+        yield api
+        if api.GetProject() is not None:
+            # Make sure "Exit" won't be blocked by the "Unsaved Changes" dialog.
+            api.CloseProject(check_save_state=False)

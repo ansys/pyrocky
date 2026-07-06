@@ -15,4 +15,5 @@
 * [Kathy Pippert](https://github.com/PipKat)
 * [Raí Bizerra](https://github.com/raispbizerra)
 * [Roberto Pastor Muela](https://github.com/RobPasMue)
+* [Sébastien Morais](https://github.com/SMoraisAnsys)
 * [viniciusdaroz](https://github.com/viniciusdaroz)

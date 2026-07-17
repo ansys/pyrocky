@@ -27,7 +27,7 @@ dependencies = [
     "Pyro5>=5.13",
     "numpy>=1.19, <3.0",
     "ansys-tools-common>=0.4.5",
-    "click==8.4.2",  # clink 8.2.0 is failing the license check.
+    "click==8.4.2",
     "docker>=7.1.0"
 ]
 

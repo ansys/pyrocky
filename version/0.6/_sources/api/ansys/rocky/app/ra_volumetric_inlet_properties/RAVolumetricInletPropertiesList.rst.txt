@@ -1,0 +1,116 @@
+
+
+
+
+
+
+:class:`RAVolumetricInletPropertiesList`
+========================================
+
+
+.. py:class:: ansys.rocky.app.ra_volumetric_inlet_properties.RAVolumetricInletPropertiesList(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`RAVolumetricInletProperties`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper for the input entries list in a single Volume Fill.
+
+   To get the :class:`RAVolumetricInletPropertiesList` from a :class:`RAVolumetricInlet`, use:
+
+   .. code-block:: python
+
+       input_properties_list = particle_input.GetInputPropertiesList()
+
+   :class:`RAVolumetricInletPropertiesList` contains methods to add, remove and retrieve individual
+   input property entries. It corresponds to the list of entries on a Volume Fill's "Input" tab
+   on the Rocky UI.
+
+   The following examples add, remove and access individual entries in the input properties list:
+
+   .. code-block:: python
+
+       # Add new items
+       input_properties_1 = input_properties_list.New()
+
+       # Access and modify items
+       input_properties_2 = input_properties_list[0]
+       input_properties_2.SetParticle('Particle 1')
+
+       # Remove items
+       input_properties_list.Remove(input_properties_2)
+       del input_properties_list[0]
+       input_properties_list.Clear()
+
+   The :class:`RAVolumetricInletPropertiesList` is a list of :class:`RAVolumetricInletProperties`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAVolumetricInletPropertiesList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_volumetric_inlet_properties import RAVolumetricInletPropertiesList
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.input.volume_fill.VolumeFillPropertiesList]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+
+
+

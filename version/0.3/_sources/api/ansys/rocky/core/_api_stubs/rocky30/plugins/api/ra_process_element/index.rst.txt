@@ -1,0 +1,398 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element
+==================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAProcessElementItem
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAUserProcess
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RACubeGroup
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RACylinderGroup
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RACubeProcess
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RACylinderProcess
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAFilterProcess
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAPlaneProcess
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RATrajectoryProcess
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAInspectorProcess
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAPolyhedronProcess
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RASurfaceUserProcess
+
+
+Module Contents
+---------------
+
+.. py:class:: RAProcessElementItem
+
+   Bases: :py:obj:`sci20.plugins.api.api_process_element.SciApiProcessElementItem`
+
+
+   .. py:method:: GetCurve(curve_name, simulation_name: _typeshed.Incomplete | None = ..., realization: _typeshed.Incomplete | None = ..., time_step: _typeshed.Incomplete | None = ...)
+
+
+.. py:class:: RAUserProcess
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   .. py:method:: GetNumberOfParticles(time_step)
+
+
+   .. py:method:: IterParticles(time_step)
+
+
+.. py:class:: RACubeGroup
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_element_item.KAElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractCubeMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.plugins.user_process.group.cube_process_group.CubeProcessGroup]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: AddProcess(source_process: coilib50.process.base_process_subject.AbstractProcessSubject) -> None
+
+
+.. py:class:: RACylinderGroup
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_element_item.KAElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractCylinderMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.plugins.user_process.group.cylinder_process_group.CylinderProcessGroup]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: AddProcess(source_process: coilib50.process.base_process_subject.AbstractProcessSubject) -> None
+
+
+.. py:class:: RACubeProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractCubeMixin`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetCubeCenter(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetCubeCenter(x, y, z, unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetCubeMagnitude(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetCubeMagnitude(x, y, z, unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetCubeRotation(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetCubeRotation(x, y, z, unit: _typeshed.Incomplete | None = ...)
+
+
+.. py:class:: RACylinderProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractCylinderMixin`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+.. py:class:: RAFilterProcess
+
+   Bases: :py:obj:`RAUserProcess`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetType()
+
+
+   .. py:method:: SetType(filter_type) -> None
+
+
+   .. py:method:: GetMode()
+
+
+   .. py:method:: SetMode(property_mode) -> None
+
+
+   .. py:method:: GetMinValue(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetMinValue(value, unit: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: GetMaxValue(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetMaxValue(value, unit: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: GetCutValue(unit: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: SetCutValue(value, unit: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: SetPropertyGridFunction(grid_function, realization: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: GetPropertyGridFunction()
+
+
+.. py:class:: RAPlaneProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[sci20.plugins.process.plane_process.plane_process_subject.PlaneProcessSubject]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetType() -> str
+
+
+   .. py:method:: SetType(plane_type: str) -> None
+
+
+   .. py:method:: GetMode() -> str
+
+
+   .. py:method:: SetMode(plane_mode: str) -> None
+
+
+   .. py:method:: GetOrigin() -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: GetPlaneOrigin() -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetOrigin(x: float, y: float, z: float) -> None
+
+
+   .. py:method:: SetPlaneOrigin(x: float, y: float, z: float) -> None
+
+
+   .. py:method:: GetNormal() -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: GetPlaneNormal() -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetNormal(x: float, y: float, z: float) -> None
+
+
+   .. py:method:: SetPlaneNormal(x: float, y: float, z: float) -> None
+
+
+.. py:class:: RATrajectoryProcess
+
+   Bases: :py:obj:`RAUserProcess`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: SetStartingTimeStep(time_step) -> None
+
+
+   .. py:method:: SetStartingTime(time: Union[str, coilib50.time.time_step_interface.ITimeStep, int]) -> None
+
+
+   .. py:method:: GetStartingTimeStep()
+
+
+   .. py:method:: GetStartingTime() -> coilib50.time.time_step_interface.ITimeStep
+
+
+   .. py:method:: SetNumberOfTimeSteps(number_of_intervals) -> None
+
+
+   .. py:method:: SetNumberOfIntervals(number_of_intervals: int)
+
+
+   .. py:method:: GetNumberOfTimeSteps()
+
+
+   .. py:method:: GetNumberOfIntervals() -> int
+
+
+   .. py:method:: SetParticleStride(particle_stride) -> None
+
+
+   .. py:method:: GetParticleStride()
+
+
+   .. py:method:: UpdateParticlesSelection() -> None
+
+
+.. py:class:: RAInspectorProcess
+
+   Bases: :py:obj:`RAUserProcess`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: SetCellId(cell_id) -> None
+
+
+.. py:class:: RAPolyhedronProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.process.user_process.polyhedron_process_with_movement.PolyhedronProcessWithMovement]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetCenter(unit: _typeshed.Incomplete | None = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetCenter(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetCenterAfterMovement(timestep: int) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: GetSize(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetSize(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetRotation(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetRotation(x: float, y: float, z: float, unit: Union[str, None] = ...)
+
+
+   .. py:method:: SetSTL(filename: str, mesh_unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetScale(unit: Union[str, None] = ...) -> list[float]
+
+
+   .. py:method:: SetScale(values: collections.abc.Sequence[Union[str, float]], unit: Union[str, None] = ...) -> None
+
+
+.. py:class:: RASurfaceUserProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.plugins.sph.surface_user_process.surface_user_process_subject.SurfaceUserProcessSubject]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: SetSTL(filename: str, mesh_unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetRotation(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetRotation(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetSize(unit: Union[str, None] = ...) -> list[float]
+
+
+   .. py:method:: SetSize(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetCenter(unit: Union[str, None] = ...) -> rocky30.base_types.Tuple3F
+
+
+   .. py:method:: SetCenter(x: float, y: float, z: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetScale(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetScale(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+

@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_fluent_coupling.py`` module
+====================================
+
+.. py:module:: ansys.rocky.app.ra_fluent_coupling
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_fluent_coupling
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_fluent_coupling.RAFluentOneWayCoupling`
+            - Rocky PrePost Scripting wrapper to Fluent one way CFD coupling process.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_fluent_coupling.RAFluentTwoWayCoupling`
+            - Rocky PrePost Scripting wrapper to manipulate Fluent Two-Way coupling properties.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAFluentOneWayCoupling</api/ansys/rocky/app/ra_fluent_coupling/RAFluentOneWayCoupling>
+    <span class="nf nf-cod-symbol_class"></span> RAFluentTwoWayCoupling</api/ansys/rocky/app/ra_fluent_coupling/RAFluentTwoWayCoupling>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

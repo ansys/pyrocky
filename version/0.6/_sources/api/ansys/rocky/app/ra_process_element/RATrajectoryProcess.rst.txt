@@ -1,0 +1,290 @@
+
+
+
+
+
+
+:class:`RATrajectoryProcess`
+============================
+
+
+.. py:class:: ansys.rocky.app.ra_process_element.RATrajectoryProcess
+
+   Bases: :py:obj:`RAUserProcess`
+
+
+   
+   PrePost Scripting wrapper for Particle Trajectory Processes.
+
+   Trajectory processes only work on particle-based processes. Before the trajectories can be
+   analyzed the process must first be configured by calling :py:meth:`SetStartingTimeStep()`,
+   :py:meth:`SetNumberOfTimeSteps()` and :py:meth:`SetParticleStride()`, followed by
+   :py:meth:`UpdateParticlesSelection()`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RATrajectoryProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetStartingTime`
+            - Set the initial time step for the computed trajectories.
+          * - :py:attr:`~GetStartingTime`
+            - Get the time step currently configured as the initial one for the particle trajectories.
+          * - :py:attr:`~SetNumberOfIntervals`
+            - Set the total number of intervals in the computed trajectories.
+          * - :py:attr:`~GetNumberOfIntervals`
+            - Get the total number of intervals in the computed trajectories.
+          * - :py:attr:`~SetParticleStride`
+            - Set the particle stride for computed trajectories.
+          * - :py:attr:`~GetParticleStride`
+            - Get the particle stride for computed trajectories.
+          * - :py:attr:`~UpdateParticlesSelection`
+            - Recompute the trajectories from the current values of starting timestep, number of timesteps
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_process_element import RATrajectoryProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetStartingTime(time: str | coilib50.time.time_step_interface.ITimeStep | int) -> None
+
+   
+   Set the initial time step for the computed trajectories.
+
+   :param time:
+       The time step to use as the initial one to compute the trajectories. Can be either a TimeStep,
+       an integer representing the timestep's index in the timeset or the string 'current' for the
+       current application time step.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStartingTime() -> coilib50.time.time_step_interface.ITimeStep
+
+   
+   Get the time step currently configured as the initial one for the particle trajectories.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfIntervals(number_of_intervals: int)
+
+   
+   Set the total number of intervals in the computed trajectories.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfIntervals() -> int
+
+   
+   Get the total number of intervals in the computed trajectories.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetParticleStride(particle_stride) -> None
+
+   
+   Set the particle stride for computed trajectories.
+
+   The "stride" is the number of particles that are "skipped" when selecting the particles
+   whose trajectories will be computed. For example, if this value is 1 then the trajectories
+   of all particles in the starting timestep will be computed. If 2, the trajectory of every
+   other particle (one out of every two) will be computed, etc.
+
+   :param int particle_stride:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleStride()
+
+   
+   Get the particle stride for computed trajectories.
+
+   :see: SetParticleStride()
+   :rtype: int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: UpdateParticlesSelection() -> None
+
+   
+   Recompute the trajectories from the current values of starting timestep, number of timesteps
+   and particle stride.
+
+   Since computing the trajectories is potentially slow when the number of particles and/or
+   timesteps is big, this method must be explicitly called in order to update the trajectories.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

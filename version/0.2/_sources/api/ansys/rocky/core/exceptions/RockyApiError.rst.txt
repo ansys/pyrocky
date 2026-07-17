@@ -1,0 +1,577 @@
+
+
+.. py:exception:: RockyApiError
+
+   Bases: :py:obj:`Exception`
+
+
+   
+   Provides the ``Exception`` class for an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: RockyApiError
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~with_traceback`
+            - Exception.with_traceback(tb) --
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__delattr__`
+            - Implement delattr(self, name).
+          * - :py:attr:`~__dir__`
+            - Default dir() implementation.
+          * - :py:attr:`~__eq__`
+            - Return self==value.
+          * - :py:attr:`~__format__`
+            - Default object formatter.
+          * - :py:attr:`~__ge__`
+            - Return self>=value.
+          * - :py:attr:`~__getattribute__`
+            - Return getattr(self, name).
+          * - :py:attr:`~__gt__`
+            - Return self>value.
+          * - :py:attr:`~__hash__`
+            - Return hash(self).
+          * - :py:attr:`~__le__`
+            - Return self<=value.
+          * - :py:attr:`~__lt__`
+            - Return self<value.
+          * - :py:attr:`~__ne__`
+            - Return self!=value.
+          * - :py:attr:`~__reduce__`
+            - Helper for pickle.
+          * - :py:attr:`~__reduce_ex__`
+            - Helper for pickle.
+          * - :py:attr:`~__repr__`
+            - Return repr(self).
+          * - :py:attr:`~__setattr__`
+            - Implement setattr(self, name, value).
+          * - :py:attr:`~__setstate__`
+            - 
+          * - :py:attr:`~__sizeof__`
+            - Size of object in memory, in bytes.
+          * - :py:attr:`~__str__`
+            - Return str(self).
+          * - :py:attr:`~__subclasshook__`
+            - Abstract classes can override this to customize issubclass().
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import RockyApiError
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __delattr__()
+
+   
+   Implement delattr(self, name).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __dir__()
+
+   
+   Default dir() implementation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __eq__()
+
+   
+   Return self==value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __format__()
+
+   
+   Default object formatter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __ge__()
+
+   
+   Return self>=value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __getattribute__()
+
+   
+   Return getattr(self, name).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __gt__()
+
+   
+   Return self>value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __hash__()
+
+   
+   Return hash(self).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __le__()
+
+   
+   Return self<=value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __lt__()
+
+   
+   Return self<value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __ne__()
+
+   
+   Return self!=value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __reduce__()
+
+   
+   Helper for pickle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __reduce_ex__()
+
+   
+   Helper for pickle.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __repr__()
+
+   
+   Return repr(self).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __setattr__()
+
+   
+   Implement setattr(self, name, value).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __setstate__()
+
+
+.. py:method:: __sizeof__()
+
+   
+   Size of object in memory, in bytes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __str__()
+
+   
+   Return str(self).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __subclasshook__()
+
+   
+   Abstract classes can override this to customize issubclass().
+
+   This is invoked early on by abc.ABCMeta.__subclasscheck__().
+   It should return True, False or NotImplemented.  If it returns
+   NotImplemented, the normal algorithm is used.  Otherwise, it
+   overrides the normal algorithm (and the outcome is cached).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: with_traceback()
+
+   
+   Exception.with_traceback(tb) --
+   set self.__traceback__ to tb and return self.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+

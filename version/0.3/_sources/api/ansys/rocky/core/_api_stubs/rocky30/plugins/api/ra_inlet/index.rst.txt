@@ -1,0 +1,86 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_inlet
+========================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_inlet
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_inlet.RAInletGeometry
+
+
+Module Contents
+---------------
+
+.. py:class:: RAInletGeometry
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_geometry.RABaseGeometry`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: SetGeometryType(geometry_type: str) -> None
+
+
+   .. py:method:: GetGeometryType() -> str
+
+
+   .. py:method:: GetRectangularSize(unit: Union[str, None] = ...) -> tuple[float, float]
+
+
+   .. py:method:: SetRectangularSize(length: float, width: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetCircularMinMaxRadius(unit: Union[str, None] = ...) -> tuple[float, float]
+
+
+   .. py:method:: SetCircularMinMaxRadius(min_radius: float, max_radius: float, unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetAlignmentAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAlignmentAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetCenter(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetCenter(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetLength(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetWidth(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInclineAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetInclineAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+

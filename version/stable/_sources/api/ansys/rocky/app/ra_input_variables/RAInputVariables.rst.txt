@@ -1,0 +1,221 @@
+
+
+
+
+
+
+:class:`RAInputVariables`
+=========================
+
+
+.. py:class:: ansys.rocky.app.ra_input_variables.RAInputVariables(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for the list of parametric input variables.
+
+   The input variables correspond to the Variables list on the Input tab of a project's
+   Expressions/Variables dock. This wrapper can be used to create, remove and list a project's
+   input variables.
+
+   Retrieve the :class:`RAInputVariables` through the corresponding :class:`RAProject`.
+   Example usage:
+
+   .. code-block:: python
+
+       project = app.GetProject()
+       input_variables = project.GetInputVariables()
+
+       input_variables.CreateVariable('a', value=1)
+       input_variables.CreateVariable('b', value=2)
+
+       input_variables.RemoveVariable('a')
+
+       for variable in input_variables:
+           variable.SetValue(3)
+
+       b = input_variables.GetVariableByName('b')
+       b.SetValue(4)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+.. py:currentmodule:: RAInputVariables
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~CreateVariable`
+            - Create a new input variable. Returns the new variable.
+          * - :py:attr:`~RemoveVariable`
+            - Remove an input variable.
+          * - :py:attr:`~GetVariableByName`
+            - Get an existing input variable via its name.
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__len__`
+            - 
+          * - :py:attr:`~__getitem__`
+            - 
+          * - :py:attr:`~__iter__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_input_variables import RAInputVariables
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: CreateVariable(name: str, value: float = 0.0) -> RAParametricVar
+
+   
+   Create a new input variable. Returns the new variable.
+
+   :param name: The variable's name.
+   :param value: The initial value for the variable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveVariable(variable: RAParametricVar | str) -> None
+
+   
+   Remove an input variable.
+
+   :param variable:
+       Either an instance of RAParametricVar or the name of the variable to remove.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVariableByName(name: str) -> RAParametricVar
+
+   
+   Get an existing input variable via its name.
+
+   :param name:
+       The input variable's name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __len__() -> int
+
+.. py:method:: __getitem__(index)
+
+.. py:method:: __iter__()
+
+
+
+

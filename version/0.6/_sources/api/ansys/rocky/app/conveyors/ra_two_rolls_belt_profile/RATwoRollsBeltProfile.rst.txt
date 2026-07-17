@@ -1,0 +1,288 @@
+
+
+
+
+
+
+:class:`RATwoRollsBeltProfile`
+==============================
+
+
+.. py:class:: ansys.rocky.app.conveyors.ra_two_rolls_belt_profile.RATwoRollsBeltProfile(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky API for a Two Rolls Belt Profile model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RATwoRollsBeltProfile
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetLowerCornerRadius`
+            - Get the value of "Lower Corner Radius".
+          * - :py:attr:`~SetLowerCornerRadius`
+            - Set the value of "Lower Corner Radius".
+          * - :py:attr:`~GetTroughingAngle`
+            - Get the value of "Troughing Angle".
+          * - :py:attr:`~SetTroughingAngle`
+            - Set the value of "Troughing Angle".
+          * - :py:attr:`~GetMaterial`
+            - Get the "Material".
+          * - :py:attr:`~SetMaterial`
+            - Set the "Material".
+          * - :py:attr:`~GetAvailableMaterials`
+            - Get all available Materials.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.conveyors.ra_two_rolls_belt_profile import RATwoRollsBeltProfile
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetLowerCornerRadius(unit: str | None = None) -> float
+
+   
+   Get the value of "Lower Corner Radius".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLowerCornerRadius(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Lower Corner Radius".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTroughingAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Troughing Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTroughingAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Troughing Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaterial()
+
+   
+   Get the "Material".
+
+   :rtype: :class:`RASolidMaterial`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaterial(value) -> None
+
+   
+   Set the "Material".
+
+   :param unicode, :class:`RASolidMaterial` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableMaterials()
+
+   
+   Get all available Materials.
+
+   :rtype: List[:class:`RASolidMaterial`]
+       A list of :class:`RASolidMaterial`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

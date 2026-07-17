@@ -1,0 +1,1194 @@
+
+
+
+
+
+
+:class:`RAVolumetricInlet`
+==========================
+
+
+.. py:class:: ansys.rocky.app.ra_volumetric_inlet.RAVolumetricInlet(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app._ra_orientation_mixin._RAOrientationMixin`
+
+
+   
+   Rocky PrePost Scripting wrapper for a single Volume Fill input.
+
+   This wrapper class corresponds to an individual entry under the "Inputs" item on the project's
+   data tree. Particle inputs can be retrieved from the :class:`RAStudy` or the
+   :class:`RAInletsOutletsCollection` via:
+
+   .. code-block:: python
+
+       input_1 = study.GetElement('Volume Fill <1>')
+       input_2 = input_collection.GetParticleInput('Volume Fill <2>')
+
+   Instances of :class:`RAVolumetricInlet` comprise two parts: Properties that can be manipulated
+   directly, such as the input's name and the seed point, and the input properties list
+   that describe which particles enter via this input and with its mass, temperature, etc.
+   This list must be manipulated via the :class:`RAParticleInputPropertiesList` returned by
+   :meth:`GetInputPropertiesList()`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAVolumetricInlet
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetInputPropertiesList`
+            - Return a list of input properties
+          * - :py:attr:`~AddParticle`
+            - Add a new particle to the Volumetric Inlet input properties list.
+          * - :py:attr:`~RemoveParticle`
+            - Remove a particle from the Particle Inlet input properties list.
+          * - :py:attr:`~GetBoxCenter`
+            - Get the value of "Box Center".
+          * - :py:attr:`~SetBoxCenter`
+            - Set the values of "Box Center".
+          * - :py:attr:`~GetBoxDimensions`
+            - Get the value of "Box Dimensions".
+          * - :py:attr:`~SetBoxDimensions`
+            - Set the values of "Box Dimensions".
+          * - :py:attr:`~GetUseGeometriesToCompute`
+            - Get the value of "Use Geometries To Compute".
+          * - :py:attr:`~SetUseGeometriesToCompute`
+            - Set the value of "Use Geometries To Compute".
+          * - :py:attr:`~GetGapScaleFactor`
+            - Get the value of "Gap Scale Factor".
+          * - :py:attr:`~SetGapScaleFactor`
+            - Set the value of "Gap Scale Factor".
+          * - :py:attr:`~GetInitialVelocity`
+            - Get the value of "Initial Velocity".
+          * - :py:attr:`~SetInitialVelocity`
+            - Set the values of "Initial Velocity".
+          * - :py:attr:`~GetPeriodic`
+            - Get the value of "Periodic".
+          * - :py:attr:`~SetPeriodic`
+            - Set the value of "Periodic".
+          * - :py:attr:`~EnablePeriodic`
+            - Set the value of "Periodic" to True.
+          * - :py:attr:`~DisablePeriodic`
+            - Set the value of "Periodic" to False.
+          * - :py:attr:`~IsPeriodicEnabled`
+            - Check if the "Periodic" is enabled.
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetPeriod`
+            - Get the value of "Period".
+          * - :py:attr:`~SetPeriod`
+            - Set the value of "Period".
+          * - :py:attr:`~GetSeedCoordinates`
+            - Get the value of "Seed Coordinates".
+          * - :py:attr:`~SetSeedCoordinates`
+            - Set the values of "Seed Coordinates".
+          * - :py:attr:`~GetInjectionTime`
+            - Get the value of "Injection Time".
+          * - :py:attr:`~SetInjectionTime`
+            - Set the value of "Injection Time".
+          * - :py:attr:`~GetStopTime`
+            - Get the value of "Stop Time".
+          * - :py:attr:`~SetStopTime`
+            - Set the value of "Stop Time".
+          * - :py:attr:`~GetSphMass`
+            - Get the value of "Sph Mass".
+          * - :py:attr:`~SetSphMass`
+            - Set the value of "Sph Mass".
+          * - :py:attr:`~GetSphTemperature`
+            - Get the value of "Sph Temperature".
+          * - :py:attr:`~SetSphTemperature`
+            - Set the value of "Sph Temperature".
+          * - :py:attr:`~GetUseBoxCenterAsSeedPoint`
+            - Get the value of "Use Box Center As Seed Point".
+          * - :py:attr:`~SetUseBoxCenterAsSeedPoint`
+            - Set the value of "Use Box Center As Seed Point".
+          * - :py:attr:`~EnableUseBoxCenterAsSeedPoint`
+            - Set the value of "Use Box Center As Seed Point" to True.
+          * - :py:attr:`~DisableUseBoxCenterAsSeedPoint`
+            - Set the value of "Use Box Center As Seed Point" to False.
+          * - :py:attr:`~IsUseBoxCenterAsSeedPointEnabled`
+            - Check if the "Use Box Center As Seed Point" is enabled.
+          * - :py:attr:`~GetGeometries`
+            - Get the "Geometries".
+          * - :py:attr:`~SetGeometries`
+            - Set the "Geometries".
+          * - :py:attr:`~GetAvailableGeometries`
+            - Get all available Geometries.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_volumetric_inlet import RAVolumetricInlet
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.input.volume_fill.VolumeFill]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetInputPropertiesList() -> ansys.rocky.app.ra_volumetric_inlet_properties.RAVolumetricInletPropertiesList
+
+   
+   Return a list of input properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: AddParticle(particle: ansys.rocky.app.ra_particle.RAParticle | str) -> ansys.rocky.app.ra_volumetric_inlet_properties.RAVolumetricInletProperties
+
+   
+   Add a new particle to the Volumetric Inlet input properties list.
+
+   : return: A new :class:`RAVolumetricInletProperties` object that can be used to set
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveParticle(particle: ansys.rocky.app.ra_particle.RAParticle | str) -> None
+
+   
+   Remove a particle from the Particle Inlet input properties list.
+
+   :param particle: The particle to remove, either as an :class:`RAParticle` object or by name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBoxCenter(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Box Center".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBoxCenter(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Box Center".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBoxDimensions(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Box Dimensions".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBoxDimensions(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Box Dimensions".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseGeometriesToCompute() -> bool
+
+   
+   Get the value of "Use Geometries To Compute".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseGeometriesToCompute(value: bool) -> None
+
+   
+   Set the value of "Use Geometries To Compute".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGapScaleFactor() -> float
+
+   
+   Get the value of "Gap Scale Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGapScaleFactor(value: str | float) -> None
+
+   
+   Set the value of "Gap Scale Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInitialVelocity(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Initial Velocity".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitialVelocity(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Initial Velocity".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m/s".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriodic() -> bool
+
+   
+   Get the value of "Periodic".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriodic(value: bool) -> None
+
+   
+   Set the value of "Periodic".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnablePeriodic() -> None
+
+   
+   Set the value of "Periodic" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisablePeriodic() -> None
+
+   
+   Set the value of "Periodic" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsPeriodicEnabled() -> bool
+
+   
+   Check if the "Periodic" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriod(unit: str | None = None) -> float
+
+   
+   Get the value of "Period".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriod(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Period".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSeedCoordinates(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Seed Coordinates".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSeedCoordinates(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Seed Coordinates".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInjectionTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Injection Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInjectionTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Injection Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStopTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Stop Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStopTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Stop Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSphMass(unit: str | None = None) -> float
+
+   
+   Get the value of "Sph Mass".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "kg".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSphMass(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Sph Mass".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "kg".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSphTemperature(unit: str | None = None) -> float
+
+   
+   Get the value of "Sph Temperature".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSphTemperature(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Sph Temperature".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseBoxCenterAsSeedPoint() -> bool
+
+   
+   Get the value of "Use Box Center As Seed Point".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseBoxCenterAsSeedPoint(value: bool) -> None
+
+   
+   Set the value of "Use Box Center As Seed Point".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableUseBoxCenterAsSeedPoint() -> None
+
+   
+   Set the value of "Use Box Center As Seed Point" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableUseBoxCenterAsSeedPoint() -> None
+
+   
+   Set the value of "Use Box Center As Seed Point" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsUseBoxCenterAsSeedPointEnabled() -> bool
+
+   
+   Check if the "Use Box Center As Seed Point" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGeometries()
+
+   
+   Get the "Geometries".
+
+   :rtype: List[:class:`RAWall`]
+       A list of :class:`RAWall`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGeometries(values) -> None
+
+   
+   Set the "Geometries".
+
+   :param List[str, :class:`RAWall`] values:
+       A list with names, :class:`RAWall`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableGeometries()
+
+   
+   Get all available Geometries.
+
+   :rtype: List[:class:`RAWall`]
+       A list of :class:`RAWall`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

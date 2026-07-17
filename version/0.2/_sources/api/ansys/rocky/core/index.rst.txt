@@ -1,0 +1,134 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: core
+.. tab-set::
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~client`
+            - Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
+
+
+          * - :py:obj:`~examples`
+            - Helper module to download project code examples.
+
+
+          * - :py:obj:`~exceptions`
+            - Module where the exceptions of the project are contained.
+
+
+          * - :py:obj:`~launcher`
+            - Module that exposes functions to launch a Rocky application session.
+
+
+          * - :py:obj:`~rocky_api_proxies`
+            - Module that defines the ``ApiElementProxy`` classes, which acts as a proxy for a
+
+
+          * - :py:obj:`~serializers`
+            - Module that defines the ``ApiElementProxy`` classes, which acts as a proxy for a
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~connect_to_rocky`
+            - Connect to a Rocky app instance.
+
+
+          * - :py:obj:`~launch_rocky`
+            - Launch the Rocky executable with the PyRocky server enabled.
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> client</api/ansys/rocky/core/client/index>
+    <span class="nf nf-fa-file"></span> examples</api/ansys/rocky/core/examples/index>
+    <span class="nf nf-fa-file"></span> exceptions</api/ansys/rocky/core/exceptions/index>
+    <span class="nf nf-fa-file"></span> launcher</api/ansys/rocky/core/launcher/index>
+    <span class="nf nf-fa-file"></span> rocky_api_proxies</api/ansys/rocky/core/rocky_api_proxies/index>
+    <span class="nf nf-fa-file"></span> serializers</api/ansys/rocky/core/serializers/index>
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+PyRocky is a Python client for Ansys Rocky application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+
+

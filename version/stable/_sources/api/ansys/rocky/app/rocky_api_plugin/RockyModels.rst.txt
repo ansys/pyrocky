@@ -1,0 +1,84 @@
+
+
+
+
+
+
+:class:`RockyModels`
+====================
+
+
+.. py:class:: ansys.rocky.app.rocky_api_plugin.RockyModels
+
+
+.. py:currentmodule:: RockyModels
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrapperClasses`
+            - 
+          * - :py:attr:`~GetExtraAPIClasses`
+            - Get a list of classes that don't necessarily wrap a single model class but are part of the
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.rocky_api_plugin import RockyModels
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrapperClasses()
+
+.. py:method:: GetExtraAPIClasses()
+
+   
+   Get a list of classes that don't necessarily wrap a single model class but are part of the
+   scripting API nonetheless.
+
+   Used by the generate-api-docs task to add these classes to the Scripting API Manual.
+
+   :rtype: list(class)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

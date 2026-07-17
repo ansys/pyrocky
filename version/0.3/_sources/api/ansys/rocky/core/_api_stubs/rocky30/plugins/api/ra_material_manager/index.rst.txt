@@ -1,0 +1,49 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_material_manager
+===================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_material_manager
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_material_manager.RAMaterialManager
+
+
+Module Contents
+---------------
+
+.. py:class:: RAMaterialManager
+
+   .. py:method:: CreateMaterialAndRelatedInteractions(materials_api_or_subject: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_collection.RAMaterialCollection, rocky30.models.material.material.MaterialCollection], interactions_api_or_subject: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction.RAMaterialsInteraction, rocky30.models.material.materials_interaction.MaterialsInteraction], material_name: Union[str, None] = ...) -> rocky30.models.material.material.Material
+      :classmethod:
+
+
+
+   .. py:method:: CreateSolidMaterialAndRelatedInteractions(materials_api_or_subject: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_collection.RAMaterialCollection, rocky30.models.material.material.MaterialCollection], interactions_api_or_subject: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction.RAMaterialsInteraction, rocky30.models.material.materials_interaction.MaterialsInteraction], material_name: Union[str, None] = ...) -> rocky30.models.material.material.Material
+      :classmethod:
+
+
+
+   .. py:method:: RemoveMaterialAndRelatedInteractions(materials_api_or_subject: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_collection.RAMaterialCollection, rocky30.models.material.material.MaterialCollection], interactions_api_or_subject: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction.RAMaterialsInteraction, rocky30.models.material.materials_interaction.MaterialsInteraction], material_or_name: Union[str, rocky30.models.material.material.Material]) -> None
+      :classmethod:
+
+
+
+   .. py:method:: RemoveSolidMaterialAndRelatedInteractions(materials_api_or_subject: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_collection.RAMaterialCollection, rocky30.models.material.material.MaterialCollection], interactions_api_or_subject: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction.RAMaterialsInteraction, rocky30.models.material.materials_interaction.MaterialsInteraction], material_or_name: Union[str, rocky30.models.material.material.Material]) -> None
+      :classmethod:
+
+
+
+   .. py:method:: CreateFluidMaterial(fluid_material_collection: rocky30.models.material.fluid_material.FluidMaterialCollection, material_name: Union[str, None] = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material.RAFluidMaterial
+      :classmethod:
+
+
+
+   .. py:method:: RemoveFluidMaterial(fluid_material_collection: rocky30.models.material.fluid_material.FluidMaterialCollection, material_or_name: Union[str, ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material.RAFluidMaterial]) -> None
+      :classmethod:
+
+
+

@@ -1,0 +1,50 @@
+
+
+
+
+
+
+:class:`FreeflowLaunchError`
+============================
+
+
+.. py:exception:: ansys.rocky.core.exceptions.FreeflowLaunchError
+
+   Bases: :py:obj:`PyRockyError`
+
+
+   
+   Provides the error raised when problems occurs during launch of the Freeflow
+   app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import FreeflowLaunchError
+
+
+
+
+

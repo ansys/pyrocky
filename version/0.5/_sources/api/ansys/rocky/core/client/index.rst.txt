@@ -1,0 +1,209 @@
+
+
+
+
+
+
+The ``client.py`` module
+========================
+
+.. py:module:: ansys.rocky.core.client
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: client
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core.client.RockyClient`
+            - Provides the client object for interacting with the Rocky/Freeflow app.
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~connect`
+            - Connect to a Rocky/Freeflow app instance.
+
+
+          * - :py:obj:`~connect_to_rocky`
+            - This function is deprecated.
+
+
+          * - :py:obj:`~wait_for`
+            - Waits until the given predicate callback returns True or raises ``TimeoutError``.
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~DEFAULT_SERVER_PORT`
+            - 
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RockyClient</api/ansys/rocky/core/client/RockyClient>
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
+application session.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: connect(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> RockyClient
+
+   
+   Connect to a Rocky/Freeflow app instance.
+
+
+   :Parameters:
+
+       **host** : :class:`python:str`, :obj:`optional`
+           Host name where the app is running. On Windows, default is ``"localhost"`. On
+           Linux, it defaults to a unix domain socket connection.
+
+       **port** : :class:`python:int`, :obj:`optional`
+           Service port to connect to.
+
+
+
+   :Returns:
+
+       :obj:`RockyClient`
+           Client object for interacting with the Rocky/Freeflow app.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: connect_to_rocky(host: str | None = None, port: int = _PYROCKY_DEFAULT_PORT) -> RockyClient
+
+   
+   This function is deprecated.
+   Use connect() instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: wait_for(predicate_callback: Callable[[], bool], *, timeout: int) -> None
+
+   
+   Waits until the given predicate callback returns True or raises ``TimeoutError``.
+
+
+   :Parameters:
+
+       **predicate_callback**
+           a function that returns a boolean value.
+
+       **timeout**
+           for how long to wait in seconds. If the timeout is reached, a ``TimeoutError``
+           is raised.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:data:: DEFAULT_SERVER_PORT
+   :value: 18615
+
+
+
+

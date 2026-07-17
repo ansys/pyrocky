@@ -1,0 +1,315 @@
+
+
+
+
+
+
+:class:`RockyApiApplication`
+============================
+
+
+.. py:class:: ansys.rocky.app.rocky_api_application.RockyApiApplication
+
+   Bases: :py:obj:`ansys.rocky.app.api_application.ApiApplication`
+
+
+
+.. py:currentmodule:: RockyApiApplication
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~CreateProject`
+            - Creates a new project.
+          * - :py:attr:`~GetProject`
+            - Overrides Kraken API implementation to use the base class.
+          * - :py:attr:`~OpenProject`
+            - Closes the current project, if any, and opens the project with the given filename.
+          * - :py:attr:`~CloseProject`
+            - Close the current project.
+          * - :py:attr:`~SaveProject`
+            - Save the currently opened project.
+          * - :py:attr:`~PlaybackMacroFile`
+            - 
+          * - :py:attr:`~PlaybackMacro`
+            - 
+          * - :py:attr:`~GetAdditionalFeatures`
+            - Get the PrePost Scripting wrapper that corresponds to the "Additional Features" page on the application's Preferences
+          * - :py:attr:`~GetVersion`
+            - Return the current version of the application.
+          * - :py:attr:`~GetStudy`
+            - Get the project's Study.
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~TYPE_3D_WINDOW`
+            - 
+          * - :py:attr:`~TYPE_TIME_PLOT_WINDOW`
+            - 
+          * - :py:attr:`~TYPE_CROSS_PLOT_WINDOW`
+            - 
+          * - :py:attr:`~TYPE_HISTOGRAM_PLOT_WINDOW`
+            - 
+          * - :py:attr:`~TYPE_SPACE_PLOT_WINDOW`
+            - 
+          * - :py:attr:`~TYPE_MULTI_TIME_PLOT_WINDOW`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.rocky_api_application import RockyApiApplication
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: TYPE_3D_WINDOW
+   :type:  str
+
+.. py:attribute:: TYPE_TIME_PLOT_WINDOW
+   :type:  str
+
+.. py:attribute:: TYPE_CROSS_PLOT_WINDOW
+   :type:  str
+
+.. py:attribute:: TYPE_HISTOGRAM_PLOT_WINDOW
+   :type:  str
+
+.. py:attribute:: TYPE_SPACE_PLOT_WINDOW
+   :type:  str
+
+.. py:attribute:: TYPE_MULTI_TIME_PLOT_WINDOW
+   :type:  str
+
+
+
+Method detail
+-------------
+
+.. py:method:: CreateProject() -> ansys.rocky.app.ra_project.RAProject
+
+   
+   Creates a new project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetProject() -> ansys.rocky.app.ra_project.RAProject
+
+   
+   Overrides Kraken API implementation to use the base class.
+   If there is no project don't create a new one.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: OpenProject(filename: str) -> ansys.rocky.app.ra_project.RAProject
+
+   
+   Closes the current project, if any, and opens the project with the given filename.
+
+   :param str filename:
+   The complete path of the project to be opened.
+   :rtype RAProject:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CloseProject(check_save_state: bool = True) -> None
+
+   
+   Close the current project.
+
+   :param bool check_save_state:
+       If False, it will close without asking the user to save it first.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SaveProject(filename: str | None = None) -> None
+
+   
+   Save the currently opened project.
+
+   :param str filename:
+       The name of the file to save the project or None if to update the current file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: PlaybackMacroFile(filename: str) -> None
+
+.. py:method:: PlaybackMacro(macro_name: str) -> None
+
+.. py:method:: GetAdditionalFeatures() -> ansys.rocky.app.ra_additional_features.RAAdditionalFeatures
+
+   
+   Get the PrePost Scripting wrapper that corresponds to the "Additional Features" page on the application's Preferences
+
+   :rtype: RAAdditionalFeatures
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVersion() -> str
+
+   
+   Return the current version of the application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStudy(study_name: str | None = None) -> ansys.rocky.app.ra_study.RAStudy
+
+   
+   Get the project's Study.
+
+   :param study_name:
+       The name of the study
+       If None is given the first model will be returned
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

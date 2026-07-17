@@ -1,0 +1,56 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api
+======================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api.RockyApiError
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api.CheckResults
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_api.CheckPropAffectsSimulation
+
+
+Module Contents
+---------------
+
+.. py:exception:: RockyApiError
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiError`
+
+
+   
+   Unspecified run-time error.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: CheckResults(ra_object) -> None
+
+.. py:function:: CheckPropAffectsSimulation(prop_owner, prop_name)
+

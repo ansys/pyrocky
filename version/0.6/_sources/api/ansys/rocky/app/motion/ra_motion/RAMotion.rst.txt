@@ -1,0 +1,359 @@
+
+
+
+
+
+
+:class:`RAMotion`
+=================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_motion.RAMotion(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper representing a single Motion in a Motion Frame.
+
+   Access individual motions via a :class:`RAMotionFrame`'s motion list:
+
+   .. code-block:: python
+
+       motions = motion_frame.GetMotions()
+       motion_1 = motions[0]
+       motion_2 = motions.New()
+
+   Every :class:`RAMotion` contains properties that are common to all motions (such as start
+   and stop times) and properties that are specific to the motion's type (translation, vibration,
+   etc). These latter properties must be accessed by a "sub-object" that is retrieved via
+   :meth:`GetTypeObject()` after the specific motion type is configured via :meth:`SetType()`.
+
+   .. code-block:: python
+
+       motions = motion_frame.GetMotions()
+       motion_1 = motions.New()
+       motion_1.SetType('Translation')
+       translation = motion_1.GetTypeObject()
+       # `translation` is a RATranslation
+       translation.SetVelocity([1.0, 0.0, 0.0], 'm/s')
+
+   Refer to the specific PrePost Scripting wrappers for documentation on the individual motion types:
+
+   * :class:`RATranslation`
+   * :class:`RARotation`
+   * :class:`RAPendulum`
+   * :class:`RAVibration`
+   * :class:`RAFreeBodyRotation`
+   * :class:`RAFreeBodyTranslation`
+   * :class:`RAPrescribedForce`
+   * :class:`RAPrescribedMoment`
+   * :class:`RASpringDashpotForce`
+   * :class:`RASpringDashpotMoment`
+   * :class:`RALinearTimeVariableForce`
+   * :class:`RALinearTimeVariableMoment`
+   * :class:`RATimeSeriesTranslation`
+   * :class:`RATimeSeriesRotation`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAMotion
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetType`
+            - Set the concrete type of motion.
+          * - :py:attr:`~GetType`
+            - Get the concrete type of motion.
+          * - :py:attr:`~GetTypeObject`
+            - Get the API object that wraps the specific motion type.
+          * - :py:attr:`~GetValidTypes`
+            - Return a list with the possible values for the motion's type.
+          * - :py:attr:`~GetStartTime`
+            - Get the value of "Start Time".
+          * - :py:attr:`~SetStartTime`
+            - Set the value of "Start Time".
+          * - :py:attr:`~GetStopTime`
+            - Get the value of "Stop Time".
+          * - :py:attr:`~SetStopTime`
+            - Set the value of "Stop Time".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_motion import RAMotion
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetType(motion_type)
+
+   
+   Set the concrete type of motion.
+
+   :param unicode motion_type:
+       The concrete motion type. Accepted values are the strings in the "Type" drop-down menu
+       in the UI.
+   :return:
+       The PrePost Scripting wrapper representing the concrete motion type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetType()
+
+   
+   Get the concrete type of motion.
+
+   :rtype: unicode
+   :return:
+       A string describing the type of motion. The returned value will be one of the strings
+       in the "Type" drop-down menu in the UI.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTypeObject()
+
+   
+   Get the API object that wraps the specific motion type.
+
+   :rtype: ApiElementItem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidTypes()
+
+   
+   Return a list with the possible values for the motion's type.
+
+   :rtype: list(unicode)
+   :return:
+       A list of accepted values for `SetType()`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStopTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Stop Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStopTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Stop Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

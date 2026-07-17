@@ -1,0 +1,345 @@
+
+
+
+
+
+
+:class:`RASurface`
+==================
+
+
+.. py:class:: ansys.rocky.app.ra_surface.RASurface
+
+   Bases: :py:obj:`ansys.rocky.app.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.app._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`
+
+
+   
+   Rocky API "Surface" model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASurface
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~HasMotionFrame`
+            - Whether the geometry is linked to a motion frame.
+          * - :py:attr:`~GetTranslation`
+            - Get the value of "Translation".
+          * - :py:attr:`~SetTranslation`
+            - Set the values of "Translation".
+          * - :py:attr:`~GetInvertNormal`
+            - Get the value of "Invert Normal".
+          * - :py:attr:`~SetInvertNormal`
+            - Set the value of "Invert Normal".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetPivotPoint`
+            - Get the value of "Pivot Point".
+          * - :py:attr:`~SetPivotPoint`
+            - Set the values of "Pivot Point".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_surface import RASurface
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[object]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: HasMotionFrame() -> bool
+
+   
+   Whether the geometry is linked to a motion frame.
+
+   :return:
+       True if geometry is linked to a motion frame False otherwise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTranslation(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Translation".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTranslation(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Translation".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInvertNormal() -> bool
+
+   
+   Get the value of "Invert Normal".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInvertNormal(value: bool) -> None
+
+   
+   Set the value of "Invert Normal".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPivotPoint(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Pivot Point".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPivotPoint(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Pivot Point".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

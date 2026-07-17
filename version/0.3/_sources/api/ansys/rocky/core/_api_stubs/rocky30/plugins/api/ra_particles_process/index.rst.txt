@@ -1,0 +1,41 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particles_process
+====================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particles_process
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particles_process.RAParticles
+
+
+Module Contents
+---------------
+
+.. py:class:: RAParticles
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetNumberOfParticles(time_step)
+
+
+   .. py:method:: IterParticles(time_step)
+
+
+   .. py:method:: RemoveProcess() -> None
+
+

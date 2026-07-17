@@ -1,0 +1,100 @@
+
+
+
+
+
+
+:class:`RockyClient`
+====================
+
+
+.. py:class:: ansys.rocky.core.client.RockyClient(pyro_uri: str)
+
+   
+   Provides the client object for interacting with the Rocky/Freeflow app.
+
+   A separate Pyro proxy is created for each thread that accesses ``api``.
+   Proxies are automatically released when their owning thread exits or when
+   the client itself is closed/garbage collected.
+
+   :Parameters:
+
+       **pyro_uri** : :class:`python:str`
+           URI of the Pyro5 proxy object that connects to the Rocky app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RockyClient
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~close`
+            - 
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~api`
+            - 
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.client import RockyClient
+
+Property detail
+---------------
+
+.. py:property:: api
+   :type: ansys.rocky.app.rocky_api_application.RockyApiApplication
+
+
+
+
+
+Method detail
+-------------
+
+.. py:method:: close() -> None
+
+
+
+

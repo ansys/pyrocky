@@ -1,0 +1,86 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_inlet
+==============================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_inlet
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_inlet.RAFluidInlet
+
+
+Module Contents
+---------------
+
+.. py:class:: RAFluidInlet(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.input.sph_inlet.SPHInlet]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetBoundaryCondition() -> str
+
+
+   .. py:method:: SetBoundaryCondition(value: str) -> None
+
+
+   .. py:method:: GetValidBoundaryConditionValues() -> List[str]
+
+
+   .. py:method:: GetMassFlowRate(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMassFlowRate(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetVelocity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetVelocity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetEntryPoint()
+
+
+   .. py:method:: SetEntryPoint(value) -> None
+
+
+   .. py:method:: GetAvailableEntryPoints()
+
+

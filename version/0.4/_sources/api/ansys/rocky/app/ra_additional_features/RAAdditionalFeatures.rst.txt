@@ -1,0 +1,203 @@
+
+
+
+
+
+
+:class:`RAAdditionalFeatures`
+=============================
+
+
+.. py:class:: ansys.rocky.app.ra_additional_features.RAAdditionalFeatures
+
+
+.. py:currentmodule:: RAAdditionalFeatures
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetBetaFeaturesEnabled`
+            - Get whether 'beta features' are enabled in the application preferences.
+          * - :py:attr:`~SetBetaFeaturesEnabled`
+            - Set whether 'beta features' are enabled in the application preferences.
+          * - :py:attr:`~GetAdvancedFeaturesEnabled`
+            - Get whether 'advanced features' are enabled in the application preferences.
+          * - :py:attr:`~SetAdvancedFeaturesEnabled`
+            - Set whether 'advanced features' are enabled in the application preferences.
+          * - :py:attr:`~GetCustomFeatures`
+            - Get a list with all enabled features in application preferences.
+          * - :py:attr:`~SetCustomFeatures`
+            - Use a list of custom features to enable them in the application preferences.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_additional_features import RAAdditionalFeatures
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetBetaFeaturesEnabled() -> bool
+
+   
+   Get whether 'beta features' are enabled in the application preferences.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBetaFeaturesEnabled(enable: bool) -> None
+
+   
+   Set whether 'beta features' are enabled in the application preferences.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAdvancedFeaturesEnabled() -> bool
+
+   
+   Get whether 'advanced features' are enabled in the application preferences.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAdvancedFeaturesEnabled(enable: bool) -> None
+
+   
+   Set whether 'advanced features' are enabled in the application preferences.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCustomFeatures() -> list[str]
+
+   
+   Get a list with all enabled features in application preferences.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCustomFeatures(features: collections.abc.Iterable[str]) -> None
+
+   
+   Use a list of custom features to enable them in the application preferences.
+
+   :param features:
+       A list of names that represents the custom features.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

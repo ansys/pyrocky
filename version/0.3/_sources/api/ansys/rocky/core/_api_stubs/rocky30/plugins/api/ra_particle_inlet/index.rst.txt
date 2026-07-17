@@ -1,0 +1,188 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet
+=================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet.RAParticleInlet
+
+
+Module Contents
+---------------
+
+.. py:class:: RAParticleInlet(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetTonnageList()
+
+
+   .. py:method:: GetInputPropertiesList() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_inlet_properties.RAParticleInletPropertiesList
+
+
+   .. py:method:: EnablePeriodicDischarge() -> None
+
+
+   .. py:method:: DisablePeriodicDischarge() -> None
+
+
+   .. py:method:: IsPeriodicDischargeEnabled() -> bool
+
+
+   .. py:method:: GetPeriodicDischarge() -> bool
+
+
+   .. py:method:: SetPeriodicDischarge(value)
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetInjectionDuration(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetInjectionDuration(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDischargeTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDischargeTime(value: float, unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetForcePacking() -> bool
+
+
+   .. py:method:: SetForcePacking(value: bool) -> None
+
+
+   .. py:method:: EnableForcePacking() -> None
+
+
+   .. py:method:: DisableForcePacking() -> None
+
+
+   .. py:method:: IsForcePackingEnabled() -> bool
+
+
+   .. py:method:: GetPeriod(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPeriod(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPeriodic() -> bool
+
+
+   .. py:method:: SetPeriodic(value: bool) -> None
+
+
+   .. py:method:: EnablePeriodic() -> None
+
+
+   .. py:method:: DisablePeriodic() -> None
+
+
+   .. py:method:: IsPeriodicEnabled() -> bool
+
+
+   .. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStopAllAtStopTime() -> bool
+
+
+   .. py:method:: SetStopAllAtStopTime(value: bool) -> None
+
+
+   .. py:method:: EnableStopAllAtStopTime() -> None
+
+
+   .. py:method:: DisableStopAllAtStopTime() -> None
+
+
+   .. py:method:: IsStopAllAtStopTimeEnabled() -> bool
+
+
+   .. py:method:: GetStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTargetNormalVelocity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTargetNormalVelocity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetUseTargetNormalVelocity() -> bool
+
+
+   .. py:method:: SetUseTargetNormalVelocity(value: bool) -> None
+
+
+   .. py:method:: EnableUseTargetNormalVelocity() -> None
+
+
+   .. py:method:: DisableUseTargetNormalVelocity() -> None
+
+
+   .. py:method:: IsUseTargetNormalVelocityEnabled() -> bool
+
+
+   .. py:method:: GetUxLocal(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetUxLocal(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetUzLocal(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetUzLocal(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSphInjectionEnabled() -> bool
+
+
+   .. py:method:: SetSphInjectionEnabled(value: bool) -> None
+
+
+   .. py:method:: GetSphTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSphTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetEntryPoint()
+
+
+   .. py:method:: SetEntryPoint(value) -> None
+
+
+   .. py:method:: GetAvailableEntryPoints()
+
+

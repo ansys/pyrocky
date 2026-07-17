@@ -1,0 +1,331 @@
+
+
+
+
+
+
+:class:`RAGeometryCollection`
+=============================
+
+
+.. py:class:: ansys.rocky.app.ra_geometry_collection.RAGeometryCollection
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`
+
+
+   
+   Rocky PrePost Scripting wrapper for the collection of geometries in a project.
+
+   The class represents the "Geometries" item on the project data tree. To get the :class:`RAGeometryCollection`
+   from a :class:`RAStudy`, use:
+
+   .. code-block:: python
+
+       geometry_collection = study.GetGeometryCollection()
+
+   This class contains methods to iterate and retrieve the geometries in a given project, manipulating
+   the collection as a regular Python list, e.g.:
+
+   .. code-block:: python
+
+       for geometry in geometry_collection:
+           print(geometry.GetName())
+
+       feed_conveyor = geometry_collection[1]
+       inlet = geometry_collection.GetGeometry('Inlet <01>')
+
+   To create the different kind of geometries (conveyors, inlets and custom geometries), see
+   :class:`RAStudy`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAGeometryCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetGeometryNames`
+            - Get the names of the geometries in this collection.
+          * - :py:attr:`~GetGeometry`
+            - Get a geometry from its name.
+          * - :py:attr:`~IterInletGeometries`
+            - Iterate over the inlet geometries.
+          * - :py:attr:`~IterSurfaces`
+            - Iterate over the surface geometries.
+          * - :py:attr:`~IterWalls`
+            - Iterate over the walls geometries.
+          * - :py:attr:`~IterSystemCouplingWalls`
+            - Iterate over the System Coupling walls geometries.
+          * - :py:attr:`~GetBoundingBox`
+            - Get the bounding box containing all geometries in this collection, at the given time.
+          * - :py:attr:`~RemoveGeometry`
+            - Remove the given geometry from the project.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_geometry_collection import RAGeometryCollection
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.geometry.geometry_collection.GeometryCollection]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetGeometryNames() -> list[str]
+
+   
+   Get the names of the geometries in this collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGeometry(geometry_name)
+
+   
+   Get a geometry from its name.
+
+   :param unicode geometry_name:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IterInletGeometries() -> collections.abc.Iterator[ansys.rocky.app.ra_base_geometry.RABaseGeometry]
+
+   
+   Iterate over the inlet geometries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IterSurfaces() -> collections.abc.Iterator[ansys.rocky.app.ra_base_geometry.RABaseGeometry]
+
+   
+   Iterate over the surface geometries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IterWalls() -> collections.abc.Iterator[ansys.rocky.app.ra_base_geometry.RABaseGeometry]
+
+   
+   Iterate over the walls geometries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IterSystemCouplingWalls() -> collections.abc.Iterator[ansys.rocky.app.ra_base_geometry.RABaseGeometry]
+
+   
+   Iterate over the System Coupling walls geometries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBoundingBox(time_step: coilib50.time.time_step_interface.ITimeStep | None, force_load: bool = False, force_orthogonal: bool = True) -> tuple[barril.units.FixedArray, barril.units.FixedArray]
+
+   
+   Get the bounding box containing all geometries in this collection, at the given time.
+
+   :param time_step:
+       The time step for which the bounding box should be computed.
+
+   :param force_load:
+       If True, the bounding box will be computed by loading the geometries from the project.
+       If False, the bounding box will only be returned if it was already computed.
+
+   :param force_orthogonal:
+       If True, the bounding box will be computed in an orthogonal coordinate system.
+       If False, the bounding box will be computed in the original coordinate system of the geometries.
+
+   :return:
+       The bounding box of all the geometries in the passed time step, or None if the box
+       could not be computed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveGeometry(geometry: ansys.rocky.app.ra_base_geometry.RABaseGeometry | str | None) -> None
+
+   
+   Remove the given geometry from the project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

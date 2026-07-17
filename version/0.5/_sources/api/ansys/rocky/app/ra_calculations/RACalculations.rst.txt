@@ -1,0 +1,390 @@
+
+
+
+
+
+
+:class:`RACalculations`
+=======================
+
+
+.. py:class:: ansys.rocky.app.ra_calculations.RACalculations(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky api for particles calculations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+.. py:currentmodule:: RACalculations
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~CreateSelectionResidenceTime`
+            - Create a residence time grid function for the given selection process
+          * - :py:attr:`~CreateSelectionFlipCount`
+            - Create a flip count grid function for the given selection process
+          * - :py:attr:`~GetTagging`
+            - Get the Tagging calculator with the given name.
+          * - :py:attr:`~GetDivisionsTagging`
+            - Get the Divisions Tagging calculator with the given name.
+          * - :py:attr:`~GetTaggingNames`
+            - Get a list of the names of all Taggings in Particles Calculations.
+          * - :py:attr:`~GetDivisionsTaggingNames`
+            - Get a list of the names of all Divisions Taggings in Particles Calculations.
+          * - :py:attr:`~CreateTagging`
+            - Create a Tagging calculator for the given particle-based selection process.
+          * - :py:attr:`~CreateDivisionsTagging`
+            - Create a Divisions Tagging calculator for the given particle-based selection process.
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__iter__`
+            - Iterates over the wrapped particle calculations.
+          * - :py:attr:`~__len__`
+            - :rtype: int
+          * - :py:attr:`~__getitem__`
+            - :param index:
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_calculations import RACalculations
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.particles_calculations.particles_calculations.ParticlesCalculations]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: CreateSelectionResidenceTime(selection: ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem | str) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+   
+   Create a residence time grid function for the given selection process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateSelectionFlipCount(selection: ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+   
+   Create a flip count grid function for the given selection process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTagging(name: str) -> ansys.rocky.app.ra_tagging.RATagging
+
+   
+   Get the Tagging calculator with the given name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDivisionsTagging(name: str) -> ansys.rocky.app.ra_divisions_tagging.RADivisionsTagging
+
+   
+   Get the Divisions Tagging calculator with the given name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTaggingNames() -> list[str]
+
+   
+   Get a list of the names of all Taggings in Particles Calculations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDivisionsTaggingNames() -> list[str]
+
+   
+   Get a list of the names of all Divisions Taggings in Particles Calculations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateTagging(selection: ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator | None
+
+   
+   Create a Tagging calculator for the given particle-based selection process.
+
+   :param selection:
+       Must be a particle selection type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateDivisionsTagging(selection: ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem) -> ansys.rocky.app.ra_divisions_tagging.RADivisionsTagging
+
+   
+   Create a Divisions Tagging calculator for the given particle-based selection process.
+
+   :param selection:
+       Must be a particle selection type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __iter__() -> collections.abc.Iterator
+
+   
+   Iterates over the wrapped particle calculations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __len__() -> int
+
+   
+   :rtype: int
+   :return:
+       The number of particle calculations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __getitem__(index: int) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+   
+   :param index:
+       The calculation index
+
+   :return:
+       The particle calculation at the given index
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_time_statistics.py`` module
+====================================
+
+.. py:module:: ansys.rocky.app.ra_time_statistics
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_time_statistics
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_time_statistics.RATimeStatisticsCalculator`
+            - PrePost Scripting wrapper for TimeStatisticsCalculators.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_time_statistics.RATimeStatistics`
+            - PrePost Scripting wrapper for TimeStatisticsContainer.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RATimeStatisticsCalculator</api/ansys/rocky/app/ra_time_statistics/RATimeStatisticsCalculator>
+    <span class="nf nf-cod-symbol_class"></span> RATimeStatistics</api/ansys/rocky/app/ra_time_statistics/RATimeStatistics>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

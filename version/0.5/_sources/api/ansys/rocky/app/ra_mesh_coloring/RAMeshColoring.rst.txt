@@ -1,0 +1,1641 @@
+
+
+
+
+
+
+:class:`RAMeshColoring`
+=======================
+
+
+.. py:class:: ansys.rocky.app.ra_mesh_coloring.RAMeshColoring(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate Mesh Colorings.
+
+   This wrapper can be accessed via the project's classes :class:`GetMeshColoring` that allow
+   coloring:
+
+   .. code-block:: python
+
+       window = app.Create3DWindow('Win 01')
+       particles = study.GetParticles()
+       particles_coloring = particles.GetMeshColoring('Win 01')
+       particles_coloring.SetNodeVisible(True)
+
+   Valid coloring modes, i.e. Node, Edges, Faces or Vectors can be accessed via
+   :class:`GetValidColoringModes`. The property being shown can be additionally modified:
+
+   .. code-block:: python
+
+       particles_coloring.SetNodeGridFunction(None)  # for solid colors
+       particles_coloring.SetNodeColor((1.0, 1.0, 1.0))
+       particles_coloring.SetNodeGridFunction('Absolute Rotational Velocity')  # for properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAMeshColoring
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetVisible`
+            - Set the value of "Visible".
+          * - :py:attr:`~GetVisible`
+            - Get the value of "Visible".
+          * - :py:attr:`~SetLevelOfDetail`
+            - Set the value of "Level of Detail".
+          * - :py:attr:`~GetValidLevelOfDetailValues`
+            - Get a list of all possible values for "Level of Detail".
+          * - :py:attr:`~GetLevelOfDetail`
+            - Get "Level of Detail" as a string.
+          * - :py:attr:`~SetStride`
+            - Set the value of "Stride".
+          * - :py:attr:`~GetStride`
+            - Get the value of "Stride".
+          * - :py:attr:`~GetAvailableGridFunctions`
+            - Get a list of all possible values for "GridFunctions".
+          * - :py:attr:`~GetAvailableGridFunctionsNames`
+            - Get a list of all possible values for "GridFunctions" names.
+          * - :py:attr:`~GetAvailableVectorGridFunctions`
+            - Get a list of all possible values for Vector "GridFunctions".
+          * - :py:attr:`~GetAvailableVectorGridFunctionsNames`
+            - Get a list of all possible values for Vector "GridFunctions" names.
+          * - :py:attr:`~GetValidColoringModes`
+            - Get a list with all possible coloring modes names.
+          * - :py:attr:`~SetTransparencyEnabled`
+            - Set the value of "Transparency".
+          * - :py:attr:`~GetTransparencyEnabled`
+            - Get the value of "Transparency".
+          * - :py:attr:`~SetTransparency`
+            - Set the value of "Transparency".
+          * - :py:attr:`~GetTransparency`
+            - Get the value of "Transparency".
+          * - :py:attr:`~SetNodeVisible`
+            - Set the value of "Node Visible".
+          * - :py:attr:`~GetNodeVisible`
+            - Get the value of "Node Visible".
+          * - :py:attr:`~SetNodeColor`
+            - Set the values of "Node Color".
+          * - :py:attr:`~GetNodeColor`
+            - Get the value of "Node Color".
+          * - :py:attr:`~SetNodeGridFunction`
+            - Set the values of "Node GridFunction".
+          * - :py:attr:`~GetNodeGridFunction`
+            - Get the value of "Node GridFunction".
+          * - :py:attr:`~SetNodePointSize`
+            - Set the value of "Node Point Size".
+          * - :py:attr:`~GetNodePointSize`
+            - Get the value of "Node Point Size".
+          * - :py:attr:`~SetEdgeVisible`
+            - Set the value of "Edge Visible".
+          * - :py:attr:`~GetEdgeVisible`
+            - Get the value of "Edge Visible".
+          * - :py:attr:`~SetEdgeColor`
+            - Set the values of "Edge Color".
+          * - :py:attr:`~GetEdgeColor`
+            - Get the value of "Edge Color".
+          * - :py:attr:`~SetEdgeGridFunction`
+            - Set the values of "Edge GridFunction".
+          * - :py:attr:`~GetEdgeGridFunction`
+            - Get the value of "Edge GridFunction".
+          * - :py:attr:`~SetEdgeLineWidth`
+            - Set the value of "Edge Line Width".
+          * - :py:attr:`~GetEdgeLineWidth`
+            - Get the value of "Edge Line Width".
+          * - :py:attr:`~SetFaceVisible`
+            - Set the value of "Face Visible".
+          * - :py:attr:`~GetFaceVisible`
+            - Get the value of "Face Visible".
+          * - :py:attr:`~SetFaceColor`
+            - Set the values of "Face Color".
+          * - :py:attr:`~GetFaceColor`
+            - Get the value of "Face Color".
+          * - :py:attr:`~SetFaceGridFunction`
+            - Set the values of "Face GridFunction".
+          * - :py:attr:`~GetFaceGridFunction`
+            - Get the value of "Face GridFunction".
+          * - :py:attr:`~GetValidFaceScopes`
+            - Get a list of all possible values for "Face Scope".
+          * - :py:attr:`~SetFaceScope`
+            - Set the value of "Face Scope".
+          * - :py:attr:`~GetFaceScope`
+            - Get "Face Scope" as a string.
+          * - :py:attr:`~GetValidFaceStructuredPartitionsValues`
+            - Get a list of all possible values for "Face Structured Partitions".
+          * - :py:attr:`~SetFaceStructuredPartitions`
+            - Set the value of "Face Structured Partitions".
+          * - :py:attr:`~GetFaceStructuredPartitions`
+            - Get "Face Structured Partitions" as a string.
+          * - :py:attr:`~GetValidFaceCustomStructuredPartitions`
+            - Get a list of all possible values for "Face Custom Structured Partitions".
+          * - :py:attr:`~SetFaceCustomStructuredPartitions`
+            - Set the value of "Face Custom Structured Partitions".
+          * - :py:attr:`~GetFaceCustomStructuredPartitions`
+            - Get the value of "Face Custom Structured Partitions".
+          * - :py:attr:`~SetFaceShowOnNode`
+            - Set the value of "Show On Node".
+          * - :py:attr:`~GetFaceShowOnNode`
+            - Get the value of "Show On Node".
+          * - :py:attr:`~SetVectorVisible`
+            - Set the value of "Vector Visible".
+          * - :py:attr:`~GetVectorVisible`
+            - Get the value of "Vector Visible".
+          * - :py:attr:`~SetVectorGridFunction`
+            - Set the values of "Vector GridFunction".
+          * - :py:attr:`~GetVectorGridFunction`
+            - Get the value of "Vector GridFunction".
+          * - :py:attr:`~SetVectorScale`
+            - Set the value of "Vector Scale".
+          * - :py:attr:`~GetVectorScale`
+            - Get the value of "Vector Scale".
+          * - :py:attr:`~SetNormalizedVectorsEnabled`
+            - Set the value of "Normalized Vectors".
+          * - :py:attr:`~GetNormalizedVectorsEnabled`
+            - Get the value of "Normalized Vector".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_mesh_coloring import RAMeshColoring
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[sci20.plugins.process.coloring_process.MeshAssemblyColoringProcessSubject]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetVisible(value: bool) -> None
+
+   
+   Set the value of "Visible".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVisible() -> bool
+
+   
+   Get the value of "Visible".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLevelOfDetail(value: str) -> None
+
+   
+   Set the value of "Level of Detail".
+
+   :param value:
+       The value to set. Must be one of ['Rich', 'Automatic', 'Simple'].
+   :raises RockyApiError:
+       If `value` is not a valid "Level of Detail" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidLevelOfDetailValues() -> list[str]
+
+   
+   Get a list of all possible values for "Level of Detail".
+
+   :return:
+       The returned list is ['Rich', 'Automatic', 'Simple'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLevelOfDetail() -> str
+
+   
+   Get "Level of Detail" as a string.
+
+   :return:
+       The returned value will be one of ['Rich', 'Automatic', 'Simple'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStride(value: int) -> None
+
+   
+   Set the value of "Stride".
+
+   :param value:
+       The value to set. This value must be an int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStride() -> int
+
+   
+   Get the value of "Stride".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableGridFunctions() -> set[ben10.element_function.semantic_association.SemanticAssociation]
+
+   
+   Get a list of all possible values for "GridFunctions".
+
+   :return:
+       The returned set contains the SemanticAssociation of the available Grid Functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableGridFunctionsNames() -> set[str]
+
+   
+   Get a list of all possible values for "GridFunctions" names.
+
+   :return:
+       The returned set contains the names of the available Grid Functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableVectorGridFunctions() -> set[ben10.element_function.semantic_association.SemanticAssociation]
+
+   
+   Get a list of all possible values for Vector "GridFunctions".
+
+   :return:
+       The returned set contains the SemanticAssociation of the available Vector Grid
+       Functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableVectorGridFunctionsNames() -> set[str]
+
+   
+   Get a list of all possible values for Vector "GridFunctions" names.
+
+   :return:
+       The returned set contains the names of the available Vector Grid Functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidColoringModes() -> list[str]
+
+   
+   Get a list with all possible coloring modes names.
+
+   :return:
+       The returned values will be a combination of ['Node', 'Edge', 'Face', 'Vector']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTransparencyEnabled(value: bool) -> None
+
+   
+   Set the value of "Transparency".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTransparencyEnabled() -> bool
+
+   
+   Get the value of "Transparency".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTransparency(value: float) -> None
+
+   
+   Set the value of "Transparency".
+
+   :param value:
+      The value to set. This value must be a float type between 0 and 100.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTransparency() -> float
+
+   
+   Get the value of "Transparency".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNodeVisible(value: bool) -> None
+
+   
+   Set the value of "Node Visible".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNodeVisible() -> bool
+
+   
+   Get the value of "Node Visible".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNodeColor(values: ColorType) -> None
+
+   
+   Set the values of "Node Color".
+
+   :param values:
+       The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements or `values` is not a tuple.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNodeColor() -> ColorType
+
+   
+   Get the value of "Node Color".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNodeGridFunction(value: ben10.element_function.semantic_association.SemanticAssociation | str | None) -> None
+
+   
+   Set the values of "Node GridFunction".
+
+   :param value:
+       The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+       of its name or `None` for solid colors.
+   :raises RockyApiError:
+       If `value` is not a valid type or is not available for the current coloring.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNodeGridFunction() -> ben10.element_function.semantic_association.SemanticAssociation | None
+
+   
+   Get the value of "Node GridFunction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNodePointSize(value: float) -> None
+
+   
+   Set the value of "Node Point Size".
+
+   :param value:
+       The value to set. This value must be a float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNodePointSize() -> float
+
+   
+   Get the value of "Node Point Size".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEdgeVisible(value: bool) -> None
+
+   
+   Set the value of "Edge Visible".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEdgeVisible() -> bool
+
+   
+   Get the value of "Edge Visible".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEdgeColor(values: ColorType) -> None
+
+   
+   Set the values of "Edge Color".
+
+   :param values:
+       The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements or `values` is not a tuple.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEdgeColor() -> ColorType
+
+   
+   Get the value of "Edge Color".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEdgeGridFunction(value: ben10.element_function.semantic_association.SemanticAssociation | str | None) -> None
+
+   
+   Set the values of "Edge GridFunction".
+
+   :param value:
+       The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+       of its name or `None` for solid colors.
+   :raises RockyApiError:
+       If `value` is not a valid type or is not available for the current coloring.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEdgeGridFunction() -> ben10.element_function.semantic_association.SemanticAssociation | None
+
+   
+   Get the value of "Edge GridFunction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEdgeLineWidth(value: float) -> None
+
+   
+   Set the value of "Edge Line Width".
+
+   :param value:
+      The value to set. This value must be a float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEdgeLineWidth() -> float
+
+   
+   Get the value of "Edge Line Width".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFaceVisible(value: bool) -> None
+
+   
+   Set the value of "Face Visible".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFaceVisible() -> bool
+
+   
+   Get the value of "Face Visible".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFaceColor(values: ColorType) -> None
+
+   
+   Set the values of "Face Color".
+
+   :param values:
+       The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements or `values` is not a tuple.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFaceColor() -> ColorType
+
+   
+   Get the value of "Face Color".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFaceGridFunction(value: ben10.element_function.semantic_association.SemanticAssociation | str | None) -> None
+
+   
+   Set the values of "Face GridFunction".
+
+   :param value:
+       The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+       of its name or `None` for solid colors.
+   :raises RockyApiError:
+       If `value` is not a valid type or is not available for the current coloring.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFaceGridFunction() -> ben10.element_function.semantic_association.SemanticAssociation | None
+
+   
+   Get the value of "Face GridFunction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidFaceScopes() -> list[str]
+
+   
+   Get a list of all possible values for "Face Scope".
+
+   :return:
+       The returned list with the valid scope options.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFaceScope(value: str) -> None
+
+   
+   Set the value of "Face Scope".
+
+   :param value:
+       The value to set.
+   :raises RockyApiError:
+       If `value` is not a valid "Face Scope" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFaceScope() -> str
+
+   
+   Get "Face Scope" as a string.
+
+   :return:
+       The return will be one of the "GetValidFaceScopes" values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidFaceStructuredPartitionsValues() -> list[str]
+
+   
+   Get a list of all possible values for "Face Structured Partitions".
+
+   :return:
+       The returned list is ['All', 'Custom...'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFaceStructuredPartitions(value: str) -> None
+
+   
+   Set the value of "Face Structured Partitions".
+
+   :param value:
+       The value to set.
+   :raises RockyApiError:
+       If `value` is not a valid "Face Structured Partitions" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFaceStructuredPartitions() -> str
+
+   
+   Get "Face Structured Partitions" as a string.
+
+   :return:
+       The returned value will be one of ['All', 'Custom...'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidFaceCustomStructuredPartitions() -> list[str]
+
+   
+   Get a list of all possible values for "Face Custom Structured Partitions".
+
+    :return:
+        The returned list is ['Top', 'Bottom', 'North', 'South', 'East', 'West'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFaceCustomStructuredPartitions(values: list[str]) -> None
+
+   
+   Set the value of "Face Custom Structured Partitions".
+
+   :param values:
+       A list containing all the custom partitions.
+   :raises RockyApiError:
+       If any of `values` is not a valid "Face Custom Structured Partitions" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFaceCustomStructuredPartitions() -> list[str]
+
+   
+    Get the value of "Face Custom Structured Partitions".
+
+   :return:
+       The returned value will be a combination of ['Top', 'Bottom', 'North', 'South', 'East',
+       'West'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFaceShowOnNode(value: bool) -> None
+
+   
+   Set the value of "Show On Node".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFaceShowOnNode() -> bool
+
+   
+   Get the value of "Show On Node".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVectorVisible(value: bool) -> None
+
+   
+   Set the value of "Vector Visible".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVectorVisible() -> bool
+
+   
+   Get the value of "Vector Visible".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVectorGridFunction(value: ben10.element_function.semantic_association.SemanticAssociation | str | None) -> None
+
+   
+   Set the values of "Vector GridFunction".
+
+   :param value:
+      The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+      of its name or `None` for solid colors.
+   :raises RockyApiError:
+      If `value` is not a valid type or is not available for the current coloring.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVectorGridFunction() -> ben10.element_function.semantic_association.SemanticAssociation | None
+
+   
+   Get the value of "Vector GridFunction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVectorScale(value: float) -> None
+
+   
+   Set the value of "Vector Scale".
+
+   :param value:
+      The value to set. This value must be a float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVectorScale() -> float
+
+   
+   Get the value of "Vector Scale".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNormalizedVectorsEnabled(value: bool) -> None
+
+   
+   Set the value of "Normalized Vectors".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNormalizedVectorsEnabled() -> bool
+
+   
+   Get the value of "Normalized Vector".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

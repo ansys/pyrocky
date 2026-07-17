@@ -1,0 +1,598 @@
+
+
+
+
+
+
+:class:`RAInletGeometry`
+========================
+
+
+.. py:class:: ansys.rocky.app.ra_inlet.RAInletGeometry
+
+   Bases: :py:obj:`ansys.rocky.app.ra_base_geometry.RABaseGeometry`
+
+
+   
+   Rocky API Inlet model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAInletGeometry
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetGeometryType`
+            - Sets Inlet geometry type, rectangular or circular
+          * - :py:attr:`~GetGeometryType`
+            - Get the Inlet geometry type, which is either 'rectangular' or 'circular'.
+          * - :py:attr:`~GetRectangularSize`
+            - Get the rectangular length and width of the inlet.
+          * - :py:attr:`~SetRectangularSize`
+            - Sets inlet rectangular size.
+          * - :py:attr:`~GetCircularMinMaxRadius`
+            - Get the minimum and maximum radiuses for circular inlets.
+          * - :py:attr:`~SetCircularMinMaxRadius`
+            - Set the minimum and maximum radiuses for circular inlets.
+          * - :py:attr:`~GetAlignmentAngle`
+            - Get the value of "Alignment Angle".
+          * - :py:attr:`~SetAlignmentAngle`
+            - Set the value of "Alignment Angle".
+          * - :py:attr:`~GetCenter`
+            - Get the value of "Center".
+          * - :py:attr:`~SetCenter`
+            - Set the values of "Center".
+          * - :py:attr:`~GetLength`
+            - Get the value of "Length".
+          * - :py:attr:`~SetLength`
+            - Set the value of "Length".
+          * - :py:attr:`~GetWidth`
+            - Get the value of "Width".
+          * - :py:attr:`~SetWidth`
+            - Set the value of "Width".
+          * - :py:attr:`~GetInclineAngle`
+            - Get the value of "Incline Angle".
+          * - :py:attr:`~SetInclineAngle`
+            - Set the value of "Incline Angle".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_inlet import RAInletGeometry
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: SetGeometryType(geometry_type: str) -> None
+
+   
+   Sets Inlet geometry type, rectangular or circular
+
+   :param geometry_type:
+       Inlet geometry's type, 'rectangular' or 'circular'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGeometryType() -> str
+
+   
+   Get the Inlet geometry type, which is either 'rectangular' or 'circular'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRectangularSize(unit: str | None = None) -> tuple[float, float]
+
+   
+   Get the rectangular length and width of the inlet.
+
+   :param unit:
+       The optional unit of the returned values. If no unit is passed, the values will be in 'm'.
+   :return:
+       A (length, width) tuple.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRectangularSize(length: float, width: float, unit: str | None = None) -> None
+
+   
+   Sets inlet rectangular size.
+
+   :param width: Inlet width
+   :param length: Inlet length
+   :param unit:
+       The optional unit. If no unit is passed, 'm' is used.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetCircularMinMaxRadius(unit: str | None = None) -> tuple[float, float]
+
+   
+   Get the minimum and maximum radiuses for circular inlets.
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+   :return:
+       A tuple with (minimum_radius, maximum_radius)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCircularMinMaxRadius(min_radius: float, max_radius: float, unit: str | None = None) -> None
+
+   
+   Set the minimum and maximum radiuses for circular inlets.
+
+   :param unit:
+       The unit for the radiuses. If no unit is provided, the radiuses will be assumed to be
+       in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAlignmentAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Alignment Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAlignmentAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Alignment Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCenter(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Center".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCenter(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Center".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLength(unit: str | None = None) -> float
+
+   
+   Get the value of "Length".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLength(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Length".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWidth(unit: str | None = None) -> float
+
+   
+   Get the value of "Width".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetWidth(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Width".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInclineAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Incline Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInclineAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Incline Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

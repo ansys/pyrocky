@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_fbm_rotation.py`` module
+=================================
+
+.. py:module:: ansys.rocky.app.motion.ra_fbm_rotation
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_fbm_rotation
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_fbm_rotation.RAFreeBodyRotation`
+            - Rocky PrePost Scripting wrapper representing a Free Body Rotation motion.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAFreeBodyRotation</api/ansys/rocky/app/motion/ra_fbm_rotation/RAFreeBodyRotation>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,195 @@
+
+
+
+
+
+
+:class:`RAParticleTimeSelectionProcess`
+=======================================
+
+
+.. py:class:: ansys.rocky.app.ra_particle_time_selection_process.RAParticleTimeSelectionProcess
+
+   Bases: :py:obj:`ansys.rocky.app.ra_process_element.RAUserProcess`
+
+
+   
+   Select particles over a time range.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParticleTimeSelectionProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetAbsoluteTimeRange`
+            - Configure this process to use an absolute time range.
+          * - :py:attr:`~SetTimeRange`
+            - Set the values for this process' time range.
+          * - :py:attr:`~GetTimeRange`
+            - Get a dictionary with the current time range configuration.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_particle_time_selection_process import RAParticleTimeSelectionProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetAbsoluteTimeRange(initial_time, final_time, unit: str = 's') -> None
+
+   
+   Configure this process to use an absolute time range.
+
+   :param float initial_time:
+       The initial time for the particle time selection to consider particles.
+
+   :param float final_time:
+       The final time for the particle time selection to consider particles.
+
+   :param unicode unit:
+       The unit for the range given (by default seconds).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTimeRange(range_definition=None, initial=None, final=None, unit: str = 's') -> None
+
+   
+   Set the values for this process' time range.
+
+   :param range_definition:
+       One of:
+       'app_time_filter', 'all', 'last_output', 'absolute', 'single', 'absolute_only_start', 'relative_to_end'.
+
+   :param float initial:
+       The initial value for the particle time selection to consider particles. May be ignored
+       depending on the range definition.
+
+   :param float final:
+       The final time for the particle time selection to consider particles. May be ignored
+       depending on the range definition.
+
+   :param unit:
+       The unit for the initial/final values passed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTimeRange()
+
+   
+   Get a dictionary with the current time range configuration.
+
+   :return {'range_definition': unicode, 'initial': int, 'final': int, 'unit': unicode}:
+       Returns a dict with the details currently set as the time range.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

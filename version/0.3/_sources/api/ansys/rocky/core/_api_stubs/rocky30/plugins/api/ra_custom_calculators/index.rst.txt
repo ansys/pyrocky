@@ -1,0 +1,67 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_calculators
+=====================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_calculators
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_calculators.VALID_TYPES
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_calculators.VALID_SCOPE
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_calculators.RACustomCurveAndGridProperty
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_calculators.RACustomCurveParameters
+
+
+Module Contents
+---------------
+
+.. py:data:: VALID_TYPES
+   :type:  _typeshed.Incomplete
+
+.. py:data:: VALID_SCOPE
+   :type:  _typeshed.Incomplete
+
+.. py:class:: RACustomCurveAndGridProperty
+
+   .. py:method:: AddCustomCurve(name: str, curve_type: str = ..., output_unit: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+   .. py:method:: EditCustomCurve(edit_curve: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+   .. py:method:: RemoveCustomCurve(name: str) -> None
+
+
+   .. py:method:: AddCustomProperty(name: str, property_type: str = ..., output_unit: str = ..., scope: str = ..., sources: Union[dict[str, str], None] = ..., expression: str = ...) -> None
+
+
+   .. py:method:: EditCustomProperty(edit_property: str, new_name: Union[str, None] = ..., sources: Union[dict[str, str], None] = ..., expression: Union[str, None] = ...) -> None
+
+
+   .. py:method:: RemoveCustomProperty(name: str) -> None
+
+
+.. py:class:: RACustomCurveParameters(process: RACustomCurveAndGridProperty, sources: Union[dict[str, str], None] = ...)
+
+   .. py:attribute:: variable_to_association_and_unit
+      :type:  _typeshed.Incomplete
+
+
+   .. py:attribute:: output_quantity
+      :type:  _typeshed.Incomplete
+
+
+   .. py:attribute:: domain_association
+      :type:  _typeshed.Incomplete
+
+

@@ -1,0 +1,139 @@
+ansys.rocky.core.client
+=======================
+
+.. py:module:: ansys.rocky.core.client
+
+.. autoapi-nested-parse::
+
+   Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
+   application session.
+
+   ..
+       !! processed by numpydoc !!
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core.client.DEFAULT_SERVER_PORT
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core.client.RockyClient
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   ansys.rocky.core.client.connect_to_rocky
+   ansys.rocky.core.client.connect
+
+
+Module Contents
+---------------
+
+.. py:data:: DEFAULT_SERVER_PORT
+   :value: 18615
+
+
+.. py:function:: connect_to_rocky(host: str = 'localhost', port: int = _PYROCKY_DEFAULT_PORT) -> RockyClient
+
+   
+   This function is deprecated.
+   Use connect() instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: connect(host: str = 'localhost', port: int = _PYROCKY_DEFAULT_PORT) -> RockyClient
+
+   
+   Connect to a Rocky/Freeflow app instance.
+
+
+   :Parameters:
+
+       **host** : :class:`python:str`, :obj:`optional`
+           Host name where the app is running. The default is ``"localhost"``.
+
+       **port** : :class:`python:int`, :obj:`optional`
+           Service port to connect to.
+
+
+
+   :Returns:
+
+       :obj:`RockyClient`
+           Client object for interacting with the Rocky/Freeflow app.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:class:: RockyClient(rocky_api)
+
+   
+   Provides the client object for interacting with the Rocky/Freeflow app.
+
+
+   :Parameters:
+
+       **rocky_api** : :obj:`Pyro5.api.Proxy`
+           Pyro5 proxy object for interacting with the Rocky app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:property:: api
+      :type: ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application.RockyApiApplication
+
+
+
+   .. py:method:: close()
+
+

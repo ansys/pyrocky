@@ -1,0 +1,982 @@
+
+
+
+
+
+
+:class:`RADomainSettings`
+=========================
+
+
+.. py:class:: ansys.rocky.app.ra_domain_settings.RADomainSettings(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for Domain Setings properties.
+
+   This wrapper corresponds to the "Domain Settings" item on a project's data tree. Access it from
+   the :class:`RAStudy` with:
+
+   .. code-block:: python
+
+       domain_settings = study.GetDomainSettings()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RADomainSettings
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~CoordinateLimitsAtBoundaryLimits`
+            - 
+          * - :py:attr:`~GetCoordinateLimitsMinMax`
+            - 
+          * - :py:attr:`~ResetDomainToGeometriesLimits`
+            - Reset the domain settings coordinate limits based on the geometry bounding box.
+          * - :py:attr:`~GetCoordinateLimitsMaxValues`
+            - Get the value of "Coordinate Limits Max Values".
+          * - :py:attr:`~SetCoordinateLimitsMaxValues`
+            - Set the values of "Coordinate Limits Max Values".
+          * - :py:attr:`~GetCoordinateLimitsMinValues`
+            - Get the value of "Coordinate Limits Min Values".
+          * - :py:attr:`~SetCoordinateLimitsMinValues`
+            - Set the values of "Coordinate Limits Min Values".
+          * - :py:attr:`~GetUseBoundaryLimits`
+            - Get the value of "Use Boundary Limits".
+          * - :py:attr:`~SetUseBoundaryLimits`
+            - Set the value of "Use Boundary Limits".
+          * - :py:attr:`~EnableUseBoundaryLimits`
+            - Set the value of "Use Boundary Limits" to True.
+          * - :py:attr:`~DisableUseBoundaryLimits`
+            - Set the value of "Use Boundary Limits" to False.
+          * - :py:attr:`~IsUseBoundaryLimitsEnabled`
+            - Check if the "Use Boundary Limits" is enabled.
+          * - :py:attr:`~GetPeriodicLimitsMaxCoordinates`
+            - Get the value of "Periodic Limits Max Coordinates".
+          * - :py:attr:`~SetPeriodicLimitsMaxCoordinates`
+            - Set the values of "Periodic Limits Max Coordinates".
+          * - :py:attr:`~GetPeriodicLimitsMinCoordinates`
+            - Get the value of "Periodic Limits Min Coordinates".
+          * - :py:attr:`~SetPeriodicLimitsMinCoordinates`
+            - Set the values of "Periodic Limits Min Coordinates".
+          * - :py:attr:`~GetPeriodicAtGeometryLimits`
+            - Get the value of "Periodic At Geometry Limits".
+          * - :py:attr:`~SetPeriodicAtGeometryLimits`
+            - Set the value of "Periodic At Geometry Limits".
+          * - :py:attr:`~EnablePeriodicAtGeometryLimits`
+            - Set the value of "Periodic At Geometry Limits" to True.
+          * - :py:attr:`~DisablePeriodicAtGeometryLimits`
+            - Set the value of "Periodic At Geometry Limits" to False.
+          * - :py:attr:`~IsPeriodicAtGeometryLimitsEnabled`
+            - Check if the "Periodic At Geometry Limits" is enabled.
+          * - :py:attr:`~GetCartesianPeriodicDirections`
+            - Get "Cartesian Periodic Directions" as a string.
+          * - :py:attr:`~SetCartesianPeriodicDirections`
+            - Set the value of "Cartesian Periodic Directions".
+          * - :py:attr:`~GetValidCartesianPeriodicDirectionsValues`
+            - Get a list of all possible values for "Cartesian Periodic Directions".
+          * - :py:attr:`~GetInitialAngle`
+            - Get the value of "Initial Angle".
+          * - :py:attr:`~SetInitialAngle`
+            - Set the value of "Initial Angle".
+          * - :py:attr:`~GetNumberOfDivisions`
+            - Get the value of "Number of Divisions".
+          * - :py:attr:`~SetNumberOfDivisions`
+            - Set the value of "Number of Divisions".
+          * - :py:attr:`~GetCylindricalPeriodicDirections`
+            - Get "Cylindrical Periodic Directions" as a string.
+          * - :py:attr:`~SetCylindricalPeriodicDirections`
+            - Set the value of "Cylindrical Periodic Directions".
+          * - :py:attr:`~GetValidCylindricalPeriodicDirectionsValues`
+            - Get a list of all possible values for "Cylindrical Periodic Directions".
+          * - :py:attr:`~GetDomainType`
+            - Get "Domain Type" as a string.
+          * - :py:attr:`~SetDomainType`
+            - Set the value of "Domain Type".
+          * - :py:attr:`~GetValidDomainTypeValues`
+            - Get a list of all possible values for "Domain Type".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_domain_settings import RADomainSettings
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: CoordinateLimitsAtBoundaryLimits() -> bool
+
+.. py:method:: GetCoordinateLimitsMinMax()
+
+.. py:method:: ResetDomainToGeometriesLimits() -> None
+
+   
+   Reset the domain settings coordinate limits based on the geometry bounding box.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCoordinateLimitsMaxValues(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Coordinate Limits Max Values".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCoordinateLimitsMaxValues(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Coordinate Limits Max Values".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCoordinateLimitsMinValues(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Coordinate Limits Min Values".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCoordinateLimitsMinValues(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Coordinate Limits Min Values".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseBoundaryLimits() -> bool
+
+   
+   Get the value of "Use Boundary Limits".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseBoundaryLimits(value: bool) -> None
+
+   
+   Set the value of "Use Boundary Limits".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableUseBoundaryLimits() -> None
+
+   
+   Set the value of "Use Boundary Limits" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableUseBoundaryLimits() -> None
+
+   
+   Set the value of "Use Boundary Limits" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsUseBoundaryLimitsEnabled() -> bool
+
+   
+   Check if the "Use Boundary Limits" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriodicLimitsMaxCoordinates(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Periodic Limits Max Coordinates".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriodicLimitsMaxCoordinates(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Periodic Limits Max Coordinates".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriodicLimitsMinCoordinates(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Periodic Limits Min Coordinates".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriodicLimitsMinCoordinates(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Periodic Limits Min Coordinates".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriodicAtGeometryLimits() -> bool
+
+   
+   Get the value of "Periodic At Geometry Limits".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriodicAtGeometryLimits(value: bool) -> None
+
+   
+   Set the value of "Periodic At Geometry Limits".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnablePeriodicAtGeometryLimits() -> None
+
+   
+   Set the value of "Periodic At Geometry Limits" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisablePeriodicAtGeometryLimits() -> None
+
+   
+   Set the value of "Periodic At Geometry Limits" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsPeriodicAtGeometryLimitsEnabled() -> bool
+
+   
+   Check if the "Periodic At Geometry Limits" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCartesianPeriodicDirections() -> str
+
+   
+   Get "Cartesian Periodic Directions" as a string.
+
+   :return:
+       The returned value will be one of ['NONE', 'X', 'Y', 'XY', 'Z', 'XZ', 'YZ', 'XYZ'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCartesianPeriodicDirections(value: str) -> None
+
+   
+   Set the value of "Cartesian Periodic Directions".
+
+   :param value:
+       The value to set. Must be one of ['NONE', 'X', 'Y', 'XY', 'Z', 'XZ', 'YZ', 'XYZ'].
+   :raises RockyApiError:
+       If `value` is not a valid "Cartesian Periodic Directions" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidCartesianPeriodicDirectionsValues() -> list[str]
+
+   
+   Get a list of all possible values for "Cartesian Periodic Directions".
+
+   :return:
+       The returned list is ['NONE', 'X', 'Y', 'XY', 'Z', 'XZ', 'YZ', 'XYZ'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInitialAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Initial Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitialAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Initial Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfDivisions() -> int
+
+   
+   Get the value of "Number of Divisions".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfDivisions(value: str | int) -> None
+
+   
+   Set the value of "Number of Divisions".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCylindricalPeriodicDirections() -> str
+
+   
+   Get "Cylindrical Periodic Directions" as a string.
+
+   :return:
+       The returned value will be one of ['X', 'Y', 'Z'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCylindricalPeriodicDirections(value: str) -> None
+
+   
+   Set the value of "Cylindrical Periodic Directions".
+
+   :param value:
+       The value to set. Must be one of ['X', 'Y', 'Z'].
+   :raises RockyApiError:
+       If `value` is not a valid "Cylindrical Periodic Directions" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidCylindricalPeriodicDirectionsValues() -> list[str]
+
+   
+   Get a list of all possible values for "Cylindrical Periodic Directions".
+
+   :return:
+       The returned list is ['X', 'Y', 'Z'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDomainType() -> str
+
+   
+   Get "Domain Type" as a string.
+
+   :return:
+       The returned value will be one of ['NONE', 'CARTESIAN', 'CYLINDRICAL'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDomainType(value: str) -> None
+
+   
+   Set the value of "Domain Type".
+
+   :param value:
+       The value to set. Must be one of ['NONE', 'CARTESIAN', 'CYLINDRICAL'].
+   :raises RockyApiError:
+       If `value` is not a valid "Domain Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidDomainTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Domain Type".
+
+   :return:
+       The returned list is ['NONE', 'CARTESIAN', 'CYLINDRICAL'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

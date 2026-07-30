@@ -1,0 +1,165 @@
+
+
+
+
+
+
+:class:`IWrappedItem`
+=====================
+
+
+.. py:class:: ansys.rocky.app.api_element_item.IWrappedItem
+
+   Bases: :py:obj:`ben10.interface.Interface`
+
+
+   
+   Interface for wrapped items.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:currentmodule:: IWrappedItem
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - :rtype: class
+          * - :py:attr:`~GetClassName`
+            - :rtype: unicode
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - :rtype: list of classes
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.api_element_item import IWrappedItem
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> None
+   :classmethod:
+
+
+   
+   :rtype: class
+   :returns:
+       The class that is wrapped by the object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetClassName() -> None
+   :classmethod:
+
+
+   
+   :rtype: unicode
+   :returns:
+       The classname that is wrapped by the object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetChildrenClassesToIgnore() -> None
+   :classmethod:
+
+
+   
+   :rtype: list of classes
+   :returns:
+       The children of wrapped class that should be ignored.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

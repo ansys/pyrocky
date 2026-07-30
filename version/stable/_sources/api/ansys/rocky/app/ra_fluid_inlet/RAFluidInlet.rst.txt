@@ -1,0 +1,841 @@
+
+
+
+
+
+
+:class:`RAFluidInlet`
+=====================
+
+
+.. py:class:: ansys.rocky.app.ra_fluid_inlet.RAFluidInlet(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for a single Fluid Inlet input.
+
+   This wrapper class corresponds to an individual entry under the "Inputs" item on the project's
+   data tree. Particle inputs can be retrieved from the :class:`RAStudy` or the
+   :class:`RAInletsOutletsCollection` via:
+
+   .. code-block:: python
+
+       input_1 = study.GetElement('Fluid Inlet <1>')
+       input_2 = input_collection.GetParticleInput('Fluid Inlet <2>')
+
+   Instances of :class:`RAFluidInlet` has properties that can be manipulated
+   directly, such as the input's name and the particle entry point.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAFluidInlet
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetBoundaryCondition`
+            - Get "Boundary Condition" as a string.
+          * - :py:attr:`~SetBoundaryCondition`
+            - Set the value of "Boundary Condition".
+          * - :py:attr:`~GetValidBoundaryConditionValues`
+            - Get a list of all possible values for "Boundary Condition".
+          * - :py:attr:`~GetMassFlowRate`
+            - Get the value of "Mass Flow Rate".
+          * - :py:attr:`~SetMassFlowRate`
+            - Set the value of "Mass Flow Rate".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetInjectionDuration`
+            - Get the value of "Injection Duration".
+          * - :py:attr:`~SetInjectionDuration`
+            - Set the value of "Injection Duration".
+          * - :py:attr:`~GetPeriodic`
+            - Get the value of "Periodic".
+          * - :py:attr:`~SetPeriodic`
+            - Set the value of "Periodic".
+          * - :py:attr:`~EnablePeriodic`
+            - Set the value of "Periodic" to True.
+          * - :py:attr:`~DisablePeriodic`
+            - Set the value of "Periodic" to False.
+          * - :py:attr:`~IsPeriodicEnabled`
+            - Check if the "Periodic" is enabled.
+          * - :py:attr:`~GetPeriod`
+            - Get the value of "Period".
+          * - :py:attr:`~SetPeriod`
+            - Set the value of "Period".
+          * - :py:attr:`~GetStartTime`
+            - Get the value of "Start Time".
+          * - :py:attr:`~SetStartTime`
+            - Set the value of "Start Time".
+          * - :py:attr:`~GetStopTime`
+            - Get the value of "Stop Time".
+          * - :py:attr:`~SetStopTime`
+            - Set the value of "Stop Time".
+          * - :py:attr:`~GetTemperature`
+            - Get the value of "Temperature".
+          * - :py:attr:`~SetTemperature`
+            - Set the value of "Temperature".
+          * - :py:attr:`~GetVelocity`
+            - Get the value of "Velocity".
+          * - :py:attr:`~SetVelocity`
+            - Set the value of "Velocity".
+          * - :py:attr:`~GetEntryPoint`
+            - Get the "Entry Point".
+          * - :py:attr:`~SetEntryPoint`
+            - Set the "Entry Point".
+          * - :py:attr:`~GetAvailableEntryPoints`
+            - Get all available Entry Points.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_fluid_inlet import RAFluidInlet
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.input.sph_inlet.SPHInlet]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetBoundaryCondition() -> str
+
+   
+   Get "Boundary Condition" as a string.
+
+   :return:
+       The returned value will be one of ['mass_flow_rate', 'velocity'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBoundaryCondition(value: str) -> None
+
+   
+   Set the value of "Boundary Condition".
+
+   :param value:
+       The value to set. Must be one of ['mass_flow_rate', 'velocity'].
+   :raises RockyApiError:
+       If `value` is not a valid "Boundary Condition" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidBoundaryConditionValues() -> list[str]
+
+   
+   Get a list of all possible values for "Boundary Condition".
+
+   :return:
+       The returned list is ['mass_flow_rate', 'velocity'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMassFlowRate(unit: str | None = None) -> float
+
+   
+   Get the value of "Mass Flow Rate".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "t/h".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMassFlowRate(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Mass Flow Rate".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "t/h".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInjectionDuration(unit: str | None = None) -> float
+
+   
+   Get the value of "Injection Duration".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInjectionDuration(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Injection Duration".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriodic() -> bool
+
+   
+   Get the value of "Periodic".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriodic(value: bool) -> None
+
+   
+   Set the value of "Periodic".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnablePeriodic() -> None
+
+   
+   Set the value of "Periodic" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisablePeriodic() -> None
+
+   
+   Set the value of "Periodic" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsPeriodicEnabled() -> bool
+
+   
+   Check if the "Periodic" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriod(unit: str | None = None) -> float
+
+   
+   Get the value of "Period".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriod(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Period".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStopTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Stop Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStopTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Stop Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTemperature(unit: str | None = None) -> float
+
+   
+   Get the value of "Temperature".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTemperature(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Temperature".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVelocity(unit: str | None = None) -> float
+
+   
+   Get the value of "Velocity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVelocity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Velocity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEntryPoint()
+
+   
+   Get the "Entry Point".
+
+   :rtype: :class:`RAInletGeometry`, :class:`RARectangularSurface`, :class:`RACircularSurface`, :class:`RASurface`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEntryPoint(value) -> None
+
+   
+   Set the "Entry Point".
+
+   :param unicode, :class:`RAInletGeometry`, :class:`RARectangularSurface`, :class:`RACircularSurface`, :class:`RASurface` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableEntryPoints()
+
+   
+   Get all available Entry Points.
+
+   :rtype: List[:class:`RAInletGeometry`, :class:`RARectangularSurface`, :class:`RACircularSurface`, :class:`RASurface`]
+       A list of :class:`RAInletGeometry`, :class:`RARectangularSurface`, :class:`RACircularSurface`, :class:`RASurface`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

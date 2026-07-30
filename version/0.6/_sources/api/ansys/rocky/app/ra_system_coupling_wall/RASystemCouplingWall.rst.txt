@@ -1,0 +1,756 @@
+
+
+
+
+
+
+:class:`RASystemCouplingWall`
+=============================
+
+
+.. py:class:: ansys.rocky.app.ra_system_coupling_wall.RASystemCouplingWall
+
+   Bases: :py:obj:`ansys.rocky.app.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`
+
+
+   
+   Rocky API "System Coupling Wall" model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASystemCouplingWall
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~HasMotionFrame`
+            - Whether the geometry is linked to a motion frame.
+          * - :py:attr:`~GetCapillaryFrictionCoefficient`
+            - Get the value of "Capillary Friction Coefficient".
+          * - :py:attr:`~SetCapillaryFrictionCoefficient`
+            - Set the value of "Capillary Friction Coefficient".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetSphBoundaryType`
+            - Get "Sph Boundary Type" as a string.
+          * - :py:attr:`~SetSphBoundaryType`
+            - Set the value of "Sph Boundary Type".
+          * - :py:attr:`~GetValidSphBoundaryTypeValues`
+            - Get a list of all possible values for "Sph Boundary Type".
+          * - :py:attr:`~GetStructuralCouplingTypeEnabled`
+            - Get the value of "Structural Coupling Type Enabled".
+          * - :py:attr:`~SetStructuralCouplingTypeEnabled`
+            - Set the value of "Structural Coupling Type Enabled".
+          * - :py:attr:`~EnableStructuralCouplingType`
+            - Set the value of "Structural Coupling Type" to True.
+          * - :py:attr:`~DisableStructuralCouplingType`
+            - Set the value of "Structural Coupling Type" to False.
+          * - :py:attr:`~IsStructuralCouplingTypeEnabled`
+            - Check if the "Structural Coupling Type" is enabled.
+          * - :py:attr:`~GetSurfaceTensionContactAngle`
+            - Get the value of "Surface Tension Contact Angle".
+          * - :py:attr:`~SetSurfaceTensionContactAngle`
+            - Set the value of "Surface Tension Contact Angle".
+          * - :py:attr:`~GetThermalCouplingTypeEnabled`
+            - Get the value of "Thermal Coupling Type Enabled".
+          * - :py:attr:`~SetThermalCouplingTypeEnabled`
+            - Set the value of "Thermal Coupling Type Enabled".
+          * - :py:attr:`~EnableThermalCouplingType`
+            - Set the value of "Thermal Coupling Type" to True.
+          * - :py:attr:`~DisableThermalCouplingType`
+            - Set the value of "Thermal Coupling Type" to False.
+          * - :py:attr:`~IsThermalCouplingTypeEnabled`
+            - Check if the "Thermal Coupling Type" is enabled.
+          * - :py:attr:`~GetTriangleSize`
+            - Get the value of "Triangle Size".
+          * - :py:attr:`~SetTriangleSize`
+            - Set the value of "Triangle Size".
+          * - :py:attr:`~GetMaterial`
+            - Get the "Material".
+          * - :py:attr:`~SetMaterial`
+            - Set the "Material".
+          * - :py:attr:`~GetAvailableMaterials`
+            - Get all available Materials.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_system_coupling_wall import RASystemCouplingWall
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[object]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: HasMotionFrame() -> bool
+
+   
+   Whether the geometry is linked to a motion frame.
+
+   :return:
+       True if geometry is linked to a motion frame False otherwise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCapillaryFrictionCoefficient() -> float
+
+   
+   Get the value of "Capillary Friction Coefficient".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCapillaryFrictionCoefficient(value: str | float) -> None
+
+   
+   Set the value of "Capillary Friction Coefficient".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSphBoundaryType() -> str
+
+   
+   Get "Sph Boundary Type" as a string.
+
+   :return:
+       The returned value will be one of ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSphBoundaryType(value: str) -> None
+
+   
+   Set the value of "Sph Boundary Type".
+
+   :param value:
+       The value to set. Must be one of ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+   :raises RockyApiError:
+       If `value` is not a valid "Sph Boundary Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidSphBoundaryTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Sph Boundary Type".
+
+   :return:
+       The returned list is ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStructuralCouplingTypeEnabled() -> bool
+
+   
+   Get the value of "Structural Coupling Type Enabled".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStructuralCouplingTypeEnabled(value: bool) -> None
+
+   
+   Set the value of "Structural Coupling Type Enabled".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableStructuralCouplingType() -> None
+
+   
+   Set the value of "Structural Coupling Type" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableStructuralCouplingType() -> None
+
+   
+   Set the value of "Structural Coupling Type" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsStructuralCouplingTypeEnabled() -> bool
+
+   
+   Check if the "Structural Coupling Type" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSurfaceTensionContactAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Surface Tension Contact Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSurfaceTensionContactAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Surface Tension Contact Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetThermalCouplingTypeEnabled() -> bool
+
+   
+   Get the value of "Thermal Coupling Type Enabled".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetThermalCouplingTypeEnabled(value: bool) -> None
+
+   
+   Set the value of "Thermal Coupling Type Enabled".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableThermalCouplingType() -> None
+
+   
+   Set the value of "Thermal Coupling Type" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableThermalCouplingType() -> None
+
+   
+   Set the value of "Thermal Coupling Type" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsThermalCouplingTypeEnabled() -> bool
+
+   
+   Check if the "Thermal Coupling Type" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTriangleSize(unit: str | None = None) -> float
+
+   
+   Get the value of "Triangle Size".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTriangleSize(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Triangle Size".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaterial()
+
+   
+   Get the "Material".
+
+   :rtype: :class:`RASolidMaterial`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaterial(value) -> None
+
+   
+   Set the "Material".
+
+   :param unicode, :class:`RASolidMaterial` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableMaterials()
+
+   
+   Get all available Materials.
+
+   :rtype: List[:class:`RASolidMaterial`]
+       A list of :class:`RASolidMaterial`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

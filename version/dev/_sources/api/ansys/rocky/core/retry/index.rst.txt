@@ -1,0 +1,109 @@
+
+
+
+
+
+
+The ``retry.py`` module
+=======================
+
+.. py:module:: ansys.rocky.core.retry
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: retry
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~wait_succeed`
+            - Repeatedly calls ``predicate_callback`` until it succeeds or timeout is reached.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: wait_succeed(predicate_callback: Callable, *, timeout: int, expected_exc) -> Any
+
+   
+   Repeatedly calls ``predicate_callback`` until it succeeds or timeout is reached.
+
+
+   :Parameters:
+
+       **predicate_callback**
+           Callable invoked until it returns successfully.
+
+       **timeout**
+           Maximum wait time in seconds.
+
+       **expected_exc**
+           Exception type to catch and retry while waiting.
+
+
+
+   :Returns:
+
+       :obj:`Any`
+           The return value from ``predicate_callback``.
+
+
+
+
+   :Raises:
+
+       :obj:`expected_exc`
+           Raised when retries exceed ``timeout``.
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

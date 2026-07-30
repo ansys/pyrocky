@@ -1,0 +1,1377 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../../../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings &#8212; pyrocky</title>
+  
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../../../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../../../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/styles/ansys-sphinx-theme.css?v=9e79609d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/styles\ansys-sphinx-theme.css?v=9e79609d" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://www.nerdfonts.com/assets/css/webfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../../../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+  <!-- Include desired assets -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+
+  
+    <link href="../../../../../../../../../_static/css/breadcrumbs.css" rel="stylesheet" />
+  
+    <script src="../../../../../../../../../_static/documentation_options.js?v=d198571b"></script>
+    <script src="../../../../../../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../../../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="../../../../../../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_sph_settings/index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://rocky.docs.pyansys.com/versions.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.3';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="icon" href="../../../../../../../../../_static/ansys-favicon.png"/>
+    <link rel="index" title="Index" href="../../../../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../../../../search.html" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.3.3" />
+  <meta property="og:site_name" content="PyAnsys" />
+  <meta name="physics" content="Fluids" />
+  <link rel="canonical" href="https://rocky.docs.pyansys.com/version/stable/api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_sph_settings/index.html" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../../../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../../../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../../../../../../_static/pyansys_logo_transparent_black.png" class="logo__image only-light" alt="pyrocky - Home"/>
+    <img src="../../../../../../../../../_static/pyansys_logo_transparent_white.png" class="logo__image only-dark pst-js-only" alt="pyrocky - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../../../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav>
+</div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+  
+    <div id="announcement_msg"></div>
+<script>
+  fetch("announcement.html")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+      }
+      return response.text();
+    })
+    .then(
+      (text) => (document.getElementById("announcement_msg").innerHTML = text),
+    )
+    .catch((error) => console.error(`Fetch problem: ${error.message}`));
+</script>
+  
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../index.html">
+    Home
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../getting_started/index.html">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../user_guide/index.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../examples/index.html">
+    Examples
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../../../../../../contributing.html">
+    Contribute
+  </a>
+</li>
+
+  </ul>
+</nav>
+</div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<div class="search-bar pst-js-only" id="search-bar">
+  <form class="bd-search d-flex align-items-center" action="../../../../../../../../../search.html" method="get">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="search" class="form-control" name="q" placeholder="Search the docs ..."
+      aria-label="Search the docs ..." autocomplete="off" autocorrect="off"
+      autocapitalize="off" spellcheck="false" />
+    <span class="search-button__kbd-shortcut">
+      <kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd>
+    </span>
+  </form>
+  <div id="static-search-results" class="static-search-results" style="display:none;" tabindex="0"></div>
+</div></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/ansys/pyrocky" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+         
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="https://docs.pyansys.com/" class="nav-link">PyAnsys</a>
+    </li>
+     
+    <li class="breadcrumb-item">
+      <a
+        href="../../../../../../../../../index.html"
+        class="nav-link"
+        aria-label="Home"
+      >
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+      
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings</span></li>
+    
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="module-ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings">
+<span id="ansys-rocky-core-api-stubs-rocky30-plugins-api-ra-sph-settings"></span><h1>ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings<a class="headerlink" href="#module-ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings" title="Link to this heading">#</a></h1>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings" title="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RASPHSettings</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.</span></span><span class="sig-name descname"><span class="pre">RASPHSettings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_typeshed.Incomplete</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../ra_grid_process_element/index.html#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem" title="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetWrappedClass">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetWrappedClass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.14)"><span class="pre">type</span></a><span class="p"><span class="pre">[</span></span><span class="pre">rocky30.models.sph.sph_settings.SPHProcess</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetWrappedClass" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetClassName">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GetClassName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetClassName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetBackgroundPressure">
+<span class="sig-name descname"><span class="pre">GetBackgroundPressure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetBackgroundPressure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetBackgroundPressure">
+<span class="sig-name descname"><span class="pre">SetBackgroundPressure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetBackgroundPressure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSolver">
+<span class="sig-name descname"><span class="pre">SetSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSolver" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSolver">
+<span class="sig-name descname"><span class="pre">GetSolver</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSolver" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetCS">
+<span class="sig-name descname"><span class="pre">GetCS</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetCS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetCS">
+<span class="sig-name descname"><span class="pre">SetCS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetCS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetClearyFactor">
+<span class="sig-name descname"><span class="pre">GetClearyFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetClearyFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetClearyFactor">
+<span class="sig-name descname"><span class="pre">SetClearyFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetClearyFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityDevMinus">
+<span class="sig-name descname"><span class="pre">GetDensityDevMinus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityDevMinus" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityDevMinus">
+<span class="sig-name descname"><span class="pre">SetDensityDevMinus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityDevMinus" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityDevPlus">
+<span class="sig-name descname"><span class="pre">GetDensityDevPlus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityDevPlus" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityDevPlus">
+<span class="sig-name descname"><span class="pre">SetDensityDevPlus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityDevPlus" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityRelativeErrorTolerance">
+<span class="sig-name descname"><span class="pre">GetDensityRelativeErrorTolerance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityRelativeErrorTolerance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityRelativeErrorTolerance">
+<span class="sig-name descname"><span class="pre">SetDensityRelativeErrorTolerance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityRelativeErrorTolerance" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDissFactor">
+<span class="sig-name descname"><span class="pre">GetDissFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDissFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDissFactor">
+<span class="sig-name descname"><span class="pre">SetDissFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDissFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDistFactorNorm">
+<span class="sig-name descname"><span class="pre">GetDistFactorNorm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDistFactorNorm" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDistFactorNorm">
+<span class="sig-name descname"><span class="pre">SetDistFactorNorm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDistFactorNorm" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDistFactorTang">
+<span class="sig-name descname"><span class="pre">GetDistFactorTang</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDistFactorTang" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDistFactorTang">
+<span class="sig-name descname"><span class="pre">SetDistFactorTang</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDistFactorTang" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetEulerianSolutionEnabled">
+<span class="sig-name descname"><span class="pre">GetEulerianSolutionEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetEulerianSolutionEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetEulerianSolutionEnabled">
+<span class="sig-name descname"><span class="pre">SetEulerianSolutionEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetEulerianSolutionEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableEulerianSolution">
+<span class="sig-name descname"><span class="pre">EnableEulerianSolution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableEulerianSolution" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableEulerianSolution">
+<span class="sig-name descname"><span class="pre">DisableEulerianSolution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableEulerianSolution" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsEulerianSolutionEnabled">
+<span class="sig-name descname"><span class="pre">IsEulerianSolutionEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsEulerianSolutionEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetFreeSurfaceDivergenceLimit">
+<span class="sig-name descname"><span class="pre">GetFreeSurfaceDivergenceLimit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetFreeSurfaceDivergenceLimit" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetFreeSurfaceDivergenceLimit">
+<span class="sig-name descname"><span class="pre">SetFreeSurfaceDivergenceLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetFreeSurfaceDivergenceLimit" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetKernelDistFactor">
+<span class="sig-name descname"><span class="pre">GetKernelDistFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetKernelDistFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetKernelDistFactor">
+<span class="sig-name descname"><span class="pre">SetKernelDistFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetKernelDistFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetKernelType">
+<span class="sig-name descname"><span class="pre">GetKernelType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetKernelType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetKernelType">
+<span class="sig-name descname"><span class="pre">SetKernelType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetKernelType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidKernelTypeValues">
+<span class="sig-name descname"><span class="pre">GetValidKernelTypeValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidKernelTypeValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetLimitTurbulentViscosity">
+<span class="sig-name descname"><span class="pre">GetLimitTurbulentViscosity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetLimitTurbulentViscosity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetLimitTurbulentViscosity">
+<span class="sig-name descname"><span class="pre">SetLimitTurbulentViscosity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetLimitTurbulentViscosity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMaximumExpectedVelocity">
+<span class="sig-name descname"><span class="pre">GetMaximumExpectedVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMaximumExpectedVelocity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMaximumExpectedVelocity">
+<span class="sig-name descname"><span class="pre">SetMaximumExpectedVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMaximumExpectedVelocity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMaximumNumberOfIterations">
+<span class="sig-name descname"><span class="pre">GetMaximumNumberOfIterations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMaximumNumberOfIterations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMaximumNumberOfIterations">
+<span class="sig-name descname"><span class="pre">SetMaximumNumberOfIterations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMaximumNumberOfIterations" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMinDistFactor">
+<span class="sig-name descname"><span class="pre">GetMinDistFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMinDistFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMinDistFactor">
+<span class="sig-name descname"><span class="pre">SetMinDistFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMinDistFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetName">
+<span class="sig-name descname"><span class="pre">GetName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetName">
+<span class="sig-name descname"><span class="pre">SetName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetName" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNegativePressureFactor">
+<span class="sig-name descname"><span class="pre">GetNegativePressureFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNegativePressureFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNegativePressureFactor">
+<span class="sig-name descname"><span class="pre">SetNegativePressureFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNegativePressureFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNumCellSteps">
+<span class="sig-name descname"><span class="pre">GetNumCellSteps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNumCellSteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNumCellSteps">
+<span class="sig-name descname"><span class="pre">SetNumCellSteps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNumCellSteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNumberOfSteps">
+<span class="sig-name descname"><span class="pre">GetNumberOfSteps</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNumberOfSteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNumberOfSteps">
+<span class="sig-name descname"><span class="pre">SetNumberOfSteps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNumberOfSteps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPosCorrectionType">
+<span class="sig-name descname"><span class="pre">GetPosCorrectionType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPosCorrectionType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPosCorrectionType">
+<span class="sig-name descname"><span class="pre">SetPosCorrectionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPosCorrectionType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidPosCorrectionTypeValues">
+<span class="sig-name descname"><span class="pre">GetValidPosCorrectionTypeValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidPosCorrectionTypeValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPressureDeg">
+<span class="sig-name descname"><span class="pre">GetPressureDeg</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPressureDeg" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPressureDeg">
+<span class="sig-name descname"><span class="pre">SetPressureDeg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPressureDeg" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPressureUnderRelaxationFactor">
+<span class="sig-name descname"><span class="pre">GetPressureUnderRelaxationFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPressureUnderRelaxationFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPressureUnderRelaxationFactor">
+<span class="sig-name descname"><span class="pre">SetPressureUnderRelaxationFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPressureUnderRelaxationFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShepardFilterOnDensityEnabled">
+<span class="sig-name descname"><span class="pre">GetShepardFilterOnDensityEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShepardFilterOnDensityEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShepardFilterOnDensityEnabled">
+<span class="sig-name descname"><span class="pre">SetShepardFilterOnDensityEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShepardFilterOnDensityEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableShepardFilterOnDensity">
+<span class="sig-name descname"><span class="pre">EnableShepardFilterOnDensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableShepardFilterOnDensity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableShepardFilterOnDensity">
+<span class="sig-name descname"><span class="pre">DisableShepardFilterOnDensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableShepardFilterOnDensity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsShepardFilterOnDensityEnabled">
+<span class="sig-name descname"><span class="pre">IsShepardFilterOnDensityEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsShepardFilterOnDensityEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShepardFilterOnPressureEnabled">
+<span class="sig-name descname"><span class="pre">GetShepardFilterOnPressureEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShepardFilterOnPressureEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShepardFilterOnPressureEnabled">
+<span class="sig-name descname"><span class="pre">SetShepardFilterOnPressureEnabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShepardFilterOnPressureEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableShepardFilterOnPressure">
+<span class="sig-name descname"><span class="pre">EnableShepardFilterOnPressure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableShepardFilterOnPressure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableShepardFilterOnPressure">
+<span class="sig-name descname"><span class="pre">DisableShepardFilterOnPressure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableShepardFilterOnPressure" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsShepardFilterOnPressureEnabled">
+<span class="sig-name descname"><span class="pre">IsShepardFilterOnPressureEnabled</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsShepardFilterOnPressureEnabled" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShiftingFactor">
+<span class="sig-name descname"><span class="pre">GetShiftingFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShiftingFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShiftingFactor">
+<span class="sig-name descname"><span class="pre">SetShiftingFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShiftingFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSize">
+<span class="sig-name descname"><span class="pre">GetSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSize" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSize">
+<span class="sig-name descname"><span class="pre">SetSize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSize" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSolverModel">
+<span class="sig-name descname"><span class="pre">GetSolverModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSolverModel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSolverModel">
+<span class="sig-name descname"><span class="pre">SetSolverModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSolverModel" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidSolverModelValues">
+<span class="sig-name descname"><span class="pre">GetValidSolverModelValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidSolverModelValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSoundSpeed">
+<span class="sig-name descname"><span class="pre">GetSoundSpeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSoundSpeed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSoundSpeed">
+<span class="sig-name descname"><span class="pre">SetSoundSpeed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSoundSpeed" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityDegree">
+<span class="sig-name descname"><span class="pre">GetStabilityDegree</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityDegree" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityDegree">
+<span class="sig-name descname"><span class="pre">SetStabilityDegree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityDegree" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityNegFactor">
+<span class="sig-name descname"><span class="pre">GetStabilityNegFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityNegFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityNegFactor">
+<span class="sig-name descname"><span class="pre">SetStabilityNegFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityNegFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityPosFactor">
+<span class="sig-name descname"><span class="pre">GetStabilityPosFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityPosFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityPosFactor">
+<span class="sig-name descname"><span class="pre">SetStabilityPosFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityPosFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStiffFactor">
+<span class="sig-name descname"><span class="pre">GetStiffFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStiffFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStiffFactor">
+<span class="sig-name descname"><span class="pre">SetStiffFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStiffFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionBoundaryAngle">
+<span class="sig-name descname"><span class="pre">GetSurfaceTensionBoundaryAngle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionBoundaryAngle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionBoundaryAngle">
+<span class="sig-name descname"><span class="pre">SetSurfaceTensionBoundaryAngle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionBoundaryAngle" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionBoundaryFraction">
+<span class="sig-name descname"><span class="pre">GetSurfaceTensionBoundaryFraction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionBoundaryFraction" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionBoundaryFraction">
+<span class="sig-name descname"><span class="pre">SetSurfaceTensionBoundaryFraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionBoundaryFraction" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionCoefficient">
+<span class="sig-name descname"><span class="pre">GetSurfaceTensionCoefficient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionCoefficient" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionCoefficient">
+<span class="sig-name descname"><span class="pre">SetSurfaceTensionCoefficient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionCoefficient" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionType">
+<span class="sig-name descname"><span class="pre">GetSurfaceTensionType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionType">
+<span class="sig-name descname"><span class="pre">SetSurfaceTensionType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidSurfaceTensionTypeValues">
+<span class="sig-name descname"><span class="pre">GetValidSurfaceTensionTypeValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidSurfaceTensionTypeValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTimestepFactor">
+<span class="sig-name descname"><span class="pre">GetTimestepFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTimestepFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTimestepFactor">
+<span class="sig-name descname"><span class="pre">SetTimestepFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTimestepFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbDistanceFraction">
+<span class="sig-name descname"><span class="pre">GetTurbDistanceFraction</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbDistanceFraction" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbDistanceFraction">
+<span class="sig-name descname"><span class="pre">SetTurbDistanceFraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbDistanceFraction" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulenceType">
+<span class="sig-name descname"><span class="pre">GetTurbulenceType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulenceType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulenceType">
+<span class="sig-name descname"><span class="pre">SetTurbulenceType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulenceType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidTurbulenceTypeValues">
+<span class="sig-name descname"><span class="pre">GetValidTurbulenceTypeValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidTurbulenceTypeValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulentPrandtl">
+<span class="sig-name descname"><span class="pre">GetTurbulentPrandtl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulentPrandtl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulentPrandtl">
+<span class="sig-name descname"><span class="pre">SetTurbulentPrandtl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulentPrandtl" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulentViscosityMaximumRatio">
+<span class="sig-name descname"><span class="pre">GetTurbulentViscosityMaximumRatio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulentViscosityMaximumRatio" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulentViscosityMaximumRatio">
+<span class="sig-name descname"><span class="pre">SetTurbulentViscosityMaximumRatio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulentViscosityMaximumRatio" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetUpdateCoupledDensity">
+<span class="sig-name descname"><span class="pre">GetUpdateCoupledDensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetUpdateCoupledDensity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetUpdateCoupledDensity">
+<span class="sig-name descname"><span class="pre">SetUpdateCoupledDensity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetUpdateCoupledDensity" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetUseParticlesNeighborsList">
+<span class="sig-name descname"><span class="pre">GetUseParticlesNeighborsList</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetUseParticlesNeighborsList" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetUseParticlesNeighborsList">
+<span class="sig-name descname"><span class="pre">SetUseParticlesNeighborsList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetUseParticlesNeighborsList" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetViscosityType">
+<span class="sig-name descname"><span class="pre">GetViscosityType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetViscosityType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetViscosityType">
+<span class="sig-name descname"><span class="pre">SetViscosityType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetViscosityType" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidViscosityTypeValues">
+<span class="sig-name descname"><span class="pre">GetValidViscosityTypeValues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidViscosityTypeValues" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetXsphFactor">
+<span class="sig-name descname"><span class="pre">GetXsphFactor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetXsphFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetXsphFactor">
+<span class="sig-name descname"><span class="pre">SetXsphFactor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetXsphFactor" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetFluidMaterial">
+<span class="sig-name descname"><span class="pre">GetFluidMaterial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetFluidMaterial" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetFluidMaterial">
+<span class="sig-name descname"><span class="pre">SetFluidMaterial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetFluidMaterial" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetAvailableFluidMaterials">
+<span class="sig-name descname"><span class="pre">GetAvailableFluidMaterials</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetAvailableFluidMaterials" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings"><code class="docutils literal notranslate"><span class="pre">RASPHSettings</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetWrappedClass"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetWrappedClass()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetClassName"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetClassName()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetBackgroundPressure"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetBackgroundPressure()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetBackgroundPressure"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetBackgroundPressure()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSolver"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetSolver()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSolver"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetSolver()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetCS"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetCS()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetCS"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetCS()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetClearyFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetClearyFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetClearyFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetClearyFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityDevMinus"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetDensityDevMinus()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityDevMinus"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetDensityDevMinus()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityDevPlus"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetDensityDevPlus()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityDevPlus"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetDensityDevPlus()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDensityRelativeErrorTolerance"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetDensityRelativeErrorTolerance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDensityRelativeErrorTolerance"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetDensityRelativeErrorTolerance()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDissFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetDissFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDissFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetDissFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDistFactorNorm"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetDistFactorNorm()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDistFactorNorm"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetDistFactorNorm()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetDistFactorTang"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetDistFactorTang()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetDistFactorTang"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetDistFactorTang()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetEulerianSolutionEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetEulerianSolutionEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetEulerianSolutionEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetEulerianSolutionEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableEulerianSolution"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.EnableEulerianSolution()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableEulerianSolution"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.DisableEulerianSolution()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsEulerianSolutionEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.IsEulerianSolutionEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetFreeSurfaceDivergenceLimit"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetFreeSurfaceDivergenceLimit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetFreeSurfaceDivergenceLimit"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetFreeSurfaceDivergenceLimit()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetKernelDistFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetKernelDistFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetKernelDistFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetKernelDistFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetKernelType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetKernelType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetKernelType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetKernelType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidKernelTypeValues"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetValidKernelTypeValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetLimitTurbulentViscosity"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetLimitTurbulentViscosity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetLimitTurbulentViscosity"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetLimitTurbulentViscosity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMaximumExpectedVelocity"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetMaximumExpectedVelocity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMaximumExpectedVelocity"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetMaximumExpectedVelocity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMaximumNumberOfIterations"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetMaximumNumberOfIterations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMaximumNumberOfIterations"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetMaximumNumberOfIterations()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetMinDistFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetMinDistFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetMinDistFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetMinDistFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetName"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetName()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetName"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetName()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNegativePressureFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetNegativePressureFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNegativePressureFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetNegativePressureFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNumCellSteps"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetNumCellSteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNumCellSteps"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetNumCellSteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetNumberOfSteps"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetNumberOfSteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetNumberOfSteps"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetNumberOfSteps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPosCorrectionType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetPosCorrectionType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPosCorrectionType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetPosCorrectionType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidPosCorrectionTypeValues"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetValidPosCorrectionTypeValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPressureDeg"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetPressureDeg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPressureDeg"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetPressureDeg()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetPressureUnderRelaxationFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetPressureUnderRelaxationFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetPressureUnderRelaxationFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetPressureUnderRelaxationFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShepardFilterOnDensityEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetShepardFilterOnDensityEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShepardFilterOnDensityEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetShepardFilterOnDensityEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableShepardFilterOnDensity"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.EnableShepardFilterOnDensity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableShepardFilterOnDensity"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.DisableShepardFilterOnDensity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsShepardFilterOnDensityEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.IsShepardFilterOnDensityEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShepardFilterOnPressureEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetShepardFilterOnPressureEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShepardFilterOnPressureEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetShepardFilterOnPressureEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.EnableShepardFilterOnPressure"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.EnableShepardFilterOnPressure()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.DisableShepardFilterOnPressure"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.DisableShepardFilterOnPressure()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.IsShepardFilterOnPressureEnabled"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.IsShepardFilterOnPressureEnabled()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetShiftingFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetShiftingFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetShiftingFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetShiftingFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSize"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetSize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSize"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetSize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSolverModel"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetSolverModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSolverModel"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetSolverModel()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidSolverModelValues"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetValidSolverModelValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSoundSpeed"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetSoundSpeed()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSoundSpeed"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetSoundSpeed()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityDegree"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetStabilityDegree()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityDegree"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetStabilityDegree()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityNegFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetStabilityNegFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityNegFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetStabilityNegFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStabilityPosFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetStabilityPosFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStabilityPosFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetStabilityPosFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetStiffFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetStiffFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetStiffFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetStiffFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionBoundaryAngle"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetSurfaceTensionBoundaryAngle()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionBoundaryAngle"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetSurfaceTensionBoundaryAngle()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionBoundaryFraction"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetSurfaceTensionBoundaryFraction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionBoundaryFraction"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetSurfaceTensionBoundaryFraction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionCoefficient"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetSurfaceTensionCoefficient()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionCoefficient"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetSurfaceTensionCoefficient()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetSurfaceTensionType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetSurfaceTensionType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetSurfaceTensionType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetSurfaceTensionType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidSurfaceTensionTypeValues"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetValidSurfaceTensionTypeValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTimestepFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetTimestepFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTimestepFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetTimestepFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbDistanceFraction"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetTurbDistanceFraction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbDistanceFraction"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetTurbDistanceFraction()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulenceType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetTurbulenceType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulenceType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetTurbulenceType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidTurbulenceTypeValues"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetValidTurbulenceTypeValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulentPrandtl"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetTurbulentPrandtl()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulentPrandtl"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetTurbulentPrandtl()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetTurbulentViscosityMaximumRatio"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetTurbulentViscosityMaximumRatio()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetTurbulentViscosityMaximumRatio"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetTurbulentViscosityMaximumRatio()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetUpdateCoupledDensity"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetUpdateCoupledDensity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetUpdateCoupledDensity"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetUpdateCoupledDensity()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetUseParticlesNeighborsList"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetUseParticlesNeighborsList()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetUseParticlesNeighborsList"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetUseParticlesNeighborsList()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetViscosityType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetViscosityType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetViscosityType"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetViscosityType()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetValidViscosityTypeValues"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetValidViscosityTypeValues()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetXsphFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetXsphFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetXsphFactor"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetXsphFactor()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetFluidMaterial"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetFluidMaterial()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.SetFluidMaterial"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.SetFluidMaterial()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings.GetAvailableFluidMaterials"><code class="docutils literal notranslate"><span class="pre">RASPHSettings.GetAvailableFluidMaterials()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+<!-- If there is no fix edit button function, use the PyData edit-this-button-->
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <ul class="this-page-menu">
+      <li><a href="../../../../../../../../../_sources/api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/ra_sph_settings/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../../../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../../../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+  <!-- Include desired assets -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js"></script>
+
+<script>
+// Passing the search options to the search.js file
+const SEARCH_OPTIONS = JSON.parse('{"keys": ["title", "text", "objectID"], "limit": 10, "threshold": 0.2}');
+const SEARCH_FILE = "../../../../../../../../../_static/search.json";
+const ADVANCE_SEARCH_PATH = "../../../../../../../../../search.html";
+const EXTRA_SOURCES = JSON.parse('""');
+</script>
+
+
+<script src="../../../../../../../../../_static/js/search.js"></script>
+
+  
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright (c) 2025 ANSYS, Inc. All rights reserved.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the
+  <a href="https://sphinxdocs.ansys.com/version/stable/index.html"
+    >Ansys Sphinx Theme</a
+  >
+  1.6.3. <br />Last updated on
+  <span id="ast_build_date"></span>
+</p>
+<script>
+  var options = { day: "numeric", month: "long", year: "numeric" };
+  var ast_lastModifiedDate = new Date(document.lastModified);
+  var ast_build_date = ast_lastModifiedDate.toLocaleDateString("en-US", options);
+  document.getElementById("ast_build_date").innerHTML = ast_build_date;
+</script></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_joints_data
+=======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_joints_data
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_joints_data.RAParticleJointsData
+
+
+Module Contents
+---------------
+
+.. py:class:: RAParticleJointsData
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: RemoveProcess() -> None
+
+
+   .. py:method:: GetCollectJointData() -> bool
+
+
+   .. py:method:: SetCollectJointData(value: bool) -> None
+
+
+   .. py:method:: EnableCollectJointData() -> None
+
+
+   .. py:method:: DisableCollectJointData() -> None
+
+
+   .. py:method:: IsCollectJointDataEnabled() -> bool
+
+

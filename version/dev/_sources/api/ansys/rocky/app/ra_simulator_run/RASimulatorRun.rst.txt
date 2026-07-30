@@ -1,0 +1,4600 @@
+
+
+
+
+
+
+:class:`RASimulatorRun`
+=======================
+
+
+.. py:class:: ansys.rocky.app.ra_simulator_run.RASimulatorRun
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for solver settings.
+
+   This wrapper corresponds to the "Solver" item on a project's data tree. Access it from the
+   :class:`RAStudy` with:
+
+   .. code-block:: python
+
+       simulator_run = study.GetSimulatorRun()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+.. py:currentmodule:: RASimulatorRun
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~RemoveProcess`
+            - It is not possible to remove the item "Solver" from the project. It's a standard Rocky
+          * - :py:attr:`~SetTimeConfiguration`
+            - Shortcut to set both the simulation's duration and its time interval.
+          * - :py:attr:`~HasFEMForcesEnabled`
+            - Whether the simulation is configured to collect forces for FEM analysis.
+          * - :py:attr:`~HasHtcCalculatedData`
+            - Whether the "HTC" is being calculated.
+          * - :py:attr:`~EnableHtcCalculator`
+            - Enables the "HTC" calculations.
+          * - :py:attr:`~DisableHtcCalculator`
+            - Disables the "HTC" calculations.
+          * - :py:attr:`~EnableFEMForces`
+            - Enables the "FEM Forces" calculations.
+          * - :py:attr:`~DisableFEMForces`
+            - Disables the "FEM Forces" calculations.
+          * - :py:attr:`~HasCompressedFileEnabled`
+            - 
+          * - :py:attr:`~GetTargetGpus`
+            - :return: A list of IDs of the GPUs currently selected for Multi GPU simulation.
+          * - :py:attr:`~SetTargetGpus`
+            - It will configure the IDs of GPUs that will be used in simulation based on the list of IDs or names of GPUs
+          * - :py:attr:`~GetFluentOutputsMultiplier`
+            - Get the value of "Fluent Outputs Multiplier".
+          * - :py:attr:`~SetFluentOutputsMultiplier`
+            - Set the value of "Fluent Outputs Multiplier".
+          * - :py:attr:`~GetAvailableOutputRoots`
+            - Deprecated: Use GetAvailableStandardOutputProperties instead.
+          * - :py:attr:`~GetAvailableOutputRootProperties`
+            - Deprecated: Use GetAvailableStandardOutputProperties instead.
+          * - :py:attr:`~GetOutputRootEnabled`
+            - Deprecated: Use GetStandardOutputPropertyEnabled instead.
+          * - :py:attr:`~SetOutputRootEnabled`
+            - Deprecated: Use SetStandardOutputPropertyEnabled instead.
+          * - :py:attr:`~GetOutputPropertyEnabled`
+            - Deprecated: Use GetStandardOutputPropertyEnabled instead.
+          * - :py:attr:`~SetOutputPropertyEnabled`
+            - Deprecated: Use SetStandardOutputPropertyEnabled instead.
+          * - :py:attr:`~GetStandardOutputPropertyEnabled`
+            - Retrieve enable state of given "Standard Output Property".
+          * - :py:attr:`~SetStandardOutputPropertyEnabled`
+            - Set enable state of given "Standard Output Property".
+          * - :py:attr:`~GetModulesOutputPropertyEnabled`
+            - Retrieve enable state of given "Modules Output Property".
+          * - :py:attr:`~SetModulesOutputPropertyEnabled`
+            - Set enable state of given "Modules Output Property".
+          * - :py:attr:`~GetStandardOutputPropertiesData`
+            - :returns: The current value of "Standard Output Properties".
+          * - :py:attr:`~SetStandardOutputPropertiesData`
+            - Set the current value of "Standard Output Properties".
+          * - :py:attr:`~GetModulesOutputPropertiesData`
+            - :returns: The current value of "Modules Output Properties".
+          * - :py:attr:`~SetModulesOutputPropertiesData`
+            - Set the current value of "Modules Output Properties".
+          * - :py:attr:`~RestoreOutputPropertiesDefaults`
+            - Restore default values of "Output Properties".
+          * - :py:attr:`~GetUseDpmBlockingEffectForSinglePhaseSimulations`
+            - The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+          * - :py:attr:`~SetUseDpmBlockingEffectForSinglePhaseSimulations`
+            - The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+          * - :py:attr:`~EnableDpmBlockingEffectForSinglePhaseSimulations`
+            - The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+          * - :py:attr:`~DisableDpmBlockingEffectForSinglePhaseSimulations`
+            - The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+          * - :py:attr:`~IsDpmBlockingEffectForSinglePhaseSimulationsEnabled`
+            - The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+          * - :py:attr:`~GetSimulationTarget`
+            - 
+          * - :py:attr:`~SetSimulationTarget`
+            - 
+          * - :py:attr:`~GetArraysGrowthRate`
+            - Get the value of "Arrays Growth Rate".
+          * - :py:attr:`~SetArraysGrowthRate`
+            - Set the value of "Arrays Growth Rate".
+          * - :py:attr:`~GetBreakageOverlapFactor`
+            - Get the value of "Breakage Overlap Factor".
+          * - :py:attr:`~SetBreakageOverlapFactor`
+            - Set the value of "Breakage Overlap Factor".
+          * - :py:attr:`~GetDisableTrianglesOnPeriodicBoundaries`
+            - Get the value of "Disable Triangles On Periodic Boundaries".
+          * - :py:attr:`~SetDisableTrianglesOnPeriodicBoundaries`
+            - Set the value of "Disable Triangles On Periodic Boundaries".
+          * - :py:attr:`~GetDragLimiterFactor`
+            - Get the value of "Drag Limiter Factor".
+          * - :py:attr:`~SetDragLimiterFactor`
+            - Set the value of "Drag Limiter Factor".
+          * - :py:attr:`~GetMoveCfdCellsWithRockyBoundaries`
+            - Get the value of "Move Cfd Cells With Rocky Boundaries".
+          * - :py:attr:`~SetMoveCfdCellsWithRockyBoundaries`
+            - Set the value of "Move Cfd Cells With Rocky Boundaries".
+          * - :py:attr:`~EnableMoveCfdCellsWithRockyBoundaries`
+            - Set the value of "Move Cfd Cells With Rocky Boundaries" to True.
+          * - :py:attr:`~DisableMoveCfdCellsWithRockyBoundaries`
+            - Set the value of "Move Cfd Cells With Rocky Boundaries" to False.
+          * - :py:attr:`~IsMoveCfdCellsWithRockyBoundariesEnabled`
+            - Check if the "Move Cfd Cells With Rocky Boundaries" is enabled.
+          * - :py:attr:`~GetFixedTimestep`
+            - Get the value of "Fixed Timestep".
+          * - :py:attr:`~SetFixedTimestep`
+            - Set the value of "Fixed Timestep".
+          * - :py:attr:`~GetSuccessiveOverRelaxationTolerance`
+            - Get the value of "Successive Over Relaxation Tolerance".
+          * - :py:attr:`~SetSuccessiveOverRelaxationTolerance`
+            - Set the value of "Successive Over Relaxation Tolerance".
+          * - :py:attr:`~GetJointElasticRatio`
+            - Get the value of "Joint Elastic Ratio".
+          * - :py:attr:`~SetJointElasticRatio`
+            - Set the value of "Joint Elastic Ratio".
+          * - :py:attr:`~GetMinimumLengthDeformationTolerance`
+            - Get the value of "Minimum Length Deformation Tolerance".
+          * - :py:attr:`~SetMinimumLengthDeformationTolerance`
+            - Set the value of "Minimum Length Deformation Tolerance".
+          * - :py:attr:`~GetLinearHystDamp`
+            - Get the value of "Linear Hyst Damp".
+          * - :py:attr:`~SetLinearHystDamp`
+            - Set the value of "Linear Hyst Damp".
+          * - :py:attr:`~GetLoadingNSteps`
+            - Get the value of "Loading N Steps".
+          * - :py:attr:`~SetLoadingNSteps`
+            - Set the value of "Loading N Steps".
+          * - :py:attr:`~GetDeformableMassMatrixType`
+            - Get "Deformable Mass Matrix Type" as a string.
+          * - :py:attr:`~SetDeformableMassMatrixType`
+            - Set the value of "Deformable Mass Matrix Type".
+          * - :py:attr:`~GetValidDeformableMassMatrixTypeValues`
+            - Get a list of all possible values for "Deformable Mass Matrix Type".
+          * - :py:attr:`~GetMinimumVolumeTolerance`
+            - Get the value of "Minimum Volume Tolerance".
+          * - :py:attr:`~SetMinimumVolumeTolerance`
+            - Set the value of "Minimum Volume Tolerance".
+          * - :py:attr:`~GetSolverCurvesFrequency`
+            - Get the value of "Solver Curves Frequency".
+          * - :py:attr:`~SetSolverCurvesFrequency`
+            - Set the value of "Solver Curves Frequency".
+          * - :py:attr:`~GetContactNeighboringDistanceBetweenParticles`
+            - Get the value of "Contact Neighboring Distance Between Particles".
+          * - :py:attr:`~SetContactNeighboringDistanceBetweenParticles`
+            - Set the value of "Contact Neighboring Distance Between Particles".
+          * - :py:attr:`~GetContactNeighboringDistanceBetweenParticlesAndTriangles`
+            - Get the value of "Contact Neighboring Distance Between Particles And Triangles".
+          * - :py:attr:`~SetContactNeighboringDistanceBetweenParticlesAndTriangles`
+            - Set the value of "Contact Neighboring Distance Between Particles And Triangles".
+          * - :py:attr:`~GetNegateInitialOverlaps`
+            - Get the value of "Negate Initial Overlaps".
+          * - :py:attr:`~SetNegateInitialOverlaps`
+            - Set the value of "Negate Initial Overlaps".
+          * - :py:attr:`~EnableNegateInitialOverlaps`
+            - Set the value of "Negate Initial Overlaps" to True.
+          * - :py:attr:`~DisableNegateInitialOverlaps`
+            - Set the value of "Negate Initial Overlaps" to False.
+          * - :py:attr:`~IsNegateInitialOverlapsEnabled`
+            - Check if the "Negate Initial Overlaps" is enabled.
+          * - :py:attr:`~GetNeighborSearchModel`
+            - Get "Neighbor Search Model" as a string.
+          * - :py:attr:`~SetNeighborSearchModel`
+            - Set the value of "Neighbor Search Model".
+          * - :py:attr:`~GetValidNeighborSearchModelValues`
+            - Get a list of all possible values for "Neighbor Search Model".
+          * - :py:attr:`~GetMaximumNumberOfIterations`
+            - Get the value of "Maximum Number of Iterations".
+          * - :py:attr:`~SetMaximumNumberOfIterations`
+            - Set the value of "Maximum Number of Iterations".
+          * - :py:attr:`~GetOverRelaxationCoefficient`
+            - Get the value of "Over Relaxation Coefficient".
+          * - :py:attr:`~SetOverRelaxationCoefficient`
+            - Set the value of "Over Relaxation Coefficient".
+          * - :py:attr:`~GetRefineConcaveSearch`
+            - Get the value of "Refine Concave Search".
+          * - :py:attr:`~SetRefineConcaveSearch`
+            - Set the value of "Refine Concave Search".
+          * - :py:attr:`~GetParticleSizeLimitForReordering`
+            - Get the value of "Particle Size Limit For Reordering".
+          * - :py:attr:`~SetParticleSizeLimitForReordering`
+            - Set the value of "Particle Size Limit For Reordering".
+          * - :py:attr:`~GetSpecialReorderingForWidePsd`
+            - Get the value of "Special Reordering For Wide Psd".
+          * - :py:attr:`~SetSpecialReorderingForWidePsd`
+            - Set the value of "Special Reordering For Wide Psd".
+          * - :py:attr:`~GetResetOnlyPhysicalContactsData`
+            - Get the value of "Reset Only Physical Contacts Data".
+          * - :py:attr:`~SetResetOnlyPhysicalContactsData`
+            - Set the value of "Reset Only Physical Contacts Data".
+          * - :py:attr:`~GetSortingDistanceFactor`
+            - Get the value of "Sorting Distance Factor".
+          * - :py:attr:`~SetSortingDistanceFactor`
+            - Set the value of "Sorting Distance Factor".
+          * - :py:attr:`~GetTimestepModel`
+            - Get "Timestep Model" as a string.
+          * - :py:attr:`~SetTimestepModel`
+            - Set the value of "Timestep Model".
+          * - :py:attr:`~GetValidTimestepModelValues`
+            - Get a list of all possible values for "Timestep Model".
+          * - :py:attr:`~GetUse2023R2SourceTermsApproach`
+            - Get the value of "Use 2023 R2 Source Terms Approach".
+          * - :py:attr:`~SetUse2023R2SourceTermsApproach`
+            - Set the value of "Use 2023 R2 Source Terms Approach".
+          * - :py:attr:`~GetUse2023R2CellVolumeFractionUpdateApproach`
+            - Get the value of "Use 2023 R2 Cell Volume Fraction Update Approach".
+          * - :py:attr:`~SetUse2023R2CellVolumeFractionUpdateApproach`
+            - Set the value of "Use 2023 R2 Cell Volume Fraction Update Approach".
+          * - :py:attr:`~GetUseArraysGrowthRate`
+            - Get the value of "Use Arrays Growth Rate".
+          * - :py:attr:`~SetUseArraysGrowthRate`
+            - Set the value of "Use Arrays Growth Rate".
+          * - :py:attr:`~GetUseBreakageOverlapFactor`
+            - Get the value of "Use Breakage Overlap Factor".
+          * - :py:attr:`~SetUseBreakageOverlapFactor`
+            - Set the value of "Use Breakage Overlap Factor".
+          * - :py:attr:`~GetUse3RdPowerForCfdCgm`
+            - Get the value of "Use 3Rd Power For Cfd Cgm".
+          * - :py:attr:`~SetUse3RdPowerForCfdCgm`
+            - Set the value of "Use 3Rd Power For Cfd Cgm".
+          * - :py:attr:`~EnableUse3RdPowerForCfdCgm`
+            - Set the value of "Use 3Rd Power For Cfd Cgm" to True.
+          * - :py:attr:`~DisableUse3RdPowerForCfdCgm`
+            - Set the value of "Use 3Rd Power For Cfd Cgm" to False.
+          * - :py:attr:`~IsUse3RdPowerForCfdCgmEnabled`
+            - Check if the "Use 3Rd Power For Cfd Cgm" is enabled.
+          * - :py:attr:`~GetUseDragLimiterFactor`
+            - Get the value of "Use Drag Limiter Factor".
+          * - :py:attr:`~SetUseDragLimiterFactor`
+            - Set the value of "Use Drag Limiter Factor".
+          * - :py:attr:`~GetUseFixedTimestep`
+            - Get the value of "Use Fixed Timestep".
+          * - :py:attr:`~SetUseFixedTimestep`
+            - Set the value of "Use Fixed Timestep".
+          * - :py:attr:`~GetUseContactNeighboringDistanceBetweenParticles`
+            - Get the value of "Use Contact Neighboring Distance Between Particles".
+          * - :py:attr:`~SetUseContactNeighboringDistanceBetweenParticles`
+            - Set the value of "Use Contact Neighboring Distance Between Particles".
+          * - :py:attr:`~GetUseContactNeighboringDistanceBetweenParticlesAndTriangles`
+            - Get the value of "Use Contact Neighboring Distance Between Particles And Triangles".
+          * - :py:attr:`~SetUseContactNeighboringDistanceBetweenParticlesAndTriangles`
+            - Set the value of "Use Contact Neighboring Distance Between Particles And Triangles".
+          * - :py:attr:`~GetUseNonRoundTorqueCorrection`
+            - Get the value of "Use Non Round Torque Correction".
+          * - :py:attr:`~SetUseNonRoundTorqueCorrection`
+            - Set the value of "Use Non Round Torque Correction".
+          * - :py:attr:`~GetUseSortingDistanceFactor`
+            - Get the value of "Use Sorting Distance Factor".
+          * - :py:attr:`~SetUseSortingDistanceFactor`
+            - Set the value of "Use Sorting Distance Factor".
+          * - :py:attr:`~EnableSortingDistanceFactor`
+            - Set the value of "Sorting Distance Factor" to True.
+          * - :py:attr:`~DisableSortingDistanceFactor`
+            - Set the value of "Sorting Distance Factor" to False.
+          * - :py:attr:`~IsSortingDistanceFactorEnabled`
+            - Check if the "Sorting Distance Factor" is enabled.
+          * - :py:attr:`~GetUseCompressedFiles`
+            - Get the value of "Use Compressed Files".
+          * - :py:attr:`~SetUseCompressedFiles`
+            - Set the value of "Use Compressed Files".
+          * - :py:attr:`~EnableCompressedFile`
+            - Set the value of "Compressed File" to True.
+          * - :py:attr:`~DisableCompressedFile`
+            - Set the value of "Compressed File" to False.
+          * - :py:attr:`~IsCompressedFileEnabled`
+            - Check if the "Compressed File" is enabled.
+          * - :py:attr:`~GetMpiHeterogeneous`
+            - Get the value of "Mpi Heterogeneous".
+          * - :py:attr:`~SetMpiHeterogeneous`
+            - Set the value of "Mpi Heterogeneous".
+          * - :py:attr:`~GetMpiHostfile`
+            - Get the value of "Mpi Hostfile".
+          * - :py:attr:`~SetMpiHostfile`
+            - Set the value of "Mpi Hostfile".
+          * - :py:attr:`~GetMpiHosts`
+            - Get the value of "Mpi Hosts".
+          * - :py:attr:`~SetMpiHosts`
+            - Set the value of "Mpi Hosts".
+          * - :py:attr:`~GetMpiNumberOfProcesses`
+            - Get the value of "Mpi Number of Processes".
+          * - :py:attr:`~SetMpiNumberOfProcesses`
+            - Set the value of "Mpi Number of Processes".
+          * - :py:attr:`~GetMpiNumberOfThreads`
+            - Get the value of "Mpi Number of Threads".
+          * - :py:attr:`~SetMpiNumberOfThreads`
+            - Set the value of "Mpi Number of Threads".
+          * - :py:attr:`~GetMpiWithinScheduler`
+            - Get the value of "Mpi Within Scheduler".
+          * - :py:attr:`~SetMpiWithinScheduler`
+            - Set the value of "Mpi Within Scheduler".
+          * - :py:attr:`~GetMultiGpuSlicingDirection`
+            - Get "Multi Gpu Slicing Direction" as a string.
+          * - :py:attr:`~SetMultiGpuSlicingDirection`
+            - Set the value of "Multi Gpu Slicing Direction".
+          * - :py:attr:`~GetValidMultiGpuSlicingDirectionValues`
+            - Get a list of all possible values for "Multi Gpu Slicing Direction".
+          * - :py:attr:`~GetNumberOfProcessors`
+            - Get the value of "Number of Processors".
+          * - :py:attr:`~SetNumberOfProcessors`
+            - Set the value of "Number of Processors".
+          * - :py:attr:`~GetProcessingUnit`
+            - Get "Processing Unit" as a string.
+          * - :py:attr:`~SetProcessingUnit`
+            - Set the value of "Processing Unit".
+          * - :py:attr:`~GetValidProcessingUnitValues`
+            - Get a list of all possible values for "Processing Unit".
+          * - :py:attr:`~GetReleaseParticlesWithoutOverlapCheck`
+            - Get the value of "Release Particles Without Overlap Check".
+          * - :py:attr:`~SetReleaseParticlesWithoutOverlapCheck`
+            - Set the value of "Release Particles Without Overlap Check".
+          * - :py:attr:`~GetTargetGpu`
+            - Get the value of "Target Gpu".
+          * - :py:attr:`~SetTargetGpu`
+            - Set the value of "Target Gpu".
+          * - :py:attr:`~GetUseMpi`
+            - Get the value of "Use Mpi".
+          * - :py:attr:`~SetUseMpi`
+            - Set the value of "Use Mpi".
+          * - :py:attr:`~GetResumeDataFrequency`
+            - Get the value of "Resume Data Frequency".
+          * - :py:attr:`~SetResumeDataFrequency`
+            - Set the value of "Resume Data Frequency".
+          * - :py:attr:`~GetBreakageDelayAfterRelease`
+            - Get the value of "Breakage Delay After Release".
+          * - :py:attr:`~SetBreakageDelayAfterRelease`
+            - Set the value of "Breakage Delay After Release".
+          * - :py:attr:`~GetBreakageStart`
+            - Get the value of "Breakage Start".
+          * - :py:attr:`~SetBreakageStart`
+            - Set the value of "Breakage Start".
+          * - :py:attr:`~GetTimeInterval`
+            - Get the value of "Time Interval".
+          * - :py:attr:`~SetTimeInterval`
+            - Set the value of "Time Interval".
+          * - :py:attr:`~GetOverlapParticlesDelay`
+            - Get the value of "Overlap Particles Delay".
+          * - :py:attr:`~SetOverlapParticlesDelay`
+            - Set the value of "Overlap Particles Delay".
+          * - :py:attr:`~GetSimulationDuration`
+            - Get the value of "Simulation Duration".
+          * - :py:attr:`~SetSimulationDuration`
+            - Set the value of "Simulation Duration".
+          * - :py:attr:`~GetWearGeometryUpdateInterval`
+            - Get the value of "Wear Geometry Update Interval".
+          * - :py:attr:`~SetWearGeometryUpdateInterval`
+            - Set the value of "Wear Geometry Update Interval".
+          * - :py:attr:`~GetWearStart`
+            - Get the value of "Wear Start".
+          * - :py:attr:`~SetWearStart`
+            - Set the value of "Wear Start".
+
+
+
+
+   .. tab-item:: Static methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAvailableStandardOutputProperties`
+            - :returns: The available "Standard Output Properties".
+          * - :py:attr:`~GetAvailableModulesOutputProperties`
+            - :returns: The available "Modules Output Properties".
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_simulator_run import RASimulatorRun
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.solver.rocky_simulator_run.RockySimulatorRun]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: RemoveProcess() -> None
+
+   
+   It is not possible to remove the item "Solver" from the project. It's a standard Rocky
+   item in project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTimeConfiguration(duration: float, time_interval: float) -> None
+
+   
+   Shortcut to set both the simulation's duration and its time interval.
+
+   :param duration:
+       The simulation duration (in seconds).
+
+   :param time_interval:
+       The simulation time interval (in seconds).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: HasFEMForcesEnabled() -> bool
+
+   
+   Whether the simulation is configured to collect forces for FEM analysis.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: HasHtcCalculatedData() -> bool
+
+   
+   Whether the "HTC" is being calculated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableHtcCalculator() -> None
+
+   
+   Enables the "HTC" calculations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableHtcCalculator() -> None
+
+   
+   Disables the "HTC" calculations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableFEMForces() -> None
+
+   
+   Enables the "FEM Forces" calculations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableFEMForces() -> None
+
+   
+   Disables the "FEM Forces" calculations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: HasCompressedFileEnabled() -> bool
+
+.. py:method:: GetTargetGpus() -> list[int]
+
+   
+   :return: A list of IDs of the GPUs currently selected for Multi GPU simulation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTargetGpus(gpus: list[int | str]) -> None
+
+   
+   It will configure the IDs of GPUs that will be used in simulation based on the list of IDs or names of GPUs
+   passed.
+
+   :param gpus:
+       List with IDs or names of GPUs to be used in simulation.
+       For example in the name "1 - Geforce GTX 980", the ID is 1 and the name is "1 - Geforce GTX 980".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentOutputsMultiplier() -> int
+
+   
+   Get the value of "Fluent Outputs Multiplier".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentOutputsMultiplier(value: int) -> None
+
+   
+   Set the value of "Fluent Outputs Multiplier".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableOutputRoots() -> collections.abc.Sequence[str]
+
+   
+   Deprecated: Use GetAvailableStandardOutputProperties instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableOutputRootProperties(root_key: str) -> collections.abc.Sequence[str]
+
+   
+   Deprecated: Use GetAvailableStandardOutputProperties instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOutputRootEnabled(root_key: str) -> bool
+
+   
+   Deprecated: Use GetStandardOutputPropertyEnabled instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOutputRootEnabled(root_key: str, enabled: bool) -> None
+
+   
+   Deprecated: Use SetStandardOutputPropertyEnabled instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOutputPropertyEnabled(root_key: str, property_name: str) -> bool
+
+   
+   Deprecated: Use GetStandardOutputPropertyEnabled instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOutputPropertyEnabled(root_key: str, property_name: str, enabled: bool) -> None
+
+   
+   Deprecated: Use SetStandardOutputPropertyEnabled instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStandardOutputPropertyEnabled(*output_property: str) -> bool
+
+   
+   Retrieve enable state of given "Standard Output Property".
+
+   :param output_property:
+       The output property name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStandardOutputPropertyEnabled(*output_property: str, enabled: bool) -> None
+
+   
+   Set enable state of given "Standard Output Property".
+
+   :param output_property:
+       The output property name.
+   :param enabled:
+       The enable state of given "Standard Output Property".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModulesOutputPropertyEnabled(*output_property: str) -> bool
+
+   
+   Retrieve enable state of given "Modules Output Property".
+
+   :param output_property:
+       The output property name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetModulesOutputPropertyEnabled(*output_property: str, enabled: bool) -> None
+
+   
+   Set enable state of given "Modules Output Property".
+
+   :param output_property:
+       The output property name.
+   :param enabled:
+       The enable state of given "Modules Output Property".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableStandardOutputProperties() -> dict
+   :staticmethod:
+
+
+   
+   :returns: The available "Standard Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableModulesOutputProperties() -> dict
+   :staticmethod:
+
+
+   
+   :returns: The available "Modules Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStandardOutputPropertiesData() -> dict
+
+   
+   :returns: The current value of "Standard Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStandardOutputPropertiesData(data_dict: dict) -> None
+
+   
+   Set the current value of "Standard Output Properties".
+
+   :param data_dict:
+       The data dictionary to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModulesOutputPropertiesData() -> dict
+
+   
+   :returns: The current value of "Modules Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetModulesOutputPropertiesData(data_dict: dict) -> None
+
+   
+   Set the current value of "Modules Output Properties".
+
+   :param data_dict:
+       The data dictionary to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RestoreOutputPropertiesDefaults() -> None
+
+   
+   Restore default values of "Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseDpmBlockingEffectForSinglePhaseSimulations() -> bool
+
+   
+   The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+   since 25R2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseDpmBlockingEffectForSinglePhaseSimulations(value: bool) -> None
+
+   
+   The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+   since 25R2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableDpmBlockingEffectForSinglePhaseSimulations() -> None
+
+   
+   The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+   since 25R2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableDpmBlockingEffectForSinglePhaseSimulations() -> None
+
+   
+   The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+   since 25R2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsDpmBlockingEffectForSinglePhaseSimulationsEnabled() -> bool
+
+   
+   The "Use DPM Blocking Effect For Single Phase Simulations" parameter was removed from Rocky
+   since 25R2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSimulationTarget() -> str
+
+.. py:method:: SetSimulationTarget(value: str) -> None
+
+.. py:method:: GetArraysGrowthRate() -> float
+
+   
+   Get the value of "Arrays Growth Rate".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetArraysGrowthRate(value: str | float) -> None
+
+   
+   Set the value of "Arrays Growth Rate".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBreakageOverlapFactor() -> float
+
+   
+   Get the value of "Breakage Overlap Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBreakageOverlapFactor(value: str | float) -> None
+
+   
+   Set the value of "Breakage Overlap Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDisableTrianglesOnPeriodicBoundaries() -> bool
+
+   
+   Get the value of "Disable Triangles On Periodic Boundaries".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDisableTrianglesOnPeriodicBoundaries(value: bool) -> None
+
+   
+   Set the value of "Disable Triangles On Periodic Boundaries".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDragLimiterFactor() -> float
+
+   
+   Get the value of "Drag Limiter Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDragLimiterFactor(value: str | float) -> None
+
+   
+   Set the value of "Drag Limiter Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMoveCfdCellsWithRockyBoundaries() -> bool
+
+   
+   Get the value of "Move Cfd Cells With Rocky Boundaries".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMoveCfdCellsWithRockyBoundaries(value: bool) -> None
+
+   
+   Set the value of "Move Cfd Cells With Rocky Boundaries".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableMoveCfdCellsWithRockyBoundaries() -> None
+
+   
+   Set the value of "Move Cfd Cells With Rocky Boundaries" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableMoveCfdCellsWithRockyBoundaries() -> None
+
+   
+   Set the value of "Move Cfd Cells With Rocky Boundaries" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsMoveCfdCellsWithRockyBoundariesEnabled() -> bool
+
+   
+   Check if the "Move Cfd Cells With Rocky Boundaries" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFixedTimestep(unit: str | None = None) -> float
+
+   
+   Get the value of "Fixed Timestep".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFixedTimestep(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Fixed Timestep".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSuccessiveOverRelaxationTolerance() -> float
+
+   
+   Get the value of "Successive Over Relaxation Tolerance".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSuccessiveOverRelaxationTolerance(value: str | float) -> None
+
+   
+   Set the value of "Successive Over Relaxation Tolerance".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointElasticRatio() -> float
+
+   
+   Get the value of "Joint Elastic Ratio".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetJointElasticRatio(value: str | float) -> None
+
+   
+   Set the value of "Joint Elastic Ratio".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMinimumLengthDeformationTolerance() -> float
+
+   
+   Get the value of "Minimum Length Deformation Tolerance".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMinimumLengthDeformationTolerance(value: str | float) -> None
+
+   
+   Set the value of "Minimum Length Deformation Tolerance".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLinearHystDamp() -> float
+
+   
+   Get the value of "Linear Hyst Damp".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLinearHystDamp(value: str | float) -> None
+
+   
+   Set the value of "Linear Hyst Damp".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLoadingNSteps() -> int
+
+   
+   Get the value of "Loading N Steps".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLoadingNSteps(value: str | int) -> None
+
+   
+   Set the value of "Loading N Steps".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDeformableMassMatrixType() -> str
+
+   
+   Get "Deformable Mass Matrix Type" as a string.
+
+   :return:
+       The returned value will be one of ['lumped', 'consistent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDeformableMassMatrixType(value: str) -> None
+
+   
+   Set the value of "Deformable Mass Matrix Type".
+
+   :param value:
+       The value to set. Must be one of ['lumped', 'consistent'].
+   :raises RockyApiError:
+       If `value` is not a valid "Deformable Mass Matrix Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidDeformableMassMatrixTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Deformable Mass Matrix Type".
+
+   :return:
+       The returned list is ['lumped', 'consistent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMinimumVolumeTolerance() -> float
+
+   
+   Get the value of "Minimum Volume Tolerance".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMinimumVolumeTolerance(value: str | float) -> None
+
+   
+   Set the value of "Minimum Volume Tolerance".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSolverCurvesFrequency() -> int
+
+   
+   Get the value of "Solver Curves Frequency".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSolverCurvesFrequency(value: str | int) -> None
+
+   
+   Set the value of "Solver Curves Frequency".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetContactNeighboringDistanceBetweenParticles(unit: str | None = None) -> float
+
+   
+   Get the value of "Contact Neighboring Distance Between Particles".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetContactNeighboringDistanceBetweenParticles(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Contact Neighboring Distance Between Particles".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetContactNeighboringDistanceBetweenParticlesAndTriangles(unit: str | None = None) -> float
+
+   
+   Get the value of "Contact Neighboring Distance Between Particles And Triangles".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetContactNeighboringDistanceBetweenParticlesAndTriangles(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Contact Neighboring Distance Between Particles And Triangles".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNegateInitialOverlaps() -> bool
+
+   
+   Get the value of "Negate Initial Overlaps".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNegateInitialOverlaps(value: bool) -> None
+
+   
+   Set the value of "Negate Initial Overlaps".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableNegateInitialOverlaps() -> None
+
+   
+   Set the value of "Negate Initial Overlaps" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableNegateInitialOverlaps() -> None
+
+   
+   Set the value of "Negate Initial Overlaps" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsNegateInitialOverlapsEnabled() -> bool
+
+   
+   Check if the "Negate Initial Overlaps" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNeighborSearchModel() -> str
+
+   
+   Get "Neighbor Search Model" as a string.
+
+   :return:
+       The returned value will be one of ['BVH', 'RegularGrid', 'SparseGrid'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNeighborSearchModel(value: str) -> None
+
+   
+   Set the value of "Neighbor Search Model".
+
+   :param value:
+       The value to set. Must be one of ['BVH', 'RegularGrid', 'SparseGrid'].
+   :raises RockyApiError:
+       If `value` is not a valid "Neighbor Search Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidNeighborSearchModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Neighbor Search Model".
+
+   :return:
+       The returned list is ['BVH', 'RegularGrid', 'SparseGrid'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaximumNumberOfIterations() -> int
+
+   
+   Get the value of "Maximum Number of Iterations".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaximumNumberOfIterations(value: str | int) -> None
+
+   
+   Set the value of "Maximum Number of Iterations".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOverRelaxationCoefficient() -> float
+
+   
+   Get the value of "Over Relaxation Coefficient".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOverRelaxationCoefficient(value: str | float) -> None
+
+   
+   Set the value of "Over Relaxation Coefficient".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRefineConcaveSearch() -> bool
+
+   
+   Get the value of "Refine Concave Search".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRefineConcaveSearch(value: bool) -> None
+
+   
+   Set the value of "Refine Concave Search".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleSizeLimitForReordering(unit: str | None = None) -> float
+
+   
+   Get the value of "Particle Size Limit For Reordering".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetParticleSizeLimitForReordering(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Particle Size Limit For Reordering".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSpecialReorderingForWidePsd() -> bool
+
+   
+   Get the value of "Special Reordering For Wide Psd".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSpecialReorderingForWidePsd(value: bool) -> None
+
+   
+   Set the value of "Special Reordering For Wide Psd".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetResetOnlyPhysicalContactsData() -> bool
+
+   
+   Get the value of "Reset Only Physical Contacts Data".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetResetOnlyPhysicalContactsData(value: bool) -> None
+
+   
+   Set the value of "Reset Only Physical Contacts Data".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSortingDistanceFactor() -> float
+
+   
+   Get the value of "Sorting Distance Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSortingDistanceFactor(value: str | float) -> None
+
+   
+   Set the value of "Sorting Distance Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTimestepModel() -> str
+
+   
+   Get "Timestep Model" as a string.
+
+   :return:
+       The returned value will be one of ['constant', 'variable'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTimestepModel(value: str) -> None
+
+   
+   Set the value of "Timestep Model".
+
+   :param value:
+       The value to set. Must be one of ['constant', 'variable'].
+   :raises RockyApiError:
+       If `value` is not a valid "Timestep Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidTimestepModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Timestep Model".
+
+   :return:
+       The returned list is ['constant', 'variable'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUse2023R2SourceTermsApproach() -> bool
+
+   
+   Get the value of "Use 2023 R2 Source Terms Approach".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUse2023R2SourceTermsApproach(value: bool) -> None
+
+   
+   Set the value of "Use 2023 R2 Source Terms Approach".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUse2023R2CellVolumeFractionUpdateApproach() -> bool
+
+   
+   Get the value of "Use 2023 R2 Cell Volume Fraction Update Approach".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUse2023R2CellVolumeFractionUpdateApproach(value: bool) -> None
+
+   
+   Set the value of "Use 2023 R2 Cell Volume Fraction Update Approach".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseArraysGrowthRate() -> bool
+
+   
+   Get the value of "Use Arrays Growth Rate".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseArraysGrowthRate(value: bool) -> None
+
+   
+   Set the value of "Use Arrays Growth Rate".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseBreakageOverlapFactor() -> bool
+
+   
+   Get the value of "Use Breakage Overlap Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseBreakageOverlapFactor(value: bool) -> None
+
+   
+   Set the value of "Use Breakage Overlap Factor".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUse3RdPowerForCfdCgm() -> bool
+
+   
+   Get the value of "Use 3Rd Power For Cfd Cgm".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUse3RdPowerForCfdCgm(value: bool) -> None
+
+   
+   Set the value of "Use 3Rd Power For Cfd Cgm".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableUse3RdPowerForCfdCgm() -> None
+
+   
+   Set the value of "Use 3Rd Power For Cfd Cgm" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableUse3RdPowerForCfdCgm() -> None
+
+   
+   Set the value of "Use 3Rd Power For Cfd Cgm" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsUse3RdPowerForCfdCgmEnabled() -> bool
+
+   
+   Check if the "Use 3Rd Power For Cfd Cgm" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseDragLimiterFactor() -> bool
+
+   
+   Get the value of "Use Drag Limiter Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseDragLimiterFactor(value: bool) -> None
+
+   
+   Set the value of "Use Drag Limiter Factor".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseFixedTimestep() -> bool
+
+   
+   Get the value of "Use Fixed Timestep".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseFixedTimestep(value: bool) -> None
+
+   
+   Set the value of "Use Fixed Timestep".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseContactNeighboringDistanceBetweenParticles() -> bool
+
+   
+   Get the value of "Use Contact Neighboring Distance Between Particles".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseContactNeighboringDistanceBetweenParticles(value: bool) -> None
+
+   
+   Set the value of "Use Contact Neighboring Distance Between Particles".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseContactNeighboringDistanceBetweenParticlesAndTriangles() -> bool
+
+   
+   Get the value of "Use Contact Neighboring Distance Between Particles And Triangles".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseContactNeighboringDistanceBetweenParticlesAndTriangles(value: bool) -> None
+
+   
+   Set the value of "Use Contact Neighboring Distance Between Particles And Triangles".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseNonRoundTorqueCorrection() -> bool
+
+   
+   Get the value of "Use Non Round Torque Correction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseNonRoundTorqueCorrection(value: bool) -> None
+
+   
+   Set the value of "Use Non Round Torque Correction".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseSortingDistanceFactor() -> bool
+
+   
+   Get the value of "Use Sorting Distance Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseSortingDistanceFactor(value: bool) -> None
+
+   
+   Set the value of "Use Sorting Distance Factor".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableSortingDistanceFactor() -> None
+
+   
+   Set the value of "Sorting Distance Factor" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableSortingDistanceFactor() -> None
+
+   
+   Set the value of "Sorting Distance Factor" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsSortingDistanceFactorEnabled() -> bool
+
+   
+   Check if the "Sorting Distance Factor" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseCompressedFiles() -> bool
+
+   
+   Get the value of "Use Compressed Files".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseCompressedFiles(value: bool) -> None
+
+   
+   Set the value of "Use Compressed Files".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableCompressedFile() -> None
+
+   
+   Set the value of "Compressed File" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableCompressedFile() -> None
+
+   
+   Set the value of "Compressed File" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsCompressedFileEnabled() -> bool
+
+   
+   Check if the "Compressed File" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMpiHeterogeneous() -> bool
+
+   
+   Get the value of "Mpi Heterogeneous".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMpiHeterogeneous(value: bool) -> None
+
+   
+   Set the value of "Mpi Heterogeneous".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMpiHostfile() -> str
+
+   
+   Get the value of "Mpi Hostfile".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMpiHostfile(value: str) -> None
+
+   
+   Set the value of "Mpi Hostfile".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMpiHosts() -> str
+
+   
+   Get the value of "Mpi Hosts".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMpiHosts(value: str) -> None
+
+   
+   Set the value of "Mpi Hosts".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMpiNumberOfProcesses() -> int
+
+   
+   Get the value of "Mpi Number of Processes".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMpiNumberOfProcesses(value: str | int) -> None
+
+   
+   Set the value of "Mpi Number of Processes".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMpiNumberOfThreads() -> int
+
+   
+   Get the value of "Mpi Number of Threads".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMpiNumberOfThreads(value: str | int) -> None
+
+   
+   Set the value of "Mpi Number of Threads".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMpiWithinScheduler() -> bool
+
+   
+   Get the value of "Mpi Within Scheduler".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMpiWithinScheduler(value: bool) -> None
+
+   
+   Set the value of "Mpi Within Scheduler".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMultiGpuSlicingDirection() -> str
+
+   
+   Get "Multi Gpu Slicing Direction" as a string.
+
+   :return:
+       The returned value will be one of ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMultiGpuSlicingDirection(value: str) -> None
+
+   
+   Set the value of "Multi Gpu Slicing Direction".
+
+   :param value:
+       The value to set. Must be one of ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+   :raises RockyApiError:
+       If `value` is not a valid "Multi Gpu Slicing Direction" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidMultiGpuSlicingDirectionValues() -> list[str]
+
+   
+   Get a list of all possible values for "Multi Gpu Slicing Direction".
+
+   :return:
+       The returned list is ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfProcessors() -> int
+
+   
+   Get the value of "Number of Processors".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfProcessors(value: str | int) -> None
+
+   
+   Set the value of "Number of Processors".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetProcessingUnit() -> str
+
+   
+   Get "Processing Unit" as a string.
+
+   :return:
+       The returned value will be one of ['CPU', 'GPU', 'MULTI_GPU'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetProcessingUnit(value: str) -> None
+
+   
+   Set the value of "Processing Unit".
+
+   :param value:
+       The value to set. Must be one of ['CPU', 'GPU', 'MULTI_GPU'].
+   :raises RockyApiError:
+       If `value` is not a valid "Processing Unit" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidProcessingUnitValues() -> list[str]
+
+   
+   Get a list of all possible values for "Processing Unit".
+
+   :return:
+       The returned list is ['CPU', 'GPU', 'MULTI_GPU'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetReleaseParticlesWithoutOverlapCheck() -> bool
+
+   
+   Get the value of "Release Particles Without Overlap Check".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetReleaseParticlesWithoutOverlapCheck(value: bool) -> None
+
+   
+   Set the value of "Release Particles Without Overlap Check".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTargetGpu() -> int
+
+   
+   Get the value of "Target Gpu".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTargetGpu(value: str | int) -> None
+
+   
+   Set the value of "Target Gpu".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseMpi() -> bool
+
+   
+   Get the value of "Use Mpi".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseMpi(value: bool) -> None
+
+   
+   Set the value of "Use Mpi".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetResumeDataFrequency() -> int
+
+   
+   Get the value of "Resume Data Frequency".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetResumeDataFrequency(value: str | int) -> None
+
+   
+   Set the value of "Resume Data Frequency".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBreakageDelayAfterRelease(unit: str | None = None) -> float
+
+   
+   Get the value of "Breakage Delay After Release".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBreakageDelayAfterRelease(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Breakage Delay After Release".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBreakageStart(unit: str | None = None) -> float
+
+   
+   Get the value of "Breakage Start".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBreakageStart(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Breakage Start".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTimeInterval(unit: str | None = None) -> float
+
+   
+   Get the value of "Time Interval".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTimeInterval(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Time Interval".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOverlapParticlesDelay(unit: str | None = None) -> float
+
+   
+   Get the value of "Overlap Particles Delay".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOverlapParticlesDelay(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Overlap Particles Delay".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSimulationDuration(unit: str | None = None) -> float
+
+   
+   Get the value of "Simulation Duration".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSimulationDuration(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Simulation Duration".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWearGeometryUpdateInterval(unit: str | None = None) -> float
+
+   
+   Get the value of "Wear Geometry Update Interval".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetWearGeometryUpdateInterval(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Wear Geometry Update Interval".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWearStart(unit: str | None = None) -> float
+
+   
+   Get the value of "Wear Start".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetWearStart(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Wear Start".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,0 +1,575 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle
+===========================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle.RAParticle
+
+
+Module Contents
+---------------
+
+.. py:class:: RAParticle
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: ImportFromSTL(stl_filename: str, as_concave: bool, is_open: bool = ...) -> bool
+
+
+   .. py:method:: ImportFiberFromTXT(stl_filename)
+
+
+   .. py:method:: ImportCustomFiber(filename: str) -> bool
+
+
+   .. py:method:: GetSizeDistributionList() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_size_distribution.RASizeDistributionList
+
+
+   .. py:method:: GetUseMultipleElements() -> bool
+
+
+   .. py:method:: SetUseMultipleElements(value) -> None
+
+
+   .. py:method:: IsConcave()
+
+
+   .. py:method:: GetBreakageModel() -> str
+
+
+   .. py:method:: GetValidBreakageModelValues() -> list[str]
+
+
+   .. py:method:: SetBreakageModel(value: str) -> None
+
+
+   .. py:method:: GetAssemblyParts() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_assembly.RAParticleAssemblyPartList
+
+
+   .. py:method:: GetAssemblyCustom() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_assembly.RAParticleAssemblyCustom
+
+
+   .. py:method:: GetRotationAngle(unit: str = ...) -> float
+
+
+   .. py:method:: SetRotationAngle(value: Union[str, float], unit: str = ...) -> None
+
+
+   .. py:method:: GetRotationVector(unit: str = ...) -> list[float]
+
+
+   .. py:method:: SetRotationVector(values: collections.abc.Sequence[Union[str, float]], unit: str = ...) -> None
+
+
+   .. py:method:: GetAbt10MaximumT10Value(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAbt10MaximumT10Value(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetAbt10ReferenceMinimumSpecificEnergy(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAbt10ReferenceMinimumSpecificEnergy(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetAbt10MinimumSpecificEnergy(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAbt10MinimumSpecificEnergy(value: float, unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetAbt10ReferenceSize(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAbt10ReferenceSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetAbt10SelectFunctionCoefficient(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAbt10SelectFunctionCoefficient(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDistributionModel() -> str
+
+
+   .. py:method:: SetDistributionModel(value: str) -> None
+
+
+   .. py:method:: GetValidDistributionModelValues() -> List[str]
+
+
+   .. py:method:: GetSurfaceEnergy(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSurfaceEnergy(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetIncludeRotationalDeformations() -> bool
+
+
+   .. py:method:: SetIncludeRotationalDeformations(value: bool) -> None
+
+
+   .. py:method:: EnableIncludeRotationalDeformations() -> None
+
+
+   .. py:method:: DisableIncludeRotationalDeformations() -> None
+
+
+   .. py:method:: IsIncludeRotationalDeformationsEnabled() -> bool
+
+
+   .. py:method:: GetMinimumSize(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMinimumSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMinimumSizeRatio() -> float
+
+
+   .. py:method:: SetMinimumSizeRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetMinimumVolumeFractionForFragmentDisabling() -> float
+
+
+   .. py:method:: SetMinimumVolumeFractionForFragmentDisabling(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetTavaresA(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresA(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTavaresB(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresB(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTavaresD0(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresD0(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTavaresEInf(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresEInf(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTavaresGamma(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresGamma(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTavaresMinimumEnergy(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresMinimumEnergy(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTavaresPhi(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresPhi(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTavaresRatioEmax(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresRatioEmax(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRatioEnergyAfterBreakage(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetRatioEnergyAfterBreakage(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTavaresSigmaSquared(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTavaresSigmaSquared(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetT10Formula() -> str
+
+
+   .. py:method:: SetT10Formula(value: str) -> None
+
+
+   .. py:method:: GetValidT10FormulaValues() -> List[str]
+
+
+   .. py:method:: GetShearStressLimit(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetShearStressLimit(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTensileStressLimit(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTensileStressLimit(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetEnableBreakage() -> bool
+
+
+   .. py:method:: SetEnableBreakage(value: bool) -> None
+
+
+   .. py:method:: EnableBreakage() -> None
+
+
+   .. py:method:: DisableBreakage() -> None
+
+
+   .. py:method:: IsBreakageEnabled() -> bool
+
+
+   .. py:method:: GetVonMisesStressLimit(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetVonMisesStressLimit(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetAllowSelfContacts() -> bool
+
+
+   .. py:method:: SetAllowSelfContacts(value: bool) -> None
+
+
+   .. py:method:: GetDeformationModel() -> str
+
+
+   .. py:method:: SetDeformationModel(value: str) -> None
+
+
+   .. py:method:: GetValidDeformationModelValues() -> List[str]
+
+
+   .. py:method:: GetInternalFriction() -> float
+
+
+   .. py:method:: SetInternalFriction(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetPlasticLimit(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPlasticLimit(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetFlexible() -> bool
+
+
+   .. py:method:: SetFlexible(value: bool) -> None
+
+
+   .. py:method:: GetCenterOfMassOffset(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetCenterOfMassOffset(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetChangeMassProperties() -> bool
+
+
+   .. py:method:: SetChangeMassProperties(value: bool) -> None
+
+
+   .. py:method:: GetEnableRotations() -> bool
+
+
+   .. py:method:: SetEnableRotations(value: bool) -> None
+
+
+   .. py:method:: GetHorizontalAspectRatio() -> float
+
+
+   .. py:method:: SetHorizontalAspectRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetPrincipalMomentOfInertia(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetPrincipalMomentOfInertia(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetNumberOfCorners() -> int
+
+
+   .. py:method:: SetNumberOfCorners(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetXDirection(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetXDirection(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetYDirection(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetYDirection(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetZDirection(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetZDirection(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRollingResistance() -> float
+
+
+   .. py:method:: SetRollingResistance(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSideAngle() -> float
+
+
+   .. py:method:: SetSideAngle(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSmoothness() -> float
+
+
+   .. py:method:: SetSmoothness(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSuperquadricDegree() -> float
+
+
+   .. py:method:: SetSuperquadricDegree(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetThickness(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetThickness(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetVerticalAspectRatio() -> float
+
+
+   .. py:method:: SetVerticalAspectRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetBendingAngleLimit(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBendingAngleLimit(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetWithFailure() -> bool
+
+
+   .. py:method:: SetWithFailure(value: bool) -> None
+
+
+   .. py:method:: GetEdgeAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetEdgeAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetElasticRatioBending() -> float
+
+
+   .. py:method:: SetElasticRatioBending(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetElasticRatioNormal() -> float
+
+
+   .. py:method:: SetElasticRatioNormal(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetElasticRatioTangential() -> float
+
+
+   .. py:method:: SetElasticRatioTangential(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetElasticRatioTorsion() -> float
+
+
+   .. py:method:: SetElasticRatioTorsion(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetElasticity() -> str
+
+
+   .. py:method:: SetElasticity(value: str) -> None
+
+
+   .. py:method:: GetValidElasticityValues() -> List[str]
+
+
+   .. py:method:: GetTargetNumberOfElements() -> int
+
+
+   .. py:method:: SetTargetNumberOfElements(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetElementDampingRatio() -> float
+
+
+   .. py:method:: SetElementDampingRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetFailureRatio() -> float
+
+
+   .. py:method:: SetFailureRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetJointDampingRatio() -> float
+
+
+   .. py:method:: SetJointDampingRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetJointElasticRatio() -> float
+
+
+   .. py:method:: SetJointElasticRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetJointThermalRatio() -> float
+
+
+   .. py:method:: SetJointThermalRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetPlasticRatio() -> float
+
+
+   .. py:method:: SetPlasticRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetPlasticityModel() -> str
+
+
+   .. py:method:: SetPlasticityModel(value: str) -> None
+
+
+   .. py:method:: GetValidPlasticityModelValues() -> List[str]
+
+
+   .. py:method:: GetRemeshToTarget() -> bool
+
+
+   .. py:method:: SetRemeshToTarget(value: bool) -> None
+
+
+   .. py:method:: GetSecondBendingAngleLimit(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSecondBendingAngleLimit(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTorsionAngleLimit(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTorsionAngleLimit(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetPorosity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPorosity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRandomAnglesHalfRange(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetRandomAnglesHalfRange(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetShape() -> str
+
+
+   .. py:method:: SetShape(value: str) -> None
+
+
+   .. py:method:: GetValidShapeValues() -> List[str]
+
+
+   .. py:method:: GetCgmScaleFactor() -> float
+
+
+   .. py:method:: SetCgmScaleFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSizeType() -> str
+
+
+   .. py:method:: SetSizeType(value: str) -> None
+
+
+   .. py:method:: GetValidSizeTypeValues() -> List[str]
+
+
+   .. py:method:: GetEnableRandomAngle() -> bool
+
+
+   .. py:method:: SetEnableRandomAngle(value: bool) -> None
+
+
+   .. py:method:: EnableRandomOrientation() -> None
+
+
+   .. py:method:: DisableRandomOrientation() -> None
+
+
+   .. py:method:: IsRandomOrientationEnabled() -> bool
+
+
+   .. py:method:: GetMaterial()
+
+
+   .. py:method:: SetMaterial(value) -> None
+
+
+   .. py:method:: GetAvailableMaterials()
+
+
+   .. py:method:: GetAnisotropic() -> bool
+
+
+   .. py:method:: SetAnisotropic(value: bool) -> None
+
+

@@ -1,0 +1,65 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contact_data
+===============================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contact_data
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contact_data.RAContactData
+
+
+Module Contents
+---------------
+
+.. py:class:: RAContactData
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: RemoveProcess() -> None
+
+
+   .. py:method:: GetCollectContactsData() -> bool
+
+
+   .. py:method:: SetCollectContactsData(value: bool) -> None
+
+
+   .. py:method:: EnableCollectContactsData() -> None
+
+
+   .. py:method:: DisableCollectContactsData() -> None
+
+
+   .. py:method:: IsCollectContactsDataEnabled() -> bool
+
+
+   .. py:method:: GetIncludeAdhesiveContacts() -> bool
+
+
+   .. py:method:: SetIncludeAdhesiveContacts(value: bool) -> None
+
+
+   .. py:method:: EnableIncludeAdhesiveContacts() -> None
+
+
+   .. py:method:: DisableIncludeAdhesiveContacts() -> None
+
+
+   .. py:method:: IsIncludeAdhesiveContactsEnabled() -> bool
+
+

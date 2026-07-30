@@ -1,0 +1,164 @@
+
+
+
+
+
+
+The ``motion`` package
+==========================
+
+.. py:module:: ansys.rocky.app.motion
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: motion
+.. tab-set::
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_base_motion`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_cone_crusher_frame`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_fbm_rotation`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_fbm_translation`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_linear_time_variable_force`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_linear_time_variable_moment`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_motion`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_motion_frame`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_motion_frame_source`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_motion_list`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_pendulum`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_prescribed_force`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_prescribed_moment`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_rotation`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_spring_dashpot_force`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_spring_dashpot_moment`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_time_series_rotation`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_time_series_translation`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_translation`
+            - 
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_vibration`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-fa-file"></span> ra_base_motion</api/ansys/rocky/app/motion/ra_base_motion/index>
+    <span class="nf nf-fa-file"></span> ra_cone_crusher_frame</api/ansys/rocky/app/motion/ra_cone_crusher_frame/index>
+    <span class="nf nf-fa-file"></span> ra_fbm_rotation</api/ansys/rocky/app/motion/ra_fbm_rotation/index>
+    <span class="nf nf-fa-file"></span> ra_fbm_translation</api/ansys/rocky/app/motion/ra_fbm_translation/index>
+    <span class="nf nf-fa-file"></span> ra_linear_time_variable_force</api/ansys/rocky/app/motion/ra_linear_time_variable_force/index>
+    <span class="nf nf-fa-file"></span> ra_linear_time_variable_moment</api/ansys/rocky/app/motion/ra_linear_time_variable_moment/index>
+    <span class="nf nf-fa-file"></span> ra_motion</api/ansys/rocky/app/motion/ra_motion/index>
+    <span class="nf nf-fa-file"></span> ra_motion_frame</api/ansys/rocky/app/motion/ra_motion_frame/index>
+    <span class="nf nf-fa-file"></span> ra_motion_frame_source</api/ansys/rocky/app/motion/ra_motion_frame_source/index>
+    <span class="nf nf-fa-file"></span> ra_motion_list</api/ansys/rocky/app/motion/ra_motion_list/index>
+    <span class="nf nf-fa-file"></span> ra_pendulum</api/ansys/rocky/app/motion/ra_pendulum/index>
+    <span class="nf nf-fa-file"></span> ra_prescribed_force</api/ansys/rocky/app/motion/ra_prescribed_force/index>
+    <span class="nf nf-fa-file"></span> ra_prescribed_moment</api/ansys/rocky/app/motion/ra_prescribed_moment/index>
+    <span class="nf nf-fa-file"></span> ra_rotation</api/ansys/rocky/app/motion/ra_rotation/index>
+    <span class="nf nf-fa-file"></span> ra_spring_dashpot_force</api/ansys/rocky/app/motion/ra_spring_dashpot_force/index>
+    <span class="nf nf-fa-file"></span> ra_spring_dashpot_moment</api/ansys/rocky/app/motion/ra_spring_dashpot_moment/index>
+    <span class="nf nf-fa-file"></span> ra_time_series_rotation</api/ansys/rocky/app/motion/ra_time_series_rotation/index>
+    <span class="nf nf-fa-file"></span> ra_time_series_translation</api/ansys/rocky/app/motion/ra_time_series_translation/index>
+    <span class="nf nf-fa-file"></span> ra_translation</api/ansys/rocky/app/motion/ra_translation/index>
+    <span class="nf nf-fa-file"></span> ra_vibration</api/ansys/rocky/app/motion/ra_vibration/index>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

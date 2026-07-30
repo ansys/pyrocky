@@ -1,0 +1,105 @@
+
+
+
+
+
+
+The ``ra_custom_calculators.py`` module
+=======================================
+
+.. py:module:: ansys.rocky.app.ra_custom_calculators
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_custom_calculators
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_custom_calculators.RACustomCurveAndGridProperty`
+            - Helper class, to add, edit and remove custom curves and grid properties.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_custom_calculators.RACustomCurveParameters`
+            - 
+
+
+
+
+
+
+
+    .. tab-item:: Constants
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~VALID_TYPES`
+            - 
+
+
+          * - :py:obj:`~VALID_SCOPE`
+            - 
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RACustomCurveAndGridProperty</api/ansys/rocky/app/ra_custom_calculators/RACustomCurveAndGridProperty>
+    <span class="nf nf-cod-symbol_class"></span> RACustomCurveParameters</api/ansys/rocky/app/ra_custom_calculators/RACustomCurveParameters>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: VALID_TYPES
+   :type:  _typeshed.Incomplete
+
+.. py:data:: VALID_SCOPE
+   :type:  _typeshed.Incomplete
+
+
+

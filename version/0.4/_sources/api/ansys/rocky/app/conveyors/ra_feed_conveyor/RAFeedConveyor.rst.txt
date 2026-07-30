@@ -1,0 +1,2182 @@
+
+
+
+
+
+
+:class:`RAFeedConveyor`
+=======================
+
+
+.. py:class:: ansys.rocky.app.conveyors.ra_feed_conveyor.RAFeedConveyor
+
+   Bases: :py:obj:`ansys.rocky.app.conveyors.ra_base_conveyor.RABaseConveyor`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`
+
+
+   
+   Rocky api Feed Conveyor model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAFeedConveyor
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAccelerationPeriod`
+            - Get the value of "Acceleration Period".
+          * - :py:attr:`~SetAccelerationPeriod`
+            - Set the value of "Acceleration Period".
+          * - :py:attr:`~GetBeginningStopTime`
+            - Get the value of "Beginning Stop Time".
+          * - :py:attr:`~SetBeginningStopTime`
+            - Set the value of "Beginning Stop Time".
+          * - :py:attr:`~GetBeltSpeed`
+            - Get the value of "Belt Speed".
+          * - :py:attr:`~SetBeltSpeed`
+            - Set the value of "Belt Speed".
+          * - :py:attr:`~GetDecelerationPeriod`
+            - Get the value of "Deceleration Period".
+          * - :py:attr:`~SetDecelerationPeriod`
+            - Set the value of "Deceleration Period".
+          * - :py:attr:`~GetBeginningStartTime`
+            - Get the value of "Beginning Start Time".
+          * - :py:attr:`~SetBeginningStartTime`
+            - Set the value of "Beginning Start Time".
+          * - :py:attr:`~GetCapillaryFrictionCoefficient`
+            - Get the value of "Capillary Friction Coefficient".
+          * - :py:attr:`~SetCapillaryFrictionCoefficient`
+            - Set the value of "Capillary Friction Coefficient".
+          * - :py:attr:`~GetDropBoxHeight`
+            - Get the value of "Drop Box Height".
+          * - :py:attr:`~SetDropBoxHeight`
+            - Set the value of "Drop Box Height".
+          * - :py:attr:`~GetDropBoxLength`
+            - Get the value of "Drop Box Length".
+          * - :py:attr:`~SetDropBoxLength`
+            - Set the value of "Drop Box Length".
+          * - :py:attr:`~GetDropBoxWidth`
+            - Get the value of "Drop Box Width".
+          * - :py:attr:`~SetDropBoxWidth`
+            - Set the value of "Drop Box Width".
+          * - :py:attr:`~GetFrontPlateOffset`
+            - Get the value of "Front Plate Offset".
+          * - :py:attr:`~SetFrontPlateOffset`
+            - Set the value of "Front Plate Offset".
+          * - :py:attr:`~GetWallThickness`
+            - Get the value of "Wall Thickness".
+          * - :py:attr:`~SetWallThickness`
+            - Set the value of "Wall Thickness".
+          * - :py:attr:`~GetBeltThickness`
+            - Get the value of "Belt Thickness".
+          * - :py:attr:`~SetBeltThickness`
+            - Set the value of "Belt Thickness".
+          * - :py:attr:`~GetBeltWidth`
+            - Get the value of "Belt Width".
+          * - :py:attr:`~SetBeltWidth`
+            - Set the value of "Belt Width".
+          * - :py:attr:`~GetLoadingLength`
+            - Get the value of "Loading Length".
+          * - :py:attr:`~SetLoadingLength`
+            - Set the value of "Loading Length".
+          * - :py:attr:`~GetTemperature`
+            - Get the value of "Temperature".
+          * - :py:attr:`~SetTemperature`
+            - Set the value of "Temperature".
+          * - :py:attr:`~GetThermalBoundaryConditionType`
+            - Get "Thermal Boundary Condition Type" as a string.
+          * - :py:attr:`~SetThermalBoundaryConditionType`
+            - Set the value of "Thermal Boundary Condition Type".
+          * - :py:attr:`~GetValidThermalBoundaryConditionTypeValues`
+            - Get a list of all possible values for "Thermal Boundary Condition Type".
+          * - :py:attr:`~GetTransitionLength`
+            - Get the value of "Transition Length".
+          * - :py:attr:`~SetTransitionLength`
+            - Set the value of "Transition Length".
+          * - :py:attr:`~GetTriangleSize`
+            - Get the value of "Triangle Size".
+          * - :py:attr:`~SetTriangleSize`
+            - Set the value of "Triangle Size".
+          * - :py:attr:`~GetDiameter`
+            - Get the value of "Diameter".
+          * - :py:attr:`~SetDiameter`
+            - Set the value of "Diameter".
+          * - :py:attr:`~GetFaceWidth`
+            - Get the value of "Face Width".
+          * - :py:attr:`~SetFaceWidth`
+            - Set the value of "Face Width".
+          * - :py:attr:`~GetOffsetToIdlers`
+            - Get the value of "Offset To Idlers".
+          * - :py:attr:`~SetOffsetToIdlers`
+            - Set the value of "Offset To Idlers".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetAlignmentAngle`
+            - Get the value of "Alignment Angle".
+          * - :py:attr:`~SetAlignmentAngle`
+            - Set the value of "Alignment Angle".
+          * - :py:attr:`~GetBeltInclineAngle`
+            - Get the value of "Belt Incline Angle".
+          * - :py:attr:`~SetBeltInclineAngle`
+            - Set the value of "Belt Incline Angle".
+          * - :py:attr:`~GetHorizontalOffset`
+            - Get the value of "Horizontal Offset".
+          * - :py:attr:`~SetHorizontalOffset`
+            - Set the value of "Horizontal Offset".
+          * - :py:attr:`~GetOutOfPlaneOffset`
+            - Get the value of "Out of Plane Offset".
+          * - :py:attr:`~SetOutOfPlaneOffset`
+            - Set the value of "Out of Plane Offset".
+          * - :py:attr:`~GetReturnBeltAngle`
+            - Get the value of "Return Belt Angle".
+          * - :py:attr:`~SetReturnBeltAngle`
+            - Set the value of "Return Belt Angle".
+          * - :py:attr:`~GetVerticalOffset`
+            - Get the value of "Vertical Offset".
+          * - :py:attr:`~SetVerticalOffset`
+            - Set the value of "Vertical Offset".
+          * - :py:attr:`~GetSkirtboardHeight`
+            - Get the value of "Skirtboard Height".
+          * - :py:attr:`~SetSkirtboardHeight`
+            - Set the value of "Skirtboard Height".
+          * - :py:attr:`~GetHeightOffset`
+            - Get the value of "Height Offset".
+          * - :py:attr:`~SetHeightOffset`
+            - Set the value of "Height Offset".
+          * - :py:attr:`~GetSkirtboardLength`
+            - Get the value of "Skirtboard Length".
+          * - :py:attr:`~SetSkirtboardLength`
+            - Set the value of "Skirtboard Length".
+          * - :py:attr:`~GetLengthOffset`
+            - Get the value of "Length Offset".
+          * - :py:attr:`~SetLengthOffset`
+            - Set the value of "Length Offset".
+          * - :py:attr:`~GetWidth`
+            - Get the value of "Width".
+          * - :py:attr:`~SetWidth`
+            - Set the value of "Width".
+          * - :py:attr:`~GetSphBoundaryType`
+            - Get "Sph Boundary Type" as a string.
+          * - :py:attr:`~SetSphBoundaryType`
+            - Set the value of "Sph Boundary Type".
+          * - :py:attr:`~GetValidSphBoundaryTypeValues`
+            - Get a list of all possible values for "Sph Boundary Type".
+          * - :py:attr:`~GetSurfaceTensionContactAngle`
+            - Get the value of "Surface Tension Contact Angle".
+          * - :py:attr:`~SetSurfaceTensionContactAngle`
+            - Set the value of "Surface Tension Contact Angle".
+          * - :py:attr:`~GetMaterial`
+            - Get the "Material".
+          * - :py:attr:`~SetMaterial`
+            - Set the "Material".
+          * - :py:attr:`~GetAvailableMaterials`
+            - Get all available Materials.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.conveyors.ra_feed_conveyor import RAFeedConveyor
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetAccelerationPeriod(unit: str | None = None) -> float
+
+   
+   Get the value of "Acceleration Period".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAccelerationPeriod(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Acceleration Period".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBeginningStopTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Beginning Stop Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBeginningStopTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Beginning Stop Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBeltSpeed(unit: str | None = None) -> float
+
+   
+   Get the value of "Belt Speed".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBeltSpeed(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Belt Speed".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDecelerationPeriod(unit: str | None = None) -> float
+
+   
+   Get the value of "Deceleration Period".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDecelerationPeriod(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Deceleration Period".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBeginningStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Beginning Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBeginningStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Beginning Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCapillaryFrictionCoefficient() -> float
+
+   
+   Get the value of "Capillary Friction Coefficient".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCapillaryFrictionCoefficient(value: str | float) -> None
+
+   
+   Set the value of "Capillary Friction Coefficient".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDropBoxHeight(unit: str | None = None) -> float
+
+   
+   Get the value of "Drop Box Height".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDropBoxHeight(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Drop Box Height".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDropBoxLength(unit: str | None = None) -> float
+
+   
+   Get the value of "Drop Box Length".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDropBoxLength(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Drop Box Length".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDropBoxWidth(unit: str | None = None) -> float
+
+   
+   Get the value of "Drop Box Width".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDropBoxWidth(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Drop Box Width".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFrontPlateOffset(unit: str | None = None) -> float
+
+   
+   Get the value of "Front Plate Offset".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFrontPlateOffset(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Front Plate Offset".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWallThickness(unit: str | None = None) -> float
+
+   
+   Get the value of "Wall Thickness".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetWallThickness(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Wall Thickness".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBeltThickness(unit: str | None = None) -> float
+
+   
+   Get the value of "Belt Thickness".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBeltThickness(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Belt Thickness".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBeltWidth(unit: str | None = None) -> float
+
+   
+   Get the value of "Belt Width".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBeltWidth(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Belt Width".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLoadingLength(unit: str | None = None) -> float
+
+   
+   Get the value of "Loading Length".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLoadingLength(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Loading Length".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTemperature(unit: str | None = None) -> float
+
+   
+   Get the value of "Temperature".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTemperature(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Temperature".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetThermalBoundaryConditionType() -> str
+
+   
+   Get "Thermal Boundary Condition Type" as a string.
+
+   :return:
+       The returned value will be one of ['adiabatic', 'prescribed_temperature', 'cfd_coupled_temperature'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetThermalBoundaryConditionType(value: str) -> None
+
+   
+   Set the value of "Thermal Boundary Condition Type".
+
+   :param value:
+       The value to set. Must be one of ['adiabatic', 'prescribed_temperature', 'cfd_coupled_temperature'].
+   :raises RockyApiError:
+       If `value` is not a valid "Thermal Boundary Condition Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidThermalBoundaryConditionTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Thermal Boundary Condition Type".
+
+   :return:
+       The returned list is ['adiabatic', 'prescribed_temperature', 'cfd_coupled_temperature'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTransitionLength(unit: str | None = None) -> float
+
+   
+   Get the value of "Transition Length".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTransitionLength(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Transition Length".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTriangleSize(unit: str | None = None) -> float
+
+   
+   Get the value of "Triangle Size".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTriangleSize(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Triangle Size".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDiameter(unit: str | None = None) -> float
+
+   
+   Get the value of "Diameter".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDiameter(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Diameter".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFaceWidth(unit: str | None = None) -> float
+
+   
+   Get the value of "Face Width".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFaceWidth(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Face Width".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOffsetToIdlers(unit: str | None = None) -> float
+
+   
+   Get the value of "Offset To Idlers".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOffsetToIdlers(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Offset To Idlers".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAlignmentAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Alignment Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAlignmentAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Alignment Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBeltInclineAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Belt Incline Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBeltInclineAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Belt Incline Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetHorizontalOffset(unit: str | None = None) -> float
+
+   
+   Get the value of "Horizontal Offset".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetHorizontalOffset(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Horizontal Offset".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOutOfPlaneOffset(unit: str | None = None) -> float
+
+   
+   Get the value of "Out of Plane Offset".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOutOfPlaneOffset(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Out of Plane Offset".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetReturnBeltAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Return Belt Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetReturnBeltAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Return Belt Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVerticalOffset(unit: str | None = None) -> float
+
+   
+   Get the value of "Vertical Offset".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVerticalOffset(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Vertical Offset".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSkirtboardHeight(unit: str | None = None) -> float
+
+   
+   Get the value of "Skirtboard Height".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSkirtboardHeight(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Skirtboard Height".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetHeightOffset(unit: str | None = None) -> float
+
+   
+   Get the value of "Height Offset".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetHeightOffset(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Height Offset".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSkirtboardLength(unit: str | None = None) -> float
+
+   
+   Get the value of "Skirtboard Length".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSkirtboardLength(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Skirtboard Length".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLengthOffset(unit: str | None = None) -> float
+
+   
+   Get the value of "Length Offset".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLengthOffset(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Length Offset".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWidth(unit: str | None = None) -> float
+
+   
+   Get the value of "Width".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetWidth(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Width".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSphBoundaryType() -> str
+
+   
+   Get "Sph Boundary Type" as a string.
+
+   :return:
+       The returned value will be one of ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSphBoundaryType(value: str) -> None
+
+   
+   Set the value of "Sph Boundary Type".
+
+   :param value:
+       The value to set. Must be one of ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+   :raises RockyApiError:
+       If `value` is not a valid "Sph Boundary Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidSphBoundaryTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Sph Boundary Type".
+
+   :return:
+       The returned list is ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSurfaceTensionContactAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Surface Tension Contact Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSurfaceTensionContactAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Surface Tension Contact Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaterial()
+
+   
+   Get the "Material".
+
+   :rtype: :class:`RASolidMaterial`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaterial(value) -> None
+
+   
+   Set the "Material".
+
+   :param unicode, :class:`RASolidMaterial` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableMaterials()
+
+   
+   Get all available Materials.
+
+   :rtype: List[:class:`RASolidMaterial`]
+       A list of :class:`RASolidMaterial`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

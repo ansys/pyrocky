@@ -1,0 +1,300 @@
+
+
+
+
+
+
+:class:`RASpringDashpotMoment`
+==============================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_spring_dashpot_moment.RASpringDashpotMoment(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper representing a Spring-Dashpot Moment motion.
+
+   Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+   example:
+
+   .. code-block:: python
+
+       motions = motion_frame.GetMotions()
+       motion_1 = motions.New()
+       motion_1.SetType('Spring-Dashpot Moment')
+       spring_moment = motion_1.GetTypeObject()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASpringDashpotMoment
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDashpotCoefficient`
+            - Get the value of "Dashpot Coefficient".
+          * - :py:attr:`~SetDashpotCoefficient`
+            - Set the value of "Dashpot Coefficient".
+          * - :py:attr:`~GetDirection`
+            - Get "Direction" as a string.
+          * - :py:attr:`~SetDirection`
+            - Set the value of "Direction".
+          * - :py:attr:`~GetValidDirectionValues`
+            - Get a list of all possible values for "Direction".
+          * - :py:attr:`~GetSpringCoefficient`
+            - Get the value of "Spring Coefficient".
+          * - :py:attr:`~SetSpringCoefficient`
+            - Set the value of "Spring Coefficient".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_spring_dashpot_moment import RASpringDashpotMoment
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetDashpotCoefficient(unit: str | None = None) -> float
+
+   
+   Get the value of "Dashpot Coefficient".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Nms/rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDashpotCoefficient(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Dashpot Coefficient".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Nms/rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDirection() -> str
+
+   
+   Get "Direction" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'x', 'y', 'xy', 'z', 'xz', 'yz', 'xyz'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDirection(value: str) -> None
+
+   
+   Set the value of "Direction".
+
+   :param value:
+       The value to set. Must be one of ['none', 'x', 'y', 'xy', 'z', 'xz', 'yz', 'xyz'].
+   :raises RockyApiError:
+       If `value` is not a valid "Direction" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidDirectionValues() -> list[str]
+
+   
+   Get a list of all possible values for "Direction".
+
+   :return:
+       The returned list is ['none', 'x', 'y', 'xy', 'z', 'xz', 'yz', 'xyz'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSpringCoefficient(unit: str | None = None) -> float
+
+   
+   Get the value of "Spring Coefficient".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Nm/rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSpringCoefficient(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Spring Coefficient".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Nm/rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

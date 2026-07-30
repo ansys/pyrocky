@@ -1,0 +1,90 @@
+
+
+.. py:class:: ApiExportToolkitProxy(pyro_api: Pyro5.api.Proxy)
+
+
+
+
+.. py:currentmodule:: ApiExportToolkitProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~serialize`
+            - Serialize a proxy object of the API ExportToolkit object.
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getattr__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __getattr__(attr_name: str) -> collections.abc.Callable
+
+
+.. py:method:: serialize(obj: ApiExportToolkitProxy) -> dict
+   :classmethod:
+
+   
+   Serialize a proxy object of the API ExportToolkit object.
+
+
+   :Parameters:
+
+       **obj** : :obj:`Any`
+           Object to serialize.
+
+   :Returns:
+
+       :class:`python:dict`
+           Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+

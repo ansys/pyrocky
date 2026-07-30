@@ -1,0 +1,35 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_time_series_rotation
+==============================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_time_series_rotation
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_time_series_rotation.RATimeSeriesRotation
+
+
+Module Contents
+---------------
+
+.. py:class:: RATimeSeriesRotation(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: ImportTimeSeriesMotion(file_path: str) -> None
+
+

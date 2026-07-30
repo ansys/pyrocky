@@ -1,0 +1,321 @@
+
+
+
+
+
+
+:class:`RAResidenceTime`
+========================
+
+
+.. py:class:: ansys.rocky.app.ra_residence_time.RAResidenceTime(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate Residence Time Calculators in a project.
+
+   The class corresponds to an individual "Residence Time" calculation under the
+   "Particles Calculation" item on the project's data tree. To create the
+   :class:`RAResidenceTime` from a :class:`RACalculations`, use:
+
+   .. code-block:: python
+
+       selection_process = study.GetElement('Particles')
+       particles_calculations = study.GetCalculations()
+       residence_time = particles_calculations.CreateSelectionResidenceTime(selection_process)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAResidenceTime
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetGridFunctionName`
+            - Get the grid function name. This name can be used to access the grid
+          * - :py:attr:`~GetCalculatorName`
+            - Get the grid function name. This name can be used to access the grid
+          * - :py:attr:`~GetNameMask`
+            - Get the value of "Name Mask".
+          * - :py:attr:`~SetNameMask`
+            - Set the value of "Name Mask".
+          * - :py:attr:`~GetStopTime`
+            - Get the value of "Stop Time".
+          * - :py:attr:`~SetStopTime`
+            - Set the value of "Stop Time".
+          * - :py:attr:`~GetStartTime`
+            - Get the value of "Start Time".
+          * - :py:attr:`~SetStartTime`
+            - Set the value of "Start Time".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_residence_time import RAResidenceTime
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.particles_calculations.selection_residence_time_calculation.ParticlesSelectionResidenceTimeCalculator]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetGridFunctionName() -> str
+
+   
+   Get the grid function name. This name can be used to access the grid
+   function on a particle-based process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCalculatorName() -> str
+
+   
+   Get the grid function name. This name can be used to access the grid
+   function on a particle-based process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNameMask() -> str
+
+   
+   Get the value of "Name Mask".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNameMask(value: str) -> None
+
+   
+   Set the value of "Name Mask".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStopTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Stop Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStopTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Stop Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

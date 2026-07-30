@@ -1,0 +1,530 @@
+
+
+
+
+
+
+.. py:module:: ansys.rocky.core.rocky_api_proxies
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: rocky_api_proxies
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ApiElementProxy`
+            - Provides a proxy object for an API element.
+
+
+          * - :py:obj:`~ApiListProxy`
+            - Provides a proxy object for API elements that implement the sequence interface.
+
+
+          * - :py:obj:`~ApiGridFunctionProxy`
+            - 
+
+
+          * - :py:obj:`~ApiExportToolkitProxy`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Module that defines the ``ApiElementProxy`` classes, which acts as a proxy for a
+Rocky application internal objects.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+.. py:class:: ApiElementProxy(pyro_api: Pyro5.api.Proxy, pool_id: str)
+
+   
+   Provides a proxy object for an API element.
+
+
+   :Parameters:
+
+       **pyro_api** : :obj:`Pyro5.api.Proxy`
+           Pyro5 proxy object for interacting with the Rocky app.
+
+       **pool_id** : :class:`python:int`
+           ID of the API element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: ApiElementProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~serialize`
+            - Serialize a proxy object of the API element.
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getattr__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiElementProxy
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __getattr__(attr_name: str) -> object
+
+
+.. py:method:: serialize(obj: ApiElementProxy) -> dict
+   :classmethod:
+
+   
+   Serialize a proxy object of the API element.
+
+
+   :Parameters:
+
+       **obj** : :obj:`Any`
+           Object to serialize.
+
+   :Returns:
+
+       :class:`python:dict`
+           Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:class:: ApiListProxy(pyro_api: Pyro5.api.Proxy, pool_id: str)
+
+   Bases: :py:obj:`ApiElementProxy`
+
+
+   
+   Provides a proxy object for API elements that implement the sequence interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ApiListProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~serialize`
+            - Serialize a proxy object of the API element.
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__len__`
+            - 
+          * - :py:attr:`~__getitem__`
+            - 
+          * - :py:attr:`~__iter__`
+            - 
+          * - :py:attr:`~__delitem__`
+            - 
+          * - :py:attr:`~__getattr__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiListProxy
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __len__() -> int
+
+
+.. py:method:: __getitem__(index: int) -> ApiElementProxy
+
+
+.. py:method:: __iter__() -> collections.abc.Generator[ApiElementProxy, None, None]
+
+
+.. py:method:: __delitem__(index: int) -> None
+
+
+.. py:method:: __getattr__(attr_name: str) -> object
+
+
+.. py:method:: serialize(obj: ApiElementProxy) -> dict
+   :classmethod:
+
+   
+   Serialize a proxy object of the API element.
+
+
+   :Parameters:
+
+       **obj** : :obj:`Any`
+           Object to serialize.
+
+   :Returns:
+
+       :class:`python:dict`
+           Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:class:: ApiGridFunctionProxy(grid_pool_id: str, gf_name: str, pyro_api: Pyro5.api.Proxy)
+
+
+
+
+.. py:currentmodule:: ApiGridFunctionProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~serialize`
+            - Serialize a proxy object of the API Grid Functions.
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getattr__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiGridFunctionProxy
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __getattr__(attr_name: str) -> collections.abc.Callable
+
+
+.. py:method:: serialize(obj: ApiGridFunctionProxy) -> dict
+   :classmethod:
+
+   
+   Serialize a proxy object of the API Grid Functions.
+
+
+   :Parameters:
+
+       **obj** : :obj:`Any`
+           Object to serialize.
+
+   :Returns:
+
+       :class:`python:dict`
+           Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:class:: ApiExportToolkitProxy(pyro_api: Pyro5.api.Proxy)
+
+
+
+
+.. py:currentmodule:: ApiExportToolkitProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~serialize`
+            - Serialize a proxy object of the API ExportToolkit object.
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getattr__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: __getattr__(attr_name: str) -> collections.abc.Callable
+
+
+.. py:method:: serialize(obj: ApiExportToolkitProxy) -> dict
+   :classmethod:
+
+   
+   Serialize a proxy object of the API ExportToolkit object.
+
+
+   :Parameters:
+
+       **obj** : :obj:`Any`
+           Object to serialize.
+
+   :Returns:
+
+       :class:`python:dict`
+           Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+

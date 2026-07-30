@@ -1,0 +1,105 @@
+
+
+
+
+
+
+:class:`RAMotionFrameSource`
+============================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_motion_frame_source.RAMotionFrameSource(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.motion.ra_base_motion.RABaseMotionFrame`
+
+
+   
+   Rocky PrePost Scripting wrapper for the root element for Motion Frames
+
+   This class represents the "Motion Frame" item on the project's data tree. Get the :class:`RAMotionFrameSource`
+   from a :class:`RAStudy` via:
+
+   .. code-block:: python
+
+       motion_frame_source = study.GetMotionFrameSource()
+
+   This is the element through which motion frames with no parent frames can be created, and through
+   which all motion frames can be directly accessed:
+
+   .. code-block:: python
+
+       motion_frame_1 = motion_frame_source.NewFrame()
+       motion_frame_2 = motion_frame.GetMotionFrame('My Frame')
+       for motion_frame in motion_frame.IterMotionFrames():
+           motion_frame.SetRelativePosition([1.0, 2.0, 3.0], 'm')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAMotionFrameSource
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_motion_frame_source import RAMotionFrameSource
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+
+
+

@@ -1,0 +1,288 @@
+
+
+
+
+
+
+:class:`RATimeRangeFilter`
+==========================
+
+
+.. py:class:: ansys.rocky.app.ra_time_range_filter.RATimeRangeFilter(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate Time Range Filter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RATimeRangeFilter
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDomainRange`
+            - Get the value of "Domain Range".
+          * - :py:attr:`~SetDomainRange`
+            - Set the value of "Domain Range".
+          * - :py:attr:`~GetValidDomainRangeValues`
+            - Get a list of all possible values for "Domain Range".
+          * - :py:attr:`~GetFinal`
+            - Get the value of "Final".
+          * - :py:attr:`~SetFinal`
+            - Set the value of "Final".
+          * - :py:attr:`~GetInitial`
+            - Get the value of "Initial".
+          * - :py:attr:`~SetInitial`
+            - Set the value of "Initial".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_time_range_filter import RATimeRangeFilter
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetDomainRange() -> str
+
+   
+   Get the value of "Domain Range".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDomainRange(value: str)
+
+   
+   Set the value of "Domain Range".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidDomainRangeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Domain Range".
+
+   :return:
+         The returned list is ['Application Time Filter', 'All', 'Last Output', 'Time Range',
+         'Specific Time', 'After Time', 'Time Range Relative to Simulation End'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFinal(unit: str | None = None) -> float
+
+   
+   Get the value of "Final".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFinal(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Final".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInitial(unit: str | None = None) -> float
+
+   
+   Get the value of "Initial".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitial(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Initial".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,0 +1,374 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings
+===============================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_settings.RASPHSettings
+
+
+Module Contents
+---------------
+
+.. py:class:: RASPHSettings(id, model_id: _typeshed.Incomplete | None = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.sph.sph_settings.SPHProcess]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetBackgroundPressure() -> float
+
+
+   .. py:method:: SetBackgroundPressure(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: SetSolver(value: str) -> None
+
+
+   .. py:method:: GetSolver() -> str
+
+
+   .. py:method:: GetCS() -> float
+
+
+   .. py:method:: SetCS(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetClearyFactor() -> float
+
+
+   .. py:method:: SetClearyFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetDensityDevMinus() -> float
+
+
+   .. py:method:: SetDensityDevMinus(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetDensityDevPlus() -> float
+
+
+   .. py:method:: SetDensityDevPlus(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetDensityRelativeErrorTolerance() -> float
+
+
+   .. py:method:: SetDensityRelativeErrorTolerance(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetDissFactor() -> float
+
+
+   .. py:method:: SetDissFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetDistFactorNorm() -> float
+
+
+   .. py:method:: SetDistFactorNorm(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetDistFactorTang() -> float
+
+
+   .. py:method:: SetDistFactorTang(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetEulerianSolutionEnabled() -> bool
+
+
+   .. py:method:: SetEulerianSolutionEnabled(value: bool) -> None
+
+
+   .. py:method:: EnableEulerianSolution() -> None
+
+
+   .. py:method:: DisableEulerianSolution() -> None
+
+
+   .. py:method:: IsEulerianSolutionEnabled() -> bool
+
+
+   .. py:method:: GetFreeSurfaceDivergenceLimit() -> float
+
+
+   .. py:method:: SetFreeSurfaceDivergenceLimit(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetKernelDistFactor() -> float
+
+
+   .. py:method:: SetKernelDistFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetKernelType() -> str
+
+
+   .. py:method:: SetKernelType(value: str) -> None
+
+
+   .. py:method:: GetValidKernelTypeValues() -> List[str]
+
+
+   .. py:method:: GetLimitTurbulentViscosity() -> bool
+
+
+   .. py:method:: SetLimitTurbulentViscosity(value: bool) -> None
+
+
+   .. py:method:: GetMaximumExpectedVelocity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMaximumExpectedVelocity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMaximumNumberOfIterations() -> int
+
+
+   .. py:method:: SetMaximumNumberOfIterations(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetMinDistFactor() -> float
+
+
+   .. py:method:: SetMinDistFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetNegativePressureFactor() -> float
+
+
+   .. py:method:: SetNegativePressureFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetNumCellSteps() -> int
+
+
+   .. py:method:: SetNumCellSteps(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetNumberOfSteps() -> int
+
+
+   .. py:method:: SetNumberOfSteps(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetPosCorrectionType() -> str
+
+
+   .. py:method:: SetPosCorrectionType(value: str) -> None
+
+
+   .. py:method:: GetValidPosCorrectionTypeValues() -> List[str]
+
+
+   .. py:method:: GetPressureDeg() -> int
+
+
+   .. py:method:: SetPressureDeg(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetPressureUnderRelaxationFactor() -> float
+
+
+   .. py:method:: SetPressureUnderRelaxationFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetShepardFilterOnDensityEnabled() -> bool
+
+
+   .. py:method:: SetShepardFilterOnDensityEnabled(value: bool) -> None
+
+
+   .. py:method:: EnableShepardFilterOnDensity() -> None
+
+
+   .. py:method:: DisableShepardFilterOnDensity() -> None
+
+
+   .. py:method:: IsShepardFilterOnDensityEnabled() -> bool
+
+
+   .. py:method:: GetShepardFilterOnPressureEnabled() -> bool
+
+
+   .. py:method:: SetShepardFilterOnPressureEnabled(value: bool) -> None
+
+
+   .. py:method:: EnableShepardFilterOnPressure() -> None
+
+
+   .. py:method:: DisableShepardFilterOnPressure() -> None
+
+
+   .. py:method:: IsShepardFilterOnPressureEnabled() -> bool
+
+
+   .. py:method:: GetShiftingFactor() -> float
+
+
+   .. py:method:: SetShiftingFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSize(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSolverModel() -> str
+
+
+   .. py:method:: SetSolverModel(value: str) -> None
+
+
+   .. py:method:: GetValidSolverModelValues() -> List[str]
+
+
+   .. py:method:: GetSoundSpeed(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSoundSpeed(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStabilityDegree() -> int
+
+
+   .. py:method:: SetStabilityDegree(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetStabilityNegFactor() -> float
+
+
+   .. py:method:: SetStabilityNegFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetStabilityPosFactor() -> float
+
+
+   .. py:method:: SetStabilityPosFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetStiffFactor() -> float
+
+
+   .. py:method:: SetStiffFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSurfaceTensionBoundaryAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSurfaceTensionBoundaryAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSurfaceTensionBoundaryFraction() -> float
+
+
+   .. py:method:: SetSurfaceTensionBoundaryFraction(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSurfaceTensionCoefficient(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSurfaceTensionCoefficient(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSurfaceTensionType() -> str
+
+
+   .. py:method:: SetSurfaceTensionType(value: str) -> None
+
+
+   .. py:method:: GetValidSurfaceTensionTypeValues() -> List[str]
+
+
+   .. py:method:: GetTimestepFactor() -> float
+
+
+   .. py:method:: SetTimestepFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetTurbDistanceFraction() -> float
+
+
+   .. py:method:: SetTurbDistanceFraction(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetTurbulenceType() -> str
+
+
+   .. py:method:: SetTurbulenceType(value: str) -> None
+
+
+   .. py:method:: GetValidTurbulenceTypeValues() -> List[str]
+
+
+   .. py:method:: GetTurbulentPrandtl() -> float
+
+
+   .. py:method:: SetTurbulentPrandtl(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetTurbulentViscosityMaximumRatio() -> float
+
+
+   .. py:method:: SetTurbulentViscosityMaximumRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetUpdateCoupledDensity() -> bool
+
+
+   .. py:method:: SetUpdateCoupledDensity(value: bool) -> None
+
+
+   .. py:method:: GetUseParticlesNeighborsList() -> bool
+
+
+   .. py:method:: SetUseParticlesNeighborsList(value: bool) -> None
+
+
+   .. py:method:: GetViscosityType() -> str
+
+
+   .. py:method:: SetViscosityType(value: str) -> None
+
+
+   .. py:method:: GetValidViscosityTypeValues() -> List[str]
+
+
+   .. py:method:: GetXsphFactor() -> float
+
+
+   .. py:method:: SetXsphFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetFluidMaterial()
+
+
+   .. py:method:: SetFluidMaterial(value) -> None
+
+
+   .. py:method:: GetAvailableFluidMaterials()
+
+

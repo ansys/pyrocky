@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_solid_material.py`` module
+===================================
+
+.. py:module:: ansys.rocky.app.ra_solid_material
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_solid_material
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_solid_material.RASolidMaterial`
+            - Rocky PrePost Scripting wrapper for individual materials in a project.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RASolidMaterial</api/ansys/rocky/app/ra_solid_material/RASolidMaterial>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

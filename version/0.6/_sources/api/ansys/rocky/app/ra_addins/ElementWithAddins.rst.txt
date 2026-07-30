@@ -1,0 +1,197 @@
+
+
+
+
+
+
+:class:`ElementWithAddins`
+==========================
+
+
+.. py:class:: ansys.rocky.app.ra_addins.ElementWithAddins
+
+   
+   Rocky PrePost Scripting wrapper for properties in a module or elements with module properties
+   like in material interaction and particle input.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: ElementWithAddins
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetModuleProperties`
+            - Get the names of the module properties.
+          * - :py:attr:`~GetModuleProperty`
+            - Get the value of a module property.
+          * - :py:attr:`~SetModuleProperty`
+            - Set the value of a module property.
+          * - :py:attr:`~GetValidOptionsForModuleProperty`
+            - Get all valid options only for properties that have a list of possible options.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_addins import ElementWithAddins
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetModuleProperties() -> collections.abc.Sequence[ModulePropertyIdentifier]
+
+   
+   Get the names of the module properties.
+
+   :rtype: tuple(ModulePropertyIdentifier)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModuleProperty(property_name: str | ModulePropertyIdentifier, unit: str | None = None) -> float | bool | str | ansys.rocky.app.ra_addin_list.RAModulePropertyList
+
+   
+   Get the value of a module property.
+
+   :param Union[str, ModulePropertyIdentifier] property_name:
+       The name of the module property to get.
+   :param str unit:
+       The unit for `value`, just for scalar properties. If no unit is provided,
+       the returned value will be in the unit that was set before (via `SetModuleProperty()`).
+   :rtype: float, bool, str or :class:`RAModulePropertyList`
+   :return:
+       - For basic module properties like numbers and booleans, the returned value is a basic
+         Python type (float, bool, or string)
+       - For input files, the returned value is the string of the full path to the file
+       - For properties that are lists of other properties, the returned value is a
+           :class:`RAModulePropertyList`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetModuleProperty(property_name: str | ModulePropertyIdentifier, value: float | bool | str, unit: str | None = None) -> None
+
+   
+   Set the value of a module property.
+
+   :param Union[str, ModulePropertyIdentifier] property_name:
+       The name of the module property to set.
+   :param float, bool or str value:
+       The value to set.
+       If the property_name references to an enum property then value must be an str value.
+   :param str unit:
+       The unit for `value`, just for scalar properties. If no unit is provided,
+       `value` is assumed to be the unit was set before.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidOptionsForModuleProperty(property_name)
+
+   
+   Get all valid options only for properties that have a list of possible options.
+
+   :param str property_name:
+       The name of the module property.
+   :rtype: List[str]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

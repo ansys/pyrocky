@@ -1,0 +1,100 @@
+
+
+
+
+
+
+:class:`RACylinderGroup`
+========================
+
+
+.. py:class:: ansys.rocky.app.ra_process_element.RACylinderGroup
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_element_item.KAElementItem`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.app._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractCylinderMixin`
+
+
+   
+   Mixin for classes that define a cylinder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RACylinderGroup
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~AddProcess`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_process_element import RACylinderGroup
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.user_process.group.cylinder_process_group.CylinderProcessGroup]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: AddProcess(source_process: coilib50.process.base_process_subject.AbstractProcessSubject) -> None
+
+
+
+

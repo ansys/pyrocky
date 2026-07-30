@@ -1,0 +1,134 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction_collection
+===================================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction_collection
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction_collection.RAMaterialsInteractionCollection
+
+
+Module Contents
+---------------
+
+.. py:class:: RAMaterialsInteractionCollection(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction.RAMaterialsInteraction`\ ]
+
+
+   
+   Base class for API classes that wrap SubjectLists (and related list classes).
+
+   Provides methods to add, remove and iterate on the items. The PrePost Scripting wrappers for the list items
+   will be obtained via ApiApplication._GetElementWrapper(), so it's important that these wrappers
+   are registered as wrapper classes (see `EPApiExtension`).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: New() -> None
+
+      
+      Add a new item. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: __delitem__(index) -> None
+
+
+   .. py:method:: Remove(item) -> None
+
+      
+      Remove an item from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: Clear() -> None
+
+      
+      Remove all items from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: GetMaterialsInteraction(material_1, material_2) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction.RAMaterialsInteraction
+
+

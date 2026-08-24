@@ -252,7 +252,13 @@ def launch_container(  # pragma: no cover
     RockyClient
         Rocky client instance connected to the launched container.
     """
-    import docker
+    try:
+        import docker
+    except ImportError:
+        raise LaunchError("""
+            Failed to launch container: docker-py not installed.
+            Install it by running `pip install .[docker]`.
+            """)
 
     image = f"{product}:{version_tag}"
     uds_socket_dir = _uds_socket_path(port).parent

@@ -28,7 +28,6 @@ dependencies = [
     "numpy>=1.19, <3.0",
     "ansys-tools-common>=0.4.5",
     "click==8.4.2",
-    "docker>=7.1.0"
 ]
 
 [project.optional-dependencies]
@@ -45,6 +44,9 @@ doc = [
     "sphinx-copybutton==0.5.2",
     "sphinx-gallery==0.21.0",
     "matplotlib==3.10.9", # required by sphinx-gallery
+]
+docker = [
+    "docker>=7.1.0"
 ]
 
 [project.urls]

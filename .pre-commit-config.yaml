@@ -19,7 +19,12 @@ repos:
   rev: v2.4.3
   hooks:
   - id: codespell
-    args: ["--skip=pyproject.toml, src/ansys/rocky/app/*"]
+    args:
+    - "--skip"
+    - "pyproject.toml, src/ansys/rocky/app/*"
+    - "--ignore-words"
+    - "doc/styles/config/vocabularies/ANSYS/accept.txt"
+    - "-w"
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v6.0.0

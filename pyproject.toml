@@ -1,5 +1,5 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
+requires = ["flit_core >=3.2,<5"]
 build-backend = "flit_core.buildapi"
 
 [project]
@@ -27,7 +27,7 @@ dependencies = [
     "Pyro5>=5.13",
     "numpy>=1.19, <3.0",
     "ansys-tools-common>=0.4.5",
-    "click==8.4.2",
+    "click==8.5.0",
 ]
 
 [project.optional-dependencies]
@@ -35,7 +35,7 @@ tests = [
     "pytest==9.1.1",
     "pytest-cov==7.1.0",
     "requests==2.34.2",
-    "ansys-tools-common==0.5.1"
+    "ansys-tools-common==0.5.2"
 ]
 doc = [
     "ansys-sphinx-theme[autoapi]==1.9.0",

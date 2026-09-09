@@ -6,3 +6,5 @@ dialogs
 (?i)API
 (?i)pyrocky
 [Pp]ostprocess
+Synopsys
+synopsys

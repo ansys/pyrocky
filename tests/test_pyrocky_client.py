@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,7 +21,10 @@
 # SOFTWARE.
 
 from concurrent.futures import ThreadPoolExecutor
+import os
 import sys
+
+import pytest
 
 from ansys.rocky.core.client import RockyClient
 from ansys.rocky.core.rocky_api_proxies import ApiExportToolkitProxy
@@ -105,6 +108,12 @@ def test_pyro_excepthook_installed(rocky_api, capsys) -> None:
     assert "Remote traceback" in out_err.err
 
 
+ANSYS_VERSION = int(os.getenv("ANSYS_VERSION", "261"))
+
+
+@pytest.mark.skipif(
+    ANSYS_VERSION < 261, reason="Support for multithreaded API calls was added in v261."
+)
 def test_multithread_api_calls(rocky_session: RockyClient) -> None:
     """Test that api calls can be executed on distinct threads."""
 

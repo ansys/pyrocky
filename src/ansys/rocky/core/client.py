@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -19,10 +19,12 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
 """
 Module that defines the ``RockyClient`` class, which acts as a proxy for a Rocky
 application session.
 """
+
 import hashlib
 import os
 from pathlib import Path
@@ -146,6 +148,9 @@ class RockyClient:
     pyro_uri : str
         URI of the Pyro5 proxy object that connects to the Rocky app.
     """
+
+    # Avoid TCP connection issues due to client/server hostname resolution mismatch.
+    Pyro5.config.PREFER_IP_VERSION = 4
 
     def __init__(self, pyro_uri: str) -> None:
         self._pyro_uri = pyro_uri

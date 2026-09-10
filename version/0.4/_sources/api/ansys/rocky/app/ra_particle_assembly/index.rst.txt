@@ -1,0 +1,87 @@
+
+
+
+
+
+
+The ``ra_particle_assembly.py`` module
+======================================
+
+.. py:module:: ansys.rocky.app.ra_particle_assembly
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_particle_assembly
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_particle_assembly.RAParticleAssemblyPart`
+            - Rocky PrePost Scripting wrapper for a single entry in a single Particle Assembly's part list.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_particle_assembly.RAParticleAssemblyPartList`
+            - Rocky PrePost Scripting wrapper for the parts list in a single Particle Assembly.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_particle_assembly.RAParticleAssemblyCustom`
+            - Base wrapper class for all subjects.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAParticleAssemblyPart</api/ansys/rocky/app/ra_particle_assembly/RAParticleAssemblyPart>
+    <span class="nf nf-cod-symbol_class"></span> RAParticleAssemblyPartList</api/ansys/rocky/app/ra_particle_assembly/RAParticleAssemblyPartList>
+    <span class="nf nf-cod-symbol_class"></span> RAParticleAssemblyCustom</api/ansys/rocky/app/ra_particle_assembly/RAParticleAssemblyCustom>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

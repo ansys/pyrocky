@@ -1,0 +1,95 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project
+==========================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project.RATimeOrIndex
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project.RAProject
+
+
+Module Contents
+---------------
+
+.. py:data:: RATimeOrIndex
+
+.. py:class:: RAProject
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: CloseProject(check_save_state: bool = ...) -> None
+
+
+   .. py:method:: SaveProject(filename: Union[str, None] = ...) -> None
+
+
+   .. py:method:: SaveProjectForRestart(filename: str, timestep_or_index: Union[RATimeOrIndex, None] = ...) -> None
+
+
+   .. py:method:: GetProjectFilename() -> str
+
+
+   .. py:method:: GetWrappedClass() -> Type[petroapp10.plugins.entities.petroapp10_project.Petroapp10Project]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: CreateStudy(study_name: Union[str, None] = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_study.RAStudy
+
+
+   .. py:method:: GetStudyNames() -> list[str]
+
+
+   .. py:method:: GetStudy(study_name: Union[str, None] = ...) -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_study.RAStudy, None]
+
+
+   .. py:method:: GetModelStudy(model_item)
+      :classmethod:
+
+
+
+   .. py:method:: GetModelElement(model_element_id)
+
+
+   .. py:method:: GetUserProcessCollection() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_user_process_collection.RAUserProcessCollection, None]
+
+
+   .. py:method:: GetUserProcess(process_name)
+
+
+   .. py:method:: GetTimeFilter() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_filter.RATimeFilter, None]
+
+
+   .. py:method:: GetParametricVariables() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_parametric_variables.RAParametricVariables
+
+
+   .. py:method:: GetInputVariables() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_input_variables.RAInputVariables
+
+
+   .. py:method:: RemoveProcess(process: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem, str]) -> None
+
+
+   .. py:method:: GetElementNames(type_name: _typeshed.Incomplete | None = ...)
+
+
+   .. py:method:: GetElement(element_name: _typeshed.Incomplete | None = ..., type_name: _typeshed.Incomplete | None = ..., raise_if_no_found: bool = ...)
+
+

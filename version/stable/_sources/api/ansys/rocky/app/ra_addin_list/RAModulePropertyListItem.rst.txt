@@ -1,0 +1,97 @@
+
+
+
+
+
+
+:class:`RAModulePropertyListItem`
+=================================
+
+
+.. py:class:: ansys.rocky.app.ra_addin_list.RAModulePropertyListItem(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`
+
+
+   
+   Rocky PrePost Scripting wrapper for an item inside a :class:`RAModulePropertyList`.
+
+   The wrapper corresponds to a single row in a table of module properties inside the editor of
+   an individual Module or simulation entity. It is retrieved from its containing list, via:
+
+   .. code-block:: python
+
+       my_module = study.GetElement('My Module')
+       module_list = my_module.GetModuleProperty('List of Items')
+       module_item = module_list.New()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAModulePropertyListItem
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_addin_list import RAModulePropertyListItem
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.addins.model.property_set.PropertySet]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+
+
+

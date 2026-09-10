@@ -1,0 +1,99 @@
+
+
+
+
+
+
+:class:`ApiGridFunctionProxy`
+=============================
+
+
+.. py:class:: ansys.rocky.core.rocky_api_proxies.ApiGridFunctionProxy(grid_pool_id: str, gf_name: str, pyro_api: Pyro5.api.Proxy, session_uid: str | None = None)
+
+
+
+
+.. py:currentmodule:: ApiGridFunctionProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~serialize`
+            - Serialize a proxy object of the API Grid Functions.
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getattr__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiGridFunctionProxy
+
+
+
+Method detail
+-------------
+
+.. py:method:: __getattr__(attr_name: str) -> collections.abc.Callable
+
+.. py:method:: serialize(obj: ApiGridFunctionProxy) -> dict
+   :classmethod:
+
+
+   
+   Serialize a proxy object of the API Grid Functions.
+
+
+   :Parameters:
+
+       **obj** : :obj:`Any`
+           Object to serialize.
+
+
+
+   :Returns:
+
+       :class:`python:dict`
+           Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

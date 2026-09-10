@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_geometry_collection.py`` module
+========================================
+
+.. py:module:: ansys.rocky.app.ra_geometry_collection
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_geometry_collection
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_geometry_collection.RAGeometryCollection`
+            - Rocky PrePost Scripting wrapper for the collection of geometries in a project.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAGeometryCollection</api/ansys/rocky/app/ra_geometry_collection/RAGeometryCollection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

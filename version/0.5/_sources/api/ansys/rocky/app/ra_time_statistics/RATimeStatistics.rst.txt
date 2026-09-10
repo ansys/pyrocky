@@ -1,0 +1,176 @@
+
+
+
+
+
+
+:class:`RATimeStatistics`
+=========================
+
+
+.. py:class:: ansys.rocky.app.ra_time_statistics.RATimeStatistics(id, ra_process, model_id=None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   PrePost Scripting wrapper for TimeStatisticsContainer.
+
+   Prefer using RATimeStatistics.CreateFor() to create objects of this class, as not all source
+   processes accept time statistics grid functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:currentmodule:: RATimeStatistics
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~CreateFor`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~AddGridFunction`
+            - Add a new time statistics grid function.
+          * - :py:attr:`~RemoveGridFunction`
+            - Remove a previously-generated grid function.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_time_statistics import RATimeStatistics
+
+
+
+Method detail
+-------------
+
+.. py:method:: AddGridFunction(start_time, stop_time, operation, grid_function_name, location=None)
+
+   
+   Add a new time statistics grid function.
+
+   * For both time parameters (`start_time` and `stop_time`), three kinds of values can be passed:
+       - A float or int, which will be assumed to be a value in seconds;
+       - A tuple with a float or int and an unicode. The first element is the value, and the second
+       is the value's unit.
+       - A time Scalar.
+   * `operation` must be the unicode string representing one of the operations that the time
+   statistics grid functions support. Currently these are limited to "average", "min", "max" and
+   "sum".
+   * `grid_function_name` must be the unicode string of the name of the input grid function over
+   which the `operation` will be performed.
+   * `location` is optional and must be one of 'cell' or 'node'. If no location is passed, the
+   time statistics grid function will be created on the cell.
+
+   :rtype: RATimeStatistics
+   :return:
+       An object representing the newly-created time statistics grid function. This object can
+       be used to change the start and stop times, and to retrieve the grid function name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveGridFunction(name_or_calculator) -> None
+
+   
+   Remove a previously-generated grid function.
+
+   The passed value can be either the name of the grid function to be removed, or a
+   RATimeStatisticsCalculator object previously returned by AddGridFunction().
+
+   :param unicode or RATimeStatisticsCalculator name_or_calculator:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: CreateFor(ra_process)
+   :classmethod:
+
+
+
+
+

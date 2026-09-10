@@ -1,0 +1,101 @@
+
+
+
+
+
+
+:class:`RAProcessElementItem`
+=============================
+
+
+.. py:class:: ansys.rocky.app.ra_process_element.RAProcessElementItem
+
+   Bases: :py:obj:`sci20.plugins.api.api_process_element.SciApiProcessElementItem`
+
+
+   
+   Rocky api process model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RAProcessElementItem
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCurve`
+            - Override base class implementation so to properly handle all delayed tasks that might being
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_process_element import RAProcessElementItem
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetCurve(curve_name, simulation_name=None, realization=None, time_step=None)
+
+   
+   Override base class implementation so to properly handle all delayed tasks that might being
+   used to compute the required curve.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

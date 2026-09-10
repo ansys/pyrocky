@@ -1,0 +1,123 @@
+
+
+
+
+
+
+:class:`RAParametricVariables`
+==============================
+
+
+.. py:class:: ansys.rocky.app.ra_parametric_variables.RAParametricVariables(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for the parametric variables (both input and output) in a project.
+
+   Currently the wrapper only provides a project's input variables via :meth:`GetInputVariables`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParametricVariables
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetInputVariables`
+            - Get the PrePost Scripting wrapper that handles the Input Variables in the project.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_parametric_variables import RAParametricVariables
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetInputVariables()
+
+   
+   Get the PrePost Scripting wrapper that handles the Input Variables in the project.
+
+   :rtype: RAInputVariables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

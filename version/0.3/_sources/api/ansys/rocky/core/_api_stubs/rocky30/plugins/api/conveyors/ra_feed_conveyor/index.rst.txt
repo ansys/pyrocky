@@ -1,0 +1,251 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_feed_conveyor
+==========================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_feed_conveyor
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_feed_conveyor.RAFeedConveyor
+
+
+Module Contents
+---------------
+
+.. py:class:: RAFeedConveyor
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.conveyors.ra_base_conveyor.RABaseConveyor`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetAccelerationPeriod(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAccelerationPeriod(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBeginningStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBeginningStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBeltSpeed(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBeltSpeed(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDecelerationPeriod(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDecelerationPeriod(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBeginningStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBeginningStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDropBoxHeight(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDropBoxHeight(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDropBoxLength(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDropBoxLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDropBoxWidth(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDropBoxWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetFrontPlateOffset(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetFrontPlateOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetWallThickness(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetWallThickness(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBeltThickness(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBeltThickness(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBeltWidth(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBeltWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetLoadingLength(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetLoadingLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetThermalBoundaryConditionType() -> str
+
+
+   .. py:method:: SetThermalBoundaryConditionType(value: str) -> None
+
+
+   .. py:method:: GetValidThermalBoundaryConditionTypeValues() -> List[str]
+
+
+   .. py:method:: GetTransitionLength(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTransitionLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTriangleSize(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTriangleSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDiameter(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDiameter(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetFaceWidth(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetFaceWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetOffsetToIdlers(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetOffsetToIdlers(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetAlignmentAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAlignmentAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBeltInclineAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBeltInclineAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetHorizontalOffset(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetHorizontalOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetOutOfPlaneOffset(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetOutOfPlaneOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetReturnBeltAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetReturnBeltAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetVerticalOffset(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetVerticalOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSkirtboardHeight(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSkirtboardHeight(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetHeightOffset(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetHeightOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSkirtboardLength(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSkirtboardLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetLengthOffset(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetLengthOffset(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetWidth(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetWidth(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSphBoundaryType() -> str
+
+
+   .. py:method:: SetSphBoundaryType(value: str) -> None
+
+
+   .. py:method:: GetValidSphBoundaryTypeValues() -> List[str]
+
+
+   .. py:method:: GetSurfaceTensionContactAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSurfaceTensionContactAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMaterial()
+
+
+   .. py:method:: SetMaterial(value) -> None
+
+
+   .. py:method:: GetAvailableMaterials()
+
+

@@ -1,0 +1,110 @@
+
+
+
+
+
+
+:class:`RAMotionList`
+=====================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_motion_list.RAMotionList(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`ansys.rocky.app.motion.ra_motion.RAMotion`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate the motions in a single Motion Frame.
+
+   To get the :class:`RAMotionList` from a :class:`RAMotionFrame`, use:
+
+   .. code-block:: python
+
+       motions = motion_frame.GetMotions()
+
+   The :class:`RAMotionList` class acts as a regular Python list, with the usual methods to iterate
+   and access individual motions:
+
+   .. code-block:: python
+
+       motion_1 = motions.New()
+       motion_2 = motions.New()
+
+       for motion in motions:
+           motion.SetStartTime(1, 's')
+
+       del motions[0]
+       motions.Clear()
+
+   The items in the motion list are of type :class:`RAMotion`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAMotionList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_motion_list import RAMotionList
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+
+
+

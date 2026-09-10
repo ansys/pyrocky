@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_input_variables.py`` module
+====================================
+
+.. py:module:: ansys.rocky.app.ra_input_variables
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_input_variables
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_input_variables.RAInputVariables`
+            - Rocky PrePost Scripting wrapper for the list of parametric input variables.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_input_variables.RAParametricVar`
+            - Rocky PrePost Scripting wrapper for a parametric input variable.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAInputVariables</api/ansys/rocky/app/ra_input_variables/RAInputVariables>
+    <span class="nf nf-cod-symbol_class"></span> RAParametricVar</api/ansys/rocky/app/ra_input_variables/RAParametricVar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_particle_inlet_properties.py`` module
+==============================================
+
+.. py:module:: ansys.rocky.app.ra_particle_inlet_properties
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_particle_inlet_properties
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_particle_inlet_properties.RAParticleInletProperties`
+            - Rocky PrePost Scripting wrapper for a single entry in a single Particle Input's input list.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_particle_inlet_properties.RAParticleInletPropertiesList`
+            - Rocky PrePost Scripting wrapper for the input entries list in a single Particle Input.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAParticleInletProperties</api/ansys/rocky/app/ra_particle_inlet_properties/RAParticleInletProperties>
+    <span class="nf nf-cod-symbol_class"></span> RAParticleInletPropertiesList</api/ansys/rocky/app/ra_particle_inlet_properties/RAParticleInletPropertiesList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

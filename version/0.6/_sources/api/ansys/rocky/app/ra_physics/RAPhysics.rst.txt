@@ -1,0 +1,1581 @@
+
+
+
+
+
+
+:class:`RAPhysics`
+==================
+
+
+.. py:class:: ansys.rocky.app.ra_physics.RAPhysics(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate physics properties.
+
+   This class represents the "Physics" item on the project data tree. To get the :class:`RAPhysics`
+   from a :class:`RAStudy`, use:
+
+   .. code-block:: python
+
+       physics = study.GetPhysics()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAPhysics
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAdhesionModel`
+            - Get "Adhesion Model" as a string.
+          * - :py:attr:`~SetAdhesionModel`
+            - Set the value of "Adhesion Model".
+          * - :py:attr:`~GetValidAdhesionModelValues`
+            - Get a list of all possible values for "Adhesion Model".
+          * - :py:attr:`~GetClosePackingVolumeFraction`
+            - Get the value of "Close Packing Volume Fraction".
+          * - :py:attr:`~SetClosePackingVolumeFraction`
+            - Set the value of "Close Packing Volume Fraction".
+          * - :py:attr:`~GetEnableCoarseGrainModeling`
+            - Get the value of "Enable Coarse Grain Modeling".
+          * - :py:attr:`~SetEnableCoarseGrainModeling`
+            - Set the value of "Enable Coarse Grain Modeling".
+          * - :py:attr:`~GetEnableThermalModel`
+            - Get the value of "Enable Thermal Model".
+          * - :py:attr:`~SetEnableThermalModel`
+            - Set the value of "Enable Thermal Model".
+          * - :py:attr:`~GetGravityStartTime`
+            - Get the value of "Gravity Start Time".
+          * - :py:attr:`~SetGravityStartTime`
+            - Set the value of "Gravity Start Time".
+          * - :py:attr:`~GetGravityStopTime`
+            - Get the value of "Gravity Stop Time".
+          * - :py:attr:`~SetGravityStopTime`
+            - Set the value of "Gravity Stop Time".
+          * - :py:attr:`~GetGravityXDirection`
+            - Get the value of "Gravity X Direction".
+          * - :py:attr:`~SetGravityXDirection`
+            - Set the value of "Gravity X Direction".
+          * - :py:attr:`~GetGravityYDirection`
+            - Get the value of "Gravity Y Direction".
+          * - :py:attr:`~SetGravityYDirection`
+            - Set the value of "Gravity Y Direction".
+          * - :py:attr:`~GetGravityZDirection`
+            - Get the value of "Gravity Z Direction".
+          * - :py:attr:`~SetGravityZDirection`
+            - Set the value of "Gravity Z Direction".
+          * - :py:attr:`~GetImpactEnergyModel`
+            - Get "Impact Energy Model" as a string.
+          * - :py:attr:`~SetImpactEnergyModel`
+            - Set the value of "Impact Energy Model".
+          * - :py:attr:`~GetValidImpactEnergyModelValues`
+            - Get a list of all possible values for "Impact Energy Model".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetNormalForceModel`
+            - Get "Normal Force Model" as a string.
+          * - :py:attr:`~SetNormalForceModel`
+            - Set the value of "Normal Force Model".
+          * - :py:attr:`~GetValidNormalForceModelValues`
+            - Get a list of all possible values for "Normal Force Model".
+          * - :py:attr:`~GetRollingResistanceModel`
+            - Get "Rolling Resistance Model" as a string.
+          * - :py:attr:`~SetRollingResistanceModel`
+            - Set the value of "Rolling Resistance Model".
+          * - :py:attr:`~GetValidRollingResistanceModelValues`
+            - Get a list of all possible values for "Rolling Resistance Model".
+          * - :py:attr:`~GetExponentLimit`
+            - Get the value of "Exponent Limit".
+          * - :py:attr:`~SetExponentLimit`
+            - Set the value of "Exponent Limit".
+          * - :py:attr:`~GetVolumeFractionLimit`
+            - Get the value of "Volume Fraction Limit".
+          * - :py:attr:`~SetVolumeFractionLimit`
+            - Set the value of "Volume Fraction Limit".
+          * - :py:attr:`~GetRestitutionModel`
+            - Get "Restitution Model" as a string.
+          * - :py:attr:`~SetRestitutionModel`
+            - Set the value of "Restitution Model".
+          * - :py:attr:`~GetValidRestitutionModelValues`
+            - Get a list of all possible values for "Restitution Model".
+          * - :py:attr:`~GetSearchDistanceMultiplier`
+            - Get the value of "Search Distance Multiplier".
+          * - :py:attr:`~SetSearchDistanceMultiplier`
+            - Set the value of "Search Distance Multiplier".
+          * - :py:attr:`~GetSphThermalTransferModel`
+            - Get "Sph Thermal Transfer Model" as a string.
+          * - :py:attr:`~SetSphThermalTransferModel`
+            - Set the value of "Sph Thermal Transfer Model".
+          * - :py:attr:`~GetValidSphThermalTransferModelValues`
+            - Get a list of all possible values for "Sph Thermal Transfer Model".
+          * - :py:attr:`~GetNumericalSofteningFactor`
+            - Get the value of "Numerical Softening Factor".
+          * - :py:attr:`~SetNumericalSofteningFactor`
+            - Set the value of "Numerical Softening Factor".
+          * - :py:attr:`~GetTangentialForceModel`
+            - Get "Tangential Force Model" as a string.
+          * - :py:attr:`~SetTangentialForceModel`
+            - Set the value of "Tangential Force Model".
+          * - :py:attr:`~GetValidTangentialForceModelValues`
+            - Get a list of all possible values for "Tangential Force Model".
+          * - :py:attr:`~GetThermalCorrectionModel`
+            - Get "Thermal Correction Model" as a string.
+          * - :py:attr:`~SetThermalCorrectionModel`
+            - Set the value of "Thermal Correction Model".
+          * - :py:attr:`~GetValidThermalCorrectionModelValues`
+            - Get a list of all possible values for "Thermal Correction Model".
+          * - :py:attr:`~GetUpdateDistanceMultiplier`
+            - Get the value of "Update Distance Multiplier".
+          * - :py:attr:`~SetUpdateDistanceMultiplier`
+            - Set the value of "Update Distance Multiplier".
+          * - :py:attr:`~GetUseRadlEtAl`
+            - Get the value of "Use Radl Et Al".
+          * - :py:attr:`~SetUseRadlEtAl`
+            - Set the value of "Use Radl Et Al".
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~enable_thermal_model`
+            - 
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_physics import RAPhysics
+
+Property detail
+---------------
+
+.. py:property:: enable_thermal_model
+
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetAdhesionModel() -> str
+
+   
+   Get "Adhesion Model" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'constant', 'linear', 'JKR', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAdhesionModel(value: str) -> None
+
+   
+   Set the value of "Adhesion Model".
+
+   :param value:
+       The value to set. Must be one of ['none', 'constant', 'linear', 'JKR', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Adhesion Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidAdhesionModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Adhesion Model".
+
+   :return:
+       The returned list is ['none', 'constant', 'linear', 'JKR', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetClosePackingVolumeFraction() -> float
+
+   
+   Get the value of "Close Packing Volume Fraction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetClosePackingVolumeFraction(value: str | float) -> None
+
+   
+   Set the value of "Close Packing Volume Fraction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEnableCoarseGrainModeling() -> bool
+
+   
+   Get the value of "Enable Coarse Grain Modeling".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnableCoarseGrainModeling(value: bool) -> None
+
+   
+   Set the value of "Enable Coarse Grain Modeling".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEnableThermalModel() -> bool
+
+   
+   Get the value of "Enable Thermal Model".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnableThermalModel(value: bool) -> None
+
+   
+   Set the value of "Enable Thermal Model".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGravityStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Gravity Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGravityStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Gravity Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGravityStopTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Gravity Stop Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGravityStopTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Gravity Stop Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGravityXDirection(unit: str | None = None) -> float
+
+   
+   Get the value of "Gravity X Direction".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m/s2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGravityXDirection(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Gravity X Direction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGravityYDirection(unit: str | None = None) -> float
+
+   
+   Get the value of "Gravity Y Direction".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m/s2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGravityYDirection(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Gravity Y Direction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGravityZDirection(unit: str | None = None) -> float
+
+   
+   Get the value of "Gravity Z Direction".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m/s2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGravityZDirection(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Gravity Z Direction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetImpactEnergyModel() -> str
+
+   
+   Get "Impact Energy Model" as a string.
+
+   :return:
+       The returned value will be one of ['default', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetImpactEnergyModel(value: str) -> None
+
+   
+   Set the value of "Impact Energy Model".
+
+   :param value:
+       The value to set. Must be one of ['default', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Impact Energy Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidImpactEnergyModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Impact Energy Model".
+
+   :return:
+       The returned list is ['default', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNormalForceModel() -> str
+
+   
+   Get "Normal Force Model" as a string.
+
+   :return:
+       The returned value will be one of ['linear_hysteresis', 'linear_elastic_viscous', 'damped_hertzian', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNormalForceModel(value: str) -> None
+
+   
+   Set the value of "Normal Force Model".
+
+   :param value:
+       The value to set. Must be one of ['linear_hysteresis', 'linear_elastic_viscous', 'damped_hertzian', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Normal Force Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidNormalForceModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Normal Force Model".
+
+   :return:
+       The returned list is ['linear_hysteresis', 'linear_elastic_viscous', 'damped_hertzian', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRollingResistanceModel() -> str
+
+   
+   Get "Rolling Resistance Model" as a string.
+
+   :return:
+       The returned value will be one of ['type_1', 'type_3', 'none', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRollingResistanceModel(value: str) -> None
+
+   
+   Set the value of "Rolling Resistance Model".
+
+   :param value:
+       The value to set. Must be one of ['type_1', 'type_3', 'none', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Rolling Resistance Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidRollingResistanceModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Rolling Resistance Model".
+
+   :return:
+       The returned list is ['type_1', 'type_3', 'none', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetExponentLimit() -> float
+
+   
+   Get the value of "Exponent Limit".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetExponentLimit(value: str | float) -> None
+
+   
+   Set the value of "Exponent Limit".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVolumeFractionLimit() -> float
+
+   
+   Get the value of "Volume Fraction Limit".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVolumeFractionLimit(value: str | float) -> None
+
+   
+   Set the value of "Volume Fraction Limit".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRestitutionModel() -> str
+
+   
+   Get "Restitution Model" as a string.
+
+   :return:
+       The returned value will be one of ['constant', 'velocity_dependent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRestitutionModel(value: str) -> None
+
+   
+   Set the value of "Restitution Model".
+
+   :param value:
+       The value to set. Must be one of ['constant', 'velocity_dependent'].
+   :raises RockyApiError:
+       If `value` is not a valid "Restitution Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidRestitutionModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Restitution Model".
+
+   :return:
+       The returned list is ['constant', 'velocity_dependent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSearchDistanceMultiplier() -> float
+
+   
+   Get the value of "Search Distance Multiplier".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSearchDistanceMultiplier(value: str | float) -> None
+
+   
+   Set the value of "Search Distance Multiplier".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSphThermalTransferModel() -> str
+
+   
+   Get "Sph Thermal Transfer Model" as a string.
+
+   :return:
+       The returned value will be one of ['cleary', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSphThermalTransferModel(value: str) -> None
+
+   
+   Set the value of "Sph Thermal Transfer Model".
+
+   :param value:
+       The value to set. Must be one of ['cleary', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Sph Thermal Transfer Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidSphThermalTransferModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Sph Thermal Transfer Model".
+
+   :return:
+       The returned list is ['cleary', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumericalSofteningFactor() -> float
+
+   
+   Get the value of "Numerical Softening Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumericalSofteningFactor(value: str | float) -> None
+
+   
+   Set the value of "Numerical Softening Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTangentialForceModel() -> str
+
+   
+   Get "Tangential Force Model" as a string.
+
+   :return:
+       The returned value will be one of ['elastic_coulomb', 'coulomb_limit', 'mindlin_deresiewicz', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTangentialForceModel(value: str) -> None
+
+   
+   Set the value of "Tangential Force Model".
+
+   :param value:
+       The value to set. Must be one of ['elastic_coulomb', 'coulomb_limit', 'mindlin_deresiewicz', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Tangential Force Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidTangentialForceModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Tangential Force Model".
+
+   :return:
+       The returned list is ['elastic_coulomb', 'coulomb_limit', 'mindlin_deresiewicz', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetThermalCorrectionModel() -> str
+
+   
+   Get "Thermal Correction Model" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'morris_et_al_area', 'morris_et_al_area_time'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetThermalCorrectionModel(value: str) -> None
+
+   
+   Set the value of "Thermal Correction Model".
+
+   :param value:
+       The value to set. Must be one of ['none', 'morris_et_al_area', 'morris_et_al_area_time'].
+   :raises RockyApiError:
+       If `value` is not a valid "Thermal Correction Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidThermalCorrectionModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Thermal Correction Model".
+
+   :return:
+       The returned list is ['none', 'morris_et_al_area', 'morris_et_al_area_time'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUpdateDistanceMultiplier() -> float
+
+   
+   Get the value of "Update Distance Multiplier".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUpdateDistanceMultiplier(value: str | float) -> None
+
+   
+   Set the value of "Update Distance Multiplier".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseRadlEtAl() -> bool
+
+   
+   Get the value of "Use Radl Et Al".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseRadlEtAl(value: bool) -> None
+
+   
+   Set the value of "Use Radl Et Al".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

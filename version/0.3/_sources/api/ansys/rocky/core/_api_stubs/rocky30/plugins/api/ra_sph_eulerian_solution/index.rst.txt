@@ -1,0 +1,47 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_eulerian_solution
+========================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_eulerian_solution
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_sph_eulerian_solution.RASPHEulerianSolution
+
+
+Module Contents
+---------------
+
+.. py:class:: RASPHEulerianSolution(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_subject_with_coloring_mixin._RASubjectWithColoringMixin`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetEulerianSolutionEnabled() -> bool
+
+
+   .. py:method:: SetEulerianSolutionEnabled(value: bool) -> None
+
+
+   .. py:method:: EnableEulerianSolution() -> None
+
+
+   .. py:method:: DisableEulerianSolution() -> None
+
+
+   .. py:method:: IsEulerianSolutionEnabled() -> bool
+
+

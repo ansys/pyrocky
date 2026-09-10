@@ -1,0 +1,829 @@
+
+
+
+
+
+
+:class:`RACFDPerParticleParameters`
+===================================
+
+
+.. py:class:: ansys.rocky.app.ra_cfd_parameters.RACFDPerParticleParameters(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper representing the set of CFD parameters for a specific Particle.
+
+   Access individual sets of parameters via a :class:`RABaseCFDCoupling`'s parameters list:
+
+   .. code-block:: python
+
+       parameters_list = coupling_process.GetCFDParametersList()
+       parameters = parameters_list.GetParametersFor('Particle <01>')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RACFDPerParticleParameters
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetConvectiveHeatTransferLaw`
+            - Get "Convective Heat Transfer Law" as a string.
+          * - :py:attr:`~SetConvectiveHeatTransferLaw`
+            - Set the value of "Convective Heat Transfer Law".
+          * - :py:attr:`~GetValidConvectiveHeatTransferLawValues`
+            - Get a list of all possible values for "Convective Heat Transfer Law".
+          * - :py:attr:`~GetDragLaw`
+            - Get "Drag Law" as a string.
+          * - :py:attr:`~SetDragLaw`
+            - Set the value of "Drag Law".
+          * - :py:attr:`~GetValidDragLawValues`
+            - Get a list of all possible values for "Drag Law".
+          * - :py:attr:`~GetLiftLaw`
+            - Get "Lift Law" as a string.
+          * - :py:attr:`~SetLiftLaw`
+            - Set the value of "Lift Law".
+          * - :py:attr:`~GetValidLiftLawValues`
+            - Get a list of all possible values for "Lift Law".
+          * - :py:attr:`~GetMorsiAndAlexanderK1`
+            - Get the value of "Morsi And Alexander K1".
+          * - :py:attr:`~SetMorsiAndAlexanderK1`
+            - Set the value of "Morsi And Alexander K1".
+          * - :py:attr:`~GetMorsiAndAlexanderK2`
+            - Get the value of "Morsi And Alexander K2".
+          * - :py:attr:`~SetMorsiAndAlexanderK2`
+            - Set the value of "Morsi And Alexander K2".
+          * - :py:attr:`~GetMorsiAndAlexanderK3`
+            - Get the value of "Morsi And Alexander K3".
+          * - :py:attr:`~SetMorsiAndAlexanderK3`
+            - Set the value of "Morsi And Alexander K3".
+          * - :py:attr:`~GetSyamlalObrienC1`
+            - Get the value of "Syamlal Obrien C1".
+          * - :py:attr:`~SetSyamlalObrienC1`
+            - Set the value of "Syamlal Obrien C1".
+          * - :py:attr:`~GetSyamlalObrienD1`
+            - Get the value of "Syamlal Obrien D1".
+          * - :py:attr:`~SetSyamlalObrienD1`
+            - Set the value of "Syamlal Obrien D1".
+          * - :py:attr:`~GetTorqueLaw`
+            - Get "Torque Law" as a string.
+          * - :py:attr:`~SetTorqueLaw`
+            - Set the value of "Torque Law".
+          * - :py:attr:`~GetValidTorqueLawValues`
+            - Get a list of all possible values for "Torque Law".
+          * - :py:attr:`~GetUseUserDefinedConstants`
+            - Get the value of "Use User Defined Constants".
+          * - :py:attr:`~SetUseUserDefinedConstants`
+            - Set the value of "Use User Defined Constants".
+          * - :py:attr:`~GetVirtualMassLaw`
+            - Get "Virtual Mass Law" as a string.
+          * - :py:attr:`~SetVirtualMassLaw`
+            - Set the value of "Virtual Mass Law".
+          * - :py:attr:`~GetValidVirtualMassLawValues`
+            - Get a list of all possible values for "Virtual Mass Law".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_cfd_parameters import RACFDPerParticleParameters
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetConvectiveHeatTransferLaw() -> str
+
+   
+   Get "Convective Heat Transfer Law" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'RanzMarshall1952', 'Whitaker1972', 'Gunn1978', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetConvectiveHeatTransferLaw(value: str) -> None
+
+   
+   Set the value of "Convective Heat Transfer Law".
+
+   :param value:
+       The value to set. Must be one of ['none', 'RanzMarshall1952', 'Whitaker1972', 'Gunn1978', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Convective Heat Transfer Law" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidConvectiveHeatTransferLawValues() -> list[str]
+
+   
+   Get a list of all possible values for "Convective Heat Transfer Law".
+
+   :return:
+       The returned list is ['none', 'RanzMarshall1952', 'Whitaker1972', 'Gunn1978', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDragLaw() -> str
+
+   
+   Get "Drag Law" as a string.
+
+   :return:
+       The returned value will be one of ['WenYu1966', 'SchillerNaumann1933', 'HaiderLevenspiel1989', 'Ganser1993', 'Ergun1958', 'GidaspowBezburuahDing1992', 'HuilinGidaspow2003', 'DiFelice1994', 'Dallavalle1948', 'MarheinekeWegener2011', 'SyamlalOBrien1987', 'MorsiAlexander1972', 'HillKochLadd2001', 'HillKoch2001', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDragLaw(value: str) -> None
+
+   
+   Set the value of "Drag Law".
+
+   :param value:
+       The value to set. Must be one of ['WenYu1966', 'SchillerNaumann1933', 'HaiderLevenspiel1989', 'Ganser1993', 'Ergun1958', 'GidaspowBezburuahDing1992', 'HuilinGidaspow2003', 'DiFelice1994', 'Dallavalle1948', 'MarheinekeWegener2011', 'SyamlalOBrien1987', 'MorsiAlexander1972', 'HillKochLadd2001', 'HillKoch2001', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Drag Law" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidDragLawValues() -> list[str]
+
+   
+   Get a list of all possible values for "Drag Law".
+
+   :return:
+       The returned list is ['WenYu1966', 'SchillerNaumann1933', 'HaiderLevenspiel1989', 'Ganser1993', 'Ergun1958', 'GidaspowBezburuahDing1992', 'HuilinGidaspow2003', 'DiFelice1994', 'Dallavalle1948', 'MarheinekeWegener2011', 'SyamlalOBrien1987', 'MorsiAlexander1972', 'HillKochLadd2001', 'HillKoch2001', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLiftLaw() -> str
+
+   
+   Get "Lift Law" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'Saffman1968', 'Mei1992', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLiftLaw(value: str) -> None
+
+   
+   Set the value of "Lift Law".
+
+   :param value:
+       The value to set. Must be one of ['none', 'Saffman1968', 'Mei1992', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Lift Law" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidLiftLawValues() -> list[str]
+
+   
+   Get a list of all possible values for "Lift Law".
+
+   :return:
+       The returned list is ['none', 'Saffman1968', 'Mei1992', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMorsiAndAlexanderK1() -> float
+
+   
+   Get the value of "Morsi And Alexander K1".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMorsiAndAlexanderK1(value: str | float) -> None
+
+   
+   Set the value of "Morsi And Alexander K1".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMorsiAndAlexanderK2() -> float
+
+   
+   Get the value of "Morsi And Alexander K2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMorsiAndAlexanderK2(value: str | float) -> None
+
+   
+   Set the value of "Morsi And Alexander K2".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMorsiAndAlexanderK3() -> float
+
+   
+   Get the value of "Morsi And Alexander K3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMorsiAndAlexanderK3(value: str | float) -> None
+
+   
+   Set the value of "Morsi And Alexander K3".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSyamlalObrienC1() -> float
+
+   
+   Get the value of "Syamlal Obrien C1".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSyamlalObrienC1(value: str | float) -> None
+
+   
+   Set the value of "Syamlal Obrien C1".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSyamlalObrienD1() -> float
+
+   
+   Get the value of "Syamlal Obrien D1".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSyamlalObrienD1(value: str | float) -> None
+
+   
+   Set the value of "Syamlal Obrien D1".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTorqueLaw() -> str
+
+   
+   Get "Torque Law" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'DennisSinghIngham1980', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTorqueLaw(value: str) -> None
+
+   
+   Set the value of "Torque Law".
+
+   :param value:
+       The value to set. Must be one of ['none', 'DennisSinghIngham1980', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Torque Law" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidTorqueLawValues() -> list[str]
+
+   
+   Get a list of all possible values for "Torque Law".
+
+   :return:
+       The returned list is ['none', 'DennisSinghIngham1980', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseUserDefinedConstants() -> bool
+
+   
+   Get the value of "Use User Defined Constants".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseUserDefinedConstants(value: bool) -> None
+
+   
+   Set the value of "Use User Defined Constants".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVirtualMassLaw() -> str
+
+   
+   Get "Virtual Mass Law" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'constant', 'Paladino2005', 'IshiiMishima1984', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVirtualMassLaw(value: str) -> None
+
+   
+   Set the value of "Virtual Mass Law".
+
+   :param value:
+       The value to set. Must be one of ['none', 'constant', 'Paladino2005', 'IshiiMishima1984', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Virtual Mass Law" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidVirtualMassLawValues() -> list[str]
+
+   
+   Get a list of all possible values for "Virtual Mass Law".
+
+   :return:
+       The returned list is ['none', 'constant', 'Paladino2005', 'IshiiMishima1984', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

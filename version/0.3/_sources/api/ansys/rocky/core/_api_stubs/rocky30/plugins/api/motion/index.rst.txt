@@ -1,0 +1,34 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion
+======================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_base_motion/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_cone_crusher_frame/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_fbm_rotation/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_fbm_translation/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_linear_time_variable_force/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_linear_time_variable_moment/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_motion/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_motion_frame/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_motion_frame_source/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_motion_list/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_pendulum/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_prescribed_force/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_prescribed_moment/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_rotation/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_spring_dashpot_force/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_spring_dashpot_moment/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_time_series_rotation/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_time_series_translation/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_translation/index
+   /api/ansys/rocky/core/_api_stubs/rocky30/plugins/api/motion/ra_vibration/index
+
+

@@ -1,0 +1,81 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_streamlines_user_process
+===========================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_streamlines_user_process
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_streamlines_user_process.SurfaceTypes
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_streamlines_user_process.RAStreamlinesUserProcess
+
+
+Module Contents
+---------------
+
+.. py:data:: SurfaceTypes
+
+.. py:class:: RAStreamlinesUserProcess
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAUserProcess`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.plugins.sph.streamlines_user_process.streamlines_user_process.StreamlinesUserProcessSubject]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: UpdateStreamlines() -> None
+
+
+   .. py:method:: GetSources() -> Union[list[SurfaceTypes], None]
+
+
+   .. py:method:: SetSources(surfaces: Union[str, SurfaceTypes, list]) -> None
+
+
+   .. py:method:: GetAvailableSources() -> list[SurfaceTypes]
+
+
+   .. py:method:: GetDirection() -> str
+
+
+   .. py:method:: SetDirection(value: str) -> None
+
+
+   .. py:method:: GetValidDirectionValues() -> List[str]
+
+
+   .. py:method:: GetMaximumLength(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMaximumLength(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetSpacing(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSpacing(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

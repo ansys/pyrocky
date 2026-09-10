@@ -1,0 +1,781 @@
+
+
+
+
+
+
+:class:`RAParticleAssemblyCustom`
+=================================
+
+
+.. py:class:: ansys.rocky.app.ra_particle_assembly.RAParticleAssemblyCustom(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Base wrapper class for all subjects.
+
+   :ivar unicode id:
+       The id of the subject
+
+   :ivar unicode _model_id:
+       The id of the input reader associated with the subject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParticleAssemblyCustom
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetMomentOfInertia`
+            - Deprecated: Use :meth:`GetPrincipalMomentOfInertia()` instead.
+          * - :py:attr:`~SetMomentOfInertia`
+            - Deprecated: Use :meth:`SetPrincipalMomentOfInertia()` instead.
+          * - :py:attr:`~GetArea`
+            - Get the value of "Area".
+          * - :py:attr:`~SetArea`
+            - Set the value of "Area".
+          * - :py:attr:`~GetCenterOfMass`
+            - Get the value of "Center of Mass".
+          * - :py:attr:`~SetCenterOfMass`
+            - Set the values of "Center of Mass".
+          * - :py:attr:`~GetEnabled`
+            - Get the value of "Enabled".
+          * - :py:attr:`~SetEnabled`
+            - Set the value of "Enabled".
+          * - :py:attr:`~GetGeometricCenter`
+            - Get the value of "Geometric Center".
+          * - :py:attr:`~SetGeometricCenter`
+            - Set the values of "Geometric Center".
+          * - :py:attr:`~GetInertiaXAxis`
+            - Get the value of "Inertia X Axis".
+          * - :py:attr:`~SetInertiaXAxis`
+            - Set the values of "Inertia X Axis".
+          * - :py:attr:`~GetInertiaYAxis`
+            - Get the value of "Inertia Y Axis".
+          * - :py:attr:`~SetInertiaYAxis`
+            - Set the values of "Inertia Y Axis".
+          * - :py:attr:`~GetInertiaZAxis`
+            - Get the value of "Inertia Z Axis".
+          * - :py:attr:`~SetInertiaZAxis`
+            - Set the values of "Inertia Z Axis".
+          * - :py:attr:`~GetMass`
+            - Get the value of "Mass".
+          * - :py:attr:`~SetMass`
+            - Set the value of "Mass".
+          * - :py:attr:`~GetPrincipalMomentOfInertia`
+            - Get the value of "Principal Moment of Inertia".
+          * - :py:attr:`~SetPrincipalMomentOfInertia`
+            - Set the values of "Principal Moment of Inertia".
+          * - :py:attr:`~GetPorosity`
+            - Get the value of "Porosity".
+          * - :py:attr:`~SetPorosity`
+            - Set the value of "Porosity".
+          * - :py:attr:`~GetVolume`
+            - Get the value of "Volume".
+          * - :py:attr:`~SetVolume`
+            - Set the value of "Volume".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_particle_assembly import RAParticleAssemblyCustom
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.particle.particle_assembly.ParticleAssemblyCustom]
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetMomentOfInertia(unit: str | None = None) -> list[float]
+
+   
+   Deprecated: Use :meth:`GetPrincipalMomentOfInertia()` instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMomentOfInertia(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Deprecated: Use :meth:`SetPrincipalMomentOfInertia()` instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetArea(unit: str | None = None) -> float
+
+   
+   Get the value of "Area".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetArea(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Area".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCenterOfMass(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Center of Mass".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCenterOfMass(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Center of Mass".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEnabled() -> bool
+
+   
+   Get the value of "Enabled".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnabled(value: bool) -> None
+
+   
+   Set the value of "Enabled".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGeometricCenter(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Geometric Center".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGeometricCenter(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Geometric Center".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInertiaXAxis(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Inertia X Axis".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInertiaXAxis(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Inertia X Axis".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "-".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInertiaYAxis(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Inertia Y Axis".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInertiaYAxis(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Inertia Y Axis".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "-".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInertiaZAxis(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Inertia Z Axis".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInertiaZAxis(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Inertia Z Axis".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "-".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMass(unit: str | None = None) -> float
+
+   
+   Get the value of "Mass".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "kg".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMass(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Mass".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "kg".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPrincipalMomentOfInertia(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Principal Moment of Inertia".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m5".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPrincipalMomentOfInertia(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Principal Moment of Inertia".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m5".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPorosity(unit: str | None = None) -> float
+
+   
+   Get the value of "Porosity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "<fraction>".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPorosity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Porosity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "<fraction>".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVolume(unit: str | None = None) -> float
+
+   
+   Get the value of "Volume".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVolume(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Volume".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

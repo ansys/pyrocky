@@ -1,0 +1,143 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet
+===================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet.RAVolumetricInlet
+
+
+Module Contents
+---------------
+
+.. py:class:: RAVolumetricInlet(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api._ra_orientation_mixin._RAOrientationMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.input.volume_fill.VolumeFill]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetInputPropertiesList() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties.RAVolumetricInletPropertiesList
+
+
+   .. py:method:: GetCustomGeometries() -> list[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall.RAWall]
+
+
+   .. py:method:: SetCustomGeometries(values: list[Union[str, ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_wall.RAWall]]) -> None
+
+
+   .. py:method:: GetUseCustomGeometriesToCompute() -> bool
+
+
+   .. py:method:: SetUseCustomGeometriesToCompute(value: bool) -> None
+
+
+   .. py:method:: GetBoxCenter(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetBoxCenter(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBoxDimensions(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetBoxDimensions(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetUseGeometriesToCompute() -> bool
+
+
+   .. py:method:: SetUseGeometriesToCompute(value: bool) -> None
+
+
+   .. py:method:: GetGapScaleFactor() -> float
+
+
+   .. py:method:: SetGapScaleFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetInitialVelocity(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInitialVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPeriodic() -> bool
+
+
+   .. py:method:: SetPeriodic(value: bool) -> None
+
+
+   .. py:method:: EnablePeriodic() -> None
+
+
+   .. py:method:: DisablePeriodic() -> None
+
+
+   .. py:method:: IsPeriodicEnabled() -> bool
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetPeriod(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPeriod(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSeedCoordinates(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetSeedCoordinates(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInjectionTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetInjectionTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSphMass(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSphMass(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSphTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSphTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetGeometries()
+
+
+   .. py:method:: SetGeometries(values) -> None
+
+
+   .. py:method:: GetAvailableGeometries()
+
+

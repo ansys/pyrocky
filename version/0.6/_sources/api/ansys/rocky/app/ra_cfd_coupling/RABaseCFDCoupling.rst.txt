@@ -1,0 +1,797 @@
+
+
+
+
+
+
+:class:`RABaseCFDCoupling`
+==========================
+
+
+.. py:class:: ansys.rocky.app.ra_cfd_coupling.RABaseCFDCoupling
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   
+   Base class for PrePost Scripting wrappers for the various CFD coupling modes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RABaseCFDCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCFDParametersList`
+            - Get the list of per-Particle CFD parameter sets.
+          * - :py:attr:`~SetPartIdIfValid`
+            - Subclasses should implement this method if it's a Process with visualization
+          * - :py:attr:`~GetConvectiveHeatTransferLaw`
+            - Get the current "Convective Heat Transfer Law". This is a shortcut to access the "Convective Heat Transfer Law" of the individual
+          * - :py:attr:`~SetConvectiveHeatTransferLaw`
+            - Set the current "Convective Heat Transfer Law". This is a shortcut to set the "Convective Heat Transfer Law" of all individual
+          * - :py:attr:`~GetDragLaw`
+            - Get the current "Drag Law". This is a shortcut to access the "Drag Law" of the individual
+          * - :py:attr:`~SetDragLaw`
+            - Set the current "Drag Law". This is a shortcut to set the "Drag Law" of all individual
+          * - :py:attr:`~GetLiftLaw`
+            - Get the current "Lift Law". This is a shortcut to access the "Lift Law" of the individual
+          * - :py:attr:`~SetLiftLaw`
+            - Set the current "Lift Law". This is a shortcut to set the "Lift Law" of all individual
+          * - :py:attr:`~GetMorsiAndAlexanderK1`
+            - Get the current "Morsi And Alexander K1". This is a shortcut to access the "Morsi And Alexander K1" of the individual
+          * - :py:attr:`~SetMorsiAndAlexanderK1`
+            - Set the current "Morsi And Alexander K1". This is a shortcut to set the "Morsi And Alexander K1" of all individual
+          * - :py:attr:`~GetMorsiAndAlexanderK2`
+            - Get the current "Morsi And Alexander K2". This is a shortcut to access the "Morsi And Alexander K2" of the individual
+          * - :py:attr:`~SetMorsiAndAlexanderK2`
+            - Set the current "Morsi And Alexander K2". This is a shortcut to set the "Morsi And Alexander K2" of all individual
+          * - :py:attr:`~GetMorsiAndAlexanderK3`
+            - Get the current "Morsi And Alexander K3". This is a shortcut to access the "Morsi And Alexander K3" of the individual
+          * - :py:attr:`~SetMorsiAndAlexanderK3`
+            - Set the current "Morsi And Alexander K3". This is a shortcut to set the "Morsi And Alexander K3" of all individual
+          * - :py:attr:`~GetSyamlalObrienC1`
+            - Get the current "Syamlal Obrien C1". This is a shortcut to access the "Syamlal Obrien C1" of the individual
+          * - :py:attr:`~SetSyamlalObrienC1`
+            - Set the current "Syamlal Obrien C1". This is a shortcut to set the "Syamlal Obrien C1" of all individual
+          * - :py:attr:`~GetSyamlalObrienD1`
+            - Get the current "Syamlal Obrien D1". This is a shortcut to access the "Syamlal Obrien D1" of the individual
+          * - :py:attr:`~SetSyamlalObrienD1`
+            - Set the current "Syamlal Obrien D1". This is a shortcut to set the "Syamlal Obrien D1" of all individual
+          * - :py:attr:`~GetTorqueLaw`
+            - Get the current "Torque Law". This is a shortcut to access the "Torque Law" of the individual
+          * - :py:attr:`~SetTorqueLaw`
+            - Set the current "Torque Law". This is a shortcut to set the "Torque Law" of all individual
+          * - :py:attr:`~GetUseUserDefinedConstants`
+            - Get the current "Use User Defined Constants". This is a shortcut to access the "Use User Defined Constants" of the individual
+          * - :py:attr:`~SetUseUserDefinedConstants`
+            - Set the current "Use User Defined Constants". This is a shortcut to set the "Use User Defined Constants" of all individual
+          * - :py:attr:`~GetVirtualMassLaw`
+            - Get the current "Virtual Mass Law". This is a shortcut to access the "Virtual Mass Law" of the individual
+          * - :py:attr:`~SetVirtualMassLaw`
+            - Set the current "Virtual Mass Law". This is a shortcut to set the "Virtual Mass Law" of all individual
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_cfd_coupling import RABaseCFDCoupling
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetCFDParametersList() -> ansys.rocky.app.ra_cfd_parameters.RACFDParametersList
+
+   
+   Get the list of per-Particle CFD parameter sets.
+
+   :rtype: RACFDParametersList
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPartIdIfValid() -> None
+
+   
+   Subclasses should implement this method if it's a Process with visualization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetConvectiveHeatTransferLaw()
+
+   
+   Get the current "Convective Heat Transfer Law". This is a shortcut to access the "Convective Heat Transfer Law" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetConvectiveHeatTransferLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Convective Heat Transfer Law".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetConvectiveHeatTransferLaw(value) -> None
+
+   
+   Set the current "Convective Heat Transfer Law". This is a shortcut to set the "Convective Heat Transfer Law" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetConvectiveHeatTransferLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDragLaw()
+
+   
+   Get the current "Drag Law". This is a shortcut to access the "Drag Law" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetDragLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Drag Law".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDragLaw(value) -> None
+
+   
+   Set the current "Drag Law". This is a shortcut to set the "Drag Law" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetDragLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetLiftLaw()
+
+   
+   Get the current "Lift Law". This is a shortcut to access the "Lift Law" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetLiftLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Lift Law".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLiftLaw(value) -> None
+
+   
+   Set the current "Lift Law". This is a shortcut to set the "Lift Law" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetLiftLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMorsiAndAlexanderK1()
+
+   
+   Get the current "Morsi And Alexander K1". This is a shortcut to access the "Morsi And Alexander K1" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetMorsiAndAlexanderK1()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Morsi And Alexander K1".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMorsiAndAlexanderK1(value) -> None
+
+   
+   Set the current "Morsi And Alexander K1". This is a shortcut to set the "Morsi And Alexander K1" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetMorsiAndAlexanderK1()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMorsiAndAlexanderK2()
+
+   
+   Get the current "Morsi And Alexander K2". This is a shortcut to access the "Morsi And Alexander K2" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetMorsiAndAlexanderK2()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Morsi And Alexander K2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMorsiAndAlexanderK2(value) -> None
+
+   
+   Set the current "Morsi And Alexander K2". This is a shortcut to set the "Morsi And Alexander K2" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetMorsiAndAlexanderK2()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMorsiAndAlexanderK3()
+
+   
+   Get the current "Morsi And Alexander K3". This is a shortcut to access the "Morsi And Alexander K3" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetMorsiAndAlexanderK3()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Morsi And Alexander K3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMorsiAndAlexanderK3(value) -> None
+
+   
+   Set the current "Morsi And Alexander K3". This is a shortcut to set the "Morsi And Alexander K3" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetMorsiAndAlexanderK3()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSyamlalObrienC1()
+
+   
+   Get the current "Syamlal Obrien C1". This is a shortcut to access the "Syamlal Obrien C1" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetSyamlalObrienC1()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Syamlal Obrien C1".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSyamlalObrienC1(value) -> None
+
+   
+   Set the current "Syamlal Obrien C1". This is a shortcut to set the "Syamlal Obrien C1" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetSyamlalObrienC1()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSyamlalObrienD1()
+
+   
+   Get the current "Syamlal Obrien D1". This is a shortcut to access the "Syamlal Obrien D1" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetSyamlalObrienD1()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Syamlal Obrien D1".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSyamlalObrienD1(value) -> None
+
+   
+   Set the current "Syamlal Obrien D1". This is a shortcut to set the "Syamlal Obrien D1" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetSyamlalObrienD1()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTorqueLaw()
+
+   
+   Get the current "Torque Law". This is a shortcut to access the "Torque Law" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetTorqueLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Torque Law".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTorqueLaw(value) -> None
+
+   
+   Set the current "Torque Law". This is a shortcut to set the "Torque Law" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetTorqueLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseUserDefinedConstants()
+
+   
+   Get the current "Use User Defined Constants". This is a shortcut to access the "Use User Defined Constants" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetUseUserDefinedConstants()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Use User Defined Constants".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseUserDefinedConstants(value) -> None
+
+   
+   Set the current "Use User Defined Constants". This is a shortcut to set the "Use User Defined Constants" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetUseUserDefinedConstants()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVirtualMassLaw()
+
+   
+   Get the current "Virtual Mass Law". This is a shortcut to access the "Virtual Mass Law" of the individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.GetVirtualMassLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet, or if the :class:`RACFDPerParticleParameters`
+       for the Particles have different values for the "Virtual Mass Law".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVirtualMassLaw(value) -> None
+
+   
+   Set the current "Virtual Mass Law". This is a shortcut to set the "Virtual Mass Law" of all individual
+   :class:`RACFDPerParticleParameters` configured in the coupling.
+
+   See also :meth:`RACFDPerParticleParameters.SetVirtualMassLaw()`
+
+   :raises RockyApiError:
+       If there are no Particles in the project yet.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,0 +1,570 @@
+
+
+
+
+
+
+:class:`RAJointsDataMeshColoring`
+=================================
+
+
+.. py:class:: ansys.rocky.app.ra_joints_data_mesh_coloring.RAJointsDataMeshColoring(id: str)
+
+
+.. py:currentmodule:: RAJointsDataMeshColoring
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetSubject`
+            - 
+          * - :py:attr:`~SetVisible`
+            - 
+          * - :py:attr:`~GetVisible`
+            - 
+          * - :py:attr:`~GetValidColoringModes`
+            - Get a list with all possible coloring modes names.
+          * - :py:attr:`~GetAvailableGridFunctionsNames`
+            - Get a list of all possible values for "GridFunctions" names.
+          * - :py:attr:`~GetAvailableGridFunctions`
+            - Get a list of all possible values for "GridFunctions".
+          * - :py:attr:`~SetStride`
+            - 
+          * - :py:attr:`~GetStride`
+            - 
+          * - :py:attr:`~SetJointsVisible`
+            - Set the value of "Joints Visible".
+          * - :py:attr:`~GetJointsVisible`
+            - Get the value of "Joints Visible".
+          * - :py:attr:`~SetJointsColor`
+            - Set the values of "Joints Color".
+          * - :py:attr:`~GetJointsColor`
+            - Get the value of "Node Color".
+          * - :py:attr:`~SetJointsProperty`
+            - Set the values of "Joints Property".
+          * - :py:attr:`~GetJointsProperty`
+            - Get the value of "Joints Property".
+          * - :py:attr:`~SetJointsPointSize`
+            - Set the value of "Joints Point Size".
+          * - :py:attr:`~GetJointsPointSize`
+            - Get the value of "Joints Point Size".
+          * - :py:attr:`~SetJointsConnectivityVisible`
+            - Set the value of "Joints Connectivity Visible".
+          * - :py:attr:`~GetJointsConnectivityVisible`
+            - Get the value of "Joints Connectivity Visible".
+          * - :py:attr:`~SetJointsConnectivityColor`
+            - Set the values of "Joints Connectivity Color".
+          * - :py:attr:`~GetJointsConnectivityColor`
+            - Get the value of "Joints Connectivity Color".
+          * - :py:attr:`~SetJointsConnectivityProperty`
+            - Set the values of "Joints Connectivity GridFunction".
+          * - :py:attr:`~GetJointsConnectivityProperty`
+            - Get the value of "Joints Connectivity GridFunction".
+          * - :py:attr:`~SetJointsConnectivityLineWidth`
+            - Set the value of "Joints Connectivity Line Width".
+          * - :py:attr:`~GetJointsConnectivityLineWidth`
+            - Get the value of "Joints Connectivity Line Width".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_joints_data_mesh_coloring import RAJointsDataMeshColoring
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+.. py:method:: SetVisible(value: bool) -> None
+
+.. py:method:: GetVisible() -> bool
+
+.. py:method:: GetValidColoringModes() -> list[str]
+
+   
+   Get a list with all possible coloring modes names.
+
+   :return:
+       The returned values will be a combination of ['Joints', 'Joints Connectivity']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableGridFunctionsNames() -> set[str]
+
+   
+   Get a list of all possible values for "GridFunctions" names.
+
+   :return:
+       The returned set contains the names of the available Grid Functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableGridFunctions() -> set[type[coilib50.element_function.semantic_association.SemanticAssociation]]
+
+   
+   Get a list of all possible values for "GridFunctions".
+
+   :return:
+       The returned set contains the SemanticAssociation of the available Grid Functions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStride(value: int) -> None
+
+.. py:method:: GetStride() -> int
+
+.. py:method:: SetJointsVisible(value: bool) -> None
+
+   
+   Set the value of "Joints Visible".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsVisible() -> bool
+
+   
+   Get the value of "Joints Visible".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetJointsColor(values: ansys.rocky.app.ra_mesh_coloring.ColorType) -> None
+
+   
+   Set the values of "Joints Color".
+
+   :param values:
+       The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsColor() -> ansys.rocky.app.ra_mesh_coloring.ColorType
+
+   
+   Get the value of "Node Color".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetJointsProperty(value: type[coilib50.element_function.semantic_association.SemanticAssociation] | str | None) -> None
+
+   
+   Set the values of "Joints Property".
+
+   :param value:
+       The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+       of its name or `None` for solid colors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsProperty() -> type[coilib50.element_function.semantic_association.SemanticAssociation] | None
+
+   
+   Get the value of "Joints Property".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetJointsPointSize(value: float) -> None
+
+   
+   Set the value of "Joints Point Size".
+
+   :param value:
+       The value to set. This value must be a float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsPointSize() -> float
+
+   
+   Get the value of "Joints Point Size".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetJointsConnectivityVisible(value: bool) -> None
+
+   
+   Set the value of "Joints Connectivity Visible".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsConnectivityVisible() -> bool
+
+   
+   Get the value of "Joints Connectivity Visible".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetJointsConnectivityColor(values: ansys.rocky.app.ra_mesh_coloring.ColorType) -> None
+
+   
+   Set the values of "Joints Connectivity Color".
+
+   :param values:
+       The values to set. The values must be a tuple of floats. Must have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsConnectivityColor() -> ansys.rocky.app.ra_mesh_coloring.ColorType
+
+   
+   Get the value of "Joints Connectivity Color".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetJointsConnectivityProperty(value: type[coilib50.element_function.semantic_association.SemanticAssociation] | str | None) -> None
+
+   
+   Set the values of "Joints Connectivity GridFunction".
+
+   :param value:
+       The value to set. The value can be heterogeneous, it can be a SemanticAssociation, a str
+       of its name or `None` for solid colors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsConnectivityProperty() -> type[coilib50.element_function.semantic_association.SemanticAssociation] | None
+
+   
+   Get the value of "Joints Connectivity GridFunction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetJointsConnectivityLineWidth(value: float) -> None
+
+   
+   Set the value of "Joints Connectivity Line Width".
+
+   :param value:
+      The value to set. This value must be a float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsConnectivityLineWidth() -> float
+
+   
+   Get the value of "Joints Connectivity Line Width".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

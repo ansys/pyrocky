@@ -1,0 +1,437 @@
+
+
+
+
+
+
+:class:`RAFilterProcess`
+========================
+
+
+.. py:class:: ansys.rocky.app.ra_process_element.RAFilterProcess
+
+   Bases: :py:obj:`RAUserProcess`
+
+
+   
+   PrePost Scripting wrapper for Property Processes.
+
+   Limits properties by a specific cut or range of values.
+
+   .. note::
+       Originally named "RAPropertyProcess". Although the public api uses "Filter"
+       for functions related to this process, the original "PropertyProcess" name
+       is still used internally.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAFilterProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetType`
+            - :rtype: 'Value' or 'Range'
+          * - :py:attr:`~SetType`
+            - :param filter_type: 'Value' or 'Range'
+          * - :py:attr:`~GetMode`
+            - :rtype: unicode
+          * - :py:attr:`~SetMode`
+            - :param plane_mode: 'Cut' or 'Select'
+          * - :py:attr:`~GetMinValue`
+            - :rtype: Scalar
+          * - :py:attr:`~SetMinValue`
+            - Sets the lowest value by which you want the property results limited when Type is Range
+          * - :py:attr:`~GetMaxValue`
+            - :rtype: Scalar
+          * - :py:attr:`~SetMaxValue`
+            - Sets the highest value by which you want the property results limited when Type is Range
+          * - :py:attr:`~GetCutValue`
+            - :rtype: Scalar
+          * - :py:attr:`~SetCutValue`
+            - Sets the single, exact value by which you want the property results limited when Type is Value
+          * - :py:attr:`~SetPropertyGridFunction`
+            - Set the grid function which this property process will use to filter its input elements
+          * - :py:attr:`~GetPropertyGridFunction`
+            - Get the grid function which this property process will use to filter its input elements
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_process_element import RAFilterProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetType()
+
+   
+   :rtype: 'Value' or 'Range'
+   :return:
+       Return whether the property process filters elements that match a specific value or a range of values
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetType(filter_type) -> None
+
+   
+   :param filter_type: 'Value' or 'Range'
+       Sets whether the property process filters elements that match a specific value or a range of values
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMode()
+
+   
+   :rtype: unicode
+   :return:
+       'Cut' or 'Select', whether the property process is selecting or cutting the cell's from the input process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMode(property_mode) -> None
+
+   
+   :param plane_mode: 'Cut' or 'Select'
+       Sets whether the property process is selecting or cutting the cell's from the input process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMinValue(unit=None)
+
+   
+   :rtype: Scalar
+   :return:
+       Returns the lowest value by which you want the property results limited when Type is Range
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMinValue(value, unit=None) -> None
+
+   
+   Sets the lowest value by which you want the property results limited when Type is Range
+
+   :param value: float
+       The new minimum value
+
+   :param str|None unit:
+       The unit of the given value or None if given the same unit already used
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaxValue(unit=None)
+
+   
+   :rtype: Scalar
+   :return:
+       Returns the highest value by which you want the property results limited when Type is Range
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaxValue(value, unit=None) -> None
+
+   
+   Sets the highest value by which you want the property results limited when Type is Range
+
+   :param value: float
+       The new maximum value
+
+   :param str|None unit:
+       The unit of the given value or None if given the same unit already used
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCutValue(unit=None)
+
+   
+   :rtype: Scalar
+   :return:
+       Returns the single, exact value by which you want the property results limited when Type is Value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCutValue(value, unit=None) -> None
+
+   
+   Sets the single, exact value by which you want the property results limited when Type is Value
+
+   :param value: float
+       The new cut value
+
+   :param str|None unit:
+       The unit of the given value or None if given the same unit already used
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPropertyGridFunction(grid_function, realization=None) -> None
+
+   
+   Set the grid function which this property process will use to filter its input elements
+
+   :param unicode grid_function:
+       The new grid function
+
+   :param unicode realization:
+       An additional keyword to identify the curve realization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPropertyGridFunction()
+
+   
+   Get the grid function which this property process will use to filter its input elements
+
+   :rtype: unicode
+   :return:
+       The current grid function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

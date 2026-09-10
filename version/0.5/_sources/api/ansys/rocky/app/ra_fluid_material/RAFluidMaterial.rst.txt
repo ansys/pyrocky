@@ -1,0 +1,380 @@
+
+
+
+
+
+
+:class:`RAFluidMaterial`
+========================
+
+
+.. py:class:: ansys.rocky.app.ra_fluid_material.RAFluidMaterial(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`
+
+
+   
+   Rocky PrePost Scripting wrapper for individual fluid materials in a project.
+
+   Retrieve individual materials from the :class:`RAStudy`
+   or the :class:`RAMaterialCollection` via:
+
+   .. code-block:: python
+
+       material_1 = study.GetElement('fluid material 1')
+       material_2 = material_collection.GetMaterial('fluid material 2')
+       material_3 = material_collection[2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAFluidMaterial
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDensity`
+            - Get the value of "Density".
+          * - :py:attr:`~SetDensity`
+            - Set the value of "Density".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetSpecificHeat`
+            - Get the value of "Specific Heat".
+          * - :py:attr:`~SetSpecificHeat`
+            - Set the value of "Specific Heat".
+          * - :py:attr:`~GetThermalConductivity`
+            - Get the value of "Thermal Conductivity".
+          * - :py:attr:`~SetThermalConductivity`
+            - Set the value of "Thermal Conductivity".
+          * - :py:attr:`~GetViscosity`
+            - Get the value of "Viscosity".
+          * - :py:attr:`~SetViscosity`
+            - Set the value of "Viscosity".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_fluid_material import RAFluidMaterial
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.material.fluid_material.FluidMaterial]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetDensity(unit: str | None = None) -> float
+
+   
+   Get the value of "Density".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDensity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Density".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSpecificHeat(unit: str | None = None) -> float
+
+   
+   Get the value of "Specific Heat".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "J/kg.K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSpecificHeat(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Specific Heat".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "J/kg.K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetThermalConductivity(unit: str | None = None) -> float
+
+   
+   Get the value of "Thermal Conductivity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "W/m.K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetThermalConductivity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Thermal Conductivity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "W/m.K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetViscosity(unit: str | None = None) -> float
+
+   
+   Get the value of "Viscosity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Pa.s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetViscosity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Viscosity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Pa.s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

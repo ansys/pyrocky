@@ -1,0 +1,140 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list
+=======================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.T
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList
+
+
+Module Contents
+---------------
+
+.. py:data:: T
+
+.. py:class:: RAList(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`Generic`\ [\ :py:obj:`T`\ ]
+
+
+   
+   Base class for API classes that wrap SubjectLists (and related list classes).
+
+   Provides methods to add, remove and iterate on the items. The PrePost Scripting wrappers for the list items
+   will be obtained via ApiApplication._GetElementWrapper(), so it's important that these wrappers
+   are registered as wrapper classes (see `EPApiExtension`).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:method:: New() -> T
+
+      
+      Add a new item. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: Remove(item: T) -> None
+
+      
+      Remove an item from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: Clear() -> None
+
+      
+      Remove all items from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: __len__() -> int
+
+
+   .. py:method:: __getitem__(index: int) -> T
+
+
+   .. py:method:: __iter__() -> collections.abc.Generator[T, None, None]
+
+
+   .. py:method:: __delitem__(index: int) -> None
+
+

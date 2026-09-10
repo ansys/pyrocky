@@ -1,0 +1,256 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling
+===============================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RACFDCouplingTypes
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RACFDCoupling
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RAConstantOneWayCoupling
+
+
+Module Contents
+---------------
+
+.. py:class:: RACFDCoupling(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: SetupNoCoupling()
+
+
+   .. py:method:: SetupAirFlow() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow.RAAirFlow, None]
+
+
+   .. py:method:: SetupOneWayLBM() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow.RAAirFlow, None]
+
+
+   .. py:method:: GetAirFlow() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow.RAAirFlow, None]
+
+
+   .. py:method:: GetOneWayLBM() -> Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_airflow.RAAirFlow, None]
+
+
+   .. py:method:: SetupFluentOneWaySteadyState(f2r_filename: str) -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetupOneWayFluentSteadyState(f2r_filename: str) -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetupOneWayFluent(f2r_filename: str) -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetupFluentTwoWay(cas_filename: str) -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetupTwoWayFluent(cas_filename: str) -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetupFluentTwoWaySemiResolved(cas_filename: str) -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetupOneWayConstant() -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetupConstantOneWay() -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetupCFDConstantOneWayCouplingProcess() -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: GetCouplingMode() -> str
+
+
+   .. py:method:: GetCouplingProcess() -> Optional[RACFDCouplingTypes]
+
+
+   .. py:method:: SetCurrentCouplingPartId() -> None
+
+
+.. py:class:: RABaseCFDCoupling
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   .. py:method:: GetCFDParametersList() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_parameters.RACFDParametersList
+
+
+   .. py:method:: SetPartIdIfValid() -> None
+
+
+   .. py:method:: GetConvectiveHeatTransferLaw()
+
+
+   .. py:method:: SetConvectiveHeatTransferLaw(value) -> None
+
+
+   .. py:method:: GetDragLaw()
+
+
+   .. py:method:: SetDragLaw(value) -> None
+
+
+   .. py:method:: GetLiftLaw()
+
+
+   .. py:method:: SetLiftLaw(value) -> None
+
+
+   .. py:method:: GetMorsiAndAlexanderK1()
+
+
+   .. py:method:: SetMorsiAndAlexanderK1(value) -> None
+
+
+   .. py:method:: GetMorsiAndAlexanderK2()
+
+
+   .. py:method:: SetMorsiAndAlexanderK2(value) -> None
+
+
+   .. py:method:: GetMorsiAndAlexanderK3()
+
+
+   .. py:method:: SetMorsiAndAlexanderK3(value) -> None
+
+
+   .. py:method:: GetSyamlalObrienC1()
+
+
+   .. py:method:: SetSyamlalObrienC1(value) -> None
+
+
+   .. py:method:: GetSyamlalObrienD1()
+
+
+   .. py:method:: SetSyamlalObrienD1(value) -> None
+
+
+   .. py:method:: GetTorqueLaw()
+
+
+   .. py:method:: SetTorqueLaw(value) -> None
+
+
+   .. py:method:: GetUseUserDefinedConstants()
+
+
+   .. py:method:: SetUseUserDefinedConstants(value) -> None
+
+
+   .. py:method:: GetVirtualMassLaw()
+
+
+   .. py:method:: SetVirtualMassLaw(value) -> None
+
+
+.. py:class:: RAConstantOneWayCoupling
+
+   Bases: :py:obj:`RABaseCFDCoupling`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetDensity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSpecificHeat(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSpecificHeat(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetThermalConductivity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetThermalConductivity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTurbulentDissipationRate(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTurbulentDissipationRate(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTurbulentKineticEnergy(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTurbulentKineticEnergy(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetUseTurbulentDispersion() -> bool
+
+
+   .. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+
+   .. py:method:: EnableTurbulentDispersion() -> None
+
+
+   .. py:method:: DisableTurbulentDispersion() -> None
+
+
+   .. py:method:: IsTurbulentDispersionEnabled() -> bool
+
+
+   .. py:method:: GetVelocity(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetViscosity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetViscosity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:data:: RACFDCouplingTypes
+

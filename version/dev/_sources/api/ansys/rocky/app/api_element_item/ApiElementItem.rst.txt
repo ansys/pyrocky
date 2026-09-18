@@ -1,0 +1,337 @@
+
+
+
+
+
+
+:class:`ApiElementItem`
+=======================
+
+
+.. py:class:: ansys.rocky.app.api_element_item.ApiElementItem(id: str, model_id: str | None = None)
+
+   
+   Base wrapper class for all subjects.
+
+   :ivar unicode id:
+       The id of the subject
+
+   :ivar unicode _model_id:
+       The id of the input reader associated with the subject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:currentmodule:: ApiElementItem
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetChildrenClassesToIgnore`
+            - If there are some children classes to ignore the children should override and return them
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetDataId`
+            - :returns:
+          * - :py:attr:`~IsValid`
+            - :returns:
+          * - :py:attr:`~GetSubject`
+            - :returns:
+          * - :py:attr:`~GetName`
+            - Get the element's name.
+          * - :py:attr:`~SetName`
+            - Set the process name
+          * - :py:attr:`~SetSelected`
+            - Sets this item as the current item (selected).
+          * - :py:attr:`~Select`
+            - Select all the elements in the application that are child of this element with the given names
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~id`
+            - 
+          * - :py:attr:`~subject`
+            - 
+          * - :py:attr:`~name`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.api_element_item import ApiElementItem
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: id
+   :type:  _typeshed.Incomplete
+
+.. py:attribute:: subject
+   :type:  _typeshed.Incomplete
+
+.. py:attribute:: name
+   :type:  _typeshed.Incomplete
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetChildrenClassesToIgnore() -> list[type]
+   :classmethod:
+
+
+   
+   If there are some children classes to ignore the children should override and return them
+   in this method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDataId() -> str
+
+   
+   :returns:
+       The element pool id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsValid() -> bool
+
+   
+   :returns:
+       True if the given API object is associated to a valid/existing subject
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSubject() -> coilib50.subject.Subject
+
+   
+   :returns:
+       The element associated with the element id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the element's name.
+
+   :returns:
+       The name of the element in the application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(name: str) -> None
+
+   
+   Set the process name
+
+   :param name:
+       The name of the process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSelected() -> None
+
+   
+   Sets this item as the current item (selected).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Select(element_names: list[str]) -> None
+
+   
+   Select all the elements in the application that are child of this element with the given names
+
+   :param list(unicode) element_names:
+       The list of element names
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

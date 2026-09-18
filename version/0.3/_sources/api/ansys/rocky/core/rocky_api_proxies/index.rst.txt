@@ -1,0 +1,248 @@
+ansys.rocky.core.rocky_api_proxies
+==================================
+
+.. py:module:: ansys.rocky.core.rocky_api_proxies
+
+.. autoapi-nested-parse::
+
+   Module that defines the ``ApiElementProxy`` classes, which acts as a proxy for a
+   Rocky application internal objects.
+
+   ..
+       !! processed by numpydoc !!
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core.rocky_api_proxies.ApiElementProxy
+   ansys.rocky.core.rocky_api_proxies.ApiListProxy
+   ansys.rocky.core.rocky_api_proxies.ApiGridFunctionProxy
+   ansys.rocky.core.rocky_api_proxies.ApiExportToolkitProxy
+   ansys.rocky.core.rocky_api_proxies.ApiProjectProxy
+
+
+Module Contents
+---------------
+
+.. py:class:: ApiElementProxy(pyro_api: Pyro5.api.Proxy, pool_id: str, session_uid: str | None = None)
+
+   
+   Provides a proxy object for an API element.
+
+
+   :Parameters:
+
+       **pyro_api** : :obj:`Pyro5.api.Proxy`
+           Pyro5 proxy object for interacting with the Rocky app.
+
+       **pool_id** : :class:`python:int`
+           ID of the API element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:method:: __getattr__(attr_name: str) -> object
+
+
+   .. py:method:: serialize(obj: ApiElementProxy) -> dict
+      :classmethod:
+
+
+      
+      Serialize a proxy object of the API element.
+
+
+      :Parameters:
+
+          **obj** : :obj:`Any`
+              Object to serialize.
+
+
+
+      :Returns:
+
+          :class:`python:dict`
+              Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: ApiListProxy(pyro_api: Pyro5.api.Proxy, pool_id: str, session_uid: str | None = None)
+
+   Bases: :py:obj:`ApiElementProxy`
+
+
+   
+   Provides a proxy object for API elements that implement the sequence interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:method:: __len__() -> int
+
+
+   .. py:method:: __getitem__(index: int) -> ApiElementProxy
+
+
+   .. py:method:: __iter__() -> collections.abc.Generator[ApiElementProxy, None, None]
+
+
+   .. py:method:: __delitem__(index: int) -> None
+
+
+.. py:class:: ApiGridFunctionProxy(grid_pool_id: str, gf_name: str, pyro_api: Pyro5.api.Proxy, session_uid: str | None = None)
+
+   .. py:method:: __getattr__(attr_name: str) -> collections.abc.Callable
+
+
+   .. py:method:: serialize(obj: ApiGridFunctionProxy) -> dict
+      :classmethod:
+
+
+      
+      Serialize a proxy object of the API Grid Functions.
+
+
+      :Parameters:
+
+          **obj** : :obj:`Any`
+              Object to serialize.
+
+
+
+      :Returns:
+
+          :class:`python:dict`
+              Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: ApiExportToolkitProxy(pyro_api: Pyro5.api.Proxy, session_uid: str | None = None)
+
+   .. py:method:: __getattr__(attr_name: str) -> collections.abc.Callable
+
+
+   .. py:method:: serialize(obj: ApiExportToolkitProxy) -> dict
+      :classmethod:
+
+
+      
+      Serialize a proxy object of the API ExportToolkit object.
+
+
+      :Parameters:
+
+          **obj** : :obj:`Any`
+              Object to serialize.
+
+
+
+      :Returns:
+
+          :class:`python:dict`
+              Dictionary of the serialized object.
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+.. py:class:: ApiProjectProxy(pyro_api: Pyro5.api.Proxy, session_uid: str | None = None)
+
+   Bases: :py:obj:`ApiElementProxy`
+
+
+   
+   Provides a proxy object for an API element.
+
+
+   :Parameters:
+
+       **pyro_api** : :obj:`Pyro5.api.Proxy`
+           Pyro5 proxy object for interacting with the Rocky app.
+
+       **pool_id** : :class:`python:int`
+           ID of the API element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:method:: CloseProject(check_save_state: bool = True) -> None
+
+

@@ -1,0 +1,68 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_input
+===============================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_input
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_custom_input.RACustomInput
+
+
+Module Contents
+---------------
+
+.. py:class:: RACustomInput(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetFilePath()
+
+
+   .. py:method:: SetFilePath(file_path) -> None
+
+
+   .. py:method:: GetMotionFrame()
+
+
+   .. py:method:: SetMotionFrame(motion_frame: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_motion_frame.RAMotionFrame, str, None]) -> None
+
+
+   .. py:method:: GetAvailableMotionFrames()
+
+
+   .. py:method:: GetDefaultTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDefaultTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetParticle()
+
+
+   .. py:method:: SetParticle(value) -> None
+
+
+   .. py:method:: GetAvailableParticles()
+
+

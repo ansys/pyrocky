@@ -1,0 +1,111 @@
+
+
+
+
+
+
+The ``api_element_item.py`` module
+==================================
+
+.. py:module:: ansys.rocky.app.api_element_item
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: api_element_item
+.. tab-set::
+
+
+
+    .. tab-item:: Interfaces
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.api_element_item.IWrappedItem`
+            - Interface for wrapped items.
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.api_element_item.ApiElementItem`
+            - Base wrapper class for all subjects.
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.api_element_item.ApiError`
+            - Exception class representing an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_interface"></span> IWrappedItem</api/ansys/rocky/app/api_element_item/IWrappedItem>
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> ApiElementItem</api/ansys/rocky/app/api_element_item/ApiElementItem>
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-lightning_bolt"></span> ApiError</api/ansys/rocky/app/api_element_item/ApiError>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_addin_list.py`` module
+===============================
+
+.. py:module:: ansys.rocky.app.ra_addin_list
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_addin_list
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_addin_list.RAModulePropertyListItem`
+            - Rocky PrePost Scripting wrapper for an item inside a :class:`RAModulePropertyList`.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_addin_list.RAModulePropertyList`
+            - Rocky PrePost Scripting wrapper for a Module property that is a list of other Modules properties.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAModulePropertyListItem</api/ansys/rocky/app/ra_addin_list/RAModulePropertyListItem>
+    <span class="nf nf-cod-symbol_class"></span> RAModulePropertyList</api/ansys/rocky/app/ra_addin_list/RAModulePropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

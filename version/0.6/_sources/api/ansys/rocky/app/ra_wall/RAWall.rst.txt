@@ -1,0 +1,1799 @@
+
+
+
+
+
+
+:class:`RAWall`
+===============
+
+
+.. py:class:: ansys.rocky.app.ra_wall.RAWall
+
+   Bases: :py:obj:`ansys.rocky.app.ra_base_geometry.RABaseGeometry`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`
+
+
+   
+   Rocky API Geometry model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAWall
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~LoadFile`
+            - Replace the geometry representation for a new one contained on a file.
+          * - :py:attr:`~HasMotionFrame`
+            - Whether the boundary is linked to a motion frame.
+          * - :py:attr:`~GetOrientation`
+            - Get the orientation angles. For more specific cases, see: "GetOrientationFromAngles",
+          * - :py:attr:`~SetOrientation`
+            - The rotation is the angles in x, y and z of the rotation in the given unit. For more
+          * - :py:attr:`~SetOrientationFromAngles`
+            - The rotation is the angles in x, y and z of the rotation. The default unit is `dega`.
+          * - :py:attr:`~SetOrientationFromAngleAndVector`
+            - The rotation uses the angle and a vector, using `unit` and changes the orientation mode to
+          * - :py:attr:`~SetOrientationFromBasisVector`
+            - Sets the rotation using three basis vector and changes the orientation mode to Basis Vector.
+          * - :py:attr:`~GetOrientationFromAngles`
+            - Get the current orientation in the form of angles.
+          * - :py:attr:`~GetOrientationFromAngleAndVector`
+            - Get the current orientation in the form of an angle and a vector.
+          * - :py:attr:`~GetOrientationFromBasisVector`
+            - Get the current orientation in the form of three basis vectors.
+          * - :py:attr:`~GetCapillaryFrictionCoefficient`
+            - Get the value of "Capillary Friction Coefficient".
+          * - :py:attr:`~SetCapillaryFrictionCoefficient`
+            - Set the value of "Capillary Friction Coefficient".
+          * - :py:attr:`~GetDisableTime`
+            - Get the value of "Disable Time".
+          * - :py:attr:`~SetDisableTime`
+            - Set the value of "Disable Time".
+          * - :py:attr:`~GetEnableTime`
+            - Get the value of "Enable Time".
+          * - :py:attr:`~SetEnableTime`
+            - Set the value of "Enable Time".
+          * - :py:attr:`~GetPivotPoint`
+            - Get the value of "Pivot Point".
+          * - :py:attr:`~SetPivotPoint`
+            - Set the values of "Pivot Point".
+          * - :py:attr:`~GetTemperature`
+            - Get the value of "Temperature".
+          * - :py:attr:`~SetTemperature`
+            - Set the value of "Temperature".
+          * - :py:attr:`~GetThermalBoundaryConditionType`
+            - Get "Thermal Boundary Condition Type" as a string.
+          * - :py:attr:`~SetThermalBoundaryConditionType`
+            - Set the value of "Thermal Boundary Condition Type".
+          * - :py:attr:`~GetValidThermalBoundaryConditionTypeValues`
+            - Get a list of all possible values for "Thermal Boundary Condition Type".
+          * - :py:attr:`~GetTranslation`
+            - Get the value of "Translation".
+          * - :py:attr:`~SetTranslation`
+            - Set the values of "Translation".
+          * - :py:attr:`~GetTriangleSize`
+            - Get the value of "Triangle Size".
+          * - :py:attr:`~SetTriangleSize`
+            - Set the value of "Triangle Size".
+          * - :py:attr:`~GetBoundaryMass`
+            - Get the value of "Boundary Mass".
+          * - :py:attr:`~SetBoundaryMass`
+            - Set the value of "Boundary Mass".
+          * - :py:attr:`~GetGravityCenter`
+            - Get the value of "Gravity Center".
+          * - :py:attr:`~SetGravityCenter`
+            - Set the values of "Gravity Center".
+          * - :py:attr:`~GetMomentXDirection`
+            - Get the value of "Moment X Direction".
+          * - :py:attr:`~SetMomentXDirection`
+            - Set the values of "Moment X Direction".
+          * - :py:attr:`~GetMomentYDirection`
+            - Get the value of "Moment Y Direction".
+          * - :py:attr:`~SetMomentYDirection`
+            - Set the values of "Moment Y Direction".
+          * - :py:attr:`~GetMomentZDirection`
+            - Get the value of "Moment Z Direction".
+          * - :py:attr:`~SetMomentZDirection`
+            - Set the values of "Moment Z Direction".
+          * - :py:attr:`~GetPrincipalMomentOfInertia`
+            - Get the value of "Principal Moment of Inertia".
+          * - :py:attr:`~SetPrincipalMomentOfInertia`
+            - Set the values of "Principal Moment of Inertia".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetPeriodicReplication`
+            - Get the value of "Periodic Replication".
+          * - :py:attr:`~SetPeriodicReplication`
+            - Set the value of "Periodic Replication".
+          * - :py:attr:`~GetNumberOfReplications`
+            - Get the value of "Number of Replications".
+          * - :py:attr:`~SetNumberOfReplications`
+            - Set the value of "Number of Replications".
+          * - :py:attr:`~GetReplicateGeometry`
+            - Get the value of "Replicate Geometry".
+          * - :py:attr:`~SetReplicateGeometry`
+            - Set the value of "Replicate Geometry".
+          * - :py:attr:`~GetReplicateTime`
+            - Get the value of "Replicate Time".
+          * - :py:attr:`~SetReplicateTime`
+            - Set the value of "Replicate Time".
+          * - :py:attr:`~GetSphBoundaryType`
+            - Get "Sph Boundary Type" as a string.
+          * - :py:attr:`~SetSphBoundaryType`
+            - Set the value of "Sph Boundary Type".
+          * - :py:attr:`~GetValidSphBoundaryTypeValues`
+            - Get a list of all possible values for "Sph Boundary Type".
+          * - :py:attr:`~GetSurfaceTensionContactAngle`
+            - Get the value of "Surface Tension Contact Angle".
+          * - :py:attr:`~SetSurfaceTensionContactAngle`
+            - Set the value of "Surface Tension Contact Angle".
+          * - :py:attr:`~GetVolumeShearWorkRatio`
+            - Get the value of "Volume Shear Work Ratio".
+          * - :py:attr:`~SetVolumeShearWorkRatio`
+            - Set the value of "Volume Shear Work Ratio".
+          * - :py:attr:`~GetWearModel`
+            - Get "Wear Model" as a string.
+          * - :py:attr:`~SetWearModel`
+            - Set the value of "Wear Model".
+          * - :py:attr:`~GetValidWearModelValues`
+            - Get a list of all possible values for "Wear Model".
+          * - :py:attr:`~GetMaterial`
+            - Get the "Material".
+          * - :py:attr:`~SetMaterial`
+            - Set the "Material".
+          * - :py:attr:`~GetAvailableMaterials`
+            - Get all available Materials.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_wall import RAWall
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: LoadFile(file_path: str, import_scale: float = 1.0, convert_yz: bool = False) -> None
+
+   
+   Replace the geometry representation for a new one contained on a file.
+
+   :param file_path:
+       The file path of the STL, DXF or XGL file to import.
+
+   :param import_scale:
+       The import scale to be applied to the imported geometry.
+
+   :param convert_yz:
+       Whether the y and z axes of the imported geometry should be converted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: HasMotionFrame() -> bool
+
+   
+   Whether the boundary is linked to a motion frame.
+
+   :return:
+       True if boundary is linked to a motion frame False otherwise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOrientation(unit: str = ...) -> rocky30.base_types.Tuple3F
+
+   
+   Get the orientation angles. For more specific cases, see: "GetOrientationFromAngles",
+   "GetOrientationFromAngleAndVector" and "GetOrientationFromBasisVector".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOrientation(rotation: rocky30.base_types.Tuple3F, unit: str = ...) -> None
+
+   
+   The rotation is the angles in x, y and z of the rotation in the given unit. For more
+   specific methods, see: "SetOrientationFromAngles", "SetOrientationFromAngleAndVector" and
+   "SetOrientationFromBasisVector".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOrientationFromAngles(rotation: rocky30.base_types.Tuple3F, unit: str = ..., local_angles: bool = True, order: str = 'XYZ') -> None
+
+   
+   The rotation is the angles in x, y and z of the rotation. The default unit is `dega`.
+   Additionally, local_angles can be used as well an order of the values via kwargs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOrientationFromAngleAndVector(angle: float, vector: rocky30.base_types.Tuple3F, unit: str = ...) -> None
+
+   
+   The rotation uses the angle and a vector, using `unit` and changes the orientation mode to
+   Angle and Vector.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOrientationFromBasisVector(vector_x: rocky30.base_types.Tuple3F, vector_y: rocky30.base_types.Tuple3F, vector_z: rocky30.base_types.Tuple3F) -> None
+
+   
+   Sets the rotation using three basis vector and changes the orientation mode to Basis Vector.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOrientationFromAngles(unit: str = ...) -> rocky30.base_types.Tuple3F
+
+   
+   Get the current orientation in the form of angles.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOrientationFromAngleAndVector(unit: str = ...) -> tuple[float, rocky30.base_types.Tuple3F]
+
+   
+   Get the current orientation in the form of an angle and a vector.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOrientationFromBasisVector() -> tuple[rocky30.base_types.Tuple3F, rocky30.base_types.Tuple3F, rocky30.base_types.Tuple3F]
+
+   
+   Get the current orientation in the form of three basis vectors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCapillaryFrictionCoefficient() -> float
+
+   
+   Get the value of "Capillary Friction Coefficient".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCapillaryFrictionCoefficient(value: str | float) -> None
+
+   
+   Set the value of "Capillary Friction Coefficient".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDisableTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Disable Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDisableTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Disable Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEnableTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Enable Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnableTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Enable Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPivotPoint(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Pivot Point".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPivotPoint(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Pivot Point".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTemperature(unit: str | None = None) -> float
+
+   
+   Get the value of "Temperature".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTemperature(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Temperature".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetThermalBoundaryConditionType() -> str
+
+   
+   Get "Thermal Boundary Condition Type" as a string.
+
+   :return:
+       The returned value will be one of ['adiabatic', 'prescribed_temperature', 'cfd_coupled_temperature'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetThermalBoundaryConditionType(value: str) -> None
+
+   
+   Set the value of "Thermal Boundary Condition Type".
+
+   :param value:
+       The value to set. Must be one of ['adiabatic', 'prescribed_temperature', 'cfd_coupled_temperature'].
+   :raises RockyApiError:
+       If `value` is not a valid "Thermal Boundary Condition Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidThermalBoundaryConditionTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Thermal Boundary Condition Type".
+
+   :return:
+       The returned list is ['adiabatic', 'prescribed_temperature', 'cfd_coupled_temperature'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTranslation(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Translation".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTranslation(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Translation".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTriangleSize(unit: str | None = None) -> float
+
+   
+   Get the value of "Triangle Size".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTriangleSize(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Triangle Size".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBoundaryMass(unit: str | None = None) -> float
+
+   
+   Get the value of "Boundary Mass".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "kg".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBoundaryMass(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Boundary Mass".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "kg".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGravityCenter(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Gravity Center".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGravityCenter(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Gravity Center".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMomentXDirection() -> list[float]
+
+   
+   Get the value of "Moment X Direction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMomentXDirection(values: list[str | float]) -> None
+
+   
+   Set the values of "Moment X Direction".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMomentYDirection() -> list[float]
+
+   
+   Get the value of "Moment Y Direction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMomentYDirection(values: list[str | float]) -> None
+
+   
+   Set the values of "Moment Y Direction".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMomentZDirection() -> list[float]
+
+   
+   Get the value of "Moment Z Direction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMomentZDirection(values: list[str | float]) -> None
+
+   
+   Set the values of "Moment Z Direction".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPrincipalMomentOfInertia(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Principal Moment of Inertia".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "kg.m2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPrincipalMomentOfInertia(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Principal Moment of Inertia".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "kg.m2".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPeriodicReplication() -> bool
+
+   
+   Get the value of "Periodic Replication".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPeriodicReplication(value: bool) -> None
+
+   
+   Set the value of "Periodic Replication".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfReplications() -> int
+
+   
+   Get the value of "Number of Replications".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfReplications(value: str | int) -> None
+
+   
+   Set the value of "Number of Replications".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetReplicateGeometry() -> bool
+
+   
+   Get the value of "Replicate Geometry".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetReplicateGeometry(value: bool) -> None
+
+   
+   Set the value of "Replicate Geometry".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetReplicateTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Replicate Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetReplicateTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Replicate Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSphBoundaryType() -> str
+
+   
+   Get "Sph Boundary Type" as a string.
+
+   :return:
+       The returned value will be one of ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSphBoundaryType(value: str) -> None
+
+   
+   Set the value of "Sph Boundary Type".
+
+   :param value:
+       The value to set. Must be one of ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+   :raises RockyApiError:
+       If `value` is not a valid "Sph Boundary Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidSphBoundaryTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Sph Boundary Type".
+
+   :return:
+       The returned list is ['free_slip', 'no_slip_laminar', 'no_slip_turbulent'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSurfaceTensionContactAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Surface Tension Contact Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSurfaceTensionContactAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Surface Tension Contact Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVolumeShearWorkRatio(unit: str | None = None) -> float
+
+   
+   Get the value of "Volume Shear Work Ratio".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m3/J".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVolumeShearWorkRatio(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Volume Shear Work Ratio".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m3/J".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWearModel() -> str
+
+   
+   Get "Wear Model" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'archard', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetWearModel(value: str) -> None
+
+   
+   Set the value of "Wear Model".
+
+   :param value:
+       The value to set. Must be one of ['none', 'archard', 'custom'].
+   :raises RockyApiError:
+       If `value` is not a valid "Wear Model" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidWearModelValues() -> list[str]
+
+   
+   Get a list of all possible values for "Wear Model".
+
+   :return:
+       The returned list is ['none', 'archard', 'custom'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaterial()
+
+   
+   Get the "Material".
+
+   :rtype: :class:`RASolidMaterial`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaterial(value) -> None
+
+   
+   Set the "Material".
+
+   :param unicode, :class:`RASolidMaterial` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableMaterials()
+
+   
+   Get all available Materials.
+
+   :rtype: List[:class:`RASolidMaterial`]
+       A list of :class:`RASolidMaterial`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

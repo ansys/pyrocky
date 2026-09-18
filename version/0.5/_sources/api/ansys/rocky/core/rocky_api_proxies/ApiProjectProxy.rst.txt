@@ -1,0 +1,86 @@
+
+
+
+
+
+
+:class:`ApiProjectProxy`
+========================
+
+
+.. py:class:: ansys.rocky.core.rocky_api_proxies.ApiProjectProxy(pyro_api: Pyro5.api.Proxy, session_uid: str | None = None)
+
+   Bases: :py:obj:`ApiElementProxy`
+
+
+   
+   Provides a proxy object for an API element.
+
+
+   :Parameters:
+
+       **pyro_api** : :obj:`Pyro5.api.Proxy`
+           Pyro5 proxy object for interacting with the Rocky app.
+
+       **pool_id** : :class:`python:int`
+           ID of the API element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: ApiProjectProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~CloseProject`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiProjectProxy
+
+
+
+Method detail
+-------------
+
+.. py:method:: CloseProject(check_save_state: bool = True) -> None
+
+
+
+

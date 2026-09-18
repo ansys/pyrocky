@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_cfd_parameters.py`` module
+===================================
+
+.. py:module:: ansys.rocky.app.ra_cfd_parameters
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_cfd_parameters
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_cfd_parameters.RACFDPerParticleParameters`
+            - Rocky PrePost Scripting wrapper representing the set of CFD parameters for a specific Particle.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_cfd_parameters.RACFDParametersList`
+            - Rocky PrePost Scripting wrapper to manipulate the list of per-particle CFD parameters in a CFD coupling configuration.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RACFDPerParticleParameters</api/ansys/rocky/app/ra_cfd_parameters/RACFDPerParticleParameters>
+    <span class="nf nf-cod-symbol_class"></span> RACFDParametersList</api/ansys/rocky/app/ra_cfd_parameters/RACFDParametersList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

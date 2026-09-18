@@ -1,0 +1,446 @@
+
+
+
+
+
+
+:class:`RAStreamlinesUserProcess`
+=================================
+
+
+.. py:class:: ansys.rocky.app.ra_streamlines_user_process.RAStreamlinesUserProcess
+
+   Bases: :py:obj:`ansys.rocky.app.ra_process_element.RAUserProcess`
+
+
+   
+   Base class for UserProcesses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAStreamlinesUserProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~UpdateStreamlines`
+            - Recompute the streamlines from the current values of sources, spacing, direction and
+          * - :py:attr:`~GetSources`
+            - Get the surfaces defined as sources to generate Streamlines.
+          * - :py:attr:`~SetSources`
+            - Set the surfaces as sources to generate Streamlines.
+          * - :py:attr:`~GetAvailableSources`
+            - Get available planar surfaces that can be used to generate Streamlines.
+          * - :py:attr:`~GetDirection`
+            - Get "Direction" as a string.
+          * - :py:attr:`~SetDirection`
+            - Set the value of "Direction".
+          * - :py:attr:`~GetValidDirectionValues`
+            - Get a list of all possible values for "Direction".
+          * - :py:attr:`~GetMaximumLength`
+            - Get the value of "Maximum Length".
+          * - :py:attr:`~SetMaximumLength`
+            - Set the value of "Maximum Length".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetSpacing`
+            - Get the value of "Spacing".
+          * - :py:attr:`~SetSpacing`
+            - Set the value of "Spacing".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_streamlines_user_process import RAStreamlinesUserProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.sph.streamlines_user_process.streamlines_user_process.StreamlinesUserProcessSubject]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: UpdateStreamlines() -> None
+
+   
+   Recompute the streamlines from the current values of sources, spacing, direction and
+   maximum length.
+
+   Since computing the streamlines is potentially slow when the spacing is small, this method
+   must be explicitly called in order to update the streamlines.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSources() -> list[SurfaceTypes] | None
+
+   
+   Get the surfaces defined as sources to generate Streamlines.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSources(surfaces: str | SurfaceTypes | list) -> None
+
+   
+   Set the surfaces as sources to generate Streamlines.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableSources() -> list[SurfaceTypes]
+
+   
+   Get available planar surfaces that can be used to generate Streamlines.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDirection() -> str
+
+   
+   Get "Direction" as a string.
+
+   :return:
+       The returned value will be one of ['forward', 'backward', 'both'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDirection(value: str) -> None
+
+   
+   Set the value of "Direction".
+
+   :param value:
+       The value to set. Must be one of ['forward', 'backward', 'both'].
+   :raises RockyApiError:
+       If `value` is not a valid "Direction" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidDirectionValues() -> list[str]
+
+   
+   Get a list of all possible values for "Direction".
+
+   :return:
+       The returned list is ['forward', 'backward', 'both'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaximumLength(unit: str | None = None) -> float
+
+   
+   Get the value of "Maximum Length".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaximumLength(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Maximum Length".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSpacing(unit: str | None = None) -> float
+
+   
+   Get the value of "Spacing".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSpacing(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Spacing".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

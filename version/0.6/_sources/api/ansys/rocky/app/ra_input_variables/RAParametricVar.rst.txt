@@ -1,0 +1,181 @@
+
+
+
+
+
+
+:class:`RAParametricVar`
+========================
+
+
+.. py:class:: ansys.rocky.app.ra_input_variables.RAParametricVar(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for a parametric input variable.
+
+   Parametric input variables can be retrieved via a project's :class:`RAInputVariables`. This
+   wrapper provides methods to rename the variable and change its value. Example usage:
+
+   .. code-block:: python
+
+       input_variables = project.GetInputVariables()
+       variable = input_variables.CreateVariable('a')
+
+       variable.SetName('b')
+       variable.SetValue(100)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParametricVar
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetName`
+            - Get the variable's name.
+          * - :py:attr:`~GetValue`
+            - Get the variable's current value.
+          * - :py:attr:`~SetValue`
+            - Set the variable's current value.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_input_variables import RAParametricVar
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetName() -> str
+
+   
+   Get the variable's name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValue() -> float
+
+   
+   Get the variable's current value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetValue(value: float) -> None
+
+   
+   Set the variable's current value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

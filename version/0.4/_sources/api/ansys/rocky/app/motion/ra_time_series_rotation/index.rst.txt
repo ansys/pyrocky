@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_time_series_rotation.py`` module
+=========================================
+
+.. py:module:: ansys.rocky.app.motion.ra_time_series_rotation
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_time_series_rotation
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_time_series_rotation.RATimeSeriesRotation`
+            - Rocky PrePost Scripting wrapper representing a Time Series Rotation motion.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RATimeSeriesRotation</api/ansys/rocky/app/motion/ra_time_series_rotation/RATimeSeriesRotation>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,392 @@
+
+
+
+
+
+
+:class:`RAMaterialCollection`
+=============================
+
+
+.. py:class:: ansys.rocky.app.ra_materials_collection.RAMaterialCollection(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`
+
+
+   
+   Rocky PrePost Scripting wrapper for the collection of materials in a project.
+
+   This wrapper corresponds to the "Materials" item on the project's data tree. Retrieve the
+   :class:`RAMaterialCollection` from a :class:`RAStudy` via:
+
+   .. code-block:: python
+
+       material_collection = study.GetMaterialCollection()
+
+   Instances of the :class:`RAMaterialCollection` class act as regular Python lists and can be
+   iterated on, individual materials accessed and deleted via index, etc:
+
+   .. code-block:: python
+
+       material_1 = material_collection.AddSolidMaterial()
+       material_2 = material_collection.AddFluidMaterial()
+       material_2 = material_collection[3]
+       del material_collection[2]
+
+   Items in this list are of type :class:`RASolidMaterial` and :class:`RAFluidMaterial`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+
+
+.. py:currentmodule:: RAMaterialCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~Remove`
+            - Remove an item from the list.
+          * - :py:attr:`~Clear`
+            - Remove all items from the list.
+          * - :py:attr:`~New`
+            - Deprecated: Use :meth:`Add{Solid, Fluid}Material()` instead.
+          * - :py:attr:`~AddSolidMaterial`
+            - 
+          * - :py:attr:`~AddFluidMaterial`
+            - 
+          * - :py:attr:`~GetDefaultSolidMaterials`
+            - Get a list with the default solid materials, in order of Particle, Belt and Boundary.
+          * - :py:attr:`~GetDefaultParticleMaterial`
+            - 
+          * - :py:attr:`~GetDefaultBeltMaterial`
+            - 
+          * - :py:attr:`~GetDefaultBoundaryMaterial`
+            - 
+          * - :py:attr:`~GetSolidMaterial`
+            - Get the solid material with the given name.
+          * - :py:attr:`~GetDefaultFluidMaterial`
+            - 
+          * - :py:attr:`~GetFluidMaterial`
+            - Get the fluid material with the given name.
+          * - :py:attr:`~GetMaterialsInteractionCollection`
+            - Get the study's Materials Interaction Collection.
+          * - :py:attr:`~GetBulkSolidFraction`
+            - Get the value of "Bulk Solid Fraction".
+          * - :py:attr:`~SetBulkSolidFraction`
+            - Set the value of "Bulk Solid Fraction".
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__delitem__`
+            - 
+          * - :py:attr:`~__len__`
+            - 
+          * - :py:attr:`~__iter__`
+            - 
+          * - :py:attr:`~__getitem__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_materials_collection import RAMaterialCollection
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.material.material.MaterialCollection]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: __delitem__(index: int) -> None
+
+.. py:method:: Remove(item: ansys.rocky.app.api_element_item.ApiElementItem) -> None
+
+   
+   Remove an item from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __len__() -> int
+
+.. py:method:: __iter__() -> ansys.rocky.app.api_element_item.ApiElementItem
+
+.. py:method:: __getitem__(index: int) -> ansys.rocky.app.api_element_item.ApiElementItem
+
+.. py:method:: Clear() -> None
+
+   
+   Remove all items from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: New() -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+   
+   Deprecated: Use :meth:`Add{Solid, Fluid}Material()` instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: AddSolidMaterial(name: str | None = None) -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+.. py:method:: AddFluidMaterial(name: str | None = None) -> ansys.rocky.app.ra_fluid_material.RAFluidMaterial
+
+.. py:method:: GetDefaultSolidMaterials() -> list[ansys.rocky.app.ra_solid_material.RASolidMaterial]
+
+   
+   Get a list with the default solid materials, in order of Particle, Belt and Boundary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDefaultParticleMaterial() -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+.. py:method:: GetDefaultBeltMaterial() -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+.. py:method:: GetDefaultBoundaryMaterial() -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+.. py:method:: GetSolidMaterial(material_name: str) -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+   
+   Get the solid material with the given name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDefaultFluidMaterial() -> ansys.rocky.app.ra_fluid_material.RAFluidMaterial
+
+.. py:method:: GetFluidMaterial(material_name: str) -> ansys.rocky.app.ra_fluid_material.RAFluidMaterial
+
+   
+   Get the fluid material with the given name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaterialsInteractionCollection() -> ansys.rocky.app.ra_materials_interaction_collection.RAMaterialsInteractionCollection
+
+   
+   Get the study's Materials Interaction Collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBulkSolidFraction() -> float
+
+   
+   Get the value of "Bulk Solid Fraction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBulkSolidFraction(value: str | float) -> None
+
+   
+   Set the value of "Bulk Solid Fraction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

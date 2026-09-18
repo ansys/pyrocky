@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_five_rolls_belt_profile.py`` module
+============================================
+
+.. py:module:: ansys.rocky.app.conveyors.ra_five_rolls_belt_profile
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_five_rolls_belt_profile
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.conveyors.ra_five_rolls_belt_profile.RAFiveRollsBeltProfile`
+            - Rocky API for a Five Rolls Belt Profile model.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAFiveRollsBeltProfile</api/ansys/rocky/app/conveyors/ra_five_rolls_belt_profile/RAFiveRollsBeltProfile>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

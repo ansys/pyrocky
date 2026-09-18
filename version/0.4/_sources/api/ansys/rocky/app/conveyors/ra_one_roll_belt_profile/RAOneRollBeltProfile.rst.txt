@@ -1,0 +1,176 @@
+
+
+
+
+
+
+:class:`RAOneRollBeltProfile`
+=============================
+
+
+.. py:class:: ansys.rocky.app.conveyors.ra_one_roll_belt_profile.RAOneRollBeltProfile(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky API for a One Roll Belt Profile model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAOneRollBeltProfile
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetMaterial`
+            - Get the "Material".
+          * - :py:attr:`~SetMaterial`
+            - Set the "Material".
+          * - :py:attr:`~GetAvailableMaterials`
+            - Get all available Materials.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.conveyors.ra_one_roll_belt_profile import RAOneRollBeltProfile
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetMaterial()
+
+   
+   Get the "Material".
+
+   :rtype: :class:`RASolidMaterial`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaterial(value) -> None
+
+   
+   Set the "Material".
+
+   :param unicode, :class:`RASolidMaterial` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableMaterials()
+
+   
+   Get all available Materials.
+
+   :rtype: List[:class:`RASolidMaterial`]
+       A list of :class:`RASolidMaterial`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

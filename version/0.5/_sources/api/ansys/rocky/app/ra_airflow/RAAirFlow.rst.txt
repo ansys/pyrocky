@@ -1,0 +1,987 @@
+
+
+
+
+
+
+:class:`RAAirFlow`
+==================
+
+
+.. py:class:: ansys.rocky.app.ra_airflow.RAAirFlow
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for Lattice Boltzmann Air Flow.
+
+   This wrapper can be accessed via the project's :class:`RACFDCoupling`:
+
+   .. code-block:: python
+
+       cfd_coupling = study.GetCFDCoupling()
+       cfd_coupling.SetupAirFlow()
+       airflow = cfd_coupling.GetAirFlow()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAAirFlow
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetPartIdIfValid`
+            - Set the AirFlow's part_id, but only if AirFlow is enabled in the simulation.
+          * - :py:attr:`~GetAirDensity`
+            - Get the value of "Air Density".
+          * - :py:attr:`~SetAirDensity`
+            - Set the value of "Air Density".
+          * - :py:attr:`~GetAirKinematicViscosity`
+            - Get the value of "Air Kinematic Viscosity".
+          * - :py:attr:`~SetAirKinematicViscosity`
+            - Set the value of "Air Kinematic Viscosity".
+          * - :py:attr:`~GetBoundaryConditionType`
+            - Get "Boundary Condition Type" as a string.
+          * - :py:attr:`~SetBoundaryConditionType`
+            - Set the value of "Boundary Condition Type".
+          * - :py:attr:`~GetValidBoundaryConditionTypeValues`
+            - Get a list of all possible values for "Boundary Condition Type".
+          * - :py:attr:`~GetCellSize`
+            - Get the value of "Cell Size".
+          * - :py:attr:`~SetCellSize`
+            - Set the value of "Cell Size".
+          * - :py:attr:`~GetInteractionScale`
+            - Get the value of "Interaction Scale".
+          * - :py:attr:`~SetInteractionScale`
+            - Set the value of "Interaction Scale".
+          * - :py:attr:`~GetMaxX`
+            - Get the value of "Max X".
+          * - :py:attr:`~SetMaxX`
+            - Set the value of "Max X".
+          * - :py:attr:`~GetMaxY`
+            - Get the value of "Max Y".
+          * - :py:attr:`~SetMaxY`
+            - Set the value of "Max Y".
+          * - :py:attr:`~GetMaxZ`
+            - Get the value of "Max Z".
+          * - :py:attr:`~SetMaxZ`
+            - Set the value of "Max Z".
+          * - :py:attr:`~GetMinX`
+            - Get the value of "Min X".
+          * - :py:attr:`~SetMinX`
+            - Set the value of "Min X".
+          * - :py:attr:`~GetMinY`
+            - Get the value of "Min Y".
+          * - :py:attr:`~SetMinY`
+            - Set the value of "Min Y".
+          * - :py:attr:`~GetMinZ`
+            - Get the value of "Min Z".
+          * - :py:attr:`~SetMinZ`
+            - Set the value of "Min Z".
+          * - :py:attr:`~GetSpeedOfSound`
+            - Get the value of "Speed of Sound".
+          * - :py:attr:`~SetSpeedOfSound`
+            - Set the value of "Speed of Sound".
+          * - :py:attr:`~GetStartWhenParticlesEnter`
+            - Get the value of "Start When Particles Enter".
+          * - :py:attr:`~SetStartWhenParticlesEnter`
+            - Set the value of "Start When Particles Enter".
+          * - :py:attr:`~GetStartTime`
+            - Get the value of "Start Time".
+          * - :py:attr:`~SetStartTime`
+            - Set the value of "Start Time".
+          * - :py:attr:`~GetUseAirflow`
+            - Get the value of "Use Airflow".
+          * - :py:attr:`~SetUseAirflow`
+            - Set the value of "Use Airflow".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_airflow import RAAirFlow
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+   
+   Set the AirFlow's part_id, but only if AirFlow is enabled in the simulation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAirDensity(unit: str | None = None) -> float
+
+   
+   Get the value of "Air Density".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAirDensity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Air Density".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAirKinematicViscosity(unit: str | None = None) -> float
+
+   
+   Get the value of "Air Kinematic Viscosity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m2/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAirKinematicViscosity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Air Kinematic Viscosity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m2/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBoundaryConditionType() -> str
+
+   
+   Get "Boundary Condition Type" as a string.
+
+   :return:
+       The returned value will be one of ['first_derivative', 'second_derivative'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBoundaryConditionType(value: str) -> None
+
+   
+   Set the value of "Boundary Condition Type".
+
+   :param value:
+       The value to set. Must be one of ['first_derivative', 'second_derivative'].
+   :raises RockyApiError:
+       If `value` is not a valid "Boundary Condition Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidBoundaryConditionTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Boundary Condition Type".
+
+   :return:
+       The returned list is ['first_derivative', 'second_derivative'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCellSize(unit: str | None = None) -> float
+
+   
+   Get the value of "Cell Size".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCellSize(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Cell Size".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInteractionScale(unit: str | None = None) -> float
+
+   
+   Get the value of "Interaction Scale".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInteractionScale(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Interaction Scale".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaxX(unit: str | None = None) -> float
+
+   
+   Get the value of "Max X".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaxX(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Max X".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaxY(unit: str | None = None) -> float
+
+   
+   Get the value of "Max Y".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaxY(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Max Y".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaxZ(unit: str | None = None) -> float
+
+   
+   Get the value of "Max Z".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaxZ(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Max Z".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMinX(unit: str | None = None) -> float
+
+   
+   Get the value of "Min X".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMinX(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Min X".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMinY(unit: str | None = None) -> float
+
+   
+   Get the value of "Min Y".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMinY(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Min Y".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMinZ(unit: str | None = None) -> float
+
+   
+   Get the value of "Min Z".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMinZ(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Min Z".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSpeedOfSound(unit: str | None = None) -> float
+
+   
+   Get the value of "Speed of Sound".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSpeedOfSound(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Speed of Sound".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStartWhenParticlesEnter() -> bool
+
+   
+   Get the value of "Start When Particles Enter".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStartWhenParticlesEnter(value: bool) -> None
+
+   
+   Set the value of "Start When Particles Enter".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseAirflow() -> bool
+
+   
+   Get the value of "Use Airflow".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseAirflow(value: bool) -> None
+
+   
+   Set the value of "Use Airflow".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

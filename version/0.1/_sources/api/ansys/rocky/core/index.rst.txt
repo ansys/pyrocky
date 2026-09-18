@@ -1,0 +1,129 @@
+
+
+
+
+
+The ``ansys.rocky.core`` library
+================================
+
+.. py:module:: ansys.rocky.core
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: core
+.. tab-set::
+
+
+    .. tab-item:: Submodules
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:attr:`~ansys.rocky.core.client`
+            - Module with the client operations of Rocky.
+
+
+          * - :py:attr:`~ansys.rocky.core.examples`
+            - Helper module to download project code examples.
+
+
+          * - :py:attr:`~ansys.rocky.core.exceptions`
+            - Module where the exceptions of the project are contained.
+
+
+          * - :py:attr:`~ansys.rocky.core.launcher`
+            - Module for launching operations of the Rocky backend.
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:attr:`~connect_to_rocky`
+            - Connect to a Rocky app instance.
+
+
+          * - :py:attr:`~launch_rocky`
+            - Launch the Rocky executable with the PyRocky server enabled.
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    🗎 client<client/index.rst>
+    🗎 examples<examples/index.rst>
+    🗎 exceptions<exceptions/index.rst>
+    🗎 launcher<launcher/index.rst>
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+
+PyRocky is a Python client for Ansys Rocky application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+
+
+
+

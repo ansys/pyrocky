@@ -1,0 +1,49 @@
+
+
+
+
+
+
+:class:`RockyLaunchError`
+=========================
+
+
+.. py:exception:: ansys.rocky.core.exceptions.RockyLaunchError
+
+   Bases: :py:obj:`PyRockyError`
+
+
+   
+   Provides the error raised when problems occurs during launch of the Rocky app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import RockyLaunchError
+
+
+
+
+

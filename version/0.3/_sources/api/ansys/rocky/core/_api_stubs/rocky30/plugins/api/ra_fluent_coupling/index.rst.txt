@@ -1,0 +1,371 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling
+==================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentOneWayCoupling
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluent_coupling.RAFluentTwoWayCoupling
+
+
+Module Contents
+---------------
+
+.. py:class:: RAFluentOneWayCoupling
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: SetupStoreFiles(filename) -> None
+
+
+   .. py:method:: GetAvailableCoupledBoundaryNames() -> collections.abc.Iterable[str]
+
+
+   .. py:method:: CreateCoupledBoundaries(coupled_boundary_names: list[str]) -> None
+
+
+   .. py:method:: GetIsOneWayPeriodic() -> bool
+
+
+   .. py:method:: SetIsOneWayPeriodic(value: bool) -> None
+
+
+   .. py:method:: GetOverwriteCfdUpdateDistance() -> bool
+
+
+   .. py:method:: SetOverwriteCfdUpdateDistance(value: bool) -> None
+
+
+   .. py:method:: GetStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetUseTurbulentDispersion() -> bool
+
+
+   .. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+
+   .. py:method:: GetUserCfdUpdateDistance(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetUserCfdUpdateDistance(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+.. py:class:: RAFluentTwoWayCoupling
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_cfd_coupling.RABaseCFDCoupling`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: SetPartIdIfValid() -> None
+
+
+   .. py:method:: GetFluentReleases()
+
+
+   .. py:property:: fluent_release
+
+
+   .. py:property:: fluent_phases
+
+
+   .. py:property:: fluent_rocky_phase
+
+
+   .. py:property:: fluent_solver_processes
+
+
+   .. py:property:: use_dat_initialization
+
+
+   .. py:property:: fluent_output_frequency_multiplier
+
+
+   .. py:property:: coupling_files_kept
+
+
+   .. py:property:: fluent_time_step
+
+
+   .. py:property:: additional_input_variables
+
+
+   .. py:property:: additional_output_variables
+
+
+   .. py:property:: disabled_input_variables
+
+
+   .. py:property:: disabled_output_variables
+
+
+   .. py:method:: SetupDatFilename(dat_filename)
+
+
+   .. py:attribute:: dat_filename
+      :type:  _typeshed.Incomplete
+
+
+   .. py:attribute:: cas_filename
+      :type:  _typeshed.Incomplete
+
+
+   .. py:method:: StartFluent() -> None
+
+
+   .. py:method:: IsFluentRunning()
+
+
+   .. py:method:: CloseFluent() -> None
+
+
+   .. py:method:: UpdateFluentInfo() -> None
+
+
+   .. py:method:: SetupStoreFiles(cas_filename, case_config: _typeshed.Incomplete | None = ...) -> None
+
+
+   .. py:method:: GetFluentVersion()
+
+
+   .. py:method:: SetFluentVersion(fluent_version) -> None
+
+
+   .. py:method:: GetMaximumVolumeFractionTarget()
+
+
+   .. py:method:: SetMaximumVolumeFractionTarget(value) -> None
+
+
+   .. py:method:: GetAvailableCoupledBoundaryNames() -> collections.abc.Iterable[str]
+
+
+   .. py:method:: CreateCoupledBoundaries(coupled_boundary_names: list[str]) -> None
+
+
+   .. py:method:: GetAbsoluteValue(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAbsoluteValue(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMaximumIterations() -> int
+
+
+   .. py:method:: SetMaximumIterations(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetMappingMethod() -> str
+
+
+   .. py:method:: SetMappingMethod(value: str) -> None
+
+
+   .. py:method:: GetValidMappingMethodValues() -> List[str]
+
+
+   .. py:method:: GetAveragingMethod() -> str
+
+
+   .. py:method:: SetAveragingMethod(value: str)
+
+
+   .. py:method:: GetValidAveragingMethodValues() -> List[str]
+
+
+   .. py:method:: GetMinimumIterations() -> int
+
+
+   .. py:method:: SetMinimumIterations(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetAveragingRadiusType() -> str
+
+
+   .. py:method:: SetAveragingRadiusType(value: str) -> None
+
+
+   .. py:method:: GetValidAveragingRadiusTypeValues() -> List[str]
+
+
+   .. py:method:: GetSolidsMaximumVolumeFractionTarget() -> float
+
+
+   .. py:method:: SetSolidsMaximumVolumeFractionTarget(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetVolumeFractionTarget() -> float
+
+
+   .. py:method:: SetVolumeFractionTarget(value: float) -> None
+
+
+   .. py:method:: GetCouplingFilesKept() -> int
+
+
+   .. py:method:: SetCouplingFilesKept(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetDecompositionFactor() -> float
+
+
+   .. py:method:: SetDecompositionFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetDiffusionCoefficient(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDiffusionCoefficient(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetFluentAdditionalArgs() -> str
+
+
+   .. py:method:: SetFluentAdditionalArgs(value: str) -> None
+
+
+   .. py:method:: GetFluentExecutionMode() -> str
+
+
+   .. py:method:: SetFluentExecutionMode(value: str) -> None
+
+
+   .. py:method:: GetValidFluentExecutionModeValues() -> List[str]
+
+
+   .. py:method:: GetFluentOutputFrequencyMultiplier() -> int
+
+
+   .. py:method:: SetFluentOutputFrequencyMultiplier(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetFluentSolverProcesses() -> int
+
+
+   .. py:method:: SetFluentSolverProcesses(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetFractionParticleSize(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetFractionParticleSize(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMaximumResidualTolerance() -> float
+
+
+   .. py:method:: SetMaximumResidualTolerance(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetMaximumTimeSteps() -> int
+
+
+   .. py:method:: SetMaximumTimeSteps(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetMinimumTimeSteps() -> int
+
+
+   .. py:method:: SetMinimumTimeSteps(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetNumberOfSubsteps() -> int
+
+
+   .. py:method:: SetNumberOfSubsteps(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetNumberOfThreads() -> int
+
+
+   .. py:method:: SetNumberOfThreads(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetOverwriteCfdUpdateDistance() -> bool
+
+
+   .. py:method:: SetOverwriteCfdUpdateDistance(value: bool) -> None
+
+
+   .. py:method:: GetMaximumVolumeFraction(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMaximumVolumeFraction(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBackDiffusion() -> bool
+
+
+   .. py:method:: SetBackDiffusion(value: bool) -> None
+
+
+   .. py:method:: EnableBackDiffusion() -> None
+
+
+   .. py:method:: DisableBackDiffusion() -> None
+
+
+   .. py:method:: IsBackDiffusionEnabled() -> bool
+
+
+   .. py:method:: GetUseDatInitialization() -> bool
+
+
+   .. py:method:: SetUseDatInitialization(value: bool) -> None
+
+
+   .. py:method:: GetSubstepping() -> bool
+
+
+   .. py:method:: SetSubstepping(value: bool) -> None
+
+
+   .. py:method:: EnableSubstepping() -> None
+
+
+   .. py:method:: DisableSubstepping() -> None
+
+
+   .. py:method:: IsSubsteppingEnabled() -> bool
+
+
+   .. py:method:: GetUseTurbulentDispersion() -> bool
+
+
+   .. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+
+   .. py:method:: GetUserCfdUpdateDistance(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetUserCfdUpdateDistance(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

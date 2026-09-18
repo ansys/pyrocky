@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_spring_dashpot_moment.py`` module
+==========================================
+
+.. py:module:: ansys.rocky.app.motion.ra_spring_dashpot_moment
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_spring_dashpot_moment
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.motion.ra_spring_dashpot_moment.RASpringDashpotMoment`
+            - Rocky PrePost Scripting wrapper representing a Spring-Dashpot Moment motion.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RASpringDashpotMoment</api/ansys/rocky/app/motion/ra_spring_dashpot_moment/RASpringDashpotMoment>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

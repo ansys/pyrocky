@@ -1,0 +1,74 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_point_cloud
+==============================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_point_cloud
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_point_cloud.RAPointCloud
+
+
+Module Contents
+---------------
+
+.. py:class:: RAPointCloud
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.motion._with_movement_mixin._WithMovementMixin`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.point_cloud.point_cloud.PointCloud]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetFilePath() -> str
+
+
+   .. py:method:: SetFilePath(file_path: Union[str, pathlib.Path]) -> None
+
+
+   .. py:method:: IsTransient() -> bool
+
+
+   .. py:method:: GetEnablePeriodic() -> bool
+
+
+   .. py:method:: SetEnablePeriodic(value: bool) -> None
+
+
+   .. py:method:: EnablePeriodic() -> None
+
+
+   .. py:method:: DisablePeriodic() -> None
+
+
+   .. py:method:: IsPeriodicEnabled() -> bool
+
+
+   .. py:method:: GetPeriodicStartTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPeriodicStartTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPeriodicStopTime(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPeriodicStopTime(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSearchCutOff() -> bool
+
+
+   .. py:method:: SetSearchCutOff(value: bool) -> None
+
+

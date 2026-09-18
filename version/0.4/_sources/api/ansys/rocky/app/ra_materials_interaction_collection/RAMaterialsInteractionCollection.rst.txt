@@ -1,0 +1,252 @@
+
+
+
+
+
+
+:class:`RAMaterialsInteractionCollection`
+=========================================
+
+
+.. py:class:: ansys.rocky.app.ra_materials_interaction_collection.RAMaterialsInteractionCollection(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`ansys.rocky.app.ra_materials_interaction.RAMaterialsInteraction`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper for the collection of materials interactions in a project.
+
+   This wrapper corresponds to the "Materials Interactions" item on the project's data tree. Retrieve
+   the :class:`RAMaterialsInteractionCollection` from a :class:`RAStudy` via:
+
+   .. code-block:: python
+
+       interaction_collection = RAMaterialCollection.GetMaterialsInteractionCollection()
+
+   Instances of the :class:`RAMaterialsInteractionCollection` class act as regular Python lists and can be
+   iterated on, individual materials accessed via index, etc:
+
+   .. code-block:: python
+
+       interaction_1 = interaction_collection[3]
+       for interaction in interaction_collection:
+           interaction.SetAdhesiveFraction(80, '%')
+       interaction_2 = interaction_collection.GetMaterialsInteraction('Default Particles', 'Default Boundaries')
+
+   Note that individual interactions can't be created or removed by the user: they are created and
+   removed as necessary as new materials are created or removed.
+
+   Items in this list are of type :class:`RAMaterialsInteraction`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:currentmodule:: RAMaterialsInteractionCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~New`
+            - Unused: Materials Interactions are automatically created when Materials are created.
+          * - :py:attr:`~Remove`
+            - Unused: Materials Interactions are automatically deleted when Materials are created.
+          * - :py:attr:`~Clear`
+            - Unused: Materials Interactions are automatically deleted when Materials are created.
+          * - :py:attr:`~GetMaterialsInteraction`
+            - Get the materials interaction for the given pair of materials.
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__delitem__`
+            - Unused: Materials Interactions are automatically deleted when Materials are created.
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_materials_interaction_collection import RAMaterialsInteractionCollection
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: New() -> None
+
+   
+   Unused: Materials Interactions are automatically created when Materials are created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __delitem__(index) -> None
+
+   
+   Unused: Materials Interactions are automatically deleted when Materials are created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Remove(item) -> None
+
+   
+   Unused: Materials Interactions are automatically deleted when Materials are created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Clear() -> None
+
+   
+   Unused: Materials Interactions are automatically deleted when Materials are created.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaterialsInteraction(material_1, material_2) -> ansys.rocky.app.ra_materials_interaction.RAMaterialsInteraction
+
+   
+   Get the materials interaction for the given pair of materials.
+
+   For both `material_1` and `material_2` parameters, the parameter can be either an instance
+   of :class:`RASolidMaterial` or the material's name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

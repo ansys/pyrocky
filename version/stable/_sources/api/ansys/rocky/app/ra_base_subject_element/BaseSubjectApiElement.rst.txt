@@ -1,0 +1,99 @@
+
+
+
+
+
+
+:class:`BaseSubjectApiElement`
+==============================
+
+
+.. py:class:: ansys.rocky.app.ra_base_subject_element.BaseSubjectApiElement(base_subject)
+
+   
+   PrePost Scripting wrapper for model elements without a pool ID.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: BaseSubjectApiElement
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetSubject`
+            - :rtype: BaseSubject
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_base_subject_element import BaseSubjectApiElement
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetSubject()
+
+   
+   :rtype: BaseSubject
+   :returns:
+       The element associated with the element id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

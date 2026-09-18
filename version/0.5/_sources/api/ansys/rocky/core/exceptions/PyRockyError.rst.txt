@@ -1,0 +1,49 @@
+
+
+
+
+
+
+:class:`PyRockyError`
+=====================
+
+
+.. py:exception:: ansys.rocky.core.exceptions.PyRockyError
+
+   Bases: :py:obj:`Exception`
+
+
+   
+   Provides the generic exception for the PyRocky API.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import PyRockyError
+
+
+
+
+

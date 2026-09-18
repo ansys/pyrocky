@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_parametric_variables.py`` module
+=========================================
+
+.. py:module:: ansys.rocky.app.ra_parametric_variables
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_parametric_variables
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_parametric_variables.RAParametricVariables`
+            - Rocky PrePost Scripting wrapper for the parametric variables (both input and output) in a project.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAParametricVariables</api/ansys/rocky/app/ra_parametric_variables/RAParametricVariables>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

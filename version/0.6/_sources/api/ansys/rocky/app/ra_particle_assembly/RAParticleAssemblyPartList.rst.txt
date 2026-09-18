@@ -1,0 +1,116 @@
+
+
+
+
+
+
+:class:`RAParticleAssemblyPartList`
+===================================
+
+
+.. py:class:: ansys.rocky.app.ra_particle_assembly.RAParticleAssemblyPartList(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`RAParticleAssemblyPart`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper for the parts list in a single Particle Assembly.
+
+   To get the :class:`RAParticleAssemblyPartList` from a :class:`RAParticleAssembly`, use:
+
+   .. code-block:: python
+
+       assembly_parts = particle_assembly.GetAssemblyParts()
+
+   :class:`RAParticleAssemblyPartList` contains methods to add, remove and retrieve individual
+   assembly parts. It corresponds to the list of entries on a Particle Assembly's "Shape" tab
+   on the Rocky UI.
+
+   The following examples add, remove and access individual entries in the assembly parts list:
+
+   .. code-block:: python
+
+       # Add new items
+       assembly_part_1 = assembly_parts.New()
+
+       # Access and modify items
+       assembly_part_2 = assembly_parts[0]
+       assembly_part_2.SetParticle('Particle 1')
+
+       # Remove items
+       assembly_parts.Remove(assembly_part_2)
+       del assembly_parts[0]
+       assembly_parts.Clear()
+
+   The :class:`RAParticleAssemblyPartList` is a list of :class:`RAParticleAssemblyPart`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParticleAssemblyPartList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_particle_assembly import RAParticleAssemblyPartList
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.particle.particle_assembly.ParticleAssemblyPartList]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+
+
+

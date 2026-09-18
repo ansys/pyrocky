@@ -1,0 +1,49 @@
+
+
+
+
+
+
+:class:`RockyApiError`
+======================
+
+
+.. py:exception:: ansys.rocky.core.exceptions.RockyApiError
+
+   Bases: :py:obj:`Exception`
+
+
+   
+   Provides the ``Exception`` class for an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import RockyApiError
+
+
+
+
+

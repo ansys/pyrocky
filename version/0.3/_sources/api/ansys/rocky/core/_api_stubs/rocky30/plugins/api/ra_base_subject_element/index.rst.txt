@@ -1,0 +1,22 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_subject_element
+=======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_subject_element
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_base_subject_element.BaseSubjectApiElement
+
+
+Module Contents
+---------------
+
+.. py:class:: BaseSubjectApiElement(base_subject)
+
+   .. py:method:: GetSubject()
+
+

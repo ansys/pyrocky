@@ -1,0 +1,11 @@
+API reference
+=============
+
+This section describes  endpoints, their capabilities, and how
+to interact with them programmatically.
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   🖿 ansys.rocky.core</api/ansys/rocky/core/index>

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -19,6 +19,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
 """Module that exposes functions to launch a Rocky application session."""
 
 import contextlib
@@ -288,7 +289,11 @@ def launch_container(  # pragma: no cover
     except docker.errors.DockerException as e:
         raise LaunchError(f"Failed to start {product.capitalize()} container: {e}")
 
-    client = connect(port=port)
+    client = retry.wait_succeed(
+        lambda: connect(port=port),
+        timeout=_DEFAULT_LAUNCH_CONNECT_TIMEOUT,
+        expected_exc=ConnectionRefusedError,
+    )
     client._process = container
     return client
 

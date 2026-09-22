@@ -229,8 +229,9 @@ def launch_freeflow(  # pragma: no cover
 def launch_container(  # pragma: no cover
     product: Literal["rocky", "freeflow"] = "rocky",
     version_tag: str = "26.1.0",
-    port: int = PYROCKY_DEFAULT_PORT,
-    license_server: str | None = None,
+    server_port: int = PYROCKY_DEFAULT_PORT,
+    license_file: str | None = None,
+    connect_timeout: int = _DEFAULT_LAUNCH_CONNECT_TIMEOUT,
 ) -> RockyClient:
     """
     Launch a Rocky or FreeFlow container with the PyRocky server enabled.
@@ -241,17 +242,26 @@ def launch_container(  # pragma: no cover
         The product variant of the container to launch ("rocky" or "freeflow").
     version_tag:
         Semantic version tag of the container image. e.g. "26.1.0".
-    port:
+    server_port:
         Port to use for the PyRocky server inside the container.
-    license_server:
-        Optional license server string to set in the container. If not provided,
+    license_file:
+        Optional license file for the license checkout. If not provided,
         the function will attempt to read the `ANSYSLMD_LICENSE_FILE` environment
         variable from the host system.
+    connect_timeout:
+        How long to wait, in seconds, when connecting to the launched container.
 
     Returns
     -------
     RockyClient
         Rocky client instance connected to the launched container.
+
+    Raises
+    ------
+    LaunchError
+        For errors starting the Rocky/FreeFlow container instance
+    ConnectionRefusedError
+        For errors connecting to the container instance
     """
     try:
         import docker
@@ -261,23 +271,17 @@ def launch_container(  # pragma: no cover
             Install it by running `pip install .[docker]`.
             """)
 
-    image = f"{product}:{version_tag}"
-    uds_socket_dir = _uds_socket_path(port).parent
-
-    if license_server is not None:
-        license_file = f"1055@{license_server}"
-    else:
-        license_file = os.environ.get("ANSYSLMD_LICENSE_FILE")
+    image = f"ghcr.io/ansys/{product}:{version_tag}"
+    uds_socket_dir = _uds_socket_path(server_port).parent
 
     if license_file is None:
-        raise LaunchError("Could not obtain the license file.")
+        license_file = os.environ.get("ANSYSLMD_LICENSE_FILE", "")
 
     try:
         docker_client = docker.from_env()
-
         container = docker_client.containers.run(
             image=image,
-            command=["--pyrocky", "--pyrocky-port", str(port), "--headless"],
+            command=["--pyrocky", "--pyrocky-port", str(server_port), "--headless"],
             detach=True,
             volumes={str(uds_socket_dir): {"bind": str(uds_socket_dir), "mode": "rw"}},
             environment={
@@ -287,11 +291,11 @@ def launch_container(  # pragma: no cover
             remove=True,
         )
     except docker.errors.DockerException as e:
-        raise LaunchError(f"Failed to start {product.capitalize()} container: {e}")
+        raise LaunchError(f"Failed to start {image} container.") from e
 
     client = retry.wait_succeed(
-        lambda: connect(port=port),
-        timeout=_DEFAULT_LAUNCH_CONNECT_TIMEOUT,
+        lambda: connect(port=server_port),
+        timeout=connect_timeout,
         expected_exc=ConnectionRefusedError,
     )
     client._process = container

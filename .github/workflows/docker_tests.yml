@@ -1,0 +1,49 @@
+name: Docker Tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      images:
+        description: "Space separated images to test (e.g. 'freeflow:26.1.0 rocky:26.1.0')"
+        required: true
+        type: string
+        default: "freeflow:26.1.0 rocky:26.1.0"
+
+env:
+  MAIN_PYTHON_VERSION: '3.14'
+
+jobs:
+  docker_tests:
+    name: Run Docker Container Tests
+    runs-on: [self-hosted, Linux, pyrocky]
+    timeout-minutes: 20
+    env:
+      ANSYSLMD_LICENSE_FILE: 1055@${{ secrets.LICENSE_SERVER }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+
+      - name: Login in Github Container registry
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Python venv and install
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install .[tests,docker]
+
+      - name: Run container tests
+        env:
+          DOCKER_TEST_IMAGES: ${{ inputs.images }}
+        run: |
+          source .venv/bin/activate
+          pytest tests/test_container.py -ra -vv

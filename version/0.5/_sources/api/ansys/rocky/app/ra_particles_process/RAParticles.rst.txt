@@ -1,0 +1,193 @@
+
+
+
+
+
+
+:class:`RAParticles`
+====================
+
+
+.. py:class:: ansys.rocky.app.ra_particles_process.RAParticles
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   
+   Rocky api Particles model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParticles
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetNumberOfParticles`
+            - Get the number of active particles at the given time step.
+          * - :py:attr:`~IterParticles`
+            - Iterate on the active particles at the given time step.
+          * - :py:attr:`~RemoveProcess`
+            - It is not possible to remove the item "Particles" from the project. It's a standard Rocky
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_particles_process import RAParticles
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetNumberOfParticles(time_step)
+
+   
+   Get the number of active particles at the given time step.
+
+   :type time_step: unicode, ITimeStep or int
+   :param time_step:
+       Either a 'current' string with meaning the current time step
+       or an ITimeStep identifying the time to get the topology shape
+       or an int identifying the time step index to be used based on the global time set
+
+   :rtype: int
+   :returns:
+       The number of particles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IterParticles(time_step)
+
+   
+   Iterate on the active particles at the given time step.
+
+   :type time_step: unicode, ITimeStep or int
+   :param time_step:
+       Either a 'current' string with meaning the current time step
+       or an ITimeStep identifying the time to get the topology shape
+       or an int identifying the time step index to be used based on the global time set
+
+   :rtype: iterator(Particle)
+   :returns:
+       An iterator over the particles.
+       A Particle has:
+       - x, y, z, size
+       - x_axis, y_axis, z_axis, orientation_angle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveProcess() -> None
+
+   
+   It is not possible to remove the item "Particles" from the project. It's a standard Rocky
+   item in project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

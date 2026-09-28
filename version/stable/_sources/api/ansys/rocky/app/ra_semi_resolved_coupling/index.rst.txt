@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_semi_resolved_coupling.py`` module
+===========================================
+
+.. py:module:: ansys.rocky.app.ra_semi_resolved_coupling
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_semi_resolved_coupling
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_semi_resolved_coupling.RAFluentSemiResolvedCoupling`
+            - PrePost Scripting wrapper class for the Fluent Two-Way Semi Resolved coupling mode
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAFluentSemiResolvedCoupling</api/ansys/rocky/app/ra_semi_resolved_coupling/RAFluentSemiResolvedCoupling>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

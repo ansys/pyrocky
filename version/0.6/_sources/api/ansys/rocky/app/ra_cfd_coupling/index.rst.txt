@@ -1,0 +1,104 @@
+
+
+
+
+
+
+The ``ra_cfd_coupling.py`` module
+=================================
+
+.. py:module:: ansys.rocky.app.ra_cfd_coupling
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_cfd_coupling
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_cfd_coupling.RACFDCoupling`
+            - Rocky PrePost Scripting wrapper to configure the CFD coupling mode in a project.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_cfd_coupling.RABaseCFDCoupling`
+            - Base class for PrePost Scripting wrappers for the various CFD coupling modes.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_cfd_coupling.RAConstantOneWayCoupling`
+            - Rocky PrePost Scripting wrapper for One-Way Constant CFD coupling properties.
+
+
+
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RACFDCouplingTypes`
+            - 
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RACFDCoupling</api/ansys/rocky/app/ra_cfd_coupling/RACFDCoupling>
+    <span class="nf nf-cod-symbol_class"></span> RABaseCFDCoupling</api/ansys/rocky/app/ra_cfd_coupling/RABaseCFDCoupling>
+    <span class="nf nf-cod-symbol_class"></span> RAConstantOneWayCoupling</api/ansys/rocky/app/ra_cfd_coupling/RAConstantOneWayCoupling>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: RACFDCouplingTypes
+
+
+

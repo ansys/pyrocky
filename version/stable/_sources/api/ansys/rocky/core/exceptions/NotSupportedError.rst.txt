@@ -1,0 +1,49 @@
+
+
+
+
+
+
+:class:`NotSupportedError`
+==========================
+
+
+.. py:exception:: ansys.rocky.core.exceptions.NotSupportedError
+
+   Bases: :py:obj:`Exception`
+
+
+   
+   Provides the error to be raised when feature/parameter/version is not supported.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import NotSupportedError
+
+
+
+
+

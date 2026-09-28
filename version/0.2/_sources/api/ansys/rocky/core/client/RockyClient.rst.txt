@@ -1,0 +1,86 @@
+
+
+.. py:class:: RockyClient(rocky_api)
+
+   
+   Provides the client object for interacting with the Rocky app.
+
+
+   :Parameters:
+
+       **rocky_api** : :obj:`Pyro5.api.Proxy`
+           Pyro5 proxy object for interacting with the Rocky app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RockyClient
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~close`
+            - 
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~api`
+            - 
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.client import RockyClient
+
+Property detail
+---------------
+.. py:property:: api
+
+
+
+
+
+
+Method detail
+-------------
+.. py:method:: close()
+
+
+

@@ -1,0 +1,719 @@
+
+
+
+
+
+
+:class:`RAMaterialsInteraction`
+===============================
+
+
+.. py:class:: ansys.rocky.app.ra_materials_interaction.RAMaterialsInteraction(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`
+
+
+   
+   Rocky PrePost Scripting wrapper for the interaction between two materials.
+
+   Retrieve a :class:`RAMaterialsInteraction` from a :class:`RAMaterialsInteractionCollection` and
+   two :class:`RASolidMaterial`:
+
+   .. code-block:: python
+
+       material_1 = study.GetElement('Default Particles')
+       material_2 = study.GetElement('Default Boundaries')
+       interaction_collection = RAMaterialCollection.GetMaterialsInteractionCollection()
+       interaction = interaction_collection.GetMaterialsInteraction(material_1, material_2)
+
+   Note that the materials to which a :class:`RAMaterialsInteraction` refers are fixed - while they
+   can be retrieved with :meth:`GetFirstMaterial()` and :meth:`GetSecondMaterial()`, they can't
+   be set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAMaterialsInteraction
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFirstMaterial`
+            - Get this interaction's first material.
+          * - :py:attr:`~GetSecondMaterial`
+            - Get this interaction's second material.
+          * - :py:attr:`~GetAdhesiveDistance`
+            - Get the value of "Adhesive Distance".
+          * - :py:attr:`~SetAdhesiveDistance`
+            - Set the value of "Adhesive Distance".
+          * - :py:attr:`~GetAdhesiveFraction`
+            - Get the value of "Adhesive Fraction".
+          * - :py:attr:`~SetAdhesiveFraction`
+            - Set the value of "Adhesive Fraction".
+          * - :py:attr:`~GetContactStiffnessMultiplier`
+            - Get the value of "Contact Stiffness Multiplier".
+          * - :py:attr:`~SetContactStiffnessMultiplier`
+            - Set the value of "Contact Stiffness Multiplier".
+          * - :py:attr:`~GetRestitutionCoefficient`
+            - Get the value of "Restitution Coefficient".
+          * - :py:attr:`~SetRestitutionCoefficient`
+            - Set the value of "Restitution Coefficient".
+          * - :py:attr:`~GetDynamicFriction`
+            - Get the value of "Dynamic Friction".
+          * - :py:attr:`~SetDynamicFriction`
+            - Set the value of "Dynamic Friction".
+          * - :py:attr:`~GetStaticFriction`
+            - Get the value of "Static Friction".
+          * - :py:attr:`~SetStaticFriction`
+            - Set the value of "Static Friction".
+          * - :py:attr:`~GetSurfaceEnergy`
+            - Get the value of "Surface Energy".
+          * - :py:attr:`~SetSurfaceEnergy`
+            - Set the value of "Surface Energy".
+          * - :py:attr:`~GetTangentialStiffnessRatio`
+            - Get the value of "Tangential Stiffness Ratio".
+          * - :py:attr:`~SetTangentialStiffnessRatio`
+            - Set the value of "Tangential Stiffness Ratio".
+          * - :py:attr:`~GetVelocityExponent`
+            - Get the value of "Velocity Exponent".
+          * - :py:attr:`~SetVelocityExponent`
+            - Set the value of "Velocity Exponent".
+          * - :py:attr:`~GetVelocityLimit`
+            - Get the value of "Velocity Limit".
+          * - :py:attr:`~SetVelocityLimit`
+            - Set the value of "Velocity Limit".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_materials_interaction import RAMaterialsInteraction
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetFirstMaterial() -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+   
+   Get this interaction's first material.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSecondMaterial() -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+   
+   Get this interaction's second material.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAdhesiveDistance(unit: str | None = None) -> float
+
+   
+   Get the value of "Adhesive Distance".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAdhesiveDistance(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Adhesive Distance".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAdhesiveFraction(unit: str | None = None) -> float
+
+   
+   Get the value of "Adhesive Fraction".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAdhesiveFraction(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Adhesive Fraction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetContactStiffnessMultiplier(unit: str | None = None) -> float
+
+   
+   Get the value of "Contact Stiffness Multiplier".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetContactStiffnessMultiplier(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Contact Stiffness Multiplier".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRestitutionCoefficient(unit: str | None = None) -> float
+
+   
+   Get the value of "Restitution Coefficient".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRestitutionCoefficient(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Restitution Coefficient".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDynamicFriction(unit: str | None = None) -> float
+
+   
+   Get the value of "Dynamic Friction".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDynamicFriction(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Dynamic Friction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStaticFriction(unit: str | None = None) -> float
+
+   
+   Get the value of "Static Friction".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStaticFriction(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Static Friction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSurfaceEnergy(unit: str | None = None) -> float
+
+   
+   Get the value of "Surface Energy".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "J/m2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSurfaceEnergy(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Surface Energy".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "J/m2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTangentialStiffnessRatio(unit: str | None = None) -> float
+
+   
+   Get the value of "Tangential Stiffness Ratio".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTangentialStiffnessRatio(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Tangential Stiffness Ratio".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVelocityExponent(unit: str | None = None) -> float
+
+   
+   Get the value of "Velocity Exponent".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVelocityExponent(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Velocity Exponent".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVelocityLimit(unit: str | None = None) -> float
+
+   
+   Get the value of "Velocity Limit".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVelocityLimit(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Velocity Limit".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

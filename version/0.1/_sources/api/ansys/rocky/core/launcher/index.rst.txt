@@ -1,0 +1,114 @@
+
+
+
+
+
+The ``launcher.py`` module
+==========================
+
+.. py:module:: ansys.rocky.core.launcher
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: launcher
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:attr:`~launch_rocky`
+            - Launch the Rocky executable with the PyRocky server enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Description
+-----------
+
+Module for launching operations of the Rocky backend.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: launch_rocky(rocky_exe: Optional[Union[pathlib.Path, str]] = None, *, headless: bool = True, server_port: int = DEFAULT_SERVER_PORT) -> ansys.rocky.core.client.RockyClient
+
+   
+   Launch the Rocky executable with the PyRocky server enabled.
+
+   This method waits for Rocky to start up and then returns a
+   ```RockyClient`` instance.
+
+   :Parameters:
+
+       **rocky_exe** : :obj:`Optional`\[:obj:`Path`], :obj:`optional`
+           Path to the Rocky executable. If a path is not specified, this method
+           tries to find the path using ``AWP_ROOT*`` environment variables.
+
+       **headless** : :ref:`bool <python:bltin-boolean-values>`, :obj:`optional`
+           Whether to launch Rocky in headless mode. The default is ``True``.
+
+       **server_port: int, optional**
+           Set the port for Rocky RPC server.
+
+   :Returns:
+
+       :obj:`RockyClient`
+           Rocky client instance connected to the launched Rocky app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

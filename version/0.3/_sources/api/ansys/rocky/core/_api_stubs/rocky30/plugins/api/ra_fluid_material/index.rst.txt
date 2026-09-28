@@ -1,0 +1,68 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material
+=================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material.RAFluidMaterial
+
+
+Module Contents
+---------------
+
+.. py:class:: RAFluidMaterial(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.material.fluid_material.FluidMaterial]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetSoundSpeed(unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: SetSoundSpeed(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetDensity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetSpecificHeat(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSpecificHeat(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetThermalConductivity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetThermalConductivity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetViscosity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetViscosity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

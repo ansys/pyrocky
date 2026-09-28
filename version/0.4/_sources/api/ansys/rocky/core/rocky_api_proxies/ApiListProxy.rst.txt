@@ -1,0 +1,95 @@
+
+
+
+
+
+
+:class:`ApiListProxy`
+=====================
+
+
+.. py:class:: ansys.rocky.core.rocky_api_proxies.ApiListProxy(pyro_api: Pyro5.api.Proxy, pool_id: str, session_uid: str | None = None)
+
+   Bases: :py:obj:`ApiElementProxy`
+
+
+   
+   Provides a proxy object for API elements that implement the sequence interface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+.. py:currentmodule:: ApiListProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__len__`
+            - 
+          * - :py:attr:`~__getitem__`
+            - 
+          * - :py:attr:`~__iter__`
+            - 
+          * - :py:attr:`~__delitem__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiListProxy
+
+
+
+Method detail
+-------------
+
+.. py:method:: __len__() -> int
+
+.. py:method:: __getitem__(index: int) -> ApiElementProxy
+
+.. py:method:: __iter__() -> collections.abc.Generator[ApiElementProxy, None, None]
+
+.. py:method:: __delitem__(index: int) -> None
+
+
+
+

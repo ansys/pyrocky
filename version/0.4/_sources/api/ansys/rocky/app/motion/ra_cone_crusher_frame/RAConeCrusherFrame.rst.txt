@@ -1,0 +1,476 @@
+
+
+
+
+
+
+:class:`RAConeCrusherFrame`
+===========================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_cone_crusher_frame.RAConeCrusherFrame(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.motion.ra_base_motion.RABaseMotionFrame`
+
+
+   
+   Rocky PrePost Scripting wrapper for a cone crusher frame.
+
+   The class contains methods to configure a cone crusher frame. There are some options
+   to retrieve a specific :class:`RAConeCrusherFrame` in a project from a :class:`RAStudy`,
+   a :class:`RAMotionFrameSource`, another :class:`RAConeCrusherFrame` or a :class:`RAMotionFrame`:
+
+   .. code-block:: python
+
+       # From the RAStudy
+       motion_frame = study.GetElement('<motion frame name>')
+
+       # From the RAMotionFrameSource
+       frame_source = study.GetMotionFrameSource()
+       motion_frame = frame_source.GetMotionFrame('<motion frame name>')
+
+       # From a "parent" motion frame
+       frame_1 = study.GetElement('<frame 1 name>')
+       frame_2 = frame_1.GetMotionFrame('<frame 2 name>')
+
+   Motion frames can be created on the "root" of the project's cone crusher frames (the source returned
+   in :meth:`RAStudy.GetMotionFrameSource()`), or as a 'child' frame of a pre-existing cone crusher frame:
+
+   .. code-block:: python
+
+       frame_source = study.GetMotionFrameSource()
+
+       # Create a motion frame with no parent frame
+       frame_1 = frame_source.NewConeCrusherFrame()
+       # Configure this new frame frame_1
+       frame_1.SetInitialOrientation(...)
+       frame_1.SetPivotPoint(...)
+
+       # Create a new frame, as a child of `frame_1`
+       frame_2 = frame_1.NewConeCrusherFrame()
+       # Configure this new frame frame_2
+       frame_2.SetInitialOrientation(...)
+       # ... configure motions, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAConeCrusherFrame
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetInitialOrientation`
+            - Get the value of "Initial Orientation".
+          * - :py:attr:`~SetInitialOrientation`
+            - Set the values of "Initial Orientation".
+          * - :py:attr:`~GetPivotPoint`
+            - Get the value of "Pivot Point".
+          * - :py:attr:`~SetPivotPoint`
+            - Set the values of "Pivot Point".
+          * - :py:attr:`~GetRotationAxis`
+            - Get the value of "Rotation Axis".
+          * - :py:attr:`~SetRotationAxis`
+            - Set the values of "Rotation Axis".
+          * - :py:attr:`~GetRotationalVelocity`
+            - Get the value of "Rotational Velocity".
+          * - :py:attr:`~SetRotationalVelocity`
+            - Set the value of "Rotational Velocity".
+          * - :py:attr:`~GetStartTime`
+            - Get the value of "Start Time".
+          * - :py:attr:`~SetStartTime`
+            - Set the value of "Start Time".
+          * - :py:attr:`~GetStopTime`
+            - Get the value of "Stop Time".
+          * - :py:attr:`~SetStopTime`
+            - Set the value of "Stop Time".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_cone_crusher_frame import RAConeCrusherFrame
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetInitialOrientation(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Initial Orientation".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitialOrientation(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Initial Orientation".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPivotPoint(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Pivot Point".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPivotPoint(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Pivot Point".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRotationAxis(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Rotation Axis".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRotationAxis(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Rotation Axis".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRotationalVelocity(unit: str | None = None) -> float
+
+   
+   Get the value of "Rotational Velocity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "rad/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRotationalVelocity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Rotational Velocity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "rad/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStopTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Stop Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStopTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Stop Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

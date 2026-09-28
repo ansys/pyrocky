@@ -1,0 +1,47 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_eulerian_statistics
+======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_eulerian_statistics
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_eulerian_statistics.RAEulerianStatistics
+
+
+Module Contents
+---------------
+
+.. py:class:: RAEulerianStatistics
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_process_element.RAUserProcess`
+
+
+   .. py:method:: GetWrappedClass() -> Type[rocky30.process.eulerian.eulerian_statistics_process.EulerianStatisticsProcessSubject]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetDivisions() -> tuple[int, int, int]
+
+
+   .. py:method:: SetDivisions(divisions: tuple[int, int, int]) -> None
+
+
+   .. py:method:: GetParticleGridFunctionNames() -> list[str]
+
+
+   .. py:method:: GetAvailableOperations() -> list[str]
+
+
+   .. py:method:: CreateEulerianGridFunction(operation_name: str, value_name: str, weight_name: Union[str, None] = ...) -> kraken20.plugins.api.ka_grid_function.KAGridFunction
+
+

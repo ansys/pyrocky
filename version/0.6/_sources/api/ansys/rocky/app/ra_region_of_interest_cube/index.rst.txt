@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_region_of_interest_cube.py`` module
+============================================
+
+.. py:module:: ansys.rocky.app.ra_region_of_interest_cube
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_region_of_interest_cube
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_region_of_interest_cube.RARegionOfInterestCube`
+            - Rocky PrePost Scripting wrapper for a single Cube geometry.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RARegionOfInterestCube</api/ansys/rocky/app/ra_region_of_interest_cube/RARegionOfInterestCube>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

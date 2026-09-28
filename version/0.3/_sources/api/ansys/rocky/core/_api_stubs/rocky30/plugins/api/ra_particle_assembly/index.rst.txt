@@ -1,0 +1,211 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_assembly
+====================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_assembly
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_assembly.RAParticleAssemblyPart
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_assembly.RAParticleAssemblyPartList
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_particle_assembly.RAParticleAssemblyCustom
+
+
+Module Contents
+---------------
+
+.. py:class:: RAParticleAssemblyPart(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.particle.particle_assembly.ParticleAssemblyPart]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetAngle(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetAngle(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPositionX(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPositionX(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPositionY(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPositionY(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPositionZ(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPositionZ(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRotationX(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetRotationX(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRotationY(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetRotationY(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetRotationZ(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetRotationZ(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetScale(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetScale(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetParticle()
+
+
+   .. py:method:: SetParticle(value) -> None
+
+
+   .. py:method:: GetAvailableParticles()
+
+
+.. py:class:: RAParticleAssemblyPartList(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`RAParticleAssemblyPart`\ ]
+
+
+   
+   Base class for API classes that wrap SubjectLists (and related list classes).
+
+   Provides methods to add, remove and iterate on the items. The PrePost Scripting wrappers for the list items
+   will be obtained via ApiApplication._GetElementWrapper(), so it's important that these wrappers
+   are registered as wrapper classes (see `EPApiExtension`).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.particle.particle_assembly.ParticleAssemblyPartList]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+.. py:class:: RAParticleAssemblyCustom(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.particle.particle_assembly.ParticleAssemblyCustom]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetArea(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetArea(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetCenterOfMass(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetCenterOfMass(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetEnabled() -> bool
+
+
+   .. py:method:: SetEnabled(value: bool) -> None
+
+
+   .. py:method:: GetGeometricCenter(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetGeometricCenter(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInertiaXAxis(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInertiaXAxis(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInertiaYAxis(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInertiaYAxis(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInertiaZAxis(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInertiaZAxis(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMass(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMass(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetMomentOfInertia(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetMomentOfInertia(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetPorosity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPorosity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetVolume(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetVolume(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

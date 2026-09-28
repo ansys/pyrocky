@@ -1,0 +1,248 @@
+
+
+
+
+
+
+:class:`RAParticleJointsData`
+=============================
+
+
+.. py:class:: ansys.rocky.app.ra_particle_joints_data.RAParticleJointsData
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   
+   Rocky API process model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParticleJointsData
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~RemoveProcess`
+            - It is not possible to remove the item "Joints" from the project.
+          * - :py:attr:`~GetCollectJointData`
+            - Get the value of "Collect Joint Data".
+          * - :py:attr:`~SetCollectJointData`
+            - Set the value of "Collect Joint Data".
+          * - :py:attr:`~EnableCollectJointData`
+            - Set the value of "Collect Joint Data" to True.
+          * - :py:attr:`~DisableCollectJointData`
+            - Set the value of "Collect Joint Data" to False.
+          * - :py:attr:`~IsCollectJointDataEnabled`
+            - Check if the "Collect Joint Data" is enabled.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_particle_joints_data import RAParticleJointsData
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: RemoveProcess() -> None
+
+   
+   It is not possible to remove the item "Joints" from the project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCollectJointData() -> bool
+
+   
+   Get the value of "Collect Joint Data".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCollectJointData(value: bool) -> None
+
+   
+   Set the value of "Collect Joint Data".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableCollectJointData() -> None
+
+   
+   Set the value of "Collect Joint Data" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableCollectJointData() -> None
+
+   
+   Set the value of "Collect Joint Data" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsCollectJointDataEnabled() -> bool
+
+   
+   Check if the "Collect Joint Data" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

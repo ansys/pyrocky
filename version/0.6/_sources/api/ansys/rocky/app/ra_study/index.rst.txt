@@ -1,0 +1,114 @@
+
+
+
+
+
+
+The ``ra_study.py`` module
+==========================
+
+.. py:module:: ansys.rocky.app.ra_study
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_study
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_study.RAStudy`
+            - Rocky PrePost Scripting wrapper for a project's Study.
+
+
+
+
+
+
+    .. tab-item:: Attributes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~RAMaterialOrName`
+            - 
+
+
+          * - :py:obj:`~Status`
+            - 
+
+
+          * - :py:obj:`~Particle`
+            - 
+
+
+          * - :py:obj:`~ParticleInletExtensions`
+            - 
+
+
+          * - :py:obj:`~PeriodicMotionExtensions`
+            - 
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAStudy</api/ansys/rocky/app/ra_study/RAStudy>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:data:: RAMaterialOrName
+
+.. py:data:: Status
+
+.. py:data:: Particle
+
+.. py:data:: ParticleInletExtensions
+
+.. py:data:: PeriodicMotionExtensions
+
+
+

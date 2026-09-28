@@ -1,0 +1,92 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material
+=================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+Module Contents
+---------------
+
+.. py:class:: RASolidMaterial(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetUseBulkDensity() -> bool
+
+
+   .. py:method:: SetUseBulkDensity(value: bool) -> None
+
+
+   .. py:method:: GetBulkDensity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBulkDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBulkSolidFraction() -> float
+
+
+   .. py:method:: SetBulkSolidFraction(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetCurrentDensity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetCurrentDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetDensity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetDensity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetYoungsModulus(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetYoungsModulus(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+
+   .. py:method:: GetPoissonRatio(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetPoissonRatio(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSpecificHeat(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSpecificHeat(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetThermalConductivity(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetThermalConductivity(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

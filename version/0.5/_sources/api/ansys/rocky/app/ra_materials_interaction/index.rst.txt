@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_materials_interaction.py`` module
+==========================================
+
+.. py:module:: ansys.rocky.app.ra_materials_interaction
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_materials_interaction
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_materials_interaction.RAMaterialsInteraction`
+            - Rocky PrePost Scripting wrapper for the interaction between two materials.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAMaterialsInteraction</api/ansys/rocky/app/ra_materials_interaction/RAMaterialsInteraction>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

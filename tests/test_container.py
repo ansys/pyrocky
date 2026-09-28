@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -27,24 +27,24 @@ import pytest
 
 import ansys.rocky.core as pyrocky
 
-VERSION = int(os.getenv("ANSYS_VERSION", "261"))
-RUN_DOCKER_TESTS = int(os.getenv("RUN_DOCKER_TESTS", "0"))
+TEST_IMAGES = os.getenv("DOCKER_TEST_IMAGES", "").split()
 
-if not RUN_DOCKER_TESTS or VERSION != 261 or sys.platform == "win32":
+if not TEST_IMAGES or sys.platform == "win32":
     pytest.skip(
-        "Docker tests must be explicitly enabled by setting RUN_DOCKER_TESTS=1"
-        " and only supports Ansys version 26.1.0 in linux for now.",
+        "Docker tests must be explicitly enabled by setting DOCKER_TEST_IMAGES"
+        " and only supports linux.",
         allow_module_level=True,
     )
 
 
-@pytest.mark.parametrize("variant", ["freeflow", "rocky"])
-def test_launch_container(variant, request):
+@pytest.mark.parametrize("image_name", TEST_IMAGES)
+def test_launch_container(image_name, request) -> None:
     """
-    Minimal test to check if it is possible to launch a Rocky and Freeflow container
+    Minimal test to check if it is possible to launch a Rocky or Freeflow container
     and communicate with it.
     """
-    client = pyrocky.launch_container(variant)
+    product, version_tag = image_name.split(":")
+    client = pyrocky.launch_container(product, version_tag, server_port=17800)
     request.addfinalizer(client.close)
 
     project = client.api.CreateProject()

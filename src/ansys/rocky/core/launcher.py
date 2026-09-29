@@ -279,6 +279,9 @@ def launch_container(  # pragma: no cover
 
     try:
         docker_client = docker.from_env()
+        # Pull the image if not present locally, or update the outdated layers.
+        docker_client.images.pull(image)
+
         container = docker_client.containers.run(
             image=image,
             command=["--pyrocky", "--pyrocky-port", str(server_port), "--headless"],

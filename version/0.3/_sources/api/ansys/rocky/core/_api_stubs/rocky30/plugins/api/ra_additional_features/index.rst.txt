@@ -1,0 +1,43 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_additional_features
+======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_additional_features
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_additional_features.RAAdditionalFeatures
+
+
+Module Contents
+---------------
+
+.. py:class:: RAAdditionalFeatures
+
+   .. py:method:: GetBetaFeaturesEnabled() -> bool
+
+
+   .. py:method:: SetBetaFeaturesEnabled(enable: bool) -> None
+
+
+   .. py:method:: GetAdvancedFeaturesEnabled() -> bool
+
+
+   .. py:method:: SetAdvancedFeaturesEnabled(enable: bool) -> None
+
+
+   .. py:method:: GetCustomFeatures() -> list[str]
+
+
+   .. py:method:: SetCustomFeatures(features: collections.abc.Iterable[str]) -> None
+
+
+   .. py:method:: GetMeshedParticlesUpscalingEnabled() -> bool
+
+
+   .. py:method:: SetMeshedParticlesUpscalingEnabled(enable: bool) -> None
+
+

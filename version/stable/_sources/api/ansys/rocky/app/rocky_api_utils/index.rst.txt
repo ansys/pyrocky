@@ -1,0 +1,76 @@
+
+
+
+
+
+
+The ``rocky_api_utils.py`` module
+=================================
+
+.. py:module:: ansys.rocky.app.rocky_api_utils
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: rocky_api_utils
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ConvertUserPassedValueToScalar`
+            - 
+
+
+          * - :py:obj:`~ConvertUserPassedValueToFixedArray`
+            - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: ConvertUserPassedValueToScalar(value, category, default_unit=None)
+
+.. py:function:: ConvertUserPassedValueToFixedArray(value, default_quantity)
+
+
+

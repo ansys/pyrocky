@@ -1,0 +1,66 @@
+
+
+
+
+
+
+:class:`RACustomCurveParameters`
+================================
+
+
+.. py:class:: ansys.rocky.app.ra_custom_calculators.RACustomCurveParameters(process: RACustomCurveAndGridProperty, sources: dict[str, str] | None = None)
+
+
+.. py:currentmodule:: RACustomCurveParameters
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~variable_to_association_and_unit`
+            - 
+          * - :py:attr:`~output_quantity`
+            - 
+          * - :py:attr:`~domain_association`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_custom_calculators import RACustomCurveParameters
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: variable_to_association_and_unit
+   :type:  dict[str, tuple[coilib50.element_function.semantic_association.SemanticAssociation, str]]
+
+.. py:attribute:: output_quantity
+   :type:  _typeshed.Incomplete
+
+.. py:attribute:: domain_association
+   :type:  _typeshed.Incomplete
+
+
+
+
+

@@ -1,0 +1,97 @@
+
+
+.. _sphx_glr_examples_basic_examples:
+
+Basic examples
+--------------
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+.. thumbnail-parent-div-open
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Simple particle simulation">
+
+.. only:: html
+
+  .. image:: /examples/basic_examples/images/thumb/sphx_glr_minimal_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_basic_examples_minimal.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Simple particle simulation</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Particle simulation with wall interaction">
+
+.. only:: html
+
+  .. image:: /examples/basic_examples/images/thumb/sphx_glr_particle_wall_interaction_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_basic_examples_particle_wall_interaction.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Particle simulation with wall interaction</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Particle simulation with moving wall interaction">
+
+.. only:: html
+
+  .. image:: /examples/basic_examples/images/thumb/sphx_glr_particle_wall_interaction_with_motion_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_basic_examples_particle_wall_interaction_with_motion.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Particle simulation with moving wall interaction</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Start Simulation Async">
+
+.. only:: html
+
+  .. image:: /examples/basic_examples/images/thumb/sphx_glr_start_simulation_async_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_examples_basic_examples_start_simulation_async.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Start Simulation Async</div>
+    </div>
+
+
+.. thumbnail-parent-div-close
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/basic_examples/minimal
+   /examples/basic_examples/particle_wall_interaction
+   /examples/basic_examples/particle_wall_interaction_with_motion
+   /examples/basic_examples/start_simulation_async
+

@@ -1,0 +1,300 @@
+
+
+
+
+
+
+:class:`RASurfaceUserProcess`
+=============================
+
+
+.. py:class:: ansys.rocky.app.ra_process_element.RASurfaceUserProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.app._ra_orientation_mixin._RAOrientationMixin`
+
+
+   
+   Base class for UserProcesses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASurfaceUserProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetSTL`
+            - Sets the Polyhedron file
+          * - :py:attr:`~GetCenter`
+            - :rtype: tuple(float, float, float)
+          * - :py:attr:`~SetCenter`
+            - Sets the Polyhedron X, Y and Z center
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetScale`
+            - Get the value of "Scale".
+          * - :py:attr:`~SetScale`
+            - Set the values of "Scale".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_process_element import RASurfaceUserProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.sph.surface_user_process.surface_user_process_subject.SurfaceUserProcessSubject]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: SetSTL(filename: str, mesh_unit: str | None = None) -> None
+
+   
+   Sets the Polyhedron file
+
+   :param filename: string
+       Path to the file to be used
+
+   :param mesh_unit: string or None
+       unit to be used for the mesh, or None if given in meters (m)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCenter(unit: str | None = None) -> rocky30.base_types.Tuple3F
+
+   
+   :rtype: tuple(float, float, float)
+   :return:
+       Returns the X, Y and Z Polyhedron center
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCenter(x: float, y: float, z: float, unit: str | None = None) -> None
+
+   
+   Sets the Polyhedron X, Y and Z center
+
+   :param x: float
+       The center X coordinate
+
+   :param y:
+       The center Y coordinate
+
+   :param z:
+       The center Z coordinate
+
+   :param str|None unit:
+       The unit of the given values or None if given in meters (m)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetScale(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Scale".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetScale(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Scale".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

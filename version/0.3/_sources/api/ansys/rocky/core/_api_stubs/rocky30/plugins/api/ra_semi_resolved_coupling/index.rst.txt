@@ -1,0 +1,89 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_semi_resolved_coupling
+=========================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_semi_resolved_coupling
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_semi_resolved_coupling.RAFluentSemiResolvedCoupling
+
+
+Module Contents
+---------------
+
+.. py:class:: RAFluentSemiResolvedCoupling(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: SetPartIdIfValid() -> None
+
+
+   .. py:method:: SetupDatFilename(dat_filename: str) -> bool
+
+
+   .. py:method:: SetupStoreFiles(cas_filename: str, case_config: Optional[rocky30coupling.fluent.io.fluent_cas_description.FluentCaseConfig] = ...) -> None
+
+
+   .. py:method:: GetFluentReleases() -> list[str]
+
+
+   .. py:method:: GetFluentVersion() -> str
+
+
+   .. py:method:: SetFluentVersion(fluent_version: str) -> str
+
+
+   .. py:method:: GetCouplingFilesKept() -> int
+
+
+   .. py:method:: SetCouplingFilesKept(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetFluentAdditionalArgs() -> str
+
+
+   .. py:method:: SetFluentAdditionalArgs(value: str) -> None
+
+
+   .. py:method:: GetFluentExecutionMode() -> str
+
+
+   .. py:method:: SetFluentExecutionMode(value: str) -> None
+
+
+   .. py:method:: GetValidFluentExecutionModeValues() -> List[str]
+
+
+   .. py:method:: GetFluentOutputFrequencyMultiplier() -> int
+
+
+   .. py:method:: SetFluentOutputFrequencyMultiplier(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetFluentSolverProcesses() -> int
+
+
+   .. py:method:: SetFluentSolverProcesses(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetUseDatInitialization() -> bool
+
+
+   .. py:method:: SetUseDatInitialization(value: bool) -> None
+
+

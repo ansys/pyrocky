@@ -1,0 +1,355 @@
+
+
+
+
+
+
+:class:`RAContactData`
+======================
+
+
+.. py:class:: ansys.rocky.app.ra_contact_data.RAContactData
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+
+
+
+.. py:currentmodule:: RAContactData
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~RemoveProcess`
+            - It is not possible to remove the item "Contacts" from the project. It's a standard Rocky
+          * - :py:attr:`~GetCollectContactsData`
+            - Get the value of "Collect Contacts Data".
+          * - :py:attr:`~SetCollectContactsData`
+            - Set the value of "Collect Contacts Data".
+          * - :py:attr:`~EnableCollectContactsData`
+            - Set the value of "Collect Contacts Data" to True.
+          * - :py:attr:`~DisableCollectContactsData`
+            - Set the value of "Collect Contacts Data" to False.
+          * - :py:attr:`~IsCollectContactsDataEnabled`
+            - Check if the "Collect Contacts Data" is enabled.
+          * - :py:attr:`~GetIncludeAdhesiveContacts`
+            - Get the value of "Include Adhesive Contacts".
+          * - :py:attr:`~SetIncludeAdhesiveContacts`
+            - Set the value of "Include Adhesive Contacts".
+          * - :py:attr:`~EnableIncludeAdhesiveContacts`
+            - Set the value of "Include Adhesive Contacts" to True.
+          * - :py:attr:`~DisableIncludeAdhesiveContacts`
+            - Set the value of "Include Adhesive Contacts" to False.
+          * - :py:attr:`~IsIncludeAdhesiveContactsEnabled`
+            - Check if the "Include Adhesive Contacts" is enabled.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_contact_data import RAContactData
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: RemoveProcess() -> None
+
+   
+   It is not possible to remove the item "Contacts" from the project. It's a standard Rocky
+   item in project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCollectContactsData() -> bool
+
+   
+   Get the value of "Collect Contacts Data".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCollectContactsData(value: bool) -> None
+
+   
+   Set the value of "Collect Contacts Data".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableCollectContactsData() -> None
+
+   
+   Set the value of "Collect Contacts Data" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableCollectContactsData() -> None
+
+   
+   Set the value of "Collect Contacts Data" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsCollectContactsDataEnabled() -> bool
+
+   
+   Check if the "Collect Contacts Data" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetIncludeAdhesiveContacts() -> bool
+
+   
+   Get the value of "Include Adhesive Contacts".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetIncludeAdhesiveContacts(value: bool) -> None
+
+   
+   Set the value of "Include Adhesive Contacts".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableIncludeAdhesiveContacts() -> None
+
+   
+   Set the value of "Include Adhesive Contacts" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableIncludeAdhesiveContacts() -> None
+
+   
+   Set the value of "Include Adhesive Contacts" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsIncludeAdhesiveContactsEnabled() -> bool
+
+   
+   Check if the "Include Adhesive Contacts" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

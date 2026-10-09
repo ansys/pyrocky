@@ -1,0 +1,52 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application
+=====================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_application.RockyApiApplication
+
+
+Module Contents
+---------------
+
+.. py:class:: RockyApiApplication
+
+   Bases: :py:obj:`kraken20.plugins.api.ka_application.KAApplication`
+
+
+   .. py:method:: CreateProject() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project.RAProject
+
+
+   .. py:method:: GetProject() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project.RAProject
+
+
+   .. py:method:: OpenProject(filename: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_project.RAProject
+
+
+   .. py:method:: CloseProject(check_save_state: bool = ...) -> None
+
+
+   .. py:method:: SaveProject(filename: Union[str, None] = ...) -> None
+
+
+   .. py:method:: PlaybackMacroFile(filename: str) -> None
+
+
+   .. py:method:: PlaybackMacro(macro_name: str) -> None
+
+
+   .. py:method:: GetAdditionalFeatures() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_additional_features.RAAdditionalFeatures
+
+
+   .. py:method:: GetVersion() -> str
+
+
+   .. py:method:: GetStudy(study_name: Union[str, None] = ...) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_study.RAStudy
+
+

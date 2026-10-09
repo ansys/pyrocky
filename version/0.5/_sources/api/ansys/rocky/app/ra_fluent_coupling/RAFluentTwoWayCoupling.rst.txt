@@ -1,0 +1,2221 @@
+
+
+
+
+
+
+:class:`RAFluentTwoWayCoupling`
+===============================
+
+
+.. py:class:: ansys.rocky.app.ra_fluent_coupling.RAFluentTwoWayCoupling
+
+   Bases: :py:obj:`ansys.rocky.app.ra_cfd_coupling.RABaseCFDCoupling`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate Fluent Two-Way coupling properties.
+
+   This wrapper can be accessed via the project's :class:`RACFDCoupling`:
+
+   .. code-block:: python
+
+       cfd_coupling = study.GetCFDCoupling()
+       cfd_coupling.SetupFluentTwoWay('fluent.cas')
+       two_way_process = cfd_coupling.GetCouplingProcess()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAFluentTwoWayCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetPartIdIfValid`
+            - Subclasses should implement this method if it's a Process with visualization
+          * - :py:attr:`~GetFluentReleases`
+            - Get a list of available Fluent releases.
+          * - :py:attr:`~SetupDatFilename`
+            - 
+          * - :py:attr:`~StartFluent`
+            - Starts Fluent application
+          * - :py:attr:`~IsFluentRunning`
+            - Whether a Rocky-created Fluent process is running.
+          * - :py:attr:`~CloseFluent`
+            - Closes a running Fluent application
+          * - :py:attr:`~UpdateFluentInfo`
+            - Updates the latest changes from Fluent setup.
+          * - :py:attr:`~SetupStoreFiles`
+            - Copies CAS file to Rocky's project folder and update Fluent info
+          * - :py:attr:`~GetFluentVersion`
+            - Get the value of "Version".
+          * - :py:attr:`~SetFluentVersion`
+            - Set the Ansys Fluent version to be used in CFD coupling (deprecated).
+          * - :py:attr:`~GetAvailableCoupledBoundaryNames`
+            - Obtain the names of the boundaries available for coupling in the fluent file.
+          * - :py:attr:`~CreateCoupledBoundaries`
+            - Create a coupled boundary for each of the coupled boundary name passed by the user.
+          * - :py:attr:`~GetAbsoluteValue`
+            - Get the value of "Absolute Value".
+          * - :py:attr:`~SetAbsoluteValue`
+            - Set the value of "Absolute Value".
+          * - :py:attr:`~GetMaximumIterations`
+            - Get the value of "Maximum Iterations".
+          * - :py:attr:`~SetMaximumIterations`
+            - Set the value of "Maximum Iterations".
+          * - :py:attr:`~GetMappingMethod`
+            - Get "Mapping Method" as a string.
+          * - :py:attr:`~SetMappingMethod`
+            - Set the value of "Mapping Method".
+          * - :py:attr:`~GetValidMappingMethodValues`
+            - Get a list of all possible values for "Mapping Method".
+          * - :py:attr:`~GetAveragingMethod`
+            - Deprecated: Use :meth:`GetMappingMethod()` instead.
+          * - :py:attr:`~SetAveragingMethod`
+            - Deprecated: Use :meth:`SetMappingMethod()` instead.
+          * - :py:attr:`~GetValidAveragingMethodValues`
+            - Deprecated: Use :meth:`GetValidMappingMethodValues()` instead.
+          * - :py:attr:`~GetMinimumIterations`
+            - Get the value of "Minimum Iterations".
+          * - :py:attr:`~SetMinimumIterations`
+            - Set the value of "Minimum Iterations".
+          * - :py:attr:`~GetAveragingRadiusType`
+            - Get "Averaging Radius Type" as a string.
+          * - :py:attr:`~SetAveragingRadiusType`
+            - Set the value of "Averaging Radius Type".
+          * - :py:attr:`~GetValidAveragingRadiusTypeValues`
+            - Get a list of all possible values for "Averaging Radius Type".
+          * - :py:attr:`~GetSolidsMaximumVolumeFractionTarget`
+            - Get the value of "Solids Maximum Volume Fraction Target".
+          * - :py:attr:`~SetSolidsMaximumVolumeFractionTarget`
+            - Set the value of "Solids Maximum Volume Fraction Target".
+          * - :py:attr:`~GetVolumeFractionTarget`
+            - Deprecated: Use :meth:`GetSolidsMaximumVolumeFractionTarget()` instead.
+          * - :py:attr:`~SetVolumeFractionTarget`
+            - Deprecated: Use :meth:`SetSolidsMaximumVolumeFractionTarget()` instead.
+          * - :py:attr:`~GetCouplingFilesKept`
+            - Get the value of "Coupling Files Kept".
+          * - :py:attr:`~SetCouplingFilesKept`
+            - Set the value of "Coupling Files Kept".
+          * - :py:attr:`~GetDecompositionFactor`
+            - Get the value of "Decomposition Factor".
+          * - :py:attr:`~SetDecompositionFactor`
+            - Set the value of "Decomposition Factor".
+          * - :py:attr:`~GetDiffusionCoefficient`
+            - Get the value of "Diffusion Coefficient".
+          * - :py:attr:`~SetDiffusionCoefficient`
+            - Set the value of "Diffusion Coefficient".
+          * - :py:attr:`~GetFluentAdditionalArgs`
+            - Get the value of "Fluent Additional Args".
+          * - :py:attr:`~SetFluentAdditionalArgs`
+            - Set the value of "Fluent Additional Args".
+          * - :py:attr:`~GetFluentExecutionMode`
+            - Get "Fluent Execution Mode" as a string.
+          * - :py:attr:`~SetFluentExecutionMode`
+            - Set the value of "Fluent Execution Mode".
+          * - :py:attr:`~GetValidFluentExecutionModeValues`
+            - Get a list of all possible values for "Fluent Execution Mode".
+          * - :py:attr:`~GetFluentOutputFrequencyMultiplier`
+            - Get the value of "Fluent Output Frequency Multiplier".
+          * - :py:attr:`~SetFluentOutputFrequencyMultiplier`
+            - Set the value of "Fluent Output Frequency Multiplier".
+          * - :py:attr:`~GetFluentSolverProcesses`
+            - Get the value of "Fluent Solver Processes".
+          * - :py:attr:`~SetFluentSolverProcesses`
+            - Set the value of "Fluent Solver Processes".
+          * - :py:attr:`~GetFractionParticleSize`
+            - Get the value of "Fraction Particle Size".
+          * - :py:attr:`~SetFractionParticleSize`
+            - Set the value of "Fraction Particle Size".
+          * - :py:attr:`~GetMaximumResidualTolerance`
+            - Get the value of "Maximum Residual Tolerance".
+          * - :py:attr:`~SetMaximumResidualTolerance`
+            - Set the value of "Maximum Residual Tolerance".
+          * - :py:attr:`~GetMaximumTimeSteps`
+            - Get the value of "Maximum Time Steps".
+          * - :py:attr:`~SetMaximumTimeSteps`
+            - Set the value of "Maximum Time Steps".
+          * - :py:attr:`~GetMinimumTimeSteps`
+            - Get the value of "Minimum Time Steps".
+          * - :py:attr:`~SetMinimumTimeSteps`
+            - Set the value of "Minimum Time Steps".
+          * - :py:attr:`~GetNumberOfSubsteps`
+            - Get the value of "Number of Substeps".
+          * - :py:attr:`~SetNumberOfSubsteps`
+            - Set the value of "Number of Substeps".
+          * - :py:attr:`~GetNumberOfThreads`
+            - Get the value of "Number of Threads".
+          * - :py:attr:`~SetNumberOfThreads`
+            - Set the value of "Number of Threads".
+          * - :py:attr:`~GetOverwriteCfdUpdateDistance`
+            - Get the value of "Overwrite Cfd Update Distance".
+          * - :py:attr:`~SetOverwriteCfdUpdateDistance`
+            - Set the value of "Overwrite Cfd Update Distance".
+          * - :py:attr:`~GetMaximumVolumeFraction`
+            - Get the value of "Maximum Volume Fraction".
+          * - :py:attr:`~SetMaximumVolumeFraction`
+            - Set the value of "Maximum Volume Fraction".
+          * - :py:attr:`~GetBackDiffusion`
+            - Get the value of "Back Diffusion".
+          * - :py:attr:`~SetBackDiffusion`
+            - Set the value of "Back Diffusion".
+          * - :py:attr:`~EnableBackDiffusion`
+            - Set the value of "Back Diffusion" to True.
+          * - :py:attr:`~DisableBackDiffusion`
+            - Set the value of "Back Diffusion" to False.
+          * - :py:attr:`~IsBackDiffusionEnabled`
+            - Check if the "Back Diffusion" is enabled.
+          * - :py:attr:`~GetUseDatInitialization`
+            - Get the value of "Use Dat Initialization".
+          * - :py:attr:`~SetUseDatInitialization`
+            - Set the value of "Use Dat Initialization".
+          * - :py:attr:`~GetSubstepping`
+            - Get the value of "Substepping".
+          * - :py:attr:`~SetSubstepping`
+            - Set the value of "Substepping".
+          * - :py:attr:`~EnableSubstepping`
+            - Set the value of "Substepping" to True.
+          * - :py:attr:`~DisableSubstepping`
+            - Set the value of "Substepping" to False.
+          * - :py:attr:`~IsSubsteppingEnabled`
+            - Check if the "Substepping" is enabled.
+          * - :py:attr:`~GetUseTurbulentDispersion`
+            - Get the value of "Use Turbulent Dispersion".
+          * - :py:attr:`~SetUseTurbulentDispersion`
+            - Set the value of "Use Turbulent Dispersion".
+          * - :py:attr:`~GetUserCfdUpdateDistance`
+            - Get the value of "User Cfd Update Distance".
+          * - :py:attr:`~SetUserCfdUpdateDistance`
+            - Set the value of "User Cfd Update Distance".
+
+
+   .. tab-item:: Properties
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~fluent_release`
+            - 
+          * - :py:attr:`~fluent_phases`
+            - 
+          * - :py:attr:`~fluent_rocky_phase`
+            - 
+          * - :py:attr:`~fluent_solver_processes`
+            - 
+          * - :py:attr:`~use_dat_initialization`
+            - 
+          * - :py:attr:`~fluent_output_frequency_multiplier`
+            - 
+          * - :py:attr:`~coupling_files_kept`
+            - 
+          * - :py:attr:`~fluent_time_step`
+            - 
+          * - :py:attr:`~additional_input_variables`
+            - 
+          * - :py:attr:`~additional_output_variables`
+            - 
+          * - :py:attr:`~disabled_input_variables`
+            - 
+          * - :py:attr:`~disabled_output_variables`
+            - 
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~dat_filename`
+            - 
+          * - :py:attr:`~cas_filename`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_fluent_coupling import RAFluentTwoWayCoupling
+
+Property detail
+---------------
+
+.. py:property:: fluent_release
+
+.. py:property:: fluent_phases
+
+.. py:property:: fluent_rocky_phase
+
+.. py:property:: fluent_solver_processes
+
+.. py:property:: use_dat_initialization
+
+.. py:property:: fluent_output_frequency_multiplier
+
+.. py:property:: coupling_files_kept
+
+.. py:property:: fluent_time_step
+
+.. py:property:: additional_input_variables
+
+.. py:property:: additional_output_variables
+
+.. py:property:: disabled_input_variables
+
+.. py:property:: disabled_output_variables
+
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: dat_filename
+   :type:  _typeshed.Incomplete
+
+.. py:attribute:: cas_filename
+   :type:  _typeshed.Incomplete
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetPartIdIfValid() -> None
+
+   
+   Subclasses should implement this method if it's a Process with visualization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentReleases()
+
+   
+   Get a list of available Fluent releases.
+
+   :rtype: list(unicode)
+   :return: The list of available Fluent releases
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupDatFilename(dat_filename)
+
+.. py:method:: StartFluent() -> None
+
+   
+   Starts Fluent application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsFluentRunning()
+
+   
+   Whether a Rocky-created Fluent process is running.
+
+   :return:
+       True whether a Fluent application is running false otherwise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CloseFluent() -> None
+
+   
+   Closes a running Fluent application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: UpdateFluentInfo() -> None
+
+   
+   Updates the latest changes from Fluent setup.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupStoreFiles(cas_filename, case_config=None) -> None
+
+   
+   Copies CAS file to Rocky's project folder and update Fluent info
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentVersion()
+
+   
+   Get the value of "Version".
+
+   :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentVersion(fluent_version) -> None
+
+   
+   Set the Ansys Fluent version to be used in CFD coupling (deprecated).
+
+   Currently, it's not possible to change the version of Ansys Fluent used for CFD coupling.
+   This method is being kept for backward compatibility (and also because there's a chance
+   of this feature to be brought back in future version).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableCoupledBoundaryNames() -> collections.abc.Iterable[str]
+
+   
+   Obtain the names of the boundaries available for coupling in the fluent file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateCoupledBoundaries(coupled_boundary_names: list[str]) -> None
+
+   
+   Create a coupled boundary for each of the coupled boundary name passed by the user.
+   Check GetAvailableCoupledBoundaryNames to obtain the list of available boundaries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAbsoluteValue(unit: str | None = None) -> float
+
+   
+   Get the value of "Absolute Value".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAbsoluteValue(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Absolute Value".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaximumIterations() -> int
+
+   
+   Get the value of "Maximum Iterations".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaximumIterations(value: str | int) -> None
+
+   
+   Set the value of "Maximum Iterations".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMappingMethod() -> str
+
+   
+   Get "Mapping Method" as a string.
+
+   :return:
+       The returned value will be one of ['UniformDistribution', 'VolumetricDiffusion', 'DiffusionSolution'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMappingMethod(value: str) -> None
+
+   
+   Set the value of "Mapping Method".
+
+   :param value:
+       The value to set. Must be one of ['UniformDistribution', 'VolumetricDiffusion', 'DiffusionSolution'].
+   :raises RockyApiError:
+       If `value` is not a valid "Mapping Method" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidMappingMethodValues() -> list[str]
+
+   
+   Get a list of all possible values for "Mapping Method".
+
+   :return:
+       The returned list is ['UniformDistribution', 'VolumetricDiffusion', 'DiffusionSolution'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAveragingMethod() -> str
+
+   
+   Deprecated: Use :meth:`GetMappingMethod()` instead.
+
+   :return:
+       The returned value will be one of ['UniformDistribution', 'VolumetricDiffusion', 'DiffusionSolution'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAveragingMethod(value: str)
+
+   
+   Deprecated: Use :meth:`SetMappingMethod()` instead.
+
+   :param value:
+       The value to set. Must be one of ['UniformDistribution', 'VolumetricDiffusion', 'DiffusionSolution'].
+   :raises RockyApiError:
+       If `value` is not a valid "Averaging Method" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidAveragingMethodValues() -> list[str]
+
+   
+   Deprecated: Use :meth:`GetValidMappingMethodValues()` instead.
+
+   :return:
+       The returned list is ['UniformDistribution', 'VolumetricDiffusion', 'DiffusionSolution'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMinimumIterations() -> int
+
+   
+   Get the value of "Minimum Iterations".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMinimumIterations(value: str | int) -> None
+
+   
+   Set the value of "Minimum Iterations".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAveragingRadiusType() -> str
+
+   
+   Get "Averaging Radius Type" as a string.
+
+   :return:
+       The returned value will be one of ['FractionMaximumParticleSize', 'AbsoluteValue'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAveragingRadiusType(value: str) -> None
+
+   
+   Set the value of "Averaging Radius Type".
+
+   :param value:
+       The value to set. Must be one of ['FractionMaximumParticleSize', 'AbsoluteValue'].
+   :raises RockyApiError:
+       If `value` is not a valid "Averaging Radius Type" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidAveragingRadiusTypeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Averaging Radius Type".
+
+   :return:
+       The returned list is ['FractionMaximumParticleSize', 'AbsoluteValue'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSolidsMaximumVolumeFractionTarget() -> float
+
+   
+   Get the value of "Solids Maximum Volume Fraction Target".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSolidsMaximumVolumeFractionTarget(value: str | float) -> None
+
+   
+   Set the value of "Solids Maximum Volume Fraction Target".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVolumeFractionTarget() -> float
+
+   
+   Deprecated: Use :meth:`GetSolidsMaximumVolumeFractionTarget()` instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVolumeFractionTarget(value: float) -> None
+
+   
+   Deprecated: Use :meth:`SetSolidsMaximumVolumeFractionTarget()` instead.
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCouplingFilesKept() -> int
+
+   
+   Get the value of "Coupling Files Kept".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCouplingFilesKept(value: str | int) -> None
+
+   
+   Set the value of "Coupling Files Kept".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDecompositionFactor() -> float
+
+   
+   Get the value of "Decomposition Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDecompositionFactor(value: str | float) -> None
+
+   
+   Set the value of "Decomposition Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDiffusionCoefficient(unit: str | None = None) -> float
+
+   
+   Get the value of "Diffusion Coefficient".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m2/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDiffusionCoefficient(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Diffusion Coefficient".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m2/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentAdditionalArgs() -> str
+
+   
+   Get the value of "Fluent Additional Args".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentAdditionalArgs(value: str) -> None
+
+   
+   Set the value of "Fluent Additional Args".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentExecutionMode() -> str
+
+   
+   Get "Fluent Execution Mode" as a string.
+
+   :return:
+       The returned value will be one of ['serial', 'local_parallel', 'distributed_parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentExecutionMode(value: str) -> None
+
+   
+   Set the value of "Fluent Execution Mode".
+
+   :param value:
+       The value to set. Must be one of ['serial', 'local_parallel', 'distributed_parallel'].
+   :raises RockyApiError:
+       If `value` is not a valid "Fluent Execution Mode" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidFluentExecutionModeValues() -> list[str]
+
+   
+   Get a list of all possible values for "Fluent Execution Mode".
+
+   :return:
+       The returned list is ['serial', 'local_parallel', 'distributed_parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentOutputFrequencyMultiplier() -> int
+
+   
+   Get the value of "Fluent Output Frequency Multiplier".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentOutputFrequencyMultiplier(value: str | int) -> None
+
+   
+   Set the value of "Fluent Output Frequency Multiplier".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFluentSolverProcesses() -> int
+
+   
+   Get the value of "Fluent Solver Processes".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFluentSolverProcesses(value: str | int) -> None
+
+   
+   Set the value of "Fluent Solver Processes".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFractionParticleSize(unit: str | None = None) -> float
+
+   
+   Get the value of "Fraction Particle Size".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFractionParticleSize(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Fraction Particle Size".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaximumResidualTolerance() -> float
+
+   
+   Get the value of "Maximum Residual Tolerance".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaximumResidualTolerance(value: str | float) -> None
+
+   
+   Set the value of "Maximum Residual Tolerance".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaximumTimeSteps() -> int
+
+   
+   Get the value of "Maximum Time Steps".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaximumTimeSteps(value: str | int) -> None
+
+   
+   Set the value of "Maximum Time Steps".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMinimumTimeSteps() -> int
+
+   
+   Get the value of "Minimum Time Steps".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMinimumTimeSteps(value: str | int) -> None
+
+   
+   Set the value of "Minimum Time Steps".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfSubsteps() -> int
+
+   
+   Get the value of "Number of Substeps".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfSubsteps(value: str | int) -> None
+
+   
+   Set the value of "Number of Substeps".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfThreads() -> int
+
+   
+   Get the value of "Number of Threads".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfThreads(value: str | int) -> None
+
+   
+   Set the value of "Number of Threads".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOverwriteCfdUpdateDistance() -> bool
+
+   
+   Get the value of "Overwrite Cfd Update Distance".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOverwriteCfdUpdateDistance(value: bool) -> None
+
+   
+   Set the value of "Overwrite Cfd Update Distance".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaximumVolumeFraction(unit: str | None = None) -> float
+
+   
+   Get the value of "Maximum Volume Fraction".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaximumVolumeFraction(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Maximum Volume Fraction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBackDiffusion() -> bool
+
+   
+   Get the value of "Back Diffusion".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBackDiffusion(value: bool) -> None
+
+   
+   Set the value of "Back Diffusion".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableBackDiffusion() -> None
+
+   
+   Set the value of "Back Diffusion" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableBackDiffusion() -> None
+
+   
+   Set the value of "Back Diffusion" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsBackDiffusionEnabled() -> bool
+
+   
+   Check if the "Back Diffusion" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseDatInitialization() -> bool
+
+   
+   Get the value of "Use Dat Initialization".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseDatInitialization(value: bool) -> None
+
+   
+   Set the value of "Use Dat Initialization".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSubstepping() -> bool
+
+   
+   Get the value of "Substepping".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSubstepping(value: bool) -> None
+
+   
+   Set the value of "Substepping".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableSubstepping() -> None
+
+   
+   Set the value of "Substepping" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableSubstepping() -> None
+
+   
+   Set the value of "Substepping" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsSubsteppingEnabled() -> bool
+
+   
+   Check if the "Substepping" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseTurbulentDispersion() -> bool
+
+   
+   Get the value of "Use Turbulent Dispersion".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+   
+   Set the value of "Use Turbulent Dispersion".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUserCfdUpdateDistance(unit: str | None = None) -> float
+
+   
+   Get the value of "User Cfd Update Distance".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUserCfdUpdateDistance(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "User Cfd Update Distance".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,0 +1,180 @@
+
+
+
+
+
+
+:class:`RAList`
+===============
+
+
+.. py:class:: ansys.rocky.app.ra_list.RAList(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`Generic`\ [\ :py:obj:`T`\ ]
+
+
+   
+   Base class for API classes that wrap SubjectLists (and related list classes).
+
+   Provides methods to add, remove and iterate on the items. The PrePost Scripting wrappers for the list items
+   will be obtained via ApiApplication._GetElementWrapper(), so it's important that these wrappers
+   are registered as wrapper classes (see `EPApiExtension`).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+.. py:currentmodule:: RAList
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~New`
+            - Add a new item. Returns the newly created item.
+          * - :py:attr:`~Remove`
+            - Remove an item from the list.
+          * - :py:attr:`~Clear`
+            - Remove all items from the list.
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__len__`
+            - 
+          * - :py:attr:`~__getitem__`
+            - 
+          * - :py:attr:`~__iter__`
+            - 
+          * - :py:attr:`~__delitem__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_list import RAList
+
+
+
+Method detail
+-------------
+
+.. py:method:: New() -> T
+
+   
+   Add a new item. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Remove(item: T) -> None
+
+   
+   Remove an item from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Clear() -> None
+
+   
+   Remove all items from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __len__() -> int
+
+.. py:method:: __getitem__(index: int) -> T
+
+.. py:method:: __iter__() -> collections.abc.Generator[T, None, None]
+
+.. py:method:: __delitem__(index: int) -> None
+
+
+
+

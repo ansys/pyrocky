@@ -1,0 +1,440 @@
+
+
+
+
+
+
+:class:`RAPendulum`
+===================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_pendulum.RAPendulum(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper representing a Pendulum motion.
+
+   Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+   example:
+
+   .. code-block:: python
+
+       motions = motion_frame.GetMotions()
+       motion_1 = motions.New()
+       motion_1.SetType('Pendulum')
+       pendulum = motion_1.GetTypeObject()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAPendulum
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAmplitudeVariation`
+            - Get the value of "Amplitude Variation".
+          * - :py:attr:`~SetAmplitudeVariation`
+            - Set the value of "Amplitude Variation".
+          * - :py:attr:`~GetInitialAmplitude`
+            - Get the value of "Initial Amplitude".
+          * - :py:attr:`~SetInitialAmplitude`
+            - Set the value of "Initial Amplitude".
+          * - :py:attr:`~GetInitialPhase`
+            - Get the value of "Initial Phase".
+          * - :py:attr:`~SetInitialPhase`
+            - Set the value of "Initial Phase".
+          * - :py:attr:`~GetDirection`
+            - Get the value of "Direction".
+          * - :py:attr:`~SetDirection`
+            - Set the values of "Direction".
+          * - :py:attr:`~GetFrequencyVariation`
+            - Get the value of "Frequency Variation".
+          * - :py:attr:`~SetFrequencyVariation`
+            - Set the value of "Frequency Variation".
+          * - :py:attr:`~GetInitialFrequency`
+            - Get the value of "Initial Frequency".
+          * - :py:attr:`~SetInitialFrequency`
+            - Set the value of "Initial Frequency".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_pendulum import RAPendulum
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetAmplitudeVariation(unit: str | None = None) -> float
+
+   
+   Get the value of "Amplitude Variation".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "rad/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAmplitudeVariation(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Amplitude Variation".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "rad/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInitialAmplitude(unit: str | None = None) -> float
+
+   
+   Get the value of "Initial Amplitude".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitialAmplitude(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Initial Amplitude".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInitialPhase(unit: str | None = None) -> float
+
+   
+   Get the value of "Initial Phase".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitialPhase(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Initial Phase".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "rad".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDirection() -> list[float]
+
+   
+   Get the value of "Direction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDirection(values: list[str | float]) -> None
+
+   
+   Set the values of "Direction".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFrequencyVariation(unit: str | None = None) -> float
+
+   
+   Get the value of "Frequency Variation".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Hz/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFrequencyVariation(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Frequency Variation".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Hz/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInitialFrequency(unit: str | None = None) -> float
+
+   
+   Get the value of "Initial Frequency".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Hz".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitialFrequency(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Initial Frequency".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Hz".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

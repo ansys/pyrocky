@@ -1,0 +1,56 @@
+
+
+
+
+
+
+:class:`ApiCurveProxy`
+======================
+
+
+.. py:class:: ansys.rocky.core.rocky_api_proxies.ApiCurveProxy(element_id: str, curve_name: str, pyro_api: Pyro5.api.Proxy, session_uid: str | None = None)
+
+
+
+.. py:currentmodule:: ApiCurveProxy
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__getattr__`
+            - 
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.rocky_api_proxies import ApiCurveProxy
+
+
+
+Method detail
+-------------
+
+.. py:method:: __getattr__(attr_name: str) -> collections.abc.Callable
+
+
+
+

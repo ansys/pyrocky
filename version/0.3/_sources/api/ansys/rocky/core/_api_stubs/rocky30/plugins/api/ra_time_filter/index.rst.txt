@@ -1,0 +1,65 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_filter
+==============================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_filter
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_filter.RATimeFilter
+
+
+Module Contents
+---------------
+
+.. py:class:: RATimeFilter(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetFinalTime(unit: Union[str, None] = ...) -> float
+
+
+   .. py:method:: SetFinalTime(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetInitialTime(unit: Union[str, None] = ...) -> float
+
+
+   .. py:method:: SetInitialTime(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetEnabled() -> bool
+
+
+   .. py:method:: SetEnabled(value: bool) -> None
+
+
+   .. py:method:: EnableTimeFilter() -> None
+
+
+   .. py:method:: DisableTimeFilter() -> None
+
+
+   .. py:method:: IsTimeFilterEnabled() -> bool
+
+
+   .. py:method:: GetName() -> str
+
+
+   .. py:method:: SetName(value: str) -> None
+
+

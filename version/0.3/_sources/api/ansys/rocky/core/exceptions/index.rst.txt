@@ -1,0 +1,132 @@
+ansys.rocky.core.exceptions
+===========================
+
+.. py:module:: ansys.rocky.core.exceptions
+
+.. autoapi-nested-parse::
+
+   Module where the exceptions of the project are contained.
+
+   ..
+       !! processed by numpydoc !!
+
+
+Exceptions
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core.exceptions.PyRockyError
+   ansys.rocky.core.exceptions.RockyLaunchError
+   ansys.rocky.core.exceptions.FreeflowLaunchError
+   ansys.rocky.core.exceptions.RockyApiError
+
+
+Module Contents
+---------------
+
+.. py:exception:: PyRockyError
+
+   Bases: :py:obj:`Exception`
+
+
+   
+   Provides the generic exception for the PyRocky API.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:exception:: RockyLaunchError
+
+   Bases: :py:obj:`PyRockyError`
+
+
+   
+   Provides the error raised when problems occurs during launch of the Rocky app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:exception:: FreeflowLaunchError
+
+   Bases: :py:obj:`PyRockyError`
+
+
+   
+   Provides the error raised when problems occurs during launch of the Freeflow
+   app.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:exception:: RockyApiError
+
+   Bases: :py:obj:`Exception`
+
+
+   
+   Provides the ``Exception`` class for an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+

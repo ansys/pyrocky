@@ -1,0 +1,34 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_plugin
+================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_plugin
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_plugin.RockyModels
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.rocky_api_plugin.RockyApiPlugin
+
+
+Module Contents
+---------------
+
+.. py:class:: RockyModels
+
+   .. py:method:: GetWrapperClasses()
+
+
+   .. py:method:: GetExtraAPIClasses()
+
+
+.. py:class:: RockyApiPlugin
+
+   Bases: :py:obj:`plugins10core.plugin.Plugin`
+
+
+   .. py:method:: Install() -> None
+
+

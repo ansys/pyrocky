@@ -1,0 +1,543 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_simulator_run
+================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_simulator_run
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_simulator_run.RASimulatorRun
+
+
+Module Contents
+---------------
+
+.. py:class:: RASimulatorRun
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.solver.rocky_simulator_run.RockySimulatorRun]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: RemoveProcess() -> None
+
+
+   .. py:method:: SetTimeConfiguration(duration: float, time_interval: float) -> None
+
+
+   .. py:method:: GetWearGeometryUpdateFrequency(unit: Union[str, None] = ...) -> float
+
+
+   .. py:method:: SetWearGeometryUpdateFrequency(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: HasFEMForcesEnabled() -> bool
+
+
+   .. py:method:: HasHtcCalculatedData() -> bool
+
+
+   .. py:method:: EnableHtcCalculator() -> None
+
+
+   .. py:method:: DisableHtcCalculator() -> None
+
+
+   .. py:method:: EnableFEMForces() -> None
+
+
+   .. py:method:: DisableFEMForces() -> None
+
+
+   .. py:method:: SetCollectForcesForFemAnalysis(value: bool) -> None
+
+
+   .. py:method:: GetCollectForcesForFemAnalysis() -> bool
+
+
+   .. py:method:: HasCompressedFileEnabled() -> bool
+
+
+   .. py:method:: GetTargetGpus() -> list[int]
+
+
+   .. py:method:: SetTargetGpus(gpus: list[Union[int, str]]) -> None
+
+
+   .. py:method:: GetWearEnergySpectraBreakageStart(unit: Union[str, None] = ...) -> float
+
+
+   .. py:method:: SetWearEnergySpectraBreakageStart(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetWearEnergySpectraBreakageDelayAfterRelease(unit: Union[str, None] = ...) -> float
+
+
+   .. py:method:: SetWearEnergySpectraBreakageDelayAfterRelease(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetSimulationOutputFrequency(unit: Union[str, None] = ...) -> float
+
+
+   .. py:method:: SetSimulationOutputFrequency(value: Union[str, float], unit: Union[str, None] = ...) -> None
+
+
+   .. py:method:: GetSolverCurvesOutputFrequency() -> int
+
+
+   .. py:method:: SetSolverCurvesOutputFrequency(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetFluentOutputsMultiplier() -> int
+
+
+   .. py:method:: SetFluentOutputsMultiplier(value: int) -> None
+
+
+   .. py:method:: GetAvailableOutputRoots() -> collections.abc.Sequence[str]
+
+
+   .. py:method:: GetAvailableOutputRootProperties(root_key: str) -> collections.abc.Sequence[str]
+
+
+   .. py:method:: GetOutputRootEnabled(root_key: str) -> bool
+
+
+   .. py:method:: SetOutputRootEnabled(root_key: str, enabled: bool) -> None
+
+
+   .. py:method:: GetOutputPropertyEnabled(root_key: str, property_name: str) -> bool
+
+
+   .. py:method:: SetOutputPropertyEnabled(root_key: str, property_name: str, enabled: bool) -> None
+
+
+   .. py:method:: GetStandardOutputPropertyEnabled(*output_property: str) -> bool
+
+
+   .. py:method:: SetStandardOutputPropertyEnabled(*output_property: str, enabled: bool) -> None
+
+
+   .. py:method:: GetModulesOutputPropertyEnabled(*output_property: str) -> bool
+
+
+   .. py:method:: SetModulesOutputPropertyEnabled(*output_property: str, enabled: bool) -> None
+
+
+   .. py:method:: GetAvailableStandardOutputProperties() -> dict
+      :staticmethod:
+
+
+
+   .. py:method:: GetAvailableModulesOutputProperties() -> dict
+      :staticmethod:
+
+
+
+   .. py:method:: GetStandardOutputPropertiesData() -> dict
+
+
+   .. py:method:: SetStandardOutputPropertiesData(data_dict: dict) -> None
+
+
+   .. py:method:: GetModulesOutputPropertiesData() -> dict
+
+
+   .. py:method:: SetModulesOutputPropertiesData(data_dict: dict) -> None
+
+
+   .. py:method:: RestoreOutputPropertiesDefaults() -> None
+
+
+   .. py:method:: GetUseDpmBlockingEffectForSinglePhaseSimulations() -> bool
+
+
+   .. py:method:: SetUseDpmBlockingEffectForSinglePhaseSimulations(value: bool) -> None
+
+
+   .. py:method:: EnableDpmBlockingEffectForSinglePhaseSimulations() -> None
+
+
+   .. py:method:: DisableDpmBlockingEffectForSinglePhaseSimulations() -> None
+
+
+   .. py:method:: IsDpmBlockingEffectForSinglePhaseSimulationsEnabled() -> bool
+
+
+   .. py:method:: GetArraysGrowthRate() -> float
+
+
+   .. py:method:: SetArraysGrowthRate(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetBreakageOverlapFactor() -> float
+
+
+   .. py:method:: SetBreakageOverlapFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetDisableTrianglesOnPeriodicBoundaries() -> bool
+
+
+   .. py:method:: SetDisableTrianglesOnPeriodicBoundaries(value: bool) -> None
+
+
+   .. py:method:: GetDragLimiterFactor() -> float
+
+
+   .. py:method:: SetDragLimiterFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetMoveCfdCellsWithRockyBoundaries() -> bool
+
+
+   .. py:method:: SetMoveCfdCellsWithRockyBoundaries(value: bool) -> None
+
+
+   .. py:method:: EnableMoveCfdCellsWithRockyBoundaries() -> None
+
+
+   .. py:method:: DisableMoveCfdCellsWithRockyBoundaries() -> None
+
+
+   .. py:method:: IsMoveCfdCellsWithRockyBoundariesEnabled() -> bool
+
+
+   .. py:method:: GetFixedTimestep(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetFixedTimestep(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSuccessiveOverRelaxationTolerance() -> float
+
+
+   .. py:method:: SetSuccessiveOverRelaxationTolerance(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetJointElasticRatio() -> float
+
+
+   .. py:method:: SetJointElasticRatio(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetMinimumLengthDeformationTolerance() -> float
+
+
+   .. py:method:: SetMinimumLengthDeformationTolerance(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetLinearHystDamp() -> float
+
+
+   .. py:method:: SetLinearHystDamp(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetLoadingNSteps() -> int
+
+
+   .. py:method:: SetLoadingNSteps(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetDeformableMassMatrixType() -> str
+
+
+   .. py:method:: SetDeformableMassMatrixType(value: str) -> None
+
+
+   .. py:method:: GetValidDeformableMassMatrixTypeValues() -> List[str]
+
+
+   .. py:method:: GetMinimumVolumeTolerance() -> float
+
+
+   .. py:method:: SetMinimumVolumeTolerance(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetSolverCurvesFrequency() -> int
+
+
+   .. py:method:: SetSolverCurvesFrequency(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetContactNeighboringDistanceBetweenParticles(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetContactNeighboringDistanceBetweenParticles(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetContactNeighboringDistanceBetweenParticlesAndTriangles(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetContactNeighboringDistanceBetweenParticlesAndTriangles(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetNegateInitialOverlaps() -> bool
+
+
+   .. py:method:: SetNegateInitialOverlaps(value: bool) -> None
+
+
+   .. py:method:: EnableNegateInitialOverlaps() -> None
+
+
+   .. py:method:: DisableNegateInitialOverlaps() -> None
+
+
+   .. py:method:: IsNegateInitialOverlapsEnabled() -> bool
+
+
+   .. py:method:: GetNeighborSearchModel() -> str
+
+
+   .. py:method:: SetNeighborSearchModel(value: str) -> None
+
+
+   .. py:method:: GetValidNeighborSearchModelValues() -> List[str]
+
+
+   .. py:method:: GetMaximumNumberOfIterations() -> int
+
+
+   .. py:method:: SetMaximumNumberOfIterations(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetOverRelaxationCoefficient() -> float
+
+
+   .. py:method:: SetOverRelaxationCoefficient(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetRefineConcaveSearch() -> bool
+
+
+   .. py:method:: SetRefineConcaveSearch(value: bool) -> None
+
+
+   .. py:method:: GetParticleSizeLimitForReordering(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetParticleSizeLimitForReordering(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSpecialReorderingForWidePsd() -> bool
+
+
+   .. py:method:: SetSpecialReorderingForWidePsd(value: bool) -> None
+
+
+   .. py:method:: GetResetOnlyPhysicalContactsData() -> bool
+
+
+   .. py:method:: SetResetOnlyPhysicalContactsData(value: bool) -> None
+
+
+   .. py:method:: GetSortingDistanceFactor() -> float
+
+
+   .. py:method:: SetSortingDistanceFactor(value: Union[str, float]) -> None
+
+
+   .. py:method:: GetTimestepModel() -> str
+
+
+   .. py:method:: SetTimestepModel(value: str) -> None
+
+
+   .. py:method:: GetValidTimestepModelValues() -> List[str]
+
+
+   .. py:method:: GetUse2023R2SourceTermsApproach() -> bool
+
+
+   .. py:method:: SetUse2023R2SourceTermsApproach(value: bool) -> None
+
+
+   .. py:method:: GetUse2023R2CellVolumeFractionUpdateApproach() -> bool
+
+
+   .. py:method:: SetUse2023R2CellVolumeFractionUpdateApproach(value: bool) -> None
+
+
+   .. py:method:: GetUseArraysGrowthRate() -> bool
+
+
+   .. py:method:: SetUseArraysGrowthRate(value: bool) -> None
+
+
+   .. py:method:: GetUseBreakageOverlapFactor() -> bool
+
+
+   .. py:method:: SetUseBreakageOverlapFactor(value: bool) -> None
+
+
+   .. py:method:: GetUse3RdPowerForCfdCgm() -> bool
+
+
+   .. py:method:: SetUse3RdPowerForCfdCgm(value: bool) -> None
+
+
+   .. py:method:: EnableUse3RdPowerForCfdCgm() -> None
+
+
+   .. py:method:: DisableUse3RdPowerForCfdCgm() -> None
+
+
+   .. py:method:: IsUse3RdPowerForCfdCgmEnabled() -> bool
+
+
+   .. py:method:: GetUseDragLimiterFactor() -> bool
+
+
+   .. py:method:: SetUseDragLimiterFactor(value: bool) -> None
+
+
+   .. py:method:: GetUseFixedTimestep() -> bool
+
+
+   .. py:method:: SetUseFixedTimestep(value: bool) -> None
+
+
+   .. py:method:: GetUseContactNeighboringDistanceBetweenParticles() -> bool
+
+
+   .. py:method:: SetUseContactNeighboringDistanceBetweenParticles(value: bool) -> None
+
+
+   .. py:method:: GetUseContactNeighboringDistanceBetweenParticlesAndTriangles() -> bool
+
+
+   .. py:method:: SetUseContactNeighboringDistanceBetweenParticlesAndTriangles(value: bool) -> None
+
+
+   .. py:method:: GetUseNonRoundTorqueCorrection() -> bool
+
+
+   .. py:method:: SetUseNonRoundTorqueCorrection(value: bool) -> None
+
+
+   .. py:method:: GetUseSortingDistanceFactor() -> bool
+
+
+   .. py:method:: SetUseSortingDistanceFactor(value: bool) -> None
+
+
+   .. py:method:: EnableSortingDistanceFactor() -> None
+
+
+   .. py:method:: DisableSortingDistanceFactor() -> None
+
+
+   .. py:method:: IsSortingDistanceFactorEnabled() -> bool
+
+
+   .. py:method:: GetUseCompressedFiles() -> bool
+
+
+   .. py:method:: SetUseCompressedFiles(value: bool) -> None
+
+
+   .. py:method:: EnableCompressedFile() -> None
+
+
+   .. py:method:: DisableCompressedFile() -> None
+
+
+   .. py:method:: IsCompressedFileEnabled() -> bool
+
+
+   .. py:method:: GetMultiGpuSlicingDirection() -> str
+
+
+   .. py:method:: SetMultiGpuSlicingDirection(value: str) -> None
+
+
+   .. py:method:: GetValidMultiGpuSlicingDirectionValues() -> List[str]
+
+
+   .. py:method:: GetNumberOfProcessors() -> int
+
+
+   .. py:method:: SetNumberOfProcessors(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetReleaseParticlesWithoutOverlapCheck() -> bool
+
+
+   .. py:method:: SetReleaseParticlesWithoutOverlapCheck(value: bool) -> None
+
+
+   .. py:method:: GetSimulationTarget() -> str
+
+
+   .. py:method:: SetSimulationTarget(value: str) -> None
+
+
+   .. py:method:: GetValidSimulationTargetValues() -> List[str]
+
+
+   .. py:method:: GetTargetGpu() -> int
+
+
+   .. py:method:: SetTargetGpu(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetResumeDataFrequency() -> int
+
+
+   .. py:method:: SetResumeDataFrequency(value: Union[str, int]) -> None
+
+
+   .. py:method:: GetBreakageDelayAfterRelease(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBreakageDelayAfterRelease(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetBreakageStart(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetBreakageStart(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTimeInterval(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTimeInterval(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetOverlapParticlesDelay(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetOverlapParticlesDelay(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetSimulationDuration(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetSimulationDuration(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetWearGeometryUpdateInterval(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetWearGeometryUpdateInterval(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetWearStart(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetWearStart(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

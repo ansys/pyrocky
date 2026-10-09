@@ -1,0 +1,651 @@
+
+
+
+
+
+
+:class:`RASolidMaterial`
+========================
+
+
+.. py:class:: ansys.rocky.app.ra_solid_material.RASolidMaterial(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`
+
+
+   
+   Rocky PrePost Scripting wrapper for individual materials in a project.
+
+   Retrieve individual materials from the :class:`RAStudy` or the :class:`RAMaterialCollection` via:
+
+   .. code-block:: python
+
+       material_1 = study.GetElement('Default Particles')
+       material_2 = material_collection.GetMaterial('Default Boundaries')
+       material_3 = material_collection[2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASolidMaterial
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetUseBulkDensity`
+            - Get the value of "Use Bulk Density".
+          * - :py:attr:`~SetUseBulkDensity`
+            - Set the value of "Use Bulk Density".
+          * - :py:attr:`~GetBulkDensity`
+            - Get the value of "Bulk Density".
+          * - :py:attr:`~SetBulkDensity`
+            - Set the value of "Bulk Density".
+          * - :py:attr:`~GetBulkSolidFraction`
+            - Get the value of "Bulk Solid Fraction".
+          * - :py:attr:`~SetBulkSolidFraction`
+            - Set the value of "Bulk Solid Fraction".
+          * - :py:attr:`~GetCurrentDensity`
+            - Get the value of "Current Density".
+          * - :py:attr:`~SetCurrentDensity`
+            - Set the value of "Current Density".
+          * - :py:attr:`~GetDensity`
+            - Get the value of "Density".
+          * - :py:attr:`~SetDensity`
+            - Set the value of "Density".
+          * - :py:attr:`~GetYoungsModulus`
+            - Get the value of "Youngs Modulus".
+          * - :py:attr:`~SetYoungsModulus`
+            - Set the value of "Youngs Modulus".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetPoissonRatio`
+            - Get the value of "Poisson Ratio".
+          * - :py:attr:`~SetPoissonRatio`
+            - Set the value of "Poisson Ratio".
+          * - :py:attr:`~GetSpecificHeat`
+            - Get the value of "Specific Heat".
+          * - :py:attr:`~SetSpecificHeat`
+            - Set the value of "Specific Heat".
+          * - :py:attr:`~GetThermalConductivity`
+            - Get the value of "Thermal Conductivity".
+          * - :py:attr:`~SetThermalConductivity`
+            - Set the value of "Thermal Conductivity".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_solid_material import RASolidMaterial
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetUseBulkDensity() -> bool
+
+   
+   Get the value of "Use Bulk Density".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseBulkDensity(value: bool) -> None
+
+   
+   Set the value of "Use Bulk Density".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBulkDensity(unit: str | None = None) -> float
+
+   
+   Get the value of "Bulk Density".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBulkDensity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Bulk Density".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetBulkSolidFraction() -> float
+
+   
+   Get the value of "Bulk Solid Fraction".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBulkSolidFraction(value: str | float) -> None
+
+   
+   Set the value of "Bulk Solid Fraction".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCurrentDensity(unit: str | None = None) -> float
+
+   
+   Get the value of "Current Density".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCurrentDensity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Current Density".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDensity(unit: str | None = None) -> float
+
+   
+   Get the value of "Density".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDensity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Density".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "kg/m3".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetYoungsModulus(unit: str | None = None) -> float
+
+   
+   Get the value of "Youngs Modulus".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "N/m2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetYoungsModulus(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Youngs Modulus".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "N/m2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPoissonRatio(unit: str | None = None) -> float
+
+   
+   Get the value of "Poisson Ratio".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPoissonRatio(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Poisson Ratio".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSpecificHeat(unit: str | None = None) -> float
+
+   
+   Get the value of "Specific Heat".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "J/kg.K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSpecificHeat(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Specific Heat".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "J/kg.K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetThermalConductivity(unit: str | None = None) -> float
+
+   
+   Get the value of "Thermal Conductivity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "W/m.K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetThermalConductivity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Thermal Conductivity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "W/m.K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

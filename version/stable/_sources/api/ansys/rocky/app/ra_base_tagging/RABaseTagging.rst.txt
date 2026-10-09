@@ -1,0 +1,129 @@
+
+
+
+
+
+
+:class:`RABaseTagging`
+======================
+
+
+.. py:class:: ansys.rocky.app.ra_base_tagging.RABaseTagging(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Base class for Api representations of Tagging and Divisions Tagging calculators.
+   Provides methods to get the RATimeRangeFilter and get the Tagging Grid Function name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RABaseTagging
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetTimeRangeFilter`
+            - Get the API object that wraps the specific Time Range Filter.
+          * - :py:attr:`~GetGridFunctionName`
+            - Get the tagging grid function name. This name can be used to access the tagging grid
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_base_tagging import RABaseTagging
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetTimeRangeFilter()
+
+   
+   Get the API object that wraps the specific Time Range Filter.
+   :rtype: RATimeRangeFilter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGridFunctionName()
+
+   
+   Get the tagging grid function name. This name can be used to access the tagging grid
+   function on a particle-based process.
+   :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

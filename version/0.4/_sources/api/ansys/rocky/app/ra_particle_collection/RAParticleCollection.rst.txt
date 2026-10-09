@@ -1,0 +1,191 @@
+
+
+
+
+
+
+:class:`RAParticleCollection`
+=============================
+
+
+.. py:class:: ansys.rocky.app.ra_particle_collection.RAParticleCollection(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`ansys.rocky.app.ra_particle.RAParticle`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper for the collection of particles in a project.
+
+   This wrapper corresponds to the "Particles" item in the project's data tree. To retrieve the
+   :class:`RAParticleCollection` from a :class:`RAStudy`, use:
+
+   .. code-block:: python
+
+       particle_collection = study.GetParticleCollection()
+
+   Instances of the :class:`RAParticleCollection` class act as regular Python lists, and can be
+   iterated on, accessed via index, etc:
+
+   .. code-block:: python
+
+       particle_1 = particle_collection.New()
+       particle_2 = particle_collection[1]
+       del particle_collection[0]
+       for particle in particle_collection:
+           particle.SetMaterial('My Particle Material')
+
+   Items in this list are of type :class:`RAParticle`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAParticleCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetParticleNames`
+            - Get a list of the names of all the particles in this collection.
+          * - :py:attr:`~GetParticle`
+            - Get a particle given its name.
+          * - :py:attr:`~New`
+            - Add a new item. Returns the newly created item.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_particle_collection import RAParticleCollection
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetParticleNames() -> list[str]
+
+   
+   Get a list of the names of all the particles in this collection.
+
+   :rtype: list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticle(particle_name: str) -> ansys.rocky.app.ra_particle.RAParticle
+
+   
+   Get a particle given its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: New() -> ansys.rocky.app.ra_particle.RAParticle
+
+   
+   Add a new item. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

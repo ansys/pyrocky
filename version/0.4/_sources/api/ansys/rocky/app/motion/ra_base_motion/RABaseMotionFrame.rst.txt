@@ -1,0 +1,234 @@
+
+
+
+
+
+
+:class:`RABaseMotionFrame`
+==========================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_base_motion.RABaseMotionFrame(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Base class for Api representations of MotionFrames and MotionFrameSources. Provides methods
+   to create, iterate and remove motion frames.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RABaseMotionFrame
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~NewFrame`
+            - Creates a new motion frame.
+          * - :py:attr:`~NewConeCrusherFrame`
+            - Creates a new cone crusher frame.
+          * - :py:attr:`~IterMotionFrames`
+            - Iterates over all the motion frames available (recursively).
+          * - :py:attr:`~GetMotionFrame`
+            - Get a specific motion frame given its name.
+          * - :py:attr:`~RemoveFrame`
+            - Removes a previously-created motion frame.
+          * - :py:attr:`~GetParentMotionFrame`
+            - Gets the parent motion frame.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_base_motion import RABaseMotionFrame
+
+
+
+Method detail
+-------------
+
+.. py:method:: NewFrame() -> ansys.rocky.app.motion.ra_motion_frame.RAMotionFrame
+
+   
+   Creates a new motion frame.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: NewConeCrusherFrame()
+
+   
+   Creates a new cone crusher frame.
+
+   :rtype: RAConeCrusherFrame
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IterMotionFrames() -> collections.abc.Generator[_typeshed.Incomplete]
+
+   
+   Iterates over all the motion frames available (recursively).
+
+   :return iter(RAMotionFrame):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMotionFrame(frame_name)
+
+   
+   Get a specific motion frame given its name.
+
+   :param unicode frame_name:
+
+   :rtype: RAMotionFrame
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveFrame(motion_frame) -> None
+
+   
+   Removes a previously-created motion frame.
+
+   :param RAMotionFrame or RAConeCrusherFrame motion_frame:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParentMotionFrame()
+
+   
+   Gets the parent motion frame.
+   If the Motion Frame is a RAMotionFrameSource it returns None.
+
+   :rtype: RAMotionFrame
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

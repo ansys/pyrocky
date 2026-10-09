@@ -1,0 +1,97 @@
+
+
+
+
+
+
+The ``rocky_api_deprecated_decorator.py`` module
+================================================
+
+.. py:module:: ansys.rocky.app.rocky_api_deprecated_decorator
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: rocky_api_deprecated_decorator
+.. tab-set::
+
+
+
+
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ApiDeprecated`
+            - Decorator that marks API method as deprecated, showing errors or warnings to the Rocky app user.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: ApiDeprecated(new_name: str, release_version: str, show_error: bool = False) -> collections.abc.Callable
+
+   
+   Decorator that marks API method as deprecated, showing errors or warnings to the Rocky app user.
+
+   :param new_name:
+       The name of the method that substitutes this one, if any.
+   :param release_version:
+       The release version when the method was deprecated.
+   :param show_error:
+       Flag to raise an exception with the deprecation message instead of warning.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

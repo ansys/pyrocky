@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -25,7 +25,6 @@ from coilib50.element_function.semantic_association import (
     SemanticAssociation as SemanticAssociation,
 )
 from coilib50.units import IQuantity as IQuantity
-from coilib50.units import Quantity as Quantity
 
 from ansys.rocky.app.ra_api import RockyApiError as RockyApiError
 
@@ -127,10 +126,20 @@ class RACustomCurveAndGridProperty:
         :param scope:
             The scope to be set.
         :param sources:
-            A dict pointing the variable used to the property association it represents and a
-            string indicating in which unit the input data should be gotten.
+            A dict that maps short variable names (used inside \'expression\') to the names of existing properties
+            that supply the input data. Each key is a placeholder that you can reference in \'expression\' and the
+            corresponding value is the Rocky property name whose data will be bound to that placeholder.
         :param expression:
             The expression to be set.
+
+        Example usage::
+
+            particles.AddCustomProperty(
+                name="Refreshment Cycle",
+                output_unit=\'-\',
+                sources={"A": "System Released Time"},
+                expression=\'max(abs(floor(A / 3600))) - abs(floor(A / 3600))\',
+            )
         """
 
     def EditCustomProperty(
@@ -148,8 +157,9 @@ class RACustomCurveAndGridProperty:
         :param new_name:
             The new name of the property to be set.
         :param sources:
-            A dict pointing the variable used to the property association it represents and a
-            string indicating in which unit the input data should be gotten.
+            A dict that maps short variable names (used inside 'expression') to the names of existing properties
+            that supply the input data. Each key is a placeholder that you can reference in 'expression' and the
+            corresponding value is the Rocky property name whose data will be bound to that placeholder.
         :param expression:
             The expression to be set.
         """
@@ -166,7 +176,6 @@ class RACustomCurveParameters:
     variable_to_association_and_unit: dict[str, tuple[SemanticAssociation, str]]
     output_quantity: Incomplete
     domain_association: Incomplete
-
     def __init__(
         self, process: RACustomCurveAndGridProperty, sources: dict[str, str] | None = None
     ) -> None: ...

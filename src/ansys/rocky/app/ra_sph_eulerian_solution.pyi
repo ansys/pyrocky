@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -26,7 +26,7 @@ from rocky30.models.sph.sph_eulerian_solution import (
 
 from ansys.rocky.app._ra_subject_with_coloring_mixin import _RASubjectWithColoringMixin
 from ansys.rocky.app.api_element_item import ApiElementItem
-from ansys.rocky.app.ra_sph_settings import RASPHSettings as RASPHSettings
+from ansys.rocky.app.ra_output_data import RAOutputData as RAOutputData
 
 class RASPHEulerianSolution(ApiElementItem, _RASubjectWithColoringMixin):
     """

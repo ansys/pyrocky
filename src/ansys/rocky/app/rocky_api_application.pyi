@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -27,7 +27,7 @@ from coilib50.subject import Subject as Subject
 from coilib50.time.time_set import TimeSet as TimeSet
 from coilib50.time.time_step import TimeStep as TimeStep
 from coilib50.time.time_step_interface import ITimeStep
-from esss_qt10.qt_traits import QWidget as QWidget
+from esss_qt10.qt_traits import QWidgetWithSizeHint as QWidget
 from kraken20.plugins.api.ka_3dwindow import RA3DWindow
 from kraken20.plugins.api.ka_cross_plot import KACrossPlotWindow
 from kraken20.plugins.api.ka_histogram_window import KAHistogramWindow
@@ -36,6 +36,9 @@ from kraken20.plugins.api.ka_space_plot import KASpacePlotWindow
 from kraken20.plugins.api.ka_time_plot_window import RATimePlotWindow
 from kraken20.plugins.api.ka_workspace_window import (
     KAWorkspaceWindow as KAWorkspaceWindow,
+)
+from rocky30.plugins.kraken_plugins_setup import (
+    GetMacroScriptsSearchDirectories as GetMacroScriptsSearchDirectories,
 )
 from sci20.app.base_process import BaseProcess as BaseProcess
 

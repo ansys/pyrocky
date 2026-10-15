@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,8 +21,8 @@
 # SOFTWARE.
 
 from _typeshed import Incomplete
-from ben10 import interface
-from ben10.foundation.decorators import Abstract
+from coilib50 import interface
+from coilib50.foundation.decorators import Abstract
 from coilib50.subject import Subject as Subject
 from plugins10.core.pluginmanager import PluginManager as PluginManager
 

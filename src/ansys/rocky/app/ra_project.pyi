@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -26,6 +26,10 @@ from rocky30.models.study.study import Study as Study
 
 from ansys.rocky.app.api_element_item import ApiElementItem
 from ansys.rocky.app.api_expose import ApiExpose
+from ansys.rocky.app.ra_api import RockyApiError as RockyApiError
+from ansys.rocky.app.ra_clip_plane_collection import (
+    RAClipPlaneCollection as RAClipPlaneCollection,
+)
 from ansys.rocky.app.ra_grid_process_element import (
     RAGridProcessElementItem as RAGridProcessElementItem,
 )
@@ -129,7 +133,7 @@ class RAProject(ApiElementItem):
     @ApiExpose
     def GetStudyNames(self) -> list[str]: ...
     @ApiExpose
-    def GetStudy(self, study_name: str | None = None) -> RAStudy | None:
+    def GetStudy(self, study_name: str | None = None) -> RAStudy:
         """
         Get the project's Study.
 
@@ -188,6 +192,11 @@ class RAProject(ApiElementItem):
 
         :param process:
             a process or process name
+        """
+
+    def Get3DClipPlanesCollection(self) -> RAClipPlaneCollection:
+        """
+        Get the project's collection of 3D Clip Planes.
         """
 
     @ApiExpose

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,11 +20,12 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from collections.abc import Generator
-
-from _typeshed import Incomplete
+from typing import Iterator
 
 from ansys.rocky.app.api_element_item import ApiElementItem
+from ansys.rocky.app.motion.ra_cone_crusher_frame import (
+    RAConeCrusherFrame as RAConeCrusherFrame,
+)
 from ansys.rocky.app.motion.ra_motion_frame import RAMotionFrame as RAMotionFrame
 
 class RABaseMotionFrame(ApiElementItem):
@@ -38,21 +39,21 @@ class RABaseMotionFrame(ApiElementItem):
         Creates a new motion frame.
         """
 
-    def NewConeCrusherFrame(self):
+    def NewConeCrusherFrame(self) -> RAConeCrusherFrame:
         """
         Creates a new cone crusher frame.
 
         :rtype: RAConeCrusherFrame
         """
 
-    def IterMotionFrames(self) -> Generator[Incomplete]:
+    def IterMotionFrames(self) -> Iterator[RAMotionFrame | RAConeCrusherFrame]:
         """
         Iterates over all the motion frames available (recursively).
 
         :return iter(RAMotionFrame):
         """
 
-    def GetMotionFrame(self, frame_name):
+    def GetMotionFrame(self, frame_name: str) -> RAMotionFrame | RAConeCrusherFrame:
         """
         Get a specific motion frame given its name.
 
@@ -61,14 +62,14 @@ class RABaseMotionFrame(ApiElementItem):
         :rtype: RAMotionFrame
         """
 
-    def RemoveFrame(self, motion_frame) -> None:
+    def RemoveFrame(self, motion_frame: RAMotionFrame | RAConeCrusherFrame) -> None:
         """
         Removes a previously-created motion frame.
 
         :param RAMotionFrame or RAConeCrusherFrame motion_frame:
         """
 
-    def GetParentMotionFrame(self):
+    def GetParentMotionFrame(self) -> RAMotionFrame | None:
         """
         Gets the parent motion frame.
         If the Motion Frame is a RAMotionFrameSource it returns None.

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -32,18 +32,10 @@ from coilib50.time.time_step import TimeStep
 from petroapp10.plugins.entities.input_reader.input_reader_model import (
     InputReader as InputReader,
 )
-from rocky20.simulator import RestartData as RestartData
 from rocky30.base_types import Tuple3F as Tuple3F
 from rocky30.models.geometry.custom_geometry import CustomGeometry as CustomGeometry
-from rocky30.models.naming import CreateNewName as CreateNewName
-from rocky30.models.restart.simulation_restart_subject import (
-    SimulationRestartSubject as SimulationRestartSubject,
-)
 from rocky30.models.study.study import Study as Study
 from rocky30.models.workbench.workbench_data_subject import WorkbenchData as WorkbenchData
-from rocky30.plugins.prop_change.prop_change_service import (
-    RockyPropChangeValidator as RockyPropChangeValidator,
-)
 from rocky30.process.geometry.custom_boundary_process import (
     CustomBoundaryProcessSubject as CustomBoundaryProcessSubject,
 )
@@ -88,6 +80,7 @@ from ansys.rocky.app.ra_materials_interaction_collection import (
     RAMaterialsInteractionCollection as RAMaterialsInteractionCollection,
 )
 from ansys.rocky.app.ra_outlet import RAOutlet as RAOutlet
+from ansys.rocky.app.ra_output_data import RAOutputData as RAOutputData
 from ansys.rocky.app.ra_particle import RAParticle as RAParticle
 from ansys.rocky.app.ra_particle_collection import (
     RAParticleCollection as RAParticleCollection,
@@ -126,6 +119,7 @@ Status = dict[str, Sequence[tuple[IStatusMessage, str]]]
 Particle = RAParticle | list[RAParticle] | None
 ParticleInletExtensions = list[tuple[str, float | Scalar]]
 PeriodicMotionExtensions = list[tuple[str, float | Scalar]]
+SurfaceTypes = RARectangularSurface | RACircularSurface | RASurface
 
 class RAStudy(ApiElementItem):
     """
@@ -206,7 +200,7 @@ class RAStudy(ApiElementItem):
         Get the study's Physics object.
         """
 
-    def GetMotionFrameSource(self) -> RAMotionFrameSource | None:
+    def GetMotionFrameSource(self) -> RAMotionFrameSource:
         """
         Get the study's Motion Frame Source.
 
@@ -240,7 +234,7 @@ class RAStudy(ApiElementItem):
 
     def CreateParticleInlet(
         self,
-        entry_point: RAFeedConveyor | RAInletGeometry | RASurface,
+        entry_point: RAFeedConveyor | RAInletGeometry | SurfaceTypes,
         particle: RAParticle,
     ) -> RAParticleInlet:
         """
@@ -313,6 +307,11 @@ class RAStudy(ApiElementItem):
         import_scale: float = 1.0,
         convert_yz: bool = False,
         custom_name_prefix: str | None = None,
+        shuffle_colors: bool = True,
+        custom_color: Tuple3F | None = None,
+        geometry_split_method: str = "BODY",
+        normal_angle_tolerance: float = 16,
+        max_edge_size: float | None = None,
     ) -> list[RAWall]:
         """
         Import a geometry file and create one or more corresponding geometries in the study.
@@ -325,6 +324,26 @@ class RAStudy(ApiElementItem):
 
         :param convert_yz:
             Whether the y and z axes of the imported geometry should be converted.
+
+        :param shuffle_colors:
+            Whether the imported geometry should be assigned a shuffled face color. Ignored when
+            `custom_color` is provided.
+
+        :param custom_color:
+            Optional normalized RGB tuple (each component in [0, 1]) to be used as the face color
+            of every imported geometry. When provided, takes precedence over `shuffle_colors`.
+
+        :param geometry_split_method:
+            Identify the strategy to split geometries for CAD files. Accepted values are: 'MODEL', 'ASSEMBLY', 'PARTS', 'BODY'.
+            This parameter is only used for CAD file extensions.
+
+        :normal_angle_tolerance:
+            The maximum angle tolerance value for mesh generation (in degrees).
+            This parameter is only used for CAD file extensions.
+
+        :max_edge_size:
+            An optional value to express the maximum edge size (in meters) for the mesh generation.
+            This parameter is only used for CAD file extensions.
         """
 
     def ImportSystemCouplingWall(
@@ -333,6 +352,8 @@ class RAStudy(ApiElementItem):
         import_scale: float = 1.0,
         convert_yz: bool = False,
         custom_name_prefix: str | None = None,
+        shuffle_colors: bool = True,
+        custom_color: Tuple3F | None = None,
     ) -> list[RASystemCouplingWall]:
         """
         Import a geometry file and create one or more corresponding geometries in the study.
@@ -345,6 +366,14 @@ class RAStudy(ApiElementItem):
 
         :param convert_yz:
             Whether the y and z axes of the imported geometry should be converted.
+
+        :param shuffle_colors:
+            Whether the imported geometry should be assigned a shuffled face color. Ignored when
+            `custom_color` is provided.
+
+        :param custom_color:
+            Optional normalized RGB tuple (each component in [0, 1]) to be used as the face color
+            of every imported geometry. When provided, takes precedence over `shuffle_colors`.
         """
 
     def ImportSurface(
@@ -353,6 +382,11 @@ class RAStudy(ApiElementItem):
         import_scale: float = 1.0,
         convert_yz: bool = False,
         custom_name_prefix: str | None = None,
+        shuffle_colors: bool = True,
+        custom_color: Tuple3F | None = None,
+        geometry_split_method: str = "BODY",
+        normal_angle_tolerance: float = 16,
+        max_edge_size: float | None = None,
     ) -> list[RASurface]:
         """
         Import a custom surface file and create one or more corresponding geometries in the study.
@@ -365,6 +399,26 @@ class RAStudy(ApiElementItem):
 
         :param convert_yz:
             Whether the y and z axes of the imported geometry should be converted.
+
+        :param shuffle_colors:
+            Whether the imported geometry should be assigned a shuffled face color. Ignored when
+            `custom_color` is provided.
+
+        :param custom_color:
+            Optional normalized RGB tuple (each component in [0, 1]) to be used as the face color
+            of every imported geometry. When provided, takes precedence over `shuffle_colors`.
+
+        :param geometry_split_method:
+            Identify the strategy to split geometries for prime files. Accepted values are: 'MODEL', 'ASSEMBLY', 'PARTS', 'BODY'.
+            This parameter is only used for Prime associated extensions.
+
+        :normal_angle_tolerance:
+            The maximum angle tolerance value for mesh generation (in degrees).
+            This parameter is only used for Prime associated extensions.
+
+        :max_edge_size:
+            An optional value to express the maximum edge size (in meters) for the mesh generation.
+            This parameter is only used for Prime associated extensions.
         """
 
     def ConvertToWall(
@@ -519,6 +573,14 @@ class RAStudy(ApiElementItem):
             The joint statisctics data object.
         """
 
+    def GetOutputData(self) -> RAOutputData:
+        """
+        Get the RAOutputData object.
+
+        :return:
+            The output data object.
+        """
+
     def GetUnusedPartId(self) -> int:
         """
         :returns:
@@ -546,20 +608,6 @@ class RAStudy(ApiElementItem):
 
         :return:
             The particles process
-        """
-
-    def SetRestartSubject(self, restart_subject: SimulationRestartSubject) -> None:
-        """
-        Set the restart subject
-
-        :param restart_subject:
-            The subject with study restart information
-        """
-
-    def GetRestartSubject(self) -> SimulationRestartSubject:
-        """
-        :return:
-            The subject with study restart information
         """
 
     def GetSimulatorRun(self) -> RASimulatorRun:
@@ -610,41 +658,10 @@ class RAStudy(ApiElementItem):
             The curves for the given element and name.
         """
 
-    def ClearPartIds(self) -> None:
-        """
-        Re-set the process part ids to None
-        """
-
     def ResetSimulationStatus(self) -> None:
         """
         In addition to clearing the part ids, removes the possibility of "resuming" the simulation
         next.
-        """
-
-    def SetupRestartPartIds(self) -> None:
-        """
-        Re-set the particle and geometry processes to the default configuration when the source
-        of the processes is a restart data.
-
-        In a restart there is only particle information, so the process is set to the default id
-        and all the other are set to None.
-        """
-
-    def CreateRestartSubject(
-        self, timestep_index: int, restart_filename: str
-    ) -> RestartData:
-        """
-        Creates, configure and set the restart subject to the current study.
-        The given time-step index defines the time to which the restart information will be create from.
-
-        :param timestep_index:
-            The time-step index to create the restart information
-
-        :param restart_filename:
-            the filename to be set so the restart subject could write and read the data from
-
-        :raise RestartValidationFailedException:
-            If it cannot create a restart subject.
         """
 
     @ApiExpose
@@ -849,9 +866,7 @@ class RAStudy(ApiElementItem):
         Get whether the Intra Particle Collision Statistics Module is enabled.
         """
 
-    def SetMeshedParticlesUpscalingEnabled(self, value: bool) -> None:
-        """ """
-
+    def SetMeshedParticlesUpscalingEnabled(self, value: bool) -> None: ...
     def GetMeshedParticlesUpscalingEnabled(self) -> bool:
         """
         Get the Meshed Particles Upscaling value.

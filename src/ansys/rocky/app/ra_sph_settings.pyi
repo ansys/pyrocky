@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -25,6 +25,8 @@ from rocky30.models.sph.sph_settings import SPHProcess as SPHProcess
 from ansys.rocky.app.ra_grid_process_element import (
     RAGridProcessElementItem as RAGridProcessElementItem,
 )
+from ansys.rocky.app.ra_sph_refinement import RASphAdaptiveSizing as RASphAdaptiveSizing
+from ansys.rocky.app.rocky_api_deprecated_decorator import ApiDeprecated as ApiDeprecated
 
 class RASPHSettings(RAGridProcessElementItem):
     """
@@ -60,6 +62,130 @@ class RASPHSettings(RAGridProcessElementItem):
 
         :return:
             The returned value will be one of [\'WCSPH\', \'IISPH\'].
+        """
+
+    def GetEulerianSolutionEnabled(self) -> bool:
+        """
+        Get the value of "Eulerian Solution Enabled".
+
+        """
+
+    def SetEulerianSolutionEnabled(self, value: bool) -> None:
+        """
+        Set the value of "Eulerian Solution Enabled".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableEulerianSolution(self) -> None:
+        """
+        Set the value of "Eulerian Solution" to True.
+        """
+
+    def DisableEulerianSolution(self) -> None:
+        """
+        Set the value of "Eulerian Solution" to False.
+        """
+
+    def IsEulerianSolutionEnabled(self) -> bool:
+        """
+        Check if the "Eulerian Solution" is enabled.
+
+        """
+
+    def GetAdaptiveSphSizingEnabled(self) -> bool:
+        """
+        Get the value of "Adaptive Sph Sizing Enabled".
+
+        """
+
+    def SetAdaptiveSphSizingEnabled(self, value: bool) -> None:
+        """
+        Set the value of "Adaptive Sph Sizing Enabled".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableAdaptiveSphSizing(self) -> None:
+        """
+        Set the value of "Adaptive SPH Sizing" to True.
+        """
+
+    def DisableAdaptiveSphSizing(self) -> None:
+        """
+        Set the value of "Adaptive SPH Sizing" to False.
+        """
+
+    def IsAdaptiveSphSizingEnabled(self) -> bool:
+        """
+        Check if the "Adaptive SPH Sizing" is enabled.
+
+        """
+
+    def GetSphAdaptiveSizing(self) -> RASphAdaptiveSizing:
+        """
+        Get the "Adaptive Sph Sizing" element
+
+        """
+
+    def GetEnabled(self) -> bool:
+        """
+        Get the value of "Enabled".
+
+        """
+
+    def SetEnabled(self, value: bool) -> None:
+        """
+        Set the value of "Enabled".
+
+        :param value:
+            The value to set.
+        """
+
+    def GetAtmosphericPressure(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Atmospheric Pressure".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "Pa".
+        """
+
+    def SetAtmosphericPressure(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Atmospheric Pressure".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "Pa".
+        """
+
+    def GetBoundaryCorrectionType(self) -> str:
+        """
+        Get "Boundary Correction Type" as a string.
+
+        :return:
+            The returned value will be one of [\'none\', \'single_point_plane\', \'single_point_all_parts\'].
+        """
+
+    def SetBoundaryCorrectionType(self, value: str) -> None:
+        """
+        Set the value of "Boundary Correction Type".
+
+        :param value:
+            The value to set. Must be one of [\'none\', \'single_point_plane\', \'single_point_all_parts\'].
+        :raises RockyApiError:
+            If `value` is not a valid "Boundary Correction Type" option.
+        """
+
+    def GetValidBoundaryCorrectionTypeValues(self) -> list[str]:
+        """
+        Get a list of all possible values for "Boundary Correction Type".
+
+        :return:
+            The returned list is [\'none\', \'single_point_plane\', \'single_point_all_parts\'].
         """
 
     def GetCS(self) -> float:
@@ -172,50 +298,6 @@ class RASPHSettings(RAGridProcessElementItem):
 
         :param value:
             The value to set. This value can be an expression with input variables or float type.
-        """
-
-    def GetEnabled(self) -> bool:
-        """
-        Get the value of "Enabled".
-
-        """
-
-    def SetEnabled(self, value: bool) -> None:
-        """
-        Set the value of "Enabled".
-
-        :param value:
-            The value to set.
-        """
-
-    def GetEulerianSolutionEnabled(self) -> bool:
-        """
-        Get the value of "Eulerian Solution Enabled".
-
-        """
-
-    def SetEulerianSolutionEnabled(self, value: bool) -> None:
-        """
-        Set the value of "Eulerian Solution Enabled".
-
-        :param value:
-            The value to set.
-        """
-
-    def EnableEulerianSolution(self) -> None:
-        """
-        Set the value of "Eulerian Solution" to True.
-        """
-
-    def DisableEulerianSolution(self) -> None:
-        """
-        Set the value of "Eulerian Solution" to False.
-        """
-
-    def IsEulerianSolutionEnabled(self) -> bool:
-        """
-        Check if the "Eulerian Solution" is enabled.
-
         """
 
     def GetFreeSurfaceDivergenceLimit(self) -> float:
@@ -409,7 +491,7 @@ class RASPHSettings(RAGridProcessElementItem):
         Get "Pos Correction Type" as a string.
 
         :return:
-            The returned value will be one of [\'none\', \'xsph\', \'shift\'].
+            The returned value will be one of [\'none\', \'xsph\', \'shift\', \'collision_shift\'].
         """
 
     def SetPosCorrectionType(self, value: str) -> None:
@@ -417,7 +499,7 @@ class RASPHSettings(RAGridProcessElementItem):
         Set the value of "Pos Correction Type".
 
         :param value:
-            The value to set. Must be one of [\'none\', \'xsph\', \'shift\'].
+            The value to set. Must be one of [\'none\', \'xsph\', \'shift\', \'collision_shift\'].
         :raises RockyApiError:
             If `value` is not a valid "Pos Correction Type" option.
         """
@@ -427,7 +509,7 @@ class RASPHSettings(RAGridProcessElementItem):
         Get a list of all possible values for "Pos Correction Type".
 
         :return:
-            The returned list is [\'none\', \'xsph\', \'shift\'].
+            The returned list is [\'none\', \'xsph\', \'shift\', \'collision_shift\'].
         """
 
     def GetPressureDeg(self) -> int:
@@ -486,6 +568,32 @@ class RASPHSettings(RAGridProcessElementItem):
         """
         Check if the "Relaxed Incompressibility Constraint" is enabled.
 
+        """
+
+    def GetSearchMethod(self) -> str:
+        """
+        Get "Search Method" as a string.
+
+        :return:
+            The returned value will be one of [\'regular_grid\', \'bvh\'].
+        """
+
+    def SetSearchMethod(self, value: str) -> None:
+        """
+        Set the value of "Search Method".
+
+        :param value:
+            The value to set. Must be one of [\'regular_grid\', \'bvh\'].
+        :raises RockyApiError:
+            If `value` is not a valid "Search Method" option.
+        """
+
+    def GetValidSearchMethodValues(self) -> list[str]:
+        """
+        Get a list of all possible values for "Search Method".
+
+        :return:
+            The returned list is [\'regular_grid\', \'bvh\'].
         """
 
     def GetShepardFilterOnDensityEnabled(self) -> bool:
@@ -875,7 +983,7 @@ class RASPHSettings(RAGridProcessElementItem):
         Get "Viscosity Type" as a string.
 
         :return:
-            The returned value will be one of [\'cleary\', \'morris\', \'custom\'].
+            The returned value will be one of [\'cleary\', \'morris\', \'custom\', \'krimi\'].
         """
 
     def SetViscosityType(self, value: str) -> None:
@@ -883,7 +991,7 @@ class RASPHSettings(RAGridProcessElementItem):
         Set the value of "Viscosity Type".
 
         :param value:
-            The value to set. Must be one of [\'cleary\', \'morris\', \'custom\'].
+            The value to set. Must be one of [\'cleary\', \'morris\', \'custom\', \'krimi\'].
         :raises RockyApiError:
             If `value` is not a valid "Viscosity Type" option.
         """
@@ -893,7 +1001,7 @@ class RASPHSettings(RAGridProcessElementItem):
         Get a list of all possible values for "Viscosity Type".
 
         :return:
-            The returned list is [\'cleary\', \'morris\', \'custom\'].
+            The returned list is [\'cleary\', \'morris\', \'custom\', \'krimi\'].
         """
 
     def GetViscousForceIntegration(self) -> str:

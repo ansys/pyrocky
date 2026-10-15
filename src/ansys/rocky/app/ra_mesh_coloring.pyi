@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from ben10.element_function.semantic_association import SemanticAssociation
+from coilib50.element_function.semantic_association import SemanticAssociation
 from sci20.plugins.process.coloring_process import MeshAssemblyColoringProcessSubject
 
 from ansys.rocky.app.api_element_item import ApiElementItem

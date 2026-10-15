@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -26,7 +26,6 @@ from coilib50.process.base_process_subject import (
     AbstractProcessSubject as AbstractProcessSubject,
 )
 from coilib50.time.time_step_interface import ITimeStep as ITimeStep
-from coilib50.units import Scalar as Scalar
 from kraken20.plugins.api.ka_element_item import KAElementItem
 from oop_ext.foundation.decorators import Abstract
 from rocky30.base_types import Tuple3F as Tuple3F

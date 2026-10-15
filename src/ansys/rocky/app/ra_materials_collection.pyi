@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,10 +20,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from rocky30.models.material.fluid_material import FluidMaterial as FluidMaterial
 from rocky30.models.material.fluid_material import (
     FluidMaterialCollection as FluidMaterialCollection,
 )
-from rocky30.models.material.fluid_material import FluidMaterial as FluidMaterial
 from rocky30.models.material.material import Material as Material
 from rocky30.models.material.material import MaterialCollection as MaterialCollection
 from rocky30.models.naming import CreateNewName as CreateNewName

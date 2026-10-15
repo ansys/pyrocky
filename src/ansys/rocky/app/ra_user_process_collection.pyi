@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,7 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from coilib50.process import Process as Process
 from coilib50.units.mapped_io import FixedArray as FixedArray
 from kraken20.plugins.api.ka_element_item import KAElementItem as KAElementItem
 from rocky30.base_types import Tuple3F as Tuple3F
@@ -42,13 +41,13 @@ from ansys.rocky.app.ra_api import RockyApiError as RockyApiError
 from ansys.rocky.app.ra_grid_process_element import (
     RAGridProcessElementItem as RAGridProcessElementItem,
 )
-from ansys.rocky.app.ra_process_element import (
-    RASurfaceUserProcess as RASurfaceUserProcess,
-)
 from ansys.rocky.app.ra_process_element import RACubeGroup as RACubeGroup
 from ansys.rocky.app.ra_process_element import RACylinderGroup as RACylinderGroup
 from ansys.rocky.app.ra_process_element import RAPlaneGroup as RAPlaneGroup
 from ansys.rocky.app.ra_process_element import RAPolyhedronProcess as RAPolyhedronProcess
+from ansys.rocky.app.ra_process_element import (
+    RASurfaceUserProcess as RASurfaceUserProcess,
+)
 from ansys.rocky.app.ra_streamlines_user_process import (
     RAStreamlinesUserProcess as RAStreamlinesUserProcess,
 )
@@ -515,4 +514,12 @@ class RAUserProcessCollection(ApiElementItem):
 
         :return:
             The list of streamlines user process names.
+        """
+
+    def RemoveProcess(self, process: ApiElementItem | str) -> None:
+        """
+        Removes a process from the collection.
+
+        :param process:
+            The process to remove.
         """

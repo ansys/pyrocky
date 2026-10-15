@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -131,7 +131,7 @@ class RAParticleAssemblyPart(ApiElementItem):
         Get the value of "Rotation X".
 
         :param unit:
-            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+            The unit for the returned value. If no unit is provided, the returned value will be in "-".
         """
 
     def SetRotationX(self, value: str | float, unit: str | None = None) -> None:
@@ -141,7 +141,7 @@ class RAParticleAssemblyPart(ApiElementItem):
         :param value:
             The value to set. This value can be an expression with input variables or float type.
         :param unit:
-            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
         """
 
     def GetRotationY(self, unit: str | None = None) -> float:
@@ -149,7 +149,7 @@ class RAParticleAssemblyPart(ApiElementItem):
         Get the value of "Rotation Y".
 
         :param unit:
-            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+            The unit for the returned value. If no unit is provided, the returned value will be in "-".
         """
 
     def SetRotationY(self, value: str | float, unit: str | None = None) -> None:
@@ -159,7 +159,7 @@ class RAParticleAssemblyPart(ApiElementItem):
         :param value:
             The value to set. This value can be an expression with input variables or float type.
         :param unit:
-            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
         """
 
     def GetRotationZ(self, unit: str | None = None) -> float:
@@ -167,7 +167,7 @@ class RAParticleAssemblyPart(ApiElementItem):
         Get the value of "Rotation Z".
 
         :param unit:
-            The unit for the returned value. If no unit is provided, the returned value will be in "m".
+            The unit for the returned value. If no unit is provided, the returned value will be in "-".
         """
 
     def SetRotationZ(self, value: str | float, unit: str | None = None) -> None:
@@ -177,7 +177,7 @@ class RAParticleAssemblyPart(ApiElementItem):
         :param value:
             The value to set. This value can be an expression with input variables or float type.
         :param unit:
-            The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
         """
 
     def GetScale(self, unit: str | None = None) -> float:

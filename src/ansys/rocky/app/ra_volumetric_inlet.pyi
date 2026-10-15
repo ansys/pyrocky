@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -34,7 +34,7 @@ from ansys.rocky.app.ra_volumetric_inlet_properties import (
 from ansys.rocky.app.ra_volumetric_inlet_properties import (
     RAVolumetricInletPropertiesList as RAVolumetricInletPropertiesList,
 )
-from ansys.rocky.app.ra_wall import RAWall as RAWall
+from ansys.rocky.app.rocky_api_deprecated_decorator import ApiDeprecated as ApiDeprecated
 
 class RAVolumetricInlet(ApiElementItem, _RAOrientationMixin):
     """
@@ -57,9 +57,9 @@ class RAVolumetricInlet(ApiElementItem, _RAOrientationMixin):
     """
 
     @classmethod
-    def GetWrappedClass(self) -> type[VolumeFill]: ...
+    def GetWrappedClass(cls) -> type[VolumeFill]: ...
     @classmethod
-    def GetClassName(self) -> str: ...
+    def GetClassName(cls) -> str: ...
     def GetInputPropertiesList(self) -> RAVolumetricInletPropertiesList:
         """
         Return a list of input properties
@@ -77,6 +77,54 @@ class RAVolumetricInlet(ApiElementItem, _RAOrientationMixin):
         Remove a particle from the Particle Inlet input properties list.
 
         :param particle: The particle to remove, either as an :class:`RAParticle` object or by name.
+        """
+
+    def SetRegionBoundingBox(self, value: str) -> None:
+        """
+        Set the value of "Region Bounding Box".
+
+        :param value:
+            The value to set. Must be one of [\'User Defined\', \'Selected Geometries\'].
+        :raises RockyApiError:
+            If `value` is not a valid "Region Bounding Box" option.
+        """
+
+    def GetRegionBoundingBox(self) -> str:
+        """
+        Get "Region Bounding Box" as a string.
+
+        :return:
+            The returned value will be one of [\'User Defined\', \'Selected Geometries\'].
+        """
+
+    def GetUseBoxCenterAsSeedPoint(self) -> bool:
+        """
+        Get the value of "Use Box Center As Seed Point".
+
+        """
+
+    def SetUseBoxCenterAsSeedPoint(self, value: bool) -> None:
+        """
+        Set the value of "Use Box Center As Seed Point".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableUseBoxCenterAsSeedPoint(self) -> None:
+        """
+        Set the value of "Use Box Center As Seed Point" to True.
+        """
+
+    def DisableUseBoxCenterAsSeedPoint(self) -> None:
+        """
+        Set the value of "Use Box Center As Seed Point" to False.
+        """
+
+    def IsUseBoxCenterAsSeedPointEnabled(self) -> bool:
+        """
+        Check if the "Use Box Center As Seed Point" is enabled.
+
         """
 
     def GetBoxCenter(self, unit: str | None = None) -> list[float]:
@@ -333,33 +381,63 @@ class RAVolumetricInlet(ApiElementItem, _RAOrientationMixin):
             The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
         """
 
-    def GetUseBoxCenterAsSeedPoint(self) -> bool:
+    def GetUseRegionCenterAsSeedPoint(self) -> bool:
         """
-        Get the value of "Use Box Center As Seed Point".
+        Get the value of "Use Region Center As Seed Point".
 
         """
 
-    def SetUseBoxCenterAsSeedPoint(self, value: bool) -> None:
+    def SetUseRegionCenterAsSeedPoint(self, value: bool) -> None:
         """
-        Set the value of "Use Box Center As Seed Point".
+        Set the value of "Use Region Center As Seed Point".
 
         :param value:
             The value to set.
         """
 
-    def EnableUseBoxCenterAsSeedPoint(self) -> None:
+    def EnableUseRegionCenterAsSeedPoint(self) -> None:
         """
-        Set the value of "Use Box Center As Seed Point" to True.
-        """
-
-    def DisableUseBoxCenterAsSeedPoint(self) -> None:
-        """
-        Set the value of "Use Box Center As Seed Point" to False.
+        Set the value of "Use Region Center As Seed Point" to True.
         """
 
-    def IsUseBoxCenterAsSeedPointEnabled(self) -> bool:
+    def DisableUseRegionCenterAsSeedPoint(self) -> None:
         """
-        Check if the "Use Box Center As Seed Point" is enabled.
+        Set the value of "Use Region Center As Seed Point" to False.
+        """
+
+    def IsUseRegionCenterAsSeedPointEnabled(self) -> bool:
+        """
+        Check if the "Use Region Center As Seed Point" is enabled.
+
+        """
+
+    def GetSphPacking(self) -> bool:
+        """
+        Get the value of "Sph Packing".
+
+        """
+
+    def SetSphPacking(self, value: bool) -> None:
+        """
+        Set the value of "Sph Packing".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableSphPacking(self) -> None:
+        """
+        Set the value of "Sph Packing" to True.
+        """
+
+    def DisableSphPacking(self) -> None:
+        """
+        Set the value of "Sph Packing" to False.
+        """
+
+    def IsSphPackingEnabled(self) -> bool:
+        """
+        Check if the "Sph Packing" is enabled.
 
         """
 

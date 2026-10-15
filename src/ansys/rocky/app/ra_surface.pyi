@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -43,6 +43,29 @@ class RASurface(RABaseGeometry, _RAOrientationMixin, _WithMovementMixin):
 
         :return:
             True if geometry is linked to a motion frame False otherwise
+        """
+
+    def GetOriginalCenterCoordinates(
+        self, unit: str | None = None
+    ) -> tuple[float, float, float]:
+        """
+        Get the coordinates of the center of the original surface area, as it was imported, without motion or any property based transformations.
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
+        """
+
+    def GetOriginalNormal(self) -> tuple[float, float, float]:
+        """
+        Get the normal vector of the original surface, as it was imported, without any motion or property based transformations.
+        """
+
+    def GetPlanarDimensions(self, unit: str | None = None) -> tuple[float, float]:
+        """
+        Get the width and height of the surface area.
+
+        :param unit:
+            The unit for the returned values. If no unit is provided, the returned values will be in "m".
         """
 
     def GetTranslation(self, unit: str | None = None) -> list[float]:

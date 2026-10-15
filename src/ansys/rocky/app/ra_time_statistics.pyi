@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2026 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,12 +20,24 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from ansys.rocky.app.api_element_item import ApiElementItem
-from ansys.rocky.app.ra_base_subject_element import (
-    BaseSubjectApiElement as BaseSubjectApiElement,
+from coilib50.units import Scalar
+from rocky30.plugins.time_statistics.time_statistics_calculation import (
+    TimeStatisticsCalculator as TimeStatisticsCalculator,
+)
+from rocky30.plugins.time_statistics.time_statistics_container import (
+    ITimeStatisticsContainer as ITimeStatisticsContainer,
+)
+from rocky30.plugins.time_statistics.time_statistics_container import (
+    TimeStatisticsContainer as TimeStatisticsContainer,
+)
+from rocky30.plugins.time_statistics.time_statistics_operations import (
+    TimeStatisticsOperations as TimeStatisticsOperations,
 )
 
-class RATimeStatisticsCalculator(BaseSubjectApiElement):
+from ansys.rocky.app.api_element_item import ApiElementItem
+from ansys.rocky.app.rocky_api_deprecated_decorator import ApiDeprecated as ApiDeprecated
+
+class RATimeStatisticsCalculator(ApiElementItem):
     """
     PrePost Scripting wrapper for TimeStatisticsCalculators.
 
@@ -33,93 +45,98 @@ class RATimeStatisticsCalculator(BaseSubjectApiElement):
     generated (for use with the rest of the API).
     """
 
-    def GetStartTime(self):
-        """
-        Get the start time of this time statistics grid function.
-
-        :rtype: Scalar
-        """
-
-    def SetStartTime(self, time_value) -> None:
-        """
-        Set the start time of this time statistics grid function.
-
-        :type time_value: float or tuple(float, unicode) or Scalar
-        """
-
-    def GetStopTime(self):
-        """
-        Get the stop time of this time statistics grid function.
-
-        :rtype: Scalar
-        """
-
-    def SetStopTime(self, time_value) -> None:
-        """
-        Get the stop time of this time statistics grid function.
-
-        :type time_value: float or tuple(float, unicode) or Scalar
-        """
-
-    def GetGridFunctionName(self):
+    @classmethod
+    def GetWrappedClass(cls) -> type[TimeStatisticsCalculator]: ...
+    @classmethod
+    def GetClassName(cls) -> str: ...
+    def GetGridFunctionName(self) -> str:
         """
         Get the name of this time statistics grid function, usable on the rest of the API.
+        """
 
-        :rtype: unicode
+    def GetStartTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Start Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetStartTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Start Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+        """
+
+    def GetStopTime(self, unit: str | None = None) -> float:
+        """
+        Get the value of "Stop Time".
+
+        :param unit:
+            The unit for the returned value. If no unit is provided, the returned value will be in "s".
+        """
+
+    def SetStopTime(self, value: str | float, unit: str | None = None) -> None:
+        """
+        Set the value of "Stop Time".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or float type.
+        :param unit:
+            The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
         """
 
 class RATimeStatistics(ApiElementItem):
     """
     PrePost Scripting wrapper for TimeStatisticsContainer.
-
-    Prefer using RATimeStatistics.CreateFor() to create objects of this class, as not all source
-    processes accept time statistics grid functions.
     """
 
-    def __init__(self, id, ra_process, model_id=None) -> None:
-        """
-        :param RAGridProcessElementItem ra_process:
-            The input process on which the time statistics grid functions will be created.
-        """
-
     def AddGridFunction(
-        self, start_time, stop_time, operation, grid_function_name, location=None
-    ):
+        self,
+        start_time: float | int | tuple[float | int, str] | Scalar,
+        stop_time: float | int | tuple[float | int, str] | Scalar,
+        operation: str,
+        grid_function_name: str,
+        location: str | None = None,
+    ) -> RATimeStatisticsCalculator:
         """
         Add a new time statistics grid function.
 
             * For both time parameters (`start_time` and `stop_time`), three kinds of values can be passed:
                 - A float or int, which will be assumed to be a value in seconds;
-                - A tuple with a float or int and an unicode. The first element is the value, and the second
+                - A tuple with a float or int and a string. The first element is the value, and the second
                   is the value\'s unit.
                 - A time Scalar.
-            * `operation` must be the unicode string representing one of the operations that the time
-               statistics grid functions support. Currently these are limited to "average", "min", "max" and
+            * `operation` must be the string representing one of the operations that the time
+               statistics grid functions support. Currently, these are limited to "average", "min", "max" and
                "sum".
-            * `grid_function_name` must be the unicode string of the name of the input grid function over
+            * `grid_function_name` must be the string of the name of the input grid function over
                which the `operation` will be performed.
             * `location` is optional and must be one of \'cell\' or \'node\'. If no location is passed, the
                time statistics grid function will be created on the cell.
 
-        :rtype: RATimeStatistics
-        :return:
+        :return RATimeStatisticsCalculator:
             An object representing the newly-created time statistics grid function. This object can
             be used to change the start and stop times, and to retrieve the grid function name.
         """
 
-    def RemoveGridFunction(self, name_or_calculator) -> None:
+    def RemoveGridFunction(
+        self, name_or_calculator: str | RATimeStatisticsCalculator
+    ) -> None:
         """
         Remove a previously-generated grid function.
 
         The passed value can be either the name of the grid function to be removed, or a
         RATimeStatisticsCalculator object previously returned by AddGridFunction().
-
-        :param unicode or RATimeStatisticsCalculator name_or_calculator:
         """
 
     @classmethod
-    def GetWrappedClass(self): ...
+    def GetWrappedClass(cls) -> type: ...
     @classmethod
-    def GetClassName(self): ...
+    def GetClassName(cls) -> str: ...
     @classmethod
-    def CreateFor(self, ra_process): ...
+    def CreateFor(cls, ra_process: ApiElementItem) -> RATimeStatistics | None: ...

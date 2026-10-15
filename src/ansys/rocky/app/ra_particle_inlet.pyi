@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,13 +21,14 @@
 # SOFTWARE.
 
 from ansys.rocky.app.api_element_item import ApiElementItem
+from ansys.rocky.app.ra_addins import ElementWithAddins as ElementWithAddins
 from ansys.rocky.app.ra_api import RockyApiError as RockyApiError
 from ansys.rocky.app.ra_particle import RAParticle as RAParticle
 from ansys.rocky.app.ra_particle_inlet_properties import (
     RAParticleInletPropertiesList as RAParticleInletPropertiesList,
 )
 
-class RAParticleInlet(ApiElementItem):
+class RAParticleInlet(ApiElementItem, ElementWithAddins):
     """
     Rocky PrePost Scripting wrapper for a single Continuous Injection input.
 

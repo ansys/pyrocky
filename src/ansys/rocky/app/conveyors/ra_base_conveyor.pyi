@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,7 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from ben10.foundation.decorators import Override as Override
 from rocky30.models.geometry.conveyors.conveyor_belt_profile import (
     BELT_PROFILE_STRING_TO_CAPTION as BELT_PROFILE_STRING_TO_CAPTION,
 )
@@ -29,9 +28,6 @@ from rocky30.models.geometry.conveyors.conveyor_belt_profile import (
 )
 from rocky30.models.geometry.conveyors.conveyor_belt_profile import (
     BeltProfileStringFromCaption as BeltProfileStringFromCaption,
-)
-from rocky30.models.geometry.conveyors.conveyor_belt_profile import (
-    SetupNewBeltProfile as SetupNewBeltProfile,
 )
 
 from ansys.rocky.app.ra_base_geometry import RABaseGeometry as RABaseGeometry

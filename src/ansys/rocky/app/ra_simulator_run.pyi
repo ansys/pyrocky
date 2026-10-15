@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,8 +20,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from collections.abc import Sequence
-
 from rocky30.models.solver.rocky_simulator_run import (
     RockySimulatorRun as RockySimulatorRun,
 )
@@ -29,6 +27,10 @@ from rocky30.models.solver.rocky_simulator_run import (
 from ansys.rocky.app.ra_grid_process_element import (
     RAGridProcessElementItem as RAGridProcessElementItem,
 )
+from ansys.rocky.app.ra_local_execution_settings import (
+    RALocalExecutionSettings as RALocalExecutionSettings,
+)
+from ansys.rocky.app.ra_mpi_settings import RAMpiSettings as RAMpiSettings
 from ansys.rocky.app.rocky_api_deprecated_decorator import ApiDeprecated as ApiDeprecated
 from ansys.rocky.app.rocky_api_utils import (
     ConvertUserPassedValueToScalar as ConvertUserPassedValueToScalar,
@@ -100,13 +102,19 @@ class RASimulatorRun(RAGridProcessElementItem):
     def HasCompressedFileEnabled(self) -> bool: ...
     def GetTargetGpus(self) -> list[int]:
         """
+        On version 27R1 the local execution mode settings are obtained from RASimulatorRun.GetLocalExecutionSettings()
+        in contrast with MPI settings that are obtained from RASimulatorSun.GetMpiSettings()
+
         :return: A list of IDs of the GPUs currently selected for Multi GPU simulation.
         """
 
     def SetTargetGpus(self, gpus: list[int | str]) -> None:
         """
-        It will configure the IDs of GPUs that will be used in simulation based on the list of IDs or names of GPUs
-        passed.
+        On version 27R1 the local execution mode settings are obtained from RASimulatorRun.GetLocalExecutionSettings()
+        in contrast with MPI settings that are obtained from RASimulatorSun.GetMpiSettings()
+
+        It will configure the IDs of GPUs that will be used in a local simulation based on the list of IDs or
+        names of GPUs passed.
 
         :param gpus:
             List with IDs or names of GPUs to be used in simulation.
@@ -124,38 +132,6 @@ class RASimulatorRun(RAGridProcessElementItem):
 
         :param value:
             The value to set.
-        """
-
-    def GetAvailableOutputRoots(self) -> Sequence[str]:
-        """
-        Deprecated: Use GetAvailableStandardOutputProperties instead.
-        """
-
-    def GetAvailableOutputRootProperties(self, root_key: str) -> Sequence[str]:
-        """
-        Deprecated: Use GetAvailableStandardOutputProperties instead.
-        """
-
-    def GetOutputRootEnabled(self, root_key: str) -> bool:
-        """
-        Deprecated: Use GetStandardOutputPropertyEnabled instead.
-        """
-
-    def SetOutputRootEnabled(self, root_key: str, enabled: bool) -> None:
-        """
-        Deprecated: Use SetStandardOutputPropertyEnabled instead.
-        """
-
-    def GetOutputPropertyEnabled(self, root_key: str, property_name: str) -> bool:
-        """
-        Deprecated: Use GetStandardOutputPropertyEnabled instead.
-        """
-
-    def SetOutputPropertyEnabled(
-        self, root_key: str, property_name: str, enabled: bool
-    ) -> None:
-        """
-        Deprecated: Use SetStandardOutputPropertyEnabled instead.
         """
 
     def GetStandardOutputPropertyEnabled(self, *output_property: str) -> bool:
@@ -273,6 +249,52 @@ class RASimulatorRun(RAGridProcessElementItem):
 
     def GetSimulationTarget(self) -> str: ...
     def SetSimulationTarget(self, value: str) -> None: ...
+    def GetResumeDataFrequency(self) -> int:
+        """
+        Get the value of "Resume Data Frequency".
+
+        """
+
+    def SetResumeDataFrequency(self, value: str | int) -> None:
+        """
+        Set the value of "Resume Data Frequency".
+
+        :param value:
+            The value to set. This value can be an expression with input variables or int type.
+        """
+
+    def GetLocalExecutionSettings(self) -> RALocalExecutionSettings:
+        """
+        Get the "Local Execution Settings" element.
+
+        .. code-block:: python
+
+            simulator_run = study.GetSimulatorRun()
+            local_execution_settings = simulator_run.GetLocalExecutionSettings()
+            local_execution_settings.GetNumberOfProcessors()
+        """
+
+    def GetMpiSettings(self) -> RALocalExecutionSettings:
+        """
+        Get the "MPI Settings" element.
+
+        .. code-block:: python
+
+            simulator_run = study.GetSimulatorRun()
+            mpi_settings = simulator_run.GetMpiSettings()
+            mpi_settings.GetNumberOfProcessors()
+        """
+
+    def GetNumberOfProcessors(self) -> int: ...
+    def SetNumberOfProcessors(self, value: str | int) -> None: ...
+    def GetProcessingUnit(self) -> str: ...
+    def SetProcessingUnit(self, value: str) -> None: ...
+    def GetValidProcessingUnitValues(self) -> list[str]: ...
+    def GetTargetGpu(self) -> int: ...
+    def SetTargetGpu(self, value: str | int) -> None: ...
+    def GetMultiGpuSlicingDirection(self) -> str: ...
+    def SetMultiGpuSlicingDirection(self, value: str) -> None: ...
+    def GetValidMultiGpuSlicingDirectionValues(self) -> list[str]: ...
     def GetArraysGrowthRate(self) -> float:
         """
         Get the value of "Arrays Growth Rate".
@@ -299,6 +321,20 @@ class RASimulatorRun(RAGridProcessElementItem):
 
         :param value:
             The value to set. This value can be an expression with input variables or float type.
+        """
+
+    def GetDisableEdgeVertexFlatContacts(self) -> bool:
+        """
+        Get the value of "Disable Edge Vertex Flat Contacts".
+
+        """
+
+    def SetDisableEdgeVertexFlatContacts(self, value: bool) -> None:
+        """
+        Set the value of "Disable Edge Vertex Flat Contacts".
+
+        :param value:
+            The value to set.
         """
 
     def GetDisableTrianglesOnPeriodicBoundaries(self) -> bool:
@@ -889,6 +925,20 @@ class RASimulatorRun(RAGridProcessElementItem):
             The value to set.
         """
 
+    def GetUseNonRoundTorqueCorrectionForBoundaries(self) -> bool:
+        """
+        Get the value of "Use Non Round Torque Correction For Boundaries".
+
+        """
+
+    def SetUseNonRoundTorqueCorrectionForBoundaries(self, value: bool) -> None:
+        """
+        Set the value of "Use Non Round Torque Correction For Boundaries".
+
+        :param value:
+            The value to set.
+        """
+
     def GetUseSortingDistanceFactor(self) -> bool:
         """
         Get the value of "Use Sorting Distance Factor".
@@ -949,154 +999,30 @@ class RASimulatorRun(RAGridProcessElementItem):
 
         """
 
-    def GetMpiHeterogeneous(self) -> bool:
+    def GetExecutionMode(self) -> str:
         """
-        Get the value of "Mpi Heterogeneous".
-
-        """
-
-    def SetMpiHeterogeneous(self, value: bool) -> None:
-        """
-        Set the value of "Mpi Heterogeneous".
-
-        :param value:
-            The value to set.
-        """
-
-    def GetMpiHostfile(self) -> str:
-        """
-        Get the value of "Mpi Hostfile".
-
-        """
-
-    def SetMpiHostfile(self, value: str) -> None:
-        """
-        Set the value of "Mpi Hostfile".
-
-        :param value:
-            The value to set.
-        """
-
-    def GetMpiHosts(self) -> str:
-        """
-        Get the value of "Mpi Hosts".
-
-        """
-
-    def SetMpiHosts(self, value: str) -> None:
-        """
-        Set the value of "Mpi Hosts".
-
-        :param value:
-            The value to set.
-        """
-
-    def GetMpiNumberOfProcesses(self) -> int:
-        """
-        Get the value of "Mpi Number of Processes".
-
-        """
-
-    def SetMpiNumberOfProcesses(self, value: str | int) -> None:
-        """
-        Set the value of "Mpi Number of Processes".
-
-        :param value:
-            The value to set. This value can be an expression with input variables or int type.
-        """
-
-    def GetMpiNumberOfThreads(self) -> int:
-        """
-        Get the value of "Mpi Number of Threads".
-
-        """
-
-    def SetMpiNumberOfThreads(self, value: str | int) -> None:
-        """
-        Set the value of "Mpi Number of Threads".
-
-        :param value:
-            The value to set. This value can be an expression with input variables or int type.
-        """
-
-    def GetMpiWithinScheduler(self) -> bool:
-        """
-        Get the value of "Mpi Within Scheduler".
-
-        """
-
-    def SetMpiWithinScheduler(self, value: bool) -> None:
-        """
-        Set the value of "Mpi Within Scheduler".
-
-        :param value:
-            The value to set.
-        """
-
-    def GetMultiGpuSlicingDirection(self) -> str:
-        """
-        Get "Multi Gpu Slicing Direction" as a string.
+        Get "Execution Mode" as a string.
 
         :return:
-            The returned value will be one of [\'X_Parallel\', \'Y_Parallel\', \'Z_Parallel\'].
+            The returned value will be one of [\'local\', \'single_mpi\', \'multi_mpi\'].
         """
 
-    def SetMultiGpuSlicingDirection(self, value: str) -> None:
+    def SetExecutionMode(self, value: str) -> None:
         """
-        Set the value of "Multi Gpu Slicing Direction".
+        Set the value of "Execution Mode".
 
         :param value:
-            The value to set. Must be one of [\'X_Parallel\', \'Y_Parallel\', \'Z_Parallel\'].
+            The value to set. Must be one of [\'local\', \'single_mpi\', \'multi_mpi\'].
         :raises RockyApiError:
-            If `value` is not a valid "Multi Gpu Slicing Direction" option.
+            If `value` is not a valid "Execution Mode" option.
         """
 
-    def GetValidMultiGpuSlicingDirectionValues(self) -> list[str]:
+    def GetValidExecutionModeValues(self) -> list[str]:
         """
-        Get a list of all possible values for "Multi Gpu Slicing Direction".
-
-        :return:
-            The returned list is [\'X_Parallel\', \'Y_Parallel\', \'Z_Parallel\'].
-        """
-
-    def GetNumberOfProcessors(self) -> int:
-        """
-        Get the value of "Number of Processors".
-
-        """
-
-    def SetNumberOfProcessors(self, value: str | int) -> None:
-        """
-        Set the value of "Number of Processors".
-
-        :param value:
-            The value to set. This value can be an expression with input variables or int type.
-        """
-
-    def GetProcessingUnit(self) -> str:
-        """
-        Get "Processing Unit" as a string.
+        Get a list of all possible values for "Execution Mode".
 
         :return:
-            The returned value will be one of [\'CPU\', \'GPU\', \'MULTI_GPU\'].
-        """
-
-    def SetProcessingUnit(self, value: str) -> None:
-        """
-        Set the value of "Processing Unit".
-
-        :param value:
-            The value to set. Must be one of [\'CPU\', \'GPU\', \'MULTI_GPU\'].
-        :raises RockyApiError:
-            If `value` is not a valid "Processing Unit" option.
-        """
-
-    def GetValidProcessingUnitValues(self) -> list[str]:
-        """
-        Get a list of all possible values for "Processing Unit".
-
-        :return:
-            The returned list is [\'CPU\', \'GPU\', \'MULTI_GPU\'].
+            The returned list is [\'local\', \'single_mpi\', \'multi_mpi\'].
         """
 
     def GetReleaseParticlesWithoutOverlapCheck(self) -> bool:
@@ -1111,48 +1037,6 @@ class RASimulatorRun(RAGridProcessElementItem):
 
         :param value:
             The value to set.
-        """
-
-    def GetTargetGpu(self) -> int:
-        """
-        Get the value of "Target Gpu".
-
-        """
-
-    def SetTargetGpu(self, value: str | int) -> None:
-        """
-        Set the value of "Target Gpu".
-
-        :param value:
-            The value to set. This value can be an expression with input variables or int type.
-        """
-
-    def GetUseMpi(self) -> bool:
-        """
-        Get the value of "Use Mpi".
-
-        """
-
-    def SetUseMpi(self, value: bool) -> None:
-        """
-        Set the value of "Use Mpi".
-
-        :param value:
-            The value to set.
-        """
-
-    def GetResumeDataFrequency(self) -> int:
-        """
-        Get the value of "Resume Data Frequency".
-
-        """
-
-    def SetResumeDataFrequency(self, value: str | int) -> None:
-        """
-        Set the value of "Resume Data Frequency".
-
-        :param value:
-            The value to set. This value can be an expression with input variables or int type.
         """
 
     def GetBreakageDelayAfterRelease(self, unit: str | None = None) -> float:

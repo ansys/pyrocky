@@ -1,0 +1,252 @@
+
+
+
+
+
+
+:class:`RACFDParametersList`
+============================
+
+
+.. py:class:: ansys.rocky.app.ra_cfd_parameters.RACFDParametersList
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`RACFDPerParticleParameters`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate the list of per-particle CFD parameters in a CFD coupling configuration.
+
+   To get the :class:`RACFDParametersList` from a CFD coupling wrapper (such as :class:`RAConstantOneWayCoupling`,
+   :class:`RAFluentOneWaySteadyCoupling`, or :class:`RAFluentTwoWayCoupling`), use:
+
+   .. code-block:: python
+
+       parameters_list = coupling_process.GetCFDParametersList()
+
+   The :class:`RACFDParametersList` class acts as a regular Python list, with the usual methods to iterate
+   and access individual parameter sets. Note that it's not possible to add and remove items from the
+   list, as they are added and removed automatically as Particles are added or removed from the project.
+
+   The items in the parameters list are of type :class:`RACFDPerParticleParameters`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:currentmodule:: RACFDParametersList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetParametersFor`
+            - Get the set of CFD parameters for a given Particle.
+          * - :py:attr:`~New`
+            - Overriden: Raises an error when called.
+          * - :py:attr:`~Remove`
+            - Overriden: Raises an error when called.
+          * - :py:attr:`~Clear`
+            - Overriden: Raises an error when called.
+
+
+
+
+
+   .. tab-item:: Special methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~__delitem__`
+            - Overriden: Raises an error when called.
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_cfd_parameters import RACFDParametersList
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetParametersFor(particle)
+
+   
+   Get the set of CFD parameters for a given Particle.
+
+   :param RAParticle or str particle:
+       Either the PrePost Scripting wrapper for a Particle, or the name of the Particle.
+   :rtype: RACFDPerParticleParameters
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: New() -> None
+
+   
+   Overriden: Raises an error when called.
+
+   RACFDPerParticleParameters are created and removed automatically when Particles are added
+   or removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Remove(item) -> None
+
+   
+   Overriden: Raises an error when called.
+
+   RACFDPerParticleParameters are created and removed automatically when Particles are added
+   or removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Clear() -> None
+
+   
+   Overriden: Raises an error when called.
+
+   RACFDPerParticleParameters are created and removed automatically when Particles are added
+   or removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: __delitem__(index) -> None
+
+   
+   Overriden: Raises an error when called.
+
+   RACFDPerParticleParameters are created and removed automatically when Particles are added
+   or removed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

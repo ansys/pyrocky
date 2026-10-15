@@ -1,0 +1,188 @@
+
+
+
+
+
+
+:class:`RAFreeBodyTranslation`
+==============================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_fbm_translation.RAFreeBodyTranslation(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper representing a Free Body Translation motion.
+
+   Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+   example:
+
+   .. code-block:: python
+
+       motions = motion_frame.GetMotions()
+       motion_1 = motions.New()
+       motion_1.SetType('Free Body Translation')
+       free_body_translation = motion_1.GetTypeObject()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAFreeBodyTranslation
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFreeMotionDirection`
+            - Get "Free Motion Direction" as a string.
+          * - :py:attr:`~SetFreeMotionDirection`
+            - Set the value of "Free Motion Direction".
+          * - :py:attr:`~GetValidFreeMotionDirectionValues`
+            - Get a list of all possible values for "Free Motion Direction".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_fbm_translation import RAFreeBodyTranslation
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetFreeMotionDirection() -> str
+
+   
+   Get "Free Motion Direction" as a string.
+
+   :return:
+       The returned value will be one of ['none', 'x', 'y', 'xy', 'z', 'xz', 'yz', 'xyz'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFreeMotionDirection(value: str) -> None
+
+   
+   Set the value of "Free Motion Direction".
+
+   :param value:
+       The value to set. Must be one of ['none', 'x', 'y', 'xy', 'z', 'xz', 'yz', 'xyz'].
+   :raises RockyApiError:
+       If `value` is not a valid "Free Motion Direction" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidFreeMotionDirectionValues() -> list[str]
+
+   
+   Get a list of all possible values for "Free Motion Direction".
+
+   :return:
+       The returned list is ['none', 'x', 'y', 'xy', 'z', 'xz', 'yz', 'xyz'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

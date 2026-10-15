@@ -1,0 +1,2259 @@
+
+
+
+
+
+
+:class:`RAStudy`
+================
+
+
+.. py:class:: ansys.rocky.app.ra_study.RAStudy(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for a project's Study.
+
+   This wrapper is the main access point for all other entities typically present in a Rocky
+   project. Access the :class:`RAStudy` via the :class:`RAProject` once a project has been created
+   or opened (:ref:`more <more>`):
+
+   .. code-block:: python
+
+       project = app.GetProject()
+       study = project.GetStudy()
+
+   .. _more:
+
+   The :class:`RAStudy` class acts as a main hub of functionality, providing methods to perform
+   various common actions related to simulations:
+
+   - Helper creation methods for simulation entities such as :meth:`CreateParticle()`,
+     :meth:`CreateFeedConveyor()`, :meth:`ImportWall()`, etc.
+   - Accessor methods for specialized PrePost Scripting wrapper objects such as :meth:`GetMaterialCollection()`,
+     :meth:`GetPhysics()`, :meth:`GetSimulatorRun()`, etc.
+   - Methods related to the simulation and its results, such as :meth:`StartSimulation()`,
+     :meth:`StopSimulation()`, :meth:`DeleteResults()`, etc.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+.. py:currentmodule:: RAStudy
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+          * - :py:attr:`~GetStatus`
+            - Check the current Study status
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCustomerName`
+            - Get the study customer name.
+          * - :py:attr:`~SetCustomerName`
+            - Change the study customer's name
+          * - :py:attr:`~GetDescription`
+            - Get the study description.
+          * - :py:attr:`~SetDescription`
+            - Change the study description
+          * - :py:attr:`~GetElementNames`
+            - 
+          * - :py:attr:`~GetElement`
+            - 
+          * - :py:attr:`~GetSubjectElement`
+            - 
+          * - :py:attr:`~GetExportToolkit`
+            - Get a RAExportToolkit object related to this RAStudy. The returned object can be used
+          * - :py:attr:`~GetPhysics`
+            - Get the study's Physics object.
+          * - :py:attr:`~GetMotionFrameSource`
+            - Get the study's Motion Frame Source.
+          * - :py:attr:`~GetDomainSettings`
+            - Get the study's Domain Settings.
+          * - :py:attr:`~GetSphSettings`
+            - 
+          * - :py:attr:`~GetSphEulerianSolution`
+            - 
+          * - :py:attr:`~GetGeometryCollection`
+            - Get the study's Geometry Collection.
+          * - :py:attr:`~GetGeometry`
+            - Get the geometry with the given name
+          * - :py:attr:`~CreateParticle`
+            - Create a particle in the study with default values.
+          * - :py:attr:`~CreateParticleInlet`
+            - Create a particle inlet with the given entry_point and particle.
+          * - :py:attr:`~CreateOutlet`
+            - Create an outlet with the given exit point.
+          * - :py:attr:`~CreateVolumetricInlet`
+            - Creates a volumetric inlet with the given properties.
+          * - :py:attr:`~CreateRectangularSurface`
+            - 
+          * - :py:attr:`~CreateCircularSurface`
+            - 
+          * - :py:attr:`~CreateFeedConveyor`
+            - Creates a new feed conveyor and add it to the project.
+          * - :py:attr:`~CreateReceivingConveyor`
+            - Creates a new receiving conveyor and add it to the project.
+          * - :py:attr:`~ImportWall`
+            - Import a geometry file and create one or more corresponding geometries in the study.
+          * - :py:attr:`~ImportSystemCouplingWall`
+            - Import a geometry file and create one or more corresponding geometries in the study.
+          * - :py:attr:`~ImportSurface`
+            - Import a custom surface file and create one or more corresponding geometries in the study.
+          * - :py:attr:`~ConvertToWall`
+            - 
+          * - :py:attr:`~ConvertToSystemCouplingWall`
+            - 
+          * - :py:attr:`~ConvertToSurface`
+            - 
+          * - :py:attr:`~GetWallFromFilename`
+            - Given a filename finds all imported geometries created from it.
+          * - :py:attr:`~GetSurfaceFromFilename`
+            - Given a filename finds all imported geometries created from it.
+          * - :py:attr:`~ReplaceWallTriangles`
+            - Replace the existing triangles of a geometry with new triangles.
+          * - :py:attr:`~RemoveWall`
+            - Remove walls associated with the given filename.
+          * - :py:attr:`~RemoveSurface`
+            - Remove custom surfaces associated with the given filename.
+          * - :py:attr:`~GetRegionsOfInterestCollection`
+            - 
+          * - :py:attr:`~GetMaterialCollection`
+            - Get the study's Material Collection.
+          * - :py:attr:`~GetParticleCollection`
+            - Get the study's Particle Collection.
+          * - :py:attr:`~GetPointCloudCollection`
+            - Get the study's Point Cloud Collection.
+          * - :py:attr:`~GetMaterialsInteractionCollection`
+            - Deprecated: Use :meth:`RAMaterialCollection.GetMaterialsInteractionCollection()` instead.
+          * - :py:attr:`~GetInletsOutletsCollection`
+            - Get the study's Inlets and Outlets Collection.
+          * - :py:attr:`~GetCalculations`
+            - Get the project's Calculations.
+          * - :py:attr:`~GetParticleInput`
+            - Get the particle input with the given name.
+          * - :py:attr:`~GetSourceForMeshProcesses`
+            - :return:
+          * - :py:attr:`~GetInputReader`
+            - Get the study's input reader.
+          * - :py:attr:`~GetSolutionId`
+            - :returns:
+          * - :py:attr:`~GetCFDCoupling`
+            - Get the current CFD coupling object.
+          * - :py:attr:`~GetAirFlow`
+            - Get the RAAirFlow object (if applicable).
+          * - :py:attr:`~GetContactData`
+            - Get the RAContactData object.
+          * - :py:attr:`~GetJointsData`
+            - Get the RAParticleJointsData object.
+          * - :py:attr:`~GetUnusedPartId`
+            - :returns:
+          * - :py:attr:`~UpdateTimeSet`
+            - Request an update in the the time steps available in the study.
+          * - :py:attr:`~GetParticleMeshProcess`
+            - Get the process that generated the particle mesh.
+          * - :py:attr:`~GetParticles`
+            - Get the process that contains the simulated particles.
+          * - :py:attr:`~SetRestartSubject`
+            - Set the restart subject
+          * - :py:attr:`~GetRestartSubject`
+            - :return:
+          * - :py:attr:`~GetSimulatorRun`
+            - Get the PrePost Scripting wrapper for simulation-related parameters.
+          * - :py:attr:`~GetSolver`
+            - Synonym for :meth:`GetSimulatorRun()`.
+          * - :py:attr:`~CreateSolidMaterialAndRelatedInteractions`
+            - 
+          * - :py:attr:`~RemoveSolidMaterialAndRelatedInteractions`
+            - 
+          * - :py:attr:`~CreateFluidMaterial`
+            - 
+          * - :py:attr:`~RemoveFluidMaterial`
+            - 
+          * - :py:attr:`~GetElementCurve`
+            - Get the curve matching a given element name and curve name.
+          * - :py:attr:`~ClearPartIds`
+            - Re-set the process part ids to None
+          * - :py:attr:`~ResetSimulationStatus`
+            - In addition to clearing the part ids, removes the possibility of "resuming" the simulation
+          * - :py:attr:`~SetupRestartPartIds`
+            - Re-set the particle and geometry processes to the default configuration when the source
+          * - :py:attr:`~CreateRestartSubject`
+            - Creates, configure and set the restart subject to the current study.
+          * - :py:attr:`~IsSimulating`
+            - Whether we're currently simulating something.
+          * - :py:attr:`~GetProgress`
+            - Get the current simulation progress [0.00, 100.00] or None if no simulation is running.
+          * - :py:attr:`~HasResults`
+            - Whether we have results from a previous simulation.
+          * - :py:attr:`~CanResumeSimulation`
+            - Whether the simulation can be resumed.
+          * - :py:attr:`~DeleteResults`
+            - Called to delete any results we currently have from a simulation.
+          * - :py:attr:`~RefreshResults`
+            - Called to refresh the results we currently have from a simulation.
+          * - :py:attr:`~StartSimulation`
+            - Start the simulation. If possible, will resume a previously interrupted simulation.
+          * - :py:attr:`~StopSimulation`
+            - Stops a currently running simulation. If there's no simulation running, does nothing.
+          * - :py:attr:`~ExtendSimulation`
+            - Extend the simulation: either its duration, the duration of an inlet in the study or the
+          * - :py:attr:`~GetTimeSet`
+            - Get the study's timeset.
+          * - :py:attr:`~SetVariable`
+            - Sets the values the given parametric variable
+          * - :py:attr:`~SetWorkbenchData`
+            - Set the workbench data subject
+          * - :py:attr:`~GetWorkbenchData`
+            - :return:
+          * - :py:attr:`~GetFEMForcesAnalysisModules`
+            - Get the name and the FEM Forces property for all available Boundary Collision Statistics
+          * - :py:attr:`~SetCollectForcesForFemAnalysis`
+            - Enable the Boundary Collision Statistics modules and enable/disable
+          * - :py:attr:`~GetCollectForcesForFemAnalysis`
+            - Checks wheter the Collision Statistics modules are colecting FEM Forces for analysis
+          * - :py:attr:`~HasCalculatedHTC`
+            - Checks whether HTC is being calculated.
+          * - :py:attr:`~GetModuleCollection`
+            - Get the study's Module Collection.
+          * - :py:attr:`~SetIntraParticleCollisionStatistics`
+            - Enable/disable the Intra Particle Collision Statistics Module.
+          * - :py:attr:`~SetHTCCalculatorEnabled`
+            - Enable/disable the SPH HTC Calculator module.
+          * - :py:attr:`~GetIntraParticleCollisionStatistics`
+            - Get whether the Intra Particle Collision Statistics Module is enabled.
+          * - :py:attr:`~SetMeshedParticlesUpscalingEnabled`
+            - 
+          * - :py:attr:`~GetMeshedParticlesUpscalingEnabled`
+            - Get the Meshed Particles Upscaling value.
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~customer_name`
+            - 
+          * - :py:attr:`~description`
+            - 
+          * - :py:attr:`~STATUS_ERROR`
+            - 
+          * - :py:attr:`~STATUS_WARNING`
+            - 
+          * - :py:attr:`~STATUS_INFO`
+            - 
+          * - :py:attr:`~STATUS_UNKNOWN`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_study import RAStudy
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: customer_name
+   :type:  _typeshed.Incomplete
+
+.. py:attribute:: description
+   :type:  _typeshed.Incomplete
+
+.. py:attribute:: STATUS_ERROR
+   :type:  str
+
+.. py:attribute:: STATUS_WARNING
+   :type:  str
+
+.. py:attribute:: STATUS_INFO
+   :type:  str
+
+.. py:attribute:: STATUS_UNKNOWN
+   :type:  str
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.study.study.Study]
+   :classmethod:
+
+
+.. py:method:: GetCustomerName() -> str
+
+   
+   Get the study customer name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCustomerName(customer_name: str) -> None
+
+   
+   Change the study customer's name
+
+   :param customer_name:
+       The customer name to be set
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDescription() -> str
+
+   
+   Get the study description.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDescription(description: str) -> None
+
+   
+   Change the study description
+
+   :param description:
+       The customer name to be set
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetElementNames(type_name: str | None = None) -> list[str]
+
+.. py:method:: GetElement(element_name: str | None = None, type_name: str | None = None, raise_if_no_found: bool = True) -> ansys.rocky.app.api_element_item.ApiElementItem
+
+.. py:method:: GetSubjectElement(subject: coilib50.subject.Subject | str) -> ansys.rocky.app.api_element_item.ApiElementItem
+
+.. py:method:: GetExportToolkit() -> ansys.rocky.app.ra_export_toolkit.RAExportToolkit
+
+   
+   Get a RAExportToolkit object related to this RAStudy. The returned object can be used
+   for export operations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetPhysics() -> ansys.rocky.app.ra_physics.RAPhysics
+
+   
+   Get the study's Physics object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMotionFrameSource() -> ansys.rocky.app.motion.ra_motion_frame_source.RAMotionFrameSource | None
+
+   
+   Get the study's Motion Frame Source.
+
+   :return:
+       The motion frame source, used to deal with motion.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDomainSettings() -> ansys.rocky.app.ra_domain_settings.RADomainSettings
+
+   
+   Get the study's Domain Settings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSphSettings() -> ansys.rocky.app.ra_sph_settings.RASPHSettings
+
+.. py:method:: GetSphEulerianSolution() -> ansys.rocky.app.ra_sph_eulerian_solution.RASPHEulerianSolution
+
+.. py:method:: GetGeometryCollection() -> ansys.rocky.app.ra_geometry_collection.RAGeometryCollection
+
+   
+   Get the study's Geometry Collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGeometry(geometry_name: str) -> ansys.rocky.app.ra_wall.RAWall | None
+
+   
+   Get the geometry with the given name
+
+   :return: The geometry with the given name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateParticle() -> ansys.rocky.app.ra_particle.RAParticle
+
+   
+   Create a particle in the study with default values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateParticleInlet(entry_point: ansys.rocky.app.conveyors.ra_feed_conveyor.RAFeedConveyor | ansys.rocky.app.ra_inlet.RAInletGeometry | ansys.rocky.app.ra_surface.RASurface, particle: ansys.rocky.app.ra_particle.RAParticle) -> ansys.rocky.app.ra_particle_inlet.RAParticleInlet
+
+   
+   Create a particle inlet with the given entry_point and particle.
+
+   :param entry_point:
+       The input's entry point - either a FeedConveyor or an Inlet.
+   :param particle:
+       The particle that will enter through this input.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateOutlet(exit_point: ansys.rocky.app.ra_base_geometry.RABaseGeometry) -> ansys.rocky.app.ra_outlet.RAOutlet
+
+   
+   Create an outlet with the given exit point.
+
+   :param exit_point:
+       The outlet's exit point surface.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateVolumetricInlet(particle: ansys.rocky.app.ra_particle.RAParticle | None = None, name: str | None = None, mass: float = 100.0, seed_coordinates: rocky30.base_types.Tuple3F | None = None, geometries: list[str | ansys.rocky.app.ra_wall.RAWall] | None = None, use_geometries_to_compute: bool = False, box_center: rocky30.base_types.Tuple3F | None = None, box_dimensions: rocky30.base_types.Tuple3F | None = None, use_box_center_as_seed_point: bool = False) -> ansys.rocky.app.ra_volumetric_inlet.RAVolumetricInlet
+
+   
+   Creates a volumetric inlet with the given properties.
+
+   :param name:
+       The name which will be used for the volume fill.
+   :param seed_coordinates:
+       A point (x, y, z) in meters that will be the reference to start the filling process.
+   :param geometries:
+       A list of names or RAWall selected in RAVolumetricInlet. The names or RAWall list must match the
+       existent geometries.
+   :param use_geometries_to_compute:
+       If true: the limits of the filling process will be the selected boundaries.
+       If false: a cube must be defined to be the limits of the filling process.
+   :param box_center:
+       A point (x, y, z) that will be the center of the limit cube.
+   :param dimensions:
+       The dimensions (length, width, height) of the limit cube.
+   :param box_dimensions:
+       The dimensions (lenght, width, height) of the limit cube.
+   :param use_box_center_as_seed_point:
+       If true, the seed point will be set to the box center.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateRectangularSurface() -> ansys.rocky.app.ra_rectangular_surface.RARectangularSurface
+
+.. py:method:: CreateCircularSurface() -> ansys.rocky.app.ra_circular_surface.RACircularSurface
+
+.. py:method:: CreateFeedConveyor() -> ansys.rocky.app.conveyors.ra_feed_conveyor.RAFeedConveyor
+
+   
+   Creates a new feed conveyor and add it to the project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateReceivingConveyor() -> ansys.rocky.app.conveyors.ra_receiving_conveyor.RAReceivingConveyor
+
+   
+   Creates a new receiving conveyor and add it to the project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: ImportWall(custom_filename: str, import_scale: float = 1.0, convert_yz: bool = False, custom_name_prefix: str | None = None) -> list[ansys.rocky.app.ra_wall.RAWall]
+
+   
+   Import a geometry file and create one or more corresponding geometries in the study.
+
+   :param custom_filename:
+       The filename of the STL, DXF or XGL file to import.
+
+   :param import_scale:
+       The import scale to be applied to the imported geometry.
+
+   :param convert_yz:
+       Whether the y and z axes of the imported geometry should be converted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: ImportSystemCouplingWall(custom_filename: str, import_scale: float = 1.0, convert_yz: bool = False, custom_name_prefix: str | None = None) -> list[ansys.rocky.app.ra_system_coupling_wall.RASystemCouplingWall]
+
+   
+   Import a geometry file and create one or more corresponding geometries in the study.
+
+   :param custom_filename:
+       The filename of the STL, DXF or XGL file to import.
+
+   :param import_scale:
+       The import scale to be applied to the imported geometry.
+
+   :param convert_yz:
+       Whether the y and z axes of the imported geometry should be converted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: ImportSurface(custom_filename: str, import_scale: float = 1.0, convert_yz: bool = False, custom_name_prefix: str | None = None) -> list[ansys.rocky.app.ra_surface.RASurface]
+
+   
+   Import a custom surface file and create one or more corresponding geometries in the study.
+
+   :param custom_filename:
+       The filename of the STL, DXF or XGL file to import.
+
+   :param import_scale:
+       The import scale to be applied to the imported geometry.
+
+   :param convert_yz:
+       Whether the y and z axes of the imported geometry should be converted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: ConvertToWall(geometries: list[ansys.rocky.app.ra_surface.RASurface | ansys.rocky.app.ra_system_coupling_wall.RASystemCouplingWall]) -> list[ansys.rocky.app.ra_wall.RAWall]
+
+.. py:method:: ConvertToSystemCouplingWall(geometries: list[ansys.rocky.app.ra_wall.RAWall]) -> list[ansys.rocky.app.ra_system_coupling_wall.RASystemCouplingWall]
+
+.. py:method:: ConvertToSurface(geometries: list[ansys.rocky.app.ra_wall.RAWall]) -> list[ansys.rocky.app.ra_surface.RASurface]
+
+.. py:method:: GetWallFromFilename(filename: str) -> list[ansys.rocky.app.api_element_item.ApiElementItem]
+
+   
+   Given a filename finds all imported geometries created from it.
+
+   :param filename:
+       The name of the file that originally created a set of geometries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSurfaceFromFilename(filename: str) -> list[ansys.rocky.app.api_element_item.ApiElementItem]
+
+   
+   Given a filename finds all imported geometries created from it.
+
+   :param filename:
+       The name of the file that originally created a set of geometries
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: ReplaceWallTriangles(new_filename: str, import_scale: float = 1.0, convert_yz: bool = False) -> None
+
+   
+   Replace the existing triangles of a geometry with new triangles.
+
+   It is assumed that there is a geometry corresponding to new_filename, previously
+   imported. This method is used to update the triangles of the geometry, without
+   creating new model entities.
+
+   This method only supports geometry files that contain a single object. This is true for
+   all STL files, but XGL and DXF files generally support multiple objects per file - this
+   method will raise a RuntimeError in this case.
+
+   :param new_filename:
+       The filename of the STL, DXF or XGL file with new triangle data.
+
+   :param import_scale:
+       The import scale to be applied to the imported geometry.
+
+   :param convert_yz:
+       Whether the y and z axes of the imported geometry should be converted.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveWall(filename: str) -> None
+
+   
+   Remove walls associated with the given filename.
+
+   :param filename:
+       The name of the filename associated with the current project walls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveSurface(filename: str) -> None
+
+   
+   Remove custom surfaces associated with the given filename.
+
+   :param filename:
+       The name of the filename associated with the current project custom surfaces
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRegionsOfInterestCollection() -> ansys.rocky.app.ra_regions_of_interest_collection.RARegionsOfInterestCollection
+
+.. py:method:: GetMaterialCollection() -> ansys.rocky.app.ra_materials_collection.RAMaterialCollection
+
+   
+   Get the study's Material Collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleCollection() -> ansys.rocky.app.ra_particle_collection.RAParticleCollection
+
+   
+   Get the study's Particle Collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPointCloudCollection() -> ansys.rocky.app.ra_point_cloud_collection.RAPointCloudCollection
+
+   
+   Get the study's Point Cloud Collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaterialsInteractionCollection() -> ansys.rocky.app.ra_materials_interaction_collection.RAMaterialsInteractionCollection
+
+   
+   Deprecated: Use :meth:`RAMaterialCollection.GetMaterialsInteractionCollection()` instead.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInletsOutletsCollection() -> ansys.rocky.app.ra_inlets_outlets_collection.RAInletsOutletsCollection
+
+   
+   Get the study's Inlets and Outlets Collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCalculations() -> ansys.rocky.app.ra_calculations.RACalculations
+
+   
+   Get the project's Calculations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleInput(input_name: str) -> ansys.rocky.app.ra_particle_inlet.RAParticleInlet
+
+   
+   Get the particle input with the given name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSourceForMeshProcesses() -> coilib50.process.IProcess
+
+   
+   :return:
+       Get the process in the associated study that should be used as source for mesh processes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInputReader() -> petroapp10.plugins.entities.input_reader.input_reader_model.InputReader
+
+   
+   Get the study's input reader.
+   :return:
+       The input reader associated with the study.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSolutionId() -> str
+
+   
+   :returns:
+       The id identifying the source of the solution
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCFDCoupling() -> ansys.rocky.app.ra_cfd_coupling.RACFDCoupling
+
+   
+   Get the current CFD coupling object.
+
+   :return:
+       The CFDCoupling object
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAirFlow() -> ansys.rocky.app.ra_airflow.RAAirFlow | None
+
+   
+   Get the RAAirFlow object (if applicable).
+
+   :return:
+       The AirFlow object is configured as the CFD coupling mode
+       None otherwise
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetContactData() -> ansys.rocky.app.ra_contact_data.RAContactData
+
+   
+   Get the RAContactData object.
+
+   :return:
+       The contact data object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetJointsData() -> ansys.rocky.app.ra_particle_joints_data.RAParticleJointsData
+
+   
+   Get the RAParticleJointsData object.
+
+   :return:
+       The joint statisctics data object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUnusedPartId() -> int
+
+   
+   :returns:
+       A valid part id to associate with a new process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: UpdateTimeSet() -> None
+
+   
+   Request an update in the the time steps available in the study.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleMeshProcess() -> rocky30.process.particle.particle_mesh_process.ParticleMeshProcess
+
+   
+   Get the process that generated the particle mesh.
+
+   :return:
+       The particle mesh process associated with the current this study
+
+   :raise AssertionError if no process was found associated with this study.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticles() -> ansys.rocky.app.ra_particles_process.RAParticles
+
+   
+   Get the process that contains the simulated particles.
+
+   :return:
+       The particles process
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRestartSubject(restart_subject: rocky30.models.restart.simulation_restart_subject.SimulationRestartSubject) -> None
+
+   
+   Set the restart subject
+
+   :param restart_subject:
+       The subject with study restart information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRestartSubject() -> rocky30.models.restart.simulation_restart_subject.SimulationRestartSubject
+
+   
+   :return:
+       The subject with study restart information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSimulatorRun() -> ansys.rocky.app.ra_simulator_run.RASimulatorRun
+
+   
+   Get the PrePost Scripting wrapper for simulation-related parameters.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSolver() -> ansys.rocky.app.ra_simulator_run.RASimulatorRun
+
+   
+   Synonym for :meth:`GetSimulatorRun()`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateSolidMaterialAndRelatedInteractions(material_name: str | None = None) -> ansys.rocky.app.ra_solid_material.RASolidMaterial
+
+.. py:method:: RemoveSolidMaterialAndRelatedInteractions(material_or_name: RAMaterialOrName) -> None
+
+.. py:method:: CreateFluidMaterial(material_name: str | None = None) -> ansys.rocky.app.ra_fluid_material.RAFluidMaterial
+
+.. py:method:: RemoveFluidMaterial(material_or_name: str | ansys.rocky.app.ra_fluid_material.RAFluidMaterial) -> None
+
+.. py:method:: GetElementCurve(element_name: str, curve_name: str, simulation_name: str | None = None, realization: str | None = None) -> sci20.plugins.api.api_curve.SciApiCurve
+
+   
+   Get the curve matching a given element name and curve name.
+
+   :param element_name: unicode
+       The name of the element
+
+   :param curve_name: unicode
+       The name of the curve
+
+   :param simulation_name: unicode
+       An optional parameter for defining the simulation to get the curve from.
+
+   :param realization: unicode
+       An additional keyword to identify the curve realization
+
+   :rtype: Curve
+   :return:
+       The curves for the given element and name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: ClearPartIds() -> None
+
+   
+   Re-set the process part ids to None
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: ResetSimulationStatus() -> None
+
+   
+   In addition to clearing the part ids, removes the possibility of "resuming" the simulation
+   next.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetupRestartPartIds() -> None
+
+   
+   Re-set the particle and geometry processes to the default configuration when the source
+   of the processes is a restart data.
+
+   In a restart there is only particle information, so the process is set to the default id
+   and all the other are set to None.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateRestartSubject(timestep_index: int, restart_filename: str) -> rocky20.simulator.RestartData
+
+   
+   Creates, configure and set the restart subject to the current study.
+   The given time-step index defines the time to which the restart information will be create from.
+
+   :param timestep_index:
+       The time-step index to create the restart information
+
+   :param restart_filename:
+       the filename to be set so the restart subject could write and read the data from
+
+   :raise RestartValidationFailedException:
+       If it cannot create a restart subject.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsSimulating() -> bool
+
+   
+   Whether we're currently simulating something.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetProgress() -> float | None
+
+   
+   Get the current simulation progress [0.00, 100.00] or None if no simulation is running.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: HasResults() -> bool
+
+   
+   Whether we have results from a previous simulation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CanResumeSimulation() -> bool
+
+   
+   Whether the simulation can be resumed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DeleteResults()
+
+   
+   Called to delete any results we currently have from a simulation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RefreshResults()
+
+   
+   Called to refresh the results we currently have from a simulation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: StartSimulation(skip_summary: bool | None = False, delete_results: bool | None = False, non_blocking: bool = False) -> bool
+
+   
+   Start the simulation. If possible, will resume a previously interrupted simulation.
+   If you wish to start a simulation from scratch, delete previous results via
+   DeleteResults() first.
+
+   :param bool skip_summary:
+       If starting from scratch, whether the simulation summary will be skipped (False) or
+       presented to the user (True).
+
+   :param bool delete_results:
+       True if the simulation results should be deleted, False otherwise.
+       If there are no simulation results, this flag is ignored
+
+   :param bool non_blocking:
+       If True, start the simulation asynchronously. Only works in headless mode (raises an error if otherwise).
+
+   :return bool
+       Returns True if the simulation has started successfully, False otherwise.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: StopSimulation() -> None
+
+   
+   Stops a currently running simulation. If there's no simulation running, does nothing.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: ExtendSimulation(extension_amount: float | barril.units.Scalar = 0, time: int | coilib50.time.time_step.TimeStep | None = None, inlet_extensions: ParticleInletExtensions | None = None, periodic_motion_extensions: PeriodicMotionExtensions | None = None) -> None
+
+   
+   Extend the simulation: either its duration, the duration of an inlet in the study or the
+   duration of a periodic motion frame.
+
+   :param extension_amount: The number of seconds to extend the simulation by.
+   :param time: The optional time at which to extend the simulation.
+   :param inlet_extensions: The list of input extensions.
+       The first parameter of each pair must be the name of the continuous injection to extend,
+       and the second is the number of seconds to extend the input by.
+   :param periodic_motion_extensions: the list of periodic motions extensions.
+       The first parameter of each pair must be the name of the periodic motion to extend,
+       and the second is the number of seconds to extend the periodic motion by.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTimeSet() -> coilib50.time.time_set.TimeSet
+
+   
+   Get the study's timeset.
+
+   - Before simulation, the timeset will contain the timesteps used in motion preview.
+   - After simulation, the timeset will contain the actual simulation timesteps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVariable(name: str, value: float) -> None
+
+   
+   Sets the values the given parametric variable
+
+   :param name:
+       The name of the variable
+
+   :param value:
+       The value to be set
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStatus(include_opengl_messages: bool = False) -> Status
+   :classmethod:
+
+
+   
+   Check the current Study status
+
+   :param include_opengl_messages:
+       Whether messages related to OpenGL should be included in the status.
+   :return:
+       Returns a list of subject names and the existing status as a list of tuples with the
+       message type and description
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetWorkbenchData(workbench_data: rocky30.models.workbench.workbench_data_subject.WorkbenchData) -> None
+
+   
+   Set the workbench data subject
+
+   :param workbench_data:
+       The subject with study workbench information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetWorkbenchData() -> rocky30.models.workbench.workbench_data_subject.WorkbenchData
+
+   
+   :return:
+       The subject with study workbench information
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFEMForcesAnalysisModules(module_collection: ansys.rocky.app.ra_addins.RAModuleCollection) -> dict[str, str]
+
+   
+   Get the name and the FEM Forces property for all available Boundary Collision Statistics
+   modules
+
+   :param RAModuleCollection module_collection:
+       The study's Module Collection
+
+   :return Dict[str, str]:
+       A Dict with the Module Name and the FEM Forces property name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCollectForcesForFemAnalysis(value: bool) -> None
+
+   
+   Enable the Boundary Collision Statistics modules and enable/disable
+   the FEM Forces analysis
+
+   :param bool value: Wheter to enable or disable the modules
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCollectForcesForFemAnalysis() -> bool
+
+   
+   Checks wheter the Collision Statistics modules are colecting FEM Forces for analysis
+
+   :return bool:
+       True if the Collect FEM Forces property of any Collision Statistics module is enabled
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: HasCalculatedHTC() -> bool
+
+   
+   Checks whether HTC is being calculated.
+
+   :return bool:
+       True if HTC is being calculated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModuleCollection() -> ansys.rocky.app.ra_addins.RAModuleCollection
+
+   
+   Get the study's Module Collection.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetIntraParticleCollisionStatistics(value: bool) -> None
+
+   
+   Enable/disable the Intra Particle Collision Statistics Module.
+
+   Note: This shortcut method enables/disables _all_ properties related to that Module.
+
+   :param value:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetHTCCalculatorEnabled(value: bool) -> None
+
+   
+   Enable/disable the SPH HTC Calculator module.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetIntraParticleCollisionStatistics() -> bool
+
+   
+   Get whether the Intra Particle Collision Statistics Module is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMeshedParticlesUpscalingEnabled(value: bool) -> None
+
+.. py:method:: GetMeshedParticlesUpscalingEnabled() -> bool
+
+   
+   Get the Meshed Particles Upscaling value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

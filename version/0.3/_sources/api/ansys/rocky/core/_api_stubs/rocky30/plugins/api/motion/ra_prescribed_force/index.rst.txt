@@ -1,0 +1,38 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_prescribed_force
+==========================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_prescribed_force
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_prescribed_force.RAPrescribedForce
+
+
+Module Contents
+---------------
+
+.. py:class:: RAPrescribedForce(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetForceValue(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetForceValue(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+

@@ -1,0 +1,53 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_range_filter
+====================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_range_filter
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_time_range_filter.RATimeRangeFilter
+
+
+Module Contents
+---------------
+
+.. py:class:: RATimeRangeFilter(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetDomainRange() -> str
+
+
+   .. py:method:: SetDomainRange(value: str)
+
+
+   .. py:method:: GetValidDomainRangeValues() -> list[str]
+
+
+   .. py:method:: GetFinal(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetFinal(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInitial(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetInitial(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+

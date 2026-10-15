@@ -1,0 +1,431 @@
+
+
+
+
+
+
+:class:`RACustomInput`
+======================
+
+
+.. py:class:: ansys.rocky.app.ra_custom_input.RACustomInput(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app.ra_addins.ElementWithAddins`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`
+
+
+   
+   Rocky PrePost Scripting wrapper for a single Custom Input.
+
+   This wrapper class corresponds to an individual entry under the "Inputs" item on the project's
+   data tree. Particle inputs can be retrieved from the :class:`RAStudy` or the
+   :class:`RAInletsOutletsCollection` via:
+
+   .. code-block:: python
+
+       input_1 = study.GetElement('Custom Input <1>')
+       input_2 = input_collection.GetParticleInput('Custom Input <2>')
+
+   Instances of :class:`RACustomInput` gives access to its two properties:
+   The id of the Particle that will be used in the particle generation and the path of the csv file which will
+   contain the information for each desired particle to be generated, such as, positioning, size, release time.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RACustomInput
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetFilePath`
+            - Get the value of "File Path".
+          * - :py:attr:`~SetFilePath`
+            - Set the path of the file that will be used to generate the particles
+          * - :py:attr:`~GetMotionFrame`
+            - Get the "Motion Frame".
+          * - :py:attr:`~SetMotionFrame`
+            - Assign a Motion Frame to the custom input.
+          * - :py:attr:`~GetAvailableMotionFrames`
+            - Get all available Motion Frames.
+          * - :py:attr:`~GetDefaultTemperature`
+            - Get the value of "Default Temperature".
+          * - :py:attr:`~SetDefaultTemperature`
+            - Set the value of "Default Temperature".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetParticle`
+            - Get the "Particle".
+          * - :py:attr:`~SetParticle`
+            - Set the "Particle".
+          * - :py:attr:`~GetAvailableParticles`
+            - Get all available Particles.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_custom_input import RACustomInput
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetFilePath()
+
+   
+   Get the value of "File Path".
+
+   :rtype: str
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFilePath(file_path) -> None
+
+   
+   Set the path of the file that will be used to generate the particles
+   described on the content of the file.
+
+   The accepted file extensions are [".csv", ".xls", ".xlsx", ".xlsm", ".xlsb", ".odf"].
+
+   :param str or Path file_path:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMotionFrame()
+
+   
+   Get the "Motion Frame".
+
+   :rtype: :class:`RAMotionFrame`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMotionFrame(motion_frame: ansys.rocky.app.motion.ra_motion_frame.RAMotionFrame | str | None) -> None
+
+   
+   Assign a Motion Frame to the custom input.
+
+   :param motion_frame:
+       Either the API object or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableMotionFrames()
+
+   
+   Get all available Motion Frames.
+
+   :rtype: List[:class:`RAMotionFrame`]
+       A list of :class:`RAMotionFrame`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetDefaultTemperature(unit: str | None = None) -> float
+
+   
+   Get the value of "Default Temperature".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetDefaultTemperature(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Default Temperature".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticle()
+
+   
+   Get the "Particle".
+
+   :rtype: :class:`RAParticle`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetParticle(value) -> None
+
+   
+   Set the "Particle".
+
+   :param unicode, :class:`RAParticle` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableParticles()
+
+   
+   Get all available Particles.
+
+   :rtype: List[:class:`RAParticle`]
+       A list of :class:`RAParticle`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from collections.abc import Iterable
+from typing import Iterable
 
 from _typeshed import Incomplete
 
@@ -207,7 +207,10 @@ class RAFluentTwoWayCoupling(RABaseCFDCoupling):
     def disabled_output_variables(self): ...
     @disabled_output_variables.setter
     def disabled_output_variables(self, values) -> None: ...
-    def SetupDatFilename(self, dat_filename): ...
+    def SetupDatFilename(self, dat_filename: str) -> bool:
+        """
+        Set the dat filename for Fluent two-way coupling.
+        """
     dat_filename: Incomplete
     cas_filename: Incomplete
     def StartFluent(self) -> None:
@@ -263,6 +266,24 @@ class RAFluentTwoWayCoupling(RABaseCFDCoupling):
         """
         Create a coupled boundary for each of the coupled boundary name passed by the user.
         Check GetAvailableCoupledBoundaryNames to obtain the list of available boundaries.
+        """
+
+    def SetTargetGpus(self, target_gpus: list[str]) -> None:
+        """
+        Set the target GPUs to use.
+
+        :param target_gpus:
+            List of GPUs to use
+        """
+
+    def GetTargetGpus(self) -> list[str]:
+        """
+        Get the target GPUs to use.
+        """
+
+    def GetAvailableTargetGpus(self) -> list[str]:
+        """
+        Get the available GPUs to use.
         """
 
     def GetAbsoluteValue(self, unit: str | None = None) -> float:
@@ -484,7 +505,7 @@ class RAFluentTwoWayCoupling(RABaseCFDCoupling):
         Get "Fluent Execution Mode" as a string.
 
         :return:
-            The returned value will be one of [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+            The returned value will be one of [\'serial\', \'local_parallel\', \'distributed_parallel\', \'gpu\'].
         """
 
     def SetFluentExecutionMode(self, value: str) -> None:
@@ -492,7 +513,7 @@ class RAFluentTwoWayCoupling(RABaseCFDCoupling):
         Set the value of "Fluent Execution Mode".
 
         :param value:
-            The value to set. Must be one of [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+            The value to set. Must be one of [\'serial\', \'local_parallel\', \'distributed_parallel\', \'gpu\'].
         :raises RockyApiError:
             If `value` is not a valid "Fluent Execution Mode" option.
         """
@@ -502,7 +523,7 @@ class RAFluentTwoWayCoupling(RABaseCFDCoupling):
         Get a list of all possible values for "Fluent Execution Mode".
 
         :return:
-            The returned list is [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+            The returned list is [\'serial\', \'local_parallel\', \'distributed_parallel\', \'gpu\'].
         """
 
     def GetFluentOutputFrequencyMultiplier(self) -> int:

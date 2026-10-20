@@ -1,4 +1,24 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
+# SPDX-License-Identifier: MIT
+#
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 
 from collections.abc import Generator
 from typing import Generic, TypeVar
@@ -20,9 +40,9 @@ class RAList(ApiElementItem, Generic[T]):
         """
         Add a new item. Returns the newly created item.
         """
-        from ansys.rocky.app.ra_api import CheckResults
+        from ansys.rocky.app.ra_api import CheckCanModify
 
-        CheckResults(self)
+        CheckCanModify(self)
 
         element = self.subject.New()
         return self._GetApplication()._GetElementWrapper(
@@ -33,9 +53,9 @@ class RAList(ApiElementItem, Generic[T]):
         """
         Remove an item from the list.
         """
-        from ansys.rocky.app.ra_api import CheckResults
+        from ansys.rocky.app.ra_api import CheckCanModify
 
-        CheckResults(self)
+        CheckCanModify(self)
 
         if isinstance(item, ApiElementItem):
             item = item.subject
@@ -46,9 +66,9 @@ class RAList(ApiElementItem, Generic[T]):
         """
         Remove all items from the list.
         """
-        from ansys.rocky.app.ra_api import CheckResults
+        from ansys.rocky.app.ra_api import CheckCanModify
 
-        CheckResults(self)
+        CheckCanModify(self)
 
         self.subject.Clear()
 
@@ -69,8 +89,8 @@ class RAList(ApiElementItem, Generic[T]):
             yield self._GetApplication()._GetElementWrapper(item.id, item, self._model_id)
 
     def __delitem__(self, index: int) -> None:
-        from ansys.rocky.app.ra_api import CheckResults
+        from ansys.rocky.app.ra_api import CheckCanModify
 
-        CheckResults(self)
+        CheckCanModify(self)
 
         del self.subject[index]

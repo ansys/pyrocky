@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -29,7 +29,7 @@ from rocky30.models.geometry.geometry_collection import (
     GeometryCollection as GeometryCollection,
 )
 
-from ansys.rocky.app.ra_api import CheckResults as CheckResults
+from ansys.rocky.app.ra_api import CheckCanModify as CheckCanModify
 from ansys.rocky.app.ra_api import RockyApiError as RockyApiError
 from ansys.rocky.app.ra_base_geometry import RABaseGeometry as RABaseGeometry
 from ansys.rocky.app.ra_list import RAList as RAList
@@ -69,11 +69,12 @@ class RAGeometryCollection(RAList):
         Get the names of the geometries in this collection.
         """
 
-    def GetGeometry(self, geometry_name):
+    def GetGeometry(self, geometry_name: str) -> RABaseGeometry:
         """
         Get a geometry from its name.
 
-        :param unicode geometry_name:
+        :param geometry_name:
+            The name of the geometry to retrieve.
         """
 
     def IterInletGeometries(self) -> Iterator[RABaseGeometry]:

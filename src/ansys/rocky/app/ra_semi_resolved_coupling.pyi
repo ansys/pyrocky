@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -73,6 +73,24 @@ class RAFluentSemiResolvedCoupling(ApiElementItem):
         of this feature to be brought back in future version).
         """
 
+    def SetTargetGpus(self, target_gpus: list[str]) -> None:
+        """
+        Set the target GPUs to use.
+
+        :param target_gpus:
+            List of GPUs to use
+        """
+
+    def GetTargetGpus(self) -> list[str]:
+        """
+        Get the target GPUs to use.
+        """
+
+    def GetAvailableTargetGpus(self) -> list[str]:
+        """
+        Get the available GPUs to use.
+        """
+
     def GetCouplingFilesKept(self) -> int:
         """
         Get the value of "Coupling Files Kept".
@@ -106,7 +124,7 @@ class RAFluentSemiResolvedCoupling(ApiElementItem):
         Get "Fluent Execution Mode" as a string.
 
         :return:
-            The returned value will be one of [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+            The returned value will be one of [\'serial\', \'local_parallel\', \'distributed_parallel\', \'gpu\'].
         """
 
     def SetFluentExecutionMode(self, value: str) -> None:
@@ -114,7 +132,7 @@ class RAFluentSemiResolvedCoupling(ApiElementItem):
         Set the value of "Fluent Execution Mode".
 
         :param value:
-            The value to set. Must be one of [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+            The value to set. Must be one of [\'serial\', \'local_parallel\', \'distributed_parallel\', \'gpu\'].
         :raises RockyApiError:
             If `value` is not a valid "Fluent Execution Mode" option.
         """
@@ -124,7 +142,7 @@ class RAFluentSemiResolvedCoupling(ApiElementItem):
         Get a list of all possible values for "Fluent Execution Mode".
 
         :return:
-            The returned list is [\'serial\', \'local_parallel\', \'distributed_parallel\'].
+            The returned list is [\'serial\', \'local_parallel\', \'distributed_parallel\', \'gpu\'].
         """
 
     def GetFluentOutputFrequencyMultiplier(self) -> int:

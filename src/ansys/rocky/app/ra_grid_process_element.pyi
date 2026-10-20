@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -22,16 +22,19 @@
 
 from _typeshed import Incomplete
 from barril.units import Scalar
-from ben10.element_function.semantic_association import (
+from coilib50.element_function.semantic_association import (
     SemanticAssociation as SemanticAssociation,
 )
-from ben10.element_function.semantic_association_crossed_curve import (
+from coilib50.element_function.semantic_association_crossed_curve import (
     SemanticAssociationCrossedCurve as SemanticAssociationCrossedCurve,
 )
 from coilib50.time.time_step_interface import ITimeStep as ITimeStep
 from kraken20.plugins.api.ka_grid import KAGrid
 from rocky30.plugins.curve_calculation.grid_function.pre_calculated_grid_function_calculators import (
     Rocky30PreCalculatedGridFunctionCalculation as Rocky30PreCalculatedGridFunctionCalculation,
+)
+from rocky30.plugins.time_statistics.time_statistics_container import (
+    ITimeStatisticsContainer as ITimeStatisticsContainer,
 )
 from sci20.core.geometry import IGeometry as IGeometry
 
@@ -40,7 +43,6 @@ from ansys.rocky.app.ra_custom_calculators import (
     RACustomCurveAndGridProperty as RACustomCurveAndGridProperty,
 )
 from ansys.rocky.app.ra_time_statistics import RATimeStatistics as RATimeStatistics
-from ansys.rocky.app.ra_wall import RAWall as RAWall
 
 class RAGridProcessElementItem(
     KAGrid, _RASubjectWithColoringMixin, RACustomCurveAndGridProperty
@@ -60,7 +62,7 @@ class RAGridProcessElementItem(
         """
 
     def GetGeometry(self, time_step: str | int | ITimeStep = "current") -> IGeometry: ...
-    def GetTimeStatistics(self) -> RATimeStatistics:
+    def GetTimeStatistics(self) -> RATimeStatistics | None:
         """
         Get the object responsible for handling time-statistics grid functions for this process.
         This call will return None if the process doesn't support time statistics.

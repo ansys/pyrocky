@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -22,11 +22,16 @@
 
 from collections.abc import Sequence
 
+from barril.units import FixedArray
+from coilib50.time.time_step_interface import ITimeStep as ITimeStep
+from rocky30.base_types import Tuple3F as Tuple3F
+from rocky30.models.domain.domain_settings import DomainSettings as DomainSettings
+
 from ansys.rocky.app.api_element_item import ApiElementItem
 
 class RADomainSettings(ApiElementItem):
     """
-    Rocky PrePost Scripting wrapper for Domain Setings properties.
+    Rocky PrePost Scripting wrapper for Domain Settings properties.
 
     This wrapper corresponds to the "Domain Settings" item on a project\'s data tree. Access it from
     the :class:`RAStudy` with:
@@ -37,14 +42,34 @@ class RADomainSettings(ApiElementItem):
     """
 
     @classmethod
-    def GetWrappedClass(self): ...
+    def GetWrappedClass(self) -> type[DomainSettings]: ...
     @classmethod
     def GetClassName(self) -> str: ...
     def CoordinateLimitsAtBoundaryLimits(self) -> bool: ...
-    def GetCoordinateLimitsMinMax(self): ...
+    def GetCoordinateLimitsMinMax(self) -> tuple[FixedArray, FixedArray]: ...
     def ResetDomainToGeometriesLimits(self) -> None:
         """
         Reset the domain settings coordinate limits based on the geometry bounding box.
+        """
+
+    def GetBoundingBox(
+        self,
+        time_step: ITimeStep | None = None,
+        time_step_index: int | None = None,
+        unit: str | None = None,
+    ) -> tuple[Tuple3F, Tuple3F] | None:
+        """
+        Get the coordinates of the bounding box for the domain, as set by the boundaries or
+        coordinate limits.
+
+        :param time_step:
+            The time step to get the domain bounding box.
+
+        :param time_step_index:
+            The time step index to get the domain bounding box.
+
+        :param unit:
+            The unit for the returned values. Defaults to "m" if not provided.
         """
 
     def GetCoordinateLimitsMaxValues(self, unit: str | None = None) -> list[float]:

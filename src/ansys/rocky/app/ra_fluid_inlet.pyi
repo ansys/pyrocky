@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -221,6 +221,36 @@ class RAFluidInlet(ApiElementItem):
             The value to set. This value can be an expression with input variables or float type.
         :param unit:
             The unit for `value`. If no unit is provided, `value` is assumed to be in "K".
+        """
+
+    def GetSphPacking(self) -> bool:
+        """
+        Get the value of "Sph Packing".
+
+        """
+
+    def SetSphPacking(self, value: bool) -> None:
+        """
+        Set the value of "Sph Packing".
+
+        :param value:
+            The value to set.
+        """
+
+    def EnableSphPacking(self) -> None:
+        """
+        Set the value of "Sph Packing" to True.
+        """
+
+    def DisableSphPacking(self) -> None:
+        """
+        Set the value of "Sph Packing" to False.
+        """
+
+    def IsSphPackingEnabled(self) -> bool:
+        """
+        Check if the "Sph Packing" is enabled.
+
         """
 
     def GetVelocity(self, unit: str | None = None) -> float:

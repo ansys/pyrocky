@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -20,6 +20,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from rocky30.models.study.study import Study as Study
+
 from ansys.rocky.app.api_element_item import ApiError
 
 class RockyApiError(ApiError):
@@ -31,13 +33,22 @@ class RockyApiError(ApiError):
     trying to remove by name items that don't exist, etc.
     """
 
-def CheckResults(ra_object) -> None:
+def CheckCanModify(ra_object) -> None:
     """
-    Helper function to check if the project has simulation results and raise an error with a
-    helpful message. Should be called by API methods that would invalidate simulation results.
+    Helper function that checks if a property can be changed by evaluating two conditions:
+
+    1) If the project has simulation results, raises an error with a helpful message. Should be called by API methods
+    that would invalidate simulation results;
+    2) If we are in a blocked context, i.e. the `ValidateModuleInput`, no property should be changed.
     """
 
-def CheckPropAffectsSimulation(prop_owner, prop_name):
+def CheckPropAffectsSimulation(prop_owner, prop_name) -> bool:
     """
     Helper function to check if the property (given by prop_name) affects the simulation results.
+    """
+
+def IsObjectUsedByRestart(subject) -> bool: ...
+def IsFreeflow(raise_error: bool = True) -> bool:
+    """
+    Helper method to be used to ensure the app is in freeflow variant.
     """

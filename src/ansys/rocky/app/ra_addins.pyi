@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -21,6 +21,7 @@
 # SOFTWARE.
 
 from collections.abc import Sequence
+from typing import Any
 
 import attr
 from rocky30.plugins.addins.model.addin_manager import AddinManager as AddinManager
@@ -30,12 +31,19 @@ from rocky30.plugins.addins.model.property_set import PropertySet as PropertySet
 from ansys.rocky.app.api_element_item import ApiElementItem
 from ansys.rocky.app.ra_addin_list import RAModulePropertyList as RAModulePropertyList
 from ansys.rocky.app.ra_addin_process import RAModuleOutput as RAModuleOutput
+from ansys.rocky.app.ra_api import RockyApiError as RockyApiError
 
 @attr.frozen
-class ModulePropertyIdentifier:
+class AddinPropertyIdentifier:
     name: str
     modules: set[str] = ...
     all_captions: dict[str, str] = ...
+
+@attr.frozen
+class AddinCommandIdentifier:
+    caption: str
+    name: str
+    module: str
 
 class ElementWithAddins:
     """
@@ -43,20 +51,20 @@ class ElementWithAddins:
     like in material interaction and particle input.
     """
 
-    def GetModuleProperties(self) -> Sequence[ModulePropertyIdentifier]:
+    def GetModuleProperties(self) -> Sequence[AddinPropertyIdentifier]:
         """
         Get the names of the module properties.
 
-        :rtype: tuple(ModulePropertyIdentifier)
+        :rtype: tuple(AddinPropertyIdentifier)
         """
 
     def GetModuleProperty(
-        self, property_name: str | ModulePropertyIdentifier, unit: str | None = None
+        self, property_name: str | AddinPropertyIdentifier, unit: str | None = None
     ) -> float | bool | str | RAModulePropertyList:
         """
         Get the value of a module property.
 
-        :param Union[str, ModulePropertyIdentifier] property_name:
+        :param Union[str, AddinPropertyIdentifier] property_name:
             The name of the module property to get.
         :param str unit:
             The unit for `value`, just for scalar properties. If no unit is provided,
@@ -72,30 +80,50 @@ class ElementWithAddins:
 
     def SetModuleProperty(
         self,
-        property_name: str | ModulePropertyIdentifier,
-        value: float | bool | str,
+        property_name: str | AddinPropertyIdentifier,
+        value: float | bool | str | ApiElementItem | None,
         unit: str | None = None,
     ) -> None:
         """
         Set the value of a module property.
 
-        :param Union[str, ModulePropertyIdentifier] property_name:
+        :param Union[str, AddinPropertyIdentifier] property_name:
             The name of the module property to set.
-        :param float, bool or str value:
+        :param float, bool, str or ApiElementItem value:
             The value to set.
             If the property_name references to an enum property then value must be an str value.
+            If the property_name references to an element reference (point cloud, particles, ...) then
+            the value can be either the name of the element (str) or an ApiElementItem representing it.
         :param str unit:
             The unit for `value`, just for scalar properties. If no unit is provided,
             `value` is assumed to be the unit was set before.
         """
 
-    def GetValidOptionsForModuleProperty(self, property_name):
+    def GetValidOptionsForModuleProperty(
+        self, property_name: str
+    ) -> Sequence[str | None]:
         """
         Get all valid options only for properties that have a list of possible options.
 
         :param str property_name:
             The name of the module property.
-        :rtype: List[str]
+        :rtype: list[str]
+        """
+
+    def ListAddinCommands(self) -> Sequence[AddinCommandIdentifier]:
+        """
+        Get the names of the active module commands.
+
+        :rtype: tuple(AddinCommandIdentifier)
+        """
+
+    def ExecuteCommand(self, command: str | AddinCommandIdentifier) -> None:
+        """
+        Execute a command related to the module.
+
+        :param str | AddinCommandIdentifier command:
+            The name or the AddinCommandIdentifier to be executed. Use `ListAddinCommands` to obtain a sequence of
+            active commands.
         """
 
 class RAModule(ApiElementItem, ElementWithAddins):
@@ -110,9 +138,9 @@ class RAModule(ApiElementItem, ElementWithAddins):
     """
 
     @classmethod
-    def GetWrappedClass(self): ...
+    def GetWrappedClass(self) -> type: ...
     @classmethod
-    def GetClassName(self): ...
+    def GetClassName(self) -> str: ...
     def EnableModule(self) -> None:
         """
         Enable the module.
@@ -123,7 +151,7 @@ class RAModule(ApiElementItem, ElementWithAddins):
         Disable the module.
         """
 
-    def SetModuleEnabled(self, enabled) -> None:
+    def SetModuleEnabled(self, enabled: bool) -> None:
         """
         Enable or disable the module.
 
@@ -131,14 +159,14 @@ class RAModule(ApiElementItem, ElementWithAddins):
             Whether the module should be enabled (True) or disabled (False).
         """
 
-    def IsModuleEnabled(self):
+    def IsModuleEnabled(self) -> bool:
         """
         Check if the module is enabled.
 
         :rtype: bool
         """
 
-    def GetName(self):
+    def GetName(self) -> str:
         """
         Get the element's name.
 
@@ -147,7 +175,7 @@ class RAModule(ApiElementItem, ElementWithAddins):
             The name of the element in the application
         """
 
-    def SetName(self, name) -> None:
+    def SetName(self, name: str) -> None:
         """
         Modules cannot have its name set.
 
@@ -163,6 +191,17 @@ class RAModule(ApiElementItem, ElementWithAddins):
 
         Note that only modules that declare that they generate "unique" results (as opposed to new
         properties/curves on existing items) will have an output object.
+        """
+
+    def GetAllModuleProperties(self) -> dict[str, Any]:
+        """
+        Get a dictionary of all module properties values.
+
+        :rtype: dict(str, Any)
+        :returns:
+            A dictionary with defined spec properties ('model', 'geometries', 'particle_input', ...) as keys. For the
+            entities keys, the value is another dictionary with the entity name or a tuple of names as keys and their
+            module properties as values. For scalar properties, the returned value will be a tuple of (value, unit).
         """
 
 class RAModuleCollection(ApiElementItem):

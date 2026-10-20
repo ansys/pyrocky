@@ -1,4 +1,4 @@
-# Copyright (C) 2023 - 2025 ANSYS, Inc. and/or its affiliates.
+# Copyright (C) 2023 - 2026 Synopsys, Inc. and ANSYS, Inc. All rights reserved.
 # SPDX-License-Identifier: MIT
 #
 #
@@ -31,8 +31,15 @@ from rocky30.plugins.preferences.additional_features import (
 from rocky30.plugins.preferences.additional_features import (
     SetAdditionalFeatureValue as SetAdditionalFeatureValue,
 )
-
-from ansys.rocky.app.ra_project import RAProject as RAProject
+from rocky30.plugins.preferences.appearance_settings import (
+    AppearanceFeature as AppearanceFeature,
+)
+from rocky30.plugins.preferences.appearance_settings import (
+    GetAppearanceFeatureValue as GetAppearanceFeatureValue,
+)
+from rocky30.plugins.preferences.appearance_settings import (
+    SetAppearanceFeatureValue as SetAppearanceFeatureValue,
+)
 
 class RAAdditionalFeatures:
     def GetBetaFeaturesEnabled(self) -> bool:

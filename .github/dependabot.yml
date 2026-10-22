@@ -31,7 +31,7 @@ updates:
       - "maintenance"
       - "dependencies"
     assignees:
-      - "igortg"
+      - "fingeraugusto"
       - "femarchi"
     commit-message:
       prefix: "build(pip)"
@@ -51,7 +51,7 @@ updates:
       exclude:
         - "ansys/actions"
     assignees:
-      - "igortg"
+      - "fingeraugusto"
       - "femarchi"
     labels:
       - "maintenance"

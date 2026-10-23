@@ -1,0 +1,89 @@
+
+
+
+
+
+
+:class:`RACubeProcess`
+======================
+
+
+.. py:class:: ansys.rocky.app.ra_process_element.RACubeProcess
+
+   Bases: :py:obj:`RAUserProcess`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.app._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`_RAAbstractCubeMixin`
+
+
+   
+   Base class for UserProcesses
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RACubeProcess
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_process_element import RACubeProcess
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+
+
+

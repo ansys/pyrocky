@@ -1,0 +1,229 @@
+
+
+
+
+
+
+:class:`RASPHEulerianSolution`
+==============================
+
+
+.. py:class:: ansys.rocky.app.ra_sph_eulerian_solution.RASPHEulerianSolution(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app._ra_subject_with_coloring_mixin._RASubjectWithColoringMixin`
+
+
+   
+   Rocky PrePost Scripting wrapper for SPH Eulerian Solution properties.
+
+   This wrapper corresponds to the "Eulerian Solution" item on a project's data tree. Access it from
+   the :class:`RAStudy` with:
+
+   .. code-block:: python
+
+       eulerian_solution = study.GetSphEulerianSolution()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASPHEulerianSolution
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetEulerianSolutionEnabled`
+            - Delegates the method to the project sph settings.
+          * - :py:attr:`~SetEulerianSolutionEnabled`
+            - Delegate the method to the project sph settings.
+          * - :py:attr:`~EnableEulerianSolution`
+            - Set the value of "Eulerian Solution" to True.
+          * - :py:attr:`~DisableEulerianSolution`
+            - Set the value of "Eulerian Solution" to False.
+          * - :py:attr:`~IsEulerianSolutionEnabled`
+            - Check if the "Eulerian Solution" is enabled.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_sph_eulerian_solution import RASPHEulerianSolution
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetEulerianSolutionEnabled() -> bool
+
+   
+   Delegates the method to the project sph settings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEulerianSolutionEnabled(value: bool) -> None
+
+   
+   Delegate the method to the project sph settings.
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableEulerianSolution() -> None
+
+   
+   Set the value of "Eulerian Solution" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableEulerianSolution() -> None
+
+   
+   Set the value of "Eulerian Solution" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsEulerianSolutionEnabled() -> bool
+
+   
+   Check if the "Eulerian Solution" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

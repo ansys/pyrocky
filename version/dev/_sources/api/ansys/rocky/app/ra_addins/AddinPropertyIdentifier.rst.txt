@@ -1,0 +1,70 @@
+
+
+
+
+
+
+:class:`AddinPropertyIdentifier`
+================================
+
+
+.. py:class:: ansys.rocky.app.ra_addins.AddinPropertyIdentifier
+
+
+.. py:currentmodule:: AddinPropertyIdentifier
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~name`
+            - 
+          * - :py:attr:`~modules`
+            - 
+          * - :py:attr:`~all_captions`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_addins import AddinPropertyIdentifier
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: name
+   :type:  str
+
+.. py:attribute:: modules
+   :type:  set[str]
+   :value: Ellipsis
+
+
+.. py:attribute:: all_captions
+   :type:  dict[str, str]
+   :value: Ellipsis
+
+
+
+
+
+

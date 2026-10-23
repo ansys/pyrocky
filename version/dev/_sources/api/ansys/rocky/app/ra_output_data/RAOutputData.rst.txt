@@ -1,0 +1,971 @@
+
+
+
+
+
+
+:class:`RAOutputData`
+=====================
+
+
+.. py:class:: ansys.rocky.app.ra_output_data.RAOutputData(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate the Output Data.
+
+   .. code-block:: python
+
+       output_data = study.GetOutputData()
+       # To enabled/disabled individual properties:
+       output_data.SetStandardOutputPropertyEnabled('Geometries', 'Area : Cell', enabled=False)
+       # To enabled/disabled all properties under a root parent:
+       output_data.SetStandardOutputPropertyEnabled('Geometries', enabled=False)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+
+
+.. py:currentmodule:: RAOutputData
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetStandardOutputPropertyEnabled`
+            - Retrieve enable state of given "Standard Output Property".
+          * - :py:attr:`~SetStandardOutputPropertyEnabled`
+            - Set enable state of given "Standard Output Property".
+          * - :py:attr:`~GetAdditionalOutputPropertyEnabled`
+            - Retrieve enable state of given "Additional Output Property".
+          * - :py:attr:`~SetAdditionalOutputPropertyEnabled`
+            - Set enable state of given "Additional Output Property".
+          * - :py:attr:`~GetModulesOutputPropertyEnabled`
+            - Retrieve enable state of given "Modules Output Property".
+          * - :py:attr:`~SetModulesOutputPropertyEnabled`
+            - Set enable state of given "Modules Output Property".
+          * - :py:attr:`~GetStandardOutputPropertiesData`
+            - :returns: The current value of "Standard Output Properties".
+          * - :py:attr:`~SetStandardOutputPropertiesData`
+            - Set the current value of "Standard Output Properties".
+          * - :py:attr:`~GetModulesOutputPropertiesData`
+            - :returns: The current value of "Modules Output Properties".
+          * - :py:attr:`~SetModulesOutputPropertiesData`
+            - Set the current value of "Modules Output Properties".
+          * - :py:attr:`~RestoreOutputPropertiesDefaults`
+            - Restore default values of "Output Properties".
+          * - :py:attr:`~GetCollectJointData`
+            - Get the value of "Collect Joint Data".
+          * - :py:attr:`~SetCollectJointData`
+            - Set the value of "Collect Joint Data".
+          * - :py:attr:`~EnableCollectJointData`
+            - Set the value of "Collect Joint Data" to True.
+          * - :py:attr:`~DisableCollectJointData`
+            - Set the value of "Collect Joint Data" to False.
+          * - :py:attr:`~IsCollectJointDataEnabled`
+            - Check if the "Collect Joint Data" is enabled.
+          * - :py:attr:`~GetCollectContactsData`
+            - Get the value of "Collect Contacts Data".
+          * - :py:attr:`~SetCollectContactsData`
+            - Set the value of "Collect Contacts Data".
+          * - :py:attr:`~EnableCollectContactsData`
+            - Set the value of "Collect Contacts Data" to True.
+          * - :py:attr:`~DisableCollectContactsData`
+            - Set the value of "Collect Contacts Data" to False.
+          * - :py:attr:`~IsCollectContactsDataEnabled`
+            - Check if the "Collect Contacts Data" is enabled.
+          * - :py:attr:`~GetIncludeAdhesiveContacts`
+            - Get the value of "Include Adhesive Contacts".
+          * - :py:attr:`~SetIncludeAdhesiveContacts`
+            - Set the value of "Include Adhesive Contacts".
+          * - :py:attr:`~EnableIncludeAdhesiveContacts`
+            - Set the value of "Include Adhesive Contacts" to True.
+          * - :py:attr:`~DisableIncludeAdhesiveContacts`
+            - Set the value of "Include Adhesive Contacts" to False.
+          * - :py:attr:`~IsIncludeAdhesiveContactsEnabled`
+            - Check if the "Include Adhesive Contacts" is enabled.
+          * - :py:attr:`~GetSphEulerianSolutionEnabled`
+            - Delegates the method to the project sph settings.
+          * - :py:attr:`~SetSphEulerianSolutionEnabled`
+            - Delegate the method to the project sph settings.
+          * - :py:attr:`~EnableSphEulerianSolution`
+            - Set the value of "Eulerian Solution" to True.
+          * - :py:attr:`~DisableSphEulerianSolution`
+            - Set the value of "Eulerian Solution" to False.
+          * - :py:attr:`~IsSphEulerianSolutionEnabled`
+            - Check if the "Eulerian Solution" is enabled.
+
+
+
+
+   .. tab-item:: Static methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAvailableStandardOutputProperties`
+            - :returns: The available "Standard Output Properties".
+          * - :py:attr:`~GetAvailableModulesOutputProperties`
+            - :returns: The available "Modules Output Properties".
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_output_data import RAOutputData
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetStandardOutputPropertyEnabled(*output_property: str) -> bool
+
+   
+   Retrieve enable state of given "Standard Output Property".
+
+   :param output_property:
+       The output property name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStandardOutputPropertyEnabled(*output_property: str, enabled: bool) -> None
+
+   
+   Set enable state of given "Standard Output Property".
+
+   :param output_property:
+       The output property name.
+   :param enabled:
+       The enable state of given "Standard Output Property".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAdditionalOutputPropertyEnabled(*output_property: str) -> bool
+
+   
+   Retrieve enable state of given "Additional Output Property".
+
+   :param output_property:
+       The output property name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAdditionalOutputPropertyEnabled(*output_property: str, enabled: bool) -> None
+
+   
+   Set enable state of given "Additional Output Property".
+
+   :param output_property:
+       The output property name.
+   :param enabled:
+       The enable state of given "Additional Output Property".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModulesOutputPropertyEnabled(*output_property: str) -> bool
+
+   
+   Retrieve enable state of given "Modules Output Property".
+
+   :param output_property:
+       The output property name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetModulesOutputPropertyEnabled(*output_property: str, enabled: bool) -> None
+
+   
+   Set enable state of given "Modules Output Property".
+
+   :param output_property:
+       The output property name.
+   :param enabled:
+       The enable state of given "Modules Output Property".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableStandardOutputProperties() -> dict
+   :staticmethod:
+
+
+   
+   :returns: The available "Standard Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableModulesOutputProperties() -> dict
+   :staticmethod:
+
+
+   
+   :returns: The available "Modules Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStandardOutputPropertiesData() -> dict
+
+   
+   :returns: The current value of "Standard Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStandardOutputPropertiesData(data_dict: dict) -> None
+
+   
+   Set the current value of "Standard Output Properties".
+
+   :param data_dict:
+       The data dictionary to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetModulesOutputPropertiesData() -> dict
+
+   
+   :returns: The current value of "Modules Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetModulesOutputPropertiesData(data_dict: dict) -> None
+
+   
+   Set the current value of "Modules Output Properties".
+
+   :param data_dict:
+       The data dictionary to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RestoreOutputPropertiesDefaults() -> None
+
+   
+   Restore default values of "Output Properties".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCollectJointData() -> bool
+
+   
+   Get the value of "Collect Joint Data".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCollectJointData(value: bool) -> None
+
+   
+   Set the value of "Collect Joint Data".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableCollectJointData() -> None
+
+   
+   Set the value of "Collect Joint Data" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableCollectJointData() -> None
+
+   
+   Set the value of "Collect Joint Data" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsCollectJointDataEnabled() -> bool
+
+   
+   Check if the "Collect Joint Data" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCollectContactsData() -> bool
+
+   
+   Get the value of "Collect Contacts Data".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCollectContactsData(value: bool) -> None
+
+   
+   Set the value of "Collect Contacts Data".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableCollectContactsData() -> None
+
+   
+   Set the value of "Collect Contacts Data" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableCollectContactsData() -> None
+
+   
+   Set the value of "Collect Contacts Data" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsCollectContactsDataEnabled() -> bool
+
+   
+   Check if the "Collect Contacts Data" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetIncludeAdhesiveContacts() -> bool
+
+   
+   Get the value of "Include Adhesive Contacts".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetIncludeAdhesiveContacts(value: bool) -> None
+
+   
+   Set the value of "Include Adhesive Contacts".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableIncludeAdhesiveContacts() -> None
+
+   
+   Set the value of "Include Adhesive Contacts" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableIncludeAdhesiveContacts() -> None
+
+   
+   Set the value of "Include Adhesive Contacts" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsIncludeAdhesiveContactsEnabled() -> bool
+
+   
+   Check if the "Include Adhesive Contacts" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSphEulerianSolutionEnabled() -> bool
+
+   
+   Delegates the method to the project sph settings.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSphEulerianSolutionEnabled(value: bool) -> None
+
+   
+   Delegate the method to the project sph settings.
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableSphEulerianSolution() -> None
+
+   
+   Set the value of "Eulerian Solution" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableSphEulerianSolution() -> None
+
+   
+   Set the value of "Eulerian Solution" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsSphEulerianSolutionEnabled() -> bool
+
+   
+   Check if the "Eulerian Solution" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

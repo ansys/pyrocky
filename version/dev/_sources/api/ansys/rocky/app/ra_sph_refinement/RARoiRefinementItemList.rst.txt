@@ -1,0 +1,144 @@
+
+
+
+
+
+
+:class:`RARoiRefinementItemList`
+================================
+
+
+.. py:class:: ansys.rocky.app.ra_sph_refinement.RARoiRefinementItemList(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`RARoiRefinementItem`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper for the Adaptive SPH Sizing ROI refinement table.
+
+   To get the :class:`RARoiRefinementItemList` from a :class:`RASphAdaptiveSizing`, use:
+
+   .. code-block:: python
+
+       roi_ref_levels = sph_adaptive_sizing.GetRoiRefinementLevels()
+
+   The :class:`RARoiRefinementItemList` class acts as a regular Python list, with the usual methods to iterate
+   and access individual motions:
+
+   .. code-block:: python
+
+       roi_level_1 = roi_ref_levels.New()
+       roi_level_2 = roi_ref_levels.New()
+
+       for roi_level in roi_ref_levels:
+           roi_level.SetLevelOfRefinement(2)
+
+       del roi_ref_levels[0]
+       roi_ref_levels.Clear()
+
+   The items in the roi level list are of type :class:`RARoiRefinementItem`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RARoiRefinementItemList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~New`
+            - Add a new ROI refinement row.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_sph_refinement import RARoiRefinementItemList
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.sph.sph_refinement_criteria.ROIRefinementItemList]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: New(index: int | None = None) -> RARoiRefinementItem
+
+   
+   Add a new ROI refinement row.
+
+   :param index:
+       Optional insertion index.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

@@ -1,0 +1,427 @@
+
+
+
+
+
+
+:class:`RALocalExecutionSettings`
+=================================
+
+
+.. py:class:: ansys.rocky.app.ra_local_execution_settings.RALocalExecutionSettings(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for the Local Execution Settings.
+
+   Access it from the :class:`RASimulatorRun` with:
+
+   .. code-block:: python
+
+       simulator_run = study.GetSimulatorRun()
+       local_execution_settings = simulator_run.GetLocalExecutionSettings()
+       local_execution_settings.GetNumberOfProcessors()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RALocalExecutionSettings
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetTargetGpus`
+            - :return: A list of IDs of the GPUs currently selected for Multi GPU simulation.
+          * - :py:attr:`~SetTargetGpus`
+            - It will configure the IDs of GPUs that will be used in a local simulation based on the list of IDs or
+          * - :py:attr:`~GetMultiGpuSlicingDirection`
+            - Get "Multi Gpu Slicing Direction" as a string.
+          * - :py:attr:`~SetMultiGpuSlicingDirection`
+            - Set the value of "Multi Gpu Slicing Direction".
+          * - :py:attr:`~GetValidMultiGpuSlicingDirectionValues`
+            - Get a list of all possible values for "Multi Gpu Slicing Direction".
+          * - :py:attr:`~GetNumberOfProcessors`
+            - Get the value of "Number of Processors".
+          * - :py:attr:`~SetNumberOfProcessors`
+            - Set the value of "Number of Processors".
+          * - :py:attr:`~GetProcessingUnit`
+            - Get "Processing Unit" as a string.
+          * - :py:attr:`~SetProcessingUnit`
+            - Set the value of "Processing Unit".
+          * - :py:attr:`~GetValidProcessingUnitValues`
+            - Get a list of all possible values for "Processing Unit".
+          * - :py:attr:`~GetTargetGpu`
+            - Get the value of "Target Gpu".
+          * - :py:attr:`~SetTargetGpu`
+            - Set the value of "Target Gpu".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_local_execution_settings import RALocalExecutionSettings
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.solver.general_settings.LocalExecutionSettings]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetTargetGpus() -> list[int]
+
+   
+   :return: A list of IDs of the GPUs currently selected for Multi GPU simulation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTargetGpus(gpus: list[int | str]) -> None
+
+   
+   It will configure the IDs of GPUs that will be used in a local simulation based on the list of IDs or
+   names of GPUs passed.
+
+   :param gpus:
+       List with IDs or names of GPUs to be used in simulation.
+       For example in the name "1 - Geforce GTX 980", the ID is 1 and the name is "1 - Geforce GTX 980".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMultiGpuSlicingDirection() -> str
+
+   
+   Get "Multi Gpu Slicing Direction" as a string.
+
+   :return:
+       The returned value will be one of ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMultiGpuSlicingDirection(value: str) -> None
+
+   
+   Set the value of "Multi Gpu Slicing Direction".
+
+   :param value:
+       The value to set. Must be one of ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+   :raises RockyApiError:
+       If `value` is not a valid "Multi Gpu Slicing Direction" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidMultiGpuSlicingDirectionValues() -> list[str]
+
+   
+   Get a list of all possible values for "Multi Gpu Slicing Direction".
+
+   :return:
+       The returned list is ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfProcessors() -> int
+
+   
+   Get the value of "Number of Processors".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfProcessors(value: str | int) -> None
+
+   
+   Set the value of "Number of Processors".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetProcessingUnit() -> str
+
+   
+   Get "Processing Unit" as a string.
+
+   :return:
+       The returned value will be one of ['CPU', 'GPU', 'MULTI_GPU'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetProcessingUnit(value: str) -> None
+
+   
+   Set the value of "Processing Unit".
+
+   :param value:
+       The value to set. Must be one of ['CPU', 'GPU', 'MULTI_GPU'].
+   :raises RockyApiError:
+       If `value` is not a valid "Processing Unit" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidProcessingUnitValues() -> list[str]
+
+   
+   Get a list of all possible values for "Processing Unit".
+
+   :return:
+       The returned list is ['CPU', 'GPU', 'MULTI_GPU'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTargetGpu() -> int
+
+   
+   Get the value of "Target Gpu".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTargetGpu(value: str | int) -> None
+
+   
+   Set the value of "Target Gpu".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

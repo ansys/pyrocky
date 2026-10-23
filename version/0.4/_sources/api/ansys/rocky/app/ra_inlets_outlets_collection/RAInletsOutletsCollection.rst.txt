@@ -1,0 +1,319 @@
+
+
+
+
+
+
+:class:`RAInletsOutletsCollection`
+==================================
+
+
+.. py:class:: ansys.rocky.app.ra_inlets_outlets_collection.RAInletsOutletsCollection
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`\ [\ :py:obj:`ansys.rocky.app.ra_particle_inlet.RAParticleInlet`\ ]
+
+
+   
+   Rocky PrePost Scripting wrapper for the collection of particle inputs in a project.
+
+   This wrapper corresponds to the "Inputs" item in the project's data tree. To retrieve the
+   :class:`RAInletsOutletsCollection` from a :class:`RAStudy`, use:
+
+   .. code-block:: python
+
+       input_collection = study.GetInletsOutletsCollection()
+
+   Instances of the :class:`RAInletsOutletsCollection` class act as regular Python lists, and can be
+   iterated on, accessed via index, etc:
+
+   .. code-block:: python
+
+       input_1 = input_collection.New()
+       input_2 = input_collection[1]
+       del input_collection[0]
+       for input in input_collection:
+           print(input.GetName())
+
+   Items in this list are of type :class:`RAParticleInlet`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAInletsOutletsCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~New`
+            - Add a new item. Returns the newly created item.
+          * - :py:attr:`~AddParticleInlet`
+            - Add a new ParticleInlet. Returns the newly created item.
+          * - :py:attr:`~AddOutlet`
+            - Add a new Outlet. Returns the newly created item.
+          * - :py:attr:`~AddVolumetricInlet`
+            - Add a new VolumeFill. Returns the newly created item.
+          * - :py:attr:`~AddCustomInput`
+            - Add a new CustomInput. Returns the newly created item.
+          * - :py:attr:`~AddFluidInlet`
+            - Add a new SPHInlet. Returns the newly created item.
+          * - :py:attr:`~GetParticleInputNames`
+            - Get the names of all particle inputs.
+          * - :py:attr:`~GetParticleInput`
+            - Get the particle input with the given name.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_inlets_outlets_collection import RAInletsOutletsCollection
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: New()
+
+   
+   Add a new item. Returns the newly created item.
+
+   :rtype: ApiElementItem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: AddParticleInlet() -> ansys.rocky.app.ra_particle_inlet.RAParticleInlet
+
+   
+   Add a new ParticleInlet. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: AddOutlet() -> ansys.rocky.app.ra_outlet.RAOutlet
+
+   
+   Add a new Outlet. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: AddVolumetricInlet() -> ansys.rocky.app.ra_volumetric_inlet.RAVolumetricInlet
+
+   
+   Add a new VolumeFill. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: AddCustomInput() -> ansys.rocky.app.ra_custom_input.RACustomInput
+
+   
+   Add a new CustomInput. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: AddFluidInlet() -> ansys.rocky.app.ra_fluid_inlet.RAFluidInlet
+
+   
+   Add a new SPHInlet. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleInputNames()
+
+   
+   Get the names of all particle inputs.
+
+   :rtype: list(unicode)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetParticleInput(input_name)
+
+   
+   Get the particle input with the given name.
+
+   :param unicode input_name:
+   :rtype: RAParticleInlet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

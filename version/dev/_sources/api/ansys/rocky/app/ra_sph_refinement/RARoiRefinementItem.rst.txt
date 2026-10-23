@@ -1,0 +1,247 @@
+
+
+
+
+
+
+:class:`RARoiRefinementItem`
+============================
+
+
+.. py:class:: ansys.rocky.app.ra_sph_refinement.RARoiRefinementItem(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for one Adaptive SPH Sizing ROI refinement row.
+
+   This wrapper corresponds to one item inside
+   ``RASphAdaptiveSizing.RARoiRefinementItemList``.
+
+   Access individual roi level via a :class:`RASphAdaptiveSizing`'s roi level list:
+
+   .. code-block:: python
+
+       roi_ref_levels = sph_adaptive_sizing.GetRoiRefinementLevels()
+       roi_level_1 = roi_ref_levels[0]
+       roi_level_2 = roi_ref_levels.New()
+
+   Every :class:`RARoiRefinementItem` contains two properties that define a ROI refinement level:
+   the Region of Interest and the level value:
+
+   .. code-block:: python
+
+       roi_level = roi_ref_levels.New()
+       roi_level.SetRoi('MyRoiCube')
+       roi_level.SetLevelOfRefinement(2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RARoiRefinementItem
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetLevelOfRefinement`
+            - Get the value of "Level of Refinement".
+          * - :py:attr:`~SetLevelOfRefinement`
+            - Set the value of "Level of Refinement".
+          * - :py:attr:`~GetRoi`
+            - Get the "Roi".
+          * - :py:attr:`~SetRoi`
+            - Set the "Roi".
+          * - :py:attr:`~GetAvailableRois`
+            - Get all available Rois.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_sph_refinement import RARoiRefinementItem
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.sph.sph_refinement_criteria.ROIRefinementItem]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetLevelOfRefinement() -> int
+
+   
+   Get the value of "Level of Refinement".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetLevelOfRefinement(value: str | int) -> None
+
+   
+   Set the value of "Level of Refinement".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRoi() -> None | ansys.rocky.app.ra_region_of_interest_cube.RARegionOfInterestCube | ansys.rocky.app.ra_region_of_interest_cylinder.RARegionOfInterestCylinder
+
+   
+   Get the "Roi".
+
+   :rtype: :class:`RARegionOfInterestCube`, :class:`RARegionOfInterestCylinder`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRoi(value: str | ansys.rocky.app.ra_region_of_interest_cube.RARegionOfInterestCube | ansys.rocky.app.ra_region_of_interest_cylinder.RARegionOfInterestCylinder) -> None
+
+   
+   Set the "Roi".
+
+   :param unicode, :class:`RARegionOfInterestCube`, :class:`RARegionOfInterestCylinder` value:
+       Either the API object wrapping the desired entity or its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableRois() -> list[ansys.rocky.app.ra_region_of_interest_cube.RARegionOfInterestCube | ansys.rocky.app.ra_region_of_interest_cylinder.RARegionOfInterestCylinder]
+
+   
+   Get all available Rois.
+
+   :rtype: List[:class:`RARegionOfInterestCube`, :class:`RARegionOfInterestCylinder`]
+       A list of :class:`RARegionOfInterestCube`, :class:`RARegionOfInterestCylinder`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

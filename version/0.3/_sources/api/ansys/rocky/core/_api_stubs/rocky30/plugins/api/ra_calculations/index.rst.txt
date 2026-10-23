@@ -1,0 +1,68 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_calculations
+===============================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_calculations
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_calculations.RACalculations
+
+
+Module Contents
+---------------
+
+.. py:class:: RACalculations(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.plugins.particles_calculations.particles_calculations.ParticlesCalculations]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: CreateSelectionResidenceTime(selection: Union[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem, str]) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+
+   .. py:method:: CreateSelectionFlipCount(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+
+   .. py:method:: CreateSelectionTagging(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> Union[rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator, None]
+
+
+   .. py:method:: GetTagging(name: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_tagging.RATagging
+
+
+   .. py:method:: GetDivisionsTagging(name: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_divisions_tagging.RADivisionsTagging
+
+
+   .. py:method:: GetTaggingNames() -> list[str]
+
+
+   .. py:method:: GetDivisionsTaggingNames() -> list[str]
+
+
+   .. py:method:: CreateTagging(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> Union[rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator, None]
+
+
+   .. py:method:: CreateDivisionsTagging(selection: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_divisions_tagging.RADivisionsTagging
+
+
+   .. py:method:: __iter__() -> collections.abc.Iterator
+
+
+   .. py:method:: __len__() -> int
+
+
+   .. py:method:: __getitem__(index: int) -> rocky30.plugins.particles_calculations.particles_selection_calculator.ParticlesSelectionCalculator
+
+

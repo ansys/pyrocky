@@ -1,0 +1,172 @@
+
+
+
+
+
+
+The ``ra_api.py`` module
+========================
+
+.. py:module:: ansys.rocky.app.ra_api
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_api
+.. tab-set::
+
+
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_api.RockyApiError`
+            - Exception class representing an error generated in the API layer.
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~CheckCanModify`
+            - Helper function that checks if a property can be changed by evaluating two conditions:
+
+
+          * - :py:obj:`~CheckPropAffectsSimulation`
+            - Helper function to check if the property (given by prop_name) affects the simulation results.
+
+
+          * - :py:obj:`~IsObjectUsedByRestart`
+            - 
+
+
+          * - :py:obj:`~IsFreeflow`
+            - Helper method to be used to ensure the app is in freeflow variant.
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-lightning_bolt"></span> RockyApiError</api/ansys/rocky/app/ra_api/RockyApiError>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: CheckCanModify(ra_object) -> None
+
+   
+   Helper function that checks if a property can be changed by evaluating two conditions:
+
+   1) If the project has simulation results, raises an error with a helpful message. Should be called by API methods
+   that would invalidate simulation results;
+   2) If we are in a blocked context, i.e. the `ValidateModuleInput`, no property should be changed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: CheckPropAffectsSimulation(prop_owner, prop_name) -> bool
+
+   
+   Helper function to check if the property (given by prop_name) affects the simulation results.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: IsObjectUsedByRestart(subject) -> bool
+
+.. py:function:: IsFreeflow(raise_error: bool = True) -> bool
+
+   
+   Helper method to be used to ensure the app is in freeflow variant.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

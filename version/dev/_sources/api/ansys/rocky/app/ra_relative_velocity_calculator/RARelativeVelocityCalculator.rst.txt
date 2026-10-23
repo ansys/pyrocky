@@ -1,0 +1,348 @@
+
+
+
+
+
+
+:class:`RARelativeVelocityCalculator`
+=====================================
+
+
+.. py:class:: ansys.rocky.app.ra_relative_velocity_calculator.RARelativeVelocityCalculator(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate Relative Velocity Calculators in a project.
+
+   The class corresponds to an individual "Frame-Based Results" calculation under the
+   "Calculation" item on the project's data tree. To create the
+   :class:`RARelativeVelocityCalculator` from a :class:`RACalculations`, use:
+
+   .. code-block:: python
+
+       selection_process = study.GetElement('Particles')
+       calculations = study.GetCalculations()
+       relative_velocity_calculator = calculations.CreateFrameBasedResultsCalculator(selection_process)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RARelativeVelocityCalculator
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetGridFunctionName`
+            - Get the grid function name. This name can be used to access the grid function on a process.
+          * - :py:attr:`~GetCoordinateSystem`
+            - Get "Coordinate System" as a string.
+          * - :py:attr:`~SetCoordinateSystem`
+            - Set the value of "Coordinate System".
+          * - :py:attr:`~GetValidCoordinateSystemValues`
+            - Get a list of all possible values for "Coordinate System".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetReferenceAxis`
+            - Get "Reference Axis" as a string.
+          * - :py:attr:`~SetReferenceAxis`
+            - Set the value of "Reference Axis".
+          * - :py:attr:`~GetValidReferenceAxisValues`
+            - Get a list of all possible values for "Reference Axis".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_relative_velocity_calculator import RARelativeVelocityCalculator
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.particles_calculations.relative_velocity.relative_velocity_calculator.FrameBasedRelativeVelocityCalculator]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetGridFunctionName() -> str
+
+   
+   Get the grid function name. This name can be used to access the grid function on a process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCoordinateSystem() -> str
+
+   
+   Get "Coordinate System" as a string.
+
+   :return:
+       The returned value will be one of ['Cartesian', 'Cylindrical', 'Spherical'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCoordinateSystem(value: str) -> None
+
+   
+   Set the value of "Coordinate System".
+
+   :param value:
+       The value to set. Must be one of ['Cartesian', 'Cylindrical', 'Spherical'].
+   :raises RockyApiError:
+       If `value` is not a valid "Coordinate System" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidCoordinateSystemValues() -> list[str]
+
+   
+   Get a list of all possible values for "Coordinate System".
+
+   :return:
+       The returned list is ['Cartesian', 'Cylindrical', 'Spherical'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetReferenceAxis() -> str
+
+   
+   Get "Reference Axis" as a string.
+
+   :return:
+       The returned value will be one of ['X', 'Y', 'Z'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetReferenceAxis(value: str) -> None
+
+   
+   Set the value of "Reference Axis".
+
+   :param value:
+       The value to set. Must be one of ['X', 'Y', 'Z'].
+   :raises RockyApiError:
+       If `value` is not a valid "Reference Axis" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidReferenceAxisValues() -> list[str]
+
+   
+   Get a list of all possible values for "Reference Axis".
+
+   :return:
+       The returned list is ['X', 'Y', 'Z'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

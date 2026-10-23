@@ -1,0 +1,35 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_time_series_translation
+=================================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_time_series_translation
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_time_series_translation.RATimeSeriesTranslation
+
+
+Module Contents
+---------------
+
+.. py:class:: RATimeSeriesTranslation(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: ImportTimeSeriesMotion(file_path: str) -> None
+
+

@@ -1,0 +1,213 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring
+================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.RAMeshColoring
+
+
+Module Contents
+---------------
+
+.. py:data:: ColorType
+
+.. py:class:: RAMeshColoring(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[sci20.plugins.process.coloring_process.MeshAssemblyColoringProcessSubject]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: SetVisible(value: bool) -> None
+
+
+   .. py:method:: GetVisible() -> bool
+
+
+   .. py:method:: SetLevelOfDetail(value: str) -> None
+
+
+   .. py:method:: GetValidLevelOfDetailValues() -> list[str]
+
+
+   .. py:method:: GetLevelOfDetail() -> str
+
+
+   .. py:method:: SetStride(value: int) -> None
+
+
+   .. py:method:: GetStride() -> int
+
+
+   .. py:method:: GetAvailableGridFunctions() -> set[ben10.element_function.semantic_association.SemanticAssociation]
+
+
+   .. py:method:: GetAvailableGridFunctionsNames() -> set[str]
+
+
+   .. py:method:: GetAvailableVectorGridFunctions() -> set[ben10.element_function.semantic_association.SemanticAssociation]
+
+
+   .. py:method:: GetAvailableVectorGridFunctionsNames() -> set[str]
+
+
+   .. py:method:: GetValidColoringModes() -> list[str]
+
+
+   .. py:method:: SetTransparencyEnabled(value: bool) -> None
+
+
+   .. py:method:: GetTransparencyEnabled() -> bool
+
+
+   .. py:method:: SetTransparency(value: float) -> None
+
+
+   .. py:method:: GetTransparency() -> float
+
+
+   .. py:method:: SetNodeVisible(value: bool) -> None
+
+
+   .. py:method:: GetNodeVisible() -> bool
+
+
+   .. py:method:: SetNodeColor(values: ColorType) -> None
+
+
+   .. py:method:: GetNodeColor() -> ColorType
+
+
+   .. py:method:: SetNodeGridFunction(value: Union[ben10.element_function.semantic_association.SemanticAssociation, str, None]) -> None
+
+
+   .. py:method:: GetNodeGridFunction() -> Union[ben10.element_function.semantic_association.SemanticAssociation, None]
+
+
+   .. py:method:: SetNodePointSize(value: float) -> None
+
+
+   .. py:method:: GetNodePointSize() -> float
+
+
+   .. py:method:: SetEdgeVisible(value: bool) -> None
+
+
+   .. py:method:: GetEdgeVisible() -> bool
+
+
+   .. py:method:: SetEdgeColor(values: ColorType) -> None
+
+
+   .. py:method:: GetEdgeColor() -> ColorType
+
+
+   .. py:method:: SetEdgeGridFunction(value: Union[ben10.element_function.semantic_association.SemanticAssociation, str, None]) -> None
+
+
+   .. py:method:: GetEdgeGridFunction() -> Union[ben10.element_function.semantic_association.SemanticAssociation, None]
+
+
+   .. py:method:: SetEdgeLineWidth(value: float) -> None
+
+
+   .. py:method:: GetEdgeLineWidth() -> float
+
+
+   .. py:method:: SetFaceVisible(value: bool) -> None
+
+
+   .. py:method:: GetFaceVisible() -> bool
+
+
+   .. py:method:: SetFaceColor(values: ColorType) -> None
+
+
+   .. py:method:: GetFaceColor() -> ColorType
+
+
+   .. py:method:: SetFaceGridFunction(value: Union[ben10.element_function.semantic_association.SemanticAssociation, str, None]) -> None
+
+
+   .. py:method:: GetFaceGridFunction() -> Union[ben10.element_function.semantic_association.SemanticAssociation, None]
+
+
+   .. py:method:: GetValidFaceScopes() -> list[str]
+
+
+   .. py:method:: SetFaceScope(value: str) -> None
+
+
+   .. py:method:: GetFaceScope() -> str
+
+
+   .. py:method:: GetValidFaceStructuredPartitionsValues() -> list[str]
+
+
+   .. py:method:: SetFaceStructuredPartitions(value: str) -> None
+
+
+   .. py:method:: GetFaceStructuredPartitions() -> str
+
+
+   .. py:method:: GetValidFaceCustomStructuredPartitions() -> list[str]
+
+
+   .. py:method:: SetFaceCustomStructuredPartitions(values: list[str]) -> None
+
+
+   .. py:method:: GetFaceCustomStructuredPartitions() -> list[str]
+
+
+   .. py:method:: SetFaceShowOnNode(value: bool) -> None
+
+
+   .. py:method:: GetFaceShowOnNode() -> bool
+
+
+   .. py:method:: SetVectorVisible(value: bool) -> None
+
+
+   .. py:method:: GetVectorVisible() -> bool
+
+
+   .. py:method:: SetVectorGridFunction(value: Union[ben10.element_function.semantic_association.SemanticAssociation, str, None]) -> None
+
+
+   .. py:method:: GetVectorGridFunction() -> Union[ben10.element_function.semantic_association.SemanticAssociation, None]
+
+
+   .. py:method:: SetVectorScale(value: float) -> None
+
+
+   .. py:method:: GetVectorScale() -> float
+
+
+   .. py:method:: SetNormalizedVectorsEnabled(value: bool) -> None
+
+
+   .. py:method:: GetNormalizedVectorsEnabled() -> bool
+
+

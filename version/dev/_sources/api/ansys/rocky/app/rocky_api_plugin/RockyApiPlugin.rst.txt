@@ -1,0 +1,79 @@
+
+
+
+
+
+
+:class:`RockyApiPlugin`
+=======================
+
+
+.. py:class:: ansys.rocky.app.rocky_api_plugin.RockyApiPlugin
+
+   Bases: :py:obj:`plugins10core.plugin.Plugin`
+
+
+   
+   Install Rocky API plugins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+.. py:currentmodule:: RockyApiPlugin
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~Install`
+            - 
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.rocky_api_plugin import RockyApiPlugin
+
+
+
+Method detail
+-------------
+
+.. py:method:: Install() -> None
+
+
+
+

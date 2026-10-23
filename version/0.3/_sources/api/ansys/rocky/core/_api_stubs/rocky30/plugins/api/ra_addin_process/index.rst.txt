@@ -1,0 +1,32 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_process
+================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_process
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addin_process.RAModuleOutput
+
+
+Module Contents
+---------------
+
+.. py:class:: RAModuleOutput
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   .. py:method:: GetWrappedClass() -> type[coilib50.process.IProcess]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+

@@ -1,0 +1,93 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties
+==============================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties.RAVolumetricInletProperties
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_volumetric_inlet_properties.RAVolumetricInletPropertiesList
+
+
+Module Contents
+---------------
+
+.. py:class:: RAVolumetricInletProperties(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_addins.ElementWithAddins`
+
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.input.volume_fill.VolumeFillProperties]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: GetMass(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetMass(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTemperature(unit: Optional[str] = ...) -> float
+
+
+   .. py:method:: SetTemperature(value: Union[str, float], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetParticle()
+
+
+   .. py:method:: SetParticle(value) -> None
+
+
+   .. py:method:: GetAvailableParticles()
+
+
+.. py:class:: RAVolumetricInletPropertiesList(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`\ [\ :py:obj:`RAVolumetricInletProperties`\ ]
+
+
+   
+   Base class for API classes that wrap SubjectLists (and related list classes).
+
+   Provides methods to add, remove and iterate on the items. The PrePost Scripting wrappers for the list items
+   will be obtained via ApiApplication._GetElementWrapper(), so it's important that these wrappers
+   are registered as wrapper classes (see `EPApiExtension`).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.input.volume_fill.VolumeFillPropertiesList]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+

@@ -1,0 +1,318 @@
+
+
+
+
+
+
+:class:`RAModule`
+=================
+
+
+.. py:class:: ansys.rocky.app.ra_addins.RAModule(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ElementWithAddins`
+
+
+   
+   Rocky PrePost Scripting wrapper for an individual module in a project, below the "Modules"
+   item. Retrieve individual module from the :class:`RAModuleCollection` via:
+
+   .. code-block:: python
+
+       module_collection = study.GetModuleCollection()
+       module = module_collection.GetModule('Module Name')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAModule
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~EnableModule`
+            - Enable the module.
+          * - :py:attr:`~DisableModule`
+            - Disable the module.
+          * - :py:attr:`~SetModuleEnabled`
+            - Enable or disable the module.
+          * - :py:attr:`~IsModuleEnabled`
+            - Check if the module is enabled.
+          * - :py:attr:`~GetName`
+            - Get the element's name.
+          * - :py:attr:`~SetName`
+            - Modules cannot have its name set.
+          * - :py:attr:`~GetOutputObject`
+            - Get the API object that represents this module's unique simulation results, if it exists.
+          * - :py:attr:`~GetAllModuleProperties`
+            - Get a dictionary of all module properties values.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_addins import RAModule
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: EnableModule() -> None
+
+   
+   Enable the module.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableModule() -> None
+
+   
+   Disable the module.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetModuleEnabled(enabled: bool) -> None
+
+   
+   Enable or disable the module.
+
+   :param bool enabled:
+       Whether the module should be enabled (True) or disabled (False).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsModuleEnabled() -> bool
+
+   
+   Check if the module is enabled.
+
+   :rtype: bool
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the element's name.
+
+   :rtype: unicode
+   :returns:
+       The name of the element in the application
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(name: str) -> None
+
+   
+   Modules cannot have its name set.
+
+   :param name: str
+       The name of the process
+   :raises RockyApiError:
+       Modules do not support changing its name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOutputObject() -> ansys.rocky.app.ra_addin_process.RAModuleOutput | None
+
+   
+   Get the API object that represents this module's unique simulation results, if it exists.
+
+   Note that only modules that declare that they generate "unique" results (as opposed to new
+   properties/curves on existing items) will have an output object.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAllModuleProperties() -> dict[str, Any]
+
+   
+   Get a dictionary of all module properties values.
+
+   :rtype: dict(str, Any)
+   :returns:
+       A dictionary with defined spec properties ('model', 'geometries', 'particle_input', ...) as keys. For the
+       entities keys, the value is another dictionary with the entity name or a tuple of names as keys and their
+       module properties as values. For scalar properties, the returned value will be a tuple of (value, unit).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

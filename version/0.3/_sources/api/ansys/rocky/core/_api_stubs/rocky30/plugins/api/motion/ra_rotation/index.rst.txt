@@ -1,0 +1,44 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_rotation
+==================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_rotation
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_rotation.RARotation
+
+
+Module Contents
+---------------
+
+.. py:class:: RARotation(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetAngularAcceleration(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetAngularAcceleration(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetInitialAngularVelocity(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInitialAngularVelocity(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+

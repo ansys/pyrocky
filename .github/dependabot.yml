@@ -27,6 +27,9 @@ updates:
           - "pyvista*"
     cooldown:
       default-days: 10 # Fallback cooldown if no specific rule applies
+      exclude:
+        - "ansys-tools-common"
+        - "ansys-sphinx-theme"
     labels:
       - "maintenance"
       - "dependencies"
@@ -46,10 +49,8 @@ updates:
           - "*"
     cooldown:
       default-days: 10 # Fallback cooldown if no specific rule applies
-      include:
-        - "*"  # Include all dependencies in cooldown
       exclude:
-        - "ansys/actions"
+        - "ansys/actions/*"
     assignees:
       - "fingeraugusto"
       - "femarchi"
@@ -67,10 +68,8 @@ updates:
       timezone: "Europe/Paris"
     cooldown:
       default-days: 7 # Fallback cooldown if no specific rule applies
-      include:
-        - "*"  # Include all dependencies in cooldown
       exclude:
-        - "ansys/pre-commit-hooks"
+        - "ansys/pre-commit-hooks/*"
     assignees:
       - "pyansys-ci-bot"
     labels:

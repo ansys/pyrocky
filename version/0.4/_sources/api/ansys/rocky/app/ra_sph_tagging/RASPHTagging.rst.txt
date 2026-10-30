@@ -1,0 +1,209 @@
+
+
+
+
+
+
+:class:`RASPHTagging`
+=====================
+
+
+.. py:class:: ansys.rocky.app.ra_sph_tagging.RASPHTagging(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_base_tagging.RABaseTagging`
+
+
+   
+   Rocky PrePost Scripting wrapper to manipulate Tagging Calculators for SPH.
+
+   The class corresponds to an individual "Tagging" calculation under the
+   "Calculations" item on the project's data tree. To create the
+   :class:`RASPHTagging` from a :class:`RACalculations`, use:
+
+   .. code-block:: python
+
+       selection_process = study.GetElement('SPH')
+       particles_calculations = study.GetCalculations()
+       tagging = particles_calculations.CreateTagging(selection_process)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASPHTagging
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetNameMask`
+            - Get the value of "Name Mask".
+          * - :py:attr:`~SetNameMask`
+            - Set the value of "Name Mask".
+          * - :py:attr:`~GetTagValue`
+            - Get the value of "Tag Value".
+          * - :py:attr:`~SetTagValue`
+            - Set the value of "Tag Value".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_sph_tagging import RASPHTagging
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.plugins.sph.calculations.tagging.sph_tagging_calculator.SPHTaggingCalculator]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetNameMask() -> str
+
+   
+   Get the value of "Name Mask".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNameMask(value: str) -> None
+
+   
+   Set the value of "Name Mask".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTagValue() -> int
+
+   
+   Get the value of "Tag Value".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTagValue(value: str | int) -> None
+
+   
+   Set the value of "Tag Value".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

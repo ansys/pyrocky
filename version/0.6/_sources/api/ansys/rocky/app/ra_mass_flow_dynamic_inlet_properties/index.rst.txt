@@ -1,0 +1,80 @@
+
+
+
+
+
+
+The ``ra_mass_flow_dynamic_inlet_properties.py`` module
+=======================================================
+
+.. py:module:: ansys.rocky.app.ra_mass_flow_dynamic_inlet_properties
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_mass_flow_dynamic_inlet_properties
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_mass_flow_dynamic_inlet_properties.RAMassFlowDynamicInletProperties`
+            - Rocky PrePost Scripting wrapper for a single entry in a MassFlowDynamicInlet's input list.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_mass_flow_dynamic_inlet_properties.RAMassFlowDynamicInletPropertiesList`
+            - Rocky PrePost Scripting wrapper for the input entries list in a single MassFlowDynamicInlet.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAMassFlowDynamicInletProperties</api/ansys/rocky/app/ra_mass_flow_dynamic_inlet_properties/RAMassFlowDynamicInletProperties>
+    <span class="nf nf-cod-symbol_class"></span> RAMassFlowDynamicInletPropertiesList</api/ansys/rocky/app/ra_mass_flow_dynamic_inlet_properties/RAMassFlowDynamicInletPropertiesList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

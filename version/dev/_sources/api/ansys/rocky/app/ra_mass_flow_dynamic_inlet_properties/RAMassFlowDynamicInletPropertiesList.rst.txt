@@ -1,0 +1,111 @@
+
+
+
+
+
+
+:class:`RAMassFlowDynamicInletPropertiesList`
+=============================================
+
+
+.. py:class:: ansys.rocky.app.ra_mass_flow_dynamic_inlet_properties.RAMassFlowDynamicInletPropertiesList(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.ra_list.RAList`
+
+
+   
+   Rocky PrePost Scripting wrapper for the input entries list in a single MassFlowDynamicInlet.
+
+   To get the :class:`RAMassFlowDynamicInletPropertiesList` from a
+   :class:`RAMassFlowDynamicInlet`, use:
+
+   .. code-block:: python
+
+       input_properties_list = mass_flow_dynamic_inlet.GetInputPropertiesList()
+
+   The following examples add, remove and access individual entries in the input properties list:
+
+   .. code-block:: python
+
+       # Add new items
+       input_properties_1 = input_properties_list.New()
+
+       # Access and modify items
+       input_properties_2 = input_properties_list[0]
+       input_properties_2.SetParticle('Particle 1')
+
+       # Remove items
+       input_properties_list.Remove(input_properties_2)
+       del input_properties_list[0]
+       input_properties_list.Clear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAMassFlowDynamicInletPropertiesList
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_mass_flow_dynamic_inlet_properties import RAMassFlowDynamicInletPropertiesList
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+
+
+

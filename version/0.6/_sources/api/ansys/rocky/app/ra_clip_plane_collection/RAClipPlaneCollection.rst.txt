@@ -1,0 +1,205 @@
+
+
+
+
+
+
+:class:`RAClipPlaneCollection`
+==============================
+
+
+.. py:class:: ansys.rocky.app.ra_clip_plane_collection.RAClipPlaneCollection(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for the collection of Clip Planes in a project.
+
+   This wrapper corresponds to the "3D Clip Planes" item in the project's data tree. To retrieve the
+   :class:`RAClipPlaneCollection` from a :class:`RAProject`, use:
+
+   .. code-block:: python
+
+       clip_planes_collection = project.Get3DClipPlanesCollection()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAClipPlaneCollection
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetClipPlaneNames`
+            - Get a list with the name of the clip planes.
+          * - :py:attr:`~GetClipPlaneByName`
+            - Get the clip plane with the given name.
+          * - :py:attr:`~CreateClipPlane`
+            - Create a new clip plane with the (optionally) given name, origin and normal.
+          * - :py:attr:`~RemoveClipPlane`
+            - Removes the given clip plane from the project.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_clip_plane_collection import RAClipPlaneCollection
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.vizu_clip_plane.vizu_clip_plane_collection.VizuClipPlaneCollection]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetClipPlaneNames() -> list[str]
+
+   
+   Get a list with the name of the clip planes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetClipPlaneByName(name: str) -> ansys.rocky.app.ra_clip_plane.RAClipPlane
+
+   
+   Get the clip plane with the given name.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateClipPlane(name: str | None = None, origin: rocky30.base_types.Tuple3F | None = None, normal: rocky30.base_types.Tuple3F | None = None) -> ansys.rocky.app.ra_clip_plane.RAClipPlane
+
+   
+   Create a new clip plane with the (optionally) given name, origin and normal.
+   Returns the newly created clip plane.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: RemoveClipPlane(clip_plane: ansys.rocky.app.ra_clip_plane.RAClipPlane | str) -> None
+
+   
+   Removes the given clip plane from the project.
+
+   :param clip_plane:
+       a RAClipPlane or its name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

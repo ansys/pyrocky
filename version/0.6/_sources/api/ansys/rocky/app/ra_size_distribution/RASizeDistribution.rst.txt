@@ -1,0 +1,268 @@
+
+
+
+
+
+
+:class:`RASizeDistribution`
+===========================
+
+
+.. py:class:: ansys.rocky.app.ra_size_distribution.RASizeDistribution(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for a single entry in a single Particle's size distribution list.
+
+   Access this wrapper from a given :class:`RAParticle` with:
+
+   .. code-block:: python
+
+       size_distribution_list = particle.GetSizeDistributionList()
+       distribution_1 = size_distribution_list.New()
+       distribution_1.SetSize(1.0, 'm')
+       distribution_1.SetCumulativePercentage(100)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASizeDistribution
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCumulativePercentage`
+            - Get the value of "Cumulative Percentage".
+          * - :py:attr:`~SetCumulativePercentage`
+            - Set the value of "Cumulative Percentage".
+          * - :py:attr:`~GetScaleFactor`
+            - Get the value of "Scale Factor".
+          * - :py:attr:`~SetScaleFactor`
+            - Set the value of "Scale Factor".
+          * - :py:attr:`~GetSize`
+            - Get the value of "Size".
+          * - :py:attr:`~SetSize`
+            - Set the value of "Size".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_size_distribution import RASizeDistribution
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetCumulativePercentage() -> float
+
+   
+   Get the value of "Cumulative Percentage".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCumulativePercentage(value: str | float) -> None
+
+   
+   Set the value of "Cumulative Percentage".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetScaleFactor(unit: str | None = None) -> float
+
+   
+   Get the value of "Scale Factor".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetScaleFactor(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Scale Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSize(unit: str | None = None) -> float
+
+   
+   Get the value of "Size".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSize(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Size".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

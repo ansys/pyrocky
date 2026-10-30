@@ -1,0 +1,308 @@
+
+
+
+
+
+
+:class:`RAHerschelBulkleyRheologicalModel`
+==========================================
+
+
+.. py:class:: ansys.rocky.app.ra_fluid_material.RAHerschelBulkleyRheologicalModel(rheological_model: Any)
+
+
+
+
+.. py:currentmodule:: RAHerschelBulkleyRheologicalModel
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetBehaviorIndex`
+            - Get the value of "Behavior Index".
+          * - :py:attr:`~SetBehaviorIndex`
+            - Set the value of "Behavior Index".
+          * - :py:attr:`~GetMaximumViscosity`
+            - Get the value of "Maximum Viscosity".
+          * - :py:attr:`~SetMaximumViscosity`
+            - Set the value of "Maximum Viscosity".
+          * - :py:attr:`~GetReferenceViscosity`
+            - Get the value of "Reference Viscosity".
+          * - :py:attr:`~SetReferenceViscosity`
+            - Set the value of "Reference Viscosity".
+          * - :py:attr:`~GetYieldStress`
+            - Get the value of "Yield Stress".
+          * - :py:attr:`~SetYieldStress`
+            - Set the value of "Yield Stress".
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~subject`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_fluid_material import RAHerschelBulkleyRheologicalModel
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: subject
+   :type:  _typeshed.Incomplete
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.material.fluid_material.HerschelBulkleyRheologicalModel]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetBehaviorIndex() -> float
+
+   
+   Get the value of "Behavior Index".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetBehaviorIndex(value: str | float) -> None
+
+   
+   Set the value of "Behavior Index".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetMaximumViscosity(unit: str | None = None) -> float
+
+   
+   Get the value of "Maximum Viscosity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Pa.s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetMaximumViscosity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Maximum Viscosity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Pa.s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetReferenceViscosity(unit: str | None = None) -> float
+
+   
+   Get the value of "Reference Viscosity".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Pa.s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetReferenceViscosity(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Reference Viscosity".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Pa.s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetYieldStress(unit: str | None = None) -> float
+
+   
+   Get the value of "Yield Stress".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "Pa".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetYieldStress(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Yield Stress".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "Pa".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

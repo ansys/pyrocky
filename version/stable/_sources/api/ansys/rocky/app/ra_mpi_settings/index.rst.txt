@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_mpi_settings.py`` module
+=================================
+
+.. py:module:: ansys.rocky.app.ra_mpi_settings
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_mpi_settings
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_mpi_settings.RAMpiSettings`
+            - Rocky PrePost Scripting wrapper for the MPI Execution Settings.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RAMpiSettings</api/ansys/rocky/app/ra_mpi_settings/RAMpiSettings>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+
+
+
+
+
+
+The ``ra_sph_refinement.py`` module
+===================================
+
+.. py:module:: ansys.rocky.app.ra_sph_refinement
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_sph_refinement
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_sph_refinement.RARoiRefinementItem`
+            - Rocky PrePost Scripting wrapper for one Adaptive SPH Sizing ROI refinement row.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_sph_refinement.RARoiRefinementItemList`
+            - Rocky PrePost Scripting wrapper for the Adaptive SPH Sizing ROI refinement table.
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_sph_refinement.RASphAdaptiveSizing`
+            - Rocky PrePost Scripting wrapper for the SPH Adaptive Sizing.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RARoiRefinementItem</api/ansys/rocky/app/ra_sph_refinement/RARoiRefinementItem>
+    <span class="nf nf-cod-symbol_class"></span> RARoiRefinementItemList</api/ansys/rocky/app/ra_sph_refinement/RARoiRefinementItemList>
+    <span class="nf nf-cod-symbol_class"></span> RASphAdaptiveSizing</api/ansys/rocky/app/ra_sph_refinement/RASphAdaptiveSizing>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

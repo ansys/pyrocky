@@ -1,0 +1,66 @@
+
+
+
+
+
+
+:class:`AddinCommandIdentifier`
+===============================
+
+
+.. py:class:: ansys.rocky.app.ra_addins.AddinCommandIdentifier
+
+
+.. py:currentmodule:: AddinCommandIdentifier
+
+Overview
+--------
+
+.. tab-set::
+
+
+
+
+
+   .. tab-item:: Attributes
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~caption`
+            - 
+          * - :py:attr:`~name`
+            - 
+          * - :py:attr:`~module`
+            - 
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_addins import AddinCommandIdentifier
+
+
+Attribute detail
+----------------
+
+.. py:attribute:: caption
+   :type:  str
+
+.. py:attribute:: name
+   :type:  str
+
+.. py:attribute:: module
+   :type:  str
+
+
+
+
+

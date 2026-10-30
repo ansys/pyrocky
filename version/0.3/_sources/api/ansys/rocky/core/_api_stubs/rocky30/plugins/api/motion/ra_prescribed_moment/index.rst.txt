@@ -1,0 +1,38 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_prescribed_moment
+===========================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_prescribed_moment
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_prescribed_moment.RAPrescribedMoment
+
+
+Module Contents
+---------------
+
+.. py:class:: RAPrescribedMoment(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetMomentValue(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetMomentValue(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+

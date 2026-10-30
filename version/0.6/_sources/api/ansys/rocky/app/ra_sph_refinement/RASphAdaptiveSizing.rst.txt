@@ -1,0 +1,437 @@
+
+
+
+
+
+
+:class:`RASphAdaptiveSizing`
+============================
+
+
+.. py:class:: ansys.rocky.app.ra_sph_refinement.RASphAdaptiveSizing(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for the SPH Adaptive Sizing.
+
+   .. code-block:: python
+
+       sph_settings = study.GetSphSettings()
+       sph_adaptive_sizing = sph_settings.GetAdaptiveSizing()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RASphAdaptiveSizing
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetGeometries`
+            - Get the "Adaptive Sph Sizing Geometries".
+          * - :py:attr:`~SetGeometries`
+            - Set the "Adaptive Sph Sizing Geometries".
+          * - :py:attr:`~GetAvailableGeometries`
+            - Get all available Adaptive Sph Sizing Geometries.
+          * - :py:attr:`~GetRoiRefinementLevels`
+            - Get the Adaptive SPH Sizing ROI refinement levels table.
+          * - :py:attr:`~GetEnabled`
+            - Get the value of "Enabled".
+          * - :py:attr:`~SetEnabled`
+            - Set the value of "Enabled".
+          * - :py:attr:`~Enable`
+            - Set the value of "" to True.
+          * - :py:attr:`~Disable`
+            - Set the value of "" to False.
+          * - :py:attr:`~IsEnabled`
+            - Check if the "" is enabled.
+          * - :py:attr:`~GetGeometriesLevelOfRefinement`
+            - Get the value of "Geometries Level of Refinement".
+          * - :py:attr:`~SetGeometriesLevelOfRefinement`
+            - Set the value of "Geometries Level of Refinement".
+          * - :py:attr:`~GetGeometriesRefinementDistanceFactor`
+            - Get the value of "Geometries Refinement Distance Factor".
+          * - :py:attr:`~SetGeometriesRefinementDistanceFactor`
+            - Set the value of "Geometries Refinement Distance Factor".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_sph_refinement import RASphAdaptiveSizing
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.sph.sph_refinement_criteria.SPHRefinementCriteria]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetGeometries() -> list[ansys.rocky.app.ra_wall.RAWall | ansys.rocky.app.conveyors.ra_feed_conveyor.RAFeedConveyor | ansys.rocky.app.conveyors.ra_receiving_conveyor.RAReceivingConveyor | ansys.rocky.app.ra_system_coupling_wall.RASystemCouplingWall]
+
+   
+   Get the "Adaptive Sph Sizing Geometries".
+
+   :rtype: List[:class:`RAWall`, :class:`RAFeedConveyor`, :class:`RAReceivingConveyor`, :class:`RASystemCouplingWall`]
+       A list of :class:`RAWall`, :class:`RAFeedConveyor`, :class:`RAReceivingConveyor`, :class:`RASystemCouplingWall`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGeometries(values: Iterable[ansys.rocky.app.ra_wall.RAWall | ansys.rocky.app.conveyors.ra_feed_conveyor.RAFeedConveyor | ansys.rocky.app.conveyors.ra_receiving_conveyor.RAReceivingConveyor | ansys.rocky.app.ra_system_coupling_wall.RASystemCouplingWall | str]) -> None
+
+   
+   Set the "Adaptive Sph Sizing Geometries".
+
+   :param List[str, :class:`RAWall`, :class:`RAFeedConveyor`, :class:`RAReceivingConveyor`, :class:`RASystemCouplingWall`] values:
+       A list with names, :class:`RAWall`, :class:`RAFeedConveyor`, :class:`RAReceivingConveyor`, :class:`RASystemCouplingWall`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableGeometries() -> list[ansys.rocky.app.ra_wall.RAWall | ansys.rocky.app.conveyors.ra_feed_conveyor.RAFeedConveyor | ansys.rocky.app.conveyors.ra_receiving_conveyor.RAReceivingConveyor | ansys.rocky.app.ra_system_coupling_wall.RASystemCouplingWall]
+
+   
+   Get all available Adaptive Sph Sizing Geometries.
+
+   :rtype: List[:class:`RAWall`, :class:`RAFeedConveyor`, :class:`RAReceivingConveyor`, :class:`RASystemCouplingWall`]
+       A list of :class:`RAWall`, :class:`RAFeedConveyor`, :class:`RAReceivingConveyor`, :class:`RASystemCouplingWall`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRoiRefinementLevels() -> RARoiRefinementItemList
+
+   
+   Get the Adaptive SPH Sizing ROI refinement levels table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetEnabled() -> bool
+
+   
+   Get the value of "Enabled".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetEnabled(value: bool) -> None
+
+   
+   Set the value of "Enabled".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Enable() -> None
+
+   
+   Set the value of "" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: Disable() -> None
+
+   
+   Set the value of "" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsEnabled() -> bool
+
+   
+   Check if the "" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGeometriesLevelOfRefinement() -> int
+
+   
+   Get the value of "Geometries Level of Refinement".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGeometriesLevelOfRefinement(value: str | int) -> None
+
+   
+   Set the value of "Geometries Level of Refinement".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetGeometriesRefinementDistanceFactor() -> float
+
+   
+   Get the value of "Geometries Refinement Distance Factor".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetGeometriesRefinementDistanceFactor(value: str | float) -> None
+
+   
+   Set the value of "Geometries Refinement Distance Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

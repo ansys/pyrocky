@@ -1,0 +1,89 @@
+
+
+
+
+
+
+:class:`RAModuleOutput`
+=======================
+
+
+.. py:class:: ansys.rocky.app.ra_addin_process.RAModuleOutput
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`
+
+
+   
+   Wrapper class for the object that represents a Module's unique output.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAModuleOutput
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_addin_process import RAModuleOutput
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[coilib50.process.IProcess]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+
+
+

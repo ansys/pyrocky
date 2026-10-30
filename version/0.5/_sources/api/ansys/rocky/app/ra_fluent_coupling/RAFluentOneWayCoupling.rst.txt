@@ -1,0 +1,449 @@
+
+
+
+
+
+
+:class:`RAFluentOneWayCoupling`
+===============================
+
+
+.. py:class:: ansys.rocky.app.ra_fluent_coupling.RAFluentOneWayCoupling
+
+   Bases: :py:obj:`ansys.rocky.app.ra_cfd_coupling.RABaseCFDCoupling`
+
+
+   
+   Rocky PrePost Scripting wrapper to Fluent one way CFD coupling process.
+
+   This wrapper can be accessed via the project's :class:`RACFDCoupling`:
+
+   .. code-block:: python
+
+       cfd_coupling = study.GetCFDCoupling()
+       cfd_coupling.SetupOneWayFluent('fluent.cas')
+       one_way_process = cfd_coupling.GetCouplingProcess()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAFluentOneWayCoupling
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~SetupStoreFiles`
+            - Set the file with Fluent to Rocky information.
+          * - :py:attr:`~GetAvailableCoupledBoundaryNames`
+            - Obtain the names of the boundaries available for coupling in the fluent file.
+          * - :py:attr:`~CreateCoupledBoundaries`
+            - Create a coupled boundary for each of the coupled boundary name passed by the user.
+          * - :py:attr:`~GetIsOneWayPeriodic`
+            - Get the value of "Is One Way Periodic".
+          * - :py:attr:`~SetIsOneWayPeriodic`
+            - Set the value of "Is One Way Periodic".
+          * - :py:attr:`~GetOverwriteCfdUpdateDistance`
+            - Get the value of "Overwrite Cfd Update Distance".
+          * - :py:attr:`~SetOverwriteCfdUpdateDistance`
+            - Set the value of "Overwrite Cfd Update Distance".
+          * - :py:attr:`~GetStartTime`
+            - Get the value of "Start Time".
+          * - :py:attr:`~SetStartTime`
+            - Set the value of "Start Time".
+          * - :py:attr:`~GetUseTurbulentDispersion`
+            - Get the value of "Use Turbulent Dispersion".
+          * - :py:attr:`~SetUseTurbulentDispersion`
+            - Set the value of "Use Turbulent Dispersion".
+          * - :py:attr:`~GetUserCfdUpdateDistance`
+            - Get the value of "User Cfd Update Distance".
+          * - :py:attr:`~SetUserCfdUpdateDistance`
+            - Set the value of "User Cfd Update Distance".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_fluent_coupling import RAFluentOneWayCoupling
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: SetupStoreFiles(filename) -> None
+
+   
+   Set the file with Fluent to Rocky information.
+
+   :param str filename:
+       The filename for the .f2r file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetAvailableCoupledBoundaryNames() -> collections.abc.Iterable[str]
+
+   
+   Obtain the names of the boundaries available for coupling in the fluent file.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: CreateCoupledBoundaries(coupled_boundary_names: list[str]) -> None
+
+   
+   Create a coupled boundary for each of the coupled boundary name passed by the user.
+   Check GetAvailableCoupledBoundaryNames to obtain the list of available boundaries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetIsOneWayPeriodic() -> bool
+
+   
+   Get the value of "Is One Way Periodic".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetIsOneWayPeriodic(value: bool) -> None
+
+   
+   Set the value of "Is One Way Periodic".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetOverwriteCfdUpdateDistance() -> bool
+
+   
+   Get the value of "Overwrite Cfd Update Distance".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOverwriteCfdUpdateDistance(value: bool) -> None
+
+   
+   Set the value of "Overwrite Cfd Update Distance".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetStartTime(unit: str | None = None) -> float
+
+   
+   Get the value of "Start Time".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetStartTime(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Start Time".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUseTurbulentDispersion() -> bool
+
+   
+   Get the value of "Use Turbulent Dispersion".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUseTurbulentDispersion(value: bool) -> None
+
+   
+   Set the value of "Use Turbulent Dispersion".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetUserCfdUpdateDistance(unit: str | None = None) -> float
+
+   
+   Get the value of "User Cfd Update Distance".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetUserCfdUpdateDistance(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "User Cfd Update Distance".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

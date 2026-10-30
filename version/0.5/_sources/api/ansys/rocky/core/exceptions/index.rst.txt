@@ -1,0 +1,93 @@
+
+
+
+
+
+
+The ``exceptions.py`` module
+============================
+
+.. py:module:: ansys.rocky.core.exceptions
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: exceptions
+.. tab-set::
+
+
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.core.exceptions.PyRockyError`
+            - Provides the generic exception for the PyRocky API.
+
+
+          * - :py:obj:`~ansys.rocky.core.exceptions.RockyLaunchError`
+            - Provides the error raised when problems occurs during launch of the Rocky app.
+
+
+          * - :py:obj:`~ansys.rocky.core.exceptions.FreeflowLaunchError`
+            - Provides the error raised when problems occurs during launch of the Freeflow
+
+
+          * - :py:obj:`~ansys.rocky.core.exceptions.RockyApiError`
+            - Provides the ``Exception`` class for an error generated in the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-lightning_bolt"></span> PyRockyError</api/ansys/rocky/core/exceptions/PyRockyError>
+    <span class="nf nf-md-lightning_bolt"></span> RockyLaunchError</api/ansys/rocky/core/exceptions/RockyLaunchError>
+    <span class="nf nf-md-lightning_bolt"></span> FreeflowLaunchError</api/ansys/rocky/core/exceptions/FreeflowLaunchError>
+    <span class="nf nf-md-lightning_bolt"></span> RockyApiError</api/ansys/rocky/core/exceptions/RockyApiError>
+
+
+
+
+
+
+
+Description
+-----------
+
+Module where the exceptions of the project are contained.
+
+..
+    !! processed by numpydoc !!
+
+
+
+
+
+
+

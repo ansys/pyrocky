@@ -1,0 +1,49 @@
+
+
+
+
+
+
+:class:`ApiServerError`
+=======================
+
+
+.. py:exception:: ansys.rocky.core.exceptions.ApiServerError
+
+   Bases: :py:obj:`Exception`
+
+
+   
+   Provides the ``Exception`` class for an error generated within the API layer.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.core.exceptions import ApiServerError
+
+
+
+
+

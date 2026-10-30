@@ -1,0 +1,519 @@
+
+
+
+
+
+
+:class:`RARegionOfInterestCylinder`
+===================================
+
+
+.. py:class:: ansys.rocky.app.ra_region_of_interest_cylinder.RARegionOfInterestCylinder
+
+   Bases: :py:obj:`ansys.rocky.app.ra_grid_process_element.RAGridProcessElementItem`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`, :py:obj:`ansys.rocky.app._ra_orientation_mixin._RAOrientationMixin`
+
+
+   
+   Rocky PrePost Scripting wrapper for a single Cylinder geometry.
+
+   This wrapper class corresponds to an individual entry under the "Regions Of Interest" item on
+   the project's data tree. Regions Of Interest can be retrieved from the :class:`RAStudy` or the
+   :class:`RARegionsOfInterestCollection` via:
+
+   .. code-block:: python
+
+       roi_cylinder = study.GetElement('Cylinder <1>')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RARegionOfInterestCylinder
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetCenterAfterMovement`
+            - Get the Region of Interest center taking motion in account.
+          * - :py:attr:`~GetCenter`
+            - Get the value of "Center".
+          * - :py:attr:`~SetCenter`
+            - Set the values of "Center".
+          * - :py:attr:`~GetFinalAngle`
+            - Get the value of "Final Angle".
+          * - :py:attr:`~SetFinalAngle`
+            - Set the value of "Final Angle".
+          * - :py:attr:`~GetHeight`
+            - Get the value of "Height".
+          * - :py:attr:`~SetHeight`
+            - Set the value of "Height".
+          * - :py:attr:`~GetInitialAngle`
+            - Get the value of "Initial Angle".
+          * - :py:attr:`~SetInitialAngle`
+            - Set the value of "Initial Angle".
+          * - :py:attr:`~GetInternalFactor`
+            - Get the value of "Internal Factor".
+          * - :py:attr:`~SetInternalFactor`
+            - Set the value of "Internal Factor".
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetRadius`
+            - Get the value of "Radius".
+          * - :py:attr:`~SetRadius`
+            - Set the value of "Radius".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_region_of_interest_cylinder import RARegionOfInterestCylinder
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetCenterAfterMovement(timestep: int) -> rocky30.base_types.Tuple3F
+
+   
+   Get the Region of Interest center taking motion in account.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetCenter(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Center".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetCenter(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Center".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFinalAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Final Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFinalAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Final Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetHeight(unit: str | None = None) -> float
+
+   
+   Get the value of "Height".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetHeight(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Height".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInitialAngle(unit: str | None = None) -> float
+
+   
+   Get the value of "Initial Angle".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInitialAngle(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Initial Angle".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "dega".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInternalFactor(unit: str | None = None) -> float
+
+   
+   Get the value of "Internal Factor".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInternalFactor(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Internal Factor".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "-".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRadius(unit: str | None = None) -> float
+
+   
+   Get the value of "Radius".
+
+   :param unit:
+       The unit for the returned value. If no unit is provided, the returned value will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRadius(value: str | float, unit: str | None = None) -> None
+
+   
+   Set the value of "Radius".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or float type.
+   :param unit:
+       The unit for `value`. If no unit is provided, `value` is assumed to be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

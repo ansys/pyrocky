@@ -1,0 +1,73 @@
+
+
+
+
+
+
+The ``ra_local_execution_settings.py`` module
+=============================================
+
+.. py:module:: ansys.rocky.app.ra_local_execution_settings
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_local_execution_settings
+.. tab-set::
+
+
+
+
+    .. tab-item:: Classes
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_local_execution_settings.RALocalExecutionSettings`
+            - Rocky PrePost Scripting wrapper for the Local Execution Settings.
+
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-cod-symbol_class"></span> RALocalExecutionSettings</api/ansys/rocky/app/ra_local_execution_settings/RALocalExecutionSettings>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+API reference
+=============
+
+This section describes ansys-rocky-core endpoints, their capabilities, and how
+to interact with them programmatically.
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   <span class="nf nf-md-package"></span> ansys.rocky.app</api/ansys/rocky/app/index>
+   <span class="nf nf-md-package"></span> ansys.rocky.core</api/ansys/rocky/core/index>

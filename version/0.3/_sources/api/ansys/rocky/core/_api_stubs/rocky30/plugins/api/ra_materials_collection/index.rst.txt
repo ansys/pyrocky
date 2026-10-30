@@ -1,0 +1,158 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_collection
+=======================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_collection
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_collection.RAMaterialCollection
+
+
+Module Contents
+---------------
+
+.. py:class:: RAMaterialCollection(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_list.RAList`
+
+
+   
+   Base class for API classes that wrap SubjectLists (and related list classes).
+
+   Provides methods to add, remove and iterate on the items. The PrePost Scripting wrappers for the list items
+   will be obtained via ApiApplication._GetElementWrapper(), so it's important that these wrappers
+   are registered as wrapper classes (see `EPApiExtension`).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+   .. py:method:: GetWrappedClass() -> type[rocky30.models.material.material.MaterialCollection]
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName() -> str
+      :classmethod:
+
+
+
+   .. py:method:: __delitem__(index: int) -> None
+
+
+   .. py:method:: __len__() -> int
+
+
+   .. py:method:: __iter__() -> ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem
+
+
+   .. py:method:: __getitem__(index: int) -> ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem
+
+
+   .. py:method:: Clear() -> None
+
+      
+      Remove all items from the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: New() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+      
+      Add a new item. Returns the newly created item.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      ..
+          !! processed by numpydoc !!
+
+
+   .. py:method:: AddSolidMaterial() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+   .. py:method:: AddFluidMaterial() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material.RAFluidMaterial
+
+
+   .. py:method:: GetDefaultMaterials() -> list[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial]
+
+
+   .. py:method:: GetDefaultSolidMaterials() -> list[ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial]
+
+
+   .. py:method:: GetDefaultParticleMaterial() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+   .. py:method:: GetDefaultBeltMaterial() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+   .. py:method:: GetDefaultBoundaryMaterial() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+   .. py:method:: GetMaterial(material_name: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+   .. py:method:: GetSolidMaterial(material_name: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_solid_material.RASolidMaterial
+
+
+   .. py:method:: GetDefaultFluidMaterial() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material.RAFluidMaterial
+
+
+   .. py:method:: GetFluidMaterial(material_name: str) -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_fluid_material.RAFluidMaterial
+
+
+   .. py:method:: GetMaterialsInteractionCollection() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_materials_interaction_collection.RAMaterialsInteractionCollection
+
+
+   .. py:method:: GetBulkSolidFraction() -> float
+
+
+   .. py:method:: SetBulkSolidFraction(value: Union[str, float]) -> None
+
+

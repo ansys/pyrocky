@@ -1,0 +1,440 @@
+
+
+
+
+
+
+:class:`RAClipPlane`
+====================
+
+
+.. py:class:: ansys.rocky.app.ra_clip_plane.RAClipPlane(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`, :py:obj:`ansys.rocky.app._ra_orientation_mixin._RAOrientationMixin`, :py:obj:`ansys.rocky.app.motion._with_movement_mixin._WithMovementMixin`
+
+
+   
+   Rocky PrePost Scripting wrapper for a single Clip Plane.
+
+   This wrapper class corresponds to an individual entry under the "3D Clip Planes" item on the project's
+   data tree. Clip Planes can be retrieved from the :class:`RAClipPlaneCollection` via:
+
+   .. code-block:: python
+
+       clip_plane = clip_plane_collection.GetClipPlane('Clip Plane <1>')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAClipPlane
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetOrigin`
+            - Returns the X, Y and Z plane origin
+          * - :py:attr:`~SetOrigin`
+            - Set the X, Y and Z parameters of the plane origin
+          * - :py:attr:`~SetRelativeRotationVector`
+            - Set the X, Y and Z parameters of the plane normal
+          * - :py:attr:`~GetRelativeRotationVector`
+            - Returns the X, Y and Z parameters of the plane normal
+          * - :py:attr:`~GetName`
+            - Get the value of "Name".
+          * - :py:attr:`~SetName`
+            - Set the value of "Name".
+          * - :py:attr:`~GetPlaneOrigin`
+            - Get the value of "Plane Origin".
+          * - :py:attr:`~SetPlaneOrigin`
+            - Set the values of "Plane Origin".
+          * - :py:attr:`~GetShowTool`
+            - Get the value of "Show Tool".
+          * - :py:attr:`~SetShowTool`
+            - Set the value of "Show Tool".
+          * - :py:attr:`~EnableTool`
+            - Set the value of "Tool" to True.
+          * - :py:attr:`~DisableTool`
+            - Set the value of "Tool" to False.
+          * - :py:attr:`~IsToolEnabled`
+            - Check if the "Tool" is enabled.
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_clip_plane import RAClipPlane
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.vizu_clip_plane.vizu_clip_plane_subject.VizuClipPlaneSubject]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetOrigin(unit: str | None = None) -> rocky30.base_types.Tuple3F
+
+   
+   Returns the X, Y and Z plane origin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetOrigin(x: float, y: float, z: float, unit: str | None = None) -> None
+
+   
+   Set the X, Y and Z parameters of the plane origin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetRelativeRotationVector(x: float, y: float, z: float) -> None
+
+   
+   Set the X, Y and Z parameters of the plane normal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetRelativeRotationVector() -> rocky30.base_types.Tuple3F
+
+   
+   Returns the X, Y and Z parameters of the plane normal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetName() -> str
+
+   
+   Get the value of "Name".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetName(value: str) -> None
+
+   
+   Set the value of "Name".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetPlaneOrigin(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Plane Origin".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetPlaneOrigin(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Plane Origin".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetShowTool() -> bool
+
+   
+   Get the value of "Show Tool".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetShowTool(value: bool) -> None
+
+   
+   Set the value of "Show Tool".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableTool() -> None
+
+   
+   Set the value of "Tool" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableTool() -> None
+
+   
+   Set the value of "Tool" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsToolEnabled() -> bool
+
+   
+   Check if the "Tool" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

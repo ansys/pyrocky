@@ -1,0 +1,137 @@
+
+
+
+
+
+
+The ``ra_api.py`` module
+========================
+
+.. py:module:: ansys.rocky.app.ra_api
+
+
+Summary
+-------
+
+
+
+
+
+
+
+
+.. py:currentmodule:: ra_api
+.. tab-set::
+
+
+
+
+
+
+    .. tab-item:: Exceptions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~ansys.rocky.app.ra_api.RockyApiError`
+            - Exception class representing an error generated in the API layer.
+
+
+
+    .. tab-item:: Functions
+
+        .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+
+          * - :py:obj:`~CheckResults`
+            - Helper function to check if the project has simulation results and raise an error with a
+
+
+          * - :py:obj:`~CheckPropAffectsSimulation`
+            - Helper function to check if the property (given by prop_name) affects the simulation results.
+
+
+
+
+
+
+
+
+
+
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :hidden:
+
+    <span class="nf nf-md-lightning_bolt"></span> RockyApiError</api/ansys/rocky/app/ra_api/RockyApiError>
+
+
+
+
+
+
+
+
+
+
+
+
+
+Module detail
+-------------
+
+.. py:function:: CheckResults(ra_object) -> None
+
+   
+   Helper function to check if the project has simulation results and raise an error with a
+   helpful message. Should be called by API methods that would invalidate simulation results.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:function:: CheckPropAffectsSimulation(prop_owner, prop_name)
+
+   
+   Helper function to check if the property (given by prop_name) affects the simulation results.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+

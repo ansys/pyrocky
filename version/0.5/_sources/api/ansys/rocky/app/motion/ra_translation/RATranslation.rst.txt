@@ -1,0 +1,365 @@
+
+
+
+
+
+
+:class:`RATranslation`
+======================
+
+
+.. py:class:: ansys.rocky.app.motion.ra_translation.RATranslation(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper representing a Translation motion.
+
+   Retrieve this specific wrapper after setting the correct motion type on a :class:`RAMotion`. For
+   example:
+
+   .. code-block:: python
+
+       motions = motion_frame.GetMotions()
+       motion_1 = motions.New()
+       motion_1.SetType('Translation')
+       translation = motion_1.GetTypeObject()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RATranslation
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetAcceleration`
+            - Get the value of "Acceleration".
+          * - :py:attr:`~SetAcceleration`
+            - Set the values of "Acceleration".
+          * - :py:attr:`~GetInput`
+            - Get "Input" as a string.
+          * - :py:attr:`~SetInput`
+            - Set the value of "Input".
+          * - :py:attr:`~GetValidInputValues`
+            - Get a list of all possible values for "Input".
+          * - :py:attr:`~GetFinalVelocity`
+            - Get the value of "Final Velocity".
+          * - :py:attr:`~SetFinalVelocity`
+            - Set the values of "Final Velocity".
+          * - :py:attr:`~GetVelocity`
+            - Get the value of "Velocity".
+          * - :py:attr:`~SetVelocity`
+            - Set the values of "Velocity".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.motion.ra_translation import RATranslation
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass()
+   :classmethod:
+
+
+.. py:method:: GetClassName()
+   :classmethod:
+
+
+.. py:method:: GetAcceleration(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Acceleration".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m/s2".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetAcceleration(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Acceleration".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m/s2".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetInput() -> str
+
+   
+   Get "Input" as a string.
+
+   :return:
+       The returned value will be one of ['fixed_velocity', 'initial_and_final_velocity', 'initial_velocity_and_acceleration'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetInput(value: str) -> None
+
+   
+   Set the value of "Input".
+
+   :param value:
+       The value to set. Must be one of ['fixed_velocity', 'initial_and_final_velocity', 'initial_velocity_and_acceleration'].
+   :raises RockyApiError:
+       If `value` is not a valid "Input" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidInputValues() -> list[str]
+
+   
+   Get a list of all possible values for "Input".
+
+   :return:
+       The returned list is ['fixed_velocity', 'initial_and_final_velocity', 'initial_velocity_and_acceleration'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetFinalVelocity(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Final Velocity".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetFinalVelocity(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Final Velocity".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m/s".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetVelocity(unit: str | None = None) -> list[float]
+
+   
+   Get the value of "Velocity".
+
+   :param unit:
+       The unit for the returned values. If no unit is provided, the returned values will be in "m/s".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetVelocity(values: collections.abc.Sequence[str | float], unit: str | None = None) -> None
+
+   
+   Set the values of "Velocity".
+
+   :param values:
+       The values to set. The values can be heterogeneous, the element of values can be an
+       expression with input variables or a float. Must have exactly 3 elements.
+   :param unit:
+       The unit for `values`. If no unit is provided, `values` is assumed to be in "m/s".
+   :raises RockyApiError:
+       If `values` doesn't have exactly 3 elements.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

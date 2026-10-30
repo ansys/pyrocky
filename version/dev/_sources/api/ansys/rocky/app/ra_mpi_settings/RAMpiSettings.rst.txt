@@ -1,0 +1,656 @@
+
+
+
+
+
+
+:class:`RAMpiSettings`
+======================
+
+
+.. py:class:: ansys.rocky.app.ra_mpi_settings.RAMpiSettings(id: str, model_id: str | None = None)
+
+   Bases: :py:obj:`ansys.rocky.app.api_element_item.ApiElementItem`
+
+
+   
+   Rocky PrePost Scripting wrapper for the MPI Execution Settings.
+
+   Access it from the :class:`RASimulatorRun` with:
+
+   .. code-block:: python
+
+       simulator_run = study.GetSimulatorRun()
+       mpi_settings = simulator_run.GetMpiSettings()
+       mpi_settings.GetNumberOfProcessors()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+
+.. py:currentmodule:: RAMpiSettings
+
+Overview
+--------
+
+.. tab-set::
+
+
+   .. tab-item:: Constructors
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetWrappedClass`
+            - 
+          * - :py:attr:`~GetClassName`
+            - 
+
+
+   .. tab-item:: Methods
+
+      .. list-table::
+          :header-rows: 0
+          :widths: auto
+
+          * - :py:attr:`~GetExtraParams`
+            - Get the value of "Extra Params".
+          * - :py:attr:`~SetExtraParams`
+            - Set the value of "Extra Params".
+          * - :py:attr:`~GetHeterogeneous`
+            - Get the value of "Heterogeneous".
+          * - :py:attr:`~SetHeterogeneous`
+            - Set the value of "Heterogeneous".
+          * - :py:attr:`~EnableHeterogeneous`
+            - Set the value of "Heterogeneous" to True.
+          * - :py:attr:`~DisableHeterogeneous`
+            - Set the value of "Heterogeneous" to False.
+          * - :py:attr:`~IsHeterogeneousEnabled`
+            - Check if the "Heterogeneous" is enabled.
+          * - :py:attr:`~GetHostfile`
+            - Get the value of "Hostfile".
+          * - :py:attr:`~SetHostfile`
+            - Set the value of "Hostfile".
+          * - :py:attr:`~GetNumberOfProcessors`
+            - Get the value of "Number of Processors".
+          * - :py:attr:`~SetNumberOfProcessors`
+            - Set the value of "Number of Processors".
+          * - :py:attr:`~GetNumberOfThreadsPerProcess`
+            - Get the value of "Number of Threads Per Process".
+          * - :py:attr:`~SetNumberOfThreadsPerProcess`
+            - Set the value of "Number of Threads Per Process".
+          * - :py:attr:`~GetProcessingUnit`
+            - Get "Processing Unit" as a string.
+          * - :py:attr:`~SetProcessingUnit`
+            - Set the value of "Processing Unit".
+          * - :py:attr:`~GetValidProcessingUnitValues`
+            - Get a list of all possible values for "Processing Unit".
+          * - :py:attr:`~GetSlicingDirection`
+            - Get "Slicing Direction" as a string.
+          * - :py:attr:`~SetSlicingDirection`
+            - Set the value of "Slicing Direction".
+          * - :py:attr:`~GetValidSlicingDirectionValues`
+            - Get a list of all possible values for "Slicing Direction".
+          * - :py:attr:`~GetTargetGpu`
+            - Get the value of "Target Gpu".
+          * - :py:attr:`~SetTargetGpu`
+            - Set the value of "Target Gpu".
+
+
+
+
+
+
+
+
+Import detail
+-------------
+
+.. code-block:: python
+
+    from ansys.rocky.app.ra_mpi_settings import RAMpiSettings
+
+
+
+Method detail
+-------------
+
+.. py:method:: GetWrappedClass() -> type[rocky30.models.solver.general_settings.MpiSettings]
+   :classmethod:
+
+
+.. py:method:: GetClassName() -> str
+   :classmethod:
+
+
+.. py:method:: GetExtraParams() -> str
+
+   
+   Get the value of "Extra Params".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetExtraParams(value: str) -> None
+
+   
+   Set the value of "Extra Params".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetHeterogeneous() -> bool
+
+   
+   Get the value of "Heterogeneous".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetHeterogeneous(value: bool) -> None
+
+   
+   Set the value of "Heterogeneous".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: EnableHeterogeneous() -> None
+
+   
+   Set the value of "Heterogeneous" to True.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: DisableHeterogeneous() -> None
+
+   
+   Set the value of "Heterogeneous" to False.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: IsHeterogeneousEnabled() -> bool
+
+   
+   Check if the "Heterogeneous" is enabled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetHostfile() -> str
+
+   
+   Get the value of "Hostfile".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetHostfile(value: str) -> None
+
+   
+   Set the value of "Hostfile".
+
+   :param value:
+       The value to set.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfProcessors() -> int
+
+   
+   Get the value of "Number of Processors".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfProcessors(value: str | int) -> None
+
+   
+   Set the value of "Number of Processors".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetNumberOfThreadsPerProcess() -> int
+
+   
+   Get the value of "Number of Threads Per Process".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetNumberOfThreadsPerProcess(value: str | int) -> None
+
+   
+   Set the value of "Number of Threads Per Process".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetProcessingUnit() -> str
+
+   
+   Get "Processing Unit" as a string.
+
+   :return:
+       The returned value will be one of ['CPU', 'GPU', 'MULTI_GPU'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetProcessingUnit(value: str) -> None
+
+   
+   Set the value of "Processing Unit".
+
+   :param value:
+       The value to set. Must be one of ['CPU', 'GPU', 'MULTI_GPU'].
+   :raises RockyApiError:
+       If `value` is not a valid "Processing Unit" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidProcessingUnitValues() -> list[str]
+
+   
+   Get a list of all possible values for "Processing Unit".
+
+   :return:
+       The returned list is ['CPU', 'GPU', 'MULTI_GPU'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetSlicingDirection() -> str
+
+   
+   Get "Slicing Direction" as a string.
+
+   :return:
+       The returned value will be one of ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetSlicingDirection(value: str) -> None
+
+   
+   Set the value of "Slicing Direction".
+
+   :param value:
+       The value to set. Must be one of ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+   :raises RockyApiError:
+       If `value` is not a valid "Slicing Direction" option.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetValidSlicingDirectionValues() -> list[str]
+
+   
+   Get a list of all possible values for "Slicing Direction".
+
+   :return:
+       The returned list is ['X_Parallel', 'Y_Parallel', 'Z_Parallel'].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: GetTargetGpu() -> int
+
+   
+   Get the value of "Target Gpu".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:method:: SetTargetGpu(value: str | int) -> None
+
+   
+   Set the value of "Target Gpu".
+
+   :param value:
+       The value to set. This value can be an expression with input variables or int type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+
+
+

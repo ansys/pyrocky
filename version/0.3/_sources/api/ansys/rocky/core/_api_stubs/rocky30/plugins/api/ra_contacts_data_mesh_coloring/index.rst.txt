@@ -1,0 +1,91 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contacts_data_mesh_coloring
+==============================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contacts_data_mesh_coloring
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_contacts_data_mesh_coloring.RAContactsDataMeshColoring
+
+
+Module Contents
+---------------
+
+.. py:class:: RAContactsDataMeshColoring(id: str)
+
+   .. py:method:: GetSubject() -> coilib50.subject.Subject
+
+
+   .. py:method:: SetVisible(value: bool) -> None
+
+
+   .. py:method:: GetVisible() -> bool
+
+
+   .. py:method:: GetValidColoringModes() -> list[str]
+
+
+   .. py:method:: GetAvailableGridFunctionsNames() -> set[str]
+
+
+   .. py:method:: GetAvailableGridFunctions() -> set[type[coilib50.element_function.semantic_association.SemanticAssociation]]
+
+
+   .. py:method:: SetStride(value: int) -> None
+
+
+   .. py:method:: GetStride() -> int
+
+
+   .. py:method:: SetContactsVisible(value: bool) -> None
+
+
+   .. py:method:: GetContactsVisible() -> bool
+
+
+   .. py:method:: SetContactsColor(values: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType) -> None
+
+
+   .. py:method:: GetContactsColor() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType
+
+
+   .. py:method:: SetContactsProperty(value: Union[type[coilib50.element_function.semantic_association.SemanticAssociation], str, None]) -> None
+
+
+   .. py:method:: GetContactsProperty() -> Union[type[coilib50.element_function.semantic_association.SemanticAssociation], None]
+
+
+   .. py:method:: SetContactsPointSize(value: float) -> None
+
+
+   .. py:method:: GetContactsPointSize() -> float
+
+
+   .. py:method:: SetContactsNetworkVisible(value: bool) -> None
+
+
+   .. py:method:: GetContactsNetworkVisible() -> bool
+
+
+   .. py:method:: SetContactsNetworkColor(values: ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType) -> None
+
+
+   .. py:method:: GetContactsNetworkColor() -> ansys.rocky.core._api_stubs.rocky30.plugins.api.ra_mesh_coloring.ColorType
+
+
+   .. py:method:: SetContactsNetworkProperty(value: Union[type[coilib50.element_function.semantic_association.SemanticAssociation], str, None]) -> None
+
+
+   .. py:method:: GetContactsNetworkProperty() -> Union[type[coilib50.element_function.semantic_association.SemanticAssociation], None]
+
+
+   .. py:method:: SetContactsNetworkLineWidth(value: float) -> None
+
+
+   .. py:method:: GetContactsNetworkLineWidth() -> float
+
+

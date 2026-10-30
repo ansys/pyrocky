@@ -1,0 +1,44 @@
+ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_linear_time_variable_moment
+=====================================================================================
+
+.. py:module:: ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_linear_time_variable_moment
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   ansys.rocky.core._api_stubs.rocky30.plugins.api.motion.ra_linear_time_variable_moment.RALinearTimeVariableMoment
+
+
+Module Contents
+---------------
+
+.. py:class:: RALinearTimeVariableMoment(id: str, model_id: Optional[str] = ...)
+
+   Bases: :py:obj:`ansys.rocky.core._api_stubs.plugins10.plugins.api.api_element_item.ApiElementItem`
+
+
+   .. py:method:: GetWrappedClass()
+      :classmethod:
+
+
+
+   .. py:method:: GetClassName()
+      :classmethod:
+
+
+
+   .. py:method:: GetInitialMomentValue(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetInitialMomentValue(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
+   .. py:method:: GetTimeCoefficients(unit: Optional[str] = ...) -> List[float]
+
+
+   .. py:method:: SetTimeCoefficients(values: collections.abc.Sequence[Union[str, float]], unit: Optional[str] = ...) -> None
+
+
